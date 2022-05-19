@@ -5,6 +5,7 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": ["plugin:prettier/recommended"],
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
