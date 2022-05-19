@@ -5,7 +5,10 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "extends": ["plugin:prettier/recommended"],
+      "extends": [
+        "plugin:prettier/recommended",
+        "plugin:eslint-comments/recommended"
+      ],
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
           "error",

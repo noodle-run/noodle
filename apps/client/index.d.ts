@@ -4,3 +4,4 @@ declare module '*.svg' {
   export const ReactComponent: any;
   export default content;
 }
+/* eslint-enable @typescript-eslint/no-explicit-any */
