@@ -1,7 +1,8 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "disable"],
+  "processor": "disable/disable",
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -47,6 +48,10 @@
         ],
         "react/jsx-props-no-spreading": "off"
       }
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx"],
+      "extends": ["plugin:testing-library/react", "plugin:jest/recommended"]
     },
     {
       "files": ["*.js", "*.jsx"],
