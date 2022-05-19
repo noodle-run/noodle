@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "postinstall": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -52,7 +53,9 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-testing-library": "^5.5.0",
+    "husky": "^8.0.0",
     "jest": "^27.5.1",
+    "lint-staged": ">=10",
     "nx": "14.1.7",
     "prettier": "^2.6.2",
     "react-test-renderer": "18.1.0",
