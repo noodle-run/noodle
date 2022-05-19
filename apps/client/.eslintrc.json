@@ -15,6 +15,9 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": "apps/client/tsconfig.eslint.json"
+      },
       "rules": {}
     },
     {

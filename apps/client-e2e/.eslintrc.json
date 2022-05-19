@@ -7,6 +7,12 @@
       "rules": {}
     },
     {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": "apps/client-e2e/tsconfig.eslint.json"
+      }
+    },
+    {
       "files": ["src/plugins/index.js"],
       "rules": {
         "@typescript-eslint/no-var-requires": "off",

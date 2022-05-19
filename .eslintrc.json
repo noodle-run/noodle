@@ -27,8 +27,26 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "parserOptions": {
+        "project": "./tsconfig.*?.json"
+      },
+      "extends": [
+        "plugin:@nrwl/nx/typescript",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "airbnb",
+        "airbnb-typescript",
+        "airbnb/hooks"
+      ],
+      "rules": {
+        "react/function-component-definition": [
+          "error",
+          {
+            "namedComponents": "arrow-function",
+            "unnamedComponents": "arrow-function"
+          }
+        ],
+        "react/jsx-props-no-spreading": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
