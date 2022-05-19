@@ -5,11 +5,11 @@ import Home from '../pages/index';
 describe('Home', () => {
   it('should render successfully', () => {
     const { baseElement } = render(<Home />);
-    expect(baseElement).toBeTruthy();
+    expect(baseElement).toBeInTheDocument();
   });
 
   it('should render hello world', () => {
     render(<Home />);
-    expect(screen.getByText(/hello world/i)).toBeTruthy();
+    expect(screen.getByText(/hello world/i)).toBeInTheDocument();
   });
 });
