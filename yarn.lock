@@ -3692,7 +3692,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.25.0":
+"@typescript-eslint/utils@npm:5.25.0, @typescript-eslint/utils@npm:^5.10.0, @typescript-eslint/utils@npm:^5.13.0":
   version: 5.25.0
   resolution: "@typescript-eslint/utils@npm:5.25.0"
   dependencies:
@@ -6437,6 +6437,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-disable@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "eslint-plugin-disable@npm:2.0.3"
+  dependencies:
+    resolve: ^1.1.6
+  peerDependencies:
+    eslint: ">=0.16.0"
+  checksum: 71893242172d633b63d3442393bf103f8f63ce97958ca63f6c5dacea0e4d4cdb4e35f1200b5e66c219034e26003177d18adf88e35af9ae1154739578832ec8ce
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-eslint-comments@npm:^3.2.0":
   version: 3.2.0
   resolution: "eslint-plugin-eslint-comments@npm:3.2.0"
@@ -6469,6 +6480,23 @@ __metadata:
   peerDependencies:
     eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
   checksum: 0bf77ad80339554481eafa2b1967449e1f816b94c7a6f9614ce33fb4083c4e6c050f10d241dd50b4975d47922880a34de1e42ea9d8e6fd663ebb768baa67e655
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-jest@npm:^26.2.2":
+  version: 26.2.2
+  resolution: "eslint-plugin-jest@npm:26.2.2"
+  dependencies:
+    "@typescript-eslint/utils": ^5.10.0
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ^5.0.0
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  peerDependenciesMeta:
+    "@typescript-eslint/eslint-plugin":
+      optional: true
+    jest:
+      optional: true
+  checksum: c1299a0bb465196d3c8a26ee892e29398b91bb741fe69ac6b19b54096f795142a152355ca520d80c778fb588ba2282a7c625ef204c17fe65ee94709d16970d46
   languageName: node
   linkType: hard
 
@@ -6563,6 +6591,17 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
   checksum: 729b7682a0fe6eab068171c159503ac57120ecc7b20067e76300b08879745c16a687e2033378ab45d9a3182da8844d06197a89081be83e1eb21fcceb76e79214
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-testing-library@npm:^5.5.0":
+  version: 5.5.0
+  resolution: "eslint-plugin-testing-library@npm:5.5.0"
+  dependencies:
+    "@typescript-eslint/utils": ^5.13.0
+  peerDependencies:
+    eslint: ^7.5.0 || ^8.0.0
+  checksum: 7f42e2af84a0b5d1bba86fe9838abdbfa1c4f5dae66db215f592a216f82a2164a23181841228872d7116f38398bbc671e60a1e3b9840f0a8da1972c7aac8bdcd
   languageName: node
   linkType: hard
 
@@ -10404,12 +10443,15 @@ __metadata:
     eslint-config-next: 12.1.6
     eslint-config-prettier: ^8.5.0
     eslint-plugin-cypress: ^2.12.1
+    eslint-plugin-disable: ^2.0.3
     eslint-plugin-eslint-comments: ^3.2.0
     eslint-plugin-import: ^2.26.0
+    eslint-plugin-jest: ^26.2.2
     eslint-plugin-jsx-a11y: ^6.5.1
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-react: ^7.30.0
     eslint-plugin-react-hooks: ^4.5.0
+    eslint-plugin-testing-library: ^5.5.0
     jest: 28.1.0
     next: 12.1.6
     nx: 14.1.7
@@ -11997,7 +12039,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.1.7, resolve@npm:^1.12.0, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0, resolve@npm:^1.22.0":
+"resolve@npm:^1.1.6, resolve@npm:^1.1.7, resolve@npm:^1.12.0, resolve@npm:^1.14.2, resolve@npm:^1.17.0, resolve@npm:^1.19.0, resolve@npm:^1.20.0, resolve@npm:^1.22.0":
   version: 1.22.0
   resolution: "resolve@npm:1.22.0"
   dependencies:
@@ -12020,7 +12062,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.0#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.12.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.0#~builtin<compat/resolve>":
   version: 1.22.0
   resolution: "resolve@patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b"
   dependencies:

@@ -10,6 +10,9 @@
       "files": ["*.ts", "*.tsx"],
       "parserOptions": {
         "project": "apps/client-e2e/tsconfig.eslint.json"
+      },
+      "settings": {
+        "disable/plugins": ["jest"]
       }
     },
     {
