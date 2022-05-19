@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - run: yarn install --immutable --immutable-cache --check-cache
+      - run: yarn install --immutable --immutable-cache
       - run: yarn nx-cloud start-ci-run
       - run: yarn nx affected --target=build --parallel --max-parallel=3
       - run: yarn nx affected --target=test --parallel --max-parallel=2
@@ -40,7 +40,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - run: yarn install --immutable --immutable-cache --check-cache
+      - run: yarn install --immutable --immutable-cache
       - run: yarn nx-cloud start-ci-run
       - run: yarn nx affected --target=build --parallel --max-parallel=3
       - run: yarn nx affected --target=test --parallel --max-parallel=2
@@ -57,6 +57,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - run: yarn install --immutable --immutable-cache --check-cache
+      - run: yarn install --immutable --immutable-cache
       - name: Start Nx Agent ${{ matrix.agent }}
         run: yarn nx-cloud start-agent

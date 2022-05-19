@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 
 const Home: NextPage = () => (
   <div>
-    <h1>Noodle - Open Source Educational Platform</h1>
     <h1>Hello World</h1>
   </div>
 );
