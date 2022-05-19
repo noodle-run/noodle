@@ -1,0 +1,7 @@
+{
+  "*.{ts, tsx}": [
+    "yarn nx affected:lint",
+    "yarn nx affected:test",
+    "yarn prettier --write"
+  ]
+}
