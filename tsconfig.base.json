@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@noodle/stitches": ["libs/stitches/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

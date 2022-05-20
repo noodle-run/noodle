@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "client": "apps/client",
-    "client-e2e": "apps/client-e2e"
+    "client-e2e": "apps/client-e2e",
+    "stitches": "libs/stitches"
   }
 }
