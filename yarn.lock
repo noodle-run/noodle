@@ -18910,6 +18910,7 @@ __metadata:
     tslib: ^2.4.0
     typescript: ~4.7.2
     url-loader: ^4.1.1
+    usehooks-ts: ^2.5.3
   languageName: unknown
   linkType: soft
 
@@ -24885,6 +24886,15 @@ __metadata:
   version: 3.1.1
   resolution: "use@npm:3.1.1"
   checksum: 08a130289f5238fcbf8f59a18951286a6e660d17acccc9d58d9b69dfa0ee19aa038e8f95721b00b432c36d1629a9e32a464bf2e7e0ae6a244c42ddb30bdd8b33
+  languageName: node
+  linkType: hard
+
+"usehooks-ts@npm:^2.5.3":
+  version: 2.5.3
+  resolution: "usehooks-ts@npm:2.5.3"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 22edb98c6003d34b4e1340c407353451b2c7afc9c8f50773e03bf2eab4dcab72cd8790dd6c7d4cf11ab3be8cfbd9beaa925fe07af7dbbf57bb914685b3816e84
   languageName: node
   linkType: hard
 
