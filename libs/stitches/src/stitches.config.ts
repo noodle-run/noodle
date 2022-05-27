@@ -10,6 +10,7 @@ import {
   letterSpacings,
   lineHeights,
 } from './typography';
+import { zIndices } from './zIndices';
 
 export const {
   styled,
@@ -30,6 +31,7 @@ export const {
     radii,
     space,
     sizes,
+    zIndices,
   },
 });
 
