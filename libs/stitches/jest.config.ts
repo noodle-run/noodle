@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'stitches',
   preset: '../../jest.preset.js',
@@ -12,4 +11,5 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/libs/stitches',
+  coverageReporters: ['text'],
 };

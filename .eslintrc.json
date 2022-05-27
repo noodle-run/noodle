@@ -62,7 +62,9 @@
             "packageDir": "."
           }
         ],
-        "import/prefer-default-export": "off"
+        "import/prefer-default-export": "off",
+        "implicit-arrow-linebreak": "off",
+        "function-paren-newline": "off"
       }
     },
     {
