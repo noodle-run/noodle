@@ -1,4 +1,5 @@
 import { createStitches } from '@stitches/react';
+import { borderWidths } from './borderWidths';
 import { colors } from './colors';
 import { radii } from './radii';
 import { shadows } from './shadows';
@@ -36,6 +37,7 @@ export const {
     zIndices,
     shadows,
     transitions,
+    borderWidths,
   },
 });
 
