@@ -4,6 +4,7 @@ import { radii } from './radii';
 import { shadows } from './shadows';
 import { sizes } from './sizes';
 import { space } from './space';
+import { transitions } from './transitions';
 import {
   fonts,
   fontSizes,
@@ -34,6 +35,7 @@ export const {
     sizes,
     zIndices,
     shadows,
+    transitions,
   },
 });
 
