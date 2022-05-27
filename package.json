@@ -11,11 +11,14 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "14.1.7",
+    "@radix-ui/colors": "^0.1.8",
+    "@stitches/react": "^1.2.8",
     "core-js": "^3.22.5",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "regenerator-runtime": "0.13.9",
+    "stitches-normalize-css": "^1.2.0",
     "styled-components": "^5.3.5",
     "tslib": "^2.4.0"
   },

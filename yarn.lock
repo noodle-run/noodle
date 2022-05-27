@@ -3894,6 +3894,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/colors@npm:^0.1.8":
+  version: 0.1.8
+  resolution: "@radix-ui/colors@npm:0.1.8"
+  checksum: 35fb8e48b1333e0a800ee55ce554d29016c10d2cb23aa161c6476c32b8231ec78f0ae57535ad482aa35adf0b64c957d92da88ef7f3a3f4a2f8c06870208c7ed1
+  languageName: node
+  linkType: hard
+
 "@reach/observe-rect@npm:^1.2.0":
   version: 1.2.0
   resolution: "@reach/observe-rect@npm:1.2.0"
@@ -4050,6 +4057,15 @@ __metadata:
   dependencies:
     "@sinonjs/commons": ^1.7.0
   checksum: 7d3aef54e17c1073101cb64d953157c19d62a40e261a30923fa1ee337b049c5f29cc47b1f0c477880f42b5659848ba9ab897607ac8ea4acd5c30ddcfac57fca6
+  languageName: node
+  linkType: hard
+
+"@stitches/react@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "@stitches/react@npm:1.2.8"
+  peerDependencies:
+    react: ">= 16.3.0"
+  checksum: 029795323cdedb5599ec0636526fc233b2cf41fa9c1f4a704b1f7f457c6170053384a7430afed45e25f73e348d7c391cf1379bc079943cd9cad44302234a5244
   languageName: node
   linkType: hard
 
@@ -18494,6 +18510,8 @@ __metadata:
     "@nrwl/storybook": 14.1.7
     "@nrwl/web": 14.1.7
     "@nrwl/workspace": 14.1.7
+    "@radix-ui/colors": ^0.1.8
+    "@stitches/react": ^1.2.8
     "@storybook/addon-a11y": ^6.5.3
     "@storybook/addon-console": ^1.2.3
     "@storybook/addon-essentials": ~6.5.3
@@ -18545,6 +18563,7 @@ __metadata:
     react-dom: 18.1.0
     react-test-renderer: 18.1.0
     regenerator-runtime: 0.13.9
+    stitches-normalize-css: ^1.2.0
     storybook-dark-mode: ^1.1.0
     storybook-facelift: ^6.9.0
     styled-components: ^5.3.5
@@ -22705,6 +22724,13 @@ __metadata:
   version: 1.5.0
   resolution: "statuses@npm:1.5.0"
   checksum: c469b9519de16a4bb19600205cffb39ee471a5f17b82589757ca7bd40a8d92ebb6ed9f98b5a540c5d302ccbc78f15dc03cc0280dd6e00df1335568a5d5758a5c
+  languageName: node
+  linkType: hard
+
+"stitches-normalize-css@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "stitches-normalize-css@npm:1.2.0"
+  checksum: 8d8e53e89ca0d57f66750a08882ba4ce405057b27d4febe978ed5466488746938381795ce74612f5bd31db5051bb69f376e760aff6d367af283547188ed70235
   languageName: node
   linkType: hard
 
