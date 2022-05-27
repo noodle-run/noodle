@@ -15,9 +15,9 @@ export const globalStyles = globalCss(...normalize, {
     color: '$gray12',
   },
   'h1, h2, h3, h4, h5, h6, p': {
-    fontSize: '1rem',
-    fontWeight: 400,
-    lineHeight: 1,
+    fontSize: '$base',
+    fontWeight: '$normal',
+    lineHeight: '$none',
     padding: 0,
     margin: 0,
   },
@@ -28,7 +28,7 @@ export const globalStyles = globalCss(...normalize, {
     fontFamily: '$body',
     padding: 0,
     margin: 0,
-    fontSize: '1rem',
+    fontSize: '$base',
   },
   ul: {
     padding: 0,

@@ -1,5 +1,12 @@
 import { createStitches } from '@stitches/react';
 import { colors } from './colors';
+import {
+  fonts,
+  fontSizes,
+  fontWeights,
+  letterSpacings,
+  lineHeights,
+} from './typography';
 
 export const {
   styled,
@@ -12,9 +19,11 @@ export const {
 } = createStitches({
   theme: {
     colors: colors.light,
-    fonts: {
-      body: 'Inter',
-    },
+    fonts,
+    fontSizes,
+    fontWeights,
+    letterSpacings,
+    lineHeights,
   },
 });
 

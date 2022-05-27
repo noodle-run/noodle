@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@fontsource/inter": "^4.5.10",
     "@nrwl/next": "14.1.7",
     "@radix-ui/colors": "^0.1.8",
     "@stitches/react": "^1.2.8",
