@@ -22,6 +22,7 @@ export const globalStyles = globalCss(...normalize, {
     lineHeight: '$none',
     padding: 0,
     margin: 0,
+    color: '$gray12',
   },
   button: {
     cursor: 'pointer',
