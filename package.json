@@ -21,7 +21,8 @@
     "regenerator-runtime": "0.13.9",
     "stitches-normalize-css": "^1.2.0",
     "styled-components": "^5.3.5",
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.0",
+    "usehooks-ts": "^2.5.3"
   },
   "devDependencies": {
     "@babel/core": "7.18.2",

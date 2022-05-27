@@ -12,6 +12,8 @@ export const globalStyles = globalCss(...normalize, {
   body: {
     fontFamily: '$body',
     backgroundColor: '$gray1',
+    margin: 0,
+    padding: 0,
     color: '$gray12',
   },
   'h1, h2, h3, h4, h5, h6, p': {
@@ -29,6 +31,7 @@ export const globalStyles = globalCss(...normalize, {
     padding: 0,
     margin: 0,
     fontSize: '$base',
+    color: '$gray12',
   },
   ul: {
     padding: 0,
