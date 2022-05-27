@@ -1,5 +1,6 @@
 import { createStitches } from '@stitches/react';
 import { colors } from './colors';
+import { radii } from './radii';
 import {
   fonts,
   fontSizes,
@@ -24,6 +25,7 @@ export const {
     fontWeights,
     letterSpacings,
     lineHeights,
+    radii,
   },
 });
 
