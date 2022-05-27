@@ -11,6 +11,8 @@ export const globalStyles = globalCss(...normalize, {
   },
   body: {
     fontFamily: '$body',
+    backgroundColor: '$gray1',
+    color: '$gray12',
   },
   'h1, h2, h3, h4, h5, h6, p': {
     fontSize: '1rem',
