@@ -22,3 +22,42 @@ Yarn:
 Pnpm:
 
 <Source code="pnpm install @noodle/stitches" dark />
+
+## Usage
+
+You firstly need to wrap your application with the provided `StitchesProvider` component, this applies the css reset and it also enables dark/light mode functionality.
+
+export const code1 = `import { StitchesProvider } from '@noodle/stitches';\n
+export const App = ({ children }) => {
+  return (
+    <StitchesProvider>
+      {children}
+    </StitchesProvider>
+  )
+};`;
+
+<Source code={code1} dark />
+
+You can then style any of your components using Stitches' styled api:
+
+export const code2 = `import { styled } from '@noodle/stitches';\n
+const Button = styled('button', {
+  color: '$pink10',
+  fontSize: '$lg',
+  fontWeight: '$bold',
+  border: '1px solid $pink10',
+});\n
+export const App = () => {
+  return (
+    <Button>Your Button</Button>
+  )
+}`;
+
+<Source code={code2} dark />
+
+## Guidelines
+
+- No inline styles, refer to variants for conditional styling.
+- Use the theme values provided for colors, fonts, sizes...etc to style your components.
+- Use the shorthand css properties already available.
+- Do not use the css api to make styling for the components.
