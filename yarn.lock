@@ -6593,9 +6593,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react@npm:13.2.0":
-  version: 13.2.0
-  resolution: "@testing-library/react@npm:13.2.0"
+"@testing-library/react@npm:13.3.0":
+  version: 13.3.0
+  resolution: "@testing-library/react@npm:13.3.0"
   dependencies:
     "@babel/runtime": ^7.12.5
     "@testing-library/dom": ^8.5.0
@@ -6603,7 +6603,7 @@ __metadata:
   peerDependencies:
     react: ^18.0.0
     react-dom: ^18.0.0
-  checksum: 29f4a97c932a7fd78a55791a0ae0ba8d33c5241acbade98b6714440981e6e3d86a243e0b22161d3323b549ce059c175ae56d6b5053ad44083ab6e40ca211f19e
+  checksum: 98fd8616a7cae0ecfcbe97b5b3c5b91fbafccf449c04875395ccc0e3f0b139e53b3261b9536ec2169a5e2883a1be2098907209064061fe0c2ff21dfbc785dd40
   languageName: node
   linkType: hard
 
@@ -7039,7 +7039,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:17.0.35, @types/node@npm:>=12":
+"@types/node@npm:17.0.36":
+  version: 17.0.36
+  resolution: "@types/node@npm:17.0.36"
+  checksum: 11055fde0a1e1421113849b5e32c7022911efc0be670729947bf0162970e79962d804b1eb8a9afb291380cac97cf0e684511415d586ae5fe1560322c940fe188
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:>=12":
   version: 17.0.35
   resolution: "@types/node@npm:17.0.35"
   checksum: 7a24946ae7fd20267ed92466384f594e448bfb151081158d565cc635d406ecb29ea8fb85fcd2a1f71efccf26fb5bd3c6f509bde56077eb8b832b847a6664bc62
@@ -12479,9 +12486,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^26.2.2":
-  version: 26.2.2
-  resolution: "eslint-plugin-jest@npm:26.2.2"
+"eslint-plugin-jest@npm:^26.3.0":
+  version: 26.3.0
+  resolution: "eslint-plugin-jest@npm:26.3.0"
   dependencies:
     "@typescript-eslint/utils": ^5.10.0
   peerDependencies:
@@ -12492,7 +12499,7 @@ __metadata:
       optional: true
     jest:
       optional: true
-  checksum: c1299a0bb465196d3c8a26ee892e29398b91bb741fe69ac6b19b54096f795142a152355ca520d80c778fb588ba2282a7c625ef204c17fe65ee94709d16970d46
+  checksum: 584c999067fd894b15a0a4232dc41826c800505cda25fd6beb0f0d624e677e46c8475e084af4b2e4882dd44a940d0bf84fc42a20b7eabe539c522c9539e5bbaf
   languageName: node
   linkType: hard
 
@@ -18864,9 +18871,9 @@ __metadata:
     "@storybook/theming": ^6.5.5
     "@svgr/webpack": ^6.2.1
     "@testing-library/jest-dom": ^5.16.4
-    "@testing-library/react": 13.2.0
+    "@testing-library/react": 13.3.0
     "@types/jest": 27.5.1
-    "@types/node": 17.0.35
+    "@types/node": 17.0.36
     "@types/react": 18.0.9
     "@types/react-dom": 18.0.5
     "@typescript-eslint/eslint-plugin": ~5.26.0
@@ -18884,7 +18891,7 @@ __metadata:
     eslint-plugin-disable: ^2.0.3
     eslint-plugin-eslint-comments: ^3.2.0
     eslint-plugin-import: ^2.26.0
-    eslint-plugin-jest: ^26.2.2
+    eslint-plugin-jest: ^26.3.0
     eslint-plugin-jsx-a11y: ^6.5.1
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-react: ^7.30.0
