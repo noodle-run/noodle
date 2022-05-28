@@ -46,7 +46,26 @@
             "unnamedComponents": "arrow-function"
           }
         ],
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "react/react-in-jsx-scope": "off",
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": [
+              "**/*.spec.ts",
+              "**/*.spec.tsx",
+              "**/*.stories.tsx",
+              "**/*.stories.ts",
+              "**/.storybook/*.ts",
+              "**/.storybook/*.tsx"
+            ],
+            "packageDir": "."
+          }
+        ],
+        "import/prefer-default-export": "off",
+        "implicit-arrow-linebreak": "off",
+        "function-paren-newline": "off",
+        "react/require-default-props": "off"
       }
     },
     {
