@@ -65,7 +65,8 @@
         "import/prefer-default-export": "off",
         "implicit-arrow-linebreak": "off",
         "function-paren-newline": "off",
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
+        "react/prop-types": "off"
       }
     },
     {
