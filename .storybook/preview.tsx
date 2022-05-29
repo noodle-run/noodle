@@ -1,18 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable import/no-extraneous-dependencies */
 
-import {
-  darkTheme,
-  globalStyles,
-  StitchesProvider,
-  styled,
-} from '../libs/stitches/src';
 import { DocsContainer, DocsContainerProps } from '@storybook/addon-docs';
 import { ThemeVars } from '@storybook/theming';
+import { ReactNode } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
-import { Story } from '@storybook/react';
+import { darkTheme, globalStyles, styled } from '../libs/stitches/src';
 import { dark, light } from './theme';
-import { FC, ReactNode } from 'react';
 globalStyles();
 
 type DocsParamType = {
@@ -42,6 +36,11 @@ export const parameters = {
     },
   },
   layout: 'fullscreen',
+  options: {
+    storySort: {
+      order: ['Stitches', ['Introduction', '*'], '*'],
+    },
+  },
 };
 
 const Wrapper = styled('div', {
