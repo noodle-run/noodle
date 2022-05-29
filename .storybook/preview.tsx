@@ -44,10 +44,9 @@ export const parameters = {
 };
 
 const Wrapper = styled('div', {
-  height: '$screen-h',
-  width: '$screen-w',
   backgroundColor: '$gray1',
   color: '$gray12',
+  minHeight: '100vh',
 });
 
 export const decorators = [
@@ -55,9 +54,7 @@ export const decorators = [
     const isDark = useDarkMode();
 
     return (
-      <div className={isDark ? darkTheme : ''}>
-        <Wrapper>{renderStory()}</Wrapper>
-      </div>
+      <Wrapper className={isDark ? darkTheme : ''}>{renderStory()}</Wrapper>
     );
   },
 ];
