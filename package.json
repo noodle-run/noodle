@@ -85,6 +85,7 @@
     "lint-staged": "^12.4.2",
     "nx": "14.1.9",
     "prettier": "^2.6.2",
+    "prettier-plugin-organize-imports": "^2.3.4",
     "react-test-renderer": "18.1.0",
     "storybook-dark-mode": "^1.1.0",
     "storybook-facelift": "^6.9.0",
