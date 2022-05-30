@@ -52,6 +52,7 @@
           "error",
           {
             "devDependencies": [
+              "**/jest.setup.ts",
               "**/*.spec.ts",
               "**/*.spec.tsx",
               "**/*.stories.tsx",

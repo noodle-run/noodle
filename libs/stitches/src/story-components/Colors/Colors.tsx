@@ -1,5 +1,5 @@
-import { light, lightGroups } from '../colors/light';
-import { styled } from '../stitches.config';
+import { light, lightGroups } from '../../colors/light';
+import { styled } from '../../stitches.config';
 
 const GroupWrapper = styled('div', {
   display: 'flex',
