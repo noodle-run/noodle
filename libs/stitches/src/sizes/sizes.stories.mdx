@@ -1,0 +1,24 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import { Spacings } from '../story-components/Spacings';
+import { sizes } from './index';
+
+<Meta title="Stitches / Sizing" />
+
+# Sizing
+
+Sizing constraints work the same way space constraints do, the main difference is that they work on css properties like width and height that spacings don't. Apart from that, sizing constraints have percentage values like half, full, twoThirds...etc
+
+## Usage
+
+export const code1 = `import { styled } from '@noodle/stitches';\n
+const Wrapper = styled('div', {
+  width: '$half',
+  height: '$screen-h'
+});\n
+const App = () => (
+  <Wrapper>Content</Wrapper>
+)`
+
+<Source code={code1} dark />
+
+<Spacings entries={Object.entries(sizes)} />
