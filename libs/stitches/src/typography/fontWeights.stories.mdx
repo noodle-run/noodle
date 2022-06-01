@@ -1,0 +1,19 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import { FontWeights } from '../story-components/FontWeights';
+
+<Meta title="Stitches / Typography / Weights" />
+
+# Weights
+
+There are 3 pre-defined font weight values in the noodle stitches library, `$normal`, `$semiBold` and `$bold`. These can be used to make a piece of text more or less bold.
+
+## Usage
+
+export const code1 = `import { styled } from '@noodle/stitches';\n
+const Text = styled('h3', {
+  fontFamily: '$semiBold',
+});`;
+
+<Source code={code1} dark />
+
+<FontWeights />
