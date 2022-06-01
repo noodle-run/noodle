@@ -1,4 +1,4 @@
-import { space } from '../../space';
+import { FC } from 'react';
 import { styled } from '../../stitches.config';
 
 const SpaceBox = styled('div', {
@@ -6,6 +6,8 @@ const SpaceBox = styled('div', {
   backgroundColor: '$sky10',
   height: '$6',
   borderRadius: '$md',
+  minWidth: '$1',
+  maxWidth: '$full',
 });
 
 const SpaceText = styled('p', {
@@ -14,17 +16,19 @@ const SpaceText = styled('p', {
   opacity: 0.5,
 });
 
-export const Spacings = () => (
+interface SpacingsProps {
+  entries: [string, string][];
+}
+
+export const Spacings: FC<SpacingsProps> = ({ entries }) => (
   <div>
-    {Object.entries(space)
-      .reverse()
-      .map(([name, value]) => (
-        <div key={name}>
-          <SpaceText>
-            {name} - {value}
-          </SpaceText>
-          <SpaceBox data-testid={name} css={{ width: `$${name}` }} />
-        </div>
-      ))}
+    {entries.reverse().map(([name, value]) => (
+      <div key={name}>
+        <SpaceText>
+          {name} - {value}
+        </SpaceText>
+        <SpaceBox data-testid={name} css={{ width: `$${name}` }} />
+      </div>
+    ))}
   </div>
 );

@@ -1,5 +1,6 @@
 import { Meta, Source } from '@storybook/addon-docs';
 import { Spacings } from '../story-components/Spacings';
+import { space } from './index';
 
 <Meta title="Stitches / Spacings" />
 
@@ -22,4 +23,4 @@ export const App = () => (
 
 ## Available values
 
-<Spacings />
+<Spacings entries={Object.entries(space)} />
