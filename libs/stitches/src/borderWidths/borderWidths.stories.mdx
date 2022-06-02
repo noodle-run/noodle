@@ -1,0 +1,19 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import { BorderWidths } from '../story-components/BorderWidths';
+
+<Meta title="Stitches / Border Widths" />
+
+# Border Widths
+
+There are 3 pre-defined values for common border widths available in the noodle stitches library, these are used to make a border less or more thick, currently there are `$base`, `$semiThick` and `$thick`.
+
+## Usage
+
+export const code1 = `import { styled } from '@noodle/stitches';\n
+const Box = styled('div', {
+  border: '$thick solid $red10',
+});`;
+
+<Source code={code1} dark />
+
+<BorderWidths />
