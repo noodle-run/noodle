@@ -7,20 +7,20 @@
 Firstly you need to install the peer dependencies:
 
 ```bash
-npx install-peerdeps @noodle/stitches
+npx install-peerdeps @noodlio/stitches
 ```
 
-Then you install the main `@noodle/stitches` library.
+Then you install the main `@noodlio/stitches` library.
 
 ```bash
 # npm
-npm install @noodle/stitches
+npm install @noodlio/stitches
 
 # yarn
-yarn add @noodle/stitches
+yarn add @noodlio/stitches
 
 # pnpm
-pnpm install @noodle/stitches
+pnpm install @noodlio/stitches
 ```
 
 ## Included
@@ -42,7 +42,7 @@ pnpm install @noodle/stitches
 Firstly import the `StitchesProvider` component and wrap your application around it.
 
 ```jsx
-import { StitchesProvider } from '@noodle/stitches';
+import { StitchesProvider } from '@noodlio/stitches';
 
 <StitchesProvider>
   <App />
@@ -52,7 +52,7 @@ import { StitchesProvider } from '@noodle/stitches';
 To style your components, simply import the styled function:
 
 ```jsx
-import { styled } from '@noodle/stitches';
+import { styled } from '@noodlio/stitches';
 
 const Text = styled('p', {
   fontSize: '$2xl',
