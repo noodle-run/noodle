@@ -91,6 +91,7 @@
     "storybook-facelift": "^6.9.0",
     "ts-jest": "28.0.4",
     "ts-node": "10.8.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "~4.7.2",
     "url-loader": "^4.1.1"
   },
