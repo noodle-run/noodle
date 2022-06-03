@@ -68,7 +68,8 @@
         "function-paren-newline": "off",
         "react/require-default-props": "off",
         "react/prop-types": "off",
-        "react/jsx-one-expression-per-line": "off"
+        "react/jsx-one-expression-per-line": "off",
+        "object-curly-newline": "off"
       }
     },
     {
