@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <button type="button" onClick={toggleTheme}>
         Toggle Theme
       </button>
-      <Button>Hello World</Button>
+      <Button>I&apos;m from the design-system lib</Button>
     </div>
   );
 };
