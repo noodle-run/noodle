@@ -3,3 +3,31 @@ import { Meta, Source } from '@storybook/addon-docs';
 <Meta title="Stitches / Z Indices" />
 
 # Z Indices
+
+Z indices are used to set the layering of two or more elements that are in the same position, sometimes you may want an element to be on top of another or vice versa for any reason and z indices give you that ability. The noodle stitches library includes a set of pre-defined z index values that you can reference and use in your component to determine it's z index.
+
+## Included
+
+There are currently 7 available values to use in a given component styling, starting from 0 as the smallest value and ending up with `ontop` as the biggest value.
+
+- `$0` => 0
+- `$1` => 1
+- `$2` => 2
+- `$3` => 3
+- `$4` => 4
+- `$5` => 5
+- `$ontop` => 9999
+
+## Usage
+
+export const code1 = `import { styled } from '@noodle/stitches';\n
+const Box = styled('div', {
+  width: '$20',
+  height: '$20',
+  position: 'absolute',
+  left: 0,
+  top: 0,
+  zIndex: '$ontop' // now this element will be on top of all other elements in the same position
+});`;
+
+<Source code={code1} dark />
