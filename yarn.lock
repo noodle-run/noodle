@@ -18980,6 +18980,7 @@ __metadata:
     styled-components: ^5.3.5
     ts-jest: 28.0.4
     ts-node: 10.8.0
+    tsconfig-paths-webpack-plugin: ^3.5.2
     tslib: ^2.4.0
     typescript: ~4.7.2
     url-loader: ^4.1.1
@@ -24427,7 +24428,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-paths-webpack-plugin@npm:3.5.2":
+"tsconfig-paths-webpack-plugin@npm:3.5.2, tsconfig-paths-webpack-plugin@npm:^3.5.2":
   version: 3.5.2
   resolution: "tsconfig-paths-webpack-plugin@npm:3.5.2"
   dependencies:

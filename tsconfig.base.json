@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@noodle/design-system": ["libs/design-system/src/index.ts"],
+      "@noodle/design-system/atoms": ["libs/design-system/atoms/src/index.ts"],
       "@noodle/stitches": ["libs/stitches/src/index.ts"]
     }
   },

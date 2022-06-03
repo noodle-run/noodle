@@ -4,6 +4,8 @@
   "projects": {
     "client": "apps/client",
     "client-e2e": "apps/client-e2e",
+    "design-system": "libs/design-system",
+    "design-system-atoms": "libs/design-system/atoms",
     "stitches": "libs/stitches",
     "storybook": "libs/storybook"
   }
