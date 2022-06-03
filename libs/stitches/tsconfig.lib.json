@@ -9,6 +9,7 @@
     "../../node_modules/@nrwl/next/typings/image.d.ts"
   ],
   "exclude": [
+    "**/story-components/*",
     "jest.setup.ts",
     "jest.config.ts",
     "**/*.spec.ts",
