@@ -1,1 +1,1 @@
-export * from '@noodle/design-system/atoms';
+export * from './atoms';
