@@ -1,0 +1,45 @@
+import { Meta, Source } from '@storybook/addon-docs';
+import { easing, timing } from './index';
+import { Transitions } from '../story-components/Transitions';
+
+<Meta title="Stitches / Transitions" />
+
+# Transitions
+
+Transitions are used to transition a css property value to another smoothly let's say on hover or focus, it is normally a time consuming an repetitive to keep writing the transition values for every component that you want to transition. We provide a set of pre-defined transition values that all have the same easing and timing they just adjust what kind of css properties are transitionable. The current timing for a transition is `150ms` and the easing is `cubic-bezier(0.4, 0, 0.2, 1)`.
+
+## Included
+
+- `all` => transitions all css properties of the element.
+- `colors` => transitions all color css properties of the element, color css properties include `color`, `background-color`, `border-color`, `text-decoration-color`, `fill` and `stroke`.
+- `default` => transitions all color css properties but also includes commonly transitioned properties like `opacity`, `box-shadow`, `transform`, `filter` and `backdrop-filter`.
+- `opacity` => only transitions the opacity css property.
+- `shadow` => only transitions the box-shadow css property.
+- `transform` => only transitions the transform css property.
+
+## Usage
+
+export const code1 = `import { styled } from '@noodle/stitches';\n
+const Box = styled('div', {
+  width: '$full',
+  height: '$20',
+  backgroundColor: '$pink10',
+  borderRadius: '$2xl',
+  display: 'grid',
+  placeItems: 'center',
+  fontWeight: '$bold',
+  letterSpacing: '$wide',
+  textAlign: 'center',\n\n
+  // implementing the default transition
+  transition: '$default',\n
+  '&:hover': {
+    // transitioning the scale on hover
+    transform: 'scale(1.1)',
+  },
+});`;
+
+<Source code={code1} dark />
+
+### The above code will give us the following result
+
+<Transitions />
