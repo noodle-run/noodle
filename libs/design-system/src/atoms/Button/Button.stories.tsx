@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 import { Button } from './Button';
 
 const args: ComponentProps<typeof Button> = {
-  children: 'Button',
+  children: 'Add new',
 };
 
 const config: Meta<typeof args> = {
