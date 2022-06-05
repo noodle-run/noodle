@@ -3,7 +3,7 @@ import { fontWeights } from '../../typography';
 
 const WeightName = styled('p', {
   opacity: 0.5,
-  paddingTop: '$3',
+  pt: '$3',
 });
 
 const Text = styled('p', {

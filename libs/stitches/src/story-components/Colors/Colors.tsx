@@ -4,7 +4,7 @@ import { styled } from '../../stitches.config';
 const GroupWrapper = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
-  padding: '10px 0',
+  py: '10px',
 });
 
 const ColorBox = styled('div', {
@@ -21,7 +21,7 @@ const ColorName = styled('p', {
 
 const GroupName = styled('h1', {
   fontSize: '$2xl',
-  paddingTop: '$3',
+  pt: '$3',
 });
 
 const keys = Object.keys(light);
