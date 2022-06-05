@@ -10,7 +10,7 @@ const Box = styled('div', {
   placeItems: 'center',
   fontWeight: '$bold',
   letterSpacing: '$wide',
-  marginTop: '$3',
+  mt: '$3',
   textAlign: 'center',
   '&:hover': {
     transform: 'scale(1.1)',

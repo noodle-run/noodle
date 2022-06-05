@@ -2,8 +2,8 @@ import { styled } from '../../stitches.config';
 import { lineHeights } from '../../typography';
 
 const Name = styled('p', {
-  paddingTop: '$6',
-  paddingBottom: '$2',
+  pt: '$6',
+  pb: '$2',
   opacity: 0.5,
 });
 

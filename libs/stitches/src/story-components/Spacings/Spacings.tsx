@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { styled } from '../../stitches.config';
 
 const SpaceBox = styled('div', {
-  margin: '$2 0',
+  my: '$2',
   backgroundColor: '$sky10',
   height: '$6',
   borderRadius: '$md',
@@ -12,7 +12,7 @@ const SpaceBox = styled('div', {
 
 const SpaceText = styled('p', {
   fontSize: '$sm',
-  paddingTop: '$3',
+  pt: '$3',
   opacity: 0.5,
 });
 

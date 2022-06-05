@@ -2,8 +2,8 @@ import { styled } from '../../stitches.config';
 import { letterSpacings } from '../../typography';
 
 const Name = styled('p', {
-  paddingTop: '$3',
-  paddingBottom: '$2',
+  pt: '$3',
+  pb: '$2',
   opacity: 0.5,
 });
 
