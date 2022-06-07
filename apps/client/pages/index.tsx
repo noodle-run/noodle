@@ -1,8 +1,10 @@
 import { Button } from '@noodle/design-system';
 import { useToggleTheme } from '@noodle/stitches';
 import { NextPage } from 'next';
+import { useQuery } from '../utils/trpc';
 
 const Home: NextPage = () => {
+  const hello = useQuery(['hello', { msg: 'noodle' }]);
   const { toggleTheme } = useToggleTheme();
   return (
     <div>
@@ -11,6 +13,7 @@ const Home: NextPage = () => {
         Toggle Theme
       </button>
       <Button>I&apos;m from the design-system lib</Button>
+      <p>{hello.data && hello.data.greeting}</p>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import { StitchesProvider } from '@noodle/stitches';
+import { withTRPC } from '@trpc/next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { AppRouter } from './api/trpc/[trpc]';
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
@@ -34,4 +36,15 @@ const App = ({ Component, pageProps }: AppProps) => (
   </>
 );
 
-export default App;
+export default withTRPC<AppRouter>({
+  config() {
+    const url = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}/api/trpc`
+      : 'http://localhost:4200/api/trpc';
+
+    return {
+      url,
+    };
+  },
+  ssr: false,
+})(App);

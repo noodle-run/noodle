@@ -5,7 +5,8 @@
     "fontsource",
     "ontop",
     "Parens",
-    "Tailwindcss"
+    "Tailwindcss",
+    "trpc"
   ],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
