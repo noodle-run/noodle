@@ -4,8 +4,17 @@ import { NextPage } from 'next';
 import { useQuery } from '../utils/trpc';
 
 const Home: NextPage = () => {
-  const hello = useQuery(['hello', { msg: 'noodle' }]);
+  const { data, isLoading, error } = useQuery(['hello', { msg: 'noodle' }]);
   const { toggleTheme } = useToggleTheme();
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
   return (
     <div>
       <h1>Hello World</h1>
@@ -13,7 +22,7 @@ const Home: NextPage = () => {
         Toggle Theme
       </button>
       <Button>I&apos;m from the design-system lib</Button>
-      <p>{hello.data && hello.data.greeting}</p>
+      {data && <p>{data.greeting}</p>}
     </div>
   );
 };
