@@ -1,10 +1,10 @@
 import * as trpc from '@trpc/server';
 import * as trpcNext from '@trpc/server/adapters/next';
-import * as yup from 'yup';
+import * as z from 'zod';
 
 export const appRouter = trpc.router().query('hello', {
-  input: yup.object({
-    msg: yup.string().required(),
+  input: z.object({
+    msg: z.string(),
   }),
   resolve({ input }) {
     return {
