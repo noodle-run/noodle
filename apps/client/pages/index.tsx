@@ -4,7 +4,10 @@ import { NextPage } from 'next';
 import { useQuery } from '../utils/trpc';
 
 const Home: NextPage = () => {
-  const { data, isLoading, error } = useQuery(['hello', { msg: 'noodle' }]);
+  const { data, isLoading, error } = useQuery([
+    'hello.getGreeting',
+    { greeting: 'noodle' },
+  ]);
   const { toggleTheme } = useToggleTheme();
 
   if (isLoading) {
