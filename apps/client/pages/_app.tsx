@@ -1,8 +1,8 @@
+import { AppRouter } from '@noodle/server';
 import { StitchesProvider } from '@noodle/stitches';
 import { withTRPC } from '@trpc/next';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { AppRouter } from './api/trpc/[trpc]';
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
