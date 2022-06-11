@@ -95,7 +95,6 @@
     "prettier-plugin-organize-imports": "^2.3.4",
     "react-test-renderer": "18.1.0",
     "storybook-dark-mode": "^1.1.0",
-    "storybook-facelift": "^6.9.0",
     "ts-jest": "28.0.4",
     "ts-node": "10.8.1",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
