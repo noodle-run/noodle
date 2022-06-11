@@ -6,7 +6,9 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "storybook": "nx storybook storybook",
+    "build-storybook": "nx build-storybook storybook"
   },
   "private": true,
   "dependencies": {
@@ -25,7 +27,6 @@
     "react-query": "^3.39.1",
     "regenerator-runtime": "0.13.9",
     "stitches-normalize-css": "^1.2.0",
-    "styled-components": "^5.3.5",
     "tslib": "^2.4.0",
     "usehooks-ts": "^2.5.4",
     "zod": "^3.17.3"
@@ -47,7 +48,6 @@
     "@nrwl/web": "14.2.4",
     "@nrwl/workspace": "14.2.4",
     "@storybook/addon-a11y": "^6.5.8",
-    "@storybook/addon-console": "^1.2.3",
     "@storybook/addon-essentials": "~6.5.8",
     "@storybook/addon-interactions": "^6.5.8",
     "@storybook/addon-links": "^6.5.8",
@@ -93,7 +93,6 @@
     "nx": "14.2.4",
     "prettier": "^2.6.2",
     "prettier-plugin-organize-imports": "^2.3.4",
-    "react-test-renderer": "18.1.0",
     "storybook-dark-mode": "^1.1.0",
     "ts-jest": "28.0.4",
     "ts-node": "10.8.1",

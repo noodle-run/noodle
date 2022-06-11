@@ -2,11 +2,13 @@
   "cSpell.words": [
     "Buildable",
     "cacheable",
+    "commitlint",
     "fontsource",
     "ontop",
     "Parens",
     "Tailwindcss",
-    "trpc"
+    "trpc",
+    "usehooks"
   ],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
