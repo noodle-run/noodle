@@ -62,6 +62,7 @@
     "@svgr/webpack": "^6.2.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "13.3.0",
+    "@testing-library/user-event": "^14.2.0",
     "@types/jest": "28.1.1",
     "@types/node": "17.0.43",
     "@types/react": "18.0.12",
