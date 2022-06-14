@@ -39,6 +39,7 @@
         "airbnb/hooks"
       ],
       "rules": {
+        "react/button-has-type": "off",
         "react/function-component-definition": [
           "error",
           {
