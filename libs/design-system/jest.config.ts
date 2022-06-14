@@ -12,4 +12,5 @@ export default {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/libs/design-system',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  coverageReporters: ['text'],
 };
