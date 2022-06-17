@@ -2,8 +2,7 @@
   "extends": [
     "plugin:@nrwl/nx/react-typescript",
     "../../.eslintrc.json",
-    "next",
-    "next/core-web-vitals"
+    "plugin:@next/next/recommended"
   ],
   "ignorePatterns": ["!**/*"],
   "overrides": [
@@ -17,8 +16,7 @@
       "files": ["*.ts", "*.tsx"],
       "parserOptions": {
         "project": "apps/client/tsconfig.eslint.json"
-      },
-      "rules": {}
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
