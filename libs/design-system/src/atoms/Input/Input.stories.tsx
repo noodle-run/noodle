@@ -7,6 +7,8 @@ import { Input } from './Input';
 
 const args: ComponentProps<typeof Input> = {
   icon: <FiSearch />,
+  type: 'text',
+  placeholder: 'Type here...',
 };
 
 const config: Meta<typeof args> = {
@@ -31,9 +33,22 @@ const play: typeof WithIcon.play = async ({ canvasElement }) => {
   expect(canvas.getByRole('textbox')).toHaveValue('This is an input field');
 };
 
+export const WithIconPlaceholder: Story<typeof args> = (props) => (
+  <Input {...props} />
+);
+WithIconPlaceholder.args = args;
+
 export const WithIcon: Story<typeof args> = (props) => <Input {...props} />;
 WithIcon.args = args;
 WithIcon.play = play;
 
 export const NoIcon: Story<typeof args> = (props) => <Input {...props} />;
 NoIcon.play = play;
+
+export const NoIconPlaceholder: Story<typeof args> = (props) => (
+  <Input {...props} />
+);
+NoIconPlaceholder.args = {
+  ...args,
+  icon: undefined,
+};

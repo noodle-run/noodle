@@ -42,14 +42,22 @@ type InputProps = {
   readonly icon?: ReactNode;
   readonly value?: string;
   readonly onChange?: (newValue: string) => void;
+  readonly placeholder: string;
+  readonly type: string;
 };
 
-export const Input: FC<InputProps> = ({ icon, value, onChange }) => (
+export const Input: FC<InputProps> = ({
+  icon,
+  value,
+  onChange,
+  placeholder,
+  type,
+}) => (
   <Wrapper variant={icon ? 'icon' : 'noicon'}>
     {icon && <Icon role="presentation">{icon}</Icon>}
     <Field
-      type="text"
-      placeholder="Search..."
+      type={type}
+      placeholder={placeholder}
       value={value}
       onChange={(e) => {
         if (onChange) {
