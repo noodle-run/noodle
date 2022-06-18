@@ -13,7 +13,6 @@ const args: ComponentProps<typeof Button> = {
 const config: Meta<typeof args> = {
   title: 'Design System / Atoms / Button',
   component: Button,
-  args,
   argTypes: {
     onClick: {
       action: true,
@@ -29,9 +28,19 @@ const config: Meta<typeof args> = {
 
 export default config;
 
-export const Normal: Story<typeof args> = (props) => <Button {...props} />;
-Normal.storyName = 'Button';
-Normal.play = async ({ canvasElement, args: props }) => {
+export const WithIcon: Story<typeof args> = (props) => <Button {...props} />;
+WithIcon.args = args;
+WithIcon.play = async ({ canvasElement, args: props }) => {
+  const canvas = within(canvasElement);
+  userEvent.click(canvas.getByRole('button'));
+  expect(props.onClick).toHaveBeenCalled();
+};
+
+export const NoIcon: Story<typeof args> = (props) => <Button {...props} />;
+NoIcon.args = {
+  children: 'Button',
+};
+NoIcon.play = async ({ canvasElement, args: props }) => {
   const canvas = within(canvasElement);
   userEvent.click(canvas.getByRole('button'));
   expect(props.onClick).toHaveBeenCalled();
