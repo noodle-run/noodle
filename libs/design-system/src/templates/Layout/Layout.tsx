@@ -3,7 +3,7 @@ import { FC, ReactNode } from 'react';
 
 const Wrapper = styled('div', {
   display: 'grid',
-  gridTemplateColumns: '240px 1fr',
+  gridTemplateColumns: '256px 1fr',
   minHeight: '100vh',
   width: '100vw',
   overflowX: 'hidden',
@@ -18,7 +18,7 @@ const ContentWrapper = styled('div', {
 });
 
 const SideMenuWrapper = styled('div', {
-  p: '$6',
+  p: '$4',
 });
 
 type LayoutProps = {
