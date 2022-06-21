@@ -1,9 +1,10 @@
 import { Meta, Story } from '@storybook/react';
 import { ComponentProps } from 'react';
+import { SideMenu } from '../../organisms';
 import { Layout } from './Layout';
 
 const args: ComponentProps<typeof Layout> = {
-  sidemenu: <p>SideMenu</p>,
+  sidemenu: <SideMenu />,
   children: <p>Content</p>,
 };
 
