@@ -42,4 +42,10 @@ export const globalStyles = globalCss(...normalize, {
   input: {
     backgroundColor: 'transparent',
   },
+  a: {
+    color: 'inherit',
+    textDecoration: 'none',
+    display: 'inline-block',
+    cursor: 'pointer',
+  },
 });
