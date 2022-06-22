@@ -46,3 +46,5 @@ Thumbs.db
 !.yarn/sdks
 !.yarn/versions
 !.yarn/cache
+
+.env

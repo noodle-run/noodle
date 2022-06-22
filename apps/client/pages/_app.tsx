@@ -1,10 +1,12 @@
 import { AppRouter } from '@noodle/server';
 import { StitchesProvider } from '@noodle/stitches';
 import { withTRPC } from '@trpc/next';
+import { Session } from 'next-auth';
+import { SessionProvider } from 'next-auth/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-const App = ({ Component, pageProps }: AppProps) => (
+const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => (
   <>
     <Head>
       <title>Noodle - Open Source Educational Platform</title>
@@ -30,9 +32,11 @@ const App = ({ Component, pageProps }: AppProps) => (
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
     </Head>
-    <StitchesProvider>
-      <Component {...pageProps} />
-    </StitchesProvider>
+    <SessionProvider session={session as Session}>
+      <StitchesProvider>
+        <Component {...pageProps} />
+      </StitchesProvider>
+    </SessionProvider>
   </>
 );
 
