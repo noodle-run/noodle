@@ -7,7 +7,7 @@ export const hello = createRouter().query('getGreeting', {
   }),
   resolve({ input }) {
     return {
-      greeting: `hello ${input.greeting ?? 'world'}`,
+      greeting: `Hello ${input.greeting ?? 'world'}`,
     };
   },
 });
