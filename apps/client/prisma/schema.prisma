@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url = env("PLANETSCALE_DB")
+  url = env("DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
