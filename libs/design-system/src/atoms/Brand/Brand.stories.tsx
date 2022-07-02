@@ -3,13 +3,23 @@ import { ComponentProps } from 'react';
 import { Brand } from './Brand';
 
 const args: ComponentProps<typeof Brand> = {
-  size: '50',
+  size: 50,
 };
 
 const config: Meta<typeof args> = {
   title: 'Design System / Atoms / Brand',
   component: Brand,
   args,
+  argTypes: {
+    size: {
+      control: {
+        type: 'range',
+        min: 0,
+        max: 256,
+        step: 4,
+      },
+    },
+  },
 };
 
 export default config;

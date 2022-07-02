@@ -9,7 +9,7 @@ describe('Brand atom', () => {
   });
 
   it('renders with a size', () => {
-    render(<Brand size="100" />);
+    render(<Brand size={100} />);
 
     expect(screen.getByRole('presentation')).toHaveAttribute('width', '100');
     expect(screen.getByRole('presentation')).toHaveAttribute('height', '100');
