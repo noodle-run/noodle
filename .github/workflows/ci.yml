@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - run: yarn install --immutable --immutable-cache
+      - run: yarn install --immutable
       - run: yarn nx-cloud start-ci-run
       - run: yarn nx affected --target=build --parallel --max-parallel=3
       - run: yarn nx affected --target=test --parallel --max-parallel=2
