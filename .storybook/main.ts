@@ -3,7 +3,12 @@ import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 export default {
   addons: [
-    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        backgrounds: false,
+      },
+    },
     '@storybook/addon-a11y',
     '@storybook/addon-links',
     '@storybook/addon-interactions',
