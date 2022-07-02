@@ -7,3 +7,10 @@ jest.mock(
     ({ children, ...rest }: { children: ReactElement }) =>
       React.cloneElement(children, { ...rest }),
 );
+
+jest.mock(
+  'next/image',
+  () =>
+    ({ src, alt }: { src: string; alt: string }) =>
+      React.createElement('img', { src, alt }),
+);
