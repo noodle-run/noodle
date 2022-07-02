@@ -100,6 +100,7 @@
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prisma": "^4.0.0",
+    "storybook-addon-next": "^1.6.7",
     "storybook-dark-mode": "^1.1.0",
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.1",
