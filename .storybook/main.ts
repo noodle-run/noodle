@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/core-common';
+import path from 'path';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 export default {
@@ -14,6 +15,15 @@ export default {
     '@storybook/addon-interactions',
     'storybook-dark-mode',
     'storybook-addon-paddings',
+    {
+      name: 'storybook-addon-next',
+      options: {
+        nextConfigPath: path.resolve(
+          __dirname,
+          '../apps/client/next.config.js',
+        ),
+      },
+    },
   ],
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   webpackFinal: async (config) => {
