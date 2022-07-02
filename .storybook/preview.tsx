@@ -3,7 +3,7 @@
 
 import { DocsContainer, DocsContainerProps } from '@storybook/addon-docs';
 import { ThemeVars } from '@storybook/theming';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { darkTheme, globalStyles, styled } from '../libs/stitches/src';
 import { dark, light } from './theme';
@@ -46,12 +46,19 @@ export const parameters = {
 const Wrapper = styled('div', {
   backgroundColor: '$gray1',
   color: '$gray12',
-  minHeight: '100vh',
 });
 
 export const decorators = [
   (renderStory: () => ReactNode) => {
     const isDark = useDarkMode();
+
+    useEffect(() => {
+      if (isDark) {
+        document.querySelector('.sb-show-main')?.classList.add(darkTheme);
+      } else {
+        document.querySelector('.sb-show-main')?.classList.remove(darkTheme);
+      }
+    }, [isDark]);
 
     return (
       <Wrapper className={isDark ? darkTheme : ''}>{renderStory()}</Wrapper>

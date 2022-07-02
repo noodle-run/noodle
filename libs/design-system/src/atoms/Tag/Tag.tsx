@@ -1,4 +1,4 @@
-import { styled } from '@noodle/stitches';
+import { Colors, styled } from '@noodle/stitches';
 import { FC } from 'react';
 
 const Circle = styled('div', {
@@ -8,13 +8,13 @@ const Circle = styled('div', {
 });
 
 type TagProps = {
-  readonly color: string;
+  readonly color?: Colors;
 };
 
-export const Tag: FC<TagProps> = ({ color }) => (
+export const Tag: FC<TagProps> = ({ color = 'gray' }) => (
   <Circle
     role="presentation"
-    data-testid={color}
-    css={{ backgroundColor: color }}
+    data-testid={`$${color}10`}
+    css={{ backgroundColor: `$${color}10` }}
   />
 );

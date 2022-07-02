@@ -31,6 +31,7 @@
     "react-query": "^3.39.1",
     "regenerator-runtime": "^0.13.9",
     "stitches-normalize-css": "^1.2.0",
+    "storybook-addon-paddings": "^4.3.0",
     "tslib": "^2.4.0",
     "usehooks-ts": "^2.6.0",
     "zod": "^3.17.3"
