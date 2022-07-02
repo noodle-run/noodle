@@ -41,7 +41,7 @@ export const SideMenu = () => (
   <nav>
     <PageLink href="/">
       <BrandAnchor>
-        <Brand size="50" />
+        <Brand size={50} />
       </BrandAnchor>
     </PageLink>
     <ul>

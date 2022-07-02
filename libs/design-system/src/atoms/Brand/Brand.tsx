@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
 type BrandProps = {
-  readonly size?: string;
+  readonly size?: number;
 };
 
-export const Brand: FC<BrandProps> = ({ size = '50' }) => (
+export const Brand: FC<BrandProps> = ({ size = 50 }) => (
   <svg
     width={size}
     height={size}
