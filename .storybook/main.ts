@@ -8,6 +8,7 @@ export default {
     '@storybook/addon-links',
     '@storybook/addon-interactions',
     'storybook-dark-mode',
+    'storybook-addon-paddings',
   ],
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   webpackFinal: async (config) => {

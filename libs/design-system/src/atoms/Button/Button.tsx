@@ -47,7 +47,7 @@ export const Button: FC<ButtonProps> = ({
   icon,
   type = 'button',
 }) => (
-  <Wrapper type={type ?? 'button'} onClick={onClick}>
+  <Wrapper type={type} onClick={onClick}>
     {children}
     {icon && <Icon>{icon}</Icon>}
   </Wrapper>
