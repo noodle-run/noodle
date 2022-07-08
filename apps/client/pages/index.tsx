@@ -3,7 +3,7 @@ import { styled } from '@noodle/stitches';
 import { NextPage } from 'next';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { FiGithub, FiLogOut } from 'react-icons/fi';
-import { useQuery } from '../utils/trpc';
+import { trpc } from '../utils/trpc';
 
 const Center = styled('div', {
   display: 'flex',
@@ -36,10 +36,7 @@ const Home: NextPage = () => {
     data: greetingData,
     error,
     isLoading,
-  } = useQuery([
-    'hello.getGreeting',
-    { greeting: session?.user?.name ?? 'world' },
-  ]);
+  } = trpc.proxy.greeting.useQuery({ name: 'from tRPC' });
 
   if (status === 'loading' || isLoading) {
     return (
@@ -60,7 +57,7 @@ const Home: NextPage = () => {
   if (session && session.user) {
     return (
       <Center>
-        <Title>{greetingData && greetingData.greeting}</Title>
+        <Title>{greetingData && greetingData.msg}</Title>
         <Description>Signed in as {session.user.email}</Description>
         <Button
           onClick={() => {

@@ -1,13 +1,11 @@
-import { AppRouter } from '@noodle/server';
-import { createReactQueryHooks } from '@trpc/react';
+import type { AppRouter } from '@noodle/server';
+import { setupTRPC } from '@trpc/next';
 
-export const {
-  useQuery,
-  useMutation,
-  useContext,
-  useDehydratedState,
-  useInfiniteQuery,
-  useSubscription,
-  Provider,
-  createClient,
-} = createReactQueryHooks<AppRouter>();
+export const trpc = setupTRPC<AppRouter>({
+  config() {
+    return {
+      url: '/api/trpc',
+    };
+  },
+  ssr: false,
+});

@@ -4996,54 +4996,56 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trpc/client@npm:^9.25.3":
-  version: 9.25.3
-  resolution: "@trpc/client@npm:9.25.3"
+"@trpc/client@npm:experimental":
+  version: 10.0.0-alpha.36
+  resolution: "@trpc/client@npm:10.0.0-alpha.36"
   dependencies:
     "@babel/runtime": ^7.9.0
   peerDependencies:
-    "@trpc/server": 9.25.3
-  checksum: 3b264c5dbd7a1de1a269369ef7cf79edc7bfc5ed74eb8cd4f5a280a91a3c9db637e0851bc18efbbb233e66e92d286ce5aff331c1c105835410f3ae64a511e9a0
+    "@trpc/server": 10.0.0-alpha.36
+  checksum: fe0bff02ff09256f5713e9a4f56cba24acc783a25addc9c6ea8a9a40df01a23b62f3e7c5eaef764915853180f0af308ddf85e4c1d3f6c69e69f245ff5604a983
   languageName: node
   linkType: hard
 
-"@trpc/next@npm:^9.25.3":
-  version: 9.25.3
-  resolution: "@trpc/next@npm:9.25.3"
+"@trpc/next@npm:experimental":
+  version: 10.0.0-alpha.36
+  resolution: "@trpc/next@npm:10.0.0-alpha.36"
   dependencies:
     "@babel/runtime": ^7.9.0
     react-ssr-prepass: ^1.5.0
   peerDependencies:
-    "@trpc/client": 9.25.3
-    "@trpc/react": 9.25.3
-    "@trpc/server": 9.25.3
+    "@trpc/client": 10.0.0-alpha.36
+    "@trpc/react": 10.0.0-alpha.36
+    "@trpc/server": 10.0.0-alpha.36
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
     react-query: ^3.37.0 || ^4.0.0-alpha.4
-  checksum: 1654427accea2a0c80aefd5dbe6cc98f7200ef7e5488e4ba11abb949dcb80fed1011459cb4c4ab3fa4ad66b9859bbf5b71f072d62bd93ec8ba3905d9cd9e97da
+  checksum: 077666e25e476a05bed5bf9407c522fcfbf8a2f76b47fda80521e3c12853cd4e26983bb084bc03cd5e3e5d0232585be4283cb85b70151ad2863e144b453fe88c
   languageName: node
   linkType: hard
 
-"@trpc/react@npm:^9.25.3":
-  version: 9.25.3
-  resolution: "@trpc/react@npm:9.25.3"
+"@trpc/react@npm:experimental":
+  version: 10.0.0-alpha.36
+  resolution: "@trpc/react@npm:10.0.0-alpha.36"
   dependencies:
     "@babel/runtime": ^7.9.0
   peerDependencies:
-    "@trpc/client": 9.25.3
-    "@trpc/server": 9.25.3
+    "@trpc/client": 10.0.0-alpha.36
+    "@trpc/server": 10.0.0-alpha.36
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
     react-query: ^3.37.0 || ^4.0.0-alpha.4
-  checksum: 3c2f782d4f2209db7a25917230d37b62367e7893ede3cf15a9c668559cb7192644690e55e6c0487883e710ab91f97a028bf28f5308b27d88fc5f3a43711a9088
+  checksum: 7d73866b8f37bb34f107f3a48cfbf617d7f357b4fd20be2f943e9a45f80af72983ab986a2692abd40f8ede20146c570aa540cefe91c90976164a31493c607fb1
   languageName: node
   linkType: hard
 
-"@trpc/server@npm:^9.25.3":
-  version: 9.25.3
-  resolution: "@trpc/server@npm:9.25.3"
-  checksum: 5cd704e41bee73681b049ccb16c310dd4fb8430e96ad857b318e66b0d0d9830abd4c9adc6a206d8eca88f673e617e279a3994420e18df4b688b5392219752655
+"@trpc/server@npm:experimental":
+  version: 10.0.0-alpha.36
+  resolution: "@trpc/server@npm:10.0.0-alpha.36"
+  dependencies:
+    tslib: ^2.1.0
+  checksum: 74ea268dcabfd3c808a95415a73bca62399687c802a9d663ff942d14e45ef0f0d804104628fd0de17c90ccf7a99d7b5755a05379d406c42f2a00b2f7cb2f4724
   languageName: node
   linkType: hard
 
@@ -16558,10 +16560,10 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.2.1
-    "@trpc/client": ^9.25.3
-    "@trpc/next": ^9.25.3
-    "@trpc/react": ^9.25.3
-    "@trpc/server": ^9.25.3
+    "@trpc/client": experimental
+    "@trpc/next": experimental
+    "@trpc/react": experimental
+    "@trpc/server": experimental
     "@types/jest": ^28.1.4
     "@types/node": ^18.0.3
     "@types/react": ^18.0.15

@@ -1,10 +1,9 @@
-import { AppRouter } from '@noodle/server';
 import { StitchesProvider } from '@noodle/stitches';
-import { withTRPC } from '@trpc/next';
 import { Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import { trpc } from '../utils/trpc';
 
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => (
   <>
@@ -40,11 +39,4 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => (
   </>
 );
 
-export default withTRPC<AppRouter>({
-  config() {
-    return {
-      url: '/api/trpc',
-    };
-  },
-  ssr: false,
-})(App);
+export default trpc.withTRPC(App);
