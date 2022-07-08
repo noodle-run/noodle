@@ -1,13 +1,10 @@
-import * as z from 'zod';
-import { createRouter } from '../utils/createRouter';
+import { z } from 'zod';
+import { t } from '../utils/trpc';
 
-export const hello = createRouter().query('getGreeting', {
-  input: z.object({
-    greeting: z.string().optional(),
-  }),
-  resolve({ input }) {
-    return {
-      greeting: `Hello ${input.greeting ?? 'world'}`,
-    };
-  },
+export const helloRouter = t.router({
+  greeting: t.procedure
+    .input(z.object({ name: z.string() }))
+    .query(({ input }) => ({
+      msg: `Hello ${input.name}`,
+    })),
 });
