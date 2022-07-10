@@ -50,21 +50,7 @@
         ],
         "react/jsx-props-no-spreading": "off",
         "react/react-in-jsx-scope": "off",
-        "import/no-extraneous-dependencies": [
-          "error",
-          {
-            "devDependencies": [
-              "**/jest.setup.ts",
-              "**/*.spec.ts",
-              "**/*.spec.tsx",
-              "**/*.stories.tsx",
-              "**/*.stories.ts",
-              "**/.storybook/*.ts",
-              "**/.storybook/*.tsx"
-            ],
-            "packageDir": "."
-          }
-        ],
+        "import/no-extraneous-dependencies": "off",
         "import/prefer-default-export": "off",
         "implicit-arrow-linebreak": "off",
         "function-paren-newline": "off",
