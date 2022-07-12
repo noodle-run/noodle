@@ -7,3 +7,4 @@ export * from './Profile';
 export * from './ProgressBar';
 export * from './Star';
 export * from './Tag';
+export * from './TimeSince';
