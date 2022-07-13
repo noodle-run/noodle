@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import { ComponentProps } from 'react';
-import { EditedNoteCard } from './EditedNoteCard';
+import { EditedNoteCard } from './NotebookLink';
 
 const args: ComponentProps<typeof EditedNoteCard> = {
-  noteTitle: '✨ History of Artificial Intelligence',
+  href: '/',
+  title: '✨ History of Artificial Intelligence',
   lastEdited: new Date(),
-  labelName: 'Artificia Intelligence',
+  label: 'Artificial Intelligence',
   labelColor: 'red',
   isStarred: false,
 };
@@ -14,7 +15,7 @@ describe('EditedNoteCard Molecule', () => {
   it('renders the noteTitle', () => {
     render(<EditedNoteCard {...args} />);
 
-    expect(screen.getByText(args.noteTitle)).toBeInTheDocument();
+    expect(screen.getByText(args.title)).toBeInTheDocument();
   });
 
   it('renders the lastEdited', () => {
@@ -26,12 +27,6 @@ describe('EditedNoteCard Molecule', () => {
   it('renders the labelName', () => {
     render(<EditedNoteCard {...args} />);
 
-    expect(screen.getByText(args.labelName)).toBeInTheDocument();
-  });
-
-  it('renders the labelColor', () => {
-    render(<EditedNoteCard {...args} />);
-
-    expect(screen.getByDisplayValue(args.labelColor)).toBeInTheDocument();
+    expect(screen.getByText(args.label)).toBeInTheDocument();
   });
 });

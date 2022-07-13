@@ -1,17 +1,18 @@
 import { colorGroups } from '@noodle/stitches';
 import { Meta, Story } from '@storybook/react';
 import { ComponentProps } from 'react';
-import { EditedNoteCard } from './EditedNoteCard';
+import { EditedNoteCard } from './NotebookLink';
 
 const args: ComponentProps<typeof EditedNoteCard> = {
-  noteTitle: '✨ History of Artificial Intelligence',
+  href: '/',
+  title: '✨ History of Artificial Intelligence',
   lastEdited: new Date(),
-  labelName: 'Artificia Intelligence',
-  labelColor: 'mint',
+  label: 'Artificial Intelligence',
+  labelColor: 'red',
   isStarred: false,
 };
 const config: Meta<typeof args> = {
-  title: 'Design System / Molecules / EditedNoteCard',
+  title: 'Design System / Molecules / Notebook Link',
   component: EditedNoteCard,
   args,
   argTypes: {
@@ -35,4 +36,4 @@ export default config;
 export const Normal: Story<typeof args> = (props) => (
   <EditedNoteCard {...props} />
 );
-Normal.storyName = 'Edited Note Card';
+Normal.storyName = 'Notebook Link';
