@@ -39,6 +39,7 @@ const Text = styled('p', {
   fontSize: '$sm',
   color: '$gray9',
 });
+
 interface TimeSinceProps {
   date: Date;
 }
