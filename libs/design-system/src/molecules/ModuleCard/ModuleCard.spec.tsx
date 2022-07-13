@@ -28,12 +28,14 @@ describe('ModuleCard Molecule', () => {
   it('renders the number of Credits', () => {
     render(<ModuleCard {...args} />);
 
-    expect(screen.getByText(args.credits)).toBeInTheDocument();
+    expect(screen.getByText(`${args.credits} Credits`)).toBeInTheDocument();
   });
 
   it('renders the number of Tasks remaining', () => {
     render(<ModuleCard {...args} />);
 
-    expect(screen.getByText(args.tasksRemaining)).toBeInTheDocument();
+    expect(
+      screen.getByText(`${args.tasksRemaining} Tasks remaining`),
+    ).toBeInTheDocument();
   });
 });
