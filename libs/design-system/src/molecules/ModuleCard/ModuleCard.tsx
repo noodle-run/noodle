@@ -3,24 +3,14 @@ import { ProgressBar } from '../../atoms';
 
 const Wrapper = styled('div', {
   borderRadius: '$2xl',
-  backgroundColor: '$gray4',
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
+  backgroundColor: '$gray2',
   boxShadow: '$lg',
 });
 
 const ContentWrapper = styled('div', {
-  margin: '$5 $7',
+  padding: '$5 $7',
   display: 'flex',
   flexDirection: 'column',
-  gap: '$3',
-});
-
-const SectionWrapper = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '$1',
 });
 
 const Emoji = styled('div', {
@@ -30,6 +20,7 @@ const Emoji = styled('div', {
 const ModuleName = styled('h6', {
   fontSize: '$lg',
   color: '$gray12',
+  py: '$3',
 });
 
 const ModuleCode = styled('p', {
@@ -40,11 +31,14 @@ const ModuleCode = styled('p', {
 const Credits = styled('p', {
   fontSize: '$xs',
   color: '$gray11',
+  pt: '$1',
 });
 
 const TasksRemaining = styled('p', {
   fontSize: '$sm',
   color: '$gray9',
+  pt: '$3',
+  pb: '$1',
 });
 
 type ModuleCardProps = {
@@ -70,14 +64,10 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
     <ContentWrapper>
       <Emoji>{icon}</Emoji>
       <ModuleName>{moduleName}</ModuleName>
-      <SectionWrapper>
-        <ModuleCode>{moduleCode}</ModuleCode>
-        <Credits>{credits} Credits</Credits>
-      </SectionWrapper>
-      <SectionWrapper>
-        <TasksRemaining>{tasksRemaining} Tasks remaining</TasksRemaining>
-        <ProgressBar progress={progress} color={progressBarColor} />
-      </SectionWrapper>
+      <ModuleCode>{moduleCode}</ModuleCode>
+      <Credits>{credits} Credits</Credits>
+      <TasksRemaining>{tasksRemaining} Tasks remaining</TasksRemaining>
+      <ProgressBar progress={progress} color={progressBarColor} />
     </ContentWrapper>
   </Wrapper>
 );
