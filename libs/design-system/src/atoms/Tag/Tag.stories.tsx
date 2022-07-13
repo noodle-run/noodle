@@ -5,6 +5,7 @@ import { Tag } from './Tag';
 
 const args: ComponentProps<typeof Tag> = {
   color: 'red',
+  text: 'Important',
 };
 
 const config: Meta<typeof args> = {

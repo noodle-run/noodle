@@ -19,4 +19,10 @@ describe('Tag atom', () => {
 
     expect(screen.getByTestId('$gray10')).toBeInTheDocument();
   });
+
+  it('should render a tag with the text prop value', () => {
+    render(<Tag text="Important" />);
+
+    expect(screen.getByText('Important')).toBeInTheDocument();
+  });
 });
