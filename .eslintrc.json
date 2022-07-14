@@ -57,7 +57,8 @@
         "react/require-default-props": "off",
         "react/prop-types": "off",
         "react/jsx-one-expression-per-line": "off",
-        "object-curly-newline": "off"
+        "object-curly-newline": "off",
+        "operator-linebreak": "off"
       }
     },
     {
