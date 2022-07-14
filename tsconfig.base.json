@@ -17,6 +17,7 @@
     "strict": true,
     "paths": {
       "@noodle/design-system": ["libs/design-system/src/index.ts"],
+      "@noodle/editor": ["libs/editor/src/index.ts"],
       "@noodle/server": ["libs/server/src/index.ts"],
       "@noodle/stitches": ["libs/stitches/src/index.ts"]
     }

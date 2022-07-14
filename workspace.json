@@ -5,6 +5,7 @@
     "client": "apps/client",
     "client-e2e": "apps/client-e2e",
     "design-system": "libs/design-system",
+    "editor": "libs/editor",
     "server": "libs/server",
     "stitches": "libs/stitches",
     "storybook": "libs/storybook"
