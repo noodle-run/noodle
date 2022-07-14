@@ -1,6 +1,3 @@
-import { helloRouter } from './routers/hello.router';
-import { t } from './utils/trpc';
-
-export const appRouter = t.mergeRouters(helloRouter);
-
-export type AppRouter = typeof appRouter;
+export { appRouter, AppRouter } from './routers';
+export { authOptions } from './utils/authOptions';
+export { createContext } from './utils/context';
