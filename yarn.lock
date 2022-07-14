@@ -2623,6 +2623,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/eslint-plugin-next@npm:12.1.6":
+  version: 12.1.6
+  resolution: "@next/eslint-plugin-next@npm:12.1.6"
+  dependencies:
+    glob: 7.1.7
+  checksum: 33dcaf71f299d3c8a0744cad512369f92d7a355f3c0d57f2496e888e4242080c49226ec2c59ba2efac04b3a1df51c36019b853b4177df082ca4621a1713a2229
+  languageName: node
+  linkType: hard
+
 "@next/eslint-plugin-next@npm:12.2.0":
   version: 12.2.0
   resolution: "@next/eslint-plugin-next@npm:12.2.0"
@@ -4996,56 +5005,56 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trpc/client@npm:^10.0.0-alpha.36":
-  version: 10.0.0-alpha.36
-  resolution: "@trpc/client@npm:10.0.0-alpha.36"
+"@trpc/client@npm:^10.0.0-alpha.38":
+  version: 10.0.0-alpha.38
+  resolution: "@trpc/client@npm:10.0.0-alpha.38"
   dependencies:
     "@babel/runtime": ^7.9.0
   peerDependencies:
-    "@trpc/server": 10.0.0-alpha.36
-  checksum: fe0bff02ff09256f5713e9a4f56cba24acc783a25addc9c6ea8a9a40df01a23b62f3e7c5eaef764915853180f0af308ddf85e4c1d3f6c69e69f245ff5604a983
+    "@trpc/server": 10.0.0-alpha.38
+  checksum: 4c8354fe4170bb51d5033937bb84b167a3cc4724efdd4b4b0907b336d2f4d18161f20ab9f1cdc654a17a51f537efdbc56478bb2f8fb4ba52a1212e69589dddb1
   languageName: node
   linkType: hard
 
-"@trpc/next@npm:^10.0.0-alpha.36":
-  version: 10.0.0-alpha.36
-  resolution: "@trpc/next@npm:10.0.0-alpha.36"
+"@trpc/next@npm:^10.0.0-alpha.38":
+  version: 10.0.0-alpha.38
+  resolution: "@trpc/next@npm:10.0.0-alpha.38"
   dependencies:
     "@babel/runtime": ^7.9.0
     react-ssr-prepass: ^1.5.0
   peerDependencies:
-    "@trpc/client": 10.0.0-alpha.36
-    "@trpc/react": 10.0.0-alpha.36
-    "@trpc/server": 10.0.0-alpha.36
+    "@trpc/client": 10.0.0-alpha.38
+    "@trpc/react": 10.0.0-alpha.38
+    "@trpc/server": 10.0.0-alpha.38
     next: "*"
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
     react-query: ^3.37.0 || ^4.0.0-alpha.4
-  checksum: 077666e25e476a05bed5bf9407c522fcfbf8a2f76b47fda80521e3c12853cd4e26983bb084bc03cd5e3e5d0232585be4283cb85b70151ad2863e144b453fe88c
+  checksum: f63efb7434e8b2f6dba6f40c3b7b5cc849778768e87f7b24aac9da30f29c36ed6cd3773f821d78b46c6bc681f0872bbf86410722520720f07db41ec449fdff27
   languageName: node
   linkType: hard
 
-"@trpc/react@npm:^10.0.0-alpha.36":
-  version: 10.0.0-alpha.36
-  resolution: "@trpc/react@npm:10.0.0-alpha.36"
+"@trpc/react@npm:^10.0.0-alpha.38":
+  version: 10.0.0-alpha.38
+  resolution: "@trpc/react@npm:10.0.0-alpha.38"
   dependencies:
     "@babel/runtime": ^7.9.0
   peerDependencies:
-    "@trpc/client": 10.0.0-alpha.36
-    "@trpc/server": 10.0.0-alpha.36
+    "@trpc/client": 10.0.0-alpha.38
+    "@trpc/server": 10.0.0-alpha.38
     react: ">=16.8.0"
     react-dom: ">=16.8.0"
     react-query: ^3.37.0 || ^4.0.0-alpha.4
-  checksum: 7d73866b8f37bb34f107f3a48cfbf617d7f357b4fd20be2f943e9a45f80af72983ab986a2692abd40f8ede20146c570aa540cefe91c90976164a31493c607fb1
+  checksum: eb81cad05965778b102204e5237627ac2c97c481a5dd9083698275485028f8f11cc095268f6bfd5ce78c41e6472eb75b98038a44a2d904d51367a91e17385a20
   languageName: node
   linkType: hard
 
-"@trpc/server@npm:^10.0.0-alpha.36":
-  version: 10.0.0-alpha.36
-  resolution: "@trpc/server@npm:10.0.0-alpha.36"
+"@trpc/server@npm:^10.0.0-alpha.38":
+  version: 10.0.0-alpha.38
+  resolution: "@trpc/server@npm:10.0.0-alpha.38"
   dependencies:
     tslib: ^2.1.0
-  checksum: 74ea268dcabfd3c808a95415a73bca62399687c802a9d663ff942d14e45ef0f0d804104628fd0de17c90ccf7a99d7b5755a05379d406c42f2a00b2f7cb2f4724
+  checksum: fdb805bc4536e78ff7b5aac8788d5c1392590161ca4d3b377f6097442d2b520b9779df284c3fe1baec1b602e9288fc7399f01567e94333581a48d632c5c0dd03
   languageName: node
   linkType: hard
 
@@ -8823,6 +8832,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"copy-anything@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "copy-anything@npm:3.0.2"
+  dependencies:
+    is-what: ^4.1.6
+  checksum: 394491d62ab0c77c81616668bce51b91cf4e7b539bd530bb5b22c226151b0bc6122c01de21ffe46d5ec273f504fb34f6569f349ffb823fa814dddb8b27a4750c
+  languageName: node
+  linkType: hard
+
 "copy-concurrently@npm:^1.0.0":
   version: 1.0.5
   resolution: "copy-concurrently@npm:1.0.5"
@@ -10349,6 +10367,30 @@ __metadata:
     eslint-plugin-react: ^7.28.0
     eslint-plugin-react-hooks: ^4.3.0
   checksum: 253178689c3c80eef2567e3aaf0612e18973bc9cf51d9be36074b5dd58210e8b6942200a424bcccbb81ac884e41303479ab09f251a2a97addc2de61efdc9576c
+  languageName: node
+  linkType: hard
+
+"eslint-config-next@npm:12.1.6":
+  version: 12.1.6
+  resolution: "eslint-config-next@npm:12.1.6"
+  dependencies:
+    "@next/eslint-plugin-next": 12.1.6
+    "@rushstack/eslint-patch": ^1.1.3
+    "@typescript-eslint/parser": ^5.21.0
+    eslint-import-resolver-node: ^0.3.6
+    eslint-import-resolver-typescript: ^2.7.1
+    eslint-plugin-import: ^2.26.0
+    eslint-plugin-jsx-a11y: ^6.5.1
+    eslint-plugin-react: ^7.29.4
+    eslint-plugin-react-hooks: ^4.5.0
+  peerDependencies:
+    eslint: ^7.23.0 || ^8.0.0
+    next: ">=10.2.0"
+    typescript: ">=3.3.1"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: b3ba9e8f598b4018002aaaa64dc0e8a8b5994be992839a8b1b0a7f7ab0e4cbe006a30fd787524baab7c1e979dc6b41d4cdcbe239be181635413d987be7f25b6f
   languageName: node
   linkType: hard
 
@@ -13612,6 +13654,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-what@npm:^4.1.6":
+  version: 4.1.7
+  resolution: "is-what@npm:4.1.7"
+  checksum: aade39dcc45a209d6cb2f2d5dbcf0e63ed894aadbae37bd5693c64e9876a27632431b43fc9d9332ebf0795eddd2abc11a2d0f3c6fa41c36330616a645660530e
+  languageName: node
+  linkType: hard
+
 "is-whitespace-character@npm:^1.0.0":
   version: 1.0.4
   resolution: "is-whitespace-character@npm:1.0.4"
@@ -16567,10 +16616,10 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
     "@testing-library/user-event": ^14.2.1
-    "@trpc/client": ^10.0.0-alpha.36
-    "@trpc/next": ^10.0.0-alpha.36
-    "@trpc/react": ^10.0.0-alpha.36
-    "@trpc/server": ^10.0.0-alpha.36
+    "@trpc/client": ^10.0.0-alpha.38
+    "@trpc/next": ^10.0.0-alpha.38
+    "@trpc/react": ^10.0.0-alpha.38
+    "@trpc/server": ^10.0.0-alpha.38
     "@types/jest": ^28.1.4
     "@types/node": ^18.0.3
     "@types/react": ^18.0.15
@@ -16584,6 +16633,7 @@ __metadata:
     eslint: ^8.19.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-next: 12.1.6
     eslint-config-prettier: ^8.5.0
     eslint-plugin-cypress: ^2.12.1
     eslint-plugin-disable: ^2.0.3
@@ -16610,11 +16660,13 @@ __metadata:
     react-dom: ^18.2.0
     react-icons: ^4.4.0
     react-query: ^3.39.1
+    react-test-renderer: 18.2.0
     regenerator-runtime: ^0.13.9
     stitches-normalize-css: ^1.2.0
     storybook-addon-next: ^1.6.7
     storybook-addon-paddings: ^4.3.0
     storybook-dark-mode: ^1.1.0
+    superjson: ^1.9.1
     ts-jest: ^28.0.5
     ts-node: ^10.8.2
     tsconfig-paths-webpack-plugin: ^3.5.2
@@ -18841,17 +18893,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-is@npm:^16.12.0 || ^17.0.0 || ^18.0.0, react-is@npm:^18.0.0, react-is@npm:^18.2.0":
+  version: 18.2.0
+  resolution: "react-is@npm:18.2.0"
+  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
-  languageName: node
-  linkType: hard
-
-"react-is@npm:^18.0.0":
-  version: 18.2.0
-  resolution: "react-is@npm:18.2.0"
-  checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
   languageName: node
   linkType: hard
 
@@ -18894,6 +18946,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-shallow-renderer@npm:^16.15.0":
+  version: 16.15.0
+  resolution: "react-shallow-renderer@npm:16.15.0"
+  dependencies:
+    object-assign: ^4.1.1
+    react-is: ^16.12.0 || ^17.0.0 || ^18.0.0
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 6052c7e3e9627485120ebd8257f128aad8f56386fe8d42374b7743eac1be457c33506d153c7886b4e32923c0c352d402ab805ef9ca02dbcd8393b2bdeb6e5af8
+  languageName: node
+  linkType: hard
+
 "react-sizeme@npm:^3.0.1":
   version: 3.0.2
   resolution: "react-sizeme@npm:3.0.2"
@@ -18927,6 +18991,19 @@ __metadata:
   peerDependencies:
     react: ">= 0.14.0"
   checksum: c082b48f30f8ba8d0c55ed1d761910630860077c7ff5793c4c912adcb5760df06436ed0ad62be0de28113aac9ad2af55eccd995f8eee98df53382e4ced2072fb
+  languageName: node
+  linkType: hard
+
+"react-test-renderer@npm:18.2.0":
+  version: 18.2.0
+  resolution: "react-test-renderer@npm:18.2.0"
+  dependencies:
+    react-is: ^18.2.0
+    react-shallow-renderer: ^16.15.0
+    scheduler: ^0.23.0
+  peerDependencies:
+    react: ^18.2.0
+  checksum: 6b6980ced93fa2b72662d5e4ab3b4896833586940047ce52ca9aca801e5432adf05fcbe28289b0af3ce6a2a7c590974e25dcc8aa43d0de658bfe8bbcd686f958
   languageName: node
   linkType: hard
 
@@ -21030,6 +21107,15 @@ __metadata:
   bin:
     stylus: bin/stylus
   checksum: 5ec06f3186aaa4802cc2f04f93665a71348954e3d10f6cb26d7cdba7108fcdfa5e9a330fa7694fa0d0d31d8decf6b18349f49bbaadde96351e30d549dfb272c7
+  languageName: node
+  linkType: hard
+
+"superjson@npm:^1.9.1":
+  version: 1.9.1
+  resolution: "superjson@npm:1.9.1"
+  dependencies:
+    copy-anything: ^3.0.2
+  checksum: b575fe4d18b7263b3d6a617dea7857a0f31ae30e80f8cc0c6fe18dc2e6b8bbd7b3374007ca67fa487e0159fff18cce03cbe0654a0df97f337bec6a8835c0eee3
   languageName: node
   linkType: hard
 
