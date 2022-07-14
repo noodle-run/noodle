@@ -11,7 +11,9 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "rules": {}
+      "rules": {
+        "no-param-reassign": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
