@@ -3,16 +3,15 @@ import { ComponentProps } from 'react';
 import { Checkbox } from './Checkbox';
 
 const args: ComponentProps<typeof Checkbox> = {
-  isChecked: false,
+  checked: false,
 };
 
 const config: Meta<typeof args> = {
   title: 'Design System / Atoms / Checkbox',
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   component: Checkbox,
   args,
   argTypes: {
-    isChecked: {
+    checked: {
       control: {
         type: 'boolean',
       },

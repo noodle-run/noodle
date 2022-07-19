@@ -1,23 +1,15 @@
 import { styled } from '@noodle/stitches';
+import { Indicator, Root } from '@radix-ui/react-checkbox';
 import { FC } from 'react';
 import { FiCheck } from 'react-icons/fi';
 
-type CheckboxProps = {
-  isChecked?: boolean;
-};
-
-const Icon = styled(FiCheck, {
-  stroke: 'white',
-});
-
-const CheckboxContainer = styled('div', {
+const CheckboxContainer = styled(Root, {
+  display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  display: 'flex',
-  height: '1.5rem',
-  width: '1.5rem',
-  borderRadius: '40%',
-  border: '1px solid $gray12',
+  height: '$6',
+  width: '$6',
+  borderRadius: '$lg',
   transition: '$colors',
   variants: {
     color: {
@@ -25,28 +17,35 @@ const CheckboxContainer = styled('div', {
         border: '1px solid $blue9',
         backgroundColor: '$blue9',
       },
+      default: {
+        border: '1px solid $gray12',
+      },
     },
   },
 });
-export const Checkbox: FC<CheckboxProps> = ({ isChecked = false }) => {
-  const variant = isChecked ? 'checked' : undefined;
 
-  if (isChecked) {
-    return (
-      <CheckboxContainer
-        data-testid={`${variant || 'default'}`}
-        color={variant}
-      >
-        <Icon role="button" />
-      </CheckboxContainer>
-    );
-  }
-  return (
-    <CheckboxContainer
-      data-testid={`${variant || 'default'}`}
-      color={variant}
-    />
-  );
+const IconWrapper = styled('span', {
+  height: '$full',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
+type CheckboxProps = {
+  checked?: boolean;
 };
 
-export default Checkbox;
+export const Checkbox: FC<CheckboxProps> = ({ checked = false }) => {
+  const variant = checked ? 'checked' : 'default';
+  return (
+    <CheckboxContainer data-testid={variant} checked={checked} color={variant}>
+      {checked && (
+        <Indicator asChild>
+          <IconWrapper>
+            <FiCheck color="white" />
+          </IconWrapper>
+        </Indicator>
+      )}
+    </CheckboxContainer>
+  );
+};

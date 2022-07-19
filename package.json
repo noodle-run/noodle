@@ -17,6 +17,7 @@
     "@nrwl/next": "^14.4.2",
     "@prisma/client": "^4.0.0",
     "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-checkbox": "^0.1.5",
     "@stitches/react": "^1.2.8",
     "@trpc/client": "^10.0.0-alpha.38",
     "@trpc/next": "^10.0.0-alpha.38",

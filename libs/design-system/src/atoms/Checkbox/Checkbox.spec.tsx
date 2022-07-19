@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
-// eslint-disable-next-line import/no-named-as-default
-import Checkbox from './Checkbox';
+import { Checkbox } from './Checkbox';
 
 describe('Button atom', () => {
   it('renders an unchecked checkbox', () => {
@@ -9,7 +8,7 @@ describe('Button atom', () => {
     expect(screen.getByTestId('default')).toBeInTheDocument();
   });
   it('renders a checked checkbox', () => {
-    render(<Checkbox isChecked />);
+    render(<Checkbox checked />);
 
     expect(screen.getByTestId('checked')).toBeInTheDocument();
   });
