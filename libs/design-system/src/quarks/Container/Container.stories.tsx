@@ -7,7 +7,7 @@ const args: ComponentProps<typeof Container> = {
 };
 
 const config: Meta<typeof args> = {
-  title: 'Design System / Atoms / Container',
+  title: 'Design System / Quarks / Container',
   component: Container,
   args,
 };

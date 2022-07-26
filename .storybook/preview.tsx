@@ -38,7 +38,13 @@ export const parameters = {
   layout: 'fullscreen',
   options: {
     storySort: {
-      order: ['Stitches', ['Introduction', '*'], '*'],
+      order: [
+        'Stitches',
+        ['Introduction', '*'],
+        'Design System',
+        ['Quarks', '*'],
+        '*',
+      ],
     },
   },
 };
