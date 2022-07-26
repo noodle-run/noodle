@@ -29,7 +29,10 @@ export default {
     interactionsDebugger: true,
     previewMdx2: true,
   },
-  staticDirs: [path.resolve(__dirname, '../libs/stitches/src/assets')],
+  staticDirs: [
+    path.resolve(__dirname, '../libs/stitches/src/assets'),
+    path.resolve(__dirname, '../apps/client/public'),
+  ],
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   webpackFinal: async (config) => {
     const modifiedConfig = config;
