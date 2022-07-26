@@ -7,7 +7,4 @@ export default {
   core: {
     builder: 'webpack5',
   },
-  features: {
-    interactionsDebugger: true,
-  },
 };
