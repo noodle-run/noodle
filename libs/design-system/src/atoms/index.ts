@@ -1,6 +1,5 @@
 export * from './Brand';
 export * from './Button';
-export * from './Container';
 export * from './Input';
 export * from './Label';
 export * from './Link';

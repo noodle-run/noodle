@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { Container } from './Container';
+import { Center } from './Center';
 
-describe('Container atom', () => {
+describe('Center quark', () => {
   it('renders the children', () => {
-    render(<Container>Hello World</Container>);
+    render(<Center>Hello World</Center>);
 
     expect(screen.getByText(/hello world/i)).toBeInTheDocument();
   });
