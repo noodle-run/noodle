@@ -1,6 +1,7 @@
 import { createStitches } from '@stitches/react';
 import { aliases } from './aliases';
 import { borderWidths } from './borderWidths';
+import { breakpoints } from './breakpoints';
 import { colors } from './colors';
 import { radii } from './radii';
 import { shadows } from './shadows';
@@ -42,6 +43,9 @@ export const {
   },
   utils: {
     ...aliases,
+  },
+  media: {
+    ...breakpoints,
   },
 });
 
