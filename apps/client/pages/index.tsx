@@ -1,9 +1,9 @@
 import { Brand, Button } from '@noodle/design-system';
 import { styled } from '@noodle/stitches';
 import { NextPage } from 'next';
-import { signIn, signOut, useSession } from 'next-auth/react';
-import { FiGithub, FiLogOut } from 'react-icons/fi';
-import { trpc } from '../utils/trpc';
+import { signIn, useSession } from 'next-auth/react';
+import { FiGithub } from 'react-icons/fi';
+import { Greeting } from '../components/Greeting';
 
 const Center = styled('div', {
   display: 'flex',
@@ -32,13 +32,8 @@ const Description = styled('p', {
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
-  const {
-    data: greetingData,
-    error,
-    isLoading,
-  } = trpc.proxy.greeting.useQuery({ name: 'from tRPC' });
 
-  if (status === 'loading' || isLoading) {
+  if (status === 'loading') {
     return (
       <Center>
         <Description>Loading...</Description>
@@ -46,31 +41,8 @@ const Home: NextPage = () => {
     );
   }
 
-  if (error) {
-    return (
-      <Center>
-        <Description>Error: {error.message}</Description>
-      </Center>
-    );
-  }
-
   if (session && session.user) {
-    return (
-      <Center>
-        <Title>{greetingData && greetingData.msg}</Title>
-        <Description>Signed in as {session.user.email}</Description>
-        <Button
-          onClick={() => {
-            signOut().catch((err: string) => {
-              throw new Error(err);
-            });
-          }}
-          icon={<FiLogOut />}
-        >
-          Sign out
-        </Button>
-      </Center>
-    );
+    return <Greeting />;
   }
 
   return (
