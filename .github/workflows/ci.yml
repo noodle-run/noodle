@@ -25,6 +25,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
+          cache: 'pnpm'
       - run: pnpm install
       - run: pnpm nx-cloud start-ci-run
       - run: pnpm nx affected --target=build --parallel --max-parallel=3
@@ -46,6 +47,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
+          cache: 'pnpm'
       - run: pnpm install
       - run: pnpm nx-cloud start-ci-run
       - run: pnpm nx affected --target=build --parallel --max-parallel=3
@@ -66,6 +68,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
+          cache: 'pnpm'
       - run: pnpm install
       - name: Start Nx Agent ${{ matrix.agent }}
         run: pnpm nx-cloud start-agent
