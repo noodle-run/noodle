@@ -17,16 +17,19 @@ jobs:
         name: Checkout [main]
         with:
           fetch-depth: 0
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - run: yarn install --immutable
-      - run: yarn nx-cloud start-ci-run
-      - run: yarn nx affected --target=build --parallel --max-parallel=3
-      - run: yarn nx affected --target=test --parallel --max-parallel=2
-      - run: yarn nx-cloud stop-all-agents
+      - run: pnpm install
+      - run: pnpm nx-cloud start-ci-run
+      - run: pnpm nx affected --target=build --parallel --max-parallel=3
+      - run: pnpm nx affected --target=test --parallel --max-parallel=2
+      - run: pnpm nx-cloud stop-all-agents
   pr:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
@@ -35,16 +38,19 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - run: yarn install --immutable
-      - run: yarn nx-cloud start-ci-run
-      - run: yarn nx affected --target=build --parallel --max-parallel=3
-      - run: yarn nx affected --target=test --parallel --max-parallel=2
-      - run: yarn nx-cloud stop-all-agents
+      - run: pnpm install
+      - run: pnpm nx-cloud start-ci-run
+      - run: pnpm nx affected --target=build --parallel --max-parallel=3
+      - run: pnpm nx affected --target=test --parallel --max-parallel=2
+      - run: pnpm nx-cloud stop-all-agents
   agents:
     runs-on: ubuntu-latest
     name: Agent 1
@@ -54,9 +60,12 @@ jobs:
         agent: [1, 2, 3]
     steps:
       - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - run: yarn install --immutable
+      - run: pnpm install
       - name: Start Nx Agent ${{ matrix.agent }}
-        run: yarn nx-cloud start-agent
+        run: pnpm nx-cloud start-agent
