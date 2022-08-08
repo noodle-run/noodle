@@ -50,7 +50,21 @@
         ],
         "react/jsx-props-no-spreading": "off",
         "react/react-in-jsx-scope": "off",
-        "import/no-extraneous-dependencies": "off",
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": [
+              "**/jest.setup.ts",
+              "**/*.spec.ts",
+              "**/*.spec.tsx",
+              "**/*.stories.tsx",
+              "**/*.stories.ts",
+              "**/.storybook/*.ts",
+              "**/.storybook/*.tsx"
+            ],
+            "packageDir": "."
+          }
+        ],
         "import/prefer-default-export": "off",
         "implicit-arrow-linebreak": "off",
         "function-paren-newline": "off",
@@ -58,7 +72,10 @@
         "react/prop-types": "off",
         "react/jsx-one-expression-per-line": "off",
         "object-curly-newline": "off",
-        "operator-linebreak": "off"
+        "operator-linebreak": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "jsx-a11y/anchor-is-valid": "off"
       }
     },
     {

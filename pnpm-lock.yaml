@@ -28,6 +28,7 @@ specifiers:
   '@storybook/addon-interactions': ^6.5.9
   '@storybook/addon-links': ^6.5.9
   '@storybook/builder-webpack5': ^6.5.9
+  '@storybook/core-common': ^6.5.10
   '@storybook/core-server': ^6.5.9
   '@storybook/jest': ^0.0.10
   '@storybook/manager-webpack5': ^6.5.9
@@ -52,6 +53,7 @@ specifiers:
   babel-jest: ^28.1.3
   babel-loader: ^8.2.5
   core-js: ^3.24.0
+  css-loader: ^6.7.1
   cypress: ^10.3.1
   eslint: ^8.20.0
   eslint-config-airbnb: ^19.0.4
@@ -76,6 +78,7 @@ specifiers:
   next: ^12.2.3
   next-auth: ^4.10.2
   nx: ^14.4.3
+  postcss-loader: ^7.0.1
   prettier: ^2.7.1
   prettier-plugin-organize-imports: ^3.0.0
   prisma: ^4.1.0
@@ -93,6 +96,7 @@ specifiers:
   storybook-addon-next: ^1.6.7
   storybook-addon-paddings: ^4.3.0
   storybook-dark-mode: ^1.1.0
+  style-loader: ^3.3.1
   superjson: ^1.9.1
   ts-jest: ^28.0.7
   ts-node: ^10.9.1
@@ -155,6 +159,7 @@ devDependencies:
   '@storybook/addon-interactions': 6.5.10_blgvvlkat75h2b2huay3y24kyy
   '@storybook/addon-links': 6.5.10_biqbaboplfbrettd7655fr4n2y
   '@storybook/builder-webpack5': 6.5.10_7pxu6c7vgs7yic5gnzu7awjkkq
+  '@storybook/core-common': 6.5.10_7pxu6c7vgs7yic5gnzu7awjkkq
   '@storybook/core-server': 6.5.10_tqj65fm2npa4kzcq23rbsnsm3i
   '@storybook/jest': 0.0.10_biqbaboplfbrettd7655fr4n2y
   '@storybook/manager-webpack5': 6.5.10_7pxu6c7vgs7yic5gnzu7awjkkq
@@ -174,6 +179,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.32.0_qugx7qdu5zevzvxaiqyxfiwquq
   babel-jest: 28.1.3_@babel+core@7.18.10
   babel-loader: 8.2.5_xc6oct4hcywdrbo4ned6ytbybm
+  css-loader: 6.7.1_webpack@5.74.0
   cypress: 10.4.0
   eslint: 8.21.0
   eslint-config-airbnb: 19.0.4_oyn2uifcemcbkyuj2uapcqffk4
@@ -196,12 +202,14 @@ devDependencies:
   jest-fetch-mock: 3.0.3
   lint-staged: 13.0.3
   nx: 14.5.4
+  postcss-loader: 7.0.1_qjv4cptcpse3y5hrjkrbb7drda
   prettier: 2.7.1
   prettier-plugin-organize-imports: 3.0.1_gd3y7r3s3evy6b2vthd7dmacga
   prisma: 4.1.1
   react-test-renderer: 18.2.0_react@18.2.0
-  storybook-addon-next: 1.6.7_5ul2tmfxoyj3zogwv4s7mub6ve
+  storybook-addon-next: 1.6.7_tnuovn7lo2hdi3cxhhgehibnbu
   storybook-dark-mode: 1.1.0_szr23uwlzhn73d2k2dkxny45ui
+  style-loader: 3.3.1_webpack@5.74.0
   ts-jest: 28.0.7_ta2dmbt2qiyd6mcpkta7cldhsy
   ts-node: 10.9.1_hn66opzbaneygq52jmwjxha6su
   tsconfig-paths-webpack-plugin: 3.5.2
@@ -677,7 +685,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.18.9
       '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.12.9
       '@babel/plugin-transform-parameters': 7.18.8_@babel+core@7.12.9
     dev: true
@@ -1975,7 +1983,7 @@ packages:
     dependencies:
       '@jest/types': 27.5.1
       '@types/node': 18.6.4
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-message-util: 27.5.1
       jest-util: 27.5.1
       slash: 3.0.0
@@ -2282,7 +2290,7 @@ packages:
       '@babel/core': 7.18.10
       '@jest/types': 27.5.1
       babel-plugin-istanbul: 6.1.1
-      chalk: 4.1.0
+      chalk: 4.1.2
       convert-source-map: 1.8.0
       fast-json-stable-stringify: 2.1.0
       graceful-fs: 4.2.10
@@ -2339,7 +2347,7 @@ packages:
       '@types/istanbul-reports': 3.0.1
       '@types/node': 18.6.4
       '@types/yargs': 16.0.4
-      chalk: 4.1.0
+      chalk: 4.1.2
 
   /@jest/types/28.1.3:
     resolution: {integrity: sha512-RyjiyMUZrKz/c+zlMFO1pm70DcIlST8AeWTkoUdZevew44wcNZQHsEVOiCVtgVnlFFD82FPaXycys58cf2muVQ==}
@@ -4196,9 +4204,9 @@ packages:
       global: 4.4.0
       html-webpack-plugin: 4.5.2_webpack@4.46.0
       pnp-webpack-plugin: 1.6.4_typescript@4.7.4
-      postcss: 8.4.16
+      postcss: 7.0.39
       postcss-flexbugs-fixes: 4.2.1
-      postcss-loader: 4.3.0_yqfl5gugdirklt5o2w2kmcv77i
+      postcss-loader: 4.3.0_gzaxsinx64nntyd3vmdqwl7coe
       raw-loader: 4.0.2_webpack@4.46.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -5509,12 +5517,12 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.4.5
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
 
   /@types/eslint/8.4.5:
     resolution: {integrity: sha512-dhsC09y1gpJWnK+Ff4SGvCuSnk9DaU0BJZSzOwa6GVSg65XtTugLBITDAAzRU5duGBoXBHpdR/9jHGxJjNflJQ==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
 
   /@types/estree-jsx/0.0.1:
@@ -6739,7 +6747,7 @@ packages:
       '@types/babel__core': 7.1.19
       babel-plugin-istanbul: 6.1.1
       babel-preset-jest: 27.5.1_@babel+core@7.18.10
-      chalk: 4.1.0
+      chalk: 4.1.2
       graceful-fs: 4.2.10
       slash: 3.0.0
     transitivePeerDependencies:
@@ -11788,7 +11796,7 @@ packages:
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
       '@types/node': 18.6.4
-      chalk: 4.1.0
+      chalk: 4.1.2
       co: 4.6.0
       dedent: 0.7.0
       expect: 27.5.1
@@ -11986,7 +11994,7 @@ packages:
     resolution: {integrity: sha512-m0NvkX55LDt9T4mctTEgnZk3fmEg3NRYutvMPWM/0iPnkFj2wIeF45O1718cMSOFO1vINkqmxqD8vE37uTEbqw==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       diff-sequences: 27.5.1
       jest-get-type: 27.5.1
       pretty-format: 27.5.1
@@ -12019,7 +12027,7 @@ packages:
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
       '@jest/types': 27.5.1
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-get-type: 27.5.1
       jest-util: 27.5.1
       pretty-format: 27.5.1
@@ -12182,7 +12190,7 @@ packages:
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
       '@types/node': 18.6.4
-      chalk: 4.1.0
+      chalk: 4.1.2
       co: 4.6.0
       expect: 27.5.1
       is-generator-fn: 2.1.0
@@ -12216,7 +12224,7 @@ packages:
     resolution: {integrity: sha512-z2uTx/T6LBaCoNWNFWwChLBKYxTMcGBRjAt+2SbP929/Fflb9aa5LGma654Rz8z9HLxsrUaYzxE9T/EFIL/PAw==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-diff: 27.5.1
       jest-get-type: 27.5.1
       pretty-format: 27.5.1
@@ -12238,7 +12246,7 @@ packages:
       '@babel/code-frame': 7.18.6
       '@jest/types': 27.5.1
       '@types/stack-utils': 2.0.1
-      chalk: 4.1.0
+      chalk: 4.1.2
       graceful-fs: 4.2.10
       micromatch: 4.0.5
       pretty-format: 27.5.1
@@ -12362,7 +12370,7 @@ packages:
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
       '@types/node': 18.6.4
-      chalk: 4.1.0
+      chalk: 4.1.2
       emittery: 0.8.1
       graceful-fs: 4.2.10
       jest-docblock: 27.5.1
@@ -12423,7 +12431,7 @@ packages:
       '@jest/test-result': 27.5.1
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
-      chalk: 4.1.0
+      chalk: 4.1.2
       cjs-module-lexer: 1.2.2
       collect-v8-coverage: 1.0.1
       execa: 5.1.1
@@ -12500,7 +12508,7 @@ packages:
       '@types/babel__traverse': 7.18.0
       '@types/prettier': 2.7.0
       babel-preset-current-node-syntax: 1.0.1_@babel+core@7.18.10
-      chalk: 4.1.0
+      chalk: 4.1.2
       expect: 27.5.1
       graceful-fs: 4.2.10
       jest-diff: 27.5.1
@@ -12587,7 +12595,7 @@ packages:
     dependencies:
       '@jest/types': 27.5.1
       camelcase: 6.3.0
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-get-type: 27.5.1
       leven: 3.1.0
       pretty-format: 27.5.1
@@ -15102,7 +15110,7 @@ packages:
       ts-node: 10.8.2_hn66opzbaneygq52jmwjxha6su
       yaml: 1.10.2
 
-  /postcss-loader/4.3.0_yqfl5gugdirklt5o2w2kmcv77i:
+  /postcss-loader/4.3.0_gzaxsinx64nntyd3vmdqwl7coe:
     resolution: {integrity: sha512-M/dSoIiNDOo8Rk0mUqoj4kpGq91gcxCfb9PoyZVdZ76/AuhxylHDYZblNE8o+EQ9AMSASeMFEKxZf5aU6wlx1Q==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -15112,7 +15120,7 @@ packages:
       cosmiconfig: 7.0.1
       klona: 2.0.5
       loader-utils: 2.0.2
-      postcss: 8.4.16
+      postcss: 7.0.39
       schema-utils: 3.1.1
       semver: 7.3.7
       webpack: 4.46.0
@@ -15130,6 +15138,20 @@ packages:
       postcss: 8.4.16
       semver: 7.3.7
       webpack: 5.74.0
+
+  /postcss-loader/7.0.1_qjv4cptcpse3y5hrjkrbb7drda:
+    resolution: {integrity: sha512-VRviFEyYlLjctSM93gAZtcJJ/iSkPZ79zWbN/1fSH+NisBByEiVLqpdVDrPLVSi8DX0oJo12kL/GppTBdKVXiQ==}
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      postcss: ^7.0.0 || ^8.0.1
+      webpack: ^5.0.0
+    dependencies:
+      cosmiconfig: 7.0.1
+      klona: 2.0.5
+      postcss: 8.4.16
+      semver: 7.3.7
+      webpack: 5.74.0
+    dev: true
 
   /postcss-merge-longhand/5.1.6_postcss@8.4.16:
     resolution: {integrity: sha512-6C/UGF/3T5OE2CEbOuX7iNO63dnvqhGZeUnKkDeifebY0XqkkvrctYSZurpNE902LDf2yKwwPFgotnfSoPhQiw==}
@@ -16380,7 +16402,7 @@ packages:
     peerDependencies:
       postcss: 8.x
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       concat-with-sourcemaps: 1.1.0
       cssnano: 5.1.12_postcss@8.4.16
       import-cwd: 3.0.0
@@ -17149,7 +17171,7 @@ packages:
   /store2/2.14.2:
     resolution: {integrity: sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==}
 
-  /storybook-addon-next/1.6.7_5ul2tmfxoyj3zogwv4s7mub6ve:
+  /storybook-addon-next/1.6.7_tnuovn7lo2hdi3cxhhgehibnbu:
     resolution: {integrity: sha512-ltnHboGekSr6+UWv3MNl+0GaOyIWjTHN8Z5rc2te3bB1gq46W6JEML4XVNflFdANhKvVHayAxMOr7oeT3LMc2Q==}
     peerDependencies:
       '@storybook/addon-actions': ^6.0.0
@@ -17162,7 +17184,6 @@ packages:
       image-size: 1.0.2
       loader-utils: 3.2.0
       next: 12.2.4_twoewwu6sg7cdf3ao6njtbftne
-      postcss: 8.4.16
       postcss-loader: 6.2.1_qjv4cptcpse3y5hrjkrbb7drda
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -17174,6 +17195,7 @@ packages:
     transitivePeerDependencies:
       - fibers
       - node-sass
+      - postcss
       - sass
       - sass-embedded
       - webpack
@@ -17495,7 +17517,7 @@ packages:
       debug: 4.3.4
       glob: 7.2.3
       sax: 1.2.4
-      source-map: 0.7.3
+      source-map: 0.7.4
     transitivePeerDependencies:
       - supports-color
 
