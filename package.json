@@ -37,6 +37,7 @@
     "stitches-normalize-css": "^1.2.0",
     "storybook-addon-paddings": "^4.3.0",
     "superjson": "^1.9.1",
+    "tailwind-merge": "^1.5.1",
     "tslib": "^2.4.0",
     "usehooks-ts": "^2.6.0",
     "zod": "^3.17.10"
