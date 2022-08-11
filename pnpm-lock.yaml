@@ -56,7 +56,7 @@ specifiers:
   babel-loader: ^8.2.5
   core-js: ^3.24.0
   css-loader: ^6.7.1
-  cypress: ^10.3.1
+  cypress: ^10.2.0
   eslint: ^8.20.0
   eslint-config-airbnb: ^19.0.4
   eslint-config-airbnb-typescript: ^17.0.0
@@ -17951,7 +17951,7 @@ packages:
       typescript: '*'
       webpack: ^5.0.0
     dependencies:
-      chalk: 4.1.2
+      chalk: 4.1.0
       enhanced-resolve: 5.10.0
       micromatch: 4.0.5
       semver: 7.3.7
@@ -18034,7 +18034,7 @@ packages:
   /tsconfig-paths-webpack-plugin/3.5.2:
     resolution: {integrity: sha512-EhnfjHbzm5IYI9YPNVIxx1moxMI4bpHD2e0zTXeDNQcwjjRaGepP7IhTHJkyDBG0CAOoxRfe7jCG630Ou+C6Pw==}
     dependencies:
-      chalk: 4.1.2
+      chalk: 4.1.0
       enhanced-resolve: 5.10.0
       tsconfig-paths: 3.14.1
 
