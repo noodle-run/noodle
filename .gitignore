@@ -48,3 +48,6 @@ Thumbs.db
 !.yarn/cache
 
 .env
+
+# Next.js
+.next
