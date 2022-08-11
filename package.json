@@ -7,8 +7,8 @@
     "build": "nx build",
     "test": "nx test",
     "postinstall": "husky install",
-    "storybook": "nx storybook storybook",
-    "build-storybook": "nx build-storybook storybook"
+    "storybook": "nx storybook ui",
+    "build-storybook": "nx build-storybook ui"
   },
   "private": true,
   "dependencies": {
