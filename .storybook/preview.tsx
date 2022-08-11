@@ -3,7 +3,7 @@
 
 import { DocsContainer, DocsContainerProps } from '@storybook/addon-docs';
 import { ThemeVars } from '@storybook/theming';
-import { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { darkTheme, globalStyles, styled } from '../libs/stitches/src';
 import { dark, light } from './theme';
