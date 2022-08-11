@@ -29,10 +29,7 @@ export default {
     interactionsDebugger: true,
     previewMdx2: true,
   },
-  staticDirs: [
-    path.resolve(__dirname, '../libs/stitches/src/assets'),
-    path.resolve(__dirname, '../apps/client/public'),
-  ],
+  staticDirs: [path.resolve(__dirname, '../apps/client/public')],
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   webpackFinal: async (config) => {
     const modifiedConfig = config;
@@ -42,10 +39,8 @@ export default {
 
     if (modifiedConfig.resolve) {
       if (modifiedConfig.resolve.plugins) {
-        // @ts-expect-error tsPaths is a webpack plugin
         modifiedConfig.resolve.plugins.push(tsPaths);
       } else {
-        // @ts-expect-error tsPaths is a webpack plugin
         modifiedConfig.resolve.plugins = [tsPaths];
       }
     }

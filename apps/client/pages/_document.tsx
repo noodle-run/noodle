@@ -1,18 +1,11 @@
-import { getCssText } from '@noodle/stitches';
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class Document extends NextDocument {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <style
-            id="stitches"
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: getCssText() }}
-          />
-        </Head>
-        <body>
+        <Head />
+        <body className="dark:bg-zinc-900 dark:text-white">
           <Main />
           <NextScript />
         </body>
