@@ -42,10 +42,8 @@ export default {
 
     if (modifiedConfig.resolve) {
       if (modifiedConfig.resolve.plugins) {
-        // @ts-expect-error tsPaths is a webpack plugin
         modifiedConfig.resolve.plugins.push(tsPaths);
       } else {
-        // @ts-expect-error tsPaths is a webpack plugin
         modifiedConfig.resolve.plugins = [tsPaths];
       }
     }
