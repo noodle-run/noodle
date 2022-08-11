@@ -1,8 +1,8 @@
-import { StitchesProvider } from '@noodle/stitches';
 import { Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import '../styles/globals.css';
 import { trpc } from '../utils/trpc';
 
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => (
@@ -32,9 +32,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => (
       <meta name="theme-color" content="#ffffff" />
     </Head>
     <SessionProvider session={session as Session}>
-      <StitchesProvider>
-        <Component {...pageProps} />
-      </StitchesProvider>
+      <Component {...pageProps} />
     </SessionProvider>
   </>
 );
