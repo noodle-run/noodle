@@ -1,13 +1,11 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable import/no-extraneous-dependencies */
-
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/900.css';
 import { DocsContainer, DocsContainerProps } from '@storybook/addon-docs';
 import { ThemeVars } from '@storybook/theming';
-import { ReactNode, useEffect } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
-import { darkTheme, globalStyles, styled } from '../libs/stitches/src';
+import './globals.css';
 import { dark, light } from './theme';
-globalStyles();
 
 type DocsParamType = {
   theme: ThemeVars;
@@ -17,9 +15,13 @@ export const parameters = {
   darkMode: {
     dark: { ...dark },
     light: { ...light },
+    darkClass: 'dark',
+    classTarget: 'html',
+    stylePreview: true,
   },
   docs: {
     container: (props: DocsContainerProps) => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const isDark = useDarkMode();
 
       const { id: storyId, storyById } = props.context;
@@ -29,48 +31,11 @@ export const parameters = {
       (docs as DocsParamType).theme = isDark ? dark : light;
 
       return (
-        <div className={isDark ? darkTheme : ''}>
+        <div className={isDark ? 'dark-layout' : 'light'}>
           <DocsContainer {...props} />
         </div>
       );
     },
   },
   layout: 'fullscreen',
-  options: {
-    storySort: {
-      order: [
-        'Stitches',
-        ['Introduction', '*'],
-        'Design System',
-        ['Quarks', '*'],
-        '*',
-      ],
-    },
-  },
 };
-
-const Wrapper = styled('div', {
-  backgroundColor: '$gray1',
-  color: '$gray12',
-});
-
-export const decorators = [
-  (renderStory: () => ReactNode) => {
-    const isDark = useDarkMode();
-
-    useEffect(() => {
-      if (isDark) {
-        document.querySelector('.sb-show-main')?.classList.add(darkTheme);
-      } else {
-        document.querySelector('.sb-show-main')?.classList.remove(darkTheme);
-      }
-    }, [isDark]);
-
-    return (
-      <Wrapper className={isDark ? darkTheme : ''}>{renderStory()}</Wrapper>
-    );
-  },
-];
-
-/* eslint-enable import/no-extraneous-dependencies */
-/* eslint-enable react-hooks/rules-of-hooks */
