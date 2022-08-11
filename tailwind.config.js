@@ -16,6 +16,9 @@ module.exports = {
           900: '#d23953',
         },
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
     },
   },
   darkMode: 'media',
