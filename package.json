@@ -9,7 +9,7 @@
     "postinstall": "husky install",
     "storybook": "nx storybook ui",
     "build-storybook": "nx build-storybook ui",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic -o dist/storybook/ui --exit-zero-on-changes"
   },
   "private": true,
   "dependencies": {
