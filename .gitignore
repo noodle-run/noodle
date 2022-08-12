@@ -51,3 +51,5 @@ Thumbs.db
 
 # Next.js
 .next
+
+storybook-static
