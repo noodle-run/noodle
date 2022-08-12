@@ -1,0 +1,48 @@
+
+> nx run ui:build-storybook --output-dir /var/folders/lb/vzr3qvqs6dq4p7qsqpznw2c80000gn/T/chromatic--51113-kQiHAsxYGtDQ
+
+
+>  NX  ui framework: @storybook/react
+
+
+>  NX  Storybook builder starting ...
+
+info => Cleaning outputDir: /Users/ahmedtarek/Desktop/noodle/dist/storybook/ui
+info => Loading presets
+info => Copying static files: /Users/ahmedtarek/Desktop/noodle/apps/client/public at /Users/ahmedtarek/Desktop/noodle/dist/storybook/ui/
+info => Compiling manager..
+info => Compiling preview..
+info => Loading custom babel config
+info Addon-docs: using MDX2
+=> Loading Nrwl React Storybook preset from "@nrwl/react/plugins/storybook"
+info => Using default Webpack5 setup
+info => Manager built (12 s)
+info => Preview built (15 s)
+WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+WARN This can impact web performance.
+WARN Assets: 
+WARN   529.e9ab4490.iframe.bundle.js (603 KiB)
+WARN   981.476c3461.iframe.bundle.js (801 KiB)
+WARN   375.814fc364.iframe.bundle.js (3.1 MiB)
+WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+WARN Entrypoints:
+WARN   main (3.13 MiB)
+WARN       runtime~main.f104c4f8.iframe.bundle.js
+WARN       375.814fc364.iframe.bundle.js
+WARN       main.4b5e57f1.iframe.bundle.js
+WARN 
+info => Output directory: /Users/ahmedtarek/Desktop/noodle/dist/storybook/ui
+
+>  NX  Storybook builder finished ...
+
+
+>  NX  Storybook files available in dist/storybook/ui
+
+
+ 
+
+ >  NX   Successfully ran target build-storybook for project ui
+
+
+   See Nx Cloud run details at https://nx.app/runs/JniQ2RHHWyV
+
