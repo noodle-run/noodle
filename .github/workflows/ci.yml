@@ -53,28 +53,6 @@ jobs:
       - run: pnpm nx affected --target=build --parallel --max-parallel=3
       - run: pnpm nx affected --target=test --parallel --max-parallel=2
       - run: pnpm nx-cloud stop-all-agents
-  chromatic:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 7
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '16'
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm nx-cloud start-ci-run
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          exitZeroOnChanges: true
   agents:
     runs-on: ubuntu-latest
     name: Agent 1

@@ -8,7 +8,7 @@
     "test": "nx test",
     "postinstall": "husky install",
     "storybook": "nx storybook ui",
-    "build-storybook": "nx build-storybook ui",
+    "build-storybook": "build-storybook -c ./libs/ui/.storybook",
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "private": true,
