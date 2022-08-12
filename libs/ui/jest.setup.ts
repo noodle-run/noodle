@@ -14,3 +14,14 @@ jest.mock(
     ({ src, alt }: { src: string; alt: string }) =>
       React.createElement('img', { src, alt }),
 );
+
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      route: '/',
+      pathname: '/',
+      query: '',
+      asPath: '',
+    };
+  },
+}));
