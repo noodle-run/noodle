@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 import { Brand } from './Brand';
 
 const args: ComponentProps<typeof Brand> = {
-  size: 50,
+  size: 30,
 };
 
 const config: Meta<typeof args> = {
