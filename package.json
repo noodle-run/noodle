@@ -8,7 +8,8 @@
     "test": "nx test",
     "postinstall": "husky install",
     "storybook": "nx storybook ui",
-    "build-storybook": "nx build-storybook ui"
+    "build-storybook": "nx build-storybook ui",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "private": true,
   "dependencies": {
@@ -78,6 +79,7 @@
     "autoprefixer": "10.4.8",
     "babel-jest": "^28.1.3",
     "babel-loader": "^8.2.5",
+    "chromatic": "^6.7.4",
     "css-loader": "^6.7.1",
     "cypress": "^10.2.0",
     "eslint": "^8.20.0",

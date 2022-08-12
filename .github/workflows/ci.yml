@@ -72,3 +72,24 @@ jobs:
       - run: pnpm install
       - name: Start Nx Agent ${{ matrix.agent }}
         run: pnpm nx-cloud start-agent
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        uses: pnpm/action-setup@v2.2.2
+          with:
+            version: 7
+        uses: actions/setup-node@v1
+          with:
+            node-version: '16'
+            cache: 'pnpm'
+        run: pnpm install
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          exitZeroOnChanges: true
