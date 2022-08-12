@@ -4,7 +4,7 @@ type BrandProps = {
   readonly size?: number;
 };
 
-export const Brand: FC<BrandProps> = ({ size = 50 }) => (
+export const Brand: FC<BrandProps> = ({ size = 30 }) => (
   <svg
     width={size}
     height={size}
