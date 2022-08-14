@@ -22,18 +22,17 @@ export const Landing = () => (
             </a>
           </Link>
           <Link href="/contributing">
-            <a className="px-4 py-2 text-sm font-semibold text-white transition-colors rounded-lg md:text-base bg-zinc-700 hover:bg-zinc-800">
+            <a className="px-4 py-2 text-sm font-semibold text-black transition-colors rounded-lg md:text-base dark:bg-zinc-700 dark:hover:bg-zinc-800 bg-zinc-200 hover:bg-zinc-300 dark:text-white">
               Contribute
             </a>
           </Link>
         </div>
-        <div className="inline-block mt-24 overflow-hidden lg:mt-36 xl:mt-56 drop-shadow-xl rounded-3xl shadow-primary-500">
+        <div className="inline-block mt-24 overflow-hidden lg:mt-36 xl:mt-56 drop-shadow-md shadow-primary-500">
           <Image
             src="/preview.png"
             alt="Preview"
             width={1920 / 2}
             height={1080 / 2}
-            className="rounded-3xl"
           />
         </div>
       </header>
