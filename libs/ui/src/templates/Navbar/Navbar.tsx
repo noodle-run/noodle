@@ -54,12 +54,12 @@ export const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink href="https://github.com/ixahmedxi/noodle" external>
+            <NavLink href="https://twitter.com/ixahmedxii" external>
               <FiTwitter title="Twitter" size={22} />
             </NavLink>
           </li>
           <li>
-            <NavLink href="https://github.com/ixahmedxi/noodle" external>
+            <NavLink href="https://discord.gg/ZWmTMEwrYx" external>
               <FaDiscord title="Discord" size={22} />
             </NavLink>
           </li>
