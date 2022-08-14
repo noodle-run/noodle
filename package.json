@@ -30,6 +30,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+    "react-spinners": "^0.13.4",
     "regenerator-runtime": "^0.13.9",
     "superjson": "^1.9.1",
     "tailwind-merge": "^1.5.1",
