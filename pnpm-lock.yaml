@@ -91,6 +91,7 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   react-icons: ^4.4.0
+  react-spinners: ^0.13.4
   react-test-renderer: 18.2.0
   regenerator-runtime: ^0.13.9
   storybook-addon-next: ^1.6.7
@@ -126,6 +127,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.4.0_react@18.2.0
+  react-spinners: 0.13.4_biqbaboplfbrettd7655fr4n2y
   regenerator-runtime: 0.13.9
   superjson: 1.9.1
   tailwind-merge: 1.5.1
@@ -15927,6 +15929,16 @@ packages:
       shallowequal: 1.1.0
       throttle-debounce: 3.0.1
     dev: true
+
+  /react-spinners/0.13.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-V6IURjYOwomhdngMfuVxBp4utCF6v21sjQ6r4K2JoKl8fwXZp1UeHMBLf+2SU+cts8hAVj9rHOJ8kdT5UqqaJw==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /react-ssr-prepass/1.5.0_react@18.2.0:
     resolution: {integrity: sha512-yFNHrlVEReVYKsLI5lF05tZoHveA5pGzjFbFJY/3pOqqjGOmMmqx83N4hIjN2n6E1AOa+eQEUxs3CgRnPmT0RQ==}
