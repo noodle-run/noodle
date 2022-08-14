@@ -31,7 +31,6 @@ export const Landing = () => (
           <Image
             src="/preview.png"
             alt="Preview"
-            placeholder="blur"
             width={1920 / 2}
             height={1080 / 2}
             className="rounded-3xl"
