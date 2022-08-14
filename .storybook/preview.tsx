@@ -3,7 +3,7 @@ import '@fontsource/inter/600.css';
 import '@fontsource/inter/900.css';
 import { DocsContainer, DocsContainerProps } from '@storybook/addon-docs';
 import { ThemeVars } from '@storybook/theming';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import './globals.css';
 import { dark, light } from './theme';
@@ -39,6 +39,11 @@ export const parameters = {
     },
   },
   layout: 'fullscreen',
+  options: {
+    storySort: {
+      order: ['Atoms', 'Molecules', 'Organisms', 'Templates', 'Pages', '*'],
+    },
+  },
 };
 
 export const decorators = [
