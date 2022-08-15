@@ -35,6 +35,7 @@ In this guide you will get an overview of the expected contribution workflow fro
       - [Next-auth](#next-auth)
       - [Github auth](#github-auth)
       - [Chromatic](#chromatic)
+    - [Running the project](#running-the-project)
 
 <!-- tocstop -->
 
@@ -205,3 +206,17 @@ You can read the docs about creating OAuth tokens [here](https://docs.github.com
 #### Chromatic
 
 Additionally, if you want to publish Noodle's storybook to your own chromatic account, copy the project token and paste it into the `.env` file as well.
+
+### Running the project
+
+Now that you have Nodejs, pnpm and your environment variables set up, you're ready to run the project locally on your machine. You can start the project using two methods:
+
+```bash
+# Through the start script in package.json
+pnpm start
+
+# Through the nx cli
+pnpm nx serve client
+```
+
+This will start the project on port `4200`, you can access the website on `http://localhost:4200`.
