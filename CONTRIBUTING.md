@@ -30,6 +30,11 @@ In this guide you will get an overview of the expected contribution workflow fro
       - [Make sure Nodejs is installed](#make-sure-nodejs-is-installed)
     - [Pnpm](#pnpm)
     - [Dependencies](#dependencies)
+    - [Environment variables](#environment-variables)
+      - [Database](#database)
+      - [Next-auth](#next-auth)
+      - [Github auth](#github-auth)
+      - [Chromatic](#chromatic)
 
 <!-- tocstop -->
 
@@ -164,3 +169,39 @@ cd noodle
 # Install dependencies
 pnpm install
 ```
+
+### Environment variables
+
+In the project there is a `.env.example` file that lists all the required environment variables that are needed for the project to successfully run.
+
+You need to duplicate the `.env.example` file as only `.env` and then supply your environment variable values in that file.
+
+```bash
+cp .env.example .env
+```
+
+The above command will copy the `.env.example` file and make a new file called `.env` with the same content.
+
+The `.env.example` file includes comments about each expected environment variable and why they are needed.
+
+#### Database
+
+Noodle requires a mysql database to connect to and save the data into. You can install and configure mysql on your machine and then supply the database url in the `.env` file or use something like [planetscale](https://planetscale.com/) to create a database on the cloud and copy the database url in the `.env` file without needing to locally install mysql.
+
+```
+DATABASE_URL=<your-db-url-here>
+```
+
+#### Next-auth
+
+next-auth is a library we use to provide authentication, it needs two values that are outlined and documented in the `.env.example` file.
+
+#### Github auth
+
+Noodle contains the ability to log in using your Github account, to enable this you need to create a new OAuth app on your github account with the homepage url of http://localhost:4200 and the Authorization callback URL of http://localhost:4200/api/auth/callback/github.
+
+You can read the docs about creating OAuth tokens [here](https://docs.github.com/en/developers/apps/building-github-apps/authenticating-with-github-apps).
+
+#### Chromatic
+
+Additionally, if you want to publish Noodle's storybook to your own chromatic account, copy the project token and paste it into the `.env` file as well.
