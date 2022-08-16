@@ -27,15 +27,10 @@ export const Landing = () => (
             </a>
           </Link>
         </div>
-        <div className="inline-block mt-24 overflow-hidden lg:mt-36 xl:mt-56 drop-shadow-md shadow-primary-500">
-          <Image
-            src="/preview.png"
-            alt="Preview"
-            width={1920 / 2}
-            height={1080 / 2}
-          />
-        </div>
       </header>
     </main>
+    <div className="absolute w-full px-6 -translate-x-1/2 lg:w-2/3 xl:w-1/2 bottom-24 -z-10 left-1/2 drop-shadow-md shadow-primary-500">
+      <Image src="/preview.png" alt="Preview" width={1920} height={1080} />
+    </div>
   </div>
 );
