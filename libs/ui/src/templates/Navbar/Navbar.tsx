@@ -35,7 +35,12 @@ export const Navbar = () => {
             <NavLink href="/about">About</NavLink>
           </li>
           <li>
-            <NavLink href="/contributing">Contributing</NavLink>
+            <NavLink
+              href="https://github.com/ixahmedxi/noodle/blob/main/CONTRIBUTING.md"
+              external
+            >
+              Contributing
+            </NavLink>
           </li>
           <li>
             <NavLink
