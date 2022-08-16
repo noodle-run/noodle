@@ -21,11 +21,14 @@ export const Landing = () => (
               Learn more
             </a>
           </Link>
-          <Link href="/contributing">
-            <a className="px-4 py-2 text-sm font-semibold text-black transition-colors rounded-lg md:text-base dark:bg-zinc-700 dark:hover:bg-zinc-800 bg-zinc-200 hover:bg-zinc-300 dark:text-white">
-              Contribute
-            </a>
-          </Link>
+          <a
+            href="https://github.com/ixahmedxi/noodle/blob/main/CONTRIBUTING.md"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="px-4 py-2 text-sm font-semibold text-black transition-colors rounded-lg md:text-base dark:bg-zinc-700 dark:hover:bg-zinc-800 bg-zinc-200 hover:bg-zinc-300 dark:text-white"
+          >
+            Contribute
+          </a>
         </div>
       </header>
     </main>
