@@ -32,7 +32,7 @@ export const Landing = () => (
         </div>
       </header>
     </main>
-    <div className="absolute w-full px-6 -translate-x-1/2 lg:w-2/3 xl:w-1/2 bottom-24 -z-10 left-1/2 drop-shadow-md shadow-primary-500">
+    <div className="absolute bottom-0 w-full px-6 -translate-x-1/2 lg:w-2/3 xl:w-1/2 lg:bottom-12 xl:bottom-24 -z-10 left-1/2 drop-shadow-md shadow-primary-500">
       <Image src="/preview.png" alt="Preview" width={1920} height={1080} />
     </div>
   </div>
