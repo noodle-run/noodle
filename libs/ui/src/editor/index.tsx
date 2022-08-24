@@ -1,4 +1,5 @@
 import {
+  ELEMENT_BLOCKQUOTE,
   ELEMENT_H1,
   ELEMENT_H2,
   ELEMENT_H3,
@@ -8,6 +9,7 @@ import {
   ELEMENT_PARAGRAPH,
   PlateRenderElementProps,
 } from '@udecode/plate';
+import { Blockquote } from './Blockquote';
 import { Heading } from './Heading';
 import { Paragraph } from './Paragraph';
 
@@ -31,4 +33,5 @@ export const components = {
     <Heading variant="h6" {...props} />
   ),
   [ELEMENT_PARAGRAPH]: Paragraph,
+  [ELEMENT_BLOCKQUOTE]: Blockquote,
 };
