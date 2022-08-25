@@ -21,7 +21,7 @@ export const Paragraph: FC<EditorRenderElementProps> = ({
   return (
     <p
       className={twMerge(
-        'py-3 dark:text-zinc-300 text-zinc-700',
+        'py-1 dark:text-zinc-300 text-zinc-700',
         placeholderEnabled &&
           "before:content-['Type_something...'] before:block before:cursor-text before:absolute before:opacity-25",
       )}
