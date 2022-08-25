@@ -1,7 +1,6 @@
-import { isCollapsed, isElementEmpty, useEditorState } from '@udecode/plate';
+import { isElementEmpty, useEditorState } from '@udecode/plate';
 import { cva, VariantProps } from 'class-variance-authority';
 import { FC } from 'react';
-import { useFocused } from 'slate-react';
 import { EditorRenderElementProps } from '../../utils/EditorComponentProps';
 
 const styles = cva(['font-extrabold', 'dark:text-white', 'text-black'], {
@@ -46,16 +45,11 @@ export const Heading: FC<HeadingProps> = ({
 }) => {
   const Component = variant || 'h1';
 
-  const focused = useFocused();
   const editor = useEditorState();
 
   const isEmptyBlock = element && isElementEmpty(editor, element);
 
-  const placeholderEnabled =
-    Component === 'h1' &&
-    isEmptyBlock &&
-    isCollapsed(editor.selection) &&
-    focused;
+  const placeholderEnabled = Component === 'h1' && isEmptyBlock;
 
   return (
     <Component
