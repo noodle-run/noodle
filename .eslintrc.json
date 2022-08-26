@@ -75,7 +75,8 @@
         "operator-linebreak": "off",
         "@typescript-eslint/no-misused-promises": "off",
         "@typescript-eslint/no-floating-promises": "off",
-        "jsx-a11y/anchor-is-valid": "off"
+        "jsx-a11y/anchor-is-valid": "off",
+        "no-param-reassign": "off"
       }
     },
     {
