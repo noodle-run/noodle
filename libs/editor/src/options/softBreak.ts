@@ -1,10 +1,8 @@
-import {
-  ELEMENT_BLOCKQUOTE,
-  ELEMENT_CODE_BLOCK,
-  ELEMENT_TD,
-  PlatePlugin,
-  SoftBreakPlugin,
-} from '@udecode/plate';
+import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote';
+import { SoftBreakPlugin } from '@udecode/plate-break';
+import { ELEMENT_CODE_BLOCK } from '@udecode/plate-code-block';
+import { PlatePlugin } from '@udecode/plate-core';
+import { ELEMENT_TD } from '@udecode/plate-table';
 
 export const softBreakOptions: Partial<PlatePlugin<SoftBreakPlugin>> = {
   options: {

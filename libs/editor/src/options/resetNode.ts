@@ -1,12 +1,12 @@
+import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote';
 import {
-  ELEMENT_BLOCKQUOTE,
-  ELEMENT_PARAGRAPH,
-  ELEMENT_TODO_LI,
   isBlockAboveEmpty,
   isSelectionAtBlockStart,
   PlatePlugin,
-  ResetNodePlugin,
-} from '@udecode/plate';
+} from '@udecode/plate-core';
+import { ELEMENT_TODO_LI } from '@udecode/plate-list';
+import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph';
+import { ResetNodePlugin } from '@udecode/plate-reset-node';
 
 export const resetNodeOptions: Partial<PlatePlugin<ResetNodePlugin>> = {
   options: {

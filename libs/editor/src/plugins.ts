@@ -1,14 +1,15 @@
 import { editorComponents } from '@noodle/ui';
+import { createBlockquotePlugin } from '@udecode/plate-block-quote';
 import {
-  createBasicElementsPlugin,
-  createBasicMarksPlugin,
   createExitBreakPlugin,
-  createPlugins,
-  createResetNodePlugin,
-  createSelectOnBackspacePlugin,
   createSoftBreakPlugin,
-  createTrailingBlockPlugin,
-} from '@udecode/plate';
+} from '@udecode/plate-break';
+import { createPlugins } from '@udecode/plate-core';
+import { createHeadingPlugin } from '@udecode/plate-heading';
+import { createParagraphPlugin } from '@udecode/plate-paragraph';
+import { createResetNodePlugin } from '@udecode/plate-reset-node';
+import { createSelectOnBackspacePlugin } from '@udecode/plate-select';
+import { createTrailingBlockPlugin } from '@udecode/plate-trailing-block';
 import { selectOnBackspaceOptions } from './options/backspaceSelect';
 import { exitBreakOptions } from './options/exitBreak';
 import { resetNodeOptions } from './options/resetNode';
@@ -19,8 +20,9 @@ import { createForcedLayoutPlugin } from './plugins/createForcedLayoutPlugin';
 export const plugins = createPlugins(
   [
     // Elements
-    createBasicElementsPlugin(),
-    createBasicMarksPlugin(),
+    createParagraphPlugin(),
+    createHeadingPlugin(),
+    createBlockquotePlugin(),
 
     // Behavior
     createExitBreakPlugin(exitBreakOptions),

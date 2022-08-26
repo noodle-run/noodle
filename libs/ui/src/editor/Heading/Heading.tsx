@@ -1,4 +1,4 @@
-import { isElementEmpty, useEditorState } from '@udecode/plate';
+import { isElementEmpty, useEditorState } from '@udecode/plate-core';
 import { cva, VariantProps } from 'class-variance-authority';
 import { FC } from 'react';
 import { EditorRenderElementProps } from '../../utils/EditorComponentProps';

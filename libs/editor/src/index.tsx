@@ -1,4 +1,4 @@
-import { Plate } from '@udecode/plate';
+import { Plate } from '@udecode/plate-core';
 import { initialValue } from './initialValue';
 import { plugins } from './plugins';
 
