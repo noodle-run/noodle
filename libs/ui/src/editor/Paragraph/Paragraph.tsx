@@ -1,4 +1,8 @@
-import { isCollapsed, isElementEmpty, useEditorState } from '@udecode/plate';
+import {
+  isCollapsed,
+  isElementEmpty,
+  useEditorState,
+} from '@udecode/plate-core';
 import { FC } from 'react';
 import { useFocused, useSelected } from 'slate-react';
 import { twMerge } from 'tailwind-merge';

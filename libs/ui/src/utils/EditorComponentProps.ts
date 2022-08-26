@@ -4,7 +4,10 @@
  * The types also correctly modifies the children type to be ReactNode instead of any.
  */
 
-import { PlateRenderElementProps, PlateRenderLeafProps } from '@udecode/plate';
+import {
+  PlateRenderElementProps,
+  PlateRenderLeafProps,
+} from '@udecode/plate-core';
 import { ReactNode } from 'react';
 
 export type EditorRenderElementProps = Partial<PlateRenderElementProps> & {

@@ -1,11 +1,11 @@
 import {
   createPluginFactory,
-  ELEMENT_H1,
-  ELEMENT_PARAGRAPH,
   getNode,
   isElement,
   setElements,
-} from '@udecode/plate';
+} from '@udecode/plate-core';
+import { ELEMENT_H1 } from '@udecode/plate-heading';
+import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph';
 
 export const createForcedLayoutPlugin = createPluginFactory({
   key: 'forcedLayout',
