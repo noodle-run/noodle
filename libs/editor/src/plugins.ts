@@ -14,6 +14,7 @@ import { exitBreakOptions } from './options/exitBreak';
 import { resetNodeOptions } from './options/resetNode';
 import { softBreakOptions } from './options/softBreak';
 import { trailingBlockOptions } from './options/trailingBlock';
+import { createForcedLayoutPlugin } from './plugins/createForcedLayoutPlugin';
 
 export const plugins = createPlugins(
   [
@@ -27,6 +28,9 @@ export const plugins = createPlugins(
     createTrailingBlockPlugin(trailingBlockOptions),
     createSelectOnBackspacePlugin(selectOnBackspaceOptions),
     createResetNodePlugin(resetNodeOptions),
+
+    // Custom
+    createForcedLayoutPlugin(),
   ],
   { components: editorComponents },
 );
