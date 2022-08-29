@@ -1,5 +1,6 @@
 import {
   MARK_BOLD,
+  MARK_CODE,
   MARK_ITALIC,
   MARK_STRIKETHROUGH,
   MARK_SUBSCRIPT,
@@ -20,6 +21,7 @@ import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph';
 import { Blockquote } from './Blockquote';
 import { Bold } from './Bold';
 import { Heading } from './Heading';
+import { InlineCode } from './InlineCode';
 import { Italic } from './Italic';
 import { Paragraph } from './Paragraph';
 import { Strikethrough } from './Strikethrough';
@@ -56,4 +58,5 @@ export const components = {
   [MARK_STRIKETHROUGH]: Strikethrough,
   [MARK_SUBSCRIPT]: Subscript,
   [MARK_SUPERSCRIPT]: Superscript,
+  [MARK_CODE]: InlineCode,
 };
