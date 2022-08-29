@@ -52,6 +52,7 @@ specifiers:
   '@types/testing-library__jest-dom': ^5.14.5
   '@typescript-eslint/eslint-plugin': ^5.34.0
   '@typescript-eslint/parser': ^5.34.0
+  '@udecode/plate-autoformat': ^16.3.0
   '@udecode/plate-basic-marks': ^16.3.0
   '@udecode/plate-block-quote': ^16.3.0
   '@udecode/plate-break': ^16.3.0
@@ -142,6 +143,7 @@ dependencies:
   '@trpc/next': 10.0.0-alpha.45_z5moel67nd3zrv5gp7hk6ofhwe
   '@trpc/react': 10.0.0-alpha.45_3mhm7jipegl77f3c5kjx5nthoa
   '@trpc/server': 10.0.0-alpha.45
+  '@udecode/plate-autoformat': 16.3.0_duarcytdrv4uxfpt6zcjk4tfxu
   '@udecode/plate-basic-marks': 16.3.0_duarcytdrv4uxfpt6zcjk4tfxu
   '@udecode/plate-block-quote': 16.3.0_duarcytdrv4uxfpt6zcjk4tfxu
   '@udecode/plate-break': 16.3.0_duarcytdrv4uxfpt6zcjk4tfxu

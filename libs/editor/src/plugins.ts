@@ -1,4 +1,5 @@
 import { editorComponents } from '@noodle/ui';
+import { createAutoformatPlugin } from '@udecode/plate-autoformat';
 import {
   createBoldPlugin,
   createCodePlugin,
@@ -19,6 +20,7 @@ import { createParagraphPlugin } from '@udecode/plate-paragraph';
 import { createResetNodePlugin } from '@udecode/plate-reset-node';
 import { createSelectOnBackspacePlugin } from '@udecode/plate-select';
 import { createTrailingBlockPlugin } from '@udecode/plate-trailing-block';
+import { autoFormatRules } from './options/autoFormatRules';
 import { selectOnBackspaceOptions } from './options/backspaceSelect';
 import { exitBreakOptions } from './options/exitBreak';
 import { resetNodeOptions } from './options/resetNode';
@@ -48,6 +50,9 @@ export const plugins = createPlugins(
     createTrailingBlockPlugin(trailingBlockOptions),
     createSelectOnBackspacePlugin(selectOnBackspaceOptions),
     createResetNodePlugin(resetNodeOptions),
+    createAutoformatPlugin({
+      options: { rules: autoFormatRules, enableUndoOnDelete: true },
+    }),
 
     // Custom
     createForcedLayoutPlugin(),
