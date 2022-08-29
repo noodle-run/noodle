@@ -1,4 +1,5 @@
 import { Meta, Story } from '@storybook/react';
+import { Plate } from '@udecode/plate-core';
 import { ComponentProps } from 'react';
 import { Heading } from './Heading';
 
@@ -32,7 +33,11 @@ const config: Meta<typeof args> = {
 
 export default config;
 
-const Template: Story<typeof args> = (props) => <Heading {...props} />;
+const Template: Story<typeof args> = (props) => (
+  <Plate>
+    <Heading {...props} />
+  </Plate>
+);
 
 export const H1 = Template.bind({});
 H1.storyName = 'h1';
