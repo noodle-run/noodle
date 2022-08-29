@@ -27,6 +27,11 @@ import {
 } from '@udecode/plate-basic-marks';
 import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote';
 import {
+  ELEMENT_CODE_BLOCK,
+  insertEmptyCodeBlock,
+} from '@udecode/plate-code-block';
+import { ELEMENT_DEFAULT, getPluginType } from '@udecode/plate-core';
+import {
   ELEMENT_H2,
   ELEMENT_H3,
   ELEMENT_H4,
@@ -88,6 +93,19 @@ export const autoFormatRules: AutoformatRule[] = [
     type: ELEMENT_BLOCKQUOTE,
     mode: 'block',
     preFormat,
+  },
+  {
+    mode: 'block',
+    type: ELEMENT_CODE_BLOCK,
+    match: '``` ',
+    triggerAtBlockStart: false,
+    preFormat,
+    format: (editor) => {
+      insertEmptyCodeBlock(editor, {
+        defaultType: getPluginType(editor, ELEMENT_DEFAULT),
+        insertNodesOptions: { select: true },
+      });
+    },
   },
   {
     mode: 'mark',

@@ -8,6 +8,7 @@ import {
   MARK_UNDERLINE,
 } from '@udecode/plate-basic-marks';
 import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote';
+import { ELEMENT_CODE_BLOCK } from '@udecode/plate-code-block';
 import { PlateRenderElementProps } from '@udecode/plate-core';
 import {
   ELEMENT_H1,
@@ -20,6 +21,7 @@ import {
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph';
 import { Blockquote } from './Blockquote';
 import { Bold } from './Bold';
+import { CodeBlock } from './CodeBlock';
 import { Heading } from './Heading';
 import { InlineCode } from './InlineCode';
 import { Italic } from './Italic';
@@ -50,6 +52,7 @@ export const components = {
   ),
   [ELEMENT_PARAGRAPH]: Paragraph,
   [ELEMENT_BLOCKQUOTE]: Blockquote,
+  [ELEMENT_CODE_BLOCK]: CodeBlock,
 
   // Marks
   [MARK_BOLD]: Bold,
