@@ -1,4 +1,13 @@
 import { editorComponents } from '@noodle/ui';
+import {
+  createBoldPlugin,
+  createCodePlugin,
+  createItalicPlugin,
+  createStrikethroughPlugin,
+  createSubscriptPlugin,
+  createSuperscriptPlugin,
+  createUnderlinePlugin,
+} from '@udecode/plate-basic-marks';
 import { createBlockquotePlugin } from '@udecode/plate-block-quote';
 import {
   createExitBreakPlugin,
@@ -23,6 +32,15 @@ export const plugins = createPlugins(
     createParagraphPlugin(),
     createHeadingPlugin(),
     createBlockquotePlugin(),
+
+    // Marks
+    createBoldPlugin(),
+    createItalicPlugin(),
+    createUnderlinePlugin(),
+    createStrikethroughPlugin(),
+    createSubscriptPlugin(),
+    createSuperscriptPlugin(),
+    createCodePlugin(),
 
     // Behavior
     createExitBreakPlugin(exitBreakOptions),

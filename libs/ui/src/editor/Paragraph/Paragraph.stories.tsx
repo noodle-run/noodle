@@ -1,4 +1,5 @@
 import { Meta, Story } from '@storybook/react';
+import { Plate } from '@udecode/plate-core';
 import { ComponentProps } from 'react';
 import { Paragraph } from './Paragraph';
 
@@ -27,7 +28,11 @@ const config: Meta<typeof args> = {
 
 export default config;
 
-const Template: Story<typeof args> = (props) => <Paragraph {...props} />;
+const Template: Story<typeof args> = (props) => (
+  <Plate>
+    <Paragraph {...props} />
+  </Plate>
+);
 
 export const Normal = Template.bind({});
 Normal.storyName = 'Paragraph';

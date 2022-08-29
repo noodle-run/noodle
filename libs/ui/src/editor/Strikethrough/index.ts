@@ -1,0 +1,1 @@
+export { Strikethrough } from './Strikethrough';
