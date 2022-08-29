@@ -17,6 +17,7 @@ import {
 import { createCodeBlockPlugin } from '@udecode/plate-code-block';
 import { createPlugins } from '@udecode/plate-core';
 import { createHeadingPlugin } from '@udecode/plate-heading';
+import { createListPlugin } from '@udecode/plate-list';
 import { createParagraphPlugin } from '@udecode/plate-paragraph';
 import { createResetNodePlugin } from '@udecode/plate-reset-node';
 import { createSelectOnBackspacePlugin } from '@udecode/plate-select';
@@ -38,6 +39,7 @@ export const plugins = createPlugins(
     createCodeBlockPlugin({
       options: { syntax: false },
     }),
+    createListPlugin(),
 
     // Marks
     createBoldPlugin(),

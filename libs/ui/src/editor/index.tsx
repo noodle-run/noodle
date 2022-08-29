@@ -18,6 +18,7 @@ import {
   ELEMENT_H5,
   ELEMENT_H6,
 } from '@udecode/plate-heading';
+import { ELEMENT_LI, ELEMENT_OL, ELEMENT_UL } from '@udecode/plate-list';
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph';
 import { Blockquote } from './Blockquote';
 import { Bold } from './Bold';
@@ -25,11 +26,14 @@ import { CodeBlock } from './CodeBlock';
 import { Heading } from './Heading';
 import { InlineCode } from './InlineCode';
 import { Italic } from './Italic';
+import { ListItem } from './ListItem';
+import { OrderedList } from './OrderedList';
 import { Paragraph } from './Paragraph';
 import { Strikethrough } from './Strikethrough';
 import { Subscript } from './Subscript';
 import { Superscript } from './Superscript';
 import { Underline } from './Underline';
+import { UnorderedList } from './UnorderedList';
 
 export const components = {
   [ELEMENT_H1]: (props: PlateRenderElementProps) => (
@@ -53,6 +57,9 @@ export const components = {
   [ELEMENT_PARAGRAPH]: Paragraph,
   [ELEMENT_BLOCKQUOTE]: Blockquote,
   [ELEMENT_CODE_BLOCK]: CodeBlock,
+  [ELEMENT_UL]: UnorderedList,
+  [ELEMENT_OL]: OrderedList,
+  [ELEMENT_LI]: ListItem,
 
   // Marks
   [MARK_BOLD]: Bold,
