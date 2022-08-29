@@ -28,9 +28,17 @@ import {
 import { ELEMENT_BLOCKQUOTE } from '@udecode/plate-block-quote';
 import {
   ELEMENT_CODE_BLOCK,
+  ELEMENT_CODE_LINE,
   insertEmptyCodeBlock,
 } from '@udecode/plate-code-block';
-import { ELEMENT_DEFAULT, getPluginType } from '@udecode/plate-core';
+import {
+  ELEMENT_DEFAULT,
+  getParentNode,
+  getPluginType,
+  isElement,
+  isType,
+  PlateEditor,
+} from '@udecode/plate-core';
 import {
   ELEMENT_H2,
   ELEMENT_H3,
@@ -38,10 +46,39 @@ import {
   ELEMENT_H5,
   ELEMENT_H6,
 } from '@udecode/plate-heading';
-import { unwrapList } from '@udecode/plate-list';
+import {
+  ELEMENT_LI,
+  ELEMENT_OL,
+  ELEMENT_UL,
+  toggleList,
+  unwrapList,
+} from '@udecode/plate-list';
 
 export const preFormat: AutoformatBlockRule['preFormat'] = (editor) =>
   unwrapList(editor);
+
+export const format = (editor: PlateEditor, customFormatting: () => void) => {
+  if (editor.selection) {
+    const parentEntry = getParentNode(editor, editor.selection);
+    if (!parentEntry) return;
+    const [node] = parentEntry;
+    if (
+      isElement(node) &&
+      !isType(editor, node, ELEMENT_CODE_BLOCK) &&
+      !isType(editor, node, ELEMENT_CODE_LINE)
+    ) {
+      customFormatting();
+    }
+  }
+};
+
+export const formatList = (editor: PlateEditor, elementType: string) => {
+  format(editor, () =>
+    toggleList(editor, {
+      type: elementType,
+    }),
+  );
+};
 
 export const autoFormatRules: AutoformatRule[] = [
   ...autoformatSmartQuotes,
@@ -106,6 +143,27 @@ export const autoFormatRules: AutoformatRule[] = [
         insertNodesOptions: { select: true },
       });
     },
+  },
+  {
+    mode: 'block',
+    type: ELEMENT_LI,
+    match: ['* ', '- '],
+    preFormat,
+    format: (editor) => formatList(editor, ELEMENT_UL),
+  },
+  {
+    mode: 'block',
+    type: ELEMENT_LI,
+    match: ['* ', '- '],
+    preFormat,
+    format: (editor) => formatList(editor, ELEMENT_UL),
+  },
+  {
+    mode: 'block',
+    type: ELEMENT_LI,
+    match: ['1. ', '1) '],
+    preFormat,
+    format: (editor) => formatList(editor, ELEMENT_OL),
   },
   {
     mode: 'mark',
