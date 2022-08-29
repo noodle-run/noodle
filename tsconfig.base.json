@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "strict": true,
     "paths": {
+      "@noodle/editor": ["libs/editor/src/index.tsx"],
       "@noodle/server": ["libs/server/src/index.ts"],
       "@noodle/ui": ["libs/ui/src/index.ts"]
     }

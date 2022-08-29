@@ -4,6 +4,7 @@
   "projects": {
     "client": "apps/client",
     "client-e2e": "apps/client-e2e",
+    "editor": "libs/editor",
     "server": "libs/server",
     "ui": "libs/ui"
   }
