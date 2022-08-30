@@ -5,7 +5,10 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "parserOptions": {
-        "project": ["libs/editor/tsconfig.eslint.json"]
+        "project": [
+          "libs/editor/tsconfig.eslint.json",
+          "libs/editor/.storybook/tsconfig.json"
+        ]
       },
       "rules": {}
     },
