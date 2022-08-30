@@ -1,31 +1,16 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/editor/src",
+  "sourceRoot": "libs/storybook/src",
   "projectType": "library",
   "tags": [],
   "targets": {
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/editor/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/editor"],
-      "options": {
-        "jestConfig": "libs/editor/jest.config.ts",
-        "passWithNoTests": true
-      }
-    },
     "storybook": {
       "executor": "@nrwl/storybook:storybook",
       "options": {
         "uiFramework": "@storybook/react",
         "port": 4400,
         "config": {
-          "configFolder": "libs/editor/.storybook"
+          "configFolder": "libs/storybook/.storybook"
         }
       },
       "configurations": {
@@ -39,9 +24,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/editor",
+        "outputPath": "dist/storybook/storybook",
         "config": {
-          "configFolder": "libs/editor/.storybook"
+          "configFolder": "libs/storybook/.storybook"
         }
       },
       "configurations": {
