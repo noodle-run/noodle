@@ -45,6 +45,7 @@
     "next": "^12.2.5",
     "next-auth": "^4.10.2",
     "next-mdx-remote": "^4.1.0",
+    "next-seo": "^5.5.0",
     "react": "^18.2.0",
     "react-dnd": "15.1.2",
     "react-dnd-html5-backend": "15.1.2",
