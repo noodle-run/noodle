@@ -44,6 +44,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  years         Year[]
 }
 
 model VerificationToken {
@@ -52,4 +53,37 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Year {
+  id        String   @id @default(cuid())
+  number    Int      @unique @default(1)
+  startDate DateTime @default(now())
+  endDate   DateTime @default(now())
+  User      User?    @relation(fields: [userEmail], references: [email])
+  userEmail String?
+  modules   Module[]
+}
+
+model Module {
+  id      String  @id @default(cuid())
+  name    String  @unique
+  code    String  @unique
+  emoji   String?
+  color   String?
+  credits Int     @default(0)
+  year    Year    @relation(fields: [yearId], references: [id], onDelete: Cascade)
+  yearId  String
+  notes   Note[]
+}
+
+model Note {
+  id        String   @id @default(cuid())
+  title     String
+  emoji     String?
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Module    Module   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  moduleId  String
 }
