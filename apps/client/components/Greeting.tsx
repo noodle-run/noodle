@@ -3,7 +3,7 @@ import { trpc } from '../utils/trpc';
 
 export const Greeting = () => {
   const { data: session } = useSession();
-  const { data: greetingData } = trpc.proxy.greeting.useQuery({
+  const { data: greetingData } = trpc.greeting.useQuery({
     name: 'from tRPC',
   });
 
