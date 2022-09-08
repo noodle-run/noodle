@@ -1,24 +1,17 @@
 import { authOptions } from '@noodle/server';
-import { Auth } from '@noodle/ui';
 import { GetServerSideProps, NextPage } from 'next';
 import { unstable_getServerSession } from 'next-auth';
-import { signIn } from 'next-auth/react';
+import { Greeting } from '../components/Greeting';
 
-const SignIn: NextPage = () => (
-  <Auth
-    onMagicLinkLogin={(email) => signIn('email', { email })}
-    onGithubLogin={() => signIn('github')}
-    onGoogleLogin={() => signIn('google')}
-  />
-);
+const Dashboard: NextPage = () => <Greeting />;
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const session = await unstable_getServerSession(req, res, authOptions);
 
-  if (session) {
+  if (!session) {
     return {
       redirect: {
-        destination: '/dashboard',
+        destination: '/signin',
         permanent: false,
       },
       props: {
@@ -34,4 +27,4 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   };
 };
 
-export default SignIn;
+export default Dashboard;
