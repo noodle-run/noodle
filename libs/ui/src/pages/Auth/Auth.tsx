@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FC, useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { FiArrowRight } from 'react-icons/fi';
+import { z } from 'zod';
 import { Brand } from '../../atoms/Brand';
 import { Button } from '../../atoms/Button';
 import { Input } from '../../atoms/Input';
@@ -18,6 +19,7 @@ export const Auth: FC<AuthProps> = ({
   onMagicLinkLogin,
 }) => {
   const [email, setEmail] = useState('');
+  const isEmail = z.string().email();
 
   return (
     <main className="flex items-center justify-center min-h-screen">
@@ -43,6 +45,7 @@ export const Auth: FC<AuthProps> = ({
           <Button
             type="submit"
             variant="primary"
+            disabled={!isEmail.safeParse(email).success}
             icon={<FiArrowRight strokeWidth={3} />}
           >
             Let me in!

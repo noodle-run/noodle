@@ -101,6 +101,7 @@ specifiers:
   next-auth: ^4.10.2
   next-mdx-remote: ^4.1.0
   next-seo: ^5.5.0
+  nodemailer: ^6.7.8
   nx: ^14.6.4
   postcss: 8.4.16
   postcss-loader: ^7.0.1
@@ -165,9 +166,10 @@ dependencies:
   class-variance-authority: 0.2.3_typescript@4.8.2
   core-js: 3.25.0
   next: 12.2.5_vyk55zyolcaieh7zfm7nf7uva4
-  next-auth: 4.10.3_biqbaboplfbrettd7655fr4n2y
+  next-auth: 4.10.3_br325yun545l5vwdnneu6tztxq
   next-mdx-remote: 4.1.0_biqbaboplfbrettd7655fr4n2y
   next-seo: 5.5.0_3xcjr4wz26biff45sz3jtokgje
+  nodemailer: 6.7.8
   react: 18.2.0
   react-dnd: 15.1.2_inywor3g7l7zas7stjrshv3ffy
   react-dnd-html5-backend: 15.1.2
@@ -2636,7 +2638,7 @@ packages:
       next-auth: ^4
     dependencies:
       '@prisma/client': 4.3.1_prisma@4.3.1
-      next-auth: 4.10.3_biqbaboplfbrettd7655fr4n2y
+      next-auth: 4.10.3_br325yun545l5vwdnneu6tztxq
     dev: false
 
   /@next/bundle-analyzer/12.2.5:
@@ -15250,7 +15252,7 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /next-auth/4.10.3_biqbaboplfbrettd7655fr4n2y:
+  /next-auth/4.10.3_br325yun545l5vwdnneu6tztxq:
     resolution: {integrity: sha512-7zc4aXYc/EEln7Pkcsn21V1IevaTZsMLJwapfbnKA4+JY0+jFzWbt5p/ljugesGIrN4VOZhpZIw50EaFZyghJQ==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
     peerDependencies:
@@ -15265,6 +15267,7 @@ packages:
       '@panva/hkdf': 1.0.2
       cookie: 0.4.2
       jose: 4.9.2
+      nodemailer: 6.7.8
       oauth: 0.9.15
       openid-client: 5.1.9
       preact: 10.10.6
@@ -15428,6 +15431,11 @@ packages:
 
   /node-releases/2.0.6:
     resolution: {integrity: sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==}
+
+  /nodemailer/6.7.8:
+    resolution: {integrity: sha512-2zaTFGqZixVmTxpJRCFC+Vk5eGRd/fYtvIR+dl5u9QXLTQWGIf48x/JXvo58g9sa0bU6To04XUv554Paykum3g==}
+    engines: {node: '>=6.0.0'}
+    dev: false
 
   /normalize-package-data/2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
