@@ -22,11 +22,13 @@ export const Auth: FC<AuthProps> = ({
   const isEmail = z.string().email();
 
   return (
-    <main className="flex items-center justify-center min-h-screen">
+    <main className="flex items-center justify-center min-h-screen px-6 md:px-0">
       <div className="flex flex-col items-center">
         <Brand size={50} />
-        <h1 className="mt-3 text-3xl font-extrabold">Welcome to Noodle!</h1>
-        <p className="max-w-sm pt-2 text-center dark:text-zinc-300 text-zinc-700">
+        <h1 className="mt-3 text-2xl font-extrabold text-center md:text-3xl">
+          Welcome to Noodle!
+        </h1>
+        <p className="max-w-sm pt-2 text-sm text-center dark:text-zinc-300 text-zinc-700 md:text-base">
           Enter your email address or use one of the social media options to log
           back in or register!
         </p>
@@ -51,7 +53,7 @@ export const Auth: FC<AuthProps> = ({
             Let me in!
           </Button>
         </form>
-        <div className="flex items-center justify-between my-6">
+        <div className="flex items-center justify-between my-3 md:my-6">
           <span className="h-[1px] w-12 inline-block bg-zinc-700" />
           <p className="mx-3 dark:text-zinc-300 text-zinc-700">OR</p>
           <span className="h-[1px] w-12 inline-block bg-zinc-700" />
