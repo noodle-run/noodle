@@ -6,10 +6,16 @@ import '../styles/globals.css';
 import { nextSEO } from '../utils/next-seo.config';
 import { trpc } from '../utils/trpc';
 
-const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => (
+type CustomAppProps = AppProps & {
+  pageProps: {
+    session: Session;
+  };
+};
+
+const App = ({ Component, pageProps }: CustomAppProps) => (
   <>
     <DefaultSeo {...nextSEO} />
-    <SessionProvider session={session as Session}>
+    <SessionProvider session={pageProps.session}>
       <Component {...pageProps} />
     </SessionProvider>
   </>
