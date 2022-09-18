@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Navbar } from '../../templates/Navbar';
 
 export const Landing = () => (
-  <div className="h-screen overflow-hidden bg-[url('/bg.svg')] bg-bottom bg-no-repeat bg-cover">
+  <div className="min-h-screen overflow-hidden bg-[url('/bg.svg')] bg-bottom bg-no-repeat bg-cover">
     <main className="container px-6 py-8 mx-auto md:px-0">
       <Navbar />
       <header className="pt-24 text-center">
@@ -31,9 +31,9 @@ export const Landing = () => (
           </a>
         </div>
       </header>
+      <div className="max-w-5xl mx-auto pt-36 md:pt-64">
+        <Image src="/preview.png" alt="Preview" width={1920} height={1080} />
+      </div>
     </main>
-    <div className="absolute bottom-0 w-full px-6 -translate-x-1/2 lg:w-2/3 xl:w-1/2 lg:bottom-12 xl:bottom-24 -z-10 left-1/2 drop-shadow-md shadow-primary-500">
-      <Image src="/preview.png" alt="Preview" width={1920} height={1080} />
-    </div>
   </div>
 );
