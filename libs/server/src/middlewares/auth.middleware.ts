@@ -12,3 +12,5 @@ export const authMiddleWare = t.middleware(({ next, ctx }) => {
     },
   });
 });
+
+export const authProcedure = t.procedure.use(authMiddleWare);
