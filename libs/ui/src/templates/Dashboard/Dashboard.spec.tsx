@@ -1,76 +1,22 @@
-import { act, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
 import { Dashboard } from './Dashboard';
 
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: jest.fn().mockImplementation((query: string) => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: jest.fn(), // Deprecated
-    removeListener: jest.fn(), // Deprecated
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
-});
-
-const user = {
-  name: 'Ahmed Elsakaan',
-  course: 'Computer Science',
-  avatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
+const args = {
+  userName: 'Ahmed Elsakaan',
+  userCourse: 'Computer Science',
+  userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
 };
 
 describe('Dashboard template', () => {
   it('renders the logo', () => {
-    render(<Dashboard user={user}>Dashboard</Dashboard>);
+    render(<Dashboard {...args}>Dashboard</Dashboard>);
 
     expect(screen.getByTitle(/brand/i)).toBeInTheDocument();
   });
 
   it('renders the children', () => {
-    render(<Dashboard user={user}>Dashboard template</Dashboard>);
+    render(<Dashboard {...args}>Dashboard template</Dashboard>);
 
     expect(screen.getByText(/dashboard template/i)).toBeInTheDocument();
-  });
-
-  it('opens and closes the menu on mobile', async () => {
-    render(<Dashboard user={user}>Dashboard</Dashboard>);
-
-    const button = screen.getByTestId('menu-button');
-
-    expect(screen.getByTestId('menu-0')).toBeInTheDocument();
-    expect(screen.getByTitle('Open menu')).toBeInTheDocument();
-    expect(screen.queryByTitle('Close menu')).not.toBeInTheDocument();
-
-    // eslint-disable-next-line testing-library/no-unnecessary-act
-    await act(async () => {
-      await userEvent.click(button);
-    });
-
-    expect(screen.getByTestId('menu-auto')).toBeInTheDocument();
-    expect(screen.queryByTitle('Open menu')).not.toBeInTheDocument();
-    expect(screen.getByTitle('Close menu')).toBeInTheDocument();
-  });
-
-  it('renders the menu with auto height on desktop', () => {
-    Object.defineProperty(window, 'matchMedia', {
-      writable: true,
-      value: jest.fn().mockImplementation((query: string) => ({
-        matches: true,
-        media: query,
-        onchange: null,
-        addListener: jest.fn(), // Deprecated
-        removeListener: jest.fn(), // Deprecated
-        addEventListener: jest.fn(),
-        removeEventListener: jest.fn(),
-        dispatchEvent: jest.fn(),
-      })),
-    });
-
-    render(<Dashboard user={user}>Dashboard</Dashboard>);
-
-    expect(screen.getByTestId('menu-auto')).toBeInTheDocument();
   });
 });
