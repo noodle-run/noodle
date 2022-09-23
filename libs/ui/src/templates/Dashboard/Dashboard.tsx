@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { FC, PropsWithChildren, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiActivity, FiBook, FiMenu, FiX } from 'react-icons/fi';
 import { useMediaQuery } from 'usehooks-ts';
 import { Brand } from '../../atoms/Brand';
+import { SidebarLink } from '../../molecules/SidebarLink';
 
 export const Dashboard: FC<PropsWithChildren> = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ export const Dashboard: FC<PropsWithChildren> = ({ children }) => {
       <nav className="flex flex-col w-full p-3 lg:w-72 lg:p-6">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <a className="flex items-center gap-3 font-extrabold">
+            <a className="flex items-center gap-3 px-0 font-extrabold lg:px-3">
               <Brand size={36} />
               Noodle
             </a>
@@ -40,11 +41,20 @@ export const Dashboard: FC<PropsWithChildren> = ({ children }) => {
           duration={150}
           height={menuHeight}
         >
-          <ul className="pt-3">
+          <ul className="pt-3 lg:pt-6">
             <li>
-              <Link href="/modules">
-                <a>Modules</a>
-              </Link>
+              <SidebarLink
+                href="/dashboard"
+                label="Today's activity"
+                icon={<FiActivity />}
+              />
+            </li>
+            <li>
+              <SidebarLink
+                href="/dashboard/notebooks"
+                label="Notebooks"
+                icon={<FiBook />}
+              />
             </li>
           </ul>
         </AnimateHeight>
