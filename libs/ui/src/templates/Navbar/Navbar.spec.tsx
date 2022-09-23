@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Navbar } from './Navbar';
 
@@ -10,7 +10,10 @@ describe('Navigation bar template', () => {
 
     expect(screen.getByTestId('pages-links')).not.toHaveClass('absolute');
 
-    await userEvent.click(button);
+    // eslint-disable-next-line testing-library/no-unnecessary-act
+    await act(async () => {
+      await userEvent.click(button);
+    });
 
     expect(screen.getByTestId('pages-links')).toHaveClass('absolute');
   });
@@ -22,7 +25,10 @@ describe('Navigation bar template', () => {
 
     const button = screen.getByRole('button');
 
-    await userEvent.click(button);
+    // eslint-disable-next-line testing-library/no-unnecessary-act
+    await act(async () => {
+      await userEvent.click(button);
+    });
 
     expect(screen.getByTitle(/close-menu/i)).toBeInTheDocument();
   });

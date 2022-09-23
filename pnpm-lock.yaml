@@ -109,6 +109,7 @@ specifiers:
   prettier-plugin-organize-imports: ^3.1.1
   prisma: ^4.3.1
   react: ^18.2.0
+  react-animate-height: ^3.0.4
   react-dnd: 16.0.1
   react-dnd-html5-backend: 16.0.1
   react-dom: ^18.2.0
@@ -133,6 +134,7 @@ specifiers:
   tslib: ^2.4.0
   typescript: ^4.8.3
   url-loader: ^4.1.1
+  usehooks-ts: ^2.7.1
   zod: ^3.19.1
 
 dependencies:
@@ -171,6 +173,7 @@ dependencies:
   next-seo: 5.5.0_c3hne4hwj64hb7tofigd3bvkji
   nodemailer: 6.7.8
   react: 18.2.0
+  react-animate-height: 3.0.4_biqbaboplfbrettd7655fr4n2y
   react-dnd: 16.0.1_qwravoh5geot5nrl3riagcuhi4
   react-dnd-html5-backend: 16.0.1
   react-dom: 18.2.0_react@18.2.0
@@ -184,6 +187,7 @@ dependencies:
   superjson: 1.10.0
   tailwind-merge: 1.6.0
   tslib: 2.4.0
+  usehooks-ts: 2.7.1_biqbaboplfbrettd7655fr4n2y
   zod: 3.19.1
 
 devDependencies:
@@ -9200,6 +9204,10 @@ packages:
       typescript: 4.8.3
     dev: false
 
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
+
   /clean-css/4.2.4:
     resolution: {integrity: sha512-EJUDT7nDVFDvaQgAo2G/PJvxmp1o/c6iXLbswsBbUFXi1Nr+AjA2cKmfbKDMjMvzEe75g3P6JkaDDAKk96A85A==}
     engines: {node: '>= 4.0'}
@@ -17433,6 +17441,18 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
+  /react-animate-height/3.0.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-k+mBS8yCzpFp+7BdrHsL5bXd6CO/2bYO2SvRGKfxK+Ss3nzplAJLlgnd6Zhcxe/avdpy/CgcziicFj7pIHgG5g==}
+    engines: {node: '>= 12.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      classnames: 2.3.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /react-dnd-html5-backend/16.0.1:
     resolution: {integrity: sha512-Wu3dw5aDJmOGw8WjH1I1/yTH+vlXEL4vmjk5p+MHxP8HuHJS1lAGeIdG/hze1AvNeXWo/JgULV87LyQOr+r5jw==}
     dependencies:
@@ -20300,6 +20320,17 @@ packages:
     resolution: {integrity: sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /usehooks-ts/2.7.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-7WgP5ELpmJ/5rZ4P+YnfhLXdiGf1Xpy4iLnjcifBGmwBWXBBa9FZRRHNOiJJw1NKIAU9LOaKaps4G3KXLPhZ6w==}
+    engines: {node: '>=16.15.0', npm: '>=8'}
+    peerDependencies:
+      react: ^16.8.0  || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0  || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
