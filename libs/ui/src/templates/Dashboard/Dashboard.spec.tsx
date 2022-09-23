@@ -16,23 +16,29 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
+const user = {
+  name: 'Ahmed Elsakaan',
+  course: 'Computer Science',
+  avatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
+};
+
 describe('Dashboard template', () => {
   it('renders the logo', () => {
-    render(<Dashboard>Dashboard</Dashboard>);
+    render(<Dashboard user={user}>Dashboard</Dashboard>);
 
     expect(screen.getByTitle(/brand/i)).toBeInTheDocument();
   });
 
   it('renders the children', () => {
-    render(<Dashboard>Dashboard template</Dashboard>);
+    render(<Dashboard user={user}>Dashboard template</Dashboard>);
 
     expect(screen.getByText(/dashboard template/i)).toBeInTheDocument();
   });
 
   it('opens and closes the menu on mobile', async () => {
-    render(<Dashboard>Dashboard</Dashboard>);
+    render(<Dashboard user={user}>Dashboard</Dashboard>);
 
-    const button = screen.getByRole('button');
+    const button = screen.getByTestId('menu-button');
 
     expect(screen.getByTestId('menu-0')).toBeInTheDocument();
     expect(screen.getByTitle('Open menu')).toBeInTheDocument();
@@ -63,7 +69,7 @@ describe('Dashboard template', () => {
       })),
     });
 
-    render(<Dashboard>Dashboard</Dashboard>);
+    render(<Dashboard user={user}>Dashboard</Dashboard>);
 
     expect(screen.getByTestId('menu-auto')).toBeInTheDocument();
   });
