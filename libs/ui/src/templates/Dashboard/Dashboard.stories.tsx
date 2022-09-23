@@ -4,11 +4,9 @@ import { Dashboard } from './Dashboard';
 
 const args: ComponentProps<typeof Dashboard> = {
   children: 'Dashboard content',
-  user: {
-    name: 'Ahmed Elsakaan',
-    course: 'Computer Science',
-    avatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
-  },
+  userName: 'Ahmed Elsakaan',
+  userCourse: 'Computer Science',
+  userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
 };
 
 const config: Meta<typeof args> = {
