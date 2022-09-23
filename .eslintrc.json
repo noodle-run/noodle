@@ -76,7 +76,8 @@
         "@typescript-eslint/no-misused-promises": "off",
         "@typescript-eslint/no-floating-promises": "off",
         "jsx-a11y/anchor-is-valid": "off",
-        "no-param-reassign": "off"
+        "no-param-reassign": "off",
+        "arrow-body-style": "off"
       }
     },
     {

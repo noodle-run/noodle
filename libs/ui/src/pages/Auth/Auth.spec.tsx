@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Auth } from './Auth';
 
@@ -69,7 +69,11 @@ describe('Auth page', () => {
     );
     const email = 'johndoe123@gmail.com';
     const inputElement = screen.getByPlaceholderText('Enter your email');
-    await userEvent.type(inputElement, email);
+
+    // eslint-disable-next-line testing-library/no-unnecessary-act
+    await act(async () => {
+      await userEvent.type(inputElement, email);
+    });
 
     const loginButton = screen.getByText('Let me in!');
 
