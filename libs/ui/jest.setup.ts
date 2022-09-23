@@ -1,5 +1,8 @@
 import '@testing-library/jest-dom';
 import React, { ReactElement } from 'react';
+import ResizeObserver from 'resize-observer-polyfill';
+
+global.ResizeObserver = ResizeObserver;
 
 jest.mock(
   'next/link',
