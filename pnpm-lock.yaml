@@ -98,6 +98,7 @@ specifiers:
   jest-environment-jsdom: ^29.0.3
   jest-fetch-mock: ^3.0.3
   lint-staged: ^13.0.3
+  mockdate: ^3.0.5
   next: ^12.3.0
   next-auth: ^4.10.2
   next-mdx-remote: ^4.1.0
@@ -261,6 +262,7 @@ devDependencies:
   jest-environment-jsdom: 29.0.3
   jest-fetch-mock: 3.0.3
   lint-staged: 13.0.3
+  mockdate: 3.0.5
   nx: 14.7.5
   postcss: 8.4.16
   postcss-loader: 7.0.1_qjv4cptcpse3y5hrjkrbb7drda
@@ -15885,6 +15887,10 @@ packages:
     resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
     engines: {node: '>=10'}
     hasBin: true
+
+  /mockdate/3.0.5:
+    resolution: {integrity: sha512-iniQP4rj1FhBdBYS/+eQv7j1tadJ9lJtdzgOpvsOHng/GbcDh2Fhdeq+ZRldrPYdXvCyfFUmFeEwEGXZB5I/AQ==}
+    dev: true
 
   /move-concurrently/1.0.1:
     resolution: {integrity: sha512-hdrFxZOycD/g6A6SoI2bB5NA/5NEqD0569+S47WZhPvm46sD50ZHdYaFmnua5lndde9rCHGjmfK7Z8BuCt/PcQ==}
