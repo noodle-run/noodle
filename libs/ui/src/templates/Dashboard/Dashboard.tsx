@@ -1,5 +1,6 @@
 import { ComponentProps, FC, PropsWithChildren } from 'react';
 import { FiBook, FiCheck, FiGrid, FiHome } from 'react-icons/fi';
+import { Greeting } from '../../molecules/Greeting';
 import { Sidebar } from '../../organisms/Sidebar';
 
 type DashboardProps = {
@@ -41,7 +42,11 @@ export const Dashboard: FC<PropsWithChildren<DashboardProps>> = ({
           },
         ]}
       />
-      <div className="flex-1 p-6 rounded-2xl ring-1 dark:ring-zinc-800 ring-zinc-100">
+      <div className="flex-1 p-8 rounded-2xl ring-1 dark:ring-zinc-800 ring-zinc-100">
+        <Greeting
+          name="Ahmed"
+          quote='"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein'
+        />
         {children}
       </div>
     </main>

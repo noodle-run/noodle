@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { FiChevronDown, FiChevronUp, FiSettings, FiUser } from 'react-icons/fi';
+import { FiChevronUp, FiSettings, FiUser } from 'react-icons/fi';
 import { useMediaQuery } from 'usehooks-ts';
 import { DropdownMenu } from '../../atoms/DropdownMenu';
 
@@ -29,11 +29,7 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
               <p className="text-xs text-gray-500">{course}</p>
             </div>
           </div>
-          {isDesktop ? (
-            <FiChevronUp size={24} className="text-zinc-500" />
-          ) : (
-            <FiChevronDown size={20} className="text-zinc-500" />
-          )}
+          {isDesktop && <FiChevronUp size={24} className="text-zinc-500" />}
         </button>
       }
       list={[

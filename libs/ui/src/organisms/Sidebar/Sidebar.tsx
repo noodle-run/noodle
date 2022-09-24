@@ -29,7 +29,7 @@ export const Sidebar: FC<SidebarProps> = ({ user, links }) => {
               Noodle
             </a>
           </Link>
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
             {!isDesktop && <UserCard {...user} />}
             <button
               data-testid="menu-button"

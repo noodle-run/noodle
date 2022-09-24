@@ -134,6 +134,7 @@
     "jest-environment-jsdom": "^29.0.3",
     "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^13.0.3",
+    "mockdate": "^3.0.5",
     "nx": "^14.7.5",
     "postcss": "8.4.16",
     "postcss-loader": "^7.0.1",
