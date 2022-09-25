@@ -6,13 +6,13 @@ const styles = cva(['transition-colors'], {
   variants: {
     isStarred: {
       true: ['text-amber-400', 'fill-amber-400'],
-      false: ['text-gray-500'],
+      false: ['text-gray-500', 'dark:hover:text-white', 'hover:text-black'],
     },
   },
 });
 
 type StarButtonProps = VariantProps<typeof styles> & {
-  onChange: (newValue: boolean) => void;
+  onChange?: (newValue: boolean) => void;
 };
 
 export const StarButton: FC<StarButtonProps> = ({ isStarred, onChange }) => {
@@ -20,16 +20,19 @@ export const StarButton: FC<StarButtonProps> = ({ isStarred, onChange }) => {
 
   return (
     <button
+      className="p-1"
       onClick={() => {
         setStarred((current) => !current);
 
-        onChange(!starred);
+        if (onChange) {
+          onChange(!starred);
+        }
       }}
     >
       <FiStar
         title="Favourite"
         data-testid="favourite-icon"
-        size={24}
+        size={20}
         className={styles({ isStarred: starred })}
       />
     </button>

@@ -4,6 +4,7 @@ import { FC, ReactNode } from 'react';
 
 type DropdownMenuProps = {
   trigger: ReactNode;
+  side?: 'top' | 'bottom' | 'left' | 'right';
   list: {
     label: string;
     href: string;
@@ -11,13 +12,17 @@ type DropdownMenuProps = {
   }[];
 };
 
-export const DropdownMenu: FC<DropdownMenuProps> = ({ trigger, list }) => {
+export const DropdownMenu: FC<DropdownMenuProps> = ({
+  trigger,
+  list,
+  side = 'top',
+}) => {
   return (
     <RadixDropDown.Root>
       <RadixDropDown.Trigger asChild>{trigger}</RadixDropDown.Trigger>
       <RadixDropDown.Portal>
         <RadixDropDown.Content
-          side="top"
+          side={side}
           className="flex flex-col gap-1 px-3 py-2 text-black dark:text-white dark:bg-zinc-800 bg-zinc-100 rounded-2xl"
         >
           {list.map((item) => (
