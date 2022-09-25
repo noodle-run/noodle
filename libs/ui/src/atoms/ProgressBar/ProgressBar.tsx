@@ -39,7 +39,7 @@ type ProgressBarProps = VariantProps<typeof valueBarStyles> & {
 
 export const ProgressBar: FC<ProgressBarProps> = ({ value, color }) => {
   return (
-    <div className="relative w-full h-4 rounded-full dark:bg-zinc-800 bg-zinc-100">
+    <div className="relative w-full h-4 rounded-full dark:bg-zinc-700 bg-zinc-100">
       <div
         className={valueBarStyles({ color })}
         style={{ width: `${value}%` }}
