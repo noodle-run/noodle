@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .dark-layout {
-  @apply text-white;
+  @apply text-white bg-zinc-900;
 }
