@@ -21,7 +21,7 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
           <div className="flex items-center gap-3 text-left">
             <img
               src={avatar}
-              alt="Avatar"
+              alt={name}
               className="w-8 h-8 rounded-full lg:w-10 lg:h-10"
             />
             <div className="hidden lg:block">
