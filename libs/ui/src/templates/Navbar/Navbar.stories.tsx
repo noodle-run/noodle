@@ -4,6 +4,9 @@ import { Navbar } from './Navbar';
 const config: ComponentMeta<typeof Navbar> = {
   title: 'Templates / Navbar',
   component: Navbar,
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 };
 
 export default config;

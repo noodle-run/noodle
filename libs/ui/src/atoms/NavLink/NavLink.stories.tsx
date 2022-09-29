@@ -11,6 +11,13 @@ const config: Meta<typeof args> = {
   title: 'Atoms / NavLink',
   component: NavLink,
   args,
+  argTypes: {
+    external: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default config;

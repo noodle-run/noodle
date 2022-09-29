@@ -18,6 +18,13 @@ const config: Meta<typeof args> = {
   title: 'Molecules / Notebook Item',
   component: NotebookItem,
   args,
+  argTypes: {
+    defaultStarred: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default config;

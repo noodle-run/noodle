@@ -11,12 +11,12 @@ const args: ComponentProps<typeof TodaysActivity> = {
   recentModules: [
     {
       href: '/modules/1',
+      icon: '🧠',
       name: 'Algorithms and Complexity',
       code: 'CS2860',
       tasks: 3,
       color: 'red',
       progress: 45,
-      icon: <>🧠</>,
     },
   ],
   recentNotebooks: [
