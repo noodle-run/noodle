@@ -42,11 +42,7 @@ export const Dashboard: FC<PropsWithChildren<DashboardProps>> = ({
           },
         ]}
       />
-      <div className="flex-1 p-8 rounded-2xl ring-1 dark:ring-zinc-800 ring-zinc-100">
-        <Greeting
-          name="Ahmed"
-          quote='"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein'
-        />
+      <div className="flex-1 p-8 rounded-2xl ring-1 dark:ring-zinc-800 ring-zinc-100 overflow-y-scroll scrollbar-hide">
         {children}
       </div>
     </main>
