@@ -130,6 +130,7 @@ specifiers:
   style-loader: ^3.3.1
   superjson: ^1.10.0
   tailwind-merge: ^1.6.0
+  tailwind-scrollbar-hide: ^1.1.7
   tailwindcss: 3.1.8
   ts-jest: ^29.0.1
   ts-node: ^10.9.1
@@ -275,6 +276,7 @@ devDependencies:
   storybook-addon-paddings: 4.3.0_biqbaboplfbrettd7655fr4n2y
   storybook-dark-mode: 1.1.2_biqbaboplfbrettd7655fr4n2y
   style-loader: 3.3.1_webpack@5.74.0
+  tailwind-scrollbar-hide: 1.1.7
   tailwindcss: 3.1.8_57znarxsqwmnneadci5z5fd5gu
   ts-jest: 29.0.1_qhleighb64iy6v4s55b4ph3jw4
   ts-node: 10.9.1_bidgzm5cq2du6gnjtweqqjrrn4
@@ -19718,6 +19720,10 @@ packages:
   /tailwind-merge/1.6.0:
     resolution: {integrity: sha512-lfpys05uZMcVGIbgrrM/HlQGYKiPIcUhs76H1VrXo0gerpYkoLk4zjQTppdyAcBcmpzlzXJw7X0JniUKOr2hkg==}
     dev: false
+
+  /tailwind-scrollbar-hide/1.1.7:
+    resolution: {integrity: sha512-X324n9OtpTmOMqEgDUEA/RgLrNfBF/jwJdctaPZDzB3mppxJk7TLIDmOreEDm1Bq4R9LSPu4Epf8VSdovNU+iA==}
+    dev: true
 
   /tailwindcss/3.1.8_57znarxsqwmnneadci5z5fd5gu:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
