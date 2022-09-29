@@ -2,7 +2,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { FC } from 'react';
 
 const styles = cva(
-  ['px-2', 'py-1', 'text-xs', 'rounded-full', 'w-36', 'truncate'],
+  ['px-2', 'py-1', 'text-xs', 'rounded-full', 'truncate', 'w-20', 'lg:w-auto'],
   {
     variants: {
       color: {

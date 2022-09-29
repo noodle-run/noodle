@@ -9,7 +9,7 @@ const args: ComponentProps<typeof ModuleCard> = {
   tasks: 3,
   color: 'red',
   progress: 45,
-  icon: <>🧠</>,
+  icon: '🧠',
 };
 
 const config: Meta<typeof args> = {

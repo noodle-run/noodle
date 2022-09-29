@@ -6,9 +6,10 @@ describe('Dropdown menu atom', () => {
   it('renders the trigger', () => {
     render(
       <DropdownMenu
-        trigger={<button>Click me</button>}
         list={[{ href: '/', label: 'Home', icon: <p>home icon</p> }]}
-      />,
+      >
+        Click me
+      </DropdownMenu>,
     );
 
     expect(screen.getByText(/click me/i)).toBeInTheDocument();
@@ -17,9 +18,10 @@ describe('Dropdown menu atom', () => {
   it('renders the list', async () => {
     render(
       <DropdownMenu
-        trigger={<button>Click me</button>}
         list={[{ href: '/', label: 'Home', icon: <p>home icon</p> }]}
-      />,
+      >
+        Click me
+      </DropdownMenu>,
     );
 
     // eslint-disable-next-line testing-library/no-unnecessary-act

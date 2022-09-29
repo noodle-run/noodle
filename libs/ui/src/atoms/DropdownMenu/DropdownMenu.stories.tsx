@@ -1,25 +1,42 @@
 import { Meta, Story } from '@storybook/react';
 import { ComponentProps } from 'react';
-import { FiSettings } from 'react-icons/fi';
+import { FiSettings, FiUser } from 'react-icons/fi';
 import { DropdownMenu } from './DropdownMenu';
 
 const args: ComponentProps<typeof DropdownMenu> = {
-  trigger: <button>click me</button>,
+  children: 'click me',
   list: [
     {
+      label: 'Profile',
+      href: '/dashboard/profile',
+      icon: <FiUser />,
+    },
+    {
       label: 'Settings',
-      href: '/settings',
+      href: '/dashboard/settings',
       icon: <FiSettings />,
     },
   ],
+  pos: 'bottom',
 };
 
 const config: Meta<typeof args> = {
   title: 'Atoms / Dropdown Menu',
   component: DropdownMenu,
   args,
+  parameters: {
+    controls: {
+      exclude: [/^icon*/],
+    },
+  },
   argTypes: {
-    trigger: {
+    pos: { control: 'select', options: ['bottom', 'top'] },
+    list: {
+      table: {
+        disable: true,
+      },
+    },
+    buttonAs: {
       table: {
         disable: true,
       },

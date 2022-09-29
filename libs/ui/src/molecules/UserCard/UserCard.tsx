@@ -13,25 +13,8 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   return (
     <DropdownMenu
-      trigger={
-        <button
-          type="button"
-          className="flex items-center justify-center w-auto gap-3 p-3 transition-colors lg:w-full lg:justify-between focus-visible:border-none focus-within:outline-none"
-        >
-          <div className="flex items-center gap-3 text-left">
-            <img
-              src={avatar}
-              alt={name}
-              className="w-8 h-8 rounded-full lg:w-10 lg:h-10"
-            />
-            <div className="hidden lg:block">
-              <p className="text-sm font-semibold">{name}</p>
-              <p className="text-xs text-gray-500">{course}</p>
-            </div>
-          </div>
-          {isDesktop && <FiChevronUp size={24} className="text-zinc-500" />}
-        </button>
-      }
+      buttonAs="div"
+      pos="top"
       list={[
         {
           label: 'Profile',
@@ -44,6 +27,24 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
           icon: <FiSettings />,
         },
       ]}
-    />
+    >
+      <button
+        type="button"
+        className="flex items-center justify-center w-auto gap-3 p-3 transition-colors lg:w-full lg:justify-between focus-visible:border-none focus-within:outline-none"
+      >
+        <div className="flex items-center gap-3 text-left">
+          <img
+            src={avatar}
+            alt={name}
+            className="w-8 h-8 rounded-full lg:w-10 lg:h-10"
+          />
+          <div className="hidden lg:block">
+            <p className="text-sm font-semibold">{name}</p>
+            <p className="text-xs text-gray-500">{course}</p>
+          </div>
+        </div>
+        {isDesktop && <FiChevronUp size={24} className="text-zinc-500" />}
+      </button>
+    </DropdownMenu>
   );
 };

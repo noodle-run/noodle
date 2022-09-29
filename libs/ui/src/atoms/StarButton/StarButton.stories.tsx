@@ -4,13 +4,20 @@ import { StarButton } from './StarButton';
 
 const args: ComponentProps<typeof StarButton> = {
   isStarred: false,
-  onChange: () => {},
 };
 
 const config: Meta<typeof args> = {
   title: 'Atoms / Star Button',
   component: StarButton,
   args,
+  argTypes: {
+    onChange: {
+      action: 'toggled button',
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default config;
