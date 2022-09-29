@@ -1,6 +1,5 @@
 import { ComponentProps, FC, PropsWithChildren } from 'react';
 import { FiBook, FiCheck, FiGrid, FiHome } from 'react-icons/fi';
-import { Greeting } from '../../molecules/Greeting';
 import { Sidebar } from '../../organisms/Sidebar';
 
 type DashboardProps = {
@@ -42,7 +41,7 @@ export const Dashboard: FC<PropsWithChildren<DashboardProps>> = ({
           },
         ]}
       />
-      <div className="flex-1 p-8 rounded-2xl ring-1 dark:ring-zinc-800 ring-zinc-100 overflow-y-scroll scrollbar-hide">
+      <div className="flex-1 p-8 overflow-y-scroll rounded-2xl ring-1 dark:ring-zinc-800 ring-zinc-100 scrollbar-hide">
         {children}
       </div>
     </main>
