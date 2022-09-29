@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 import { Dashboard } from './Dashboard';
 
 const args: ComponentProps<typeof Dashboard> = {
-  children: '',
+  children: 'Dashboard content',
   userName: 'Ahmed Elsakaan',
   userCourse: 'Computer Science',
   userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
