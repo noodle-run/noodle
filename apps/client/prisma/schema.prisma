@@ -37,14 +37,18 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String     @id @default(cuid())
   name          String?
-  email         String?   @unique
+  email         String?    @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
-  years         Year[]
+  course        String?
+  year          Int?
+  modules       Module[]
+  notebooks     Notebook[]
+  tasks         Task[]
 }
 
 model VerificationToken {
@@ -55,29 +59,20 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Year {
-  id        String   @id @default(cuid())
-  number    Int      @unique @default(1)
-  startDate DateTime @default(now())
-  endDate   DateTime @default(now())
-  User      User?    @relation(fields: [userEmail], references: [email])
-  userEmail String?
-  modules   Module[]
-}
-
 model Module {
-  id      String  @id @default(cuid())
-  name    String  @unique
-  code    String  @unique
-  emoji   String?
-  color   String?
-  credits Int     @default(0)
-  year    Year    @relation(fields: [yearId], references: [id], onDelete: Cascade)
-  yearId  String
-  notes   Note[]
+  id        String     @id @default(cuid())
+  name      String     @unique
+  code      String     @unique
+  emoji     String?
+  color     String?
+  credits   Int        @default(0)
+  notebooks Notebook[]
+  tasks     Task[]
+  User      User?      @relation(fields: [userId], references: [id])
+  userId    String?
 }
 
-model Note {
+model Notebook {
   id        String   @id @default(cuid())
   title     String
   emoji     String?
@@ -86,4 +81,17 @@ model Note {
   updatedAt DateTime @updatedAt
   Module    Module   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
   moduleId  String
+  User      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+}
+
+model Task {
+  id          String   @id @default(cuid())
+  todo        String
+  dateCreated DateTime @default(now())
+  dueDate     DateTime
+  Module      Module   @relation(fields: [moduleId], references: [name], onDelete: Cascade)
+  moduleId    String
+  User        User?    @relation(fields: [userId], references: [id])
+  userId      String?
 }
