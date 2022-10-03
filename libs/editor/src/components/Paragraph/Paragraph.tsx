@@ -3,10 +3,24 @@ import {
   isElementEmpty,
   useEditorState,
 } from '@udecode/plate-core';
+import { cva } from 'class-variance-authority';
 import { FC } from 'react';
 import { useFocused, useSelected } from 'slate-react';
-import { twMerge } from 'tailwind-merge';
 import { EditorRenderElementProps } from '../../utils/EditorComponentProps';
+
+const styles = cva(['py-1', 'dark:text-zinc-200', 'text-zinc-800'], {
+  variants: {
+    placeholder: {
+      true: [
+        "before:content-['Type_something...']",
+        'before:block',
+        'before:cursor-text',
+        'before:absolute',
+        'before:opacity-25',
+      ],
+    },
+  },
+});
 
 export const Paragraph: FC<EditorRenderElementProps> = ({
   children,
@@ -23,14 +37,7 @@ export const Paragraph: FC<EditorRenderElementProps> = ({
     isEmptyBlock && isCollapsed(editor.selection) && focused && selected;
 
   return (
-    <p
-      className={twMerge(
-        'py-1 dark:text-zinc-300 text-zinc-700',
-        placeholderEnabled &&
-          "before:content-['Type_something...'] before:block before:cursor-text before:absolute before:opacity-25",
-      )}
-      {...attributes}
-    >
+    <p className={styles({ placeholder: placeholderEnabled })} {...attributes}>
       {children}
     </p>
   );

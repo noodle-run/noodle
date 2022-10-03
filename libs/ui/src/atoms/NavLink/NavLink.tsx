@@ -1,15 +1,29 @@
+import { cva } from 'class-variance-authority';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, ReactNode } from 'react';
-import { twMerge } from 'tailwind-merge';
 
-const baseStyles = twMerge(
-  'text-zinc-600 dark:text-zinc-400 transition-colors',
-  'hover:text-zinc-900 dark:hover:text-zinc-200',
-);
-
-const activeStyles = twMerge(
-  'text-primary-500 dark:text-primary-500 hover:text-primary-700 font-bold dark:hover:text-primary-700',
+const styles = cva(
+  [
+    'text-zinc-600',
+    'dark:text-zinc-400',
+    'transition-colors',
+    'hover:text-zinc-900',
+    'dark:hover:text-zinc-200',
+  ],
+  {
+    variants: {
+      active: {
+        true: [
+          'text-primary-500',
+          'dark:text-primary-500',
+          'hover:text-primary-700',
+          'font-bold',
+          'dark:hover:text-primary-700',
+        ],
+      },
+    },
+  },
 );
 
 type NavLinkProps = {
@@ -26,7 +40,7 @@ export const NavLink: FC<NavLinkProps> = ({ href, children, external }) => {
         href={href}
         target="_blank"
         rel="noreferrer noopener"
-        className={baseStyles}
+        className={styles({ active: false })}
       >
         {children}
       </a>
@@ -35,14 +49,7 @@ export const NavLink: FC<NavLinkProps> = ({ href, children, external }) => {
 
   return (
     <Link href={href}>
-      <a
-        className={twMerge(
-          baseStyles,
-          router.pathname === href && activeStyles,
-        )}
-      >
-        {children}
-      </a>
+      <a className={styles({ active: router.pathname === href })}>{children}</a>
     </Link>
   );
 };
