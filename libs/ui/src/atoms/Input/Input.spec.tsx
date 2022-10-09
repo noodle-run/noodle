@@ -4,7 +4,7 @@ import { Input } from './Input';
 
 describe('Input atom', () => {
   it('should render value', () => {
-    render(<Input defaultValue="johndoe@gmail.com" />);
+    render(<Input label="Email address" defaultValue="johndoe@gmail.com" />);
 
     const inputElement = screen.getByTestId('input-atom');
 
@@ -13,7 +13,7 @@ describe('Input atom', () => {
 
   it('should type into the input', async () => {
     const onChange = jest.fn();
-    render(<Input onChange={onChange} />);
+    render(<Input label="Email address" onChange={onChange} />);
 
     const inputElement = screen.getByTestId('input-atom');
 

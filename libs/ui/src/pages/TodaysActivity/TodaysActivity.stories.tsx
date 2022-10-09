@@ -3,8 +3,6 @@ import { ComponentProps } from 'react';
 import { TodaysActivity } from './TodaysActivity';
 
 const args: ComponentProps<typeof TodaysActivity> = {
-  userName: 'Ahmed Elsakaan',
-  userCourse: 'Computer Science',
   userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
   quote:
     '"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein',

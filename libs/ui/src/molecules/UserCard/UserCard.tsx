@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import { FiChevronUp, FiSettings, FiUser } from 'react-icons/fi';
+import { twMerge } from 'tailwind-merge';
 import { useMediaQuery } from 'usehooks-ts';
 import { DropdownMenu } from '../../atoms/DropdownMenu';
 
 type UserCardProps = {
-  name: string;
-  avatar: string;
-  course: string;
+  name?: string;
+  avatar?: string;
+  course?: string;
 };
 
 export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
@@ -30,7 +31,10 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
     >
       <button
         type="button"
-        className="flex items-center justify-center w-auto gap-3 p-3 transition-colors lg:w-full lg:justify-between focus-visible:border-none focus-within:outline-none"
+        className={twMerge(
+          'flex items-center lg:justify-start justify-center w-auto gap-3 p-3 transition-colors lg:w-full focus-visible:border-none focus-within:outline-none',
+          name && course && 'lg:justify-center',
+        )}
       >
         <div className="flex items-center gap-3 text-left">
           <img
@@ -38,10 +42,12 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
             alt={name}
             className="w-8 h-8 rounded-full lg:w-10 lg:h-10"
           />
-          <div className="hidden lg:block">
-            <p className="text-sm font-semibold">{name}</p>
-            <p className="text-xs text-gray-500">{course}</p>
-          </div>
+          {name && course && (
+            <div className="hidden lg:block">
+              <p className="text-sm font-semibold">{name}</p>
+              <p className="text-xs text-gray-500">{course}</p>
+            </div>
+          )}
         </div>
         {isDesktop && <FiChevronUp size={24} className="text-zinc-500" />}
       </button>

@@ -3,9 +3,9 @@ import { FiBook, FiCheck, FiGrid, FiHome } from 'react-icons/fi';
 import { Sidebar } from '../../organisms/Sidebar';
 
 type DashboardProps = {
-  userName: ComponentProps<typeof Sidebar>['user']['name'];
+  userName?: ComponentProps<typeof Sidebar>['user']['name'];
   userAvatar: ComponentProps<typeof Sidebar>['user']['avatar'];
-  userCourse: ComponentProps<typeof Sidebar>['user']['course'];
+  userCourse?: ComponentProps<typeof Sidebar>['user']['course'];
 };
 
 export const Dashboard: FC<PropsWithChildren<DashboardProps>> = ({
