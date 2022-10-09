@@ -27,7 +27,7 @@ export const TodaysActivity: FC<TodaysActivityProps> = ({
       userAvatar={userAvatar}
       userCourse={userCourse}
     >
-      <Greeting name={userName.split(' ')[0]} quote={quote} />
+      <Greeting name={userName && userName.split(' ')[0]} quote={quote} />
       <div className="flex flex-col">
         <section className="order-2 pt-9 lg:order-1">
           <h3 className="pb-3 text-xs lg:text-base dark:text-zinc-400 text-zinc-600">

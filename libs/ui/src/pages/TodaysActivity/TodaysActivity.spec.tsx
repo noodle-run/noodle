@@ -37,17 +37,17 @@ const args: ComponentProps<typeof TodaysActivity> = {
 describe("Today's Activity page", () => {
   it('renders the user name', () => {
     render(<TodaysActivity {...args} />);
-    expect(screen.getByText(args.userName)).toBeInTheDocument();
+    expect(screen.getByText(args.userName as string)).toBeInTheDocument();
   });
 
   it('renders the user course', () => {
     render(<TodaysActivity {...args} />);
-    expect(screen.getByText(args.userCourse)).toBeInTheDocument();
+    expect(screen.getByText(args.userCourse as string)).toBeInTheDocument();
   });
 
   it('renders the user avatar', () => {
     render(<TodaysActivity {...args} />);
-    expect(screen.getByAltText(args.userName)).toBeInTheDocument();
+    expect(screen.getByAltText(args.userName as string)).toBeInTheDocument();
   });
 
   it('renders the quote', () => {

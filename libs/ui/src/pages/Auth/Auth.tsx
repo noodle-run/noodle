@@ -41,7 +41,7 @@ export const Auth: FC<AuthProps> = ({
         >
           <Input
             type="email"
-            placeholder="Enter your email"
+            label="Email address"
             onChange={(e) => setEmail(e.target.value)}
           />
           <Button

@@ -22,7 +22,7 @@ describe('Auth page', () => {
         onMagicLinkLogin={jest.fn()}
       />,
     );
-    expect(screen.getByPlaceholderText('Enter your email')).toBeInTheDocument();
+    expect(screen.getByTestId('input-atom')).toBeInTheDocument();
   });
 
   it('should render login button', () => {
@@ -68,7 +68,7 @@ describe('Auth page', () => {
       />,
     );
     const email = 'johndoe123@gmail.com';
-    const inputElement = screen.getByPlaceholderText('Enter your email');
+    const inputElement = screen.getByTestId('input-atom');
 
     // eslint-disable-next-line testing-library/no-unnecessary-act
     await act(async () => {

@@ -18,5 +18,10 @@ export default config;
 
 const Template: Story<typeof args> = (props) => <UserCard {...props} />;
 
-export const Default = Template.bind({});
-Default.storyName = 'User Card';
+export const NoUserDetails = Template.bind({});
+NoUserDetails.args = {
+  name: undefined,
+  course: undefined,
+};
+
+export const Normal = Template.bind({});

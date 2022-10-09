@@ -1,7 +1,7 @@
 import { FC, useMemo } from 'react';
 
 type GreetingProps = {
-  name: string;
+  name?: string;
   quote: string;
 };
 
@@ -23,8 +23,8 @@ export const Greeting: FC<GreetingProps> = ({ name, quote }) => {
 
   return (
     <div>
-      <h1 className="text-2xl lg:text-3xl font-semibold pb-1">
-        {genGreeting}, {name}!
+      <h1 className="pb-1 text-2xl font-semibold lg:text-3xl">
+        {genGreeting} {name && `, ${name}!`}
       </h1>
       <h3 className="text-sm lg:text-base text-zinc-700 max-w-[70ch] dark:text-zinc-400">
         {quote}

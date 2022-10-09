@@ -4,7 +4,7 @@ import { Input } from './Input';
 
 const args: ComponentProps<typeof Input> = {
   type: 'email',
-  placeholder: 'Enter your email',
+  label: 'Email address',
 };
 
 const config: Meta<typeof args> = {

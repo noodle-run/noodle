@@ -26,13 +26,13 @@ describe('UserCard molecule', () => {
   it('should render name', () => {
     render(<UserCard {...args} />);
 
-    expect(screen.getByText(args.name)).toBeInTheDocument();
+    expect(screen.getByText(args.name as string)).toBeInTheDocument();
   });
 
   it('should render course', () => {
     render(<UserCard {...args} />);
 
-    expect(screen.getByText(args.course)).toBeInTheDocument();
+    expect(screen.getByText(args.course as string)).toBeInTheDocument();
   });
 
   it('should render avatar', () => {
