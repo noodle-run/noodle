@@ -28,5 +28,36 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env['GOOGLE_CLIENT_SECRET'] as string,
     }),
   ],
+  events: {
+    signIn: async (message) => {
+      if (message.isNewUser) {
+        const module = await prisma.module.create({
+          data: {
+            name: 'Welcome',
+            code: 'N001',
+            emoji: '👋',
+            User: {
+              connect: {
+                id: message.user.id,
+              },
+            },
+          },
+        });
+        await prisma.notebook.create({
+          data: {
+            title: 'Get started using Noodle!',
+            emoji: '👋',
+            content:
+              '[{"type":"h1","children":[{"text":"Getting started with Noodle!"}]},{"type":"p","children":[{"text":"Welcome to Noodle, we are glad to have you here!"}]}]',
+            Module: {
+              connect: {
+                id: module.id,
+              },
+            },
+          },
+        });
+      }
+    },
+  },
   secret: process.env['NEXTAUTH_SECRET'],
 };
