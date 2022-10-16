@@ -16,17 +16,12 @@ type TodaysActivityProps = Omit<
 export const TodaysActivity: FC<TodaysActivityProps> = ({
   userName,
   userAvatar,
-  userCourse,
   quote,
   recentModules,
   recentNotebooks,
 }) => {
   return (
-    <Dashboard
-      userName={userName}
-      userAvatar={userAvatar}
-      userCourse={userCourse}
-    >
+    <Dashboard userName={userName} userAvatar={userAvatar}>
       <Greeting name={userName && userName.split(' ')[0]} quote={quote} />
       <div className="flex flex-col">
         <section className="order-2 pt-9 lg:order-1">

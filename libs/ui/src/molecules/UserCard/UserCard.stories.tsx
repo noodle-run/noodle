@@ -4,7 +4,6 @@ import { UserCard } from './UserCard';
 
 const args: ComponentProps<typeof UserCard> = {
   name: 'Ahmed Elsakaan',
-  course: 'Computer Science',
   avatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
 };
 
@@ -21,7 +20,6 @@ const Template: Story<typeof args> = (props) => <UserCard {...props} />;
 export const NoUserDetails = Template.bind({});
 NoUserDetails.args = {
   name: undefined,
-  course: undefined,
 };
 
 export const Normal = Template.bind({});

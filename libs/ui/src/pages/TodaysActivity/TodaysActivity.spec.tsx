@@ -4,7 +4,6 @@ import { TodaysActivity } from './TodaysActivity';
 
 const args: ComponentProps<typeof TodaysActivity> = {
   userName: 'Ahmed Elsakaan',
-  userCourse: 'Computer Science',
   userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
   quote:
     '"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein',
@@ -38,11 +37,6 @@ describe("Today's Activity page", () => {
   it('renders the user name', () => {
     render(<TodaysActivity {...args} />);
     expect(screen.getByText(args.userName as string)).toBeInTheDocument();
-  });
-
-  it('renders the user course', () => {
-    render(<TodaysActivity {...args} />);
-    expect(screen.getByText(args.userCourse as string)).toBeInTheDocument();
   });
 
   it('renders the user avatar', () => {

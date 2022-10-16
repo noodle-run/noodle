@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
+import { ComponentProps } from 'react';
 import { Dashboard } from './Dashboard';
 
-const args = {
+const args: ComponentProps<typeof Dashboard> = {
   userName: 'Ahmed Elsakaan',
-  userCourse: 'Computer Science',
   userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
 };
 
