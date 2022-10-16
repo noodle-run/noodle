@@ -22,5 +22,10 @@ export default config;
 
 const Template: Story<typeof args> = (props) => <ModuleCard {...props} />;
 
-export const Default = Template.bind({});
-Default.storyName = 'Module Card';
+export const Normal = Template.bind({});
+
+export const NoTasks = Template.bind({});
+NoTasks.args = {
+  progress: undefined,
+  tasks: undefined,
+};

@@ -8,8 +8,8 @@ type ModuleCardProps = {
   color: ComponentProps<typeof ProgressBar>['color'];
   name: string;
   code: string;
-  tasks: number;
-  progress: number;
+  tasks?: number;
+  progress?: number;
 };
 
 export const ModuleCard: FC<ModuleCardProps> = ({
@@ -29,12 +29,14 @@ export const ModuleCard: FC<ModuleCardProps> = ({
         <p className="pt-1 pb-3 text-sm dark:text-zinc-400 text-zinc-600">
           {code}
         </p>
-        <div className="flex flex-col gap-1">
-          <span className="text-xs text-zinc-500 pb-[2px]">
-            {tasks} {tasks === 1 ? 'task' : 'tasks'} remaining
-          </span>
-          <ProgressBar value={progress} color={color} />
-        </div>
+        {progress && tasks && (
+          <div className="flex flex-col gap-1">
+            <span className="text-xs text-zinc-500 pb-[2px]">
+              {tasks} {tasks === 1 ? 'task' : 'tasks'} remaining
+            </span>
+            <ProgressBar value={progress} color={color} />
+          </div>
+        )}
       </a>
     </Link>
   );
