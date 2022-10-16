@@ -7,10 +7,9 @@ import { DropdownMenu } from '../../atoms/DropdownMenu';
 type UserCardProps = {
   name?: string;
   avatar?: string;
-  course?: string;
 };
 
-export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
+export const UserCard: FC<UserCardProps> = ({ name, avatar }) => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   return (
     <DropdownMenu
@@ -33,7 +32,7 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
         type="button"
         className={twMerge(
           'flex items-center lg:justify-start justify-center w-auto gap-3 p-3 transition-colors lg:w-full focus-visible:border-none focus-within:outline-none',
-          name && course && 'lg:justify-center',
+          name && 'lg:justify-center',
         )}
       >
         <div className="flex items-center gap-3 text-left">
@@ -42,10 +41,9 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar, course }) => {
             alt={name}
             className="w-8 h-8 rounded-full lg:w-10 lg:h-10"
           />
-          {name && course && (
+          {name && (
             <div className="hidden lg:block">
               <p className="text-sm font-semibold">{name}</p>
-              <p className="text-xs text-gray-500">{course}</p>
             </div>
           )}
         </div>

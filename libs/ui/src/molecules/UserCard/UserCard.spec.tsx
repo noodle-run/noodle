@@ -18,7 +18,6 @@ Object.defineProperty(window, 'matchMedia', {
 
 const args: ComponentProps<typeof UserCard> = {
   name: 'Ahmed Elsakaan',
-  course: 'Computer Science',
   avatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
 };
 
@@ -27,12 +26,6 @@ describe('UserCard molecule', () => {
     render(<UserCard {...args} />);
 
     expect(screen.getByText(args.name as string)).toBeInTheDocument();
-  });
-
-  it('should render course', () => {
-    render(<UserCard {...args} />);
-
-    expect(screen.getByText(args.course as string)).toBeInTheDocument();
   });
 
   it('should render avatar', () => {

@@ -5,19 +5,17 @@ import { Sidebar } from '../../organisms/Sidebar';
 type DashboardProps = {
   userName?: ComponentProps<typeof Sidebar>['user']['name'];
   userAvatar: ComponentProps<typeof Sidebar>['user']['avatar'];
-  userCourse?: ComponentProps<typeof Sidebar>['user']['course'];
 };
 
 export const Dashboard: FC<PropsWithChildren<DashboardProps>> = ({
   children,
   userName,
   userAvatar,
-  userCourse,
 }) => {
   return (
     <main className="flex flex-col h-screen gap-3 p-3 lg:p-6 lg:flex-row lg:gap-6">
       <Sidebar
-        user={{ name: userName, avatar: userAvatar, course: userCourse }}
+        user={{ name: userName, avatar: userAvatar }}
         links={[
           {
             label: "Today's Activity",
