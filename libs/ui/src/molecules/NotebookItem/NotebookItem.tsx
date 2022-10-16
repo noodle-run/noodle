@@ -1,14 +1,12 @@
 import Link from 'next/link';
 import { ComponentProps, FC } from 'react';
 import { ModuleTag } from '../../atoms/ModuleTag';
-import { StarButton } from '../../atoms/StarButton';
 
 type NotebookItemProps = {
   emoji: string;
   title: string;
   lastEdited: string;
   label: ComponentProps<typeof ModuleTag>;
-  defaultStarred: boolean;
   href: string;
 };
 
@@ -18,7 +16,6 @@ export const NotebookItem: FC<NotebookItemProps> = ({
   lastEdited,
   label,
   href,
-  defaultStarred,
 }) => {
   return (
     <Link href={href}>
@@ -29,11 +26,10 @@ export const NotebookItem: FC<NotebookItemProps> = ({
             {title}
           </span>
         </span>
-        <div className="flex items-center gap-3 pr-3">
+        <div className="flex items-center gap-3 pr-5">
           <p className="text-xs text-zinc-500">{lastEdited}</p>
           <div className="flex items-center gap-3">
             <ModuleTag {...label} />
-            <StarButton isStarred={defaultStarred} />
           </div>
         </div>
       </a>
