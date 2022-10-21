@@ -10,7 +10,6 @@ describe('NotebookItem molecule', () => {
         lastEdited="2 days ago"
         label={{ name: 'Artificial Intelligence', color: 'blue' }}
         href="/notebooks/ai"
-        defaultStarred={false}
       />,
     );
 
@@ -26,7 +25,6 @@ describe('NotebookItem molecule', () => {
         lastEdited="2 days ago"
         label={{ name: 'Artificial Intelligence', color: 'blue' }}
         href="/notebooks/ai"
-        defaultStarred={false}
       />,
     );
 

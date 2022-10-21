@@ -28,7 +28,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'IT Project Management',
         color: 'green',
       },
-      defaultStarred: false,
     },
   ],
 };
