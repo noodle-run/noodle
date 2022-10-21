@@ -6,7 +6,6 @@ import { Sidebar } from './Sidebar';
 const args: ComponentProps<typeof Sidebar> = {
   user: {
     name: 'Ahmed Elsakaan',
-    course: 'Computer Science',
     avatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
   },
   links: [
