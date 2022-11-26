@@ -64,7 +64,14 @@ export const Auth: FC<AuthProps> = ({
           </Button>
           <Button
             onClick={onGoogleLogin}
-            icon={<Image src="/Google__G__Logo.svg" width={20} height={20} />}
+            icon={
+              <Image
+                src="/Google__G__Logo.svg"
+                alt="Google logo"
+                width={20}
+                height={20}
+              />
+            }
             variant="white"
           >
             Continue with Google
