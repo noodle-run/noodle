@@ -16,7 +16,7 @@ export const Landing = () => (
           efficiently.
         </p>
         <div className="flex items-center justify-center gap-4 pt-6 md:gap-6">
-          <Link href="/about">
+          <Link legacyBehavior href="/about">
             <a className="px-4 py-2 text-sm font-semibold text-white transition-colors rounded-lg md:text-base hover:bg-primary-700 bg-primary-500">
               Learn more
             </a>

@@ -13,7 +13,7 @@ export const Navbar = () => {
 
   return (
     <nav className="relative flex justify-between">
-      <Link href="/">
+      <Link legacyBehavior href="/">
         <a className="flex items-center gap-3 font-extrabold">
           <Brand size={35} />
           <span>Noodle</span>

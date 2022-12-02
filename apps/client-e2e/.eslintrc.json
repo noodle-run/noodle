@@ -1,26 +1,22 @@
 {
-  "extends": ["plugin:cypress/recommended", "../../.eslintrc.json"],
+  "extends": ["../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        "jest/no-done-callback": "off"
+      }
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "parserOptions": {
-        "project": "apps/client-e2e/tsconfig.eslint.json"
-      },
-      "settings": {
-        "disable/plugins": ["jest"]
+      "rules": {
+        "jest/no-done-callback": "off"
       }
     },
     {
-      "files": ["src/plugins/index.js"],
-      "rules": {
-        "@typescript-eslint/no-var-requires": "off",
-        "no-undef": "off"
-      }
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
     }
   ]
 }
