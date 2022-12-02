@@ -53,3 +53,8 @@ Thumbs.db
 .next
 
 storybook-static
+
+# Playwright
+**/test-results
+**/playwright-report
+**/playwright/.cache

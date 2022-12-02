@@ -1,14 +1,15 @@
 {
+  "name": "client-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/client-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
-      "executor": "@nrwl/cypress:cypress",
+      "executor": "@mands/nx-playwright:playwright-executor",
       "options": {
-        "cypressConfig": "apps/client-e2e/cypress.config.ts",
-        "devServerTarget": "client:serve:development",
-        "testingType": "e2e"
+        "e2eFolder": "apps/client-e2e",
+        "devServerTarget": "client:serve",
+        "packageRunner": "pnpm"
       },
       "configurations": {
         "production": {
@@ -16,11 +17,21 @@
         }
       }
     },
+    "ts-check": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "tsc --build --force --verbose apps/client-e2e/tsconfig.json"
+          }
+        ]
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/client-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/client-e2e/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },

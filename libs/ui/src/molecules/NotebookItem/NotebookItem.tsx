@@ -18,7 +18,7 @@ export const NotebookItem: FC<NotebookItemProps> = ({
   href,
 }) => {
   return (
-    <Link href={href}>
+    <Link legacyBehavior href={href}>
       <a className="flex items-center justify-between transition-colors dark:bg-zinc-800 bg-zinc-100 rounded-xl dark:hover:bg-zinc-700/50 hover:bg-zinc-100">
         <span className="flex items-center flex-1 gap-3 px-5 py-3 truncate">
           <span className="text-sm lg:text-base">{emoji}</span>

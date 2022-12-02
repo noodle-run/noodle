@@ -22,7 +22,7 @@ export const ModuleCard: FC<ModuleCardProps> = ({
   color,
 }) => {
   return (
-    <Link href={href}>
+    <Link legacyBehavior href={href}>
       <a className="block p-6 transition-colors hover:dark:bg-zinc-700/50 hover:bg-zinc-200 bg-zinc-100 dark:bg-zinc-800 rounded-2xl">
         <span className="text-base lg:text-lg">{icon}</span>
         <h3 className="pt-2 text-base lg:text-lg">{name}</h3>
