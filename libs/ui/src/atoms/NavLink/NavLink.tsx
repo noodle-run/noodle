@@ -48,8 +48,8 @@ export const NavLink: FC<NavLinkProps> = ({ href, children, external }) => {
   }
 
   return (
-    <Link legacyBehavior href={href}>
-      <a className={styles({ active: router.pathname === href })}>{children}</a>
+    <Link className={styles({ active: router.pathname === href })} href={href}>
+      {children}
     </Link>
   );
 };
