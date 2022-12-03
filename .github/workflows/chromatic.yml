@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'pnpm'
-      - run: pnpm install
+      - run: pnpm install --prefer-offline --frozen-lockfile
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:
