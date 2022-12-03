@@ -58,11 +58,12 @@ export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({
             as="li"
             className="transition-colors ui-active:bg-zinc-300 dark:ui-active:bg-zinc-700/50 rounded-xl hover:bg-zinc-300 dark:hover:bg-zinc-700/50"
           >
-            <Link legacyBehavior href={item.href}>
-              <a className="flex items-center gap-3 px-3 text-sm h-9">
-                {item.icon}
-                {item.label}
-              </a>
+            <Link
+              className="flex items-center gap-3 px-3 text-sm h-9"
+              href={item.href}
+            >
+              <span>{item.icon}</span>
+              <span>{item.label}</span>
             </Link>
           </Menu.Item>
         ))}
