@@ -47,7 +47,7 @@ describe('Module Card Molecule', () => {
     render(<ModuleCard {...args} />);
 
     expect(
-      screen.getByText(`${args.tasks} tasks remaining`),
+      screen.getByText(`${args.tasks as number} tasks remaining`),
     ).toBeInTheDocument();
   });
 
