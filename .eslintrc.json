@@ -73,8 +73,12 @@
         "react/jsx-one-expression-per-line": "off",
         "object-curly-newline": "off",
         "operator-linebreak": "off",
-        "@typescript-eslint/no-misused-promises": "off",
-        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-misused-promises": [
+          "error",
+          { "checksVoidReturn": false }
+        ],
+        "@typescript-eslint/no-floating-promises": "error",
+        "no-void": "off",
         "jsx-a11y/anchor-is-valid": "off",
         "no-param-reassign": "off",
         "arrow-body-style": "off",
