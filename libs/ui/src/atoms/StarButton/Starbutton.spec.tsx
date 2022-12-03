@@ -16,12 +16,12 @@ describe('StarButton atom', () => {
     expect(icon).toHaveClass('text-amber-400');
   });
 
-  it('calls the onChange handler when clicked', () => {
+  it('calls the onChange handler when clicked', async () => {
     const onChange = jest.fn();
     render(<StarButton isStarred={false} onChange={onChange} />);
     const button = screen.getByRole('button');
 
-    act(() => {
+    await act(() => {
       button.click();
     });
 
