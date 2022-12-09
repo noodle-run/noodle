@@ -8,7 +8,7 @@ type TodaysActivityProps = Omit<
   ComponentProps<typeof Dashboard>,
   'children'
 > & {
-  quote: string;
+  greetingProps: ComponentProps<typeof Greeting>;
   recentModules: ComponentProps<typeof ModuleCard>[];
   recentNotebooks: ComponentProps<typeof NotebookItem>[];
 };
@@ -16,13 +16,13 @@ type TodaysActivityProps = Omit<
 export const TodaysActivity: FC<TodaysActivityProps> = ({
   userName,
   userAvatar,
-  quote,
+  greetingProps,
   recentModules,
   recentNotebooks,
 }) => {
   return (
     <Dashboard userName={userName} userAvatar={userAvatar}>
-      <Greeting name={userName && userName.split(' ')[0]} quote={quote} />
+      <Greeting {...greetingProps} />
       <div className="flex flex-col">
         <section className="order-2 pt-9 lg:order-1">
           <h3 className="pb-3 text-xs lg:text-base dark:text-zinc-400 text-zinc-600">

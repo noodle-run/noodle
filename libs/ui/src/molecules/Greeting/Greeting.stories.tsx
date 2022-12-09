@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 import { Greeting } from './Greeting';
 
 const args: ComponentProps<typeof Greeting> = {
-  name: 'Ahmed',
+  greeting: 'Good morning, John Doe!',
   quote:
     '"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein',
 };

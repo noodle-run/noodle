@@ -5,8 +5,11 @@ import { TodaysActivity } from './TodaysActivity';
 const args: ComponentProps<typeof TodaysActivity> = {
   userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
   userName: 'Ahmed Elsakaan',
-  quote:
-    '"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein',
+  greetingProps: {
+    greeting: 'Good morning, John Doe!',
+    quote:
+      '"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein',
+  },
   recentModules: [
     {
       href: '/modules/1',
@@ -54,7 +57,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'Algorithms and Complexity',
         color: 'red',
       },
-      defaultStarred: false,
     },
     {
       emoji: '✨',
@@ -65,7 +67,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'IT Project Management',
         color: 'green',
       },
-      defaultStarred: false,
     },
     {
       emoji: '👩‍🎨',
@@ -76,7 +77,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'User centered design',
         color: 'indigo',
       },
-      defaultStarred: false,
     },
     {
       emoji: '📌',
@@ -87,7 +87,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'Final Year Project',
         color: 'amber',
       },
-      defaultStarred: false,
     },
     {
       emoji: '🔐',
@@ -98,7 +97,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'Malicious Software',
         color: 'blue',
       },
-      defaultStarred: false,
     },
   ],
 };
