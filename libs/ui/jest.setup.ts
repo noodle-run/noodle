@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 
 global.ResizeObserver = ResizeObserver;
@@ -17,13 +17,6 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 });
-
-jest.mock(
-  'next/link',
-  () =>
-    ({ children, ...rest }: { children: ReactElement }) =>
-      React.cloneElement(children, { ...rest }),
-);
 
 jest.mock(
   'next/image',

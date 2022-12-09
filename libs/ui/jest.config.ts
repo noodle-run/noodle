@@ -10,7 +10,7 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/stitches',
+  coverageDirectory: '../../coverage/libs/ui',
   coverageReporters: ['text'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };
