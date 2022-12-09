@@ -5,8 +5,11 @@ import { TodaysActivity } from './TodaysActivity';
 const args: ComponentProps<typeof TodaysActivity> = {
   userName: 'Ahmed Elsakaan',
   userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
-  quote:
-    '"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein',
+  greetingProps: {
+    greeting: 'Good morning, John Doe!',
+    quote:
+      '"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein',
+  },
   recentModules: [
     {
       href: '/modules/1',
@@ -43,9 +46,14 @@ describe("Today's Activity page", () => {
     expect(screen.getByAltText(args.userName as string)).toBeInTheDocument();
   });
 
+  it('renders the greeting', () => {
+    render(<TodaysActivity {...args} />);
+    expect(screen.getByText(args.greetingProps?.greeting)).toBeInTheDocument();
+  });
+
   it('renders the quote', () => {
     render(<TodaysActivity {...args} />);
-    expect(screen.getByText(args.quote)).toBeInTheDocument();
+    expect(screen.getByText(args.greetingProps.quote)).toBeInTheDocument();
   });
 
   it('renders the recent modules', () => {
