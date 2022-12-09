@@ -78,7 +78,7 @@ specifiers:
   autoprefixer: 10.4.13
   babel-jest: ^29.3.1
   babel-loader: ^9.1.0
-  chromatic: ^6.11.4
+  chromatic: ^6.12.0
   class-variance-authority: ^0.4.0
   core-js: ^3.26.1
   css-loader: ^6.4.0
@@ -254,7 +254,7 @@ devDependencies:
   autoprefixer: 10.4.13_postcss@8.4.19
   babel-jest: 29.3.1_@babel+core@7.20.5
   babel-loader: 9.1.0_ztqwsvkb6z73luspkai6ilstpu
-  chromatic: 6.11.4
+  chromatic: 6.12.0
   css-loader: 6.7.2_webpack@5.75.0
   eslint: 8.29.0
   eslint-config-airbnb: 19.0.4_u6r7wmyqgznou2plc6ye67x2ku
@@ -10671,8 +10671,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /chromatic/6.11.4:
-    resolution: {integrity: sha512-f1TcuIXKjGUuOjPuwFF44kzbuEcESFcDxHzrzWPLmHuC90dV8HLxbufqYaTOBYMO/rJ32Zftb7S9pXuF/Rhfog==}
+  /chromatic/6.12.0:
+    resolution: {integrity: sha512-Xm+GeBzaRFeTeqZb07Tx9FjkP63PTbVmX1FA8HPJq1dpthgUKATX7g53cw6ZET6+gCogGKuvsfIcB+naAqTQDQ==}
     hasBin: true
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
