@@ -30,9 +30,6 @@ export const Navbar = () => {
             <NavLink href="/">Home</NavLink>
           </li>
           <li>
-            <NavLink href="/about">About</NavLink>
-          </li>
-          <li>
             <NavLink
               href="https://github.com/ixahmedxi/noodle/blob/main/CONTRIBUTING.md"
               external
@@ -50,7 +47,7 @@ export const Navbar = () => {
           </li>
         </ul>
         <div className="w-[1px] h-8 bg-zinc-200 dark:bg-zinc-700 hidden md:inline-block" />
-        <ul className="flex gap-6">
+        <ul className="flex gap-6 items-center">
           <li>
             <NavLink href="https://github.com/ixahmedxi/noodle" external>
               <FiGithub title="Github" size={22} />

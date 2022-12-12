@@ -15,6 +15,29 @@ describe('Dropdown menu atom', () => {
     expect(screen.getByText(/click me/i)).toBeInTheDocument();
   });
 
+  it('triggers list item on click', async () => {
+    const listItemOnClick = jest.fn();
+    render(
+      <DropdownMenu
+        list={[
+          { onClick: listItemOnClick, label: 'Sign out', icon: <>icon</> },
+        ]}
+      >
+        Click me
+      </DropdownMenu>,
+    );
+
+    await act(async () => {
+      await userEvent.click(screen.getByRole('button', { name: 'Click me' }));
+    });
+
+    await act(async () => {
+      await userEvent.click(screen.getByText('Sign out'));
+    });
+
+    expect(listItemOnClick).toHaveBeenCalledTimes(1);
+  });
+
   it('renders the list', async () => {
     render(
       <DropdownMenu

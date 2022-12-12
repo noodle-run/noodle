@@ -1,5 +1,6 @@
+import { signOut } from 'next-auth/react';
 import { FC } from 'react';
-import { FiChevronUp, FiSettings, FiUser } from 'react-icons/fi';
+import { FiChevronUp, FiLogOut, FiSettings, FiUser } from 'react-icons/fi';
 import { twMerge } from 'tailwind-merge';
 import { useMediaQuery } from 'usehooks-ts';
 import { DropdownMenu } from '../../atoms/DropdownMenu';
@@ -22,6 +23,11 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar }) => {
           icon: <FiUser />,
         },
         {
+          label: 'Sign out',
+          onClick: () => signOut(),
+          icon: <FiLogOut />,
+        },
+        {
           label: 'Settings',
           href: '/dashboard/settings',
           icon: <FiSettings />,
@@ -37,7 +43,7 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar }) => {
       >
         <div className="flex items-center gap-3 text-left">
           <img
-            src={avatar}
+            src={avatar || '/user-placeholder.svg'}
             alt={name}
             className="w-8 h-8 rounded-full lg:w-10 lg:h-10"
           />

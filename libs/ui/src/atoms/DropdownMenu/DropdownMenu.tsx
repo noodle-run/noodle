@@ -33,13 +33,13 @@ const menuContentStyles = cva(
   },
 );
 
+type ListItem =
+  | { onClick?: undefined; href: string; label: string; icon: ReactNode }
+  | { onClick: () => void; href?: undefined; label: string; icon: ReactNode };
+
 type DropdownMenuProps = VariantProps<typeof menuContentStyles> & {
   buttonAs?: 'button' | 'div';
-  list: {
-    label: string;
-    href: string;
-    icon: ReactNode;
-  }[];
+  list: ListItem[];
 };
 
 export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({
@@ -54,17 +54,28 @@ export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({
       <Menu.Items as="ul" className={menuContentStyles({ pos })}>
         {list.map((item) => (
           <Menu.Item
-            key={item.href}
+            key={item.label}
             as="li"
             className="transition-colors ui-active:bg-zinc-300 dark:ui-active:bg-zinc-700/50 rounded-xl hover:bg-zinc-300 dark:hover:bg-zinc-700/50"
           >
-            <Link
-              href={item.href}
-              className="flex items-center gap-3 px-3 text-sm h-9"
-            >
-              <span>{item.icon}</span>
-              <span>{item.label}</span>
-            </Link>
+            {item.href ? (
+              <Link
+                href={item.href}
+                className="flex items-center gap-3 px-3 text-sm h-9"
+              >
+                <span>{item.icon}</span>
+                <span>{item.label}</span>
+              </Link>
+            ) : (
+              <button
+                type="button"
+                onClick={item.onClick}
+                className="flex items-center gap-3 px-3 text-sm h-9 w-full"
+              >
+                <span>{item.icon}</span>
+                <span>{item.label}</span>
+              </button>
+            )}
           </Menu.Item>
         ))}
       </Menu.Items>
