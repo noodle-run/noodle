@@ -54,7 +54,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'Algorithms and Complexity',
         color: 'red',
       },
-      defaultStarred: false,
     },
     {
       emoji: '✨',
@@ -65,7 +64,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'IT Project Management',
         color: 'green',
       },
-      defaultStarred: false,
     },
     {
       emoji: '👩‍🎨',
@@ -76,7 +74,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'User centered design',
         color: 'indigo',
       },
-      defaultStarred: false,
     },
     {
       emoji: '📌',
@@ -87,7 +84,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'Final Year Project',
         color: 'amber',
       },
-      defaultStarred: false,
     },
     {
       emoji: '🔐',
@@ -98,7 +94,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'Malicious Software',
         color: 'blue',
       },
-      defaultStarred: false,
     },
   ],
 };

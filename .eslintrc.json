@@ -75,14 +75,17 @@
         "operator-linebreak": "off",
         "@typescript-eslint/no-misused-promises": [
           "error",
-          { "checksVoidReturn": false }
+          {
+            "checksVoidReturn": false
+          }
         ],
         "@typescript-eslint/no-floating-promises": "error",
         "no-void": "off",
         "jsx-a11y/anchor-is-valid": "off",
         "no-param-reassign": "off",
         "arrow-body-style": "off",
-        "react/jsx-wrap-multilines": "off"
+        "react/jsx-wrap-multilines": "off",
+        "testing-library/no-unnecessary-act": "off"
       }
     },
     {
