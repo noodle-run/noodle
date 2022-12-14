@@ -1,12 +1,11 @@
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
   provider             = "mysql"
   url                  = env("DATABASE_URL")
-  referentialIntegrity = "prisma"
+  relationMode = "prisma"
 }
 
 model Account {
@@ -26,6 +25,7 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+  @@index([userId])
 }
 
 model Session {
@@ -34,6 +34,8 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
 model User {
@@ -68,6 +70,8 @@ model Module {
   tasks     Task[]
   User      User?      @relation(fields: [userId], references: [id])
   userId    String?
+
+  @@index([userId])
 }
 
 model Notebook {
@@ -81,6 +85,9 @@ model Notebook {
   moduleId  String
   User      User?    @relation(fields: [userId], references: [id])
   userId    String?
+
+  @@index([userId])
+  @@index([moduleId])
 }
 
 model Task {
@@ -92,4 +99,14 @@ model Task {
   moduleId    String
   User        User?    @relation(fields: [userId], references: [id])
   userId      String?
+
+  @@index([userId])
+  @@index([moduleId])
+}
+
+model WaitingList {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
 }
