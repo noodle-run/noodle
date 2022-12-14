@@ -51,14 +51,14 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
             <form
               onSubmit={onSubmit}
               className={twMerge(
-                'bg-zinc-800 flex flex-col md:flex-row rounded-lg md:rounded-full shadow-md min-w-full md:min-w-[50ch]',
+                'dark:bg-zinc-800 bg-zinc-200 flex flex-col md:flex-row rounded-lg md:rounded-full shadow-md min-w-full md:min-w-[50ch]',
               )}
               noValidate
             >
               <input
                 type="email"
                 placeholder="Email address"
-                className="bg-transparent flex-1 text-sm py-3 pl-6 rounded-l-full outline-none"
+                className="bg-transparent flex-1 text-sm py-3 pl-6 rounded-l-full outline-none placeholder:text-zinc-500"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -105,12 +105,12 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
                       leaveFrom="opacity-100 scale-100"
                       leaveTo="opacity-0 scale-95"
                     >
-                      <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-zinc-900 p-6 text-left align-middle shadow-xl transition-all">
+                      <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 p-6 text-left align-middle shadow-xl transition-all">
                         <div className="flex justify-end">
                           <button
                             type="button"
                             onClick={() => setIsOpen(false)}
-                            className="text-zinc-300"
+                            className="dark:text-zinc-300 text-zinc-700"
                           >
                             <FiX size={24} />
                           </button>
@@ -125,11 +125,11 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
                         </div>
                         <Dialog.Title
                           as="h3"
-                          className="text-2xl font-bold text-center leading-6 text-white"
+                          className="text-2xl font-bold text-center leading-6"
                         >
                           You&apos;re on the waiting list!
                         </Dialog.Title>
-                        <Dialog.Description className="text-sm text-zinc-400 text-center mt-3 mb-6">
+                        <Dialog.Description className="text-sm dark:text-zinc-400 text-zinc-600 text-center mt-3 mb-6">
                           We will send you an email as soon as Noodle is ready.
                           Thanks for your interest 🤟
                         </Dialog.Description>
