@@ -64,12 +64,12 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
               />
               <button
                 type="submit"
-                className="px-6 font-semibold shadow-md text-sm bg-primary-500 transition-colors rounded-full"
+                className="px-6 font-semibold shadow-md text-xs md:text-sm bg-primary-500 transition-colors rounded-full"
               >
                 Join waitlist!
               </button>
             </form>
-            <div className="min-w-[52ch] h-12 flex justify-start text-sm text-red-500">
+            <div className="min-w-full md:min-w-[52ch] h-12 flex justify-start text-sm text-red-500">
               {waitlistFormError && (
                 <p className="flex gap-3 items-center">
                   <FiAlertTriangle /> {waitlistFormError}
