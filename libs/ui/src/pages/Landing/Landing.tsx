@@ -51,7 +51,7 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
             <form
               onSubmit={onSubmit}
               className={twMerge(
-                'bg-zinc-800 flex rounded-full gap-6 shadow-md min-w-full md:min-w-[50ch]',
+                'bg-zinc-800 flex flex-col md:flex-row rounded-lg md:rounded-full shadow-md min-w-full md:min-w-[50ch]',
               )}
               noValidate
             >
@@ -64,7 +64,7 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
               />
               <button
                 type="submit"
-                className="px-6 font-semibold shadow-md text-xs md:text-sm bg-primary-500 transition-colors rounded-full"
+                className="px-6 py-2 md:py-0 font-semibold shadow-md text-sm bg-primary-500 transition-colors rounded-b-lg md:rounded-full"
               >
                 Join waitlist!
               </button>
