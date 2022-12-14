@@ -104,6 +104,7 @@ const Home: NextPage = () => {
   const { data: quote } = trpc.getGreeting.useQuery(undefined, {
     refetchOnWindowFocus: false,
   });
+
   const { mutateAsync } = trpc.addEmailToWaitList.useMutation();
 
   if (status === 'loading') {
