@@ -58,7 +58,7 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
               <input
                 type="email"
                 placeholder="Email address"
-                className="bg-transparent flex-1 text-sm py-3 pl-6 rounded-l-full outline-none placeholder:text-zinc-500"
+                className="bg-transparent flex-1 text-sm py-3 pl-6 rounded-lg md:rounded-l-full outline-none placeholder:text-zinc-500"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
