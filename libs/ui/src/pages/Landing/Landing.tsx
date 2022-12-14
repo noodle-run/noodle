@@ -1,8 +1,8 @@
+import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
 import { FC, FormEvent, Fragment, useState } from 'react';
 import { FiAlertTriangle, FiX } from 'react-icons/fi';
 import { twMerge } from 'tailwind-merge';
-import { Dialog, Transition } from '@headlessui/react';
 import { z } from 'zod';
 import { Navbar } from '../../templates/Navbar';
 
@@ -25,7 +25,7 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
       await onWaitListFormSubmit(email)
         .then(() => {
           setIsOpen(true);
-          setWaitListFormError();
+          setWaitListFormError(undefined);
         })
         .catch((err) => {
           setWaitListFormError((err as { message: string }).message);
