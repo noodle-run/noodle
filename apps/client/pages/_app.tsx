@@ -5,6 +5,7 @@ import { Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
+import Head from 'next/head';
 import '../styles/globals.css';
 import { nextSEO } from '../utils/next-seo.config';
 import { trpc } from '../utils/trpc';
@@ -15,6 +16,12 @@ type PageProps = {
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
+    <Head>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+    </Head>
     <DefaultSeo {...nextSEO} />
     <SessionProvider session={(pageProps as PageProps).session}>
       <Component {...pageProps} />
