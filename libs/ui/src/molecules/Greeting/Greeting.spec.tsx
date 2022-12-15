@@ -5,6 +5,7 @@ describe('Greeting molecules', () => {
   it('renders the greeting', () => {
     render(
       <Greeting
+        isLoading={false}
         greeting="Good morning"
         quote="The best way to predict the future is to invent it."
       />,
@@ -16,6 +17,7 @@ describe('Greeting molecules', () => {
   it('renders the quote', () => {
     render(
       <Greeting
+        isLoading={false}
         greeting="Good morning"
         quote="The best way to predict the future is to invent it."
       />,
@@ -24,5 +26,17 @@ describe('Greeting molecules', () => {
     expect(
       screen.getByText('The best way to predict the future is to invent it.'),
     ).toBeInTheDocument();
+  });
+
+  it('renders the skeleton', () => {
+    render(
+      <Greeting
+        isLoading
+        greeting="Good morning"
+        quote="The best way to predict the future is to invent it."
+      />,
+    );
+
+    expect(screen.getByRole('status')).toBeInTheDocument();
   });
 });

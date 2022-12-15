@@ -101,7 +101,7 @@ const todaysProps: Pick<
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
-  const { data: quote } = trpc.getGreeting.useQuery(undefined, {
+  const { data: quote, isLoading } = trpc.getGreeting.useQuery(undefined, {
     refetchOnWindowFocus: false,
   });
 
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
     <TodaysActivity
       userAvatar={session?.user?.image || undefined}
       userName={session?.user?.name || undefined}
-      greetingProps={quote || { greeting: '', quote: '' }}
+      greetingProps={{ ...quote, isLoading }}
       recentModules={todaysProps.recentModules}
       recentNotebooks={todaysProps.recentNotebooks}
     />
