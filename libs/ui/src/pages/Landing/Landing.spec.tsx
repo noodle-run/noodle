@@ -3,7 +3,8 @@ import { Landing } from './Landing';
 
 describe('Landing page', () => {
   it('renders the heading', () => {
-    render(<Landing />);
+    const onWaitListFormSubmit = jest.fn();
+    render(<Landing onWaitListFormSubmit={onWaitListFormSubmit} />);
 
     expect(
       screen.getByText(/rethinking student productivity/i),
