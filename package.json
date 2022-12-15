@@ -118,7 +118,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "3.231.0",
     "@fontsource/inter": "4.5.14",
-    "@headlessui/react": "^1.7.5",
+    "@headlessui/react": "^1.7.6",
     "@mdx-js/react": "^2.2.1",
     "@next-auth/prisma-adapter": "^1.0.5",
     "@prisma/client": "^4.7.1",
