@@ -122,7 +122,7 @@ const Home: NextPage = () => {
       userAvatar={session?.user?.image || undefined}
       userName={session?.user?.name || undefined}
       greetingProps={
-        { ...quote, isLoading } || { greeting: '', quote: '', isLoading: true }
+        quote ? { ...quote, isLoading } : { greeting: '', quote: '', isLoading }
       }
       recentModules={todaysProps.recentModules}
       recentNotebooks={todaysProps.recentNotebooks}
