@@ -15,7 +15,7 @@ export const greetingRouter = t.router({
   getGreeting: t.procedure.query(async ({ ctx }) => {
     const name = ctx.session?.user?.name;
     const quote = await fetch(
-      'https://api.quotable.io/random?minLength=80',
+      'https://api.quotable.io/random?minLength=100&maxLength=140',
     ).then((res) => res.json() as Promise<QuoteType>);
 
     const date = new Date();
