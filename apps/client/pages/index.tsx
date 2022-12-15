@@ -121,9 +121,7 @@ const Home: NextPage = () => {
     <TodaysActivity
       userAvatar={session?.user?.image || undefined}
       userName={session?.user?.name || undefined}
-      greetingProps={
-        quote ? { ...quote, isLoading } : { greeting: '', quote: '', isLoading }
-      }
+      greetingProps={{ ...quote, isLoading }}
       recentModules={todaysProps.recentModules}
       recentNotebooks={todaysProps.recentNotebooks}
     />
