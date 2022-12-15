@@ -6,6 +6,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
   userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
   userName: 'Ahmed Elsakaan',
   greetingProps: {
+    isLoading: false,
     greeting: 'Good morning, John Doe!',
     quote:
       '"Of course there is no formula for success except perhaps an unconditional acceptance of life and what it brings." - Arthur Rubinstein',

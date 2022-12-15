@@ -6,6 +6,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
   userName: 'Ahmed Elsakaan',
   userAvatar: 'https://avatars.githubusercontent.com/u/20271968?v=4',
   greetingProps: {
+    isLoading: false,
     greeting: 'Good morning',
     quote: 'The best way to predict the future is to invent it.',
   },
@@ -47,12 +48,16 @@ describe("Today's Activity page", () => {
 
   it('renders the greeting', () => {
     render(<TodaysActivity {...args} />);
-    expect(screen.getByText(args.greetingProps.greeting)).toBeInTheDocument();
+    expect(
+      screen.getByText(args.greetingProps.greeting as string),
+    ).toBeInTheDocument();
   });
 
   it('renders the quote', () => {
     render(<TodaysActivity {...args} />);
-    expect(screen.getByText(args.greetingProps.quote)).toBeInTheDocument();
+    expect(
+      screen.getByText(args.greetingProps.quote as string),
+    ).toBeInTheDocument();
   });
 
   it('renders the recent modules', () => {
