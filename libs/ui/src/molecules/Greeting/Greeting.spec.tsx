@@ -39,4 +39,10 @@ describe('Greeting molecules', () => {
 
     expect(screen.getByRole('status')).toBeInTheDocument();
   });
+
+  it("doesn't render anything when no loading and no greeting", () => {
+    render(<Greeting isLoading={false} />);
+
+    expect(screen.queryByText('Good morning')).not.toBeInTheDocument();
+  });
 });
