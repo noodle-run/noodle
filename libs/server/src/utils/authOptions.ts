@@ -35,7 +35,8 @@ export const authOptions: NextAuthOptions = {
           data: {
             name: 'Welcome',
             code: 'N001',
-            emoji: '👋',
+            icon: '👋',
+            color: 'amber',
             User: {
               connect: {
                 id: message.user.id,
@@ -46,12 +47,17 @@ export const authOptions: NextAuthOptions = {
         await prisma.notebook.create({
           data: {
             title: 'Get started using Noodle!',
-            emoji: '👋',
+            icon: '👋',
             content:
               '[{"type":"h1","children":[{"text":"Getting started with Noodle!"}]},{"type":"p","children":[{"text":"Welcome to Noodle, we are glad to have you here!"}]}]',
             Module: {
               connect: {
                 id: module.id,
+              },
+            },
+            User: {
+              connect: {
+                id: message.user.id,
               },
             },
           },
