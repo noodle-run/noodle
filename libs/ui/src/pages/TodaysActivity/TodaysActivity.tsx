@@ -9,8 +9,8 @@ type TodaysActivityProps = Omit<
   'children'
 > & {
   greetingProps: ComponentProps<typeof Greeting>;
-  recentModules: ComponentProps<typeof ModuleCard>[];
-  recentNotebooks: ComponentProps<typeof NotebookItem>[];
+  recentModules?: ComponentProps<typeof ModuleCard>[];
+  recentNotebooks?: ComponentProps<typeof NotebookItem>[];
 };
 
 export const TodaysActivity: FC<TodaysActivityProps> = ({
@@ -29,11 +29,12 @@ export const TodaysActivity: FC<TodaysActivityProps> = ({
             Recent modules
           </h3>
           <div className="grid gap-6 grid-cols-[repeat(auto-fill,_minmax(288px,_1fr))]">
-            {recentModules.map((module) => (
-              <div key={module.name}>
-                <ModuleCard {...module} />
-              </div>
-            ))}
+            {recentModules &&
+              recentModules.map((module) => (
+                <div key={module.name}>
+                  <ModuleCard {...module} />
+                </div>
+              ))}
           </div>
         </section>
         <section className="order-1 pt-9">
@@ -41,9 +42,10 @@ export const TodaysActivity: FC<TodaysActivityProps> = ({
             Recently edited notebooks
           </h3>
           <div className="flex flex-col gap-3">
-            {recentNotebooks.map((notebook) => (
-              <NotebookItem key={notebook.href} {...notebook} />
-            ))}
+            {recentNotebooks &&
+              recentNotebooks.map((notebook) => (
+                <NotebookItem key={notebook.href} {...notebook} />
+              ))}
           </div>
         </section>
       </div>
