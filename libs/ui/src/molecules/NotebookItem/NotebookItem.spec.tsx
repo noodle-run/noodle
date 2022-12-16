@@ -5,7 +5,7 @@ describe('NotebookItem molecule', () => {
   it('renders the label and emoji', () => {
     render(
       <NotebookItem
-        emoji="🤖"
+        icon="🤖"
         title="AI"
         lastEdited="2 days ago"
         label={{ name: 'Artificial Intelligence', color: 'blue' }}
@@ -20,7 +20,7 @@ describe('NotebookItem molecule', () => {
   it('renders correct lastEdited time', () => {
     render(
       <NotebookItem
-        emoji="🤖"
+        icon="🤖"
         title="AI"
         lastEdited="2 days ago"
         label={{ name: 'Artificial Intelligence', color: 'blue' }}
