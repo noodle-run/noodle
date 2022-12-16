@@ -1,9 +1,9 @@
-import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
-import { FC, FormEvent, Fragment, useState } from 'react';
-import { FiAlertTriangle, FiX } from 'react-icons/fi';
+import { FC, FormEvent, useState } from 'react';
+import { FiAlertTriangle } from 'react-icons/fi';
 import { twMerge } from 'tailwind-merge';
 import { z } from 'zod';
+import { Modal } from '../../molecules/Modal';
 import { Navbar } from '../../templates/Navbar';
 
 const isEmail = z.string().email();
@@ -27,8 +27,8 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
           setIsOpen(true);
           setWaitListFormError(undefined);
         })
-        .catch((err) => {
-          setWaitListFormError((err as { message: string }).message);
+        .catch((err: Error) => {
+          setWaitListFormError(err.message);
           setIsOpen(false);
         });
     }
@@ -76,69 +76,15 @@ export const Landing: FC<LandingProps> = ({ onWaitListFormSubmit }) => {
                 </p>
               )}
             </div>
-            <Transition appear show={isOpen} as={Fragment}>
-              <Dialog
-                as="div"
-                className="relative z-10 font-[sans_serif]"
-                onClose={() => setIsOpen(false)}
-              >
-                <Transition.Child
-                  as={Fragment}
-                  enter="ease-out duration-300"
-                  enterFrom="opacity-0"
-                  enterTo="opacity-100"
-                  leave="ease-in duration-200"
-                  leaveFrom="opacity-100"
-                  leaveTo="opacity-0"
-                >
-                  <div className="fixed inset-0 bg-black bg-opacity-75" />
-                </Transition.Child>
-
-                <div className="fixed inset-0 overflow-y-auto">
-                  <div className="flex min-h-full items-center justify-center p-4 text-center">
-                    <Transition.Child
-                      as={Fragment}
-                      enter="ease-out duration-300"
-                      enterFrom="opacity-0 scale-95"
-                      enterTo="opacity-100 scale-100"
-                      leave="ease-in duration-200"
-                      leaveFrom="opacity-100 scale-100"
-                      leaveTo="opacity-0 scale-95"
-                    >
-                      <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 p-6 text-left align-middle shadow-xl transition-all">
-                        <div className="flex justify-end">
-                          <button
-                            type="button"
-                            onClick={() => setIsOpen(false)}
-                            className="dark:text-zinc-300 text-zinc-700"
-                          >
-                            <FiX size={24} />
-                          </button>
-                        </div>
-                        <div className="flex justify-center mb-6">
-                          <Image
-                            src="/waitlist-illustration.svg"
-                            alt="happy illustration"
-                            width={150}
-                            height={130.58}
-                          />
-                        </div>
-                        <Dialog.Title
-                          as="h3"
-                          className="text-2xl font-bold text-center leading-6"
-                        >
-                          You&apos;re on the waiting list!
-                        </Dialog.Title>
-                        <Dialog.Description className="text-sm dark:text-zinc-400 text-zinc-600 text-center mt-3 mb-6">
-                          We will send you an email as soon as Noodle is ready.
-                          Thanks for your interest 🤟
-                        </Dialog.Description>
-                      </Dialog.Panel>
-                    </Transition.Child>
-                  </div>
-                </div>
-              </Dialog>
-            </Transition>
+            <Modal
+              image="/waitlist-illustration.svg"
+              alt="waitlist illustration"
+              title="You're on the waiting list!"
+              description="We will send you an email as soon as Noodle is ready.
+                          Thanks for your interest 🤟"
+              open={isOpen}
+              onClose={() => setIsOpen(false)}
+            />
           </div>
         </header>
         <div className="max-w-5xl mx-auto pt-36 md:pt-64">

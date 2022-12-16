@@ -3,6 +3,17 @@ import userEvent from '@testing-library/user-event';
 import { Auth } from './Auth';
 
 describe('Auth page', () => {
+  beforeEach(() => {
+    // IntersectionObserver isn't available in test environment
+    const mockIntersectionObserver = jest.fn();
+    mockIntersectionObserver.mockReturnValue({
+      observe: () => null,
+      unobserve: () => null,
+      disconnect: () => null,
+    });
+    window.IntersectionObserver = mockIntersectionObserver;
+  });
+
   it('should render welcome message', () => {
     render(
       <Auth
@@ -80,5 +91,37 @@ describe('Auth page', () => {
     await userEvent.click(loginButton);
 
     expect(onMagicLinkLogin).toHaveBeenCalledWith(email);
+  });
+
+  it('should render authentication denied on error', () => {
+    render(
+      <Auth
+        onGithubLogin={jest.fn()}
+        onGoogleLogin={jest.fn()}
+        onMagicLinkLogin={jest.fn()}
+        error="Not approved"
+      />,
+    );
+
+    expect(screen.getByText('Authentication denied')).toBeInTheDocument();
+  });
+
+  it('closes the modal when clicking on the close button', async () => {
+    render(
+      <Auth
+        onGithubLogin={jest.fn()}
+        onGoogleLogin={jest.fn()}
+        onMagicLinkLogin={jest.fn()}
+        error="Not approved"
+      />,
+    );
+
+    const closeButton = screen.getByTestId('close-modal');
+
+    await act(async () => {
+      await userEvent.click(closeButton);
+    });
+
+    expect(screen.queryByText('Authentication denied')).not.toBeInTheDocument();
   });
 });

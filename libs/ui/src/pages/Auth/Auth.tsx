@@ -6,18 +6,22 @@ import { z } from 'zod';
 import { Brand } from '../../atoms/Brand';
 import { Button } from '../../atoms/Button';
 import { Input } from '../../atoms/Input';
+import { Modal } from '../../molecules/Modal';
 
 type AuthProps = {
   onMagicLinkLogin: (email: string) => void;
   onGithubLogin: () => void;
   onGoogleLogin: () => void;
+  error?: string;
 };
 
 export const Auth: FC<AuthProps> = ({
   onGithubLogin,
   onGoogleLogin,
   onMagicLinkLogin,
+  error,
 }) => {
+  const [isErrorModalOpen, setErrorModalOpen] = useState(!!error);
   const [email, setEmail] = useState('');
   const isEmail = z.string().email();
 
@@ -77,6 +81,16 @@ export const Auth: FC<AuthProps> = ({
             Continue with Google
           </Button>
         </div>
+        {error === 'Not approved' && (
+          <Modal
+            title="Authentication denied"
+            description="You have not been approved for early access just yet, we will let you know when you can sign in 🙌"
+            image="/auth-denied.svg"
+            alt="sad illustration"
+            open={isErrorModalOpen}
+            onClose={() => setErrorModalOpen(false)}
+          />
+        )}
       </div>
     </main>
   );
