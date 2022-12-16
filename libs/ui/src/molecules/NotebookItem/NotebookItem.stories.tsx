@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 import { NotebookItem } from './NotebookItem';
 
 const args: ComponentProps<typeof NotebookItem> = {
-  emoji: '📚',
+  icon: '📚',
   title: 'Introduction to Computer Algorithms',
   lastEdited: '19 hours ago',
   href: '/notebooks/1',
@@ -11,20 +11,12 @@ const args: ComponentProps<typeof NotebookItem> = {
     name: 'Algorithms and Complexity',
     color: 'red',
   },
-  defaultStarred: false,
 };
 
 const config: Meta<typeof args> = {
   title: 'Molecules / Notebook Item',
   component: NotebookItem,
   args,
-  argTypes: {
-    defaultStarred: {
-      table: {
-        disable: true,
-      },
-    },
-  },
 };
 
 export default config;
