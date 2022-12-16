@@ -63,7 +63,7 @@ model Module {
   id        String     @id @default(cuid())
   name      String     @unique
   code      String     @unique
-  emoji     String?
+  icon     String?
   color     String?
   credits   Int        @default(0)
   notebooks Notebook[]
@@ -77,7 +77,7 @@ model Module {
 model Notebook {
   id        String   @id @default(cuid())
   title     String
-  emoji     String?
+  icon     String?
   content   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
