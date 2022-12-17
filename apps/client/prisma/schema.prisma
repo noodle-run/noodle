@@ -1,10 +1,10 @@
 generator client {
-  provider        = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-  provider             = "mysql"
-  url                  = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
@@ -60,16 +60,17 @@ model VerificationToken {
 }
 
 model Module {
-  id        String     @id @default(cuid())
-  name      String     @unique
-  code      String     @unique
-  icon     String?
-  color     String?
-  credits   Int        @default(0)
-  notebooks Notebook[]
-  tasks     Task[]
-  User      User?      @relation(fields: [userId], references: [id])
-  userId    String?
+  id          String     @id @default(cuid())
+  name        String     @unique
+  code        String     @unique
+  icon        String
+  color       String
+  lastVisited DateTime   @default(now())
+  credits     Int        @default(0)
+  notebooks   Notebook[]
+  tasks       Task[]
+  User        User       @relation(fields: [userId], references: [id])
+  userId      String
 
   @@index([userId])
 }
@@ -77,14 +78,14 @@ model Module {
 model Notebook {
   id        String   @id @default(cuid())
   title     String
-  icon     String?
+  icon      String
   content   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   Module    Module   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
   moduleId  String
-  User      User?    @relation(fields: [userId], references: [id])
-  userId    String?
+  User      User     @relation(fields: [userId], references: [id])
+  userId    String
 
   @@index([userId])
   @@index([moduleId])
@@ -97,8 +98,8 @@ model Task {
   dueDate     DateTime
   Module      Module   @relation(fields: [moduleId], references: [name], onDelete: Cascade)
   moduleId    String
-  User        User?    @relation(fields: [userId], references: [id])
-  userId      String?
+  User        User     @relation(fields: [userId], references: [id])
+  userId      String
 
   @@index([userId])
   @@index([moduleId])

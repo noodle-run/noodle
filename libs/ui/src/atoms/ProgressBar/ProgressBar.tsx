@@ -33,15 +33,18 @@ const valueBarStyles = cva(
   },
 );
 
-type ProgressBarProps = VariantProps<typeof valueBarStyles> & {
+type ProgressBarProps = {
   value: number;
+  color: string;
 };
 
 export const ProgressBar: FC<ProgressBarProps> = ({ value, color }) => {
   return (
     <div className="relative w-full h-4 rounded-full dark:bg-zinc-700 bg-zinc-100">
       <div
-        className={valueBarStyles({ color })}
+        className={valueBarStyles({
+          color: color as VariantProps<typeof valueBarStyles>['color'],
+        })}
         style={{ width: `${value}%` }}
         role="presentation"
       />

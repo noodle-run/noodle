@@ -33,10 +33,19 @@ const styles = cva(
   },
 );
 
-type ModuleTagProps = VariantProps<typeof styles> & {
+type ModuleTagProps = {
+  color: string;
   name: string;
 };
 
 export const ModuleTag: FC<ModuleTagProps> = ({ name, color }) => {
-  return <div className={styles({ color })}>{name}</div>;
+  return (
+    <div
+      className={styles({
+        color: color as VariantProps<typeof styles>['color'],
+      })}
+    >
+      {name}
+    </div>
+  );
 };

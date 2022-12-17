@@ -50,7 +50,7 @@ export const notebookRouter = t.router({
         name: notebook.Module.name,
         color: notebook.Module.color,
       },
-      icon: notebook.icon as string,
+      icon: notebook.icon,
     }));
 
     return notebooks;

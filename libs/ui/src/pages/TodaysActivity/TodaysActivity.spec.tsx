@@ -10,29 +10,37 @@ const args: ComponentProps<typeof TodaysActivity> = {
     greeting: 'Good morning',
     quote: 'The best way to predict the future is to invent it.',
   },
-  recentModules: [
-    {
-      href: '/modules/1',
-      icon: '🧠',
-      name: 'Algorithms and Complexity',
-      code: 'CS2860',
-      tasks: 3,
-      color: 'red',
-      progress: 45,
-    },
-  ],
-  recentNotebooks: [
-    {
-      href: '/notebooks/1',
-      icon: '✨',
-      title: 'Week 1 - Introduction to IT Project Management',
-      lastEdited: '6 hours ago',
-      label: {
-        name: 'IT Project Management',
-        color: 'green',
+  recentModules: {
+    data: [
+      {
+        href: '/modules/1',
+        icon: '🧠',
+        name: 'Algorithms and Complexity',
+        code: 'CS2860',
+        tasks: 3,
+        color: 'red',
+        progress: 45,
       },
-    },
-  ],
+    ],
+    isError: false,
+    isLoading: false,
+  },
+  recentNotebooks: {
+    data: [
+      {
+        href: '/notebooks/1',
+        icon: '✨',
+        title: 'Week 1 - Introduction to IT Project Management',
+        lastEdited: '6 hours ago',
+        label: {
+          name: 'IT Project Management',
+          color: 'green',
+        },
+      },
+    ],
+    isLoading: false,
+    isError: false,
+  },
 };
 
 describe("Today's Activity page", () => {
@@ -62,11 +70,15 @@ describe("Today's Activity page", () => {
 
   it('renders the recent modules', () => {
     render(<TodaysActivity {...args} />);
-    expect(screen.getByText(args.recentModules[0].name)).toBeInTheDocument();
+    const module = args.recentModules.data?.[0];
+    expect(screen.getByText(module ? module.name : '')).toBeInTheDocument();
   });
 
   it('renders the recent notebooks', () => {
     render(<TodaysActivity {...args} />);
-    expect(screen.getByText(args.recentNotebooks[0].title)).toBeInTheDocument();
+    const notebook = args.recentNotebooks.data?.[0];
+    expect(
+      screen.getByText(notebook ? notebook.title : ''),
+    ).toBeInTheDocument();
   });
 });
