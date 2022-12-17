@@ -50,7 +50,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
   ],
   recentNotebooks: [
     {
-      emoji: '📚',
+      icon: '📚',
       title: 'Introduction to Computer Algorithms',
       lastEdited: '2 hours ago',
       href: '/notebooks/1',
@@ -60,7 +60,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
       },
     },
     {
-      emoji: '✨',
+      icon: '✨',
       title: 'Week 1 - Introduction to IT Project Management',
       lastEdited: '6 hours ago',
       href: '/notebooks/2',
@@ -70,7 +70,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
       },
     },
     {
-      emoji: '👩‍🎨',
+      icon: '👩‍🎨',
       title: 'Introduction to User centered design',
       lastEdited: '8 hours ago',
       href: '/notebooks/3',
@@ -80,7 +80,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
       },
     },
     {
-      emoji: '📌',
+      icon: '📌',
       title: 'Final Project Plan',
       lastEdited: '14 hours ago',
       href: '/notebooks/4',
@@ -90,7 +90,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
       },
     },
     {
-      emoji: '🔐',
+      icon: '🔐',
       title: 'Encryption and Decryption',
       lastEdited: '23 hours ago',
       href: '/notebooks/5',

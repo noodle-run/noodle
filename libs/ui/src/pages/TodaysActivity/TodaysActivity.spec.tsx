@@ -24,7 +24,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
   recentNotebooks: [
     {
       href: '/notebooks/1',
-      emoji: '✨',
+      icon: '✨',
       title: 'Week 1 - Introduction to IT Project Management',
       lastEdited: '6 hours ago',
       label: {
