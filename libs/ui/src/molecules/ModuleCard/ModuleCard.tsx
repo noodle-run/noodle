@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { ComponentProps, FC, ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 import { ProgressBar } from '../../atoms/ProgressBar';
 
 type ModuleCardProps = {
   href: string;
   icon: ReactNode;
-  color: ComponentProps<typeof ProgressBar>['color'];
+  color: string;
   name: string;
   code: string;
   tasks?: number;
