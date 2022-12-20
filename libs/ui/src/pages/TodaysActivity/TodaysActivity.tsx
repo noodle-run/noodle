@@ -12,12 +12,10 @@ type TodaysActivityProps = Omit<
   recentModules: {
     data?: ComponentProps<typeof ModuleCard>[];
     isLoading: boolean;
-    isError: boolean;
   };
   recentNotebooks: {
     data?: ComponentProps<typeof NotebookItem>[];
     isLoading: boolean;
-    isError: boolean;
   };
 };
 
@@ -36,33 +34,30 @@ export const TodaysActivity: FC<TodaysActivityProps> = ({
           <h3 className="pb-3 text-xs lg:text-base dark:text-zinc-400 text-zinc-600">
             Recent modules
           </h3>
-          <div className="grid gap-6 grid-cols-[repeat(auto-fill,_minmax(288px,_1fr))]">
-            {recentModules.isError && <div>Error loading modules :(</div>}
-            {recentModules.isLoading && (
-              <>
-                <ModuleCard variant="loading" />
-                <ModuleCard variant="loading" />
-                <ModuleCard variant="loading" />
-                <ModuleCard variant="loading" />
-                <ModuleCard variant="loading" />
-              </>
-            )}
-            {!recentModules.isLoading &&
-              !recentModules.isError &&
-              recentModules.data &&
-              recentModules.data.map((module) => (
+          {recentModules.isLoading && (
+            <div className="grid gap-6 grid-cols-[repeat(auto-fill,_minmax(288px,_1fr))]">
+              <ModuleCard variant="loading" />
+              <ModuleCard variant="loading" />
+              <ModuleCard variant="loading" />
+              <ModuleCard variant="loading" />
+              <ModuleCard variant="loading" />
+            </div>
+          )}
+          {!recentModules.isLoading && recentModules.data && (
+            <div className="grid gap-6 grid-cols-[repeat(auto-fill,_minmax(288px,_1fr))]">
+              {recentModules.data.map((module) => (
                 <div key={module.name}>
                   <ModuleCard {...module} />
                 </div>
               ))}
-          </div>
+            </div>
+          )}
         </section>
         <section className="order-1 pt-9">
           <h3 className="pb-3 text-xs lg:text-base dark:text-zinc-400 text-zinc-600">
             Recently edited notebooks
           </h3>
           <div className="flex flex-col gap-3">
-            {recentNotebooks.isError && <div>Error loading notebooks :(</div>}
             {recentNotebooks.isLoading && (
               <>
                 <NotebookItem variant="loading" />
@@ -73,7 +68,6 @@ export const TodaysActivity: FC<TodaysActivityProps> = ({
               </>
             )}
             {!recentNotebooks.isLoading &&
-              !recentNotebooks.isError &&
               recentNotebooks.data &&
               recentNotebooks.data.map((notebook) => (
                 <NotebookItem key={notebook.href} {...notebook} />
