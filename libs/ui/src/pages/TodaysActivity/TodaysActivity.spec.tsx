@@ -22,7 +22,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
         progress: 45,
       },
     ],
-    isError: false,
     isLoading: false,
   },
   recentNotebooks: {
@@ -39,7 +38,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
       },
     ],
     isLoading: false,
-    isError: false,
   },
 };
 
@@ -104,33 +102,5 @@ describe("Today's Activity page", () => {
       />,
     );
     expect(screen.getAllByRole('status')).toHaveLength(5);
-  });
-
-  it('renders error status when modules are not fetched', () => {
-    render(
-      <TodaysActivity
-        {...args}
-        recentModules={{
-          ...args.recentModules,
-          isError: true,
-        }}
-      />,
-    );
-
-    expect(screen.getByText(/error loading modules/i)).toBeInTheDocument();
-  });
-
-  it('renders error status when notebooks are not fetched', () => {
-    render(
-      <TodaysActivity
-        {...args}
-        recentNotebooks={{
-          ...args.recentNotebooks,
-          isError: true,
-        }}
-      />,
-    );
-
-    expect(screen.getByText(/error loading notebooks/i)).toBeInTheDocument();
   });
 });

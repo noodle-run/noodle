@@ -13,7 +13,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
   },
   recentModules: {
     isLoading: false,
-    isError: false,
     data: [
       {
         href: '/modules/1',
@@ -54,7 +53,6 @@ const args: ComponentProps<typeof TodaysActivity> = {
   },
   recentNotebooks: {
     isLoading: false,
-    isError: false,
     data: [
       {
         icon: '📚',
@@ -118,7 +116,25 @@ const config: Meta<typeof args> = {
 
 export default config;
 
-const Template: Story<typeof args> = (props) => <TodaysActivity {...props} />;
+const Template: Story<ComponentProps<typeof TodaysActivity>> = (props) => (
+  <TodaysActivity {...props} />
+);
 
 export const Normal = Template.bind({});
-Normal.storyName = "Today's Activity";
+
+export const Loading = Template.bind({});
+Loading.args = {
+  ...args,
+  greetingProps: {
+    ...args.greetingProps,
+    isLoading: true,
+  },
+  recentModules: {
+    ...args.recentModules,
+    isLoading: true,
+  },
+  recentNotebooks: {
+    ...args.recentNotebooks,
+    isLoading: true,
+  },
+};

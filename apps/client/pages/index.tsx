@@ -16,37 +16,61 @@ const Landing = dynamic(() => import('@noodle/ui').then((mod) => mod.Landing), {
   suspense: true,
 });
 
+const InternalError = dynamic(
+  () => import('@noodle/ui').then((mod) => mod.InternalError),
+  {
+    suspense: true,
+  },
+);
+
 const Dashboard: FC = () => {
   const { data: session } = useSession();
-  const { data: quote, isLoading } = trpc.getGreeting.useQuery(undefined, {
+  const {
+    data: greeting,
+    isLoading: isGreetingLoading,
+    error: greetingError,
+  } = trpc.getGreeting.useQuery(undefined, {
     refetchOnWindowFocus: false,
   });
   const {
     data: modules,
     isLoading: isModulesLoading,
-    isError: isModulesError,
+    error: modulesError,
   } = trpc.getRecentModules.useQuery();
   const {
     data: notebooks,
     isLoading: isNotebooksLoading,
-    isError: isNotebooksError,
+    error: notebooksError,
   } = trpc.getAllNotebooks.useQuery();
 
+  if (greetingError) {
+    return <InternalError message={greetingError.message} />;
+  }
+
+  if (modulesError) {
+    return <InternalError message={modulesError.message} />;
+  }
+
+  if (notebooksError) {
+    return <InternalError message={notebooksError.message} />;
+  }
+
   return (
-    <Suspense fallback="Loading...">
+    <Suspense fallback={<LoadingScreen />}>
       <TodaysActivity
         userAvatar={session?.user?.image || undefined}
         userName={session?.user?.name || undefined}
-        greetingProps={{ ...quote, isLoading }}
+        greetingProps={{
+          ...greeting,
+          isLoading: isGreetingLoading,
+        }}
         recentModules={{
           data: modules,
           isLoading: isModulesLoading,
-          isError: isModulesError,
         }}
         recentNotebooks={{
           data: notebooks,
           isLoading: isNotebooksLoading,
-          isError: isNotebooksError,
         }}
       />
     </Suspense>
