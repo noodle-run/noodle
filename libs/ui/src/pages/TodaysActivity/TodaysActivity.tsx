@@ -1,4 +1,6 @@
 import { ComponentProps, FC } from 'react';
+import { SkeletonCard } from '../../atoms/SkeletonCard';
+import { SkeletonNotebookItem } from '../../atoms/SkeletonNotebookItem';
 import { Greeting } from '../../molecules/Greeting';
 import { ModuleCard } from '../../molecules/ModuleCard';
 import { NotebookItem } from '../../molecules/NotebookItem';
@@ -37,9 +39,19 @@ export const TodaysActivity: FC<TodaysActivityProps> = ({
             Recent modules
           </h3>
           <div className="grid gap-6 grid-cols-[repeat(auto-fill,_minmax(288px,_1fr))]">
-            {recentModules.isLoading && <div>Loading...</div>}
+            {recentModules.isLoading && (
+              <>
+                <SkeletonCard />
+                <SkeletonCard />
+                <SkeletonCard />
+                <SkeletonCard />
+                <SkeletonCard />
+              </>
+            )}
             {recentModules.isError && <div>Error...</div>}
-            {recentModules.data &&
+            {!recentModules.isLoading &&
+              !recentModules.isError &&
+              recentModules.data &&
               recentModules.data.map((module) => (
                 <div key={module.name}>
                   <ModuleCard {...module} />
@@ -52,7 +64,17 @@ export const TodaysActivity: FC<TodaysActivityProps> = ({
             Recently edited notebooks
           </h3>
           <div className="flex flex-col gap-3">
-            {recentNotebooks.data &&
+            {recentNotebooks.isLoading && (
+              <>
+                <SkeletonNotebookItem />
+                <SkeletonNotebookItem />
+                <SkeletonNotebookItem />
+                <SkeletonNotebookItem />
+              </>
+            )}
+            {!recentNotebooks.isLoading &&
+              !recentNotebooks.isError &&
+              recentNotebooks.data &&
               recentNotebooks.data.map((notebook) => (
                 <NotebookItem key={notebook.href} {...notebook} />
               ))}
