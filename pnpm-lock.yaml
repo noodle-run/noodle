@@ -48,10 +48,10 @@ specifiers:
   '@testing-library/jest-dom': ^5.16.5
   '@testing-library/react': ^13.4.0
   '@testing-library/user-event': ^14.3.0
-  '@trpc/client': 10.5.0
-  '@trpc/next': 10.5.0
-  '@trpc/react-query': 10.5.0
-  '@trpc/server': 10.5.0
+  '@trpc/client': 10.6.0
+  '@trpc/next': 10.6.0
+  '@trpc/react-query': 10.6.0
+  '@trpc/server': 10.6.0
   '@types/jest': ^29.2.4
   '@types/node': ^18.11.17
   '@types/react': ^18.0.26
@@ -158,10 +158,10 @@ dependencies:
   '@next-auth/prisma-adapter': 1.0.5_64qbzg5ec56bux2misz3l4u6g4
   '@prisma/client': 4.7.1_prisma@4.7.1
   '@tanstack/react-query': 4.20.4_biqbaboplfbrettd7655fr4n2y
-  '@trpc/client': 10.5.0_@trpc+server@10.5.0
-  '@trpc/next': 10.5.0_pd3elg5u3zlm453dd4mbgdu4mm
-  '@trpc/react-query': 10.5.0_hkttq5uvq7kltri3tppuogqqou
-  '@trpc/server': 10.5.0
+  '@trpc/client': 10.6.0_@trpc+server@10.6.0
+  '@trpc/next': 10.6.0_wwo3ofp5elrju5zvl65jn6mjpm
+  '@trpc/react-query': 10.6.0_jvy7igwpe5g26kdgldbjgphyd4
+  '@trpc/server': 10.6.0
   '@udecode/plate-autoformat': 18.13.0_ssaskl3y6js5nfmydttwmxjiha
   '@udecode/plate-basic-marks': 18.13.0_ssaskl3y6js5nfmydttwmxjiha
   '@udecode/plate-block-quote': 18.13.0_ssaskl3y6js5nfmydttwmxjiha
@@ -6784,53 +6784,53 @@ packages:
     engines: {node: '>= 10'}
     dev: true
 
-  /@trpc/client/10.5.0_@trpc+server@10.5.0:
-    resolution: {integrity: sha512-ULRL6YUi/4sMzZnqS3VCe/VduPZgY24wdC4canpwWZfHj+O0kHz3KR260DzEw0QrpLrOwmkIWOlQKzVBn2lLgQ==}
+  /@trpc/client/10.6.0_@trpc+server@10.6.0:
+    resolution: {integrity: sha512-GvZzUQuPStXN9zTyJ+PvlGweEa1mvsbtsAgo6yfnDGjrx1HJbDMtYC+o98lz1T+UOdDPgfDE/R1MaCrWDUrpSA==}
     peerDependencies:
-      '@trpc/server': 10.5.0
+      '@trpc/server': 10.6.0
     dependencies:
-      '@trpc/server': 10.5.0
+      '@trpc/server': 10.6.0
     dev: false
 
-  /@trpc/next/10.5.0_pd3elg5u3zlm453dd4mbgdu4mm:
-    resolution: {integrity: sha512-beWvrdHZTV7kx4XeLlHKB29EC6VWkkPykWN1eoPkSTeAYMqEIpl46Xgdj6UfiLmuq8yjAi888BahGNdmTMqFZQ==}
+  /@trpc/next/10.6.0_wwo3ofp5elrju5zvl65jn6mjpm:
+    resolution: {integrity: sha512-YCKGecShvn6KQl+/rjPk+PkILLr2OR32wQaZUhkRMkqgdZ+qOBj/obuopwsz5rNevHxJBc1qolp9yibWDG7F/A==}
     peerDependencies:
       '@tanstack/react-query': ^4.3.8
-      '@trpc/client': 10.5.0
+      '@trpc/client': 10.6.0
       '@trpc/react-query': ^10.0.0-proxy-beta.21
-      '@trpc/server': 10.5.0
+      '@trpc/server': 10.6.0
       next: '*'
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
       '@tanstack/react-query': 4.20.4_biqbaboplfbrettd7655fr4n2y
-      '@trpc/client': 10.5.0_@trpc+server@10.5.0
-      '@trpc/react-query': 10.5.0_hkttq5uvq7kltri3tppuogqqou
-      '@trpc/server': 10.5.0
+      '@trpc/client': 10.6.0_@trpc+server@10.6.0
+      '@trpc/react-query': 10.6.0_jvy7igwpe5g26kdgldbjgphyd4
+      '@trpc/server': 10.6.0
       next: 13.0.7_672uxklweod7ene3nqtsh262ca
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-ssr-prepass: 1.5.0_react@18.2.0
     dev: false
 
-  /@trpc/react-query/10.5.0_hkttq5uvq7kltri3tppuogqqou:
-    resolution: {integrity: sha512-MBjgssZBy1ZRZVRE4uvnVu7AGcdOhL47Y1NIPGd5WG5ZisNrV6imf7yZ62uNDemnekwTuJT/Lad9r14swvmvzQ==}
+  /@trpc/react-query/10.6.0_jvy7igwpe5g26kdgldbjgphyd4:
+    resolution: {integrity: sha512-2YC81kRG3jvsHH/66AKk4n3jPy/C+UY2FJuJsd3BtZU8ud8fsSIKQOOeUEeIs9gN6SLPzSCEEpSOB1x8e78FbQ==}
     peerDependencies:
       '@tanstack/react-query': ^4.3.8
-      '@trpc/client': 10.5.0
-      '@trpc/server': 10.5.0
+      '@trpc/client': 10.6.0
+      '@trpc/server': 10.6.0
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
       '@tanstack/react-query': 4.20.4_biqbaboplfbrettd7655fr4n2y
-      '@trpc/client': 10.5.0_@trpc+server@10.5.0
-      '@trpc/server': 10.5.0
+      '@trpc/client': 10.6.0_@trpc+server@10.6.0
+      '@trpc/server': 10.6.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /@trpc/server/10.5.0:
-    resolution: {integrity: sha512-AJ4ckDpnN8xuqWBox68KDTFpG12ZxKkW7fi9XJ+TLtyyNyqOMVUvKH9070CdxhqBZjebTASryE+/6lntkDFQxA==}
+  /@trpc/server/10.6.0:
+    resolution: {integrity: sha512-SXqogi536yDpfK0xsCaLvP0bzu5Qzn2rRHVr59NJ0SLwLPPKFjfHIrS+O+QnTA3TVUXvnXG0/Hllu8SJXOm7Zg==}
     dev: false
 
   /@trysound/sax/0.2.0:
