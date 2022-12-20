@@ -1,6 +1,4 @@
 import { ComponentProps, FC } from 'react';
-import { SkeletonCard } from '../../atoms/SkeletonCard';
-import { SkeletonNotebookItem } from '../../atoms/SkeletonNotebookItem';
 import { Greeting } from '../../molecules/Greeting';
 import { ModuleCard } from '../../molecules/ModuleCard';
 import { NotebookItem } from '../../molecules/NotebookItem';
@@ -39,16 +37,16 @@ export const TodaysActivity: FC<TodaysActivityProps> = ({
             Recent modules
           </h3>
           <div className="grid gap-6 grid-cols-[repeat(auto-fill,_minmax(288px,_1fr))]">
+            {recentModules.isError && <div>Error loading modules :(</div>}
             {recentModules.isLoading && (
               <>
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
+                <ModuleCard variant="loading" />
+                <ModuleCard variant="loading" />
+                <ModuleCard variant="loading" />
+                <ModuleCard variant="loading" />
+                <ModuleCard variant="loading" />
               </>
             )}
-            {recentModules.isError && <div>Error...</div>}
             {!recentModules.isLoading &&
               !recentModules.isError &&
               recentModules.data &&
@@ -64,12 +62,14 @@ export const TodaysActivity: FC<TodaysActivityProps> = ({
             Recently edited notebooks
           </h3>
           <div className="flex flex-col gap-3">
+            {recentNotebooks.isError && <div>Error loading notebooks :(</div>}
             {recentNotebooks.isLoading && (
               <>
-                <SkeletonNotebookItem />
-                <SkeletonNotebookItem />
-                <SkeletonNotebookItem />
-                <SkeletonNotebookItem />
+                <NotebookItem variant="loading" />
+                <NotebookItem variant="loading" />
+                <NotebookItem variant="loading" />
+                <NotebookItem variant="loading" />
+                <NotebookItem variant="loading" />
               </>
             )}
             {!recentNotebooks.isLoading &&
