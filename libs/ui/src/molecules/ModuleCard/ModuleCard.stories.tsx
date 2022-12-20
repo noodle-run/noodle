@@ -3,6 +3,7 @@ import { ComponentProps } from 'react';
 import { ModuleCard } from './ModuleCard';
 
 const args: ComponentProps<typeof ModuleCard> = {
+  variant: 'default',
   href: '/modules/1',
   name: 'Algorithms and Complexity',
   code: 'CS2860',
@@ -20,7 +21,9 @@ const config: Meta<typeof args> = {
 
 export default config;
 
-const Template: Story<typeof args> = (props) => <ModuleCard {...props} />;
+const Template: Story<ComponentProps<typeof ModuleCard>> = (props) => (
+  <ModuleCard {...props} />
+);
 
 export const Normal = Template.bind({});
 
@@ -28,4 +31,9 @@ export const NoTasks = Template.bind({});
 NoTasks.args = {
   progress: undefined,
   tasks: undefined,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  variant: 'loading',
 };

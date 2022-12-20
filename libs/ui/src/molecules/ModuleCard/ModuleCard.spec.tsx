@@ -56,4 +56,16 @@ describe('Module Card Molecule', () => {
 
     expect(screen.getByRole('presentation')).toHaveClass('bg-red-400');
   });
+
+  it('should render the loading skeleton when variant is loading', () => {
+    render(<ModuleCard variant="loading" />);
+
+    expect(screen.getByRole('status')).toBeInTheDocument();
+  });
+
+  it('should not render skeleton when variant is default', () => {
+    render(<ModuleCard {...args} />);
+
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+  });
 });

@@ -71,14 +71,66 @@ describe("Today's Activity page", () => {
   it('renders the recent modules', () => {
     render(<TodaysActivity {...args} />);
     const module = args.recentModules.data?.[0];
-    expect(screen.getByText(module ? module.name : '')).toBeInTheDocument();
+    expect(screen.getByText(module?.name || '')).toBeInTheDocument();
   });
 
   it('renders the recent notebooks', () => {
     render(<TodaysActivity {...args} />);
     const notebook = args.recentNotebooks.data?.[0];
-    expect(
-      screen.getByText(notebook ? notebook.title : ''),
-    ).toBeInTheDocument();
+    expect(screen.getByText(notebook?.title || '')).toBeInTheDocument();
+  });
+
+  it('renders the modules loading animation', () => {
+    render(
+      <TodaysActivity
+        {...args}
+        recentModules={{
+          ...args.recentModules,
+          isLoading: true,
+        }}
+      />,
+    );
+    expect(screen.getAllByRole('status')).toHaveLength(5);
+  });
+
+  it('renders the notebooks loading animation', () => {
+    render(
+      <TodaysActivity
+        {...args}
+        recentNotebooks={{
+          ...args.recentNotebooks,
+          isLoading: true,
+        }}
+      />,
+    );
+    expect(screen.getAllByRole('status')).toHaveLength(5);
+  });
+
+  it('renders error status when modules are not fetched', () => {
+    render(
+      <TodaysActivity
+        {...args}
+        recentModules={{
+          ...args.recentModules,
+          isError: true,
+        }}
+      />,
+    );
+
+    expect(screen.getByText(/error loading modules/i)).toBeInTheDocument();
+  });
+
+  it('renders error status when notebooks are not fetched', () => {
+    render(
+      <TodaysActivity
+        {...args}
+        recentNotebooks={{
+          ...args.recentNotebooks,
+          isError: true,
+        }}
+      />,
+    );
+
+    expect(screen.getByText(/error loading notebooks/i)).toBeInTheDocument();
   });
 });

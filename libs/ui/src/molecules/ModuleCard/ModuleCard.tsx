@@ -2,17 +2,30 @@ import Link from 'next/link';
 import { FC, ReactNode } from 'react';
 import { ProgressBar } from '../../atoms/ProgressBar';
 
-type ModuleCardProps = {
-  href: string;
-  icon: ReactNode;
-  color: string;
-  name: string;
-  code: string;
-  tasks?: number;
-  progress?: number;
-};
+type ModuleCardProps =
+  | {
+      variant?: 'default';
+      href: string;
+      icon: ReactNode;
+      color: string;
+      name: string;
+      code: string;
+      tasks?: number;
+      progress?: number;
+    }
+  | {
+      variant: 'loading';
+      href?: undefined;
+      icon?: undefined;
+      color?: undefined;
+      name?: undefined;
+      code?: undefined;
+      tasks?: undefined;
+      progress?: undefined;
+    };
 
 export const ModuleCard: FC<ModuleCardProps> = ({
+  variant = 'default',
   href,
   icon,
   name,
@@ -21,9 +34,18 @@ export const ModuleCard: FC<ModuleCardProps> = ({
   progress,
   color,
 }) => {
+  if (variant === 'loading') {
+    return (
+      <div
+        role="status"
+        className="min-w-[300px] h-[148px] animate-pulse dark:bg-zinc-800 bg-zinc-100 rounded-2xl"
+      />
+    );
+  }
+
   return (
     <Link
-      href={href}
+      href={href as string}
       className="block p-6 transition-colors hover:dark:bg-zinc-700/50 hover:bg-zinc-200 bg-zinc-100 dark:bg-zinc-800 rounded-2xl"
     >
       <span className="text-base lg:text-lg">{icon}</span>

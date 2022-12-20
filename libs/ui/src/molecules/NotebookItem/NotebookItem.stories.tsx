@@ -21,7 +21,14 @@ const config: Meta<typeof args> = {
 
 export default config;
 
-const Template: Story<typeof args> = (props) => <NotebookItem {...props} />;
+const Template: Story<ComponentProps<typeof NotebookItem>> = (props) => (
+  <NotebookItem {...props} />
+);
 
 export const Normal = Template.bind({});
 Normal.storyName = 'Notebook Item';
+
+export const Loading = Template.bind({});
+Loading.args = {
+  variant: 'loading',
+};
