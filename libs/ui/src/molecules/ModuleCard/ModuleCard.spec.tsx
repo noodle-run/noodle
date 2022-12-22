@@ -10,6 +10,7 @@ const args: ComponentProps<typeof ModuleCard> = {
   color: 'red',
   progress: 45,
   icon: '🧠',
+  credits: 15,
 };
 
 describe('Module Card Molecule', () => {
@@ -67,5 +68,13 @@ describe('Module Card Molecule', () => {
     render(<ModuleCard {...args} />);
 
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
+  });
+
+  it('should render credits', () => {
+    render(<ModuleCard {...args} />);
+
+    expect(
+      screen.getByText(`${args.credits as number} Credits`),
+    ).toBeInTheDocument();
   });
 });

@@ -20,6 +20,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'Algorithms and Complexity',
         code: 'CS2860',
         color: 'red',
+        credits: 15,
       },
       {
         href: '/modules/2',
@@ -27,6 +28,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'IT Project Management',
         code: 'CS3003',
         color: 'green',
+        credits: 15,
       },
       {
         href: '/modules/3',
@@ -34,6 +36,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'User centered design',
         code: 'PC3001',
         color: 'indigo',
+        credits: 15,
       },
       {
         href: '/modules/4',
@@ -41,6 +44,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'Final Year Project',
         code: 'CS3810',
         color: 'amber',
+        credits: 15,
       },
       {
         href: '/modules/5',
@@ -48,6 +52,7 @@ const args: ComponentProps<typeof TodaysActivity> = {
         name: 'Malicious Software',
         code: 'IY3840',
         color: 'blue',
+        credits: 15,
       },
     ],
   },

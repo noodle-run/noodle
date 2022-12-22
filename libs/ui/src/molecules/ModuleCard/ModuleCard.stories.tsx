@@ -11,6 +11,7 @@ const args: ComponentProps<typeof ModuleCard> = {
   color: 'red',
   progress: 45,
   icon: '🧠',
+  credits: 15,
 };
 
 const config: Meta<typeof args> = {
