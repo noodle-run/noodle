@@ -12,6 +12,7 @@ type ModuleCardProps =
       code: string;
       tasks?: number;
       progress?: number;
+      credits?: number;
     }
   | {
       variant: 'loading';
@@ -22,6 +23,7 @@ type ModuleCardProps =
       code?: undefined;
       tasks?: undefined;
       progress?: undefined;
+      credits?: undefined;
     };
 
 export const ModuleCard: FC<ModuleCardProps> = ({
@@ -33,6 +35,7 @@ export const ModuleCard: FC<ModuleCardProps> = ({
   tasks,
   progress,
   color,
+  credits,
 }) => {
   if (variant === 'loading') {
     return (
@@ -50,9 +53,10 @@ export const ModuleCard: FC<ModuleCardProps> = ({
     >
       <span className="text-base lg:text-lg">{icon}</span>
       <h3 className="pt-2 text-base lg:text-lg">{name}</h3>
-      <p className="pt-1 pb-3 text-sm dark:text-zinc-400 text-zinc-600">
-        {code}
-      </p>
+      <p className="pt-1 text-sm dark:text-zinc-400 text-zinc-600">{code}</p>
+      {credits && (
+        <p className="text-xs pt-1 pb-3 text-zinc-500">{credits} Credits</p>
+      )}
       <div>
         {progress && tasks && (
           <div className="flex flex-col gap-1">

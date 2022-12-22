@@ -25,6 +25,7 @@ const InternalError = dynamic(
 
 const Dashboard: FC = () => {
   const { data: session } = useSession();
+
   const {
     data: greeting,
     isLoading: isGreetingLoading,
@@ -32,11 +33,13 @@ const Dashboard: FC = () => {
   } = trpc.getGreeting.useQuery(undefined, {
     refetchOnWindowFocus: false,
   });
+
   const {
     data: modules,
     isLoading: isModulesLoading,
     error: modulesError,
   } = trpc.getRecentModules.useQuery();
+
   const {
     data: notebooks,
     isLoading: isNotebooksLoading,

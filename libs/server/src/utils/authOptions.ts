@@ -36,6 +36,7 @@ export const authOptions: NextAuthOptions = {
             name: 'Welcome',
             code: 'N001',
             icon: '👋',
+            credits: 15,
             color: 'amber',
             User: {
               connect: {
