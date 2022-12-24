@@ -18,6 +18,20 @@
         "jestConfig": "libs/server/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "pnpm tsc --project libs/server/tsconfig.lib.json --noEmit"
+          },
+          {
+            "command": "pnpm tsc --project libs/server/tsconfig.spec.json --noEmit"
+          }
+        ],
+        "parallel": true
+      }
     }
   }
 }

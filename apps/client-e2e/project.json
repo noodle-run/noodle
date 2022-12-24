@@ -17,14 +17,15 @@
         }
       }
     },
-    "ts-check": {
-      "executor": "@nrwl/workspace:run-commands",
+    "typecheck": {
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           {
-            "command": "tsc --build --force --verbose apps/client-e2e/tsconfig.json"
+            "command": "pnpm tsc --project apps/client-e2e/tsconfig.e2e.json --noEmit"
           }
-        ]
+        ],
+        "parallel": true
       }
     },
     "lint": {

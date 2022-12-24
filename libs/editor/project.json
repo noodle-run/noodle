@@ -49,6 +49,23 @@
           "quiet": true
         }
       }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "pnpm tsc --project libs/editor/tsconfig.lib.json --noEmit"
+          },
+          {
+            "command": "pnpm tsc --project libs/editor/tsconfig.spec.json --noEmit"
+          },
+          {
+            "command": "pnpm tsc --project libs/editor/.storybook/tsconfig.json --noEmit"
+          }
+        ],
+        "parallel": true
+      }
     }
   }
 }
