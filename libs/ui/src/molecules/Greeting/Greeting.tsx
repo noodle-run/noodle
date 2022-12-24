@@ -9,10 +9,10 @@ type GreetingProps = {
 export const Greeting: FC<GreetingProps> = ({ greeting, quote, isLoading }) => {
   if (isLoading) {
     return (
-      <div role="status" className="w-[70ch] h-[88px]">
-        <div className="flex flex-col gap-[8px] animate-pulse h-full">
-          <div className="w-2/3 h-[32px] dark:bg-zinc-800 bg-zinc-100 rounded" />
-          <div className="w-full h-[48px] dark:bg-zinc-800 bg-zinc-100 rounded" />
+      <div role="status" className="h-[88px] w-[70ch]">
+        <div className="flex h-full animate-pulse flex-col gap-[8px]">
+          <div className="h-[32px] w-2/3 rounded bg-zinc-100 dark:bg-zinc-800" />
+          <div className="h-[48px] w-full rounded bg-zinc-100 dark:bg-zinc-800" />
         </div>
       </div>
     );
@@ -22,7 +22,7 @@ export const Greeting: FC<GreetingProps> = ({ greeting, quote, isLoading }) => {
     return (
       <div>
         <h1 className="pb-1 text-2xl font-semibold lg:text-3xl">{greeting}</h1>
-        <h3 className="text-sm lg:text-base text-zinc-700 max-w-[70ch] dark:text-zinc-400">
+        <h3 className="max-w-[70ch] text-sm text-zinc-700 dark:text-zinc-400 lg:text-base">
           {quote}
         </h3>
       </div>

@@ -5,7 +5,7 @@ export const OrderedList: FC<EditorRenderElementProps> = ({
   attributes,
   children,
 }) => (
-  <ol className="py-1 pl-6 list-decimal" {...attributes}>
+  <ol className="list-decimal py-1 pl-6" {...attributes}>
     {children}
   </ol>
 );

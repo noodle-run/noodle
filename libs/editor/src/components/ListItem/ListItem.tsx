@@ -5,7 +5,7 @@ export const ListItem: FC<EditorRenderElementProps> = ({
   attributes,
   children,
 }) => (
-  <li className="dark:text-zinc-300 text-zinc-700" {...attributes}>
+  <li className="text-zinc-700 dark:text-zinc-300" {...attributes}>
     {children}
   </li>
 );

@@ -11,7 +11,7 @@ export const SidebarLink: FC<SidebarLinkProps> = ({ icon, label, href }) => {
   return (
     <Link
       href={href}
-      className="flex items-center gap-3 p-3 transition-colors hover:dark:bg-zinc-800/50 hover:bg-zinc-100 rounded-xl"
+      className="flex items-center gap-3 rounded-xl p-3 transition-colors hover:bg-zinc-100 hover:dark:bg-zinc-800/50"
     >
       <span>{icon}</span>
       <span>{label}</span>

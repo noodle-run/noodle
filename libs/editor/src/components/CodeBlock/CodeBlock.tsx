@@ -6,7 +6,7 @@ export const CodeBlock: FC<EditorRenderElementProps> = ({
   attributes,
 }) => (
   <pre
-    className="px-4 py-3 whitespace-pre-wrap rounded-lg dark:text-zinc-300 text-zinc-700 dark:bg-zinc-800 bg-zinc-100"
+    className="whitespace-pre-wrap rounded-lg bg-zinc-100 px-4 py-3 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
     {...attributes}
   >
     {children}

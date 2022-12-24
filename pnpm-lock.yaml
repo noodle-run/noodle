@@ -113,6 +113,7 @@ specifiers:
   postcss-loader: ^7.0.2
   prettier: ^2.8.1
   prettier-plugin-organize-imports: ^3.2.1
+  prettier-plugin-tailwindcss: 0.2.1
   prisma: ^4.8.0
   react: ^18.2.0
   react-animate-height: ^3.1.0
@@ -282,6 +283,7 @@ devDependencies:
   postcss-loader: 7.0.2_qxxfhhrl3yknjjmta266mo3u64
   prettier: 2.8.1
   prettier-plugin-organize-imports: 3.2.1_2gbcgqmzq2pxiocqw2qs7hdeqe
+  prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.1
   prisma: 4.8.0
   react-refresh: 0.14.0
   react-test-renderer: 18.2.0_react@18.2.0
@@ -19808,6 +19810,15 @@ packages:
     dependencies:
       prettier: 2.8.1
       typescript: 4.9.4
+    dev: true
+
+  /prettier-plugin-tailwindcss/0.2.1_prettier@2.8.1:
+    resolution: {integrity: sha512-aIO8IguumORyRsmT+E7JfJ3A9FEoyhqZR7Au7TBOege3VZkgMvHJMkufeYp4zjnDK2iq4ktkvGMNOQR9T8lisQ==}
+    engines: {node: '>=12.17.0'}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.8.1
     dev: true
 
   /prettier/2.3.0:

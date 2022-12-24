@@ -5,7 +5,7 @@ export const UnorderedList: FC<EditorRenderElementProps> = ({
   attributes,
   children,
 }) => (
-  <ul className="py-1 pl-6 list-disc" {...attributes}>
+  <ul className="list-disc py-1 pl-6" {...attributes}>
     {children}
   </ul>
 );
