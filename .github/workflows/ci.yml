@@ -31,6 +31,7 @@ jobs:
       - run: pnpm nx affected --target=typecheck --parallel --max-parallel=3
       - run: pnpm nx affected --target=build --parallel --max-parallel=3
       - run: pnpm nx affected --target=test --parallel --max-parallel=2
+      - run: pnpm nx affected --target=e2e --parallel --max-parallel=2
       - run: pnpm nx-cloud stop-all-agents
   pr:
     runs-on: ubuntu-latest
@@ -54,6 +55,7 @@ jobs:
       - run: pnpm nx affected --target=typecheck --parallel --max-parallel=3
       - run: pnpm nx affected --target=build --parallel --max-parallel=3
       - run: pnpm nx affected --target=test --parallel --max-parallel=2
+      - run: pnpm nx affected --target=e2e --parallel --max-parallel=2
       - run: pnpm nx-cloud stop-all-agents
   agents:
     runs-on: ubuntu-latest
