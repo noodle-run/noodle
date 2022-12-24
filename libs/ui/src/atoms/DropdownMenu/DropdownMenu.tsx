@@ -56,12 +56,12 @@ export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({
           <Menu.Item
             key={item.label}
             as="li"
-            className="transition-colors ui-active:bg-zinc-300 dark:ui-active:bg-zinc-700/50 rounded-xl hover:bg-zinc-300 dark:hover:bg-zinc-700/50"
+            className="rounded-xl transition-colors hover:bg-zinc-300 ui-active:bg-zinc-300 dark:hover:bg-zinc-700/50 dark:ui-active:bg-zinc-700/50"
           >
             {item.href ? (
               <Link
                 href={item.href}
-                className="flex items-center gap-3 px-3 text-sm h-9"
+                className="flex h-9 items-center gap-3 px-3 text-sm"
               >
                 <span>{item.icon}</span>
                 <span>{item.label}</span>
@@ -70,7 +70,7 @@ export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({
               <button
                 type="button"
                 onClick={item.onClick}
-                className="flex items-center gap-3 px-3 text-sm h-9 w-full"
+                className="flex h-9 w-full items-center gap-3 px-3 text-sm"
               >
                 <span>{item.icon}</span>
                 <span>{item.label}</span>

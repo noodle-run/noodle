@@ -21,9 +21,9 @@ export const Navbar = () => {
         <ul
           data-testid="pages-links"
           className={twMerge(
-            'gap-6 hidden md:flex',
+            'hidden gap-6 md:flex',
             navbarOpen &&
-              'flex absolute left-0 flex-col py-3 top-12 bg-zinc-900 w-full',
+              'absolute left-0 top-12 flex w-full flex-col bg-zinc-900 py-3',
           )}
         >
           <li>
@@ -46,8 +46,8 @@ export const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-        <div className="w-[1px] h-8 bg-zinc-200 dark:bg-zinc-700 hidden md:inline-block" />
-        <ul className="flex gap-6 items-center">
+        <div className="hidden h-8 w-[1px] bg-zinc-200 dark:bg-zinc-700 md:inline-block" />
+        <ul className="flex items-center gap-6">
           <li>
             <NavLink href="https://github.com/ixahmedxi/noodle" external>
               <FiGithub title="Github" size={22} />

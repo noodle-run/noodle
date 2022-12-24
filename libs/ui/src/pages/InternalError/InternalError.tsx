@@ -8,7 +8,7 @@ type InternalErrorProps = {
 
 export const InternalError: FC<InternalErrorProps> = ({ message }) => {
   return (
-    <main className="flex gap-6 flex-col h-screen justify-center items-center">
+    <main className="flex h-screen flex-col items-center justify-center gap-6">
       <Image
         src="/auth-denied.svg"
         alt="Sad illustration"
@@ -16,7 +16,7 @@ export const InternalError: FC<InternalErrorProps> = ({ message }) => {
         height={130.58 * 2}
       />
       <h1 className="text-5xl font-extrabold">Something went wrong.</h1>
-      <p className="text-red-500 flex items-center gap-3">
+      <p className="flex items-center gap-3 text-red-500">
         <FiAlertTriangle /> {message}
       </p>
     </main>

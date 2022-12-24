@@ -20,7 +20,7 @@ export const Sidebar: FC<SidebarProps> = ({ user, links }) => {
   // eslint-disable-next-line no-nested-ternary
   const menuHeight = isDesktop ? 'auto' : menuOpen ? 'auto' : 0;
   return (
-    <nav className="flex flex-col justify-between w-full p-3 lg:w-72 lg:p-6">
+    <nav className="flex w-full flex-col justify-between p-3 lg:w-72 lg:p-6">
       <div>
         <div className="flex items-center justify-between">
           <Link

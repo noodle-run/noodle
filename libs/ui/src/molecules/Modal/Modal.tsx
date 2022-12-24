@@ -58,29 +58,29 @@ export const Modal: FC<ModalProps> = ({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 p-6 text-left align-middle shadow-xl transition-all">
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-zinc-100 p-6 text-left align-middle shadow-xl transition-all dark:bg-zinc-900">
                 <div className="flex justify-end">
                   <button
                     type="button"
                     onClick={onClose}
-                    className="dark:text-zinc-300 text-zinc-700"
+                    className="text-zinc-700 dark:text-zinc-300"
                     data-testid="close-modal"
                   >
                     <FiX size={24} />
                   </button>
                 </div>
                 {image && alt && (
-                  <div className="flex justify-center mb-6">
+                  <div className="mb-6 flex justify-center">
                     <Image src={image} alt={alt} width={150} height={130.58} />
                   </div>
                 )}
                 <Dialog.Title
                   as="h3"
-                  className="text-2xl text-black dark:text-white font-bold text-center leading-6"
+                  className="text-center text-2xl font-bold leading-6 text-black dark:text-white"
                 >
                   {title}
                 </Dialog.Title>
-                <Dialog.Description className="text-sm dark:text-zinc-400 text-zinc-600 text-center mt-3 mb-6">
+                <Dialog.Description className="mt-3 mb-6 text-center text-sm text-zinc-600 dark:text-zinc-400">
                   {description}
                 </Dialog.Description>
               </Dialog.Panel>

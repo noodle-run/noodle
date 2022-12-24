@@ -41,7 +41,7 @@ export const ModuleCard: FC<ModuleCardProps> = ({
     return (
       <div
         role="status"
-        className="min-w-[300px] h-[148px] animate-pulse dark:bg-zinc-800 bg-zinc-100 rounded-2xl"
+        className="h-[148px] min-w-[300px] animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-800"
       />
     );
   }
@@ -49,18 +49,18 @@ export const ModuleCard: FC<ModuleCardProps> = ({
   return (
     <Link
       href={href as string}
-      className="block p-6 transition-colors hover:dark:bg-zinc-700/50 hover:bg-zinc-200 bg-zinc-100 dark:bg-zinc-800 rounded-2xl"
+      className="block rounded-2xl bg-zinc-100 p-6 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 hover:dark:bg-zinc-700/50"
     >
       <span className="text-base lg:text-lg">{icon}</span>
       <h3 className="pt-2 text-base lg:text-lg">{name}</h3>
-      <p className="pt-1 text-sm dark:text-zinc-400 text-zinc-600">{code}</p>
+      <p className="pt-1 text-sm text-zinc-600 dark:text-zinc-400">{code}</p>
       {credits && (
-        <p className="text-xs pt-1 pb-3 text-zinc-500">{credits} Credits</p>
+        <p className="pt-1 pb-3 text-xs text-zinc-500">{credits} Credits</p>
       )}
       <div>
         {progress && tasks && (
           <div className="flex flex-col gap-1">
-            <span className="text-xs text-zinc-500 pb-[2px]">
+            <span className="pb-[2px] text-xs text-zinc-500">
               {tasks} {tasks === 1 ? 'task' : 'tasks'} remaining
             </span>
             <ProgressBar value={progress} color={color} />

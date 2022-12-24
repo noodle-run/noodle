@@ -37,7 +37,7 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar }) => {
       <button
         type="button"
         className={twMerge(
-          'flex items-center lg:justify-start justify-center w-auto gap-3 p-3 transition-colors lg:w-full focus-visible:border-none focus-within:outline-none',
+          'flex w-auto items-center justify-center gap-3 p-3 transition-colors focus-within:outline-none focus-visible:border-none lg:w-full lg:justify-start',
           name && 'lg:justify-center',
         )}
       >
@@ -45,7 +45,7 @@ export const UserCard: FC<UserCardProps> = ({ name, avatar }) => {
           <img
             src={avatar || '/user-placeholder.svg'}
             alt={name}
-            className="w-8 h-8 rounded-full lg:w-10 lg:h-10"
+            className="h-8 w-8 rounded-full lg:h-10 lg:w-10"
           />
           {name && (
             <div className="hidden lg:block">
