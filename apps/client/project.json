@@ -54,6 +54,20 @@
       "options": {
         "lintFilePatterns": ["apps/client/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "pnpm tsc --project apps/client/tsconfig.json --noEmit"
+          },
+          {
+            "command": "pnpm tsc --project apps/client/tsconfig.spec.json --noEmit"
+          }
+        ],
+        "parallel": true
+      }
     }
   },
   "tags": []
