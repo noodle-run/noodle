@@ -18,23 +18,23 @@ export const Dashboard: FC<PropsWithChildren<DashboardProps>> = ({
         user={{ name: userName, avatar: userAvatar }}
         links={[
           {
-            label: "Today's Activity",
-            href: '/dashboard',
+            label: 'Home',
+            href: '/',
             icon: <FiHome />,
           },
           {
             label: 'Modules',
-            href: '/dashboard/modules',
+            href: '/modules',
             icon: <FiGrid />,
           },
           {
             label: 'Task list',
-            href: '/dashboard/tasks',
+            href: '/tasks',
             icon: <FiCheck />,
           },
           {
             label: 'Notebooks',
-            href: '/dashboard/notebooks',
+            href: '/notebooks',
             icon: <FiBook />,
           },
         ]}
