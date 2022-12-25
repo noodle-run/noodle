@@ -41,7 +41,7 @@ export const ModuleCard: FC<ModuleCardProps> = ({
     return (
       <div
         role="status"
-        className="h-[148px] min-w-[300px] animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-800"
+        className="h-[168px] min-w-[300px] animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-800"
       />
     );
   }
