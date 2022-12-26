@@ -19,9 +19,7 @@ jobs:
         pnpm exec nx-cloud record -- pnpm exec nx format:check
       parallel-commands-on-agents: |
         pnpm exec nx affected --target=lint --parallel=6
-        pnpm exec nx affected --target=typecheck --parallel=6
         pnpm exec nx affected --target=test --parallel=6 --ci --code-coverage
-        pnpm exec nx affected --target=e2e --parallel=6
         pnpm exec nx affected --target=build --parallel=6
 
   agents:
