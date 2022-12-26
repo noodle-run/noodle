@@ -4,6 +4,7 @@ import '@fontsource/inter/900.css';
 import { Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
+import { ThemeProvider } from 'next-themes';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import '../styles/globals.css';
@@ -24,7 +25,9 @@ const App = ({ Component, pageProps }: AppProps) => (
     </Head>
     <DefaultSeo {...nextSEO} />
     <SessionProvider session={(pageProps as PageProps).session}>
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
     </SessionProvider>
   </>
 );
