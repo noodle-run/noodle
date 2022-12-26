@@ -1,16 +1,17 @@
 import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { StarButton } from './StarButton';
 
 describe('StarButton atom', () => {
   it('renders a normal button when not starred', () => {
-    render(<StarButton isStarred={false} onChange={() => {}} />);
+    render(<StarButton isStarred={false} />);
 
     const icon = screen.getByTestId('favourite-icon');
     expect(icon).toHaveClass('text-gray-500');
   });
 
   it('renders a starred button when starred', () => {
-    render(<StarButton isStarred onChange={() => {}} />);
+    render(<StarButton isStarred />);
 
     const icon = screen.getByTestId('favourite-icon');
     expect(icon).toHaveClass('text-amber-400');
@@ -21,8 +22,8 @@ describe('StarButton atom', () => {
     render(<StarButton isStarred={false} onChange={onChange} />);
     const button = screen.getByRole('button');
 
-    await act(() => {
-      button.click();
+    await act(async () => {
+      await userEvent.click(button);
     });
 
     expect(onChange).toHaveBeenCalledWith(true);
