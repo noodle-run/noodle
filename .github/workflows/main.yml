@@ -13,7 +13,7 @@ jobs:
     with:
       number-of-agents: 6
       init-commands: |
-        pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=6
+        pnpm exec nx-cloud start-ci-run --stop-agents-after="e2e" --agent-count=6
       parallel-commands: |
         pnpm exec nx-cloud record -- pnpm exec nx workspace-lint
         pnpm exec nx-cloud record -- pnpm exec nx format:check
