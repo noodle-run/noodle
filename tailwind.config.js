@@ -21,7 +21,7 @@ module.exports = {
       },
     },
   },
-  darkMode: 'media',
+  darkMode: 'class',
   plugins: [
     require('tailwind-scrollbar-hide'),
     require('@headlessui/tailwindcss'),
