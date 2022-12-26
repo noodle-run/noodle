@@ -7,7 +7,6 @@ const Editor = () => (
     plugins={plugins}
     initialValue={initialValue}
     editableProps={{ placeholder: 'Untitled' }}
-    onChange={(newValue) => console.log(JSON.stringify(newValue))}
   />
 );
 
