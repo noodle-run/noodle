@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+env:
+  NX_CLOUD_DISTRIBUTED_EXECUTION: true
+
 jobs:
   main:
     name: CI
