@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  devdb:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=noodle
+      - MYSQL_ROOT_PASSWORD=noodle
+    ports:
+      - '3306:3306'
+    volumes:
+      - devdb:/var/lib/mysql
+      - ./dbs/devdb/init.sql:/docker-entrypoint-initdb.d/init.sql
+  testdb:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=noodle
+      - MYSQL_ROOT_PASSWORD=noodle
+    ports:
+      - '3309:3306'
+    volumes:
+      - testdb:/var/lib/mysql
+      - ./dbs/testdb/init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  devdb:
+    driver: local
+  testdb:
+    driver: local

@@ -11,7 +11,12 @@
     "build-storybook": "build-storybook -c ./libs/storybook/.storybook",
     "chromatic": "chromatic --exit-zero-on-changes",
     "format": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
-    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\""
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "prisma:setup:dev": "dotenv -e .env.dev -- pnpm prisma db push",
+    "prisma:setup:test": "dotenv -e .env.test -- pnpm prisma db push",
+    "prisma:seed:dev": "dotenv -e .env.dev -- pnpm prisma db seed",
+    "prisma:seed:test": "dotenv -e .env.test -- pnpm prisma db seed",
+    "prisma:setup": "pnpm run prisma:setup:dev && pnpm run prisma:seed:dev && pnpm run prisma:setup:test && pnpm run prisma:seed:test"
   },
   "private": true,
   "devDependencies": {
@@ -67,6 +72,7 @@
     "babel-loader": "^9.1.0",
     "chromatic": "^6.14.0",
     "css-loader": "^6.7.3",
+    "dotenv-cli": "6.0.0",
     "eslint": "^8.30.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
