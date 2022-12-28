@@ -82,6 +82,7 @@ specifiers:
   class-variance-authority: ^0.4.0
   core-js: ^3.27.0
   css-loader: ^6.7.3
+  dotenv-cli: 6.0.0
   eslint: ^8.30.0
   eslint-config-airbnb: ^19.0.4
   eslint-config-airbnb-typescript: ^17.0.0
@@ -259,6 +260,7 @@ devDependencies:
   babel-loader: 9.1.0_lkd654lvpl423ugsqn5olungie
   chromatic: 6.14.0
   css-loader: 6.7.3_webpack@5.75.0
+  dotenv-cli: 6.0.0
   eslint: 8.30.0
   eslint-config-airbnb: 19.0.4_j3uyvjk2vb2gkfzhvqukeu5rlq
   eslint-config-airbnb-typescript: 17.0.0_qipeoi3mvzxgzndpeo4r6kwevy
@@ -3492,7 +3494,7 @@ packages:
     dependencies:
       '@jest/types': 28.1.3
       '@types/node': 18.11.18
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-message-util: 28.1.3
       jest-util: 28.1.3
       slash: 3.0.0
@@ -3841,7 +3843,7 @@ packages:
       '@jest/types': 28.1.3
       '@jridgewell/trace-mapping': 0.3.17
       babel-plugin-istanbul: 6.1.1
-      chalk: 4.1.0
+      chalk: 4.1.2
       convert-source-map: 1.9.0
       fast-json-stable-stringify: 2.1.0
       graceful-fs: 4.2.10
@@ -3910,7 +3912,7 @@ packages:
       '@types/istanbul-reports': 3.0.1
       '@types/node': 18.11.18
       '@types/yargs': 17.0.17
-      chalk: 4.1.0
+      chalk: 4.1.2
     dev: true
 
   /@jest/types/29.3.1:
@@ -9980,7 +9982,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.3
+      es-abstract: 1.20.5
       get-intrinsic: 1.1.3
       is-string: 1.0.7
     dev: true
@@ -9991,7 +9993,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.4
+      es-abstract: 1.20.5
       get-intrinsic: 1.1.3
       is-string: 1.0.7
     dev: true
@@ -10029,7 +10031,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.3
+      es-abstract: 1.20.5
       es-shim-unscopables: 1.0.0
     dev: true
 
@@ -10049,7 +10051,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.4
+      es-abstract: 1.20.5
       es-shim-unscopables: 1.0.0
     dev: true
 
@@ -10080,7 +10082,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.4
+      es-abstract: 1.20.5
       es-shim-unscopables: 1.0.0
       get-intrinsic: 1.1.3
     dev: true
@@ -10251,7 +10253,7 @@ packages:
       '@types/babel__core': 7.1.20
       babel-plugin-istanbul: 6.1.1
       babel-preset-jest: 28.1.3_@babel+core@7.20.7
-      chalk: 4.1.0
+      chalk: 4.1.2
       graceful-fs: 4.2.10
       slash: 3.0.0
     transitivePeerDependencies:
@@ -12447,13 +12449,33 @@ packages:
       is-obj: 2.0.0
     dev: true
 
+  /dotenv-cli/6.0.0:
+    resolution: {integrity: sha512-qXlCOi3UMDhCWFKe0yq5sg3X+pJAz+RQDiFN38AMSbUrnY3uZshSfDJUAge951OS7J9gwLZGfsBlWRSOYz/TRg==}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
+      dotenv: 16.0.3
+      dotenv-expand: 8.0.3
+      minimist: 1.2.7
+    dev: true
+
   /dotenv-expand/5.1.0:
     resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
+    dev: true
+
+  /dotenv-expand/8.0.3:
+    resolution: {integrity: sha512-SErOMvge0ZUyWd5B0NXMQlDkN+8r+HhVUsxgOO7IoPDOdDRD2JjExpN6y3KnFR66jsJMwSn1pqIivhU5rcJiNg==}
+    engines: {node: '>=12'}
     dev: true
 
   /dotenv/10.0.0:
     resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /dotenv/8.6.0:
@@ -12630,66 +12652,6 @@ packages:
     resolution: {integrity: sha512-Sk5V6wVazPhq5MhpO+AUxJn5x7XSXGl1R93Vn7i+zS15KDVxQijejNCrz8340/2bgLBjR9GtEG8ZVKONDjcqGQ==}
     dependencies:
       stackframe: 1.3.4
-    dev: true
-
-  /es-abstract/1.20.3:
-    resolution: {integrity: sha512-AyrnaKVpMzljIdwjzrj+LxGmj8ik2LckwXacHqrJJ/jxz6dDDBcZ7I7nlHM0FvEW8MfbWJwOd+yT2XzYW49Frw==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: 1.0.2
-      es-to-primitive: 1.2.1
-      function-bind: 1.1.1
-      function.prototype.name: 1.1.5
-      get-intrinsic: 1.1.3
-      get-symbol-description: 1.0.0
-      has: 1.0.3
-      has-property-descriptors: 1.0.0
-      has-symbols: 1.0.3
-      internal-slot: 1.0.3
-      is-callable: 1.2.7
-      is-negative-zero: 2.0.2
-      is-regex: 1.1.4
-      is-shared-array-buffer: 1.0.2
-      is-string: 1.0.7
-      is-weakref: 1.0.2
-      object-inspect: 1.12.2
-      object-keys: 1.1.1
-      object.assign: 4.1.4
-      regexp.prototype.flags: 1.4.3
-      safe-regex-test: 1.0.0
-      string.prototype.trimend: 1.0.5
-      string.prototype.trimstart: 1.0.5
-      unbox-primitive: 1.0.2
-    dev: true
-
-  /es-abstract/1.20.4:
-    resolution: {integrity: sha512-0UtvRN79eMe2L+UNEF1BwRe364sj/DXhQ/k5FmivgoSdpM90b8Jc0mDzKMGo7QS0BVbOP/bTwBKNnDc9rNzaPA==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: 1.0.2
-      es-to-primitive: 1.2.1
-      function-bind: 1.1.1
-      function.prototype.name: 1.1.5
-      get-intrinsic: 1.1.3
-      get-symbol-description: 1.0.0
-      has: 1.0.3
-      has-property-descriptors: 1.0.0
-      has-symbols: 1.0.3
-      internal-slot: 1.0.3
-      is-callable: 1.2.7
-      is-negative-zero: 2.0.2
-      is-regex: 1.1.4
-      is-shared-array-buffer: 1.0.2
-      is-string: 1.0.7
-      is-weakref: 1.0.2
-      object-inspect: 1.12.2
-      object-keys: 1.1.1
-      object.assign: 4.1.4
-      regexp.prototype.flags: 1.4.3
-      safe-regex-test: 1.0.0
-      string.prototype.trimend: 1.0.6
-      string.prototype.trimstart: 1.0.6
-      unbox-primitive: 1.0.2
     dev: true
 
   /es-abstract/1.20.5:
@@ -14119,7 +14081,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.3
+      es-abstract: 1.20.5
       functions-have-names: 1.2.3
     dev: true
 
@@ -14277,7 +14239,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
@@ -15706,7 +15668,7 @@ packages:
     hasBin: true
     dependencies:
       async: 3.2.4
-      chalk: 4.1.0
+      chalk: 4.1.2
       filelist: 1.0.4
       minimatch: 3.1.2
     dev: true
@@ -15728,7 +15690,7 @@ packages:
       '@jest/test-result': 28.1.3
       '@jest/types': 28.1.3
       '@types/node': 18.11.18
-      chalk: 4.1.0
+      chalk: 4.1.2
       co: 4.6.0
       dedent: 0.7.0
       is-generator-fn: 2.1.0
@@ -15885,7 +15847,7 @@ packages:
     resolution: {integrity: sha512-8RqP1B/OXzjjTWkqMX67iqgwBVJRgCyKD3L9nq+6ZqJMdvjE8RgHktqZ6jNrkdMT+dJuYNI3rhQpxaz7drJHfw==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       diff-sequences: 28.1.1
       jest-get-type: 28.0.2
       pretty-format: 28.1.3
@@ -15920,7 +15882,7 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     dependencies:
       '@jest/types': 28.1.3
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-get-type: 28.0.2
       jest-util: 28.1.3
       pretty-format: 28.1.3
@@ -16084,7 +16046,7 @@ packages:
     resolution: {integrity: sha512-kQeJ7qHemKfbzKoGjHHrRKH6atgxMk8Enkk2iPQ3XwO6oE/KYD8lMYOziCkeSB9G4adPM4nR1DE8Tf5JeWH6Bw==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-diff: 28.1.3
       jest-get-type: 28.0.2
       pretty-format: 28.1.3
@@ -16107,7 +16069,7 @@ packages:
       '@babel/code-frame': 7.18.6
       '@jest/types': 28.1.3
       '@types/stack-utils': 2.0.1
-      chalk: 4.1.0
+      chalk: 4.1.2
       graceful-fs: 4.2.10
       micromatch: 4.0.5
       pretty-format: 28.1.3
@@ -16235,7 +16197,7 @@ packages:
     resolution: {integrity: sha512-Z1W3tTjE6QaNI90qo/BJpfnvpxtaFTFw5CDgwpyE/Kz8U/06N1Hjf4ia9quUhCh39qIGWF1ZuxFiBiJQwSEYKQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.2
       graceful-fs: 4.2.10
       jest-haste-map: 28.1.3
       jest-pnp-resolver: 1.2.3_jest-resolve@28.1.3
@@ -16271,7 +16233,7 @@ packages:
       '@jest/transform': 28.1.3
       '@jest/types': 28.1.3
       '@types/node': 18.11.18
-      chalk: 4.1.0
+      chalk: 4.1.2
       emittery: 0.10.2
       graceful-fs: 4.2.10
       jest-docblock: 28.1.1
@@ -16330,7 +16292,7 @@ packages:
       '@jest/test-result': 28.1.3
       '@jest/transform': 28.1.3
       '@jest/types': 28.1.3
-      chalk: 4.1.0
+      chalk: 4.1.2
       cjs-module-lexer: 1.2.2
       collect-v8-coverage: 1.0.1
       execa: 5.1.1
@@ -16402,7 +16364,7 @@ packages:
       '@types/babel__traverse': 7.18.3
       '@types/prettier': 2.7.2
       babel-preset-current-node-syntax: 1.0.1_@babel+core@7.20.7
-      chalk: 4.1.0
+      chalk: 4.1.2
       expect: 28.1.3
       graceful-fs: 4.2.10
       jest-diff: 28.1.3
@@ -16480,7 +16442,7 @@ packages:
     dependencies:
       '@jest/types': 28.1.3
       '@types/node': 18.11.18
-      chalk: 4.1.0
+      chalk: 4.1.2
       ci-info: 3.7.0
       graceful-fs: 4.2.10
       picomatch: 2.3.1
@@ -16516,7 +16478,7 @@ packages:
     dependencies:
       '@jest/types': 28.1.3
       camelcase: 6.3.0
-      chalk: 4.1.0
+      chalk: 4.1.2
       jest-get-type: 28.0.2
       leven: 3.1.0
       pretty-format: 28.1.3
@@ -16542,7 +16504,7 @@ packages:
       '@jest/types': 28.1.3
       '@types/node': 18.11.18
       ansi-escapes: 4.3.2
-      chalk: 4.1.0
+      chalk: 4.1.2
       emittery: 0.10.2
       jest-util: 28.1.3
       string-length: 4.0.2
@@ -18596,7 +18558,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.3
+      es-abstract: 1.20.5
     dev: true
 
   /object.entries/1.1.6:
@@ -18605,7 +18567,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.4
+      es-abstract: 1.20.5
     dev: true
 
   /object.fromentries/2.0.6:
@@ -18614,7 +18576,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.4
+      es-abstract: 1.20.5
     dev: true
 
   /object.getownpropertydescriptors/2.1.5:
@@ -18631,7 +18593,7 @@ packages:
     resolution: {integrity: sha512-B5UIT3J1W+WuWIU55h0mjlwaqxiE5vYENJXIXZ4VFe05pNYrkKuK0U/6aFcb0pKywYJh7IhfoqUfKVmrJJHZHw==}
     dependencies:
       define-properties: 1.1.4
-      es-abstract: 1.20.4
+      es-abstract: 1.20.5
     dev: true
 
   /object.pick/1.3.0:
@@ -18647,7 +18609,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.3
+      es-abstract: 1.20.5
     dev: true
 
   /object.values/1.1.6:
@@ -18656,7 +18618,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.4
+      es-abstract: 1.20.5
     dev: true
 
   /objectorarray/1.0.5:
@@ -21944,7 +21906,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.4
+      es-abstract: 1.20.5
       get-intrinsic: 1.1.3
       has-symbols: 1.0.3
       internal-slot: 1.0.3
@@ -21970,28 +21932,12 @@ packages:
       es-abstract: 1.20.5
     dev: true
 
-  /string.prototype.trimend/1.0.5:
-    resolution: {integrity: sha512-I7RGvmjV4pJ7O3kdf+LXFpVfdNOxtCW/2C8f6jNiW4+PQchwxkCDzlk1/7p+Wl4bqFIZeF47qAHXLuHHWKAxog==}
-    dependencies:
-      call-bind: 1.0.2
-      define-properties: 1.1.4
-      es-abstract: 1.20.3
-    dev: true
-
   /string.prototype.trimend/1.0.6:
     resolution: {integrity: sha512-JySq+4mrPf9EsDBEDYMOb/lM7XQLulwg5R/m1r0PXEFqrV0qHvl58sdTilSXtKOflCsK2E8jxf+GKC0T07RWwQ==}
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.4
-    dev: true
-
-  /string.prototype.trimstart/1.0.5:
-    resolution: {integrity: sha512-THx16TJCGlsN0o6dl2o6ncWUsdgnLRSA23rRE5pyGBw/mLr3Ej/R2LaqCtgP8VNMGZsvMWnf9ooZPyY2bHvUFg==}
-    dependencies:
-      call-bind: 1.0.2
-      define-properties: 1.1.4
-      es-abstract: 1.20.3
+      es-abstract: 1.20.5
     dev: true
 
   /string.prototype.trimstart/1.0.6:
@@ -21999,7 +21945,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.4
+      es-abstract: 1.20.5
     dev: true
 
   /string_decoder/1.1.1:
