@@ -115,7 +115,8 @@
     "webpack-merge": "^5.8.0"
   },
   "prisma": {
-    "schema": "./apps/client/prisma/schema.prisma"
+    "schema": "./apps/client/prisma/schema.prisma",
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} apps/client/prisma/seed.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "3.238.0",
