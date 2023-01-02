@@ -187,10 +187,17 @@ The `.env.example` file includes comments about each expected environment variab
 
 #### Database
 
-Noodle requires a mysql database to connect to and save the data into. You can install and configure mysql on your machine and then supply the database url in the `.env` file or use something like [planetscale](https://planetscale.com/) to create a database on the cloud and copy the database url in the `.env` file without needing to locally install mysql.
+Noodle requires a MySQL database to connect to and save the data into. You can install and configure MySQL on your machine and then supply the database url in the `.env` file or use something like [Planetscale](https://planetscale.com/) to create a database on the cloud and copy the database url in the `.env` file without needing to locally install MySQL.
 
 ```
 DATABASE_URL=<your-db-url-here>
+```
+If you have [Docker](https://www.docker.com) and Docker Compose set up, you can use it to spin up two MySQL databases locally using ``docker-compose up -d``. Just make sure to add either `noodle_devdb_1` or `noodle_testdb_1` for the environment you want to use at the end of this database url.
+
+```
+# For use through Docker
+
+DATABASE_URL=mysql://root:noodle@localhost:3306/<db-name-here>
 ```
 
 #### Next-auth
