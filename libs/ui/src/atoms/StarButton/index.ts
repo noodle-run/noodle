@@ -1,1 +1,0 @@
-export { StarButton } from './StarButton';

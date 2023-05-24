@@ -1,0 +1,32 @@
+{
+  "name": "eslint-config-noodle",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Noodle's ESLint configuration",
+  "license": "AGPL-3.0",
+  "author": "Ahmed Elsakaan",
+  "files": [
+    "./base.js",
+    "./next.js",
+    "./react.js",
+    "./vitest.js"
+  ],
+  "scripts": {
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint:fix": "pnpm run lint --fix"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^13.4.3",
+    "@noodle/tsconfig": "workspace:^",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-jest-dom": "^4.0.3",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.11.0",
+    "eslint-plugin-vitest": "^0.2.3"
+  }
+}

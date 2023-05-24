@@ -1,0 +1,9 @@
+{
+  "extends": "@noodle/tsconfig/react.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["vitest/globals"]
+  },
+  "exclude": ["./coverage/**/*"],
+  "include": ["**/*.ts", "**/*.tsx", ".eslintrc.cjs", "./vitest.setup.ts"]
+}

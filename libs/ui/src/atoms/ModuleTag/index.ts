@@ -1,1 +1,0 @@
-export { ModuleTag } from './ModuleTag';
