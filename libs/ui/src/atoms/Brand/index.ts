@@ -1,1 +1,0 @@
-export { Brand } from './Brand';

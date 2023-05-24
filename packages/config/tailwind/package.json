@@ -1,0 +1,32 @@
+{
+  "name": "@noodle/tailwind",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Noodle's Tailwind CSS preset",
+  "license": "AGPL-3.0",
+  "author": "Ahmed Elsakaan",
+  "type": "module",
+  "exports": {
+    ".": "./dist/tailwind.config.js",
+    "./postcss.cjs": "./postcss.cjs"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint:fix": "pnpm run lint --fix"
+  },
+  "dependencies": {
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2"
+  },
+  "devDependencies": {
+    "@noodle/tsconfig": "workspace:^",
+    "@radix-ui/colors": "^0.1.8",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.14",
+    "tailwindcss-animate": "^1.0.5",
+    "windy-radix-palette": "^0.6.1",
+    "windy-radix-typography": "^0.2.1"
+  }
+}

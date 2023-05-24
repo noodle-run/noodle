@@ -1,55 +1,41 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "noodle",
-  "affected": {
-    "defaultBase": "main"
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/next"
-  },
-  "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
-    ".eslintrc.json": "*"
-  },
+  "defaultBase": "main",
+  "defaultProject": "web",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
+      "runner": "nx-cloud",
       "options": {
         "cacheableOperations": [
           "build",
           "lint",
+          "lint:fix",
+          "typecheck",
           "test",
-          "e2e",
-          "build-storybook",
-          "typecheck"
+          "test:coverage"
         ],
-        "accessToken": "NDNkZmU5MzctMGIzNC00MTRjLWIyODUtYTE1NTRkYzE2ZDIwfHJlYWQtd3JpdGU="
+        "accessToken": "NzVmODUwODQtNDM4Yy00MTkzLWJhYjktYWQ0ZWE4Y2E2OWI4fHJlYWQtd3JpdGU="
       }
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "babel": true
-      }
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "{projectRoot}/.next",
+        "!{projectRoot}/.next/cache",
+        "{projectRoot}/dist"
+      ]
     },
-    "@nrwl/next": {
-      "application": {
-        "style": "css",
-        "linter": "eslint"
-      }
+    "start": {
+      "dependsOn": ["build"]
+    },
+    "typecheck": {
+      "outputs": ["{projectRoot}/tsconfig.tsbuildinfo"]
+    },
+    "test:coverage": {
+      "outputs": ["{projectRoot}/coverage"]
     }
-  },
-  "defaultProject": "client"
+  }
 }

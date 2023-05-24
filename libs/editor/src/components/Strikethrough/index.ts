@@ -1,1 +1,0 @@
-export { Strikethrough } from './Strikethrough';

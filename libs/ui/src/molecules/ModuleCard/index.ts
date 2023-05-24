@@ -1,1 +1,0 @@
-export { ModuleCard } from './ModuleCard';

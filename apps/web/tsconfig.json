@@ -1,0 +1,19 @@
+{
+  "extends": "@noodle/tsconfig/nextjs.json",
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.js",
+    "./.eslintrc.cjs",
+    "./vitest.setup.ts"
+  ],
+  "exclude": ["node_modules", "./postcss.config.cjs", "./coverage/**/*"]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@noodle/vitest",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Noodle's vitest configuration presets",
+  "license": "AGPL-3.0",
+  "author": "Ahmed Elsakaan",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint:fix": "pnpm run lint --fix"
+  },
+  "devDependencies": {
+    "@noodle/tsconfig": "workspace:^",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-c8": "^0.31.1",
+    "@vitest/ui": "^0.31.1",
+    "happy-dom": "^9.20.1",
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.31.1"
+  }
+}

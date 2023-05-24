@@ -1,0 +1,13 @@
+diff --git a/index.d.ts b/index.d.ts
+index 43ba6b7fe458e77d152fe0b2f7afeac05d8fc563..522a6ec5bc2c6e2b59fb793a7ce7a4f3d6ebb5fc 100755
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -7,8 +7,6 @@
+ // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+ // Minimum TypeScript Version: 4.3
+ 
+-/// <reference types="jest" />
+-
+ import { TestingLibraryMatchers } from './matchers';
+ 
+ declare global {

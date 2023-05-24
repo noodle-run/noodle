@@ -1,0 +1,47 @@
+{
+  "name": "@noodle/ui",
+  "version": "0.1.0",
+  "description": "Noodle's UI Components library",
+  "license": "AGPL-3.0",
+  "author": "Ahmed Elsakaan",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "pnpm run build --watch",
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint:fix": "pnpm run lint --fix",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwind-merge": "^1.12.0"
+  },
+  "devDependencies": {
+    "@noodle/tailwind": "workspace:^",
+    "@noodle/tsconfig": "workspace:^",
+    "@noodle/vitest": "workspace:^",
+    "@testing-library/dom": "^9.3.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "@vitest/coverage-c8": "^0.31.1",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2",
+    "vitest": "^0.31.1"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@noodle/tsconfig",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Noodle's TypeScript configuration presets",
+  "license": "AGPL-3.0",
+  "author": "Ahmed Elsakaan",
+  "files": [
+    "./base.json",
+    "./nextjs.json",
+    "./react.json"
+  ],
+  "scripts": {
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint:fix": "pnpm run lint --fix"
+  }
+}
