@@ -15,7 +15,8 @@
     "build": "tsc",
     "dev": "tsc -w",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
-    "lint:fix": "pnpm run lint --fix"
+    "lint:fix": "pnpm run lint --fix",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
