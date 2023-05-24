@@ -23,7 +23,7 @@
     "@vitejs/plugin-react": "^4.0.0",
     "@vitest/coverage-c8": "^0.31.1",
     "@vitest/ui": "^0.31.1",
-    "happy-dom": "^9.20.1",
+    "happy-dom": "^9.20.3",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.31.1"
   }
