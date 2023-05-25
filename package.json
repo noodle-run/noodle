@@ -14,6 +14,7 @@
     "format:write": "prettier --write .",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "lint:fix": "pnpm run lint --fix",
+    "prepare": "husky install",
     "start": "pnpm nx start web",
     "test": "pnpm nx run-many -t test",
     "test:coverage": "pnpm nx run-many -t test:coverage --output-style=stream",
@@ -30,6 +31,8 @@
     "del-cli": "^5.0.0",
     "eslint": "^8.41.0",
     "eslint-config-noodle": "workspace:^",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "nx": "16.2.2",
     "nx-cloud": "latest",
     "prettier": "^2.8.8",
@@ -45,7 +48,7 @@
   },
   "pnpm": {
     "patchedDependencies": {
-      "@types/testing-library__jest-dom@5.14.5": "patches/@types__testing-library__jest-dom@5.14.5.patch"
+      "@types/testing-library__jest-dom@5.14.6": "patches/@types__testing-library__jest-dom@5.14.6.patch"
     }
   }
 }
