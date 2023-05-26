@@ -5,5 +5,11 @@
     "types": ["vitest/globals"]
   },
   "exclude": ["./coverage/**/*"],
-  "include": ["**/*.ts", "**/*.tsx", ".eslintrc.cjs", "./vitest.setup.ts"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".eslintrc.cjs",
+    "./vitest.setup.ts",
+    ".storybook/**/*"
+  ]
 }
