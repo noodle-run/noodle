@@ -13,7 +13,8 @@
           "lint:fix",
           "typecheck",
           "test",
-          "test:coverage"
+          "test:coverage",
+          "build-storybook"
         ],
         "accessToken": "NzVmODUwODQtNDM4Yy00MTkzLWJhYjktYWQ0ZWE4Y2E2OWI4fHJlYWQtd3JpdGU="
       }
@@ -36,6 +37,9 @@
     },
     "test:coverage": {
       "outputs": ["{projectRoot}/coverage"]
+    },
+    "build-storybook": {
+      "outputs": ["{projectRoot}/storybook-static"]
     }
   }
 }

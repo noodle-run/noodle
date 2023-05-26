@@ -12,9 +12,11 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "build-storybook": "storybook build",
     "dev": "pnpm run build --watch",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "lint:fix": "pnpm run lint --fix",
+    "storybook": "storybook dev -p 6006",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
@@ -28,9 +30,17 @@
     "tailwind-merge": "^1.12.0"
   },
   "devDependencies": {
+    "@noodle/storybook": "workspace:^",
     "@noodle/tailwind": "workspace:^",
     "@noodle/tsconfig": "workspace:^",
     "@noodle/vitest": "workspace:^",
+    "@storybook/addon-essentials": "^7.0.17",
+    "@storybook/addon-interactions": "^7.0.17",
+    "@storybook/addon-links": "^7.0.17",
+    "@storybook/blocks": "^7.0.17",
+    "@storybook/react": "^7.0.17",
+    "@storybook/react-vite": "^7.0.17",
+    "@storybook/testing-library": "^0.0.14-next.2",
     "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -41,7 +51,9 @@
     "@vitest/coverage-c8": "^0.31.1",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
+    "storybook": "^7.0.17",
     "tailwindcss": "^3.3.2",
+    "vite": "^4.3.8",
     "vitest": "^0.31.1"
   }
 }
