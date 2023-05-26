@@ -8,7 +8,7 @@
   "scripts": {
     "build": "pnpm nx run-many -t build",
     "build:pkgs": "pnpm nx run-many -t build --exclude=web",
-    "clean": "del **/coverage **/tsconfig.tsbuildinfo **/dist **/.next **/node_modules && pnpm install",
+    "clean": "del **/coverage **/storybook-static **/tsconfig.tsbuildinfo **/dist **/.next **/node_modules && pnpm install",
     "dev": "pnpm nx run-many -t dev --parallel=99 --output-style=stream",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
