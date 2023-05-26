@@ -1,3 +1,4 @@
+import { withThemeByClassName } from '@storybook/addon-styling';
 import { type Preview } from '@storybook/react';
 
 export const basePreview = {
@@ -10,4 +11,13 @@ export const basePreview = {
       },
     },
   },
+  decorators: [
+    withThemeByClassName({
+      themes: {
+        light: '',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+    }),
+  ],
 } satisfies Preview;

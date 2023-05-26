@@ -10,6 +10,17 @@
     ".": "./dist/main.js",
     "./preview": "./dist/preview.js"
   },
+  "main": "./dist/main.js",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "dist/main.d.ts"
+      ],
+      "./preview": [
+        "dist/preview.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "build": "tsc --rootDir src",
     "dev": "pnpm build --watch",
@@ -18,8 +29,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@storybook/addon-styling": "^1.0.8",
     "@storybook/react": "^7.0.17",
-    "@storybook/react-vite": "^7.0.17"
+    "@storybook/react-vite": "^7.0.17",
+    "@storybook/types": "^7.0.17"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^"
