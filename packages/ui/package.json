@@ -34,6 +34,7 @@
     "@noodle/tailwind": "workspace:^",
     "@noodle/tsconfig": "workspace:^",
     "@noodle/vitest": "workspace:^",
+    "@storybook/addon-a11y": "^7.0.18",
     "@storybook/addon-essentials": "^7.0.18",
     "@storybook/addon-interactions": "^7.0.18",
     "@storybook/addon-links": "^7.0.18",
@@ -53,6 +54,7 @@
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "storybook": "^7.0.18",
+    "storybook-addon-pseudo-states": "^2.0.1",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9",
     "vitest": "^0.31.2"
