@@ -16,6 +16,7 @@
     "lint:fix": "pnpm run lint --fix",
     "prepare": "husky install",
     "start": "pnpm turbo start",
+    "storybook": "pnpm turbo storybook --filter=@noodle/storybook",
     "test": "pnpm turbo test",
     "test:coverage": "pnpm turbo test:coverage",
     "test:ui": "pnpm turbo test:ui",
