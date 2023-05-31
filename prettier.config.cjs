@@ -24,9 +24,8 @@ const config = {
     '^@/(.*)$',
     '^[./]',
   ],
-  importOrderSeparation: false,
-  importOrderSortSpecifiers: true,
-  importOrderMergeDuplicateImports: true,
+  importOrderParserPlugins: ['typescript', 'jsx', 'decorators-legacy'],
+  importOrderTypeScriptVersion: '5.0.4',
 };
 
 module.exports = config;
