@@ -268,7 +268,7 @@ importers:
         specifier: ^1.12.0
         version: 1.12.0
     devDependencies:
-      '@noodle/storybook':
+      '@noodle/storybook-config':
         specifier: workspace:^
         version: link:../config/storybook
       '@noodle/tailwind':
