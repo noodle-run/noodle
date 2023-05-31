@@ -30,9 +30,9 @@
   },
   "dependencies": {
     "@storybook/addon-styling": "^1.0.8",
-    "@storybook/react": "^7.0.17",
-    "@storybook/react-vite": "^7.0.17",
-    "@storybook/types": "^7.0.17"
+    "@storybook/react": "^7.0.18",
+    "@storybook/react-vite": "^7.0.18",
+    "@storybook/types": "^7.0.18"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^"

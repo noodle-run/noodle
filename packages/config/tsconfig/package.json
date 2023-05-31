@@ -9,9 +9,5 @@
     "./base.json",
     "./nextjs.json",
     "./react.json"
-  ],
-  "scripts": {
-    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
-    "lint:fix": "pnpm run lint --fix"
-  }
+  ]
 }
