@@ -8,7 +8,7 @@
   "scripts": {
     "build": "pnpm nx run-many -t build",
     "build:pkgs": "pnpm nx run-many -t build --exclude=web",
-    "clean": "del **/coverage **/storybook-static **/tsconfig.tsbuildinfo **/dist **/.next **/node_modules && pnpm install",
+    "clean": "del pnpm-lock.yaml **/coverage **/storybook-static **/tsconfig.tsbuildinfo **/dist **/.next **/node_modules && pnpm install",
     "dev": "pnpm nx run-many -t dev --parallel=99 --output-style=stream",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
@@ -23,30 +23,30 @@
     "typecheck": "pnpm nx run-many -t typecheck"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.3",
-    "@commitlint/config-conventional": "^17.6.3",
-    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.0",
     "@noodle/tsconfig": "workspace:^",
     "@types/eslint": "^8.40.0",
-    "@types/node": "^20.2.4",
+    "@types/node": "^20.2.5",
     "@types/prettier": "^2.7.2",
     "del-cli": "^5.0.0",
     "eslint": "^8.41.0",
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "nx": "16.2.2",
     "nx-cloud": "latest",
     "prettier": "^2.8.8",
     "prettier-plugin-jsdoc": "^0.4.2",
     "prettier-plugin-packagejson": "^2.4.3",
     "prettier-plugin-tailwindcss": "^0.3.0",
+    "turbo": "^1.10.0",
     "typescript": "^5.0.4"
   },
-  "packageManager": "pnpm@8.5.1",
+  "packageManager": "pnpm@8.6.0",
   "engines": {
     "node": ">=18.16.0",
-    "pnpm": ">=8.5.1"
+    "pnpm": ">=8.6.0"
   },
   "pnpm": {
     "patchedDependencies": {
