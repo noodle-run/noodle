@@ -9,7 +9,8 @@
     "./base.js",
     "./next.js",
     "./react.js",
-    "./vitest.js"
+    "./vitest.js",
+    "./storybook.js"
   ],
   "scripts": {
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
