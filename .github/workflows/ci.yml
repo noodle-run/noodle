@@ -24,6 +24,10 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
           fetch-depth: 0
+      - name: Log out the PR number
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          echo "PR sha: ${{ github.event.pull_request.head.sha }}"
 
       - uses: actions/checkout@v3
         name: Checkout [Default Branch]
