@@ -13,7 +13,7 @@ env:
 
 jobs:
   main:
-    name: Nx Cloud - Main Job
+    name: CI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
