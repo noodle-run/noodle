@@ -1,0 +1,93 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "npmScope": "noodle",
+  "defaultBase": "main",
+  "defaultProject": "web",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "lint:fix",
+          "test",
+          "test:coverage",
+          "typecheck",
+          "build-storybook"
+        ],
+        "accessToken": "NzIyMjllYzgtMzlkYS00N2U4LThjOGItOGU3YzM0OGQyMTk2fHJlYWQtb25seQ=="
+      }
+    }
+  },
+  "affected": {
+    "defaultBase": "main"
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/**/*.spec.tsx",
+      "!{projectRoot}/**/*.stories.ts",
+      "!{projectRoot}/**/*.stories.tsx",
+      "!{projectRoot}/.eslintrc.cjs",
+      "!{projectRoot}/vitest.config.ts",
+      "!{projectRoot}/vitest.setup.ts",
+      "!{projectRoot}/.storybook",
+      "!{projectRoot}/storybook-static",
+      "!{projectRoot}/tsconfig.tsbuildinfo"
+    ],
+    "lint": [
+      "default",
+      "{workspaceRoot}/.eslintrc.cjs",
+      "{workspaceRoot}/.eslintignore"
+    ]
+  },
+  "targetDefaults": {
+    "lint": {
+      "inputs": ["lint"]
+    },
+    "lint:fix": {
+      "inputs": ["lint"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        "{projectRoot}/dist",
+        "{projectRoot}/.next",
+        "!{projectRoot}/.next/cache"
+      ],
+      "inputs": ["production", "^production"]
+    },
+    "start": {
+      "dependsOn": ["build"]
+    },
+    "typecheck": {
+      "outputs": ["{projectRoot}/tsconfig.tsbuildinfo"]
+    },
+    "test:coverage": {
+      "outputs": ["{projectRoot}/coverage"]
+    },
+    "build-storybook": {
+      "inputs": ["default", "^production"],
+      "dependsOn": ["^build"],
+      "outputs": ["{projectRoot}/storybook-static"]
+    },
+    "storybook": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "test:ui": {
+      "dependsOn": ["^build"]
+    },
+    "test:watch": {
+      "dependsOn": ["^build"]
+    }
+  }
+}

@@ -1,25 +1,40 @@
 name: CI
-
 on:
   push:
-    branches: ['main']
+    branches:
+      - main
   pull_request:
-    types: [opened, synchronize]
+
+env:
+  NX_CLOUD_DISTRIBUTED_EXECUTION: true
+  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3
+  NX_BRANCH: ${{ github.event.number || github.ref_name }}
+  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
 jobs:
-  build:
-    name: CI
-    timeout-minutes: 15
+  main:
+    name: Nx Cloud - Main Job
     runs-on: ubuntu-latest
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        name: Checkout [Pull Request]
+        if: ${{ github.event_name == 'pull_request' }}
         with:
-          fetch-depth: 2
+          # By default, PRs will be checked-out based on the Merge Commit, but we want the actual branch HEAD.
+          ref: ${{ github.event.pull_request.head.sha }}
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
+      - name: Log out the PR number
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          echo "PR sha: ${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/checkout@v3
+        name: Checkout [Default Branch]
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          # We need to fetch all branches and commits so that Nx affected has a base to compare against.
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v2.2.4
         with:
@@ -33,6 +48,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Initialize the Nx Cloud distributed CI run
+        run: pnpm nx-cloud start-ci-run
 
       - name: Format
         run: pnpm format:check
@@ -55,7 +73,35 @@ jobs:
       - name: Build storybook
         run: pnpm build-storybook
 
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
+      - name: Stop all running agents for this CI run
+        if: ${{ always() }}
+        run: pnpm nx-cloud stop-all-agents
+
+  agents:
+    name: Agent ${{ matrix.agent }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        agent:
+          - [1, 2, 3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.6.0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Start Nx Agent ${{ matrix.agent }}
+        run: pnpm nx-cloud start-agent
         env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          NX_AGENT_NAME: ${{matrix.agent}}

@@ -133,7 +133,7 @@ dist
 .DS_Store
 
 # storybook
-storybook-static.turbo
+storybook-static
 
 # Turborepo files
 .turbo
