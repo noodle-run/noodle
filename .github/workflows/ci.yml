@@ -67,6 +67,11 @@ jobs:
       - name: Test
         run: pnpm test:coverage
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Build
         run: pnpm build
 
