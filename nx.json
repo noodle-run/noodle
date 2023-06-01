@@ -66,6 +66,7 @@
       "dependsOn": ["build"]
     },
     "typecheck": {
+      "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/tsconfig.tsbuildinfo"]
     },
     "test:coverage": {
@@ -73,8 +74,8 @@
       "outputs": ["{projectRoot}/coverage"]
     },
     "build-storybook": {
-      "inputs": ["default", "^production"],
       "dependsOn": ["^build"],
+      "inputs": ["default", "^production"],
       "outputs": ["{projectRoot}/storybook-static"]
     },
     "storybook": {
