@@ -53,7 +53,7 @@ importers:
         specifier: 16.3.1
         version: 16.3.1
       nx-cloud:
-        specifier: latest
+        specifier: 16.0.5
         version: 16.0.5
       prettier:
         specifier: ^2.8.8
