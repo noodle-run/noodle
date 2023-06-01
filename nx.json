@@ -46,9 +46,11 @@
   },
   "targetDefaults": {
     "lint": {
+      "dependsOn": ["^build"],
       "inputs": ["lint"]
     },
     "lint:fix": {
+      "dependsOn": ["^build"],
       "inputs": ["lint"]
     },
     "build": {
