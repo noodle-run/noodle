@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: CI
     timeout-minutes: 15
     runs-on: ubuntu-latest
     env:
@@ -34,8 +34,20 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Format
+        run: pnpm format:check
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test:coverage
+
       - name: Build
         run: pnpm build
 
-      - name: Test
-        run: pnpm test
+      - name: Build storybook
+        run: pnpm build-storybook
