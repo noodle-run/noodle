@@ -8,20 +8,13 @@ on:
 jobs:
   main:
     name: Nx Cloud - Main Job
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checks
-        uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.0
-        with:
-          number-of-agents: 5
-          parallel-commands: |
-            pnpm nx-cloud record -- pnpm format:check
-          parallel-commands-on-agents: |
-            pnpm build:pkgs & pnpm lint & pnpm typecheck & pnpm test:coverage & pnpm build & pnpm build-storybook
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.0
+    with:
+      number-of-agents: 5
+      parallel-commands: |
+        pnpm nx-cloud record -- pnpm format:check
+      parallel-commands-on-agents: |
+        pnpm build:pkgs & pnpm lint & pnpm typecheck & pnpm test:coverage & pnpm build & pnpm build-storybook
 
   agents:
     name: Nx Cloud - Agents
