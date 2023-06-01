@@ -67,6 +67,7 @@
       "outputs": ["{projectRoot}/tsconfig.tsbuildinfo"]
     },
     "test:coverage": {
+      "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/coverage"]
     },
     "build-storybook": {
