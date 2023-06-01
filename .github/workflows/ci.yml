@@ -10,6 +10,7 @@ env:
   NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+  NX_HEAD: ${{ github.event.pull_request.head.sha }}
 
 jobs:
   main:
@@ -19,8 +20,6 @@ jobs:
       - uses: actions/checkout@v3
         name: Checkout [Pull Request]
         if: ${{ github.event_name == 'pull_request' }}
-        env:
-          NX_HEAD: ${{ github.event.pull_request.head.sha }}
         with:
           # By default, PRs will be checked-out based on the Merge Commit, but we want the actual branch HEAD.
           ref: ${{ github.event.pull_request.head.sha }}
