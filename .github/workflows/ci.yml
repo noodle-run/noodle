@@ -54,3 +54,8 @@ jobs:
 
       - name: Build storybook
         run: pnpm build-storybook
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
