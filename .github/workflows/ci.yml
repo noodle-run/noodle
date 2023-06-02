@@ -67,14 +67,14 @@ jobs:
 
           exit 0
 
-      - name: Stop all running agents for this CI run
-        if: ${{ always() }}
-        run: pnpm nx-cloud stop-all-agents
-
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Stop all running agents for this CI run
+        if: ${{ always() }}
+        run: pnpm nx-cloud stop-all-agents
 
   agents:
     name: Agent ${{ matrix.agent }}
