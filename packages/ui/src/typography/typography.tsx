@@ -1,3 +1,3 @@
 export const Typography = () => {
-  return <p className="text-crimson-11 dark:text-red-10">Hello world</p>;
+  return <p className="text-crimson-11 dark:text-red-10">UI Package</p>;
 };
