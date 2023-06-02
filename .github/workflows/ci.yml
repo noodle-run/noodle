@@ -54,6 +54,7 @@ jobs:
 
           pnpm nx affected -t build --parallel=3 & pids+=($!)
           pnpm nx affected -t lint --parallel=3 & pids+=($!)
+          pnpm nx affected -t typecheck --parallel=3 & pids+=($!)
           pnpm nx affected -t test:coverage --parallel=3 & pids+=($!)
           pnpm nx affected -t build-storybook --parallel=3 & pids+=($!)
 
