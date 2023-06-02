@@ -7,13 +7,13 @@ on:
 
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true
-  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3
+  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 5
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
 jobs:
   main:
-    name: Nx Cloud - Main Job
+    name: CI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,10 +24,6 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           # We need to fetch all branches and commits so that Nx affected has a base to compare against.
           fetch-depth: 0
-      - name: Log out the PR number
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          echo "PR sha: ${{ github.event.pull_request.head.sha }}"
 
       - uses: actions/checkout@v3
         name: Checkout [Default Branch]
@@ -66,6 +62,11 @@ jobs:
 
       - name: Test
         run: pnpm test:coverage
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Build
         run: pnpm build
