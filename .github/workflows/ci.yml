@@ -7,7 +7,6 @@ on:
 
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true
-  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 5
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
@@ -70,35 +69,3 @@ jobs:
 
       - name: Build storybook
         run: pnpm build-storybook
-
-      - name: Stop all running agents for this CI run
-        if: ${{ always() }}
-        run: pnpm nx-cloud stop-all-agents
-
-  agents:
-    name: Agent ${{ matrix.agent }}
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        agent: [1, 2, 3, 4, 5]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - uses: pnpm/action-setup@v2.2.4
-        with:
-          version: 8.6.0
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Start Nx Agent ${{ matrix.agent }}
-        run: pnpm nx-cloud start-agent
-        env:
-          NX_AGENT_NAME: ${{matrix.agent}}
