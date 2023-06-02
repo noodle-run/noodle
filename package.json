@@ -28,7 +28,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
-    "@ianvs/prettier-plugin-sort-imports": "^4.0.1",
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@noodle/tsconfig": "workspace:^",
     "@types/eslint": "^8.40.0",
     "@types/node": "^20.2.5",
