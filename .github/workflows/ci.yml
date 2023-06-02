@@ -48,24 +48,19 @@ jobs:
       - name: Run commands in parallel
         run: |
           pids=()
+
           # list of commands to be run on main has env flag NX_CLOUD_DISTRIBUTED_EXECUTION set to false
           NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check & pids+=($!)
 
-          pnpm nx affected -t build --parallel=3 &
-          pids+=($!)
-
-          pnpm nx affected -t lint --parallel=3 & 
-          pids+=($!)
-
-          pnpm nx affected -t test:coverage --parallel=3 & 
-          pids+=($!)
-
-          pnpm nx affected -t build-storybook --parallel=3 & 
-          pids+=($!)
+          pnpm nx affected -t build --parallel=3 & pids+=($!)
+          pnpm nx affected -t lint --parallel=3 & pids+=($!)
+          pnpm nx affected -t test:coverage --parallel=3 & pids+=($!)
+          pnpm nx affected -t build-storybook --parallel=3 & pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
-          for pid in \${pids[*]}; do
+          for pid in "${pids[@]}"; do
             if ! wait $pid; then
+              echo "Process $pid failed"
               exit 1
             fi
           done
