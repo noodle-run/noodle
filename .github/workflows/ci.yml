@@ -7,13 +7,14 @@ on:
 
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true
+  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
 
 jobs:
   main:
     name: CI
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         name: Checkout [Pull Request]
@@ -44,28 +45,66 @@ jobs:
       - name: Initialize the Nx Cloud distributed CI run
         run: pnpm nx-cloud start-ci-run
 
-      - name: Format
-        run: pnpm format:check
+      - name: Run commands in parallel
+        run: |
+          pids=()
+          # list of commands to be run on main has env flag NX_CLOUD_DISTRIBUTED_EXECUTION set to false
+          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check & pids+=($!)
 
-      - name: Build packages
-        run: pnpm build:pkgs
+          pnpm nx affected -t build --parallel=3 &
+          pids+=($!)
 
-      - name: Lint
-        run: pnpm lint
+          pnpm nx affected -t lint --parallel=3 & 
+          pids+=($!)
 
-      - name: Typecheck
-        run: pnpm typecheck
+          pnpm nx affected -t test:coverage --parallel=3 & 
+          pids+=($!)
 
-      - name: Test
-        run: pnpm test:coverage
+          pnpm nx affected -t build-storybook --parallel=3 & 
+          pids+=($!)
+
+          # run all commands in parallel and bail if one of them fails
+          for pid in \${pids[*]}; do
+            if ! wait $pid; then
+              exit 1
+            fi
+          done
+
+          exit 0
+
+      - name: Stop all running agents for this CI run
+        if: ${{ always() }}
+        run: pnpm nx-cloud stop-all-agents
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
-      - name: Build
-        run: pnpm build
+  agents:
+    name: Agent ${{ matrix.agent }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        agent: [1, 2, 3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Build storybook
-        run: pnpm build-storybook
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.6.0
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Start Nx Agent ${{ matrix.agent }}
+        run: pnpm nx-cloud start-agent
+        env:
+          NX_AGENT_NAME: ${{matrix.agent}}
