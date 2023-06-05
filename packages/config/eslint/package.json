@@ -22,7 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.9",
     "@typescript-eslint/parser": "^5.59.9",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-jest-dom": "^4.0.3",
+    "eslint-plugin-jest-dom": "^5.0.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-no-only-tests": "^3.1.0",
     "eslint-plugin-react": "^7.32.2",
