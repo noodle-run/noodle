@@ -34,7 +34,7 @@
     "@types/node": "^20.2.5",
     "@types/prettier": "^2.7.3",
     "del-cli": "^5.0.0",
-    "eslint": "^8.41.0",
+    "eslint": "^8.42.0",
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
