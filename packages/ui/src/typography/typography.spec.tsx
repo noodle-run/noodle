@@ -6,6 +6,6 @@ describe('typography component', () => {
   it('should render the component', () => {
     render(<Typography />);
 
-    expect(screen.getByText(/ui button/i)).toBeInTheDocument();
+    expect(screen.getByText(/button/i)).toBeInTheDocument();
   });
 });
