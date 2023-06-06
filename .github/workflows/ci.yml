@@ -50,30 +50,17 @@ jobs:
       - name: Initialize the Nx Cloud distributed CI run
         run: pnpm nx-cloud start-ci-run
 
-      - name: Run commands in parallel
-        run: |
-          pids=()
+      - name: Format check
+        run: NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check
 
-          # list of commands to be run on main has env flag NX_CLOUD_DISTRIBUTED_EXECUTION set to false
-          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check & pids+=($!)
+      - name: Build packages only
+        run: pnpm nx run-many -t build --exclude web --parallel=3
 
-          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx run-many -t build --exclude web --parallel=3 & pids+=($!)
-          pnpm nx affected -t lint --parallel=3 & pids+=($!)
-          pnpm nx affected -t typecheck --parallel=3 & pids+=($!)
-          # We need run-many here to output the files so that codecov can pick them up
-          pnpm nx run-many -t test:coverage --parallel=3 & pids+=($!)
-          pnpm nx affected -t build-storybook --parallel=3 & pids+=($!)
-          pnpm nx affected -t build --parallel=3 & pids+=($!)
+      - name: Lint, typecheck, test and build storybook
+        run: pnpm nx affected -t lint typecheck test:coverage build-storybook --parallel=3
 
-          # run all commands in parallel and bail if one of them fails
-          for pid in "${pids[@]}"; do
-            if ! wait $pid; then
-              echo "Process $pid failed"
-              exit 1
-            fi
-          done
-
-          exit 0
+      - name: Build
+        run: pnpm nx affected -t build --parallel=3
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
