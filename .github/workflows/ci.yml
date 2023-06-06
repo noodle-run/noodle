@@ -56,10 +56,16 @@ jobs:
       - name: Build packages only
         run: pnpm nx run-many -t build --exclude web --parallel=3
 
-      - name: Lint, typecheck, test and build storybook
-        run: pnpm nx affected -t lint typecheck test:coverage build-storybook --parallel=3
+      - name: Lint and typecheck
+        run: pnpm nx affected -t lint typecheck --parallel=3
 
-      - name: Build
+      - name: Test
+        run: pnpm nx run-many -t test:coverage --parallel=3
+
+      - name: Build storybook
+        run: pnpm nx run-many -t build-storybook --parallel=3
+
+      - name: Build apps
         run: pnpm nx affected -t build --parallel=3
 
       - name: Upload coverage reports to Codecov
