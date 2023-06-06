@@ -46,11 +46,9 @@
   },
   "targetDefaults": {
     "lint": {
-      "dependsOn": ["^build"],
       "inputs": ["lint"]
     },
     "lint:fix": {
-      "dependsOn": ["^build"],
       "inputs": ["lint"]
     },
     "build": {
@@ -66,32 +64,14 @@
       "dependsOn": ["build"]
     },
     "typecheck": {
-      "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/tsconfig.tsbuildinfo"]
     },
     "test:coverage": {
-      "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/coverage"]
     },
     "build-storybook": {
-      "dependsOn": ["^build"],
       "inputs": ["default", "^production"],
       "outputs": ["{projectRoot}/storybook-static"]
-    },
-    "storybook": {
-      "dependsOn": ["^build"]
-    },
-    "dev": {
-      "dependsOn": ["^build"]
-    },
-    "test": {
-      "dependsOn": ["^build"]
-    },
-    "test:ui": {
-      "dependsOn": ["^build"]
-    },
-    "test:watch": {
-      "dependsOn": ["^build"]
     }
   }
 }

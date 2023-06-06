@@ -57,12 +57,13 @@ jobs:
           # list of commands to be run on main has env flag NX_CLOUD_DISTRIBUTED_EXECUTION set to false
           NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check & pids+=($!)
 
-          pnpm nx affected -t build --parallel=3 & pids+=($!)
+          pnpm nx run-many -t build --exclude web --parallel=3 & pids+=($!)
           pnpm nx affected -t lint --parallel=3 & pids+=($!)
           pnpm nx affected -t typecheck --parallel=3 & pids+=($!)
           # We need run-many here to output the files so that codecov can pick them up
           pnpm nx run-many -t test:coverage --parallel=3 & pids+=($!)
           pnpm nx affected -t build-storybook --parallel=3 & pids+=($!)
+          pnpm nx affected -t build --parallel=3 & pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
           for pid in "${pids[@]}"; do
