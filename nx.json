@@ -14,7 +14,8 @@
           "test",
           "test:coverage",
           "typecheck",
-          "build-storybook"
+          "build-storybook",
+          "e2e"
         ],
         "accessToken": "NzIyMjllYzgtMzlkYS00N2U4LThjOGItOGU3YzM0OGQyMTk2fHJlYWQtb25seQ=="
       }
@@ -92,6 +93,12 @@
     },
     "test:watch": {
       "dependsOn": ["^build"]
+    },
+    "e2e": {
+      "outputs": [
+        "{projectRoot}/test-results",
+        "{projectRoot}/playwright-report"
+      ]
     }
   }
 }
