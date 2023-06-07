@@ -48,7 +48,7 @@ jobs:
         run: pnpm install
 
       - name: Install Playwright Browsers
-        run: cd apps/web && pnpm playwright install --with-deps && cd ../..
+        run: pnpm playwright install --with-deps
 
       - name: Initialize the Nx Cloud distributed CI run
         run: pnpm nx-cloud start-ci-run

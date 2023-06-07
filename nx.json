@@ -25,7 +25,10 @@
     "defaultBase": "origin/main"
   },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*"],
+    "default": [
+      "{projectRoot}/**/*",
+      "{workspaceRoot}/.github/workflows/ci.yml"
+    ],
     "production": [
       "default",
       "!{projectRoot}/**/*.spec.ts",

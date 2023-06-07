@@ -12,17 +12,17 @@
   },
   "editor.formatOnSave": true,
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/.next": true,
-    "**/node_modules": true,
-    "**/dist": true,
-    "**/coverage": true,
-    "**/playwright-report": true,
-    "**/test-results": true
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": false,
+    "**/Thumbs.db": false,
+    "**/.next": false,
+    "**/node_modules": false,
+    "**/dist": false,
+    "**/coverage": false,
+    "**/playwright-report": false,
+    "**/test-results": false
   }
 }
