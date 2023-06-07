@@ -44,11 +44,11 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: Install Playwright Browsers
-        run: pnpm playwright install --with-deps
-
       - name: Install dependencies
         run: pnpm install
+
+      - name: Install Playwright Browsers
+        run: pnpm playwright install --with-deps
 
       - name: Initialize the Nx Cloud distributed CI run
         run: pnpm nx-cloud start-ci-run
