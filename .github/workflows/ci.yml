@@ -110,7 +110,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install dependencies
+      - name: Install Playwright Browsers
         run: pnpm playwright install --with-deps
 
       - name: Start Nx Agent ${{ matrix.agent }}
