@@ -110,6 +110,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Install dependencies
+        run: pnpm playwright install --with-deps
+
       - name: Start Nx Agent ${{ matrix.agent }}
         run: pnpm nx-cloud start-agent
         env:
