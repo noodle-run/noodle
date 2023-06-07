@@ -10,7 +10,7 @@
     "build-storybook": "pnpm nx run-many -t build-storybook",
     "build:pkgs": "pnpm nx run-many -t build --exclude web",
     "clean": "pnpm clean:bundles && del pnpm-lock.yaml **/node_modules && pnpm install",
-    "clean:bundles": "del **/coverage **/storybook-static **/tsconfig.tsbuildinfo **/dist **/.next",
+    "clean:bundles": "del **/coverage **/storybook-static **/tsconfig.tsbuildinfo **/dist **/.next **/playwright-report **/test-results",
     "dev": "pnpm nx run-many -t dev --parallel=99 --output-style=stream",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",

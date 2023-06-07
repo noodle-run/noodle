@@ -1,3 +1,18 @@
 {
-  "recommendations": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint"]
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "amodio.toggle-excluded-files",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "aaron-bond.better-comments",
+    "mikestead.dotenv",
+    "EditorConfig.EditorConfig",
+    "yzhang.markdown-all-in-one",
+    "unifiedjs.vscode-mdx",
+    "nrwl.angular-console",
+    "ms-playwright.playwright",
+    "yoavbls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss"
+  ]
 }

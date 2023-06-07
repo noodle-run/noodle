@@ -47,6 +47,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Install Playwright Browsers
+        run: pnpm playwright install --with-deps
+
       - name: Initialize the Nx Cloud distributed CI run
         run: pnpm nx-cloud start-ci-run
 
@@ -61,6 +64,7 @@ jobs:
           pnpm nx affected -t typecheck --parallel=3 & pids+=($!)
           # We need run-many here to output the files so that codecov can pick them up
           pnpm nx run-many -t test:coverage --parallel=3 & pids+=($!)
+          pnpm nx affected -t e2e --parallel=3 & pids+=($!)
           pnpm nx affected -t build-storybook --parallel=3 & pids+=($!)
           pnpm nx affected -t build --parallel=3 & pids+=($!)
 
@@ -105,6 +109,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Install Playwright Browsers
+        run: pnpm playwright install --with-deps
 
       - name: Start Nx Agent ${{ matrix.agent }}
         run: pnpm nx-cloud start-agent

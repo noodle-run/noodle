@@ -137,3 +137,8 @@ storybook-static
 
 # Turborepo files
 .turbo
+
+# Playwright
+test-results
+playwright-report
+playwright/.cache
