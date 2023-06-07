@@ -2,7 +2,12 @@
 const config = {
   overrides: [
     {
-      files: ['**/*.test.ts', '**/*.test.tsx', '**/*.spec.ts', '**/*.spec.tsx'],
+      files: [
+        '**/src/**/*.test.ts',
+        '**/src/**/*.test.tsx',
+        '**/src/**/*.spec.ts',
+        '**/src/**/*.spec.tsx',
+      ],
       extends: [
         'plugin:testing-library/react',
         'plugin:jest-dom/recommended',

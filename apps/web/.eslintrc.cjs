@@ -2,7 +2,12 @@ const path = require('path');
 
 /** @type {import('eslint').Linter.Config} */
 const config = {
-  extends: ['noodle/react', 'noodle/next'],
+  extends: [
+    'noodle/react',
+    'noodle/next',
+    'noodle/vitest',
+    'noodle/playwright',
+  ],
   parserOptions: {
     babelOptions: {
       presets: [require.resolve('next/babel')],
