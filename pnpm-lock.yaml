@@ -25,9 +25,6 @@ importers:
       '@noodle/tsconfig':
         specifier: workspace:^
         version: link:packages/config/tsconfig
-      '@playwright/test':
-        specifier: ^1.34.3
-        version: 1.34.3
       '@types/eslint':
         specifier: ^8.40.0
         version: 8.40.0
