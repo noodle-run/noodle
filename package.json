@@ -30,7 +30,6 @@
     "@commitlint/config-conventional": "^17.6.5",
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@noodle/tsconfig": "workspace:^",
-    "@playwright/test": "^1.34.3",
     "@types/eslint": "^8.40.0",
     "@types/node": "^20.2.5",
     "@types/prettier": "^2.7.3",
