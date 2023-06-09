@@ -21,7 +21,7 @@
     "@storybook/addon-essentials": "^7.0.18",
     "@storybook/addon-interactions": "^7.0.18",
     "@storybook/addon-links": "^7.0.18",
-    "@storybook/addon-styling": "^1.0.8",
+    "@storybook/addon-styling": "^1.3.0",
     "@storybook/blocks": "^7.0.18",
     "@storybook/react": "^7.0.18",
     "@storybook/react-vite": "^7.0.18",

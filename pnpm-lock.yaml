@@ -189,8 +189,8 @@ importers:
   packages/config/storybook:
     dependencies:
       '@storybook/addon-styling':
-        specifier: ^1.0.8
-        version: 1.0.8(less@4.1.3)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(webpack@5.86.0)
+        specifier: ^1.3.0
+        version: 1.3.0(less@4.1.3)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(webpack@5.86.0)
       '@storybook/react':
         specifier: ^7.0.18
         version: 7.0.18(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
@@ -286,8 +286,8 @@ importers:
         specifier: ^7.0.18
         version: 7.0.18(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-styling':
-        specifier: ^1.0.8
-        version: 1.0.8(less@4.1.3)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(webpack@5.86.0)
+        specifier: ^1.3.0
+        version: 1.3.0(less@4.1.3)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(webpack@5.86.0)
       '@storybook/blocks':
         specifier: ^7.0.18
         version: 7.0.18(react-dom@18.2.0)(react@18.2.0)
@@ -359,8 +359,8 @@ importers:
         specifier: ^7.0.18
         version: 7.0.18(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-styling':
-        specifier: ^1.0.8
-        version: 1.0.8(less@4.1.3)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(webpack@5.86.0)
+        specifier: ^1.3.0
+        version: 1.3.0(less@4.1.3)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(webpack@5.86.0)
       '@storybook/blocks':
         specifier: ^7.0.18
         version: 7.0.18(react-dom@18.2.0)(react@18.2.0)
@@ -466,7 +466,7 @@ packages:
       '@babel/parser': 7.22.4
       '@babel/template': 7.21.9
       '@babel/traverse': 7.22.4
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.4
       convert-source-map: 1.9.0
       debug: 4.3.4
       gensync: 1.0.0-beta.2
@@ -502,7 +502,7 @@ packages:
     resolution: {integrity: sha512-F3fZga2uv09wFdEjEQIJxXALXfz0+JaOb7SabvVMmjHxeVTuGW8wgE8Vp1Hd7O+zMTYtcfEISGRzPkeiaPPsvg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.4
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.18
       jsesc: 2.5.2
@@ -819,7 +819,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.4
 
   /@babel/parser@7.22.4:
     resolution: {integrity: sha512-VLLsx06XkEYqBtE5YGPwfSGwfrjnyPP5oiGty3S8pQLFDFLaS8VwWSIxkTXpcvr5zeYLE6+MBNl2npl/YnfofA==}
@@ -2529,7 +2529,7 @@ packages:
       '@babel/plugin-transform-unicode-escapes': 7.21.5(@babel/core@7.21.8)
       '@babel/plugin-transform-unicode-regex': 7.18.6(@babel/core@7.21.8)
       '@babel/preset-modules': 0.1.5(@babel/core@7.21.8)
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.4
       babel-plugin-polyfill-corejs2: 0.3.3(@babel/core@7.21.8)
       babel-plugin-polyfill-corejs3: 0.6.0(@babel/core@7.21.8)
       babel-plugin-polyfill-regenerator: 0.4.1(@babel/core@7.21.8)
@@ -2722,13 +2722,13 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.21.4
-      '@babel/generator': 7.21.9
+      '@babel/generator': 7.22.3
       '@babel/helper-environment-visitor': 7.22.1
       '@babel/helper-function-name': 7.21.0
       '@babel/helper-hoist-variables': 7.18.6
       '@babel/helper-split-export-declaration': 7.18.6
-      '@babel/parser': 7.21.9
-      '@babel/types': 7.21.5
+      '@babel/parser': 7.22.4
+      '@babel/types': 7.22.4
       debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
@@ -3927,8 +3927,8 @@ packages:
       ts-dedent: 2.2.0
     dev: true
 
-  /@storybook/addon-styling@1.0.8(less@4.1.3)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(webpack@5.86.0):
-    resolution: {integrity: sha512-Ubi75gHNFO60Sjti2n/i3f0utERNOYcpsRkWHdzV+C26kUemLG+2riKHUt8zVbNskyJxA0EZxh84HYItRe4coA==}
+  /@storybook/addon-styling@1.3.0(less@4.1.3)(postcss@8.4.24)(react-dom@18.2.0)(react@18.2.0)(webpack@5.86.0):
+    resolution: {integrity: sha512-+Ak9+SysMepRdXGlqDBlhR4cOSDCFEIfGuOW7nyA5eOgHi0IyTg9M+yfBgHVru7dEh+rq47XTVr44UhsWd4xgA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -3938,9 +3938,13 @@ packages:
       react-dom:
         optional: true
     dependencies:
+      '@babel/template': 7.21.9
+      '@babel/types': 7.22.4
       '@storybook/api': 7.0.18(react-dom@18.2.0)(react@18.2.0)
       '@storybook/components': 7.0.18(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/core-common': 7.0.18
       '@storybook/core-events': 7.0.18
+      '@storybook/csf-tools': 7.0.18
       '@storybook/manager-api': 7.0.18(react-dom@18.2.0)(react@18.2.0)
       '@storybook/node-logger': 7.0.18
       '@storybook/preview-api': 7.0.18
@@ -3951,6 +3955,7 @@ packages:
       postcss-loader: 7.3.2(postcss@8.4.24)(webpack@5.86.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+      recast: 0.23.2
       resolve-url-loader: 5.0.0
       sass-loader: 13.3.1(webpack@5.86.0)
       style-loader: 3.3.3(webpack@5.86.0)
@@ -3961,6 +3966,7 @@ packages:
       - postcss
       - sass
       - sass-embedded
+      - supports-color
       - webpack
 
   /@storybook/addon-toolbars@7.0.18(react-dom@18.2.0)(react@18.2.0):
