@@ -227,8 +227,8 @@ importers:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.24)
       tailwindcss-animate:
-        specifier: ^1.0.5
-        version: 1.0.5(tailwindcss@3.3.2)
+        specifier: ^1.0.6
+        version: 1.0.6(tailwindcss@3.3.2)
       windy-radix-palette:
         specifier: ^0.6.1
         version: 0.6.1(@radix-ui/colors@0.1.8)(tailwindcss@3.3.2)
@@ -11508,8 +11508,8 @@ packages:
     resolution: {integrity: sha512-mUTmDbcU+IhOvJ0c42eLQ/nRkvolTqfpVaVQRSxfJAv9TabS6Y2zW/1wKpKLdKzyL3Gh8j6NTLl6MWNmvOM6kA==}
     dev: false
 
-  /tailwindcss-animate@1.0.5(tailwindcss@3.3.2):
-    resolution: {integrity: sha512-UU3qrOJ4lFQABY+MVADmBm+0KW3xZyhMdRvejwtXqYOL7YjHYxmuREFAZdmVG5LPe5E9CAst846SLC4j5I3dcw==}
+  /tailwindcss-animate@1.0.6(tailwindcss@3.3.2):
+    resolution: {integrity: sha512-4WigSGMvbl3gCCact62ZvOngA+PRqhAn7si3TQ3/ZuPuQZcIEtVap+ENSXbzWhpojKB8CpvnIsrwBu8/RnHtuw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
