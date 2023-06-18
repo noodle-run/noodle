@@ -51,13 +51,13 @@
     "node": ">=18.16.0",
     "pnpm": ">=8.6.2"
   },
+  "volta": {
+    "node": "18.16.0",
+    "pnpm": "8.6.2"
+  },
   "pnpm": {
     "patchedDependencies": {
       "@types/testing-library__jest-dom@5.14.6": "patches/@types__testing-library__jest-dom@5.14.6.patch"
     }
-  },
-  "volta": {
-    "node": "18.16.0",
-    "pnpm": "8.6.2"
   }
 }
