@@ -18,10 +18,10 @@
     "lint:fix": "pnpm run lint --fix"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.4.4",
+    "@next/eslint-plugin-next": "^13.4.6",
     "@noodle/tsconfig": "workspace:^",
-    "@typescript-eslint/eslint-plugin": "^5.59.9",
-    "@typescript-eslint/parser": "^5.59.9",
+    "@typescript-eslint/eslint-plugin": "^5.59.11",
+    "@typescript-eslint/parser": "^5.59.11",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-jest-dom": "^5.0.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
@@ -31,7 +31,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-testing-library": "^5.11.0",
-    "eslint-plugin-vitest": "^0.2.5"
+    "eslint-plugin-vitest": "^0.2.6"
   },
   "volta": {
     "extends": "../../../package.json"
