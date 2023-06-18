@@ -36,5 +36,8 @@
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^"
+  },
+  "volta": {
+    "extends": "../../../package.json"
   }
 }
