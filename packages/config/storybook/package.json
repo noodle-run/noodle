@@ -16,7 +16,7 @@
       ".": [
         "dist/main.d.ts"
       ],
-      "./preview": [
+      "preview": [
         "dist/preview.d.ts"
       ]
     }
