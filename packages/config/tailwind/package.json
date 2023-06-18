@@ -10,6 +10,7 @@
     ".": "./dist/tailwind.config.js",
     "./postcss.cjs": "./postcss.cjs"
   },
+  "main": "./dist/tailwind.config.js",
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",

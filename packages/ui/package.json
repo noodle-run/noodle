@@ -10,6 +10,7 @@
       "import": "./dist/index.js"
     }
   },
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "build-storybook": "storybook build",
