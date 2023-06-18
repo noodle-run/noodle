@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -102,8 +102,8 @@ importers:
         specifier: ^1.34.3
         version: 1.34.3
       '@testing-library/dom':
-        specifier: ^9.3.0
-        version: 9.3.0
+        specifier: ^9.3.1
+        version: 9.3.1
       '@testing-library/jest-dom':
         specifier: ^5.16.5
         version: 5.16.5
@@ -112,7 +112,7 @@ importers:
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
       '@testing-library/user-event':
         specifier: ^14.4.3
-        version: 14.4.3(@testing-library/dom@9.3.0)
+        version: 14.4.3(@testing-library/dom@9.3.1)
       '@types/react':
         specifier: 18.2.9
         version: 18.2.9
@@ -160,7 +160,7 @@ importers:
         version: 8.8.0(eslint@8.42.0)
       eslint-plugin-jest-dom:
         specifier: ^5.0.1
-        version: 5.0.1(@testing-library/dom@9.3.0)(eslint@8.42.0)
+        version: 5.0.1(@testing-library/dom@9.3.1)(eslint@8.42.0)
       eslint-plugin-jsx-a11y:
         specifier: ^6.7.1
         version: 6.7.1(eslint@8.42.0)
@@ -374,8 +374,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       '@testing-library/dom':
-        specifier: ^9.3.0
-        version: 9.3.0
+        specifier: ^9.3.1
+        version: 9.3.1
       '@testing-library/jest-dom':
         specifier: ^5.16.5
         version: 5.16.5
@@ -384,7 +384,7 @@ importers:
         version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
       '@testing-library/user-event':
         specifier: ^14.4.3
-        version: 14.4.3(@testing-library/dom@9.3.0)
+        version: 14.4.3(@testing-library/dom@9.3.1)
       '@types/react':
         specifier: 18.2.9
         version: 18.2.9
@@ -4612,8 +4612,8 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/dom@9.3.0:
-    resolution: {integrity: sha512-Dffe68pGwI6WlLRYR2I0piIkyole9cSBH5jGQKCGMRpHW5RHCqAUaqc2Kv0tUyd4dU4DLPKhJIjyKOnjv4tuUw==}
+  /@testing-library/dom@9.3.1:
+    resolution: {integrity: sha512-0DGPd9AR3+iDTjGoMpxIkAsUihHZ3Ai6CneU6bRRrffXMgzCdlNk43jTrD2/5LT6CBb3MWTP8v510JzYtahD2w==}
     engines: {node: '>=14'}
     dependencies:
       '@babel/code-frame': 7.21.4
@@ -4649,7 +4649,7 @@ packages:
       react-dom: ^18.0.0
     dependencies:
       '@babel/runtime': 7.22.3
-      '@testing-library/dom': 9.3.0
+      '@testing-library/dom': 9.3.1
       '@types/react-dom': 18.2.4
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -4665,13 +4665,13 @@ packages:
       '@testing-library/dom': 8.20.0
     dev: true
 
-  /@testing-library/user-event@14.4.3(@testing-library/dom@9.3.0):
+  /@testing-library/user-event@14.4.3(@testing-library/dom@9.3.1):
     resolution: {integrity: sha512-kCUc5MEwaEMakkO5x7aoD+DLi02ehmEM2QCGWvNqAS1dV/fAvORWEjnjsEIvml59M7Y5kCkWN6fCCyPOe8OL6Q==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
     dependencies:
-      '@testing-library/dom': 9.3.0
+      '@testing-library/dom': 9.3.1
     dev: true
 
   /@tsconfig/node10@1.0.9:
@@ -7033,7 +7033,7 @@ packages:
       eslint: 8.42.0
     dev: true
 
-  /eslint-plugin-jest-dom@5.0.1(@testing-library/dom@9.3.0)(eslint@8.42.0):
+  /eslint-plugin-jest-dom@5.0.1(@testing-library/dom@9.3.1)(eslint@8.42.0):
     resolution: {integrity: sha512-zD/BjNk12R5R9cxIu8oa2HfNeDSknI3ewtN8nygIUMQuieWDnTY9Np//6a1Z3G7Y3dx3l45hCUR4EphsgRmUtA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6', yarn: '>=1'}
     peerDependencies:
@@ -7041,7 +7041,7 @@ packages:
       eslint: ^6.8.0 || ^7.0.0 || ^8.0.0
     dependencies:
       '@babel/runtime': 7.22.3
-      '@testing-library/dom': 9.3.0
+      '@testing-library/dom': 9.3.1
       eslint: 8.42.0
       requireindex: 1.2.0
     dev: true
