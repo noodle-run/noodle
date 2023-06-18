@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -183,8 +183,8 @@ importers:
         specifier: ^5.11.0
         version: 5.11.0(eslint@8.42.0)(typescript@5.1.3)
       eslint-plugin-vitest:
-        specifier: ^0.2.5
-        version: 0.2.5(eslint@8.42.0)(typescript@5.1.3)
+        specifier: ^0.2.6
+        version: 0.2.6(eslint@8.42.0)(typescript@5.1.3)
 
   packages/config/storybook:
     dependencies:
@@ -7150,8 +7150,8 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-vitest@0.2.5(eslint@8.42.0)(typescript@5.1.3):
-    resolution: {integrity: sha512-b15PJg7pzGd2X/RK6yRIHhA0sPJnjwNHytMFpqL8Xhil4C7sMz3bVhsTSisBsZR7AvYcJZotVgwQoVGgk8Sm3Q==}
+  /eslint-plugin-vitest@0.2.6(eslint@8.42.0)(typescript@5.1.3):
+    resolution: {integrity: sha512-PnH4qdqzmAYu78kBnSh5Oi6L1jCtc0orJMWxFeM6k6eW2aEmi0c4Y855v6Qh//7ruU3JzN/aeZrBSVBZMP525Q==}
     engines: {node: 14.x || >= 16}
     peerDependencies:
       eslint: '>=8.0.0'

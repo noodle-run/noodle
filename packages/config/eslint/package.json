@@ -31,7 +31,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-testing-library": "^5.11.0",
-    "eslint-plugin-vitest": "^0.2.5"
+    "eslint-plugin-vitest": "^0.2.6"
   },
   "volta": {
     "extends": "../../../package.json"
