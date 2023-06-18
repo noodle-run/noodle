@@ -29,5 +29,8 @@
     "tailwindcss-animate": "^1.0.5",
     "windy-radix-palette": "^0.6.1",
     "windy-radix-typography": "^0.2.1"
+  },
+  "volta": {
+    "extends": "../../../package.json"
   }
 }

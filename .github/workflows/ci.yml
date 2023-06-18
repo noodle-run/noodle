@@ -10,6 +10,7 @@ env:
   NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+  VOLTA_FEATURE_PNPM: 1
 
 jobs:
   main:
@@ -29,20 +30,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+      - name: Derive SHAs for `nx affected` commands
         uses: nrwl/nx-set-shas@v3
         with:
           main-branch-name: 'main'
 
-      - uses: pnpm/action-setup@v2.2.4
-        with:
-          version: 8.6.1
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
+      - name: Setup volta
+        uses: volta-cli/action@v4
 
       - name: Install dependencies
         run: pnpm install
@@ -57,7 +51,6 @@ jobs:
         run: |
           pids=()
 
-          # list of commands to be run on main has env flag NX_CLOUD_DISTRIBUTED_EXECUTION set to false
           NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check & pids+=($!)
 
           pnpm nx affected -t lint --parallel=3 & pids+=($!)
@@ -97,15 +90,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2.2.4
-        with:
-          version: 8.6.1
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
+      - name: Setup volta
+        uses: volta-cli/action@v4
 
       - name: Install dependencies
         run: pnpm install

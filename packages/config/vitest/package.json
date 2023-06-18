@@ -26,5 +26,8 @@
     "happy-dom": "^9.20.3",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.32.0"
+  },
+  "volta": {
+    "extends": "../../../package.json"
   }
 }
