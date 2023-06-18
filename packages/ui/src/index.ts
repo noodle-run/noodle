@@ -1,1 +1,1 @@
-export { Typography } from './typography/typography.js';
+export { Typography } from './typography/typography';
