@@ -13,14 +13,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "preserveWatchOutput": true,
-
     "checkJs": true,
     "allowJs": true,
-
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-
     "lib": ["es2022"],
     "module": "ESNext",
     "target": "es2022",
@@ -28,7 +25,6 @@
     "resolveJsonModule": true,
     "incremental": true,
     "declaration": true,
-
-    "moduleResolution": "nodenext"
+    "moduleResolution": "node"
   }
 }

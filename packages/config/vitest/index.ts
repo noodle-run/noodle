@@ -22,7 +22,6 @@ export const baseConfig = defineConfig({
 });
 
 export const reactConfig = mergeConfig(baseConfig, {
-  // @ts-expect-error react plugin is callable
   plugins: [react()],
   test: {
     environment: 'happy-dom',
