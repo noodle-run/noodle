@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@noodle/ui": "workspace:^",
-    "next": "13.4.4",
+    "next": "13.4.6",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -33,20 +33,20 @@
     "@noodle/tailwind": "workspace:^",
     "@noodle/tsconfig": "workspace:^",
     "@noodle/vitest": "workspace:^",
-    "@playwright/test": "^1.34.3",
-    "@testing-library/dom": "^9.3.0",
+    "@playwright/test": "^1.35.1",
+    "@testing-library/dom": "^9.3.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
-    "@types/react": "18.2.9",
-    "@types/react-dom": "18.2.4",
+    "@types/react": "18.2.12",
+    "@types/react-dom": "18.2.5",
     "@types/testing-library__jest-dom": "^5.14.6",
-    "@vitest/coverage-v8": "^0.32.0",
+    "@vitest/coverage-v8": "^0.32.2",
     "autoprefixer": "^10.4.14",
-    "dotenv": "^16.1.4",
+    "dotenv": "^16.3.1",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
-    "vitest": "^0.32.0"
+    "vitest": "^0.32.2"
   },
   "volta": {
     "extends": "../../package.json"
