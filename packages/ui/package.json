@@ -43,7 +43,7 @@
     "@storybook/blocks": "^7.0.22",
     "@storybook/react": "^7.0.22",
     "@storybook/react-vite": "^7.0.22",
-    "@storybook/testing-library": "^0.1.0",
+    "@storybook/testing-library": "^0.2.0",
     "@testing-library/dom": "^9.3.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",

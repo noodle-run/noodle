@@ -25,7 +25,7 @@
     "@storybook/blocks": "^7.0.22",
     "@storybook/react": "^7.0.22",
     "@storybook/react-vite": "^7.0.22",
-    "@storybook/testing-library": "^0.1.0",
+    "@storybook/testing-library": "^0.2.0",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "storybook": "^7.0.22",
