@@ -2,7 +2,7 @@
   "extends": "@noodle/tsconfig/react.json",
   "compilerOptions": {
     "noEmit": true,
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "@noodle/test-utils/setup"]
   },
   "exclude": ["./coverage/**/*"],
   "include": [
