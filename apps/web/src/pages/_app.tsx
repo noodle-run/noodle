@@ -3,6 +3,8 @@ import { type AppProps } from 'next/app';
 
 import '@/styles/globals.css';
 
+import { api } from '@/utils/api';
+
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider attribute="class">
@@ -11,4 +13,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default App;
+export default api.withTRPC(App);
