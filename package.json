@@ -26,8 +26,8 @@
     "typecheck": "pnpm nx run-many -t typecheck"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.5",
-    "@commitlint/config-conventional": "^17.6.5",
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@noodle/tsconfig": "workspace:^",
     "@types/eslint": "^8.40.2",

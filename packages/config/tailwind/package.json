@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
-    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/colors": "^1.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
     "tailwindcss-animate": "^1.0.6",
