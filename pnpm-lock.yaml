@@ -94,6 +94,9 @@ importers:
       '@trpc/server':
         specifier: ^10.32.0
         version: 10.32.0
+      '@vercel/analytics':
+        specifier: ^1.0.1
+        version: 1.0.1
       next:
         specifier: 13.4.7
         version: 13.4.7(@babel/core@7.22.1)(react-dom@18.2.0)(react@18.2.0)
@@ -5728,6 +5731,10 @@ packages:
       '@typescript-eslint/types': 5.60.0
       eslint-visitor-keys: 3.4.1
     dev: true
+
+  /@vercel/analytics@1.0.1:
+    resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
+    dev: false
 
   /@vitejs/plugin-react@3.1.0(vite@4.3.9):
     resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==}
