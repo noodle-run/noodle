@@ -48,11 +48,11 @@
   },
   "packageManager": "pnpm@8.6.2",
   "engines": {
-    "node": ">=18.16.0",
+    "node": ">=v18.16.1",
     "pnpm": ">=8.6.2"
   },
   "volta": {
-    "node": "18.16.0",
+    "node": "18.16.1",
     "pnpm": "8.6.2"
   },
   "pnpm": {
