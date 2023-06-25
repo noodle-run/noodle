@@ -22,5 +22,4 @@ export const {
   procedure: publicProcedure,
   router: createRouter,
   middleware,
-  mergeRouters,
 } = t;

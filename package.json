@@ -26,8 +26,8 @@
     "typecheck": "pnpm nx run-many -t typecheck"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.5",
-    "@commitlint/config-conventional": "^17.6.5",
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@noodle/tsconfig": "workspace:^",
     "@types/eslint": "^8.40.2",
@@ -38,7 +38,7 @@
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "nx": "16.3.2",
+    "nx": "16.4.0",
     "nx-cloud": "16.0.5",
     "prettier": "^2.8.8",
     "prettier-plugin-jsdoc": "^0.4.2",

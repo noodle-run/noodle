@@ -6,6 +6,13 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.js",
+    ".eslintrc.cjs"
+  ],
   "exclude": ["node_modules", "./postcss.config.cjs", "./coverage/**/*"]
 }
