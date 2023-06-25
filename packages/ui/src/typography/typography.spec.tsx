@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@noodle/test-utils/renderer';
 
 import { Typography } from './typography';
 

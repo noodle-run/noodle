@@ -3,3 +3,5 @@ pnpm-lock.yaml
 coverage
 storybook-static
 dist
+playwright-report
+test-results
