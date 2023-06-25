@@ -1,11 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '@noodle/test-utils/renderer';
 
 import Home from '@/pages/index';
 
 describe('Home page', () => {
-  it('should render the home page', () => {
+  it('should render the home page', async () => {
     render(<Home />);
 
-    expect(screen.getByText(/home page/i)).toBeInTheDocument();
+    expect(await screen.findByText(/hello john doe/i)).toBeInTheDocument();
   });
 });
