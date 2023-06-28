@@ -37,7 +37,7 @@
     "eslint": "^8.43.0",
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
+    "lint-staged": "^13.2.3",
     "nx": "16.3.2",
     "nx-cloud": "16.0.5",
     "prettier": "^2.8.8",
