@@ -8,7 +8,8 @@
     }
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
   },
   "editor.formatOnSave": true,
   "files.exclude": {
@@ -25,5 +26,8 @@
     "**/playwright-report": false,
     "**/test-results": false,
     "**/*.tsbuildinfo": false
-  }
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ]
 }

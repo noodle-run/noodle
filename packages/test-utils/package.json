@@ -26,11 +26,13 @@
   },
   "dependencies": {
     "@noodle/api": "workspace:^",
+    "@noodle/auth": "workspace:^",
     "@tanstack/react-query": "^4.29.19",
     "@testing-library/react": "^14.0.0",
     "@trpc/client": "^10.33.0",
     "@trpc/react-query": "^10.33.0",
     "cross-fetch": "^3.1.6",
+    "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "superjson": "^1.12.4"
@@ -43,7 +45,8 @@
     "@types/testing-library__jest-dom": "^5.14.6",
     "eslint-config-noodle": "workspace:^",
     "msw": "^1.2.2",
-    "msw-trpc": "^1.3.3"
+    "msw-trpc": "^1.3.3",
+    "vitest": "^0.32.2"
   },
   "volta": {
     "extends": "../../package.json"

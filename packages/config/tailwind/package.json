@@ -24,12 +24,9 @@
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
-    "@radix-ui/colors": "^1.0.0",
-    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
     "tailwindcss-animate": "^1.0.6",
-    "windy-radix-palette": "^0.6.1",
-    "windy-radix-typography": "^0.2.1"
+    "tailwindcss-radix-colors": "^0.5.0"
   },
   "volta": {
     "extends": "../../../package.json"

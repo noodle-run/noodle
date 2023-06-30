@@ -5,6 +5,9 @@ const config = {
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
   ],
+  rules: {
+    'react/prop-types': 'off',
+  },
   globals: {
     React: 'writable',
   },

@@ -1,8 +1,14 @@
+import { type FC } from 'react';
+
 import { api } from '@/utils/api';
 
-export const Greeting = () => {
+type GreetingProps = {
+  name: string | null | undefined;
+};
+
+export const Greeting: FC<GreetingProps> = ({ name }) => {
   const { data, isLoading, error } = api.greeting.hello.useQuery({
-    name: 'John Doe',
+    name,
   });
 
   if (isLoading) return <p>Loading...</p>;

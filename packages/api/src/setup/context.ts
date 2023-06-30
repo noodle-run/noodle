@@ -1,19 +1,27 @@
+import type { Session } from '@noodle/auth';
+import { type inferAsyncReturnType } from '@trpc/server';
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
 
-// TODO: add session as an option to provide to context type
-// eslint-disable-next-line
-type ContextOptions = {};
+import { getServerSession } from '@noodle/auth';
+import { prisma } from '@noodle/db';
+
+type ContextOptions = {
+  session: Session | null;
+};
 
 export const createInnerContext = (opts: ContextOptions) => {
-  // TODO: create the db connection here and pass it in the return object
   return {
     ...opts,
+    prisma,
   };
 };
 
-// TODO: get the session here and pass it to the inner function
-export const createContext = (_: CreateNextContextOptions) => {
-  return createInnerContext({});
+export const createContext = async ({ req, res }: CreateNextContextOptions) => {
+  const session = await getServerSession({ req, res });
+
+  return createInnerContext({
+    session,
+  });
 };
 
-export type Context = typeof createContext;
+export type Context = inferAsyncReturnType<typeof createContext>;

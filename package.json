@@ -11,7 +11,7 @@
     "build:pkgs": "pnpm nx run-many -t build --exclude web",
     "clean": "pnpm clean:bundles && del pnpm-lock.yaml **/node_modules && pnpm install",
     "clean:bundles": "del **/coverage **/storybook-static **/tsconfig.tsbuildinfo **/dist **/.next **/playwright-report **/test-results",
-    "dev": "pnpm nx run-many -t dev --parallel=99 --output-style=stream",
+    "dev": "pnpm nx run-many -t dev --parallel=99 --exclude=storybook-config,vitest,test-utils --output-style=stream",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "lint": "pnpm nx run-many -t lint",

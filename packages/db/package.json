@@ -1,0 +1,30 @@
+{
+  "name": "@noodle/db",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Noodle's prisma database package",
+  "license": "AGPL-3.0",
+  "author": "Ahmed Elsakaan",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "pnpm run build --watch",
+    "generate-client": "prisma generate",
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint:fix": "pnpm run lint --fix",
+    "push": "prisma db push",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.16.1"
+  },
+  "devDependencies": {
+    "@noodle/tsconfig": "workspace:^",
+    "eslint-config-noodle": "workspace:^",
+    "prisma": "^4.16.1"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

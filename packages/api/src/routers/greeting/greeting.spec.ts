@@ -3,7 +3,9 @@ import { createInnerContext } from '../../setup/context';
 
 describe('Hello router', () => {
   it('should return hello world without inputs', async () => {
-    const context = createInnerContext({});
+    const context = createInnerContext({
+      session: null,
+    });
     const caller = greetingRouter.createCaller(context);
 
     const result = await caller.hello({});
