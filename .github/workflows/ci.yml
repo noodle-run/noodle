@@ -41,6 +41,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Generate prisma types
+        run: pnpm nx generate-client db
+
       - name: Install Playwright Browsers
         run: pnpm playwright install --with-deps
 

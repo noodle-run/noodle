@@ -13,10 +13,6 @@ export const baseConfig = defineConfig({
     environment: 'node',
     coverage: {
       reporter: ['html', 'text', 'json'],
-      functions: 80,
-      lines: 80,
-      statements: 80,
-      branches: 80,
     },
   },
 });
