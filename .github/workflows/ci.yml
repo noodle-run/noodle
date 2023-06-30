@@ -41,9 +41,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Generate prisma types
-        run: pnpm nx generate-client db
-
       - name: Install Playwright Browsers
         run: pnpm playwright install --with-deps
 
@@ -55,6 +52,8 @@ jobs:
           pids=()
 
           NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check & pids+=($!)
+
+          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx generate-client db & pids+=($!)
 
           pnpm nx affected -t lint --parallel=3 & pids+=($!)
           pnpm nx affected -t typecheck --parallel=3 & pids+=($!)
