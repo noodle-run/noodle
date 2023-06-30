@@ -10,6 +10,7 @@ env:
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
   VOLTA_FEATURE_PNPM: 1
+  NODE_OPTIONS: --max_old_space_size=4096
 
 jobs:
   main:
@@ -45,9 +46,6 @@ jobs:
 
       - name: Initialize the Nx Cloud distributed CI run
         run: pnpm nx-cloud start-ci-run
-
-      - name: Set more nodejs memory
-        run: "echo '::set-env name=NODE_OPTIONS::--max_old_space_size=4096'"
 
       - name: Generate prisma client
         run: pnpm nx generate-client db
