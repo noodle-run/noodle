@@ -15,8 +15,7 @@
           "test:coverage",
           "typecheck",
           "build-storybook",
-          "e2e",
-          "generate-client"
+          "e2e"
         ],
         "accessToken": "NzIyMjllYzgtMzlkYS00N2U4LThjOGItOGU3YzM0OGQyMTk2fHJlYWQtb25seQ=="
       }
@@ -51,11 +50,9 @@
   },
   "targetDefaults": {
     "lint": {
-      "dependsOn": ["^build", "^generate-client"],
       "inputs": ["lint"]
     },
     "lint:fix": {
-      "dependsOn": ["^build", "^generate-client"],
       "inputs": ["lint"]
     },
     "build": {
@@ -71,32 +68,15 @@
       "dependsOn": ["build", "^generate-client"]
     },
     "typecheck": {
-      "dependsOn": ["^build", "^generate-client"],
       "outputs": ["{projectRoot}/tsconfig.tsbuildinfo"]
     },
     "test:coverage": {
-      "dependsOn": ["^build", "^generate-client"],
       "outputs": ["{projectRoot}/coverage"]
     },
     "build-storybook": {
-      "dependsOn": ["^build", "^generate-client"],
+      "dependsOn": ["^build"],
       "inputs": ["default", "^production"],
       "outputs": ["{projectRoot}/storybook-static"]
-    },
-    "storybook": {
-      "dependsOn": ["^build", "^generate-client"]
-    },
-    "dev": {
-      "dependsOn": ["^build", "^generate-client"]
-    },
-    "test": {
-      "dependsOn": ["^build", "^generate-client"]
-    },
-    "test:ui": {
-      "dependsOn": ["^build", "^generate-client"]
-    },
-    "test:watch": {
-      "dependsOn": ["^build", "^generate-client"]
     },
     "e2e": {
       "outputs": [
