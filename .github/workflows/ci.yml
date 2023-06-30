@@ -47,30 +47,17 @@ jobs:
       - name: Initialize the Nx Cloud distributed CI run
         run: pnpm nx-cloud start-ci-run
 
-      - name: Run commands in parallel
-        run: |
-          pids=()
+      - name: Generate prisma client
+        run: pnpm nx generate-client db
 
-          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check & pids+=($!)
+      - name: Build & Build storybook
+        run: pnpm nx run-many -t build,build-storybook --parallel=3
 
-          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx generate-client db & pids+=($!)
+      - name: Lint, Typecheck & Test
+        run: pnpm nx run-many -t lint,typecheck,test:coverage --parallel=3
 
-          pnpm nx run-many -t build --parallel=3 & pids+=($!)
-          pnpm nx run-many -t build-storybook --parallel=3 & pids+=($!)
-          pnpm nx run-many -t lint --parallel=3 & pids+=($!)
-          pnpm nx run-many -t typecheck --parallel=3 & pids+=($!)
-          pnpm nx run-many -t test:coverage --parallel=3 & pids+=($!)
-          pnpm nx run-many -t e2e --parallel=3 & pids+=($!)
-
-          # run all commands in parallel and bail if one of them fails
-          for pid in "${pids[@]}"; do
-            if ! wait $pid; then
-              echo "Process $pid failed"
-              exit 1
-            fi
-          done
-
-          exit 0
+      - name: E2E
+        run: pnpm nx run-many -t e2e --parallel=3
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3

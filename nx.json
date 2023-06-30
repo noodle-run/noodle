@@ -56,7 +56,7 @@
       "inputs": ["lint"]
     },
     "build": {
-      "dependsOn": ["^build", "^generate-client"],
+      "dependsOn": ["^build"],
       "outputs": [
         "{projectRoot}/dist",
         "{projectRoot}/.next",
@@ -65,7 +65,7 @@
       "inputs": ["production", "^production"]
     },
     "start": {
-      "dependsOn": ["build", "^generate-client"]
+      "dependsOn": ["build"]
     },
     "typecheck": {
       "outputs": ["{projectRoot}/tsconfig.tsbuildinfo"]
