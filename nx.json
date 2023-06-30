@@ -50,7 +50,7 @@
   },
   "targetDefaults": {
     "lint": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^generate-client"],
       "inputs": ["lint"]
     },
     "lint:fix": {
