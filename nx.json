@@ -55,11 +55,11 @@
       "inputs": ["lint"]
     },
     "lint:fix": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^generate-client"],
       "inputs": ["lint"]
     },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^generate-client"],
       "outputs": [
         "{projectRoot}/dist",
         "{projectRoot}/.next",
@@ -68,35 +68,35 @@
       "inputs": ["production", "^production"]
     },
     "start": {
-      "dependsOn": ["build"]
+      "dependsOn": ["build", "^generate-client"]
     },
     "typecheck": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^generate-client"],
       "outputs": ["{projectRoot}/tsconfig.tsbuildinfo"]
     },
     "test:coverage": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^generate-client"],
       "outputs": ["{projectRoot}/coverage"]
     },
     "build-storybook": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^generate-client"],
       "inputs": ["default", "^production"],
       "outputs": ["{projectRoot}/storybook-static"]
     },
     "storybook": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^generate-client"]
     },
     "dev": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^generate-client"]
     },
     "test": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^generate-client"]
     },
     "test:ui": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^generate-client"]
     },
     "test:watch": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build", "^generate-client"]
     },
     "e2e": {
       "outputs": [
