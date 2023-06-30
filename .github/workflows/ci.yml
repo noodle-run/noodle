@@ -6,8 +6,6 @@ on:
   pull_request:
 
 env:
-  NX_CLOUD_DISTRIBUTED_EXECUTION: true
-  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
   VOLTA_FEATURE_PNPM: 1
@@ -63,31 +61,3 @@ jobs:
         uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
-      - name: Stop all running agents for this CI run
-        if: ${{ always() }}
-        run: pnpm nx-cloud stop-all-agents
-
-  agents:
-    name: Agent ${{ matrix.agent }}
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        agent: [1, 2, 3]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup volta
-        uses: volta-cli/action@v4
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Install Playwright Browsers
-        run: pnpm playwright install --with-deps
-
-      - name: Start Nx Agent ${{ matrix.agent }}
-        run: pnpm nx-cloud start-agent
-        env:
-          NX_AGENT_NAME: ${{matrix.agent}}
