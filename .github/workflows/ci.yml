@@ -46,8 +46,14 @@ jobs:
       - name: Initialize the Nx Cloud distributed CI run
         run: pnpm nx-cloud start-ci-run
 
+      - name: Set more nodejs memory
+        run: "echo '::set-env name=NODE_OPTIONS::--max_old_space_size=4096'"
+
       - name: Generate prisma client
         run: pnpm nx generate-client db
+
+      - name: Build DB package
+        run: pnpm nx build db
 
       - name: Build & Build storybook
         run: pnpm nx run-many -t build,build-storybook --parallel=3

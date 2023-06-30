@@ -17,12 +17,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@prisma/client": "^4.16.1"
+    "@prisma/client": "^4.16.2"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
     "eslint-config-noodle": "workspace:^",
-    "prisma": "^4.16.1"
+    "prisma": "^4.16.2"
   },
   "volta": {
     "extends": "../../package.json"
