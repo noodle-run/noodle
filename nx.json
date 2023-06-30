@@ -15,7 +15,8 @@
           "test:coverage",
           "typecheck",
           "build-storybook",
-          "e2e"
+          "e2e",
+          "generate-client"
         ],
         "accessToken": "NzIyMjllYzgtMzlkYS00N2U4LThjOGItOGU3YzM0OGQyMTk2fHJlYWQtb25seQ=="
       }
