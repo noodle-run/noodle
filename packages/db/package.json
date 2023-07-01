@@ -8,8 +8,10 @@
   "type": "module",
   "main": "./dist/index.js",
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "db:generate": "prisma generate",
     "db:push": "prisma db push",
-    "dev": "tsc -p tsconfig.build.json --watch",
+    "dev": "pnpm run build --watch",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "lint:fix": "pnpm run lint --fix",
     "typecheck": "tsc --noEmit"
