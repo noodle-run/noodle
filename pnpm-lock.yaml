@@ -262,6 +262,9 @@ importers:
       '@noodle/tsconfig':
         specifier: workspace:^
         version: link:../tsconfig
+      '@storybook/addon-viewport':
+        specifier: ^7.0.24
+        version: 7.0.24(react-dom@18.2.0)(react@18.2.0)
 
   packages/config/tailwind:
     dependencies:
@@ -278,21 +281,15 @@ importers:
       '@radix-ui/colors':
         specifier: ^1.0.0
         version: 1.0.0
-      '@tailwindcss/typography':
-        specifier: ^0.5.9
-        version: 0.5.9(tailwindcss@3.3.2)
       autoprefixer:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.24)
       tailwindcss-animate:
         specifier: ^1.0.6
         version: 1.0.6(tailwindcss@3.3.2)
-      windy-radix-palette:
-        specifier: ^0.6.1
-        version: 0.6.1(@radix-ui/colors@1.0.0)(tailwindcss@3.3.2)
-      windy-radix-typography:
-        specifier: ^0.2.1
-        version: 0.2.1(@tailwindcss/typography@0.5.9)(tailwindcss@3.3.2)
+      tailwindcss-radix-colors:
+        specifier: ^0.5.0
+        version: 0.5.0(tailwindcss@3.3.2)
 
   packages/config/tsconfig: {}
 
@@ -3943,6 +3940,10 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
+  /@radix-ui/colors@0.1.9:
+    resolution: {integrity: sha512-Vxq944ErPJsdVepjEUhOLO9ApUVOocA63knc+V2TkJ09D/AVOjiMIgkca/7VoYgODcla0qbSIBjje0SMfZMbAw==}
+    dev: true
+
   /@radix-ui/colors@1.0.0:
     resolution: {integrity: sha512-l8Rfw7zR6sfPsbXrBq3Xit96Xo+CSFyRFqRX/ls8W/w+HXzbwc5dbVvl+qRjsSIRoC9EiTMRV/QpJHziuTjoqg==}
     dev: true
@@ -4911,18 +4912,6 @@ packages:
       tslib: 2.5.3
     dev: false
 
-  /@tailwindcss/typography@0.5.9(tailwindcss@3.3.2):
-    resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
-    peerDependencies:
-      tailwindcss: '>=3.0.0 || insiders'
-    dependencies:
-      lodash.castarray: 4.4.0
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      postcss-selector-parser: 6.0.10
-      tailwindcss: 3.3.2(ts-node@10.9.1)
-    dev: true
-
   /@tanstack/query-core@4.29.19:
     resolution: {integrity: sha512-uPe1DukeIpIHpQi6UzIgBcXsjjsDaLnc7hF+zLBKnaUlh7jFE/A+P8t4cU4VzKPMFB/C970n/9SxtpO5hmIRgw==}
     dev: false
@@ -5509,7 +5498,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.59.9(typescript@5.1.6)
       eslint: 8.44.0
       eslint-scope: 5.1.1
-      semver: 7.5.2
+      semver: 7.5.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6791,7 +6780,7 @@ packages:
       js-string-escape: 1.0.1
       lodash: 4.17.21
       md5-hex: 3.0.1
-      semver: 7.5.1
+      semver: 7.5.3
       well-known-symbols: 2.0.0
     dev: true
 
@@ -9435,10 +9424,6 @@ packages:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
     dev: true
 
-  /lodash.castarray@4.4.0:
-    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
-    dev: true
-
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
@@ -10803,14 +10788,6 @@ packages:
       postcss: 8.4.24
       postcss-selector-parser: 6.0.13
 
-  /postcss-selector-parser@6.0.10:
-    resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
-    engines: {node: '>=4'}
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
-    dev: true
-
   /postcss-selector-parser@6.0.13:
     resolution: {integrity: sha512-EaV1Gl4mUEV4ddhDnv/xtj7sxwrwxdetHdWUGnT4VJQf+4d05v6lHYZr8N573k5Z0BViss7BDhfWtKS3+sfAqQ==}
     engines: {node: '>=4'}
@@ -12147,6 +12124,15 @@ packages:
       tailwindcss: 3.3.2(ts-node@10.9.1)
     dev: true
 
+  /tailwindcss-radix-colors@0.5.0(tailwindcss@3.3.2):
+    resolution: {integrity: sha512-5v0IndMwt//8a0ZHPuBCIUKyRFUGuLHLNJ75f/puvrpBw9uiZapU9Yegwv7B22s0cilDl64yOl1bHQqvDbHuqw==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0'
+    dependencies:
+      '@radix-ui/colors': 0.1.9
+      tailwindcss: 3.3.2(ts-node@10.9.1)
+    dev: true
+
   /tailwindcss@3.3.2(ts-node@10.9.1):
     resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
     engines: {node: '>=14.0.0'}
@@ -13213,26 +13199,6 @@ packages:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
       string-width: 4.2.3
-
-  /windy-radix-palette@0.6.1(@radix-ui/colors@1.0.0)(tailwindcss@3.3.2):
-    resolution: {integrity: sha512-n8hy1IWNuieGpQ5NS9gCGoUbtzdQ/j4zPk63ok84NgaCWkyP6kBsno/iHpb4ukt3LCQPqNPo+iok2wUgxw8PBQ==}
-    peerDependencies:
-      '@radix-ui/colors': '>=0.1.0'
-      tailwindcss: '>=3.0.0'
-    dependencies:
-      '@radix-ui/colors': 1.0.0
-      tailwindcss: 3.3.2(ts-node@10.9.1)
-    dev: true
-
-  /windy-radix-typography@0.2.1(@tailwindcss/typography@0.5.9)(tailwindcss@3.3.2):
-    resolution: {integrity: sha512-bPrEwsLKAgxcMgLGPh/PE9wx31caC2CqN7G7yuhve1ZRUDhWCvgx/nXWtls44ClmpNc+G1+U0pdpdZjRO3jQ6w==}
-    peerDependencies:
-      '@tailwindcss/typography': '>=0.1.0'
-      tailwindcss: '>=3.0.0'
-    dependencies:
-      '@tailwindcss/typography': 0.5.9(tailwindcss@3.3.2)
-      tailwindcss: 3.3.2(ts-node@10.9.1)
-    dev: true
 
   /wordwrap@1.0.0:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}

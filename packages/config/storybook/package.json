@@ -35,7 +35,8 @@
     "@storybook/types": "^7.0.24"
   },
   "devDependencies": {
-    "@noodle/tsconfig": "workspace:^"
+    "@noodle/tsconfig": "workspace:^",
+    "@storybook/addon-viewport": "^7.0.24"
   },
   "volta": {
     "extends": "../../../package.json"
