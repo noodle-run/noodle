@@ -46,14 +46,14 @@
     "prettier-plugin-tailwindcss": "^0.3.0",
     "typescript": "^5.1.3"
   },
-  "packageManager": "pnpm@8.6.2",
+  "packageManager": "pnpm@8.6.5",
   "engines": {
     "node": ">=v18.15.0",
-    "pnpm": ">=8.6.2"
+    "pnpm": ">=8.6.5"
   },
   "volta": {
     "node": "18.15.0",
-    "pnpm": "8.6.2"
+    "pnpm": "8.6.5"
   },
   "pnpm": {
     "patchedDependencies": {

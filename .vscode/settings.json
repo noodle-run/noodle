@@ -10,20 +10,5 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "editor.formatOnSave": true,
-  "files.exclude": {
-    "**/.git": false,
-    "**/.svn": false,
-    "**/.hg": false,
-    "**/CVS": false,
-    "**/.DS_Store": false,
-    "**/Thumbs.db": false,
-    "**/.next": false,
-    "**/node_modules": false,
-    "**/dist": false,
-    "**/coverage": false,
-    "**/playwright-report": false,
-    "**/test-results": false,
-    "**/*.tsbuildinfo": false
-  }
+  "editor.formatOnSave": true
 }
