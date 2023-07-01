@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@noodle/api": "workspace:^",
+    "@noodle/db": "workspace:^",
     "@noodle/ui": "workspace:^",
     "@tanstack/react-query": "^4.29.19",
     "@trpc/client": "^10.33.0",

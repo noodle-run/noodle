@@ -1,13 +1,15 @@
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
 
+import { prisma } from '@noodle/db';
+
 // TODO: add session as an option to provide to context type
 // eslint-disable-next-line
 type ContextOptions = {};
 
 export const createInnerContext = (opts: ContextOptions) => {
-  // TODO: create the db connection here and pass it in the return object
   return {
     ...opts,
+    prisma,
   };
 };
 

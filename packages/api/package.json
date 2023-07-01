@@ -32,6 +32,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@noodle/db": "workspace:^",
     "@trpc/next": "^10.33.0",
     "@trpc/server": "^10.33.0",
     "superjson": "^1.12.4",
@@ -43,6 +44,7 @@
     "@vitest/coverage-v8": "^0.32.2",
     "eslint-config-noodle": "workspace:^",
     "vite": "^4.3.9",
-    "vitest": "^0.32.2"
+    "vitest": "^0.32.2",
+    "vitest-mock-extended": "^1.1.3"
   }
 }
