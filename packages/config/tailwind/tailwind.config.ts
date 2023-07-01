@@ -14,9 +14,7 @@ const config = {
     extend: {},
   },
   plugins: [
-    require('windy-radix-palette'),
-    require('@tailwindcss/typography'),
-    require('windy-radix-typography'),
+    require('tailwindcss-radix-colors'),
     require('tailwindcss-animate'),
   ],
 } satisfies Config;

@@ -1,4 +1,5 @@
 import { withThemeByClassName } from '@storybook/addon-styling';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { type Preview } from '@storybook/react';
 
 export const basePreview = {
@@ -9,6 +10,9 @@ export const basePreview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
+    },
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
     },
   },
   decorators: [
