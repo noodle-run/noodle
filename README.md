@@ -2,6 +2,8 @@
 
 > Noodle is an open source student productivity platform that helps students manage everything to do with their education from tasks, notes, flash cards to timetables. We are rethinking student productivity with Noodle.
 
+![alt text](https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/preview.png?raw=true)
+
 **Noodle is still in early development and is not ready for use yet. Follow me on twitter [@ixahmedxii](https://twitter.com/ixahmedxii) for updates.**
 
 ## Purpose
@@ -21,3 +23,5 @@ With Noodle being open source, we hope to build a community of students and deve
 - ⚡️ Flash cards
 - 🤖 Powerful AI automations
 - 📆 Timetable
+- 📈 Insights
+- 🧠 Mind maps
