@@ -32,6 +32,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@noodle/auth": "workspace:^",
     "@noodle/db": "workspace:^",
     "@trpc/next": "^10.33.0",
     "@trpc/server": "^10.33.0",

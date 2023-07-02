@@ -176,6 +176,9 @@ importers:
 
   packages/api:
     dependencies:
+      '@noodle/auth':
+        specifier: workspace:^
+        version: link:../auth
       '@noodle/db':
         specifier: workspace:^
         version: link:../db
