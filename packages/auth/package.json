@@ -1,31 +1,26 @@
 {
-  "name": "@noodle/db",
+  "name": "@noodle/auth",
   "version": "0.1.0",
   "private": true,
-  "description": "Noodle's prisma database package",
+  "description": "Noodle's authentication package using next-auth",
   "license": "AGPL-3.0",
   "author": "Ahmed Elsakaan",
-  "type": "module",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push",
-    "db:studio": "prisma studio",
     "dev": "pnpm run build --watch",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "lint:fix": "pnpm run lint --fix",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@prisma/client": "^4.16.2"
+    "@next-auth/prisma-adapter": "^1.0.7",
+    "@noodle/db": "workspace:^",
+    "next": "13.4.7",
+    "next-auth": "^4.22.1"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
-    "eslint-config-noodle": "workspace:^",
-    "prisma": "^4.16.2"
-  },
-  "volta": {
-    "extends": "../../package.json"
+    "eslint-config-noodle": "workspace:^"
   }
 }
