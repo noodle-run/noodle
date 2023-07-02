@@ -1,5 +1,3 @@
-import { TRPCError } from '@trpc/server';
-
 import { type User } from '@noodle/db';
 
 import { userRouter } from '.';
