@@ -8,7 +8,7 @@ describe('User router', () => {
   let caller: ReturnType<typeof userRouter.createCaller>;
 
   beforeEach(() => {
-    caller = userRouter.createCaller(createInnerContext({}));
+    caller = userRouter.createCaller(createInnerContext({ session: null }));
   });
 
   it('should return all users', async () => {

@@ -1,0 +1,26 @@
+{
+  "name": "@noodle/auth",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Noodle's authentication package using next-auth",
+  "license": "AGPL-3.0",
+  "author": "Ahmed Elsakaan",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "pnpm run build --watch",
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint:fix": "pnpm run lint --fix",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@next-auth/prisma-adapter": "^1.0.7",
+    "@noodle/db": "workspace:^",
+    "next": "13.4.7",
+    "next-auth": "^4.22.1"
+  },
+  "devDependencies": {
+    "@noodle/tsconfig": "workspace:^",
+    "eslint-config-noodle": "workspace:^"
+  }
+}
