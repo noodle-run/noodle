@@ -11,7 +11,7 @@ import superjson from 'superjson';
 
 const trpc = createTRPCReact<AppRouter>();
 
-const AllTheProviders: FC<PropsWithChildren> = ({ children }) => {
+export const AllTheProviders: FC<PropsWithChildren> = ({ children }) => {
   const [queryClient] = useState(() => new QueryClient());
   const [trpcClient] = useState(() =>
     trpc.createClient({

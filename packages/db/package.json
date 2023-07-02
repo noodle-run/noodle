@@ -11,6 +11,7 @@
     "build": "tsc -p tsconfig.build.json",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
+    "db:studio": "prisma studio",
     "dev": "pnpm run build --watch",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "lint:fix": "pnpm run lint --fix",

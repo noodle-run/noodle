@@ -14,6 +14,7 @@
     "dev": "pnpm nx run-many -t dev --parallel=99 --output-style=stream",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
+    "postinstall": "prisma generate",
     "lint": "pnpm nx run-many -t lint",
     "lint:fix": "pnpm nx run-many -t lint:fix",
     "prepare": "husky install",

@@ -1,8 +1,11 @@
 import { type NextPage } from 'next';
 import { signIn, signOut, useSession } from 'next-auth/react';
 
+import { api } from '@/utils/api';
+
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
+  const { data } = api.greeting.hello.useQuery({});
 
   if (status === 'loading') {
     return <div>Loading...</div>;
@@ -12,6 +15,7 @@ const Home: NextPage = () => {
     return (
       <main>
         <h1>Noodle - Open Source Education Platform</h1>
+        <p>{data?.message}</p>
         <button type="button" onClick={() => void signIn('github')}>
           Sign in with Github
         </button>

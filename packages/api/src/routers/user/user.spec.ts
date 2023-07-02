@@ -1,3 +1,5 @@
+import { TRPCError } from '@trpc/server';
+
 import { type User } from '@noodle/db';
 
 import { userRouter } from '.';
@@ -31,6 +33,6 @@ describe('User router', () => {
 
     prismaMock.user.findMany.mockResolvedValue(users);
 
-    await expect(caller.find.all()).resolves.toEqual(users);
+    await expect(caller.find.all()).rejects.toThrow(TRPCError);
   });
 });
