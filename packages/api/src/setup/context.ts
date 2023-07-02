@@ -1,10 +1,12 @@
+import type { Session } from '@noodle/auth';
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
 
+import { getServerSession } from '@noodle/auth';
 import { prisma } from '@noodle/db';
 
-// TODO: add session as an option to provide to context type
-// eslint-disable-next-line
-type ContextOptions = {};
+type ContextOptions = {
+  session: Session | null;
+};
 
 export const createInnerContext = (opts: ContextOptions) => {
   return {
@@ -13,9 +15,10 @@ export const createInnerContext = (opts: ContextOptions) => {
   };
 };
 
-// TODO: get the session here and pass it to the inner function
-export const createContext = (_: CreateNextContextOptions) => {
-  return createInnerContext({});
+export const createContext = async ({ req, res }: CreateNextContextOptions) => {
+  const session = await getServerSession({ req, res });
+
+  return createInnerContext({ session });
 };
 
 export type Context = typeof createContext;

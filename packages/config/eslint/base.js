@@ -38,6 +38,8 @@ const config = {
     ],
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     'no-console': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
   },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],

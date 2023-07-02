@@ -3,12 +3,15 @@ import { type User } from '@noodle/db';
 import { userRouter } from '.';
 import { prismaMock } from '../../../vitest.setup';
 import { createInnerContext } from '../../setup/context';
+import { fakeSession } from '../../utils/fake';
 
 describe('User router', () => {
   let caller: ReturnType<typeof userRouter.createCaller>;
 
   beforeEach(() => {
-    caller = userRouter.createCaller(createInnerContext({}));
+    caller = userRouter.createCaller(
+      createInnerContext({ session: fakeSession }),
+    );
   });
 
   it('should return all users', async () => {
