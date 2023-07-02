@@ -11,6 +11,7 @@ import Github from 'next-auth/providers/github';
 import { prisma } from '@noodle/db';
 
 declare module 'next-auth' {
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface Session extends DefaultSession {
     user?: {
       id: string;
