@@ -19,9 +19,16 @@ const Home: NextPage = () => {
           href="https://twitter.com/ixahmedxii"
           className="text-blue-10 underline"
         >
-          Ahmed on Twitter
+          Ahmed
         </a>{' '}
-        for updates.
+        and{' '}
+        <a
+          href="https://twitter.com/F1VEBORDIER"
+          className="text-blue-10 underline"
+        >
+          Sinclair
+        </a>{' '}
+        on Twitter for updates.
       </p>
     </main>
   );
