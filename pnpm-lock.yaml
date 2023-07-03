@@ -451,8 +451,8 @@ importers:
         specifier: ^10.33.0
         version: 10.33.0(@tanstack/react-query@4.29.19)(@trpc/client@10.33.0)(@trpc/server@10.33.0)(react-dom@18.2.0)(react@18.2.0)
       cross-fetch:
-        specifier: ^3.1.7
-        version: 3.1.7
+        specifier: ^3.1.8
+        version: 3.1.8
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -6718,8 +6718,8 @@ packages:
   /create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
 
-  /cross-fetch@3.1.7:
-    resolution: {integrity: sha512-Ff9FKeIMm0Rx1o8TEV87bTK5M232akt7uSAYrSTU/QA/W6Jj9P+fWn1mxGgl+dwDzpFoAY35OIS2SJXA8WEWKA==}
+  /cross-fetch@3.1.8:
+    resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
     dependencies:
       node-fetch: 2.6.12
     transitivePeerDependencies:
