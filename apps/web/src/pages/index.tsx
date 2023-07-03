@@ -1,3 +1,4 @@
+import { Balancer } from 'react-wrap-balancer';
 import { type NextPage } from 'next';
 
 const Home: NextPage = () => {
@@ -7,28 +8,32 @@ const Home: NextPage = () => {
         Noodle
       </h1>
       <h1 className="scroll-m-20 text-center text-5xl font-extrabold tracking-tight lg:text-6xl">
-        Rethinking Student Productivity
+        <Balancer>Rethinking Student Productivity</Balancer>
       </h1>
-      <p className="text-gray-11 dark:text-graydark-11 max-w-[36ch] text-center text-base leading-7 lg:text-lg [&:not(:first-child)]:mt-6">
-        Cooking is being undertaken by the Noodle team. Please wait warmly until
-        it is ready.
+      <p className="text-gray-11 dark:text-graydark-11 text-center text-base leading-7 lg:text-lg [&:not(:first-child)]:mt-6">
+        <Balancer>
+          Cooking is being undertaken by the Noodle team. Please wait warmly
+          until it is ready.
+        </Balancer>
       </p>
-      <p className="text-gray-11 dark:text-graydark-11 max-w-[36ch] text-center text-base leading-7 lg:text-lg [&:not(:first-child)]:mt-6">
-        Follow{' '}
-        <a
-          href="https://twitter.com/ixahmedxii"
-          className="text-blue-10 underline"
-        >
-          Ahmed
-        </a>{' '}
-        and{' '}
-        <a
-          href="https://twitter.com/F1VEBORDIER"
-          className="text-blue-10 underline"
-        >
-          Sinclair
-        </a>{' '}
-        on Twitter for updates.
+      <p className="text-gray-11 dark:text-graydark-11 text-center text-base leading-7 lg:text-lg [&:not(:first-child)]:mt-6">
+        <Balancer>
+          Follow{' '}
+          <a
+            href="https://twitter.com/ixahmedxii"
+            className="text-primary-500 underline"
+          >
+            Ahmed
+          </a>{' '}
+          and{' '}
+          <a
+            href="https://twitter.com/F1VEBORDIER"
+            className="text-primary-500 underline"
+          >
+            Sinclair
+          </a>{' '}
+          on Twitter for updates.
+        </Balancer>
       </p>
     </main>
   );
