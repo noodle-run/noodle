@@ -1,3 +1,4 @@
+import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 import { Analytics } from '@vercel/analytics/react';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
@@ -25,7 +26,9 @@ const App = ({ Component, pageProps }: MyAppProps) => {
       <DefaultSeo {...seo} />
       <SessionProvider session={pageProps.session}>
         <ThemeProvider attribute="class">
-          <Component {...pageProps} />
+          <WrapBalancerProvider>
+            <Component {...pageProps} />
+          </WrapBalancerProvider>
           <Analytics />
         </ThemeProvider>
       </SessionProvider>
