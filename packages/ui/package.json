@@ -49,14 +49,14 @@
     "@testing-library/user-event": "^14.4.3",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
-    "@vitest/coverage-v8": "^0.32.2",
+    "@vitest/coverage-v8": "^0.32.4",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
     "storybook": "^7.0.24",
     "storybook-addon-pseudo-states": "^2.1.0",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9",
-    "vitest": "^0.32.2"
+    "vitest": "^0.32.4"
   },
   "volta": {
     "extends": "../../package.json"
