@@ -26,7 +26,7 @@
     "eslint-plugin-jest-dom": "^5.0.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-no-only-tests": "^3.1.0",
-    "eslint-plugin-playwright": "^0.15.2",
+    "eslint-plugin-playwright": "^0.15.3",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.12",
