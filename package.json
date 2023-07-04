@@ -54,7 +54,7 @@
   },
   "volta": {
     "node": "18.15.0",
-    "pnpm": "8.6.5"
+    "pnpm": "8.6.6"
   },
   "pnpm": {
     "patchedDependencies": {
