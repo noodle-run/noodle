@@ -30,13 +30,13 @@
   },
   "dependencies": {
     "@storybook/addon-styling": "^1.3.2",
-    "@storybook/react": "^7.0.24",
-    "@storybook/react-vite": "^7.0.24",
-    "@storybook/types": "^7.0.24"
+    "@storybook/react": "^7.0.25",
+    "@storybook/react-vite": "^7.0.25",
+    "@storybook/types": "^7.0.25"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
-    "@storybook/addon-viewport": "^7.0.24"
+    "@storybook/addon-viewport": "^7.0.25"
   },
   "volta": {
     "extends": "../../../package.json"
