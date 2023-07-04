@@ -377,6 +377,10 @@ importers:
         version: 4.16.2
 
   packages/storybook:
+    dependencies:
+      '@fontsource-variable/inter':
+        specifier: ^5.0.4
+        version: 5.0.4
     devDependencies:
       '@noodle/storybook-config':
         specifier: workspace:^
@@ -490,6 +494,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@fontsource-variable/inter':
+        specifier: ^5.0.4
+        version: 5.0.4
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -3343,6 +3350,10 @@ packages:
   /@fal-works/esbuild-plugin-global-externals@2.1.2:
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
     dev: true
+
+  /@fontsource-variable/inter@5.0.4:
+    resolution: {integrity: sha512-MYomT1JVwFAPhinw3N4mQbtwNCXSQ2n+W2JFCgXNyhzDL7hgAXzI89/yZRyNz5kYfyyG7pgsOj9YZ0aujlHbEw==}
+    dev: false
 
   /@humanwhocodes/config-array@0.11.10:
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}

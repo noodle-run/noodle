@@ -1,3 +1,5 @@
+import '@fontsource-variable/inter';
+
 import { withThemeByClassName } from '@storybook/addon-styling';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { type Preview } from '@storybook/react';

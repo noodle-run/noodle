@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-inter: 'Inter Variable', sans-serif;
+}
+
 html,
 body {
   @apply bg-gray-1 dark:bg-graydark-1 text-gray-12 dark:text-graydark-12 h-full;
