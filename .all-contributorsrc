@@ -56,6 +56,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "nrwl",
+      "name": "Nrwl",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23692104?v=4",
+      "profile": "https://nrwl.io",
+      "contributions": [
+        "financial"
+      ]
     }
   ],
   "contributorsPerLine": 7,
