@@ -1,4 +1,7 @@
 # Noodle
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > Noodle is an open source student productivity platform that helps students manage everything to do with their education from tasks, notes, flash cards to timetables. We are rethinking student productivity with Noodle.
 
@@ -37,3 +40,25 @@ With Noodle being open source, we hope to build a community of students and deve
 ## Want to contribute?
 
 Since I'm still in the very very early phases of the project, I will be finishing the setup of the monorepo and then starting to create issues on the project that people can pickup and do. Every contribution will be acknowledged and appreciated a lot :heart:
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://elsakaan.dev"><img src="https://avatars.githubusercontent.com/u/20271968?v=4?s=100" width="100px;" alt="Ahmed Elsakaan"/><br /><sub><b>Ahmed Elsakaan</b></sub></a><br /><a href="#audio-ixahmedxi" title="Audio">🔊</a> <a href="#video-ixahmedxi" title="Videos">📹</a> <a href="https://github.com/ixahmedxi/noodle/commits?author=ixahmedxi" title="Code">💻</a> <a href="https://github.com/ixahmedxi/noodle/commits?author=ixahmedxi" title="Documentation">📖</a> <a href="#a11y-ixahmedxi" title="Accessibility">️️️️♿️</a> <a href="https://github.com/ixahmedxi/noodle/issues?q=author%3Aixahmedxi" title="Bug reports">🐛</a> <a href="#blog-ixahmedxi" title="Blogposts">📝</a> <a href="#business-ixahmedxi" title="Business development">💼</a> <a href="#content-ixahmedxi" title="Content">🖋</a> <a href="#data-ixahmedxi" title="Data">🔣</a> <a href="#design-ixahmedxi" title="Design">🎨</a> <a href="#example-ixahmedxi" title="Examples">💡</a> <a href="#eventOrganizing-ixahmedxi" title="Event Organizing">📋</a> <a href="#financial-ixahmedxi" title="Financial">💵</a> <a href="#fundingFinding-ixahmedxi" title="Funding Finding">🔍</a> <a href="#ideas-ixahmedxi" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-ixahmedxi" title="Maintenance">🚧</a> <a href="#mentoring-ixahmedxi" title="Mentoring">🧑‍🏫</a> <a href="#platform-ixahmedxi" title="Packaging/porting to new platform">📦</a> <a href="#plugin-ixahmedxi" title="Plugin/utility libraries">🔌</a> <a href="#projectManagement-ixahmedxi" title="Project Management">📆</a> <a href="#promotion-ixahmedxi" title="Promotion">📣</a> <a href="#question-ixahmedxi" title="Answering Questions">💬</a> <a href="#research-ixahmedxi" title="Research">🔬</a> <a href="https://github.com/ixahmedxi/noodle/pulls?q=is%3Apr+reviewed-by%3Aixahmedxi" title="Reviewed Pull Requests">👀</a> <a href="#security-ixahmedxi" title="Security">🛡️</a> <a href="#tool-ixahmedxi" title="Tools">🔧</a> <a href="#translation-ixahmedxi" title="Translation">🌍</a> <a href="https://github.com/ixahmedxi/noodle/commits?author=ixahmedxi" title="Tests">⚠️</a> <a href="#tutorial-ixahmedxi" title="Tutorials">✅</a> <a href="#talk-ixahmedxi" title="Talks">📢</a> <a href="#userTesting-ixahmedxi" title="User Testing">📓</a> <a href="#infra-ixahmedxi" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

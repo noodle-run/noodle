@@ -1,0 +1,58 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "ixahmedxi",
+      "name": "Ahmed Elsakaan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20271968?v=4",
+      "profile": "https://elsakaan.dev",
+      "contributions": [
+        "audio",
+        "video",
+        "code",
+        "doc",
+        "a11y",
+        "bug",
+        "blog",
+        "business",
+        "content",
+        "data",
+        "design",
+        "example",
+        "eventOrganizing",
+        "financial",
+        "fundingFinding",
+        "ideas",
+        "maintenance",
+        "mentoring",
+        "platform",
+        "plugin",
+        "projectManagement",
+        "promotion",
+        "question",
+        "research",
+        "review",
+        "security",
+        "tool",
+        "translation",
+        "test",
+        "tutorial",
+        "talk",
+        "userTesting",
+        "infra"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "noodle",
+  "projectOwner": "ixahmedxi"
+}
