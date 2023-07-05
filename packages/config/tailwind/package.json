@@ -8,7 +8,7 @@
   "type": "module",
   "exports": {
     ".": "./dist/tailwind.config.js",
-    "./postcss.cjs": "./postcss.config.cjs"
+    "./postcss.config.cjs": "./postcss.config.cjs"
   },
   "main": "./dist/tailwind.config.js",
   "typesVersions": {
