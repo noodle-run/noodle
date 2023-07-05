@@ -16,7 +16,7 @@
       ".": [
         "./dist/tailwind.config.d.ts"
       ],
-      "./postcss.cjs": [
+      "./postcss.config.cjs": [
         "./postcss.config.d.cts"
       ]
     }
