@@ -34,8 +34,8 @@
   "dependencies": {
     "@noodle/auth": "workspace:^",
     "@noodle/db": "workspace:^",
-    "@trpc/next": "^10.33.0",
-    "@trpc/server": "^10.33.0",
+    "@trpc/next": "^10.33.1",
+    "@trpc/server": "^10.33.1",
     "superjson": "^1.12.4",
     "zod": "^3.21.4"
   },
