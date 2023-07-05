@@ -3,5 +3,5 @@
   "compilerOptions": {
     "noEmit": true
   },
-  "include": ["**/*.ts", "**/*.tsx", ".storybook/**/*"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.cjs", ".storybook/**/*"]
 }
