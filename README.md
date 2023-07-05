@@ -19,7 +19,7 @@ With Noodle being open source, we hope to build a community of students and deve
 [![Star History Chart](https://api.star-history.com/svg?repos=ixahmedxi/noodle&type=Date)](https://star-history.com/#ixahmedxi/noodle&Date)
 
 <div align="center">
-  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnBkMmJ5d2FhbHBocm90ams1MzF5dTI5emVtNGhwMTFpdmp3YnZiYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YnkMcHgNIMW4Yfmjxr/giphy.gif">
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnBkMmJ5d2FhbHBocm90ams1MzF5dTI5emVtNGhwMTFpdmp3YnZiYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YnkMcHgNIMW4Yfmjxr/giphy.gif" alt="Stonks GIF">
 </div>
 
 ## Features
