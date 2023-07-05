@@ -13,7 +13,7 @@
     "e2e:debug": "playwright test --debug",
     "e2e:report": "playwright show-report",
     "e2e:ui": "playwright test --ui",
-    "lint": "next lint",
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "lint:fix": "pnpm run lint --fix",
     "start": "next start",
     "test": "vitest run",

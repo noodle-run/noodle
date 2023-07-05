@@ -8,9 +8,19 @@
   "type": "module",
   "exports": {
     ".": "./dist/tailwind.config.js",
-    "./postcss.cjs": "./postcss.cjs"
+    "./postcss.config.cjs": "./postcss.config.cjs"
   },
   "main": "./dist/tailwind.config.js",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/tailwind.config.d.ts"
+      ],
+      "./postcss.config.cjs": [
+        "./postcss.config.d.cts"
+      ]
+    }
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",

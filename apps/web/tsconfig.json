@@ -14,5 +14,5 @@
     "**/*.js",
     ".eslintrc.cjs"
   ],
-  "exclude": ["node_modules", "./postcss.config.cjs", "./coverage/**/*"]
+  "exclude": ["node_modules", "./coverage/**/*"]
 }

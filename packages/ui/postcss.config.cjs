@@ -1,1 +1,1 @@
-module.exports = require('@noodle/tailwind/postcss.cjs');
+module.exports = require('@noodle/tailwind/postcss.config.cjs');
