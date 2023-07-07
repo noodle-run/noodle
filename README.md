@@ -40,6 +40,26 @@ With Noodle being open source, we hope to build a community of students and deve
 - 📈 Insights
 - 🧠 Mind maps
 
+## Project Setup
+#### Pre-requisites
+- Node.js and pnpm installed
+
+#### Clone the repo, install dependencies
+```bash
+cd noodle
+pnpm install
+```
+#### Run noodle in Development mode
+```bash
+pnpm dev
+```
+noodle running on http://localhost:3000
+
+#### Build the project
+```bash
+pnpm build
+```
+
 ## Want to contribute?
 
 Since I'm still in the very very early phases of the project, I will be finishing the setup of the monorepo and then starting to create issues on the project that people can pickup and do. Every contribution will be acknowledged and appreciated a lot :heart:
