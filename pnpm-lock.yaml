@@ -72,110 +72,111 @@ importers:
         version: 5.1.6
 
   apps/web:
-    dependencies:
-      '@noodle/api':
-        specifier: workspace:^
-        version: link:../../packages/api
-      '@noodle/auth':
-        specifier: workspace:^
-        version: link:../../packages/auth
-      '@noodle/db':
-        specifier: workspace:^
-        version: link:../../packages/db
-      '@noodle/ui':
-        specifier: workspace:^
-        version: link:../../packages/ui
-      '@tanstack/react-query':
-        specifier: ^4.29.19
-        version: 4.29.19(react-dom@18.2.0)(react@18.2.0)
-      '@trpc/client':
-        specifier: ^10.33.1
-        version: 10.33.1(@trpc/server@10.33.1)
-      '@trpc/next':
-        specifier: ^10.33.1
-        version: 10.33.1(@tanstack/react-query@4.29.19)(@trpc/client@10.33.1)(@trpc/react-query@10.33.1)(@trpc/server@10.33.1)(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
-      '@trpc/react-query':
-        specifier: ^10.33.1
-        version: 10.33.1(@tanstack/react-query@4.29.19)(@trpc/client@10.33.1)(@trpc/server@10.33.1)(react-dom@18.2.0)(react@18.2.0)
-      '@trpc/server':
-        specifier: ^10.33.1
-        version: 10.33.1
-      '@vercel/analytics':
-        specifier: ^1.0.1
-        version: 1.0.1
-      next:
-        specifier: 13.4.8
-        version: 13.4.8(react-dom@18.2.0)(react@18.2.0)
-      next-auth:
-        specifier: ^4.22.1
-        version: 4.22.1(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
-      next-seo:
-        specifier: ^6.1.0
-        version: 6.1.0(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
-      next-themes:
-        specifier: ^0.2.1
-        version: 0.2.1(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-wrap-balancer:
-        specifier: ^1.0.0
-        version: 1.0.0(react@18.2.0)
-      superjson:
-        specifier: ^1.12.4
-        version: 1.12.4
-      zod:
-        specifier: ^3.21.4
-        version: 3.21.4
-    devDependencies:
-      '@noodle/tailwind':
-        specifier: workspace:^
-        version: link:../../packages/config/tailwind
-      '@noodle/test-utils':
-        specifier: workspace:^
-        version: link:../../packages/test-utils
-      '@noodle/tsconfig':
-        specifier: workspace:^
-        version: link:../../packages/config/tsconfig
-      '@noodle/vitest':
-        specifier: workspace:^
-        version: link:../../packages/config/vitest
-      '@playwright/test':
-        specifier: ^1.35.1
-        version: 1.35.1
-      '@testing-library/dom':
-        specifier: ^9.3.1
-        version: 9.3.1
-      '@testing-library/user-event':
-        specifier: ^14.4.3
-        version: 14.4.3(@testing-library/dom@9.3.1)
-      '@types/react':
-        specifier: 18.2.14
-        version: 18.2.14
-      '@types/react-dom':
-        specifier: 18.2.6
-        version: 18.2.6
-      '@vitest/coverage-v8':
-        specifier: ^0.32.4
-        version: 0.32.4(vitest@0.32.4)
-      autoprefixer:
-        specifier: ^10.4.14
-        version: 10.4.14(postcss@8.4.24)
-      dotenv:
-        specifier: ^16.3.1
-        version: 16.3.1
-      postcss:
-        specifier: ^8.4.24
-        version: 8.4.24
-      tailwindcss:
-        specifier: ^3.3.2
-        version: 3.3.2
-      vitest:
-        specifier: ^0.32.4
-        version: 0.32.4(@vitest/ui@0.32.4)(happy-dom@10.0.3)
+  dependencies:
+    '@noodle/api':
+      specifier: workspace:^
+      version: link:../../packages/api
+    '@noodle/auth':
+      specifier: workspace:^
+      version: link:../../packages/auth
+    '@noodle/db':
+      specifier: workspace:^
+      version: link:../../packages/db
+    '@noodle/ui':
+      specifier: workspace:^
+      version: link:../../packages/ui
+    '@tanstack/react-query':
+      specifier: ^5.2.0
+      version: 5.2.0(react-dom@18.2.0)(react@18.2.0)
+    '@trpc/client':
+      specifier: ^12.2.0
+      version: 12.2.0(@trpc/server@12.2.0)
+    '@trpc/next':
+      specifier: ^12.2.0
+      version: 12.2.0(@tanstack/react-query@5.2.0)(@trpc/client@12.2.0)(@trpc/react-query@12.2.0)(@trpc/server@12.2.0)(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
+    '@trpc/react-query':
+      specifier: ^12.2.0
+      version: 12.2.0(@tanstack/react-query@5.2.0)(@trpc/client@12.2.0)(@trpc/server@12.2.0)(react-dom@18.2.0)(react@18.2.0)
+    '@trpc/server':
+      specifier: ^12.2.0
+      version: 12.2.0
+    '@vercel/analytics':
+      specifier: ^1.10.0
+      version: 1.10.0
+    next:
+      specifier: 13.4.8
+      version: 13.4.8(react-dom@18.2.0)(react@18.2.0)
+    next-auth:
+      specifier: ^4.0.0
+      version: 4.0.0(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
+    next-seo:
+      specifier: ^7.0.0
+      version: 7.0.0(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
+    next-themes:
+      specifier: ^1.0.0
+      version: 1.0.0(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
+    react:
+      specifier: 18.2.0
+      version: 18.2.0
+    react-dom:
+      specifier: 18.2.0
+      version: 18.2.0(react@18.2.0)
+    react-wrap-balancer:
+      specifier: ^1.0.0
+      version: 1.0.0(react@18.2.0)
+    superjson:
+      specifier: ^1.0.0
+      version: 1.0.0
+    zod:
+      specifier: ^3.4.0
+      version: 3.4.0
+  devDependencies:
+    '@noodle/tailwind':
+      specifier: workspace:^
+      version: link:../../packages/config/tailwind
+    '@noodle/test-utils':
+      specifier: workspace:^
+      version: link:../../packages/test-utils
+    '@noodle/tsconfig':
+      specifier: workspace:^
+      version: link:../../packages/config/tsconfig
+    '@noodle/vitest':
+      specifier: workspace:^
+      version: link:../../packages/config/vitest
+    '@playwright/test':
+      specifier: ^1.16.2
+      version: 1.16.2
+    '@testing-library/dom':
+      specifier: ^8.0.0
+      version: 8.0.0
+    '@testing-library/user-event':
+      specifier: ^13.1.0
+      version: 13.1.0(@testing-library/dom@8.0.0)
+    '@types/react':
+      specifier: 18.0.9
+      version: 18.0.9
+    '@types/react-dom':
+      specifier: 18.0.3
+      version: 18.0.3
+    '@vitest/coverage-v8':
+      specifier: ^0.32.4
+      version: 0.32.4(vitest@0.32.4)
+    autoprefixer:
+      specifier: ^10.4.14
+      version: 10.4.14(postcss@8.4.24)
+    dotenv:
+      specifier: ^10.0.0
+      version: 10.0.0
+    postcss:
+      specifier: ^8.4.24
+      version: 8.4.24
+    tailwindcss:
+      specifier: ^3.4.2
+      version: 3.4.2
+    vitest:
+      specifier: ^0.32.4
+      version: 0.32.4(@vitest/ui@0.32.4)(happy-dom@10.0.3)
+
 
   packages/api:
     dependencies:
