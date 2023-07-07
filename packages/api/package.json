@@ -42,10 +42,10 @@
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
     "@noodle/vitest": "workspace:^",
-    "@vitest/coverage-v8": "^0.32.4",
+    "@vitest/coverage-v8": "^0.33.0",
     "eslint-config-noodle": "workspace:^",
     "vite": "^4.3.9",
-    "vitest": "^0.32.4",
+    "vitest": "^0.33.0",
     "vitest-mock-extended": "^1.1.3"
   }
 }
