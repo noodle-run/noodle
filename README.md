@@ -41,21 +41,21 @@ With Noodle being open source, we hope to build a community of students and deve
 - 🧠 Mind maps
 
 ## Project Setup
-#### Pre-requisites
+### Pre-requisites
 - Node.js and pnpm installed
 
-#### Clone the repo, install dependencies
+### Clone the repo, install dependencies
 ```bash
 cd noodle
 pnpm install
 ```
-#### Run noodle in Development mode
+### Run noodle in Development mode
 ```bash
 pnpm dev
 ```
 noodle running on http://localhost:3000
 
-#### Build the project
+### Build the project
 ```bash
 pnpm build
 ```
