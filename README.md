@@ -18,7 +18,7 @@ Typically for a student, you need to be using multiple applications just to be m
 
 Noodle is a platform that aims to solve this problem by providing a single platform for students to manage everything to do with their education. And with the power of having all of that data in one place, we can provide students with powerful insights and automation to help them be more productive.
 
-With Noodle being open source, we hope to build a community of students and developers to help build the best student productivity platform.
+As an open-source platform, Noodle strives to cultivate a community of students and developers who can collectively contribute to building the most exceptional student productivity platform.
 
 ## Star History
 
