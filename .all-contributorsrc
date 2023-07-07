@@ -65,6 +65,15 @@
       "contributions": [
         "financial"
       ]
+    },
+    {
+      "login": "liamsegura",
+      "name": "Liam Segura",
+      "avatar_url": "https://avatars.githubusercontent.com/u/102547056?v=4",
+      "profile": "https://www.liamsegura.com",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
