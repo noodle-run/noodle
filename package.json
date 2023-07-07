@@ -1,0 +1,67 @@
+{
+  "name": "noodle",
+  "version": "0.1.0",
+  "description": "Rethinking Student Productivity",
+  "license": "AGPL-3.0",
+  "author": "Ahmed Elsakaan",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm nx run-many -t build",
+    "build-storybook": "pnpm nx run-many -t build-storybook",
+    "build:pkgs": "pnpm nx run-many -t build --exclude web",
+    "clean": "pnpm clean:bundles && del pnpm-lock.yaml **/node_modules && pnpm install",
+    "clean:bundles": "del **/coverage **/storybook-static **/tsconfig.tsbuildinfo **/dist **/.next **/playwright-report **/test-results",
+    "dev": "pnpm nx run-many -t dev --parallel=99 --output-style=stream",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "postinstall": "prisma generate",
+    "lint": "pnpm nx run-many -t lint",
+    "lint:fix": "pnpm nx run-many -t lint:fix",
+    "prepare": "husky install",
+    "start": "pnpm nx run-many -t start --parallel=99",
+    "storybook": "pnpm nx storybook storybook",
+    "test": "pnpm nx run-many -t test",
+    "test:coverage": "pnpm nx run-many -t test:coverage --output-style=stream",
+    "test:ui": "pnpm nx run-many -t test:ui --parallel=99 --output-style=stream",
+    "test:watch": "pnpm nx run-many -t test:watch --parallel=99 --output-style=stream",
+    "typecheck": "pnpm nx run-many -t typecheck"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
+    "@noodle/tsconfig": "workspace:^",
+    "@types/eslint": "^8.40.2",
+    "@types/node": "^20.3.3",
+    "@types/prettier": "^2.7.3",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.44.0",
+    "eslint-config-noodle": "workspace:^",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "nx": "16.3.2",
+    "nx-cloud": "16.0.5",
+    "prettier": "^2.8.8",
+    "prettier-plugin-jsdoc": "^0.4.2",
+    "prettier-plugin-packagejson": "^2.4.4",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "typescript": "^5.1.6"
+  },
+  "packageManager": "pnpm@8.6.5",
+  "engines": {
+    "node": ">=v18.15.0",
+    "pnpm": ">=8.6.5"
+  },
+  "volta": {
+    "node": "18.15.0",
+    "pnpm": "8.6.5"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@types/testing-library__jest-dom@5.14.6": "patches/@types__testing-library__jest-dom@5.14.6.patch"
+    }
+  },
+  "prisma": {
+    "schema": "packages/db/prisma/schema.prisma"
+  }
+}
