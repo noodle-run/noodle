@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/android-chrome-192x192.png?raw=true" alt="Noodle logo" width="50">  
   <h1>Noodle</h1>
-  <h2>Rethinking Student Productivity</h2>
+  <h2 style="margin-top: -20px;">Rethinking Student Productivity</h2>
 </div>
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
