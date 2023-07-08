@@ -1,12 +1,12 @@
 <div align="center">
   <img src="https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/android-chrome-192x192.png?raw=true" alt="Noodle logo" width="75">  
-  <h1>Noodle</h1>
-  <h2 style="margin-top: -20px;">Rethinking Student Productivity</h2>
+  <h1>Noodle <br> Rethinking Student Productivity</h1>
+  <br>
 </div>
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=for-the-badge)](#contributors-) ![GitHub Sponsors](https://img.shields.io/github/sponsors/ixahmedxi?style=for-the-badge) ![Codecov](https://img.shields.io/codecov/c/gh/ixahmedxi/noodle?style=for-the-badge) ![GitHub](https://img.shields.io/github/license/ixahmedxi/noodle?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/ixahmedxi/noodle?style=for-the-badge)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=for-the-badge)](#contributors-) ![GitHub Sponsors](https://img.shields.io/github/sponsors/ixahmedxi?style=for-the-badge) ![Codecov](https://img.shields.io/codecov/c/gh/ixahmedxi/noodle?style=for-the-badge) ![GitHub](https://img.shields.io/github/license/ixahmedxi/noodle?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/ixahmedxi/noodle?style=for-the-badge) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ixahmedxi/noodle/main?style=for-the-badge)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -14,11 +14,10 @@
 > This is a work-in-progress and not the finished product.
 >
 > Feel free to leave feature suggestions but please don't open issues for bugs or support requests just yet.
+> 
+> Follow me on twitter [@ixahmedxii](https://twitter.com/ixahmedxii) for updates.
 
 ![Noodle Preview](https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/preview.png?raw=true)
-
-**Noodle is still in early development and is not ready for use yet. Follow me on twitter [@ixahmedxii](https://twitter.com/ixahmedxii) for updates.**
-
 ## Features
 
 - 📁 Module/Subject Management
