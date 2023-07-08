@@ -74,7 +74,7 @@ model Organization {
   updatedAt  DateTime     @updatedAt
 }
 
-enum MembershipRole {
+enum UserRole {
   OWNER
   ADMIN
   TEACHER
@@ -84,8 +84,8 @@ enum MembershipRole {
 }
 
 model Membership {
-  id   Int            @id @default(autoincrement())
-  role MembershipRole @default(MEMBER)
+  id   Int      @id @default(autoincrement())
+  role UserRole @default(MEMBER)
 
   organization   Organization @relation(fields: [organizationId], references: [id])
   organizationId String
