@@ -103,6 +103,9 @@ importers:
       '@vercel/analytics':
         specifier: ^1.0.1
         version: 1.0.1
+      lucide-react:
+        specifier: ^0.259.0
+        version: 0.259.0(react@18.2.0)
       next:
         specifier: 13.4.9
         version: 13.4.9(@babel/core@7.22.6)(react-dom@18.2.0)(react@18.2.0)
@@ -118,6 +121,9 @@ importers:
       react:
         specifier: 18.2.0
         version: 18.2.0
+      react-animate-height:
+        specifier: ^3.1.2
+        version: 3.1.2(react-dom@18.2.0)(react@18.2.0)
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
@@ -9887,6 +9893,14 @@ packages:
     dependencies:
       yallist: 4.0.0
 
+  /lucide-react@0.259.0(react@18.2.0):
+    resolution: {integrity: sha512-dFBLc6jRDfcpD9NQ7NyFVa+YR3RHX6+bs+f/UiotvNPho+kd4WyeXWMCCchUf7i/pq3BAaHkbmtkbx/GxxHVUw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
@@ -11500,6 +11514,17 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+
+  /react-animate-height@3.1.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-3xBhr6Ht9kmpX5DnZToNy0LEkEeobFPCc7eDQ3gEQZrNrP3OXM+u4c17sr/QgtfXWQslQmwfPXsqdheCJFA/QA==}
+    engines: {node: '>= 12.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /react-colorful@5.6.1(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-1exovf0uGTGyq5mXQT0zgQ80uvj2PCwvF8zY1RN9/vbJVSjSo3fsB/4L3ObbF7u70NduSiK4xu4Y6q1MHoUGEw==}
