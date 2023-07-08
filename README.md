@@ -14,10 +14,11 @@
 > This is a work-in-progress and not the finished product.
 >
 > Feel free to leave feature suggestions but please don't open issues for bugs or support requests just yet.
-> 
+>
 > Follow me on twitter [@ixahmedxii](https://twitter.com/ixahmedxii) for updates.
 
 ![Noodle Preview](https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/preview.png?raw=true)
+
 ## Features
 
 - 📁 Module/Subject Management
