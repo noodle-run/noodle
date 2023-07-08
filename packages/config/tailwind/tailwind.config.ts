@@ -34,6 +34,7 @@ const config = {
   plugins: [
     require('tailwindcss-radix-colors'),
     require('tailwindcss-animate'),
+    require('@savvywombat/tailwindcss-grid-areas'),
   ],
 } satisfies Config;
 

@@ -1,12 +1,137 @@
 import { Balancer } from 'react-wrap-balancer';
+import type { FC, ReactNode } from 'react';
 import { ArrowDown, ArrowRight, Star } from 'lucide-react';
 import { type NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { cn } from '@noodle/ui';
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/Accordion';
 import { Navbar } from '@/components/Navbar';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { constants } from '@/utils/constants';
+
+type FeatureCardProps = {
+  emoji: ReactNode;
+  title: string;
+  children: ReactNode;
+  className?: string;
+};
+
+const FeatureCard: FC<FeatureCardProps> = ({
+  children,
+  emoji,
+  title,
+  className,
+}) => {
+  return (
+    <div
+      className={cn(
+        className,
+        'from-gray-2 dark:from-graydark-2 via-gray-3 dark:via-graydark-3 to-gray-2 dark:to-graydark-2 border-gray-6 dark:border-graydark-6 rounded-xl border bg-gradient-to-br px-8 py-9',
+      )}
+    >
+      <h2 className="text-3xl font-extrabold">{emoji}</h2>
+      <h2 className="py-4 text-2xl font-extrabold">{title}</h2>
+      <div className="text-gray-11 dark:text-graydark-11 text-sm leading-6">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+const features: FeatureCardProps[] = [
+  {
+    emoji: (
+      <span role="img" aria-label="chart increasing">
+        📈
+      </span>
+    ),
+    className: 'lg:grid-in-leftTop',
+    title: 'Insights & Analytics',
+    children: (
+      <p>
+        Indulged in the art of procrastination all week? Brace yourself for the
+        truth: zero accomplishments. Prepare to be awestruck.
+      </p>
+    ),
+  },
+  {
+    emoji: (
+      <span role="img" aria-label="high voltage">
+        ⚡
+      </span>
+    ),
+    title: 'Powerful Note Taking',
+    className: 'lg:grid-in-centerTop',
+    children: (
+      <p>
+        Brace yourself! Experience note-taking that defies gravity. Get ready to
+        be smitten by its remarkable charm, leaving those pen-and-paper users in
+        lectures questioning their existence.
+      </p>
+    ),
+  },
+  {
+    emoji: (
+      <span role="img" aria-label="card file box">
+        🗃
+      </span>
+    ),
+    className: 'lg:grid-in-right',
+    title: 'Flashcards',
+    children: (
+      <p>
+        Guess what? Noodle doesn&apos;t do ordinary flashcards. No, no,
+        we&apos;ve revolutionized the game. <br /> <br /> Say goodbye to the
+        tedious task of creating your own flashcards. With Noodle, as you jot
+        down your notes, like magic, we&apos;ll conjure up customized flashcards
+        for you. <br /> <br /> But here&apos;s the thing, don&apos;t you even
+        think about slacking off on your flashcard homework. Our AI takes it
+        personally, and trust me, you don&apos;t want to face the wrath of a
+        peeved AI.
+      </p>
+    ),
+  },
+  {
+    emoji: (
+      <span role="img" aria-label="brain">
+        🧠
+      </span>
+    ),
+    title: 'AI this & Automations that',
+    className: 'lg:grid-in-leftBottom',
+    children: (
+      <p>
+        Embrace the brilliance of our wonderfully mediocre AI! It&apos;s here to
+        save the day, helping you fix mistakes and put information in the right
+        place. Because, you know, we get it—you&apos;re not the sharpest tool in
+        the shed.
+      </p>
+    ),
+  },
+  {
+    emoji: (
+      <span role="img" aria-label="man technologist">
+        👨‍💻
+      </span>
+    ),
+    title: 'Open Source',
+    className: 'lg:grid-in-centerBottom',
+    children: (
+      <p>
+        Apart from the glamour of being open source, Noodle&apos;s codebase is
+        actually open for contributions I mean if you even dare!
+      </p>
+    ),
+  },
+];
 
 const Home: NextPage = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -79,7 +204,7 @@ const Home: NextPage = () => {
       </div>
       <section
         id="features"
-        className="container mx-auto mt-56 flex flex-col gap-6"
+        className="container mx-auto mt-36 flex flex-col gap-6 lg:mt-56"
       >
         <h1 className="mx-auto max-w-[20ch] text-center text-5xl font-extrabold tracking-tighter md:text-6xl">
           <Balancer>A new era of productive students begins.</Balancer>
@@ -91,7 +216,148 @@ const Home: NextPage = () => {
             again.
           </Balancer>
         </p>
+        <div className="lg:grid-areas-featuresWide grid grid-cols-1 gap-8 lg:grid-cols-7 lg:grid-rows-2">
+          {features.map((feature) => (
+            <FeatureCard key={feature.title} {...feature} />
+          ))}
+        </div>
       </section>
+      <section
+        id="mission"
+        className="container mx-auto mt-36 flex flex-col gap-8 lg:mt-56"
+      >
+        <h1 className="mx-auto max-w-[20ch] text-center text-5xl font-extrabold tracking-tighter md:text-6xl">
+          <Balancer>Discussing the elephant in the blender</Balancer>
+        </h1>
+        <p className="text-gray-11 dark:text-graydark-11 mx-auto leading-7 lg:max-w-[80ch]">
+          <Balancer>
+            You know that friend that you talk about the future with? <br />{' '}
+            <br /> Well we&apos;re two friends, Ahmed and Sinclair that talk
+            about the future. We came up with Noodle while talking about how
+            great it would be to have a single platform that could make studies
+            easier through cross compatibility. <br /> <br />
+            You see we&apos;re not lazy, we just love when things work together
+            properly. Noodle as you see it is the result of hours of
+            discussions, hours of running ideas, talking with many fellow
+            students. <br /> <br /> We wanted a platform that could manage your
+            notes in an easy to use way, give us information about where we are
+            so we know where to go. Flash cards integrated with to do&apos;s,
+            with calendars and so much more. What you see as Noodle is
+            only&apos;the&apos;beginning. <br /> <br /> We say blender as that
+            we see Noodle becoming a blend of everything that we needed while
+            pursuing our degrees to keep on top of everything.
+          </Balancer>
+        </p>
+      </section>
+      <section
+        id="#faq"
+        className="container mx-auto mt-36 flex flex-col gap-6 lg:mt-56"
+      >
+        <h1 className="mx-auto max-w-[20ch] text-center text-5xl font-extrabold tracking-tighter md:text-6xl">
+          <Balancer>You probably got many questions for us...</Balancer>
+        </h1>
+        <p className="text-gray-11 dark:text-graydark-11 mx-auto max-w-[80ch] text-center leading-7">
+          <Balancer>
+            So here&apos;s a list of things we think you might be wondering
+            about when it comes to Noodle. If there are any more I guess too
+            bad.
+          </Balancer>
+        </p>
+        <div className="mx-auto w-full pt-6 lg:w-1/2">
+          <Accordion type="multiple">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Why is the name Noodle</AccordionTrigger>
+              <AccordionContent>
+                The name came up from our usage of the platform Moodle
+                throughout our university years. We wanted to build something
+                with our idea for this platform and the name Noodle came up as a
+                joke. We liked it and it stuck.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Is it an LMS platform</AccordionTrigger>
+              <AccordionContent>
+                The simple answer is no, we are not an LMS platform. We are a
+                productivity platform so you can think of us as like Notion,
+                Obsidian, Craft...etc but specifically for students. The
+                specificality of Noodle is that we are built for students and we
+                are built to be a blend of everything you need to be productive
+                as a student.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>When is it coming out</AccordionTrigger>
+              <AccordionContent>
+                We are working hard to get the first initial version of Noodle
+                out as soon as possible, that might be hopefully during
+                September time that aligns with the new school year.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger>Will I be given access</AccordionTrigger>
+              <AccordionContent>
+                Yes, we will onboard the people on our waitlist based on a first
+                come first serve basis, with a 500 user limit for our initial
+                version. We will also be giving out invites to people who are
+                active in our discord server.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5">
+              <AccordionTrigger>What will be the pricing</AccordionTrigger>
+              <AccordionContent>
+                We currently have no idea, we would like to have some sort of a
+                survery with our initial version users to see what they think is
+                a fair price for the platform. Noodle will also always be open
+                source and self hostable for individuals who want to do that.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-6">
+              <AccordionTrigger>
+                What aspect of it is open source
+              </AccordionTrigger>
+              <AccordionContent>
+                Noodle&apos;s DNA revolves around being open source, and with
+                that we can confidentally say that we will keep it open source
+                no matter what.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+      <div className="bg-primary-500 text-gray-12 mt-36 py-14 lg:mt-56">
+        <div className="container mx-auto flex flex-col items-start gap-6">
+          <h1 className="max-w-[20ch] text-5xl font-extrabold tracking-tighter md:text-6xl">
+            <Balancer>How about we take a minute of your time?</Balancer>
+          </h1>
+          <p className="font-semibold tracking-tight lg:max-w-[80ch]">
+            <Balancer>
+              It would mean the world to us if you think Noodle will impact your
+              productivity for the better and would sign up to our waiting list.
+              We are working hard to deliver Noodle as soon as possible so that
+              we can improve student productivity as soon as possible.
+            </Balancer>
+          </p>
+          <Link
+            href="/waitlist"
+            className="bg-gray-1 dark:bg-graydark-1 hover:bg-gray-2 dark:hover:bg-graydark-2 text-primary-500 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors md:w-auto"
+          >
+            Join Waitlist <ArrowRight size={20} />
+          </Link>
+        </div>
+      </div>
+      <h1 className="mt-36 text-center text-4xl font-extrabold tracking-tighter md:text-6xl">
+        <Balancer>
+          Thanks k byeee{' '}
+          <span role="img" aria-label="face blowing a kiss">
+            😘
+          </span>
+        </Balancer>
+      </h1>
+      <footer className="my-8">
+        <p className="text-gray-11 dark:text-graydark-11 text-center">
+          &copy; Copyright Ahmed Elsakaan 2023. All Rights Reserved.
+        </p>
+      </footer>
     </main>
   );
 };

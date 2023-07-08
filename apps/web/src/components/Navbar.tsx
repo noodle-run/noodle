@@ -19,7 +19,7 @@ export const Navbar = () => {
   }, [isMobile]);
 
   return (
-    <nav className="bg-gray-1 dark:bg-graydark-1 container fixed left-1/2 top-0 z-50 -translate-x-1/2 pt-8 md:pb-0 lg:bg-transparent lg:dark:bg-transparent">
+    <nav className="bg-gray-1 dark:bg-graydark-1 container fixed left-1/2 top-0 z-50 -translate-x-1/2 pb-4 pt-8 md:pb-0 lg:bg-transparent lg:dark:bg-transparent">
       <div className="flex flex-wrap items-center justify-between">
         <Link href="/" className="flex items-center gap-4">
           <Brand size={35} />
@@ -56,7 +56,7 @@ export const Navbar = () => {
               <li>
                 <Link
                   href="#faq"
-                  className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-6 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
+                  className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-2 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
                 >
                   FAQ
                 </Link>
