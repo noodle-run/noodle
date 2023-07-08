@@ -14,15 +14,16 @@
     "./playwright.js"
   ],
   "scripts": {
-    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint": "eslint . --max-warnings 0",
     "lint:fix": "pnpm run lint --fix"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.4.8",
+    "@next/eslint-plugin-next": "^13.4.9",
     "@noodle/tsconfig": "workspace:^",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-jest-dom": "^5.0.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-no-only-tests": "^3.1.0",

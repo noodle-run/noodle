@@ -31,8 +31,8 @@
     "@commitlint/config-conventional": "^17.6.6",
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@noodle/tsconfig": "workspace:^",
-    "@types/eslint": "^8.40.2",
-    "@types/node": "^20.3.3",
+    "@types/eslint": "^8.44.0",
+    "@types/node": "^20.4.1",
     "@types/prettier": "^2.7.3",
     "del-cli": "^5.0.0",
     "eslint": "^8.44.0",
@@ -47,18 +47,18 @@
     "prettier-plugin-tailwindcss": "^0.3.0",
     "typescript": "^5.1.6"
   },
-  "packageManager": "pnpm@8.6.5",
+  "packageManager": "pnpm@8.6.6",
   "engines": {
     "node": ">=v18.15.0",
-    "pnpm": ">=8.6.5"
+    "pnpm": ">=8.6.6"
   },
   "volta": {
     "node": "18.15.0",
-    "pnpm": "8.6.5"
+    "pnpm": "8.6.6"
   },
   "pnpm": {
     "patchedDependencies": {
-      "@types/testing-library__jest-dom@5.14.6": "patches/@types__testing-library__jest-dom@5.14.6.patch"
+      "@types/testing-library__jest-dom@5.14.7": "patches/@types__testing-library__jest-dom@5.14.7.patch"
     }
   },
   "prisma": {
