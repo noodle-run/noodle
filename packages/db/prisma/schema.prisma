@@ -35,10 +35,9 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-enum UserRole {
-  TEACHER
-  STUDENT
-  GUEST
+// The owners of the SaaS (you) can have a SUPERADMIN role to access all data
+enum GlobalRole {
+  USER
   SUPERADMIN
 }
 
@@ -48,7 +47,7 @@ model User {
   email          String?        @unique
   emailVerified  DateTime?
   image          String?
-  role           UserRole
+  role           GlobalRole     @default(USER)
   accounts       Account[]
   sessions       Session[]
   memberships    Membership[]   @relation("members")
@@ -78,7 +77,10 @@ model Organization {
 enum MembershipRole {
   OWNER
   ADMIN
+  TEACHER
+  STUDENT
   MEMBER
+  GUEST
 }
 
 model Membership {
