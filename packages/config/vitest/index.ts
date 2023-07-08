@@ -25,12 +25,9 @@ export const baseConfig = defineConfig({
   },
 });
 
-export const reactConfig = mergeConfig(
-  baseConfig,
-  defineConfig({
-    plugins: [react()],
-    test: {
-      environment: 'happy-dom',
-    },
-  }),
-);
+export const reactConfig = mergeConfig(baseConfig, {
+  plugins: [react()],
+  test: {
+    environment: 'happy-dom',
+  },
+});
