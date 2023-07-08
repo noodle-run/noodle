@@ -6,7 +6,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=for-the-badge)](#contributors-) ![Codecov](https://img.shields.io/codecov/c/gh/ixahmedxi/noodle?style=for-the-badge) ![GitHub](https://img.shields.io/github/license/ixahmedxi/noodle?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/ixahmedxi/noodle?style=for-the-badge) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ixahmedxi/noodle/main?style=for-the-badge)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=for-the-badge)](#contributors-) ![Codecov](https://img.shields.io/codecov/c/gh/ixahmedxi/noodle?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/ixahmedxi/noodle?style=for-the-badge) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ixahmedxi/noodle/main?style=for-the-badge)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
