@@ -24,7 +24,7 @@
   "scripts": {
     "build": "tsc --rootDir src",
     "dev": "pnpm build --watch",
-    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint": "eslint . --max-warnings 0",
     "lint:fix": "pnpm run lint --fix",
     "typecheck": "tsc --noEmit"
   },

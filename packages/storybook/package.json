@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "build-storybook": "storybook build",
-    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint": "eslint . --max-warnings 0",
     "lint:fix": "pnpm run lint --fix",
     "storybook": "storybook dev -p 6006",
     "typecheck": "tsc --noEmit"
@@ -30,11 +30,11 @@
     "@storybook/react-vite": "^7.0.26",
     "@storybook/testing-library": "^0.2.0",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.25",
     "storybook": "^7.0.26",
     "storybook-addon-pseudo-states": "^2.1.0",
     "tailwindcss": "^3.3.2",
-    "vite": "^4.3.9"
+    "vite": "^4.4.2"
   },
   "volta": {
     "extends": "../../package.json"

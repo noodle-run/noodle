@@ -1,14 +1,35 @@
-# Noodle
+<div align="center">
+  <img src="https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/android-chrome-192x192.png?raw=true" alt="Noodle logo" width="75">  
+  <h1>Noodle <br> Rethinking Student Productivity</h1>
+  <br>
+</div>
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=for-the-badge)](#contributors-) ![GitHub Sponsors](https://img.shields.io/github/sponsors/ixahmedxi?style=for-the-badge) ![Codecov](https://img.shields.io/codecov/c/gh/ixahmedxi/noodle?style=for-the-badge) ![GitHub](https://img.shields.io/github/license/ixahmedxi/noodle?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/ixahmedxi/noodle?style=for-the-badge) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ixahmedxi/noodle/main?style=for-the-badge)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-> Noodle is an open source student productivity platform that helps students manage everything to do with their education from tasks, notes, flash cards to timetables. We are rethinking student productivity with Noodle.
+> **Warning**
+> This is a work-in-progress and not the finished product.
+>
+> Feel free to leave feature suggestions but please don't open issues for bugs or support requests just yet.
+>
+> Follow me on twitter [@ixahmedxii](https://twitter.com/ixahmedxii) for updates.
 
 ![Noodle Preview](https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/preview.png?raw=true)
 
-**Noodle is still in early development and is not ready for use yet. Follow me on twitter [@ixahmedxii](https://twitter.com/ixahmedxii) for updates.**
+## Features
+
+- 📁 Module/Subject Management
+- 📒 Note taking
+- 🗄️ Task Management
+- ✅ Assignment grade calculator
+- ⚡️ Flash cards
+- 🤖 Powerful AI automations
+- 📆 Timetable
+- 📈 Insights
+- 🧠 Mind maps
 
 ## Purpose
 
@@ -25,22 +46,6 @@ As an open-source platform, Noodle strives to cultivate a community of students 
 <div align="center">
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnBkMmJ5d2FhbHBocm90ams1MzF5dTI5emVtNGhwMTFpdmp3YnZiYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YnkMcHgNIMW4Yfmjxr/giphy.gif" alt="Stonks GIF">
 </div>
-
-## Features
-
-- 📁 Module/Subject Management
-- 📒 Note taking
-- 🗄️ Task Management
-- ✅ Assignment grade calculator
-- ⚡️ Flash cards
-- 🤖 Powerful AI automations
-- 📆 Timetable
-- 📈 Insights
-- 🧠 Mind maps
-
-## Want to contribute?
-
-Since I'm still in the very very early phases of the project, I will be finishing the setup of the monorepo and then starting to create issues on the project that people can pickup and do. Every contribution will be acknowledged and appreciated a lot :heart:
 
 ## Contributors ✨
 
