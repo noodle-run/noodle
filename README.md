@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/android-chrome-192x192.png?raw=true" alt="Noodle logo" width="50">  
+  <img src="https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/android-chrome-192x192.png?raw=true" alt="Noodle logo" width="75">  
   <h1>Noodle</h1>
   <h2 style="margin-top: -20px;">Rethinking Student Productivity</h2>
 </div>
