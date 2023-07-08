@@ -1,10 +1,13 @@
-import type { UserConfigExport } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import { mergeConfig as _mergeConfig, defineConfig } from 'vitest/config';
 
-export const mergeConfig = (base: UserConfigExport, config: UserConfigExport) =>
-  _mergeConfig(base, config);
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const mergeConfig = (
+  base: Record<string, any>,
+  config: Record<string, any>,
+) => _mergeConfig(base, config);
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 export const baseConfig = defineConfig({
   plugins: [tsConfigPaths()],
@@ -22,9 +25,12 @@ export const baseConfig = defineConfig({
   },
 });
 
-export const reactConfig = mergeConfig(baseConfig, {
-  plugins: [react()],
-  test: {
-    environment: 'happy-dom',
-  },
-});
+export const reactConfig = mergeConfig(
+  baseConfig,
+  defineConfig({
+    plugins: [react()],
+    test: {
+      environment: 'happy-dom',
+    },
+  }),
+);
