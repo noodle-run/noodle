@@ -74,6 +74,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "misternano",
+      "name": "Nano",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22123308?v=4",
+      "profile": "https://nanos.club",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
