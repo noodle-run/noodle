@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { Balancer } from 'react-wrap-balancer';
-import { ArrowRight, Check, Mail, User } from 'lucide-react';
+import { ArrowRight, Check, Loader2, Mail, User } from 'lucide-react';
 import { type NextPage } from 'next';
 import { z } from 'zod';
 
@@ -30,7 +30,7 @@ const WaitList: NextPage = () => {
     'STUDENT' | 'PROJECT' | 'BOTH' | undefined
   >(undefined);
   const [formDisabled, setFormDisabled] = useState(true);
-  const { mutate, error, isSuccess } =
+  const { mutate, error, isSuccess, isLoading } =
     api.waitlist.addEmailToWaitList.useMutation();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -110,7 +110,13 @@ const WaitList: NextPage = () => {
               disabled={formDisabled}
               className="bg-primary-500 hover:bg-primary-700 text-gray-12 disabled:bg-gray-4 dark:disabled:bg-graydark-4 disabled:text-gray-8 dark:disabled:text-graydark-8 disabled:border-gray-6 dark:disabled:border-graydark-6 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors disabled:border"
             >
-              Secure your spot <ArrowRight size={20} />
+              {isLoading ? (
+                <Loader2 />
+              ) : (
+                <span className="flex items-center gap-4">
+                  Secure your spot <ArrowRight size={20} />
+                </span>
+              )}
             </button>
           </form>
           <div className="mx-auto flex w-full max-w-lg justify-center">
