@@ -248,7 +248,7 @@ const Home: NextPage = () => {
         </p>
       </section>
       <section
-        id="#faq"
+        id="faq"
         className="container mx-auto mt-36 flex flex-col gap-6 lg:mt-56"
       >
         <h1 className="mx-auto max-w-[20ch] text-center text-5xl font-extrabold tracking-tighter md:text-6xl">
