@@ -1,5 +1,5 @@
 import { Balancer } from 'react-wrap-balancer';
-import type { FC, ReactNode } from 'react';
+import type { FC, MouseEventHandler, ReactNode } from 'react';
 import { ArrowDown, ArrowRight, Star } from 'lucide-react';
 import { type NextPage } from 'next';
 import Image from 'next/image';
@@ -132,6 +132,16 @@ const features: FeatureCardProps[] = [
   },
 ];
 
+const smoothScrollToId =
+  (id: string): MouseEventHandler<HTMLAnchorElement> =>
+  (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
+      behavior: 'smooth',
+    });
+  };
+
 const Home: NextPage = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
@@ -157,7 +167,8 @@ const Home: NextPage = () => {
         </p>
         <div className="flex w-full flex-col items-center gap-4 lg:w-auto lg:flex-row lg:gap-6">
           <Link
-            href="#features"
+            href="/#features"
+            onClick={smoothScrollToId('features')}
             className="bg-gray-4 dark:bg-graydark-4 border-gray-6 dark:border-graydark-6 hover:bg-gray-5 dark:hover:bg-graydark-5 flex w-full items-center justify-center gap-4 rounded-md border px-6 py-3 font-semibold transition-colors lg:w-auto"
           >
             Features <ArrowDown size={20} />

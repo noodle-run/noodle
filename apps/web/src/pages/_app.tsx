@@ -45,9 +45,6 @@ const App = ({ Component, pageProps }: MyAppProps) => {
         :root {
           --font-inter: ${inter.variable}, sans-serif;
         }
-        html {
-          scroll-behavior: smooth;
-        }
       `}</style>
     </div>
   );
