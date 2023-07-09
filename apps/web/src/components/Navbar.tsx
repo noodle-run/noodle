@@ -33,7 +33,7 @@ export const Navbar = () => {
                 <Link
                   href="/"
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-3 pt-6 transition-colors md:py-3 md:pl-4 md:pr-6"
-                  onClick={() => setHeight(0)}
+                  onClick={() => isMobile && setHeight(0)}
                 >
                   Home
                 </Link>
@@ -41,7 +41,7 @@ export const Navbar = () => {
               <li>
                 <Link
                   href="/#features"
-                  onClick={() => setHeight(0)}
+                  onClick={() => isMobile && setHeight(0)}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block py-3 transition-colors md:px-6 md:py-3"
                 >
                   Features
@@ -50,7 +50,7 @@ export const Navbar = () => {
               <li>
                 <Link
                   href="/#mission"
-                  onClick={() => setHeight(0)}
+                  onClick={() => isMobile && setHeight(0)}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block py-3 transition-colors md:px-6 md:py-3"
                 >
                   Mission
@@ -59,7 +59,7 @@ export const Navbar = () => {
               <li>
                 <Link
                   href="/#faq"
-                  onClick={() => setHeight(0)}
+                  onClick={() => isMobile && setHeight(0)}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-2 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
                 >
                   FAQ
