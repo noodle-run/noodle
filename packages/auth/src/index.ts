@@ -43,7 +43,6 @@ export const authOptions: NextAuthOptions = {
       throw new Error('Not approved');
     },
   },
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   adapter: PrismaAdapter(prisma),
   providers: [
     Github({
