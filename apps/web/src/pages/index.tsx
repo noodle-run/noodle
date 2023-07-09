@@ -317,7 +317,7 @@ const Home: NextPage = () => {
               <AccordionTrigger>What will be the pricing</AccordionTrigger>
               <AccordionContent>
                 We currently have no idea, we would like to have some sort of a
-                survery with our initial version users to see what they think is
+                survey with our initial version users to see what they think is
                 a fair price for the platform. Noodle will also always be open
                 source and self hostable for individuals who want to do that.
               </AccordionContent>
