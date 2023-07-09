@@ -20,23 +20,27 @@ export const Navbar = () => {
   }, [isMobile]);
 
   const smoothScrollToTop: MouseEventHandler<HTMLAnchorElement> = (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-    isMobile && setHeight(0);
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+      isMobile && setHeight(0);
+    }
   };
 
   const smoothScrollToId =
     (id: string): MouseEventHandler<HTMLAnchorElement> =>
     (e) => {
-      e.preventDefault();
-      window.scrollTo({
-        top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
-        behavior: 'smooth',
-      });
-      isMobile && setHeight(0);
+      if (location.pathname === '/') {
+        e.preventDefault();
+        window.scrollTo({
+          top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
+          behavior: 'smooth',
+        });
+        isMobile && setHeight(0);
+      }
     };
 
   return (
