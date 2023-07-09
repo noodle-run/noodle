@@ -10,6 +10,7 @@ import { Inter } from 'next/font/google';
 
 import { type Session } from '@noodle/auth';
 
+import { Navbar } from '@/components/Navbar';
 import { api } from '@/utils/api';
 import { seo } from '@/utils/seo';
 
@@ -34,11 +35,20 @@ const App = ({ Component, pageProps }: MyAppProps) => {
       <SessionProvider session={pageProps.session}>
         <ThemeProvider attribute="class">
           <WrapBalancerProvider>
+            <Navbar />
             <Component {...pageProps} />
           </WrapBalancerProvider>
           <Analytics />
         </ThemeProvider>
       </SessionProvider>
+      <style jsx global>{`
+        :root {
+          --font-inter: ${inter.variable}, sans-serif;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+      `}</style>
     </div>
   );
 };
