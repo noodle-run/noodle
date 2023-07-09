@@ -176,7 +176,6 @@ const Home: NextPage = () => {
             src="/preview.png"
             width={1919 * 0.65}
             height={1080 * 0.65}
-            layout="responsive"
             className="shadow-primary-500/20 rounded-lg shadow-[0_100px_200px_75px]"
             alt="Dashboard Preview"
           />
