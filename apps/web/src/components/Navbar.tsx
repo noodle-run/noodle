@@ -1,5 +1,6 @@
-import { MouseEventHandler, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
+import type { MouseEventHandler } from 'react';
 import { Github, Menu, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { useMediaQuery } from 'usehooks-ts';
