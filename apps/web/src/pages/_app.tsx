@@ -1,5 +1,4 @@
 import '@/styles/globals.css';
-
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 import { Analytics } from '@vercel/analytics/react';
 import { SessionProvider } from 'next-auth/react';
@@ -44,9 +43,6 @@ const App = ({ Component, pageProps }: MyAppProps) => {
       <style jsx global>{`
         :root {
           --font-inter: ${inter.variable}, sans-serif;
-        }
-        html {
-          scroll-behavior: smooth;
         }
       `}</style>
     </div>

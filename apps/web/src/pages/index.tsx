@@ -132,6 +132,13 @@ const features: FeatureCardProps[] = [
   },
 ];
 
+const smoothScrollToId = (id: string) => () => {
+  window.scrollTo({
+    top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
+    behavior: 'smooth',
+  });
+};
+
 const Home: NextPage = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
@@ -156,12 +163,12 @@ const Home: NextPage = () => {
           </Balancer>
         </p>
         <div className="flex w-full flex-col items-center gap-4 lg:w-auto lg:flex-row lg:gap-6">
-          <Link
-            href="#features"
+          <button
+            onClick={smoothScrollToId('features')}
             className="bg-gray-4 dark:bg-graydark-4 border-gray-6 dark:border-graydark-6 hover:bg-gray-5 dark:hover:bg-graydark-5 flex w-full items-center justify-center gap-4 rounded-md border px-6 py-3 font-semibold transition-colors lg:w-auto"
           >
             Features <ArrowDown size={20} />
-          </Link>
+          </button>
           <Link
             href="/waitlist"
             className="bg-primary-500 hover:bg-primary-700 text-gray-12 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors lg:w-auto"
@@ -248,7 +255,7 @@ const Home: NextPage = () => {
         </p>
       </section>
       <section
-        id="#faq"
+        id="faq"
         className="container mx-auto mt-36 flex flex-col gap-6 lg:mt-56"
       >
         <h1 className="mx-auto max-w-[20ch] text-center text-5xl font-extrabold tracking-tighter md:text-6xl">

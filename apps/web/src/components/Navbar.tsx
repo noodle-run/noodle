@@ -18,52 +18,64 @@ export const Navbar = () => {
     }
   }, [isMobile]);
 
+  const smoothScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    isMobile && setHeight(0);
+  };
+
+  const smoothScrollToId = (id: string) => () => {
+    window.scrollTo({
+      top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
+      behavior: 'smooth',
+    });
+    isMobile && setHeight(0);
+  };
+
   return (
     <nav className="bg-gray-1 dark:bg-graydark-1 container fixed left-1/2 top-0 z-50 -translate-x-1/2 pb-4 pt-4 lg:bg-transparent lg:pb-0 lg:pt-8 lg:dark:bg-transparent">
       <div className="flex flex-wrap items-center justify-between">
-        <Link href="/" className="flex items-center gap-4">
+        <button onClick={smoothScrollToTop} className="flex items-center gap-4">
           <Brand size={35} />
           <span className="font-semibold">Noodle</span>
-        </Link>
+        </button>
 
         <div className="order-3 w-full md:order-1 md:w-auto">
           <AnimateHeight id="example-panel" duration={500} height={height}>
             <ul className="md:border-gray-6 md:dark:border-graydark-6 bg-gray-1 dark:bg-graydark-1 flex flex-col text-sm md:flex-row md:items-center md:rounded-xl md:border">
               <li>
-                <Link
-                  href="/"
+                <button
+                  onClick={smoothScrollToTop}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-3 pt-6 transition-colors md:py-3 md:pl-4 md:pr-6"
-                  onClick={() => isMobile && setHeight(0)}
                 >
                   Home
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  href="/#features"
-                  onClick={() => isMobile && setHeight(0)}
+                <button
+                  onClick={smoothScrollToId('features')}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block py-3 transition-colors md:px-6 md:py-3"
                 >
                   Features
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  href="/#mission"
-                  onClick={() => isMobile && setHeight(0)}
+                <button
+                  onClick={smoothScrollToId('mission')}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block py-3 transition-colors md:px-6 md:py-3"
                 >
                   Mission
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  href="/#faq"
-                  onClick={() => isMobile && setHeight(0)}
+                <button
+                  onClick={smoothScrollToId('faq')}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-2 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
                 >
                   FAQ
-                </Link>
+                </button>
               </li>
               <li>
                 <a
