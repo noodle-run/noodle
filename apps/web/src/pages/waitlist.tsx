@@ -8,7 +8,6 @@ import { z } from 'zod';
 import { cn } from '@noodle/ui';
 
 import { Input } from '@/components/Input';
-import { Navbar } from '@/components/Navbar';
 import {
   Select,
   SelectContent,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
-import { Disc, Github, Menu, Twitter } from 'lucide-react';
+import { Github, Menu, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { useMediaQuery } from 'usehooks-ts';
 

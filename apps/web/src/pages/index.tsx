@@ -14,7 +14,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/Accordion';
-import { Navbar } from '@/components/Navbar';
 import { constants } from '@/utils/constants';
 
 type FeatureCardProps = {
