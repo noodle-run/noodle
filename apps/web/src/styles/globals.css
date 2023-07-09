@@ -7,3 +7,7 @@
     height: -webkit-fill-available;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}

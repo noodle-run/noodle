@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
-import { Github, Menu, Twitter } from 'lucide-react';
+import { Disc, Github, Menu, Twitter } from 'lucide-react';
 import Link from 'next/link';
+import { useMediaQuery } from 'usehooks-ts';
 
 import { Brand } from '@noodle/ui';
 
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { constants } from '@/utils/constants';
 
 export const Navbar = () => {
@@ -33,13 +33,15 @@ export const Navbar = () => {
                 <Link
                   href="/"
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-3 pt-6 transition-colors md:py-3 md:pl-4 md:pr-6"
+                  onClick={() => setHeight(0)}
                 >
                   Home
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#features"
+                  href="/#features"
+                  onClick={() => setHeight(0)}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block py-3 transition-colors md:px-6 md:py-3"
                 >
                   Features
@@ -47,7 +49,8 @@ export const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="#mission"
+                  href="/#mission"
+                  onClick={() => setHeight(0)}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block py-3 transition-colors md:px-6 md:py-3"
                 >
                   Mission
@@ -55,11 +58,22 @@ export const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="#faq"
+                  href="/#faq"
+                  onClick={() => setHeight(0)}
                   className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-2 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
                 >
                   FAQ
                 </Link>
+              </li>
+              <li>
+                <a
+                  href="https://discord.gg/SERySfj8Eg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-2 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
+                >
+                  Discord
+                </a>
               </li>
             </ul>
           </AnimateHeight>

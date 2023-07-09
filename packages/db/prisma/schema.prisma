@@ -50,3 +50,18 @@ model VerificationToken {
   expires    DateTime
   @@unique([identifier, token])
 }
+
+model WaitingList {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  reason    WaitingListReason
+  approved  Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+enum WaitingListReason {
+  STUDENT
+  PROJECT
+  BOTH
+}

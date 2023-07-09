@@ -4,6 +4,7 @@ import { ArrowDown, ArrowRight, Star } from 'lucide-react';
 import { type NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useMediaQuery } from 'usehooks-ts';
 
 import { cn } from '@noodle/ui';
 
@@ -14,7 +15,6 @@ import {
   AccordionTrigger,
 } from '@/components/Accordion';
 import { Navbar } from '@/components/Navbar';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { constants } from '@/utils/constants';
 
 type FeatureCardProps = {
@@ -138,7 +138,6 @@ const Home: NextPage = () => {
 
   return (
     <main>
-      <Navbar />
       <header className="container mx-auto flex flex-col items-center justify-center gap-6 pt-36 text-center lg:pt-48">
         <a
           href={constants.github}
@@ -178,6 +177,7 @@ const Home: NextPage = () => {
             src="/preview.png"
             width={1919 * 0.65}
             height={1080 * 0.65}
+            layout="responsive"
             className="shadow-primary-500/20 rounded-lg shadow-[0_100px_200px_75px]"
             alt="Dashboard Preview"
           />
