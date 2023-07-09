@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { Balancer } from 'react-wrap-balancer';
+import type { FocusEvent } from 'react';
 import { ArrowRight, Check, Loader2, Mail, User } from 'lucide-react';
 import { type NextPage } from 'next';
 import { z } from 'zod';
@@ -23,6 +24,11 @@ const formInputValidator = z.object({
   reason: z.enum(['STUDENT', 'PROJECT', 'BOTH']),
 });
 
+type ValidationIssue = {
+  path: string[];
+  message: string;
+  code?: string;
+};
 const WaitList: NextPage = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -30,6 +36,12 @@ const WaitList: NextPage = () => {
     'STUDENT' | 'PROJECT' | 'BOTH' | undefined
   >(undefined);
   const [formDisabled, setFormDisabled] = useState(true);
+  const [validationIssues, setValidationIssues] = useState<ValidationIssue[]>(
+    [],
+  );
+  const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>(
+    {},
+  );
   const { mutate, error, isSuccess, isLoading } =
     api.waitlist.addEmailToWaitList.useMutation();
 
@@ -50,12 +62,35 @@ const WaitList: NextPage = () => {
   useEffect(() => {
     const data = formInputValidator.safeParse({ email, name, reason });
     if (data.success) {
+      setTouchedFields({});
       setFormDisabled(false);
     } else {
+      const issues: ValidationIssue[] | any = data.error.issues;
+      setValidationIssues(issues);
       setFormDisabled(true);
     }
   }, [email, name, reason]);
 
+  const renderError = (path: string) => {
+    const issue: ValidationIssue | undefined = validationIssues.find(
+      (item: ValidationIssue) => item.path[0] === path.toLowerCase(),
+    );
+    if (issue) {
+      issue.message = issue.message.includes('String')
+        ? issue.message.replace('String', path)
+        : issue.message;
+      return <span className="text-red-11 w-full italic">{issue.message}</span>;
+    }
+    return null;
+  };
+
+  const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
+    const { name } = e.target;
+    setTouchedFields((prevTouchedFields) => ({
+      ...prevTouchedFields,
+      [name]: true,
+    }));
+  };
   return (
     <main>
       <header className="container mx-auto mt-32 flex justify-center md:mt-48 xl:mt-56">
@@ -81,14 +116,20 @@ const WaitList: NextPage = () => {
               icon={<User />}
               value={name}
               onChange={(e) => setName(e.target.value)}
+              onBlur={handleBlur}
+              name="name"
             />
+            {touchedFields['name'] && renderError('Name')}
             <Input
               type="email"
               placeholder="Email address..."
               icon={<Mail />}
               value={email}
+              onBlur={handleBlur}
+              name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
+            {touchedFields['email'] && renderError('Email')}
             <Select
               onValueChange={(e: 'STUDENT' | 'PROJECT' | 'BOTH') =>
                 setReason(e)

@@ -33,7 +33,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           onMouseEnter={() => setIsInputHovered(true)}
           onMouseLeave={() => setIsInputHovered(false)}
           onFocus={() => setIsInputActive(true)}
-          onBlur={() => setIsInputActive(false)}
+          // onBlur={() => setIsInputActive(false)}
         />
       </div>
     );
