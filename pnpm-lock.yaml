@@ -403,8 +403,8 @@ importers:
   packages/storybook:
     dependencies:
       '@fontsource-variable/inter':
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.0.5
+        version: 5.0.5
     devDependencies:
       '@noodle/storybook-config':
         specifier: workspace:^
@@ -519,8 +519,8 @@ importers:
   packages/ui:
     dependencies:
       '@fontsource-variable/inter':
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.0.5
+        version: 5.0.5
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -3571,8 +3571,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@fontsource-variable/inter@5.0.4:
-    resolution: {integrity: sha512-MYomT1JVwFAPhinw3N4mQbtwNCXSQ2n+W2JFCgXNyhzDL7hgAXzI89/yZRyNz5kYfyyG7pgsOj9YZ0aujlHbEw==}
+  /@fontsource-variable/inter@5.0.5:
+    resolution: {integrity: sha512-hmj/jffr+1tabEPmvm+/b89MtbO6hd5PVbQ6HoMGTO7RMF5eD2C9UcprCgZTOF3OWh5uC21C9HZGN0O9wxe+UQ==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
