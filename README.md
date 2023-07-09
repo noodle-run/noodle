@@ -33,7 +33,7 @@
 
 ## Purpose
 
-Typically for a student, you need to be using multiple applications just to be managing your education well. This would include a note taking, calendar, task management, grade calculator, flash cards and more apps. This is tedious to manage and can be overwhelming for students.
+Typically, for a student, you need to be using multiple applications just to be managing your education well. This would include a note-taking, a calendar, task management, a grade calculator, flashcards and more apps. This is tedious to manage and can be overwhelming for students.
 
 Noodle is a platform that aims to solve this problem by providing a single platform for students to manage everything to do with their education. And with the power of having all of that data in one place, we can provide students with powerful insights and automation to help them be more productive.
 
@@ -72,4 +72,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
