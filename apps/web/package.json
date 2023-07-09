@@ -34,6 +34,7 @@
     "@trpc/next": "^10.34.0",
     "@trpc/react-query": "^10.34.0",
     "@trpc/server": "^10.34.0",
+    "@upstash/ratelimit": "^0.4.3",
     "@vercel/analytics": "^1.0.1",
     "lucide-react": "^0.259.0",
     "next": "13.4.9",

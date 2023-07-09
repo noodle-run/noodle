@@ -68,7 +68,7 @@ const WaitList: NextPage = () => {
           <p className="text-gray-11 dark:text-graydark-11 mx-auto text-center">
             <Balancer>
               By signing up to our waitlist, you will be first in line to know
-              when we launch and geting early access.
+              when we launch and getting early access.
             </Balancer>
           </p>
           <form
