@@ -1,24 +1,24 @@
 import { type DefaultSeoProps } from 'next-seo';
 
+import { constants } from './constants';
+
 export const seo: DefaultSeoProps = {
-  title: 'Noodle | Rethinking Student Productivity',
-  description:
-    'Noodle is a productivity app for students. It helps you manage your time, tasks, and goals.',
-  canonical: 'https://noodle.run',
+  title: constants.title,
+  description: constants.description,
+  canonical: constants.url,
   openGraph: {
-    url: 'https://noodle.run',
-    title: 'Noodle | Rethinking Student Productivity',
-    description:
-      'Noodle is a productivity app for students. It helps you manage your time, tasks, and goals.',
+    url: constants.url,
+    title: constants.title,
+    description: constants.description,
     images: [
       {
-        url: 'https://noodle.run/preview_card.png',
+        url: `${constants.url}/preview_card.png`,
         width: 1200,
         height: 628,
-        alt: 'Noodle - Open source education platform',
+        alt: constants.title,
       },
     ],
-    site_name: 'Noodle',
+    site_name: constants.name,
   },
   twitter: {
     cardType: 'summary_large_image',
