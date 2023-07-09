@@ -8,6 +8,10 @@ const config = {
   globals: {
     React: 'writable',
   },
+  rules: {
+    'react/prop-types': 'off',
+    'react/no-unknown-property': 'off',
+  },
   settings: {
     react: {
       version: 'detect',
