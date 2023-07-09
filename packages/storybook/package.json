@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "^5.0.4"
+    "@fontsource-variable/inter": "^5.0.5"
   },
   "devDependencies": {
     "@noodle/storybook-config": "workspace:^",

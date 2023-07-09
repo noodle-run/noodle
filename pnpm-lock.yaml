@@ -106,6 +106,9 @@ importers:
       '@trpc/server':
         specifier: ^10.34.0
         version: 10.34.0
+      '@upstash/ratelimit':
+        specifier: ^0.4.3
+        version: 0.4.3
       '@vercel/analytics':
         specifier: ^1.0.1
         version: 1.0.1
@@ -400,8 +403,8 @@ importers:
   packages/storybook:
     dependencies:
       '@fontsource-variable/inter':
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.0.5
+        version: 5.0.5
     devDependencies:
       '@noodle/storybook-config':
         specifier: workspace:^
@@ -516,8 +519,8 @@ importers:
   packages/ui:
     dependencies:
       '@fontsource-variable/inter':
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.0.5
+        version: 5.0.5
       clsx:
         specifier: ^1.2.1
         version: 1.2.1
@@ -3568,8 +3571,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@fontsource-variable/inter@5.0.4:
-    resolution: {integrity: sha512-MYomT1JVwFAPhinw3N4mQbtwNCXSQ2n+W2JFCgXNyhzDL7hgAXzI89/yZRyNz5kYfyyG7pgsOj9YZ0aujlHbEw==}
+  /@fontsource-variable/inter@5.0.5:
+    resolution: {integrity: sha512-hmj/jffr+1tabEPmvm+/b89MtbO6hd5PVbQ6HoMGTO7RMF5eD2C9UcprCgZTOF3OWh5uC21C9HZGN0O9wxe+UQ==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
@@ -6145,6 +6148,31 @@ packages:
       '@typescript-eslint/types': 5.61.0
       eslint-visitor-keys: 3.4.1
     dev: true
+
+  /@upstash/core-analytics@0.0.6:
+    resolution: {integrity: sha512-cpPSR0XJAJs4Ddz9nq3tINlPS5aLfWVCqhhtHnXt4p7qr5+/Znlt1Es736poB/9rnl1hAHrOsOvVj46NEXcVqA==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@upstash/redis': 1.22.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /@upstash/ratelimit@0.4.3:
+    resolution: {integrity: sha512-Dsp9Mw09Flg28JRklKgFiCXqr3bqv8bbG0kgpUYoHjcgPPolFFyaYOj/I2HExvYLZiogl77NUavBoNvMOK0zUQ==}
+    dependencies:
+      '@upstash/core-analytics': 0.0.6
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /@upstash/redis@1.22.0:
+    resolution: {integrity: sha512-sXoJDoEqqik0HbrNE7yRWckOySEFsoBxfRdCgOqkc0w6py19ZZG50SpGkDDEUXSnBqP8VgGYXhWAiBpqxrt5oA==}
+    dependencies:
+      isomorphic-fetch: 3.0.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
 
   /@vercel/analytics@1.0.1:
     resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
@@ -9572,6 +9600,15 @@ packages:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /isomorphic-fetch@3.0.0:
+    resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
+    dependencies:
+      node-fetch: 2.6.12
+      whatwg-fetch: 3.6.2
+    transitivePeerDependencies:
+      - encoding
+    dev: false
 
   /isomorphic-unfetch@3.1.0:
     resolution: {integrity: sha512-geDJjpoZ8N0kWexiwkX8F9NkTsXhetLPVbZFQ+JTW239QNOwvB0gniuR1Wc6f0AMTn7/mFGyXvHTifrCp/GH8Q==}
@@ -13832,6 +13869,10 @@ packages:
     dependencies:
       iconv-lite: 0.6.3
     dev: true
+
+  /whatwg-fetch@3.6.2:
+    resolution: {integrity: sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==}
+    dev: false
 
   /whatwg-mimetype@3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
