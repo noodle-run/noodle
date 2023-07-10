@@ -6,7 +6,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/github/contributors/ixahmedxi/noodle)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
