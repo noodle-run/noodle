@@ -6,7 +6,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-[![All Contributors](https://img.shields.io/github/contributors/ixahmedxi/noodle)](#contributors-)
+[![All Contributors](https://img.shields.io/github/contributors/ixahmedxi/noodle?style=flat-square&color=orange)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
