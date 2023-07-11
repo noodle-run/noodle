@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.5",
+    "@radix-ui/react-aspect-ratio": "^1.0.3",
     "@radix-ui/react-tooltip": "^1.0.6",
     "clsx": "^1.2.1",
     "react": "18.2.0",
