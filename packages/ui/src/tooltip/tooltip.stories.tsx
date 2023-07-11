@@ -1,19 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import '@storybook/react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '.';
 
-const component = () => (
+const component: FC<PropsWithChildren> = ({ children }) => (
   <main className="flex min-h-screen items-center justify-center">
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>Trigger Tooltip</TooltipTrigger>
         <TooltipContent>
-          <p>
-            You can invoke the bold styling by clicking on this button or using
-            the CMD + B keyboard shortcut.
-          </p>
+          <p>{children}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
@@ -23,7 +19,11 @@ const component = () => (
 export default {
   title: 'Design System / Tooltip',
   component,
-} as Meta;
+  args: {
+    children:
+      'You can invoke the bold styling by clicking on this button or using the CMD + B keyboard shortcut.',
+  },
+} as Meta<typeof component>;
 
 type Story = StoryObj<typeof component>;
 
