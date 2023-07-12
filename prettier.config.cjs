@@ -9,10 +9,10 @@ const config = {
   plugins: [
     require.resolve('@ianvs/prettier-plugin-sort-imports'),
     require.resolve('prettier-plugin-packagejson'),
-    // TODO: enable once support for prettier v3 is added
-    // require.resolve('prettier-plugin-jsdoc'),
+    require.resolve('prettier-plugin-jsdoc'),
     require.resolve('prettier-plugin-tailwindcss'),
   ],
+  pluginSearchDirs: false,
   importOrder: [
     '^react',
     '<TYPES>',
