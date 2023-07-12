@@ -39,11 +39,11 @@
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "nx": "16.3.2",
+    "nx": "16.5.1",
     "nx-cloud": "16.0.5",
     "prettier": "^2.8.8",
     "prettier-plugin-jsdoc": "^0.4.2",
-    "prettier-plugin-packagejson": "^2.4.4",
+    "prettier-plugin-packagejson": "^2.4.5",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "typescript": "^5.1.6"
   },
