@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@noodle/test-utils/renderer';
+import { render, screen } from '@noodle/test-utils/renderer';
 
 import { Avatar, AvatarFallback, AvatarImage } from '.';
 
@@ -38,7 +38,7 @@ describe('Avatar', () => {
     window.Image = originalImage;
   });
 
-  it('should render the image', async () => {
+  it('should render the image', () => {
     render(
       <Avatar>
         <AvatarImage
