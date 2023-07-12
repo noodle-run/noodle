@@ -22,6 +22,7 @@
     "storybook": "pnpm nx storybook storybook",
     "test": "pnpm nx run-many -t test",
     "test:coverage": "pnpm nx run-many -t test:coverage --output-style=stream",
+    "test:e2e": "pnpm nx run-many -t e2e --parallel=99 --output-style=stream",
     "test:ui": "pnpm nx run-many -t test:ui --parallel=99 --output-style=stream",
     "test:watch": "pnpm nx run-many -t test:watch --parallel=99 --output-style=stream",
     "typecheck": "pnpm nx run-many -t typecheck"
