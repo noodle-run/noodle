@@ -111,16 +111,20 @@ export const Navbar = () => {
         <ul className="order-2 flex items-center">
           <li>
             <a
+              target="_blank"
               href={constants.github}
-              className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 flex items-center px-2 transition-colors"
+              rel="noopener noreferrer"
+              className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 flex items-center px-2 transition-colors"
             >
               <Github size={20} />
             </a>
           </li>
           <li>
             <a
+              target="_blank"
               href={constants.twitter}
-              className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 flex items-center px-2 transition-colors"
+              rel="noopener noreferrer"
+              className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 flex items-center px-2 transition-colors"
             >
               <Twitter size={20} />
             </a>
