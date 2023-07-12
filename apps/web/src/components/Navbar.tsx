@@ -57,12 +57,12 @@ export const Navbar = () => {
 
         <div className="order-3 w-full md:order-1 md:w-auto">
           <AnimateHeight id="example-panel" duration={500} height={height}>
-            <ul className="md:border-gray-6 md:dark:border-graydark-6 bg-gray-1 dark:bg-graydark-1 flex flex-col text-sm md:flex-row md:items-center md:rounded-xl md:border">
+            <ul className="bg-gray-1 md:border-gray-6 md:dark:border-graydark-6 dark:bg-graydark-1 flex flex-col text-sm md:flex-row md:items-center md:rounded-xl md:border">
               <li>
                 <Link
                   href="/"
                   onClick={smoothScrollToTop}
-                  className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-3 pt-6 transition-colors md:py-3 md:pl-4 md:pr-6"
+                  className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 inline-block pb-3 pt-6 transition-colors md:py-3 md:pl-4 md:pr-6"
                 >
                   Home
                 </Link>
@@ -71,7 +71,7 @@ export const Navbar = () => {
                 <Link
                   href="/#features"
                   onClick={smoothScrollToId('features')}
-                  className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block py-3 transition-colors md:px-6 md:py-3"
+                  className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 inline-block py-3 transition-colors md:px-6 md:py-3"
                 >
                   Features
                 </Link>
@@ -80,7 +80,7 @@ export const Navbar = () => {
                 <Link
                   href="/#mission"
                   onClick={smoothScrollToId('mission')}
-                  className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block py-3 transition-colors md:px-6 md:py-3"
+                  className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 inline-block py-3 transition-colors md:px-6 md:py-3"
                 >
                   Mission
                 </Link>
@@ -89,7 +89,7 @@ export const Navbar = () => {
                 <Link
                   href="/#faq"
                   onClick={smoothScrollToId('faq')}
-                  className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-2 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
+                  className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 inline-block pb-2 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
                 >
                   FAQ
                 </Link>
@@ -99,7 +99,7 @@ export const Navbar = () => {
                   href="https://discord.gg/SERySfj8Eg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 inline-block pb-2 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
+                  className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 inline-block pb-2 pt-3 transition-colors md:py-3 md:pl-6 md:pr-4"
                 >
                   Discord
                 </a>
@@ -136,7 +136,9 @@ export const Navbar = () => {
               className="flex items-center px-2"
               aria-expanded={height !== 0}
               aria-controls="example-panel"
-              onClick={() => setHeight(height === 0 ? 'auto' : 0)}
+              onClick={() => {
+                setHeight(height === 0 ? 'auto' : 0);
+              }}
             >
               <span className="sr-only">Open Menu</span>
               <Menu size={20} />

@@ -4,8 +4,8 @@ import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
 
 const redis = new Redis({
-  url: 'https://eternal-deer-42544.upstash.io',
-  token: process.env['UPSTASH_TOKEN']!,
+  url: process.env['REDIS_URL']!,
+  token: process.env['REDIS_TOKEN']!,
 });
 
 const ratelimit = new Ratelimit({
