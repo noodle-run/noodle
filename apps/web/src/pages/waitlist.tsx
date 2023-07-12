@@ -80,19 +80,23 @@ const WaitList: NextPage = () => {
               placeholder="Your name..."
               icon={<User />}
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
             />
             <Input
               type="email"
               placeholder="Email address..."
               icon={<Mail />}
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
             <Select
-              onValueChange={(e: 'STUDENT' | 'PROJECT' | 'BOTH') =>
-                setReason(e)
-              }
+              onValueChange={(e: 'STUDENT' | 'PROJECT' | 'BOTH') => {
+                setReason(e);
+              }}
             >
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Why are you interested in Noodle?" />
@@ -108,7 +112,7 @@ const WaitList: NextPage = () => {
             <button
               type="submit"
               disabled={formDisabled}
-              className="bg-primary-500 hover:bg-primary-700 text-gray-12 disabled:bg-gray-4 dark:disabled:bg-graydark-4 disabled:text-gray-8 dark:disabled:text-graydark-8 disabled:border-gray-6 dark:disabled:border-graydark-6 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors disabled:border"
+              className="bg-primary-500 text-gray-12 dark:disabled:bg-graydark-4 dark:disabled:text-graydark-8 dark:disabled:border-graydark-6 hover:bg-primary-700 disabled:bg-gray-4 disabled:text-gray-8 disabled:border-gray-6 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors disabled:border"
             >
               {isLoading ? (
                 <Loader2 />
@@ -124,9 +128,9 @@ const WaitList: NextPage = () => {
               height={isSuccess ? 'auto' : 0}
               className={cn(isSuccess && 'w-full')}
             >
-              <div className="bg-teal-2 dark:bg-tealdark-2/50 border-teal-2 dark:border-tealdark-2 flex w-full items-center gap-6 rounded-lg border px-4 py-4">
+              <div className="bg-teal-2 border-teal-2 dark:bg-tealdark-2/50 dark:border-tealdark-2 flex w-full items-center gap-6 rounded-lg border px-4 py-4">
                 <div className="flex h-full items-start">
-                  <div className="bg-teal-1 dark:bg-tealdark-1 border-teal-11 dark:border-tealdark-11 rounded-full border p-[4px]">
+                  <div className="bg-teal-1 border-teal-11 dark:bg-tealdark-1 dark:border-tealdark-11 rounded-full border p-[4px]">
                     <Check className="text-teal-10 h-4 w-4" />
                   </div>
                 </div>
@@ -153,9 +157,9 @@ const WaitList: NextPage = () => {
               height={error ? 'auto' : 0}
               className={cn(error && 'w-full')}
             >
-              <div className="bg-red-1 dark:bg-reddark-2/50 border-red-2 dark:border-reddark-2 flex w-full items-center gap-6 rounded-lg border px-4 py-4">
+              <div className="bg-red-1 border-red-2 dark:bg-reddark-2/50 dark:border-reddark-2 flex w-full items-center gap-6 rounded-lg border px-4 py-4">
                 <div className="flex h-full items-start">
-                  <div className="bg-red-1 dark:bg-reddark-1 border-red-11 dark:border-reddark-11 rounded-full border p-[4px]">
+                  <div className="bg-red-1 border-red-11 dark:bg-reddark-1 dark:border-reddark-11 rounded-full border p-[4px]">
                     <Check className="text-red-10 h-4 w-4" />
                   </div>
                 </div>

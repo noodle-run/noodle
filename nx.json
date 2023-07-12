@@ -1,6 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "noodle",
   "defaultBase": "main",
   "defaultProject": "web",
   "tasksRunnerOptions": {
