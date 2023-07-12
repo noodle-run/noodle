@@ -119,6 +119,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "xhayper",
+      "name": "hayper",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46065349?v=4",
+      "profile": "http://website-xhayper.vercel.app",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
