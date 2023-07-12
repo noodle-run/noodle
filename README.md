@@ -41,7 +41,8 @@ As an open-source platform, Noodle strives to cultivate a community of students 
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=ixahmedxi/noodle)](https://star-history.com/#ixahmedxi/noodle)
+[![Star History Chart](https://api.star-history.com/svg?repos=ixahmedxi/noodle#gh-light-mode-only)](https://star-history.com/#ixahmedxi/noodle#gh-light-mode-only)
+[![Star History Chart](https://api.star-history.com/svg?repos=ixahmedxi/noodle&theme=dark#gh-dark-mode-only)](https://star-history.com/#ixahmedxi/noodle#gh-dark-mode-only)
 
 <div align="center">
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnBkMmJ5d2FhbHBocm90ams1MzF5dTI5emVtNGhwMTFpdmp3YnZiYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YnkMcHgNIMW4Yfmjxr/giphy.gif" alt="Stonks GIF">
