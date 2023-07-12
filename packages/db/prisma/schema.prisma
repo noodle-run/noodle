@@ -1,11 +1,10 @@
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["jsonProtocol"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
@@ -23,6 +22,7 @@ model Account {
   id_token          String? @db.Text
   session_state     String?
   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@unique([provider, providerAccountId])
 }
 
@@ -48,5 +48,21 @@ model VerificationToken {
   identifier String
   token      String   @unique
   expires    DateTime
+
   @@unique([identifier, token])
+}
+
+model WaitingList {
+  id        String            @id @default(cuid())
+  name      String
+  email     String            @unique
+  reason    WaitingListReason
+  approved  Boolean           @default(false)
+  createdAt DateTime          @default(now())
+}
+
+enum WaitingListReason {
+  STUDENT
+  PROJECT
+  BOTH
 }

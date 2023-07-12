@@ -4,12 +4,6 @@ const config = {
   extends: ['noodle/base'],
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: [
-      './tsconfig.json',
-      './packages/*/tsconfig.json',
-      './apps/*/tsconfig.json',
-      './packages/config/*/tsconfig.json',
-    ],
   },
 };
 

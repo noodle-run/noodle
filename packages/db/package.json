@@ -13,17 +13,17 @@
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
     "dev": "pnpm run build --watch",
-    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint": "eslint . --max-warnings 0",
     "lint:fix": "pnpm run lint --fix",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@prisma/client": "^4.16.2"
+    "@prisma/client": "^5.0.0"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
     "eslint-config-noodle": "workspace:^",
-    "prisma": "^4.16.2"
+    "prisma": "^5.0.0"
   },
   "volta": {
     "extends": "../../package.json"

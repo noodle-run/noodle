@@ -27,6 +27,21 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
+    async signIn({ user }) {
+      const data = await prisma.waitingList.findUnique({
+        where: { email: user.email ?? '' },
+      });
+
+      if (!data) {
+        throw new Error('Not approved');
+      }
+
+      if (data.approved) {
+        return true;
+      }
+
+      throw new Error('Not approved');
+    },
   },
   adapter: PrismaAdapter(prisma),
   providers: [

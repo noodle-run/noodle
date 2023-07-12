@@ -22,6 +22,7 @@
     "storybook": "pnpm nx storybook storybook",
     "test": "pnpm nx run-many -t test",
     "test:coverage": "pnpm nx run-many -t test:coverage --output-style=stream",
+    "test:e2e": "pnpm nx run-many -t e2e --parallel=99 --output-style=stream",
     "test:ui": "pnpm nx run-many -t test:ui --parallel=99 --output-style=stream",
     "test:watch": "pnpm nx run-many -t test:watch --parallel=99 --output-style=stream",
     "typecheck": "pnpm nx run-many -t typecheck"
@@ -31,34 +32,34 @@
     "@commitlint/config-conventional": "^17.6.6",
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "@noodle/tsconfig": "workspace:^",
-    "@types/eslint": "^8.40.2",
-    "@types/node": "^20.3.3",
+    "@types/eslint": "^8.44.0",
+    "@types/node": "^20.4.1",
     "@types/prettier": "^2.7.3",
     "del-cli": "^5.0.0",
     "eslint": "^8.44.0",
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "nx": "16.3.2",
+    "nx": "16.5.1",
     "nx-cloud": "16.0.5",
     "prettier": "^2.8.8",
     "prettier-plugin-jsdoc": "^0.4.2",
-    "prettier-plugin-packagejson": "^2.4.4",
-    "prettier-plugin-tailwindcss": "^0.3.0",
+    "prettier-plugin-packagejson": "^2.4.5",
+    "prettier-plugin-tailwindcss": "^0.4.0",
     "typescript": "^5.1.6"
   },
-  "packageManager": "pnpm@8.6.5",
+  "packageManager": "pnpm@8.6.7",
   "engines": {
     "node": ">=v18.15.0",
-    "pnpm": ">=8.6.5"
+    "pnpm": ">=8.6.7"
   },
   "volta": {
     "node": "18.15.0",
-    "pnpm": "8.6.5"
+    "pnpm": "8.6.7"
   },
   "pnpm": {
     "patchedDependencies": {
-      "@types/testing-library__jest-dom@5.14.6": "patches/@types__testing-library__jest-dom@5.14.6.patch"
+      "@types/testing-library__jest-dom@5.14.8": "patches/@types__testing-library__jest-dom@5.14.8.patch"
     }
   },
   "prisma": {

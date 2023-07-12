@@ -15,11 +15,14 @@ const config = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:@typescript-eslint/strict',
+    'plugin:@typescript-eslint/strict-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
+    'plugin:eslint-comments/recommended',
     'prettier',
   ],
+  parserOptions: {
+    project: true,
+  },
   overrides: [
     {
       files: ['**/*.cjs'],
@@ -40,6 +43,7 @@ const config = {
     'no-console': 'warn',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
+    'eslint-comments/no-unused-disable': 'error',
   },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
