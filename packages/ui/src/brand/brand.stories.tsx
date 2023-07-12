@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Brand } from '.';
 
 export default {
-  title: 'Design System / Brand',
+  title: 'UI / Brand',
   component: Brand,
   args: {
     size: 100,
