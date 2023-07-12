@@ -124,9 +124,9 @@ You will need to create a postgres database and get the URL of it to use as the 
 
 We also use [Upstash](https://upstash.com/) for rate limiting and a redis instance.
 
-You will also need to configure oauth github tokens to be able to use the authentication functionality of Noodle.
+You will also need to configure [oauth github tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to be able to use the authentication functionality of Noodle.
 
-Also, if you want your own personal nx cloud instance, you will need to create a project on nx cloud and replace the default read only token provided.
+Also, if you want your own personal [nx cloud](https://cloud.nx.app/) instance, you will need to create a project on nx cloud and replace the default read only token provided.
 
 ### Installing dependencies
 
