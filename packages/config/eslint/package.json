@@ -20,8 +20,8 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.9",
     "@noodle/tsconfig": "workspace:^",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-jest-dom": "^5.0.1",
