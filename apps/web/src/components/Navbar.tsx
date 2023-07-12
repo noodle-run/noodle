@@ -113,6 +113,7 @@ export const Navbar = () => {
             <a
               target="_blank"
               href={constants.github}
+              rel="noopener noreferrer"
               className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 flex items-center px-2 transition-colors"
             >
               <Github size={20} />
@@ -122,6 +123,7 @@ export const Navbar = () => {
             <a
               target="_blank"
               href={constants.twitter}
+              rel="noopener noreferrer"
               className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 flex items-center px-2 transition-colors"
             >
               <Twitter size={20} />
