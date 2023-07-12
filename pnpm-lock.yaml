@@ -62,8 +62,8 @@ importers:
         specifier: ^0.4.2
         version: 0.4.2(prettier@2.8.8)
       prettier-plugin-packagejson:
-        specifier: ^2.4.4
-        version: 2.4.4(prettier@2.8.8)
+        specifier: ^2.4.5
+        version: 2.4.5(prettier@2.8.8)
       prettier-plugin-tailwindcss:
         specifier: ^0.3.0
         version: 0.3.0(@ianvs/prettier-plugin-sort-imports@4.0.2)(prettier-plugin-jsdoc@0.4.2)(prettier@2.8.8)
@@ -6310,7 +6310,7 @@ packages:
       std-env: 3.3.3
       test-exclude: 6.0.0
       v8-to-istanbul: 9.1.0
-      vitest: 0.33.0(less@4.1.3)
+      vitest: 0.33.0(@vitest/ui@0.33.0)(happy-dom@10.0.3)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -11633,8 +11633,8 @@ packages:
       - supports-color
     dev: true
 
-  /prettier-plugin-packagejson@2.4.4(prettier@2.8.8):
-    resolution: {integrity: sha512-Xk74PATiZDW+kELIh8e8EY0JpwHo9xbSGc4YfIfxmITWAF8yqHa7A+yAQLLMRoQEkKNi+xaMnR8BX2F9zrsczg==}
+  /prettier-plugin-packagejson@2.4.5(prettier@2.8.8):
+    resolution: {integrity: sha512-glG71jE1gO3y5+JNAhC8X+4yrlN28rub6Aj461SKbaPie9RgMiHKcInH2Moi2VGOfkTXaEHBhg4uVMBqa+kBUA==}
     peerDependencies:
       prettier: '>= 1.16.0'
     peerDependenciesMeta:
@@ -11642,7 +11642,7 @@ packages:
         optional: true
     dependencies:
       prettier: 2.8.8
-      sort-package-json: 2.5.0
+      sort-package-json: 2.5.1
       synckit: 0.8.5
     dev: true
 
@@ -12622,8 +12622,8 @@ packages:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
     dev: true
 
-  /sort-package-json@2.5.0:
-    resolution: {integrity: sha512-KIsqEi/ameVyhhatpzwialQVSMP1mFzRLJgTBKJDz0duQmhnBDjf8MFyFoIoVnW69SqjH3/bziCSlgiuz2KbHg==}
+  /sort-package-json@2.5.1:
+    resolution: {integrity: sha512-vx/KoZxm8YNMUqdlw7SGTfqR5pqZ/sUfgOuRtDILiOy/3AvzhAibyUe2cY3OpLs3oRSow9up4yLVtQaM24rbDQ==}
     hasBin: true
     dependencies:
       detect-indent: 7.0.1
