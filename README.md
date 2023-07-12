@@ -5,9 +5,7 @@
 </div>
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
-
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > **Warning**
@@ -64,6 +62,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://www.liamsegura.com"><img src="https://avatars.githubusercontent.com/u/102547056?v=4?s=100" width="100px;" alt="Liam Segura"/><br /><sub><b>Liam Segura</b></sub></a><br /><a href="https://github.com/ixahmedxi/noodle/commits?author=liamsegura" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://nanos.club"><img src="https://avatars.githubusercontent.com/u/22123308?v=4?s=100" width="100px;" alt="Nano"/><br /><sub><b>Nano</b></sub></a><br /><a href="https://github.com/ixahmedxi/noodle/commits?author=misternano" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://rysana.com"><img src="https://avatars.githubusercontent.com/u/51100181?v=4?s=100" width="100px;" alt="John—Rysana"/><br /><sub><b>John—Rysana</b></sub></a><br /><a href="https://github.com/ixahmedxi/noodle/commits?author=jrysana" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/mabdulker"><img src="https://avatars.githubusercontent.com/u/97461667?v=4?s=100" width="100px;" alt="Max Abdulkerimov"/><br /><sub><b>Max Abdulkerimov</b></sub></a><br /><a href="https://github.com/ixahmedxi/noodle/commits?author=mabdulker" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
