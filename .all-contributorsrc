@@ -137,6 +137,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "faizan07",
+      "name": "Faizanul Haque",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14312760?v=4",
+      "profile": "https://github.com/faizan07",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,
