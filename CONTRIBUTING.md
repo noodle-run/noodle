@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to our project! Any contribution is highly appreciated and will be reflected on our project ✨
 
-First things first, make sure you read our [./CODE_OF_CONDUCT.md](Code of Conduct) to keep our community approachable and respectable.
+First things first, make sure you read our [Code of Conduct](./CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
 
 In this guide, you will get an overview of the project structure and setup, as well as the workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
