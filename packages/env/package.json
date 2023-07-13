@@ -1,8 +1,8 @@
 {
-  "name": "@noodle/auth",
+  "name": "@noodle/env",
   "version": "0.1.0",
   "private": true,
-  "description": "Noodle's authentication package using next-auth",
+  "description": "Noodle's environment variable package using t3-env",
   "license": "AGPL-3.0",
   "author": "Ahmed Elsakaan",
   "main": "./dist/index.js",
@@ -14,11 +14,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@next-auth/prisma-adapter": "^1.0.7",
-    "@noodle/db": "workspace:^",
-    "@noodle/env": "workspace:^",
-    "next": "13.4.9",
-    "next-auth": "^4.22.1"
+    "@t3-oss/env-nextjs": "^0.6.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",

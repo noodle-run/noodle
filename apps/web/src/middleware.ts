@@ -3,9 +3,11 @@ import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
 
+import { env } from '@noodle/env';
+
 const redis = new Redis({
-  url: process.env['REDIS_URL']!,
-  token: process.env['REDIS_TOKEN']!,
+  url: env.REDIS_URL,
+  token: env.REDIS_TOKEN,
 });
 
 const ratelimit = new Ratelimit({

@@ -82,6 +82,9 @@ importers:
       '@noodle/db':
         specifier: workspace:^
         version: link:../../packages/db
+      '@noodle/env':
+        specifier: workspace:^
+        version: link:../../packages/env
       '@noodle/ui':
         specifier: workspace:^
         version: link:../../packages/ui
@@ -246,6 +249,9 @@ importers:
       '@noodle/db':
         specifier: workspace:^
         version: link:../db
+      '@noodle/env':
+        specifier: workspace:^
+        version: link:../env
       next:
         specifier: 13.4.9
         version: 13.4.9(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
@@ -386,6 +392,9 @@ importers:
 
   packages/db:
     dependencies:
+      '@noodle/env':
+        specifier: workspace:^
+        version: link:../env
       '@prisma/client':
         specifier: ^5.0.0
         version: 5.0.0(prisma@5.0.0)
@@ -399,6 +408,22 @@ importers:
       prisma:
         specifier: ^5.0.0
         version: 5.0.0
+
+  packages/env:
+    dependencies:
+      '@t3-oss/env-nextjs':
+        specifier: ^0.6.0
+        version: 0.6.0(typescript@5.1.6)(zod@3.21.4)
+      zod:
+        specifier: ^3.21.4
+        version: 3.21.4
+    devDependencies:
+      '@noodle/tsconfig':
+        specifier: workspace:^
+        version: link:../config/tsconfig
+      eslint-config-noodle:
+        specifier: workspace:^
+        version: link:../config/eslint
 
   packages/storybook:
     dependencies:
@@ -5627,6 +5652,27 @@ packages:
     resolution: {integrity: sha512-sJ902EfIzn1Fa+qYmjdQqh8tPsoxyBz+8yBKC2HKUxyezKJFwPGOn7pv4WY6QuQW//ySQi5lJjA/ZT9sNWWNTg==}
     dependencies:
       tslib: 2.6.0
+    dev: false
+
+  /@t3-oss/env-core@0.6.0(typescript@5.1.6)(zod@3.21.4):
+    resolution: {integrity: sha512-3FkPAba069WRZVVab/sB1m3eSGn/rZeypx5k+sWEu1d+k0OQdRDnvFS+7MtxYgqVrwaRk3b7yVnX2dgSPVmWPQ==}
+    peerDependencies:
+      typescript: '>=4.7.2'
+      zod: ^3.0.0
+    dependencies:
+      typescript: 5.1.6
+      zod: 3.21.4
+    dev: false
+
+  /@t3-oss/env-nextjs@0.6.0(typescript@5.1.6)(zod@3.21.4):
+    resolution: {integrity: sha512-SpzcGNIbUYcQw4zPPFeRJqCC1560zL7QmB0puIqOnuCsmykPkqHPX+n9CNZLXVQerboHzfvb7Kd+jAdouk72Vw==}
+    peerDependencies:
+      typescript: '>=4.7.2'
+      zod: ^3.0.0
+    dependencies:
+      '@t3-oss/env-core': 0.6.0(typescript@5.1.6)(zod@3.21.4)
+      typescript: 5.1.6
+      zod: 3.21.4
     dev: false
 
   /@tanstack/query-core@4.29.19:
