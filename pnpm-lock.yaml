@@ -311,8 +311,8 @@ importers:
   packages/config/storybook:
     dependencies:
       '@storybook/addon-styling':
-        specifier: ^1.3.2
-        version: 1.3.2(less@4.1.3)(postcss@8.4.25)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.1)
+        specifier: ^1.3.4
+        version: 1.3.4(less@4.1.3)(postcss@8.4.25)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.1)
       '@storybook/react':
         specifier: ^7.0.27
         version: 7.0.27(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.6)
@@ -428,8 +428,8 @@ importers:
         specifier: ^7.0.27
         version: 7.0.27(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-styling':
-        specifier: ^1.3.2
-        version: 1.3.2(less@4.1.3)(postcss@8.4.25)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.1)
+        specifier: ^1.3.4
+        version: 1.3.4(less@4.1.3)(postcss@8.4.25)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.1)
       '@storybook/blocks':
         specifier: ^7.0.27
         version: 7.0.27(react-dom@18.2.0)(react@18.2.0)
@@ -571,8 +571,8 @@ importers:
         specifier: ^7.0.27
         version: 7.0.27(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-styling':
-        specifier: ^1.3.2
-        version: 1.3.2(less@4.1.3)(postcss@8.4.25)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.1)
+        specifier: ^1.3.4
+        version: 1.3.4(less@4.1.3)(postcss@8.4.25)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.1)
       '@storybook/blocks':
         specifier: ^7.0.27
         version: 7.0.27(react-dom@18.2.0)(react@18.2.0)
@@ -674,7 +674,7 @@ packages:
       '@babel/parser': 7.22.7
       '@babel/template': 7.22.5
       '@babel/traverse': 7.22.8
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.5
       convert-source-map: 1.9.0
       debug: 4.3.4
       gensync: 1.0.0-beta.2
@@ -710,7 +710,7 @@ packages:
     resolution: {integrity: sha512-F3fZga2uv09wFdEjEQIJxXALXfz0+JaOb7SabvVMmjHxeVTuGW8wgE8Vp1Hd7O+zMTYtcfEISGRzPkeiaPPsvg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.5
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.18
       jsesc: 2.5.2
@@ -1035,7 +1035,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.5
 
   /@babel/parser@7.22.7:
     resolution: {integrity: sha512-7NF8pOkHP5o2vpmGgNGcfAeCvOYhGLyA3Z4eBQkT1RJlWu47n63bCs93QfJ2hIAFCil7L5P2IWhs1oToVgrL0Q==}
@@ -2687,7 +2687,7 @@ packages:
       '@babel/plugin-transform-unicode-escapes': 7.22.5(@babel/core@7.21.8)
       '@babel/plugin-transform-unicode-regex': 7.22.5(@babel/core@7.21.8)
       '@babel/preset-modules': 0.1.5(@babel/core@7.21.8)
-      '@babel/types': 7.21.5
+      '@babel/types': 7.22.5
       babel-plugin-polyfill-corejs2: 0.3.3(@babel/core@7.21.8)
       babel-plugin-polyfill-corejs3: 0.6.0(@babel/core@7.21.8)
       babel-plugin-polyfill-regenerator: 0.4.1(@babel/core@7.21.8)
@@ -2882,8 +2882,8 @@ packages:
       '@babel/helper-function-name': 7.22.5
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.21.9
-      '@babel/types': 7.21.5
+      '@babel/parser': 7.22.7
+      '@babel/types': 7.22.5
       debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
@@ -4959,16 +4959,25 @@ packages:
       ts-dedent: 2.2.0
     dev: true
 
-  /@storybook/addon-styling@1.3.2(less@4.1.3)(postcss@8.4.25)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.1):
-    resolution: {integrity: sha512-pxc2ncCH3jlOjsJFOmUECxIFvC4jmUxd0noeEC4shGfKvGhsssHpxcVtA36+s3JhDdx+Yhrk/0KeYoMe+35/qg==}
+  /@storybook/addon-styling@1.3.4(less@4.1.3)(postcss@8.4.25)(react-dom@18.2.0)(react@18.2.0)(webpack@5.88.1):
+    resolution: {integrity: sha512-JWZ5X9IEcqB5vr6nAgutIYBLT6SlRGfK/Z7kRaWIdvU7VDA0CQl8G1vA0nuKCERvZl9QPelv3CA+7D0H9G8uTA==}
     hasBin: true
     peerDependencies:
+      less: ^3.5.0 || ^4.0.0
+      postcss: ^7.0.0 || ^8.0.1
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      webpack: ^5.0.0
     peerDependenciesMeta:
+      less:
+        optional: true
+      postcss:
+        optional: true
       react:
         optional: true
       react-dom:
+        optional: true
+      webpack:
         optional: true
     dependencies:
       '@babel/template': 7.22.5
@@ -4983,23 +4992,24 @@ packages:
       '@storybook/theming': 7.0.27(react-dom@18.2.0)(react@18.2.0)
       '@storybook/types': 7.0.27
       css-loader: 6.8.1(webpack@5.88.1)
+      less: 4.1.3
       less-loader: 11.1.3(less@4.1.3)(webpack@5.88.1)
+      postcss: 8.4.25
       postcss-loader: 7.3.3(postcss@8.4.25)(webpack@5.88.1)
+      prettier: 2.8.8
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       resolve-url-loader: 5.0.0
       sass-loader: 13.3.2(webpack@5.88.1)
       style-loader: 3.3.3(webpack@5.88.1)
+      webpack: 5.88.1(esbuild@0.17.19)
     transitivePeerDependencies:
       - encoding
       - fibers
-      - less
       - node-sass
-      - postcss
       - sass
       - sass-embedded
       - supports-color
-      - webpack
 
   /@storybook/addon-toolbars@7.0.27(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Zz7B/T9l+Eyvh7jYO+t4Fwdq2N8mVHkklztCSWz5gk/VE3cFttku3+PjPithdOXVbpqbux8HC8lDDS5KnQuurA==}
@@ -9037,7 +9047,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
@@ -9379,7 +9389,7 @@ packages:
     engines: {node: '>=12.0.0'}
     dependencies:
       ansi-escapes: 4.3.2
-      chalk: 4.1.1
+      chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-width: 3.0.0
       external-editor: 3.1.0
@@ -11734,7 +11744,6 @@ packages:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
-    dev: true
 
   /pretty-format@27.5.1:
     resolution: {integrity: sha512-Qb1gy5OrP5+zDf2Bvnzdl3jsTf1qXVMazbvCoKhtKqVs4/YK4ozX4gKQJJVyNe+cajNPn0KoC0MC3FUmaHWEmQ==}
