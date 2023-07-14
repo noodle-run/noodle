@@ -1,4 +1,3 @@
-// src/env.mjs
 import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
 
@@ -8,13 +7,35 @@ export const env = createEnv({
    * Will throw if you access these variables on the client.
    */
   server: {
+    // Database
     DATABASE_URL: z.string().url(),
+    DIRECT_URL: z.string().url(),
+
+    // Redis
     REDIS_URL: z.string().url(),
-    REDIS_TOKEN: z.string().min(1),
+    REDIS_TOKEN: z.string().min(3),
+
+    // Next auth
+    NEXTAUTH_SECRET:
+      process.env['NODE_ENV'] === 'production'
+        ? z.string().min(1)
+        : z.string().min(1).optional(),
+    NEXTAUTH_URL: z.preprocess(
+      (str) => process.env['VERCEL_URL'] ?? str,
+      process.env['VERCEL'] ? z.string().min(1) : z.string().url(),
+    ),
+
+    // Github OAuth
+    GITHUB_CLIENT_ID: z.string().min(3),
+    GITHUB_CLIENT_SECRET: z.string().min(3),
+
+    // Misc
     VERCEL_URL: z.string().url().optional(),
-    PORT: z.string().optional(),
-    GITHUB_CLIENT_ID: z.string().min(1),
-    GITHUB_CLIENT_SECRET: z.string().min(1),
+    PORT: z
+      .string()
+      .transform((s) => parseInt(s, 10))
+      .pipe(z.number())
+      .optional(),
     NODE_ENV: z.enum(['development', 'test', 'production']),
   },
   /*
@@ -38,5 +59,8 @@ export const env = createEnv({
     GITHUB_CLIENT_ID: process.env['GITHUB_CLIENT_ID'],
     GITHUB_CLIENT_SECRET: process.env['GITHUB_CLIENT_SECRET'],
     NODE_ENV: process.env['NODE_ENV'],
+    NEXTAUTH_SECRET: process.env['NEXTAUTH_SECRET'],
+    NEXTAUTH_URL: process.env['NEXTAUTH_URL'],
+    DIRECT_URL: process.env['DIRECT_URL'],
   },
 });

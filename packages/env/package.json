@@ -5,6 +5,7 @@
   "description": "Noodle's environment variable package using t3-env",
   "license": "AGPL-3.0",
   "author": "Ahmed Elsakaan",
+  "type": "module",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
