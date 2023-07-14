@@ -9,7 +9,7 @@ export const env = createEnv({
   server: {
     // Database
     DATABASE_URL: z.string().url(),
-    DIRECT_URL: z.string().url(),
+    DIRECT_URL: z.string().url().optional(),
 
     // Redis
     REDIS_URL: z.string().url(),
@@ -26,11 +26,11 @@ export const env = createEnv({
     ),
 
     // Github OAuth
-    GITHUB_CLIENT_ID: z.string().min(3),
-    GITHUB_CLIENT_SECRET: z.string().min(3),
+    GITHUB_CLIENT_ID: z.string().min(3).optional(),
+    GITHUB_CLIENT_SECRET: z.string().min(3).optional(),
 
     // Misc
-    VERCEL_URL: z.string().url().optional(),
+    VERCEL_URL: z.string().optional(),
     PORT: z
       .string()
       .transform((s) => parseInt(s, 10))
