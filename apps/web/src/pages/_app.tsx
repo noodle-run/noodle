@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+import '../styles/globals.css';
 
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 import { Analytics } from '@vercel/analytics/react';
@@ -10,9 +10,9 @@ import { Inter } from 'next/font/google';
 
 import { type Session } from '@noodle/auth';
 
-import { Navbar } from '@/components/Navbar';
-import { api } from '@/utils/api';
-import { seo } from '@/utils/seo';
+import { Navbar } from '../components/Navbar';
+import { api } from '../utils/api';
+import { seo } from '../utils/seo';
 
 const inter = Inter({
   subsets: ['latin'],

@@ -1,8 +1,0 @@
-{
-  "extends": "@noodle/tsconfig/react.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "moduleResolution": "node"
-  },
-  "include": ["**/*.ts", "**/*.tsx"]
-}

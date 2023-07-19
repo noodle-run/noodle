@@ -1,21 +1,12 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "main",
-  "defaultProject": "web",
+  "defaultProject": "@noodle/web",
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "lint:fix",
-          "test",
-          "test:coverage",
-          "typecheck",
-          "build-storybook",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "lint:fix", "typecheck"],
         "accessToken": "NzIyMjllYzgtMzlkYS00N2U4LThjOGItOGU3YzM0OGQyMTk2fHJlYWQtb25seQ=="
       }
     }
@@ -30,15 +21,7 @@
     ],
     "production": [
       "default",
-      "!{projectRoot}/**/*.spec.ts",
-      "!{projectRoot}/**/*.spec.tsx",
-      "!{projectRoot}/**/*.stories.ts",
-      "!{projectRoot}/**/*.stories.tsx",
       "!{projectRoot}/.eslintrc.cjs",
-      "!{projectRoot}/vitest.config.ts",
-      "!{projectRoot}/vitest.setup.ts",
-      "!{projectRoot}/.storybook",
-      "!{projectRoot}/storybook-static",
       "!{projectRoot}/tsconfig.tsbuildinfo"
     ],
     "lint": [
@@ -72,35 +55,8 @@
       "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/tsconfig.tsbuildinfo"]
     },
-    "test:coverage": {
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/coverage"]
-    },
-    "build-storybook": {
-      "dependsOn": ["^build"],
-      "inputs": ["default", "^production"],
-      "outputs": ["{projectRoot}/storybook-static"]
-    },
-    "storybook": {
-      "dependsOn": ["^build"]
-    },
     "dev": {
       "dependsOn": ["^build"]
-    },
-    "test": {
-      "dependsOn": ["^build"]
-    },
-    "test:ui": {
-      "dependsOn": ["^build"]
-    },
-    "test:watch": {
-      "dependsOn": ["^build"]
-    },
-    "e2e": {
-      "outputs": [
-        "{projectRoot}/test-results",
-        "{projectRoot}/playwright-report"
-      ]
     }
   }
 }

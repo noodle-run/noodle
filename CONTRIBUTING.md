@@ -68,9 +68,6 @@ The actual stack:
 
 Development stuff:
 
-- [Storybook](https://storybook.js.org/)
-- [Vitest](https://vitest.dev/)
-- [Playwright](https://playwright.dev/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io)
 
@@ -144,26 +141,11 @@ pnpm build
 # Run the built project in production mode
 pnpm start
 
-# Run the tests
-pnpm test
-
-# Run E2E tests
-pnpm test:e2e
-
-# Run the tests with coverage reporting
-pnpm test:coverage
-
-# Tests in watch mode
-pnpm test:watch
-
 # Lint
 pnpm lint
 
 # Format
 pnpm format:write
-
-# Storybook
-pnpm storybook
 ```
 
 Also, if in doubt and something is going wrong, `pnpm clean`.
