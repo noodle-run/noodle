@@ -19,10 +19,19 @@ export const env = createEnv({
     GITHUB_CLIENT_ID: z.string().min(1),
     GITHUB_CLIENT_SECRET: z.string().min(1),
 
-    REDIS_URL: z.string().url(),
-    REDIS_TOKEN: z.string().min(1),
+    UPSTASH_REDIS_REST_URL: z.string().url(),
+    UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
   },
   client: {},
-  experimental__runtimeEnv: {},
+  runtimeEnv: {
+    NODE_ENV: process.env['NODE_ENV'],
+    DATABASE_URL: process.env['DATABASE_URL'],
+    NEXTAUTH_SECRET: process.env['NEXTAUTH_SECRET'],
+    NEXTAUTH_URL: process.env['NEXTAUTH_URL'],
+    GITHUB_CLIENT_ID: process.env['GITHUB_CLIENT_ID'],
+    GITHUB_CLIENT_SECRET: process.env['GITHUB_CLIENT_SECRET'],
+    UPSTASH_REDIS_REST_URL: process.env['UPSTASH_REDIS_REST_URL'],
+    UPSTASH_REDIS_REST_TOKEN: process.env['UPSTASH_REDIS_REST_TOKEN'],
+  },
   skipValidation: !!process.env['CI'] || !!process.env['SKIP_ENV_VALIDATION'],
 });
