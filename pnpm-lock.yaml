@@ -170,8 +170,8 @@ importers:
         specifier: ^8.4.25
         version: 8.4.25
       tailwindcss:
-        specifier: ^3.3.2
-        version: 3.3.2(ts-node@10.9.1)
+        specifier: ^3.3.3
+        version: 3.3.3(ts-node@10.9.1)
 
   packages/api:
     dependencies:
@@ -262,8 +262,8 @@ importers:
         specifier: ^8.4.25
         version: 8.4.25
       tailwindcss:
-        specifier: ^3.3.2
-        version: 3.3.2(ts-node@10.9.1)
+        specifier: ^3.3.3
+        version: 3.3.3(ts-node@10.9.1)
     devDependencies:
       '@noodle/tsconfig':
         specifier: workspace:^
@@ -273,16 +273,16 @@ importers:
         version: 1.0.0
       '@savvywombat/tailwindcss-grid-areas':
         specifier: ^3.1.0
-        version: 3.1.0(tailwindcss@3.3.2)
+        version: 3.1.0(tailwindcss@3.3.3)
       autoprefixer:
         specifier: ^10.4.14
         version: 10.4.14(postcss@8.4.25)
       tailwindcss-animate:
         specifier: ^1.0.6
-        version: 1.0.6(tailwindcss@3.3.2)
+        version: 1.0.6(tailwindcss@3.3.3)
       tailwindcss-radix-colors:
         specifier: ^0.5.0
-        version: 0.5.0(tailwindcss@3.3.2)
+        version: 0.5.0(tailwindcss@3.3.3)
 
   packages/config/tsconfig: {}
 
@@ -364,8 +364,8 @@ importers:
         specifier: ^8.4.25
         version: 8.4.25
       tailwindcss:
-        specifier: ^3.3.2
-        version: 3.3.2(ts-node@10.9.1)
+        specifier: ^3.3.3
+        version: 3.3.3(ts-node@10.9.1)
 
 packages:
 
@@ -1755,14 +1755,14 @@ packages:
       '@babel/runtime': 7.22.6
     dev: false
 
-  /@savvywombat/tailwindcss-grid-areas@3.1.0(tailwindcss@3.3.2):
+  /@savvywombat/tailwindcss-grid-areas@3.1.0(tailwindcss@3.3.3):
     resolution: {integrity: sha512-CaNoCS7Zr3OeDDhCSXXU7dnqYjehdjNmDy6NdFxkLAyDcxA8YTI3rjPm6X+bTWyYINHXr+RONG3UKWrSv2UYSw==}
     engines: {node: '>=14.18.2'}
     peerDependencies:
       tailwindcss: ^3.0.1
     dependencies:
       lodash: 4.17.21
-      tailwindcss: 3.3.2(ts-node@10.9.1)
+      tailwindcss: 3.3.3(ts-node@10.9.1)
     dev: true
 
   /@swc/helpers@0.5.1:
@@ -3662,7 +3662,7 @@ packages:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.5
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     dev: true
@@ -6101,25 +6101,25 @@ packages:
     resolution: {integrity: sha512-R2/nULkdg1VR/EL4RXg4dEohdoxNUJGLMnWIQnPKL+O9Twu7Cn3Rxi4dlXkDzZrEGtR+G+psSXFouWlpTyLhCQ==}
     dev: false
 
-  /tailwindcss-animate@1.0.6(tailwindcss@3.3.2):
+  /tailwindcss-animate@1.0.6(tailwindcss@3.3.3):
     resolution: {integrity: sha512-4WigSGMvbl3gCCact62ZvOngA+PRqhAn7si3TQ3/ZuPuQZcIEtVap+ENSXbzWhpojKB8CpvnIsrwBu8/RnHtuw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.3.2(ts-node@10.9.1)
+      tailwindcss: 3.3.3(ts-node@10.9.1)
     dev: true
 
-  /tailwindcss-radix-colors@0.5.0(tailwindcss@3.3.2):
+  /tailwindcss-radix-colors@0.5.0(tailwindcss@3.3.3):
     resolution: {integrity: sha512-5v0IndMwt//8a0ZHPuBCIUKyRFUGuLHLNJ75f/puvrpBw9uiZapU9Yegwv7B22s0cilDl64yOl1bHQqvDbHuqw==}
     peerDependencies:
       tailwindcss: '>=3.0.0'
     dependencies:
       '@radix-ui/colors': 0.1.9
-      tailwindcss: 3.3.2(ts-node@10.9.1)
+      tailwindcss: 3.3.3(ts-node@10.9.1)
     dev: true
 
-  /tailwindcss@3.3.2(ts-node@10.9.1):
-    resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
+  /tailwindcss@3.3.3(ts-node@10.9.1):
+    resolution: {integrity: sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -6143,7 +6143,6 @@ packages:
       postcss-load-config: 4.0.1(postcss@8.4.25)(ts-node@10.9.1)
       postcss-nested: 6.0.1(postcss@8.4.25)
       postcss-selector-parser: 6.0.13
-      postcss-value-parser: 4.2.0
       resolve: 1.22.2
       sucrase: 3.33.0
     transitivePeerDependencies:
