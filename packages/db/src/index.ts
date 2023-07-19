@@ -9,14 +9,6 @@ const globalForPrisma = globalThis as { prisma?: PrismaClient };
 export const prisma =
   globalForPrisma.prisma ??
   new PrismaClient({
-    datasources: {
-      db: {
-        url: `${process.env['DATABASE_URL']!.replace(
-          '.eu-central-1',
-          '-pooler.eu.central-1',
-        )}?pgbouncer=true&connect_timeout=10&pool_timeout=10`,
-      },
-    },
     log:
       env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
   });
