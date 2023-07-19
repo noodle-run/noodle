@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+import '../styles/globals.css';
 
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 import { Analytics } from '@vercel/analytics/react';
