@@ -17,8 +17,8 @@
     "@next-auth/prisma-adapter": "^1.0.7",
     "@noodle/db": "workspace:^",
     "@noodle/env": "workspace:^",
-    "next": "13.4.9",
-    "next-auth": "^4.22.1"
+    "next": "13.4.10",
+    "next-auth": "^4.22.3"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",

@@ -12,7 +12,6 @@ const config = {
     require.resolve('prettier-plugin-jsdoc'),
     require.resolve('prettier-plugin-tailwindcss'),
   ],
-  pluginSearchDirs: false,
   importOrder: [
     '^react',
     '<TYPES>',
