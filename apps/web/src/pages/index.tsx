@@ -13,8 +13,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/Accordion';
-import { constants } from '@/utils/constants';
+} from '../components/Accordion';
+import { constants } from '../utils/constants';
 
 type FeatureCardProps = {
   emoji: ReactNode;
@@ -154,7 +154,7 @@ const Home: NextPage = () => {
           href={constants.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gray-4 dark:bg-graydark-4 border-gray-8 dark:border-graydark-8 hover:bg-gray-5 dark:hover:bg-graydark-5 flex items-center gap-4 rounded-full border px-3 py-2 text-sm transition-colors"
+          className="bg-gray-4 border-gray-8 dark:bg-graydark-4 dark:border-graydark-8 dark:hover:bg-graydark-5 hover:bg-gray-5 flex items-center gap-4 rounded-full border px-3 py-2 text-sm transition-colors"
         >
           Star us on Github{' '}
           <Star size={13} className="fill-primary-500 stroke-primary-500" />
@@ -171,13 +171,13 @@ const Home: NextPage = () => {
           <Link
             href="/#features"
             onClick={smoothScrollToId('features')}
-            className="bg-gray-4 dark:bg-graydark-4 border-gray-6 dark:border-graydark-6 hover:bg-gray-5 dark:hover:bg-graydark-5 flex w-full items-center justify-center gap-4 rounded-md border px-6 py-3 font-semibold transition-colors lg:w-auto"
+            className="bg-gray-4 border-gray-6 dark:bg-graydark-4 dark:border-graydark-6 dark:hover:bg-graydark-5 hover:bg-gray-5 flex w-full items-center justify-center gap-4 rounded-md border px-6 py-3 font-semibold transition-colors lg:w-auto"
           >
             Features <ArrowDown size={20} />
           </Link>
           <Link
             href="/waitlist"
-            className="bg-primary-500 hover:bg-primary-700 text-gray-12 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors lg:w-auto"
+            className="bg-primary-500 text-gray-12 hover:bg-primary-700 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors lg:w-auto"
           >
             Join Waitlist <ArrowRight size={20} />
           </Link>
@@ -350,7 +350,7 @@ const Home: NextPage = () => {
           </p>
           <Link
             href="/waitlist"
-            className="bg-gray-1 dark:bg-graydark-1 hover:bg-gray-2 dark:hover:bg-graydark-2 text-primary-500 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors md:w-auto"
+            className="bg-gray-1 text-primary-500 dark:bg-graydark-1 dark:hover:bg-graydark-2 hover:bg-gray-2 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors md:w-auto"
           >
             Join Waitlist <ArrowRight size={20} />
           </Link>

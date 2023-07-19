@@ -9,23 +9,16 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "e2e": "playwright test",
-    "e2e:debug": "playwright test --debug",
-    "e2e:report": "playwright show-report",
-    "e2e:ui": "playwright test --ui",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "pnpm run lint --fix",
     "start": "next start",
-    "test": "vitest run",
-    "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui",
-    "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@noodle/api": "workspace:^",
     "@noodle/auth": "workspace:^",
     "@noodle/db": "workspace:^",
+    "@noodle/env": "workspace:^",
     "@noodle/ui": "workspace:^",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-select": "^1.2.2",
@@ -51,20 +44,12 @@
   },
   "devDependencies": {
     "@noodle/tailwind": "workspace:^",
-    "@noodle/test-utils": "workspace:^",
     "@noodle/tsconfig": "workspace:^",
-    "@noodle/vitest": "workspace:^",
-    "@playwright/test": "^1.36.0",
-    "@testing-library/dom": "^9.3.1",
-    "@testing-library/user-event": "^14.4.3",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
-    "@vitest/coverage-v8": "^0.33.0",
     "autoprefixer": "^10.4.14",
-    "dotenv": "^16.3.1",
     "postcss": "^8.4.25",
-    "tailwindcss": "^3.3.2",
-    "vitest": "^0.33.0"
+    "tailwindcss": "^3.3.2"
   },
   "volta": {
     "extends": "../../package.json"

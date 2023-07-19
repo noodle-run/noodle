@@ -9,6 +9,7 @@ import { getServerSession as $getServerSession } from 'next-auth';
 import Github from 'next-auth/providers/github';
 
 import { prisma } from '@noodle/db';
+import { env } from '@noodle/env';
 
 declare module 'next-auth' {
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
@@ -46,8 +47,8 @@ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     Github({
-      clientId: process.env['GITHUB_CLIENT_ID']!,
-      clientSecret: process.env['GITHUB_CLIENT_SECRET']!,
+      clientId: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET,
     }),
   ],
 };

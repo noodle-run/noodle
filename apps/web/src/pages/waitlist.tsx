@@ -7,15 +7,15 @@ import { z } from 'zod';
 
 import { cn } from '@noodle/ui';
 
-import { Input } from '@/components/Input';
+import { Input } from '../components/Input';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/Select';
-import { api } from '@/utils/api';
+} from '../components/Select';
+import { api } from '../utils/api';
 
 const formInputValidator = z.object({
   name: z.string().min(3).max(255),
