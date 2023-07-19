@@ -48,7 +48,7 @@ jobs:
         run: |
           pids=()
 
-          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check & pids+=($!)
+          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm format:check & pids+=($!)
 
           pnpm nx affected -t lint --parallel=3 & pids+=($!)
           pnpm nx affected -t typecheck --parallel=3 & pids+=($!)
