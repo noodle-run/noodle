@@ -11,7 +11,7 @@ export const prisma =
   new PrismaClient({
     datasources: {
       db: {
-        url: `${env.DATABASE_URL.replace(
+        url: `${process.env['DATABASE_URL']!.replace(
           '.eu-central-1',
           '-pooler.eu.central-1',
         )}?pgbouncer=true&connect_timeout=10&pool_timeout=10`,
