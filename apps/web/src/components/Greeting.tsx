@@ -1,4 +1,4 @@
-import { api } from '@/utils/api';
+import { api } from '../utils/api';
 
 export const Greeting = () => {
   const { data, isLoading, error } = api.greeting.hello.useQuery({

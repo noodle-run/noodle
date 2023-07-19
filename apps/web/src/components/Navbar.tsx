@@ -7,7 +7,7 @@ import { useMediaQuery } from 'usehooks-ts';
 
 import { Brand } from '@noodle/ui';
 
-import { constants } from '@/utils/constants';
+import { constants } from '../utils/constants';
 
 export const Navbar = () => {
   const [height, setHeight] = useState<'auto' | number>(0);
@@ -114,7 +114,7 @@ export const Navbar = () => {
               target="_blank"
               href={constants.github}
               rel="noopener noreferrer"
-              className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 flex items-center px-2 transition-colors"
+              className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 flex items-center px-2 transition-colors"
             >
               <Github size={20} />
             </a>
@@ -124,7 +124,7 @@ export const Navbar = () => {
               target="_blank"
               href={constants.twitter}
               rel="noopener noreferrer"
-              className="text-gray-11 dark:text-graydark-11 hover:text-gray-12 dark:hover:text-graydark-12 flex items-center px-2 transition-colors"
+              className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 flex items-center px-2 transition-colors"
             >
               <Twitter size={20} />
             </a>

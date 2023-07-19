@@ -1,3 +1,5 @@
+import '@noodle/env';
+
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
