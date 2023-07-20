@@ -16,6 +16,7 @@ import {
   autoformatSuperscriptSymbols,
 } from '@udecode/plate';
 
+import { autoFormatHeadings } from './headings';
 import { autoformatMarks } from './marks';
 
 export const autoformatRules = [
@@ -37,4 +38,5 @@ export const autoformatRules = [
 
   // Custom
   ...autoformatMarks,
+  ...autoFormatHeadings,
 ];
