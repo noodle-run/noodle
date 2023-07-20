@@ -1,4 +1,4 @@
-import { ELEMENT_BLOCKQUOTE, ELEMENT_PARAGRAPH, Plate } from '@udecode/plate';
+import { Plate } from '@udecode/plate';
 
 import { plugins } from './plugins';
 
