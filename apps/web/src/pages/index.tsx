@@ -1,12 +1,11 @@
 import { Balancer } from 'react-wrap-balancer';
 import type { FC, MouseEventHandler, ReactNode } from 'react';
 import { ArrowDown, ArrowRight, Star } from 'lucide-react';
-import { type NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMediaQuery } from 'usehooks-ts';
 
-import { cn } from '@noodle/ui';
+import { cn } from '@noodle/utils';
 
 import {
   Accordion,
@@ -14,7 +13,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '../components/Accordion';
+import { Navbar } from '../components/Navbar';
 import { constants } from '../utils/constants';
+import { type NextPageWithLayout } from '../utils/NextPageWithLayout';
 
 type FeatureCardProps = {
   emoji: ReactNode;
@@ -144,7 +145,7 @@ const smoothScrollToId =
     }
   };
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
@@ -372,5 +373,12 @@ const Home: NextPage = () => {
     </main>
   );
 };
+
+Home.getLayout = (page) => (
+  <>
+    <Navbar />
+    {page}
+  </>
+);
 
 export default Home;

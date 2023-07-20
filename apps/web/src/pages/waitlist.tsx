@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { Balancer } from 'react-wrap-balancer';
 import { ArrowRight, Check, Loader2, Mail, User } from 'lucide-react';
-import { type NextPage } from 'next';
 import { z } from 'zod';
 
-import { cn } from '@noodle/ui';
+import { cn } from '@noodle/utils';
 
 import { Input } from '../components/Input';
+import { Navbar } from '../components/Navbar';
 import {
   Select,
   SelectContent,
@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from '../components/Select';
 import { api } from '../utils/api';
+import { type NextPageWithLayout } from '../utils/NextPageWithLayout';
 
 const formInputValidator = z.object({
   name: z.string().min(3).max(255),
@@ -23,7 +24,7 @@ const formInputValidator = z.object({
   reason: z.enum(['STUDENT', 'PROJECT', 'BOTH']),
 });
 
-const WaitList: NextPage = () => {
+const WaitList: NextPageWithLayout = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [reason, setReason] = useState<
@@ -176,5 +177,12 @@ const WaitList: NextPage = () => {
     </main>
   );
 };
+
+WaitList.getLayout = (page) => (
+  <>
+    <Navbar />
+    {page}
+  </>
+);
 
 export default WaitList;

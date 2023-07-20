@@ -1,17 +1,15 @@
 import '../styles/globals.css';
 
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Analytics } from '@vercel/analytics/react';
 import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
-import { type AppProps } from 'next/app';
-import { Inter } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 
-import { type Session } from '@noodle/auth';
-
-import { Navbar } from '../components/Navbar';
 import { api } from '../utils/api';
+import { type AppPropsWithLayout } from '../utils/NextPageWithLayout';
 import { seo } from '../utils/seo';
 
 const inter = Inter({
@@ -21,29 +19,32 @@ const inter = Inter({
   display: 'swap',
 });
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-interface MyAppProps extends AppProps {
-  pageProps: {
-    session: Session;
-  };
-}
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+  weight: 'variable',
+  display: 'swap',
+});
 
-const App = ({ Component, pageProps }: MyAppProps) => {
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
-    <div className={`${inter.variable} font-sans`}>
+    <div className={`${inter.variable} ${jetBrainsMono.variable} font-sans`}>
       <DefaultSeo {...seo} />
       <SessionProvider session={pageProps.session}>
         <ThemeProvider attribute="class">
           <WrapBalancerProvider>
-            <Navbar />
-            <Component {...pageProps} />
+            {getLayout(<Component {...pageProps} />)}
           </WrapBalancerProvider>
           <Analytics />
+          <ReactQueryDevtools initialIsOpen={false} />
         </ThemeProvider>
       </SessionProvider>
       <style jsx global>{`
         :root {
           --font-inter: ${inter.variable}, sans-serif;
+          --font-jetbrains-mono: ${jetBrainsMono.variable}, monospace;
         }
       `}</style>
     </div>
