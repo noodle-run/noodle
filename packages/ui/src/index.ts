@@ -1,5 +1,4 @@
 export * from './brand';
-export * from './utils/cn';
 export * from './typography';
 export * from './aspect-ratio';
 export * from './skeleton';

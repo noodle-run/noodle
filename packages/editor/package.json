@@ -1,7 +1,7 @@
 {
-  "name": "@noodle/ui",
+  "name": "@noodle/editor",
   "version": "0.1.0",
-  "description": "Noodle's UI Components library",
+  "description": "Noodle's note-taking editor using PlateJS and SlateJS",
   "license": "AGPL-3.0",
   "author": "Ahmed Elsakaan",
   "type": "module",
@@ -20,11 +20,13 @@
   },
   "dependencies": {
     "@noodle/utils": "workspace:^",
-    "@radix-ui/react-aspect-ratio": "^1.0.3",
-    "@radix-ui/react-avatar": "^1.0.3",
-    "@radix-ui/react-tooltip": "^1.0.6",
+    "@udecode/plate": "^22.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "slate": "^0.94.1",
+    "slate-history": "^0.93.0",
+    "slate-hyperscript": "^0.77.0",
+    "slate-react": "^0.97.2"
   },
   "devDependencies": {
     "@noodle/tailwind": "workspace:^",
@@ -32,6 +34,7 @@
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "^10.4.14",
+    "eslint-config-noodle": "workspace:^",
     "postcss": "^8.4.26",
     "tailwindcss": "^3.3.3"
   },

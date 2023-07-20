@@ -6,6 +6,7 @@ const config = {
   content: [
     './src/**/*.{js,jsx,ts,tsx,mdx}',
     '../../packages/ui/src/**/*.{js,jsx,ts,tsx,mdx}',
+    '../../packages/editor/src/**/*.{js,jsx,ts,tsx,mdx}',
   ],
   presets: [noodlePreset],
   darkMode: 'class',
