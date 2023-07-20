@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { cn } from '@noodle/ui';
+import { cn } from '@noodle/utils';
 
 export type InputProps = {
   icon: React.ReactNode;

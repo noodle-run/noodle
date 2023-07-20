@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import { cn } from './utils/cn';
+import { cn } from '@noodle/utils';
 
 type TypographyProps = {
   className?: string;

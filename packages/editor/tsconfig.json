@@ -1,0 +1,7 @@
+{
+  "extends": "@noodle/tsconfig/react.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".eslintrc.cjs", "**/*.cjs"]
+}

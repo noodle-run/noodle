@@ -3,8 +3,7 @@ import { createTRPCNext } from '@trpc/next';
 import SuperJSON from 'superjson';
 
 import { type AppRouter } from '@noodle/api';
-
-import { getBaseUrl } from './getBaseUrl';
+import { getBaseUrl } from '@noodle/utils';
 
 export const api = createTRPCNext<AppRouter>({
   config() {

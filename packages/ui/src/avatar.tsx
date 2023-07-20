@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import type { ComponentPropsWithoutRef, ElementRef } from 'react';
 import { Fallback, Image, Root } from '@radix-ui/react-avatar';
 
-import { cn } from './utils/cn';
+import { cn } from '@noodle/utils';
 
 export const Avatar = forwardRef<
   ElementRef<typeof Root>,
