@@ -29,7 +29,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "postcss": "^8.4.26",
+    "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
@@ -38,7 +38,7 @@
     "@savvywombat/tailwindcss-grid-areas": "^3.1.0",
     "autoprefixer": "^10.4.14",
     "tailwindcss-animate": "^1.0.6",
-    "tailwindcss-radix-colors": "^0.5.0"
+    "tailwindcss-radix-colors": "^0.5.1"
   },
   "volta": {
     "extends": "../../../package.json"
