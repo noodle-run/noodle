@@ -8,31 +8,22 @@
   "files": [
     "./base.js",
     "./next.js",
-    "./react.js",
-    "./vitest.js",
-    "./storybook.js",
-    "./playwright.js"
+    "./react.js"
   ],
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "pnpm run lint --fix"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.4.9",
+    "@next/eslint-plugin-next": "^13.4.10",
     "@noodle/tsconfig": "workspace:^",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-jest-dom": "^5.0.1",
     "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-no-only-tests": "^3.1.0",
-    "eslint-plugin-playwright": "^0.15.3",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-storybook": "^0.6.12",
-    "eslint-plugin-testing-library": "^5.11.0",
-    "eslint-plugin-vitest": "^0.2.6"
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0"
   },
   "volta": {
     "extends": "../../../package.json"

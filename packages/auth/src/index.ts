@@ -6,9 +6,11 @@ import type {
 import type { DefaultSession, NextAuthOptions } from 'next-auth';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { getServerSession as $getServerSession } from 'next-auth';
+import Credentials from 'next-auth/providers/credentials';
 import Github from 'next-auth/providers/github';
 
 import { prisma } from '@noodle/db';
+import { env } from '@noodle/env';
 
 declare module 'next-auth' {
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
@@ -45,10 +47,30 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(prisma),
   providers: [
-    Github({
-      clientId: process.env['GITHUB_CLIENT_ID']!,
-      clientSecret: process.env['GITHUB_CLIENT_SECRET']!,
-    }),
+    process.env['VERCEL_ENV'] === 'preview'
+      ? Credentials({
+          name: 'Credentials',
+          credentials: {
+            username: {
+              label: 'Username',
+              type: 'text',
+              placeholder: 'jsmith',
+            },
+            password: { label: 'Password', type: 'password' },
+          },
+          authorize() {
+            return {
+              id: '1',
+              name: 'John Doe',
+              email: 'jdoe@example.com',
+              image: 'https://i.pravatar.cc/150?u=jsmith@example.com',
+            };
+          },
+        })
+      : Github({
+          clientId: env.GITHUB_CLIENT_ID!,
+          clientSecret: env.GITHUB_CLIENT_SECRET!,
+        }),
   ],
 };
 
