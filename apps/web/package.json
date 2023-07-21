@@ -33,7 +33,7 @@
     "@upstash/ratelimit": "^0.4.3",
     "@vercel/analytics": "^1.0.1",
     "lucide-react": "^0.262.0",
-    "next": "13.4.10",
+    "next": "13.4.12",
     "next-auth": "^4.22.3",
     "next-seo": "^6.1.0",
     "next-themes": "^0.2.1",
