@@ -1,9 +1,9 @@
 import '../styles/globals.css';
 
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
+import { ClerkProvider } from '@clerk/nextjs';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Analytics } from '@vercel/analytics/react';
-import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import { Inter, JetBrains_Mono } from 'next/font/google';
@@ -32,7 +32,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <div className={`${inter.variable} ${jetBrainsMono.variable} font-sans`}>
       <DefaultSeo {...seo} />
-      <SessionProvider session={pageProps.session}>
+      <ClerkProvider {...pageProps}>
         <ThemeProvider attribute="class">
           <WrapBalancerProvider>
             {getLayout(<Component {...pageProps} />)}
@@ -40,7 +40,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           <Analytics />
           <ReactQueryDevtools initialIsOpen={false} />
         </ThemeProvider>
-      </SessionProvider>
+      </ClerkProvider>
       <style jsx global>{`
         :root {
           --font-inter: ${inter.variable}, sans-serif;

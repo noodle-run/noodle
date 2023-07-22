@@ -15,8 +15,9 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.23.0",
+    "@clerk/themes": "^1.7.5",
     "@noodle/api": "workspace:^",
-    "@noodle/auth": "workspace:^",
     "@noodle/db": "workspace:^",
     "@noodle/editor": "workspace:^",
     "@noodle/env": "workspace:^",
@@ -34,7 +35,6 @@
     "@vercel/analytics": "^1.0.1",
     "lucide-react": "^0.263.0",
     "next": "13.4.12",
-    "next-auth": "^4.22.3",
     "next-seo": "^6.1.0",
     "next-themes": "^0.2.1",
     "react": "18.2.0",

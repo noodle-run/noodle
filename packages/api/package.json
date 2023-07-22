@@ -28,7 +28,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@noodle/auth": "workspace:^",
+    "@clerk/nextjs": "^4.23.0",
     "@noodle/db": "workspace:^",
     "@trpc/next": "^10.35.0",
     "@trpc/server": "^10.35.0",

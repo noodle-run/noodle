@@ -3,12 +3,12 @@ import { TRPCError } from '@trpc/server';
 import { t } from '../setup/trpc';
 
 const isAuthenticated = t.middleware(({ ctx, next }) => {
-  if (!ctx.session?.user) {
+  if (!ctx.auth.userId) {
     throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
   return next({
     ctx: {
-      session: { ...ctx.session, user: ctx.session.user },
+      auth: ctx.auth,
     },
   });
 });
