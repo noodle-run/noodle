@@ -64,7 +64,6 @@ The actual stack:
 - [TailwindCSS](https://tailwindcss.com/)
 - [tRPC](https://trpc.io)
 - [Prisma](https://www.prisma.io/)
-- [Next-auth](https://next-auth.js.org/)
 
 Development stuff:
 

@@ -1,4 +1,5 @@
 import type { NextRequest } from 'next/server';
+import { authMiddleware } from '@clerk/nextjs';
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
 import { NextResponse } from 'next/server';
@@ -15,7 +16,7 @@ const ratelimit = new Ratelimit({
   limiter: Ratelimit.slidingWindow(5, '10 s'),
 });
 
-export default async function middleware(
+async function rateLimitMiddleware(
   request: NextRequest,
 ): Promise<Response | undefined> {
   const ip = request.ip ?? '127.0.0.1';
@@ -25,6 +26,20 @@ export default async function middleware(
     : NextResponse.redirect(new URL('/blocked', request.url));
 }
 
+export default authMiddleware({
+  beforeAuth: (req) => {
+    return rateLimitMiddleware(req);
+  },
+  publicRoutes: [
+    '/',
+    '/blocked',
+    '/waitlist',
+    '/editor',
+    '/privacy',
+    '/(api|trpc)(.*)',
+  ],
+});
+
 export const config = {
-  matcher: '/api/:path*',
+  matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
 };
