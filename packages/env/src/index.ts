@@ -7,37 +7,22 @@ export const env = createEnv({
 
     DATABASE_URL: z.string().url(),
 
-    NEXTAUTH_SECRET:
-      process.env['NODE_ENV'] === 'production'
-        ? z.string().min(1)
-        : z.string().min(1).optional(),
-    NEXTAUTH_URL: z.preprocess(
-      (str) => process.env['VERCEL_URL'] ?? str,
-      process.env['VERCEL'] ? z.string().min(1) : z.string().url(),
-    ),
-
-    GITHUB_CLIENT_ID:
-      process.env['VERCEL_ENV'] === 'preview'
-        ? z.string().min(1).optional()
-        : z.string().min(1),
-    GITHUB_CLIENT_SECRET:
-      process.env['VERCEL_ENV'] === 'preview'
-        ? z.string().min(1).optional()
-        : z.string().min(1),
+    CLERK_SECRET_KEY: z.string().min(1),
 
     UPSTASH_REDIS_REST_URL: z.string().url(),
     UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
   },
-  client: {},
+  client: {
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
+  },
   runtimeEnv: {
     NODE_ENV: process.env['NODE_ENV'],
     DATABASE_URL: process.env['DATABASE_URL'],
-    NEXTAUTH_SECRET: process.env['NEXTAUTH_SECRET'],
-    NEXTAUTH_URL: process.env['NEXTAUTH_URL'],
-    GITHUB_CLIENT_ID: process.env['GITHUB_CLIENT_ID'],
-    GITHUB_CLIENT_SECRET: process.env['GITHUB_CLIENT_SECRET'],
     UPSTASH_REDIS_REST_URL: process.env['UPSTASH_REDIS_REST_URL'],
     UPSTASH_REDIS_REST_TOKEN: process.env['UPSTASH_REDIS_REST_TOKEN'],
+    CLERK_SECRET_KEY: process.env['CLERK_SECRET_KEY'],
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
+      process.env['NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY'],
   },
   skipValidation: !!process.env['SKIP_ENV_VALIDATION'],
 });
