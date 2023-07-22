@@ -17,7 +17,7 @@ type PageProps = {
 
 const PrivacyPage: NextPageWithLayout<PageProps> = ({ source }) => {
   return (
-    <div className="container mx-auto pt-32">
+    <div className="container mx-auto py-24 lg:py-32">
       <MDXRemote
         {...source}
         components={{
