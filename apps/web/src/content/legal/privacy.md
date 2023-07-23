@@ -1,6 +1,6 @@
 # PRIVACY POLICY
 
-###### Last updated: May 10, 2023
+###### Last updated: July 23, 2023
 
 This privacy notice for Ahmed Elsakaan (doing business as Noodle) (**'we'**, **'us'**, or **'our'**), describes how and why we might collect, store, use, and/or share (**'process'**) your information when you use our services (**'Services'**), such as when you:
 
