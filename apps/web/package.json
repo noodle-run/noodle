@@ -33,7 +33,7 @@
     "@trpc/server": "^10.35.0",
     "@upstash/ratelimit": "^0.4.3",
     "@vercel/analytics": "^1.0.1",
-    "lucide-react": "^0.263.0",
+    "lucide-react": "^0.263.1",
     "next": "13.4.12",
     "next-mdx-remote": "^4.4.1",
     "next-seo": "^6.1.0",
