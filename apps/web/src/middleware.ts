@@ -26,14 +26,25 @@ async function rateLimitMiddleware(
     : NextResponse.redirect(new URL('/blocked', request.url));
 }
 
+const publicRoutesThatShouldRedirectAfterAuth = ['/', '/waitlist'];
+
 export default authMiddleware({
   beforeAuth: (req) => {
     return rateLimitMiddleware(req);
   },
+  afterAuth: (auth, req) => {
+    if (
+      auth.userId &&
+      publicRoutesThatShouldRedirectAfterAuth.includes(req.nextUrl.pathname)
+    ) {
+      return NextResponse.redirect(new URL('/app', req.url));
+    }
+
+    return NextResponse.next();
+  },
   publicRoutes: [
-    '/',
+    ...publicRoutesThatShouldRedirectAfterAuth,
     '/blocked',
-    '/waitlist',
     '/editor',
     '/privacy',
     '/(api|trpc)(.*)',
