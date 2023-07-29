@@ -28,15 +28,15 @@
     "@commitlint/config-conventional": "^17.6.7",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@noodle/tsconfig": "workspace:^",
-    "@types/eslint": "^8.44.0",
-    "@types/node": "^20.4.3",
-    "@types/prettier": "^2.7.3",
+    "@types/eslint": "^8.44.1",
+    "@types/node": "^20.4.5",
+    "@types/prettier": "^3.0.0",
     "del-cli": "^5.0.0",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "nx": "16.5.4",
+    "nx": "16.5.5",
     "nx-cloud": "16.1.1",
     "prettier": "^3.0.0",
     "prettier-plugin-jsdoc": "^1.0.1",
@@ -45,14 +45,14 @@
     "prisma": "^5.0.0",
     "typescript": "^5.1.6"
   },
-  "packageManager": "pnpm@8.6.9",
+  "packageManager": "pnpm@8.6.10",
   "engines": {
     "node": ">=v18.15.0",
-    "pnpm": ">=8.6.9"
+    "pnpm": ">=8.6.10"
   },
   "volta": {
     "node": "18.15.0",
-    "pnpm": "8.6.9"
+    "pnpm": "8.6.10"
   },
   "prisma": {
     "schema": "packages/db/prisma/schema.prisma"
