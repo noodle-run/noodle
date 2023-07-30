@@ -1,7 +1,7 @@
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
 
-import { t } from '../../setup/trpc';
+import { t } from '../setup/trpc';
 
 export const waitListRouter = t.router({
   addEmailToWaitList: t.procedure
