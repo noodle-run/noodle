@@ -1,4 +1,4 @@
-import { type IconNames } from '../../components/Icon';
+import { type IconNames } from '@/components/Icon';
 
 type PageLink = {
   href: string;

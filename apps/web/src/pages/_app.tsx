@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '@/styles/globals.css';
 
 import { Provider as WrapBalancerProvider } from 'react-wrap-balancer';
 import { ClerkProvider } from '@clerk/nextjs';
@@ -8,9 +8,9 @@ import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 
-import { api } from '../utils/api';
-import { type AppPropsWithLayout } from '../utils/NextPageWithLayout';
-import { seo } from '../utils/seo';
+import { api } from '@/utils/api';
+import { type AppPropsWithLayout } from '@/utils/NextPageWithLayout';
+import { seo } from '@/utils/seo';
 
 const inter = Inter({
   subsets: ['latin'],

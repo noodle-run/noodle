@@ -2,8 +2,8 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { Brand } from '@noodle/ui';
 
-import { ActiveLink } from '../../components/ActiveLink';
-import { Icon } from '../../components/Icon';
+import { ActiveLink } from '@/components/ActiveLink';
+import { Icon } from '@/components/Icon';
 import { pageLinks } from './static-data';
 
 const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {

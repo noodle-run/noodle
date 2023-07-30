@@ -6,17 +6,17 @@ import { z } from 'zod';
 
 import { cn } from '@noodle/utils';
 
-import { Input } from '../components/Input';
-import { Navbar } from '../components/Navbar';
+import { Input } from '@/components/Input';
+import { Navbar } from '@/components/Navbar';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '../components/Select';
-import { api } from '../utils/api';
-import { type NextPageWithLayout } from '../utils/NextPageWithLayout';
+} from '@/components/Select';
+import { api } from '@/utils/api';
+import { type NextPageWithLayout } from '@/utils/NextPageWithLayout';
 
 const formInputValidator = z.object({
   name: z.string().min(3).max(255),

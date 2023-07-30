@@ -12,10 +12,10 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '../components/Accordion';
-import { Navbar } from '../components/Navbar';
-import { constants } from '../utils/constants';
-import { type NextPageWithLayout } from '../utils/NextPageWithLayout';
+} from '@/components/Accordion';
+import { Navbar } from '@/components/Navbar';
+import { constants } from '@/utils/constants';
+import { type NextPageWithLayout } from '@/utils/NextPageWithLayout';
 
 type FeatureCardProps = {
   emoji: ReactNode;

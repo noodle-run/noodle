@@ -1,7 +1,7 @@
 import { UserButton } from '@clerk/nextjs';
 
-import { DashboardLayout } from '../../layouts/dashboard';
-import { type NextPageWithLayout } from '../../utils/NextPageWithLayout';
+import { DashboardLayout } from '@/layouts/dashboard';
+import { type NextPageWithLayout } from '@/utils/NextPageWithLayout';
 
 const AppPage: NextPageWithLayout = () => {
   return (
