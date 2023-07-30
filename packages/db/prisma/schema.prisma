@@ -21,3 +21,10 @@ enum WaitingListReason {
   PROJECT
   BOTH
 }
+
+model Feedback {
+  id        String            @id @default(cuid())
+  email     String
+  message   String
+  createdAt DateTime          @default(now())
+}

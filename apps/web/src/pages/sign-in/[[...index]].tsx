@@ -2,7 +2,7 @@ import { SignIn } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
 import { useTheme } from 'next-themes';
 
-import { type NextPageWithLayout } from '../../utils/NextPageWithLayout';
+import { type NextPageWithLayout } from '@/utils/NextPageWithLayout';
 
 const SignInPage: NextPageWithLayout = () => {
   const { resolvedTheme } = useTheme();

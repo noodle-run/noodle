@@ -8,8 +8,8 @@ import { serialize } from 'next-mdx-remote/serialize';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
-import { Navbar } from '../components/Navbar';
-import { type NextPageWithLayout } from '../utils/NextPageWithLayout';
+import { Navbar } from '@/components/Navbar';
+import { type NextPageWithLayout } from '@/utils/NextPageWithLayout';
 
 type PageProps = {
   source: MDXRemoteSerializeResult;

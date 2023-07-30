@@ -1,6 +1,6 @@
 import { NoodleEditor } from '@noodle/editor';
 
-import { type NextPageWithLayout } from '../utils/NextPageWithLayout';
+import { type NextPageWithLayout } from '@/utils/NextPageWithLayout';
 
 const Editor: NextPageWithLayout = () => {
   return <NoodleEditor />;
