@@ -38,7 +38,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
             {getLayout(<Component {...pageProps} />)}
           </WrapBalancerProvider>
           <Analytics />
-          <ReactQueryDevtools initialIsOpen={false} />
+          <ReactQueryDevtools position="bottom-right" initialIsOpen={false} />
         </ThemeProvider>
       </ClerkProvider>
       <style jsx global>{`

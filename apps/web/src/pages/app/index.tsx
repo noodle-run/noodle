@@ -1,5 +1,6 @@
 import { UserButton } from '@clerk/nextjs';
 
+import { DashboardLayout } from '../../layouts/dashboard';
 import { type NextPageWithLayout } from '../../utils/NextPageWithLayout';
 
 const AppPage: NextPageWithLayout = () => {
@@ -10,5 +11,7 @@ const AppPage: NextPageWithLayout = () => {
     </main>
   );
 };
+
+AppPage.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>;
 
 export default AppPage;
