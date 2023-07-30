@@ -7,7 +7,7 @@ import { useMediaQuery } from 'usehooks-ts';
 
 import { Brand } from '@noodle/ui';
 
-import { constants } from '../utils/constants';
+import { constants } from '@/utils/constants';
 
 export const Navbar = () => {
   const [height, setHeight] = useState<'auto' | number>(0);

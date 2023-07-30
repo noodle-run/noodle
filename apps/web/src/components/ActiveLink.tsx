@@ -14,7 +14,7 @@ type ActiveLinkProps = LinkProps &
 const ActiveLink = forwardRef<HTMLAnchorElement, ActiveLinkProps>(
   ({ className, activeClassName, href, ...props }, ref) => {
     const router = useRouter();
-    const active = router.pathname === href;
+    const active = router.pathname.startsWith(href);
 
     return (
       <Link
