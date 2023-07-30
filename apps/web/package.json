@@ -17,6 +17,7 @@
   "dependencies": {
     "@clerk/nextjs": "^4.23.1",
     "@clerk/themes": "^1.7.5",
+    "@hookform/resolvers": "^3.1.1",
     "@noodle/api": "workspace:^",
     "@noodle/db": "workspace:^",
     "@noodle/editor": "workspace:^",
@@ -41,6 +42,7 @@
     "react": "18.2.0",
     "react-animate-height": "^3.2.2",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.2",
     "react-wrap-balancer": "^1.0.0",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
