@@ -18,7 +18,7 @@ const buttonVariants = cva(
         secondary:
           'text-gray-11 dark:text-graydark-11 hover:text-gray-12 hover:dark:text-graydark-12 hover:bg-gray-2 hover:dark:bg-graydark-2',
         inverse:
-          'text-gray-1 dark:text-graydark-1 bg-gray-12 dark:bg-graydark-12 hover:bg-gray-11 hover:dark:bg-graydark-11',
+          'text-gray-1 dark:text-graydark-1 bg-gray-12 dark:bg-graydark-12 hover:bg-gray-12/80 hover:dark:bg-graydark-12/80 disabled:opacity-50',
       },
       size: {
         sm: 'py-1.5 px-3',
