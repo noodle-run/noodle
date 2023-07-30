@@ -5,3 +5,4 @@ export * from './skeleton';
 export * from './avatar';
 export * from './tooltip';
 export * from './dialog';
+export * from './button';
