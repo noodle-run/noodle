@@ -48,7 +48,7 @@
   "packageManager": "pnpm@8.6.11",
   "engines": {
     "node": ">=v18.15.0",
-    "pnpm": ">=8.6.11"
+    "pnpm": ">=8.6.10"
   },
   "volta": {
     "node": "18.15.0",
