@@ -22,9 +22,9 @@
 
 ![Noodle Preview](https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/preview.png?raw=true)
 
-**This is a UI design mockup of what the platform will look like, it is not the current state of the project.**
+<p align="center" style="color:dodgerblue;"><strong>⚠️ This is a UI design mockup of what the platform will look like, it is not the current state of the project.</strong></p>
 
-## Features
+## Planned Features
 
 - 📁 Module/Subject Management
 - 📒 Note taking
