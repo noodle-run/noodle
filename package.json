@@ -36,7 +36,7 @@
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
-    "nx": "16.5.5",
+    "nx": "16.6.0",
     "nx-cloud": "16.1.1",
     "prettier": "^3.0.0",
     "prettier-plugin-jsdoc": "^1.0.1",
