@@ -4,82 +4,96 @@ import { cn } from '@noodle/utils';
 
 type TypographyProps = {
   className?: string;
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p';
 };
 
 const H1: FC<PropsWithChildren<TypographyProps>> = ({
   children,
   className,
+  as = 'h1',
 }) => {
+  const As = as;
   return (
-    <h1
+    <As
       className={cn(
         'scroll-m-20 text-5xl font-extrabold tracking-tighter lg:text-6xl',
         className,
       )}
     >
       {children}
-    </h1>
+    </As>
   );
 };
 
 const H2: FC<PropsWithChildren<TypographyProps>> = ({
   children,
   className,
+  as = 'h2',
 }) => {
+  const As = as;
   return (
-    <h2
+    <As
       className={cn(
         'scroll-m-20 text-4xl font-extrabold tracking-tighter lg:text-5xl',
         className,
       )}
     >
       {children}
-    </h2>
+    </As>
   );
 };
 
 const H3: FC<PropsWithChildren<TypographyProps>> = ({
   children,
   className,
+  as = 'h3',
 }) => {
+  const As = as;
   return (
-    <h3
+    <As
       className={cn(
         'scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl',
         className,
       )}
     >
       {children}
-    </h3>
+    </As>
   );
 };
 
 const H4: FC<PropsWithChildren<TypographyProps>> = ({
   children,
   className,
+  as = 'h4',
 }) => {
+  const As = as;
   return (
-    <h4
+    <As
       className={cn(
         'scroll-m-20 text-2xl font-bold tracking-tight lg:text-3xl',
         className,
       )}
     >
       {children}
-    </h4>
+    </As>
   );
 };
 
-const P: FC<PropsWithChildren<TypographyProps>> = ({ children, className }) => {
+const P: FC<PropsWithChildren<TypographyProps>> = ({
+  children,
+  className,
+  as = 'p',
+}) => {
+  const As = as;
   return (
-    <p
+    <As
       className={cn(
-        'text-gray-11 dark:text-graydark-11 leading-6 tracking-tight [&:not(:first-child)]:mt-6',
+        'text-gray-11 dark:text-graydark-11 leading-7 tracking-tight',
         className,
       )}
     >
       {children}
-    </p>
+    </As>
   );
 };
 
