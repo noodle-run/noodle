@@ -1,11 +1,14 @@
-import type { Session } from '@noodle/auth';
+import type {
+  SignedInAuthObject,
+  SignedOutAuthObject,
+} from '@clerk/nextjs/server';
+import { getAuth } from '@clerk/nextjs/server';
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
 
-import { getServerSession } from '@noodle/auth';
 import { prisma } from '@noodle/db';
 
 type ContextOptions = {
-  session: Session | null;
+  auth: SignedInAuthObject | SignedOutAuthObject;
 };
 
 export const createInnerContext = (opts: ContextOptions) => {
@@ -15,10 +18,10 @@ export const createInnerContext = (opts: ContextOptions) => {
   };
 };
 
-export const createContext = async ({ req, res }: CreateNextContextOptions) => {
-  const session = await getServerSession({ req, res });
+export const createContext = ({ req }: CreateNextContextOptions) => {
+  const auth = getAuth(req);
 
-  return createInnerContext({ session });
+  return createInnerContext({ auth });
 };
 
 export type Context = typeof createContext;

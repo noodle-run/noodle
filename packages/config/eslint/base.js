@@ -44,6 +44,14 @@ const config = {
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     'eslint-comments/no-unused-disable': 'error',
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksVoidReturn: {
+          attributes: false,
+        },
+      },
+    ],
   },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],

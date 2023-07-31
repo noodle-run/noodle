@@ -1,10 +1,10 @@
+import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 import { httpBatchLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
 import SuperJSON from 'superjson';
 
 import { type AppRouter } from '@noodle/api';
-
-import { getBaseUrl } from './getBaseUrl';
+import { getBaseUrl } from '@noodle/utils';
 
 export const api = createTRPCNext<AppRouter>({
   config() {
@@ -19,3 +19,6 @@ export const api = createTRPCNext<AppRouter>({
   },
   ssr: false,
 });
+
+export type RouterInputs = inferRouterInputs<AppRouter>;
+export type RouterOutputs = inferRouterOutputs<AppRouter>;

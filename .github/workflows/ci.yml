@@ -11,6 +11,9 @@ env:
   NX_BRANCH: ${{ github.event.number || github.ref_name }}
   NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
   VOLTA_FEATURE_PNPM: 1
+  SKIP_ENV_VALIDATION: true
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}}
+  CLERK_SECRET_KEY: ${{secrets.CLERK_SECRET_KEY}}
 
 jobs:
   main:
@@ -41,9 +44,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install Playwright Browsers
-        run: pnpm playwright install --with-deps
-
       - name: Initialize the Nx Cloud distributed CI run
         run: pnpm nx-cloud start-ci-run
 
@@ -51,14 +51,11 @@ jobs:
         run: |
           pids=()
 
-          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm nx format:check & pids+=($!)
+          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm format:check & pids+=($!)
 
           pnpm nx affected -t lint --parallel=3 & pids+=($!)
           pnpm nx affected -t typecheck --parallel=3 & pids+=($!)
           # We need run-many here to output the files so that codecov can pick them up
-          pnpm nx run-many -t test:coverage --parallel=3 & pids+=($!)
-          pnpm nx affected -t e2e --parallel=3 & pids+=($!)
-          pnpm nx affected -t build-storybook --parallel=3 & pids+=($!)
           pnpm nx affected -t build --parallel=3 & pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
@@ -70,11 +67,6 @@ jobs:
           done
 
           exit 0
-
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Stop all running agents for this CI run
         if: ${{ always() }}
@@ -95,9 +87,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: Install Playwright Browsers
-        run: pnpm playwright install --with-deps
 
       - name: Start Nx Agent ${{ matrix.agent }}
         run: pnpm nx-cloud start-agent

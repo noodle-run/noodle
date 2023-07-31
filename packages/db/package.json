@@ -18,6 +18,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@noodle/env": "workspace:^",
     "@prisma/client": "^5.0.0"
   },
   "devDependencies": {

@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to our project! Any contribution is highly appreciated and will be reflected on our project ✨
 
-First things first, make sure you read our [./CODE_OF_CONDUCT.md](Code of Conduct) to keep our community approachable and respectable.
+First things first, make sure you read our [Code of Conduct](./CODE_OF_CONDUCT.md) to keep our community approachable and respectable.
 
 In this guide, you will get an overview of the project structure and setup, as well as the workflow from opening an issue, creating a PR, reviewing, and merging the PR.
 
@@ -64,13 +64,9 @@ The actual stack:
 - [TailwindCSS](https://tailwindcss.com/)
 - [tRPC](https://trpc.io)
 - [Prisma](https://www.prisma.io/)
-- [Next-auth](https://next-auth.js.org/)
 
 Development stuff:
 
-- [Storybook](https://storybook.js.org/)
-- [Vitest](https://vitest.dev/)
-- [Playwright](https://playwright.dev/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io)
 
@@ -144,26 +140,11 @@ pnpm build
 # Run the built project in production mode
 pnpm start
 
-# Run the tests
-pnpm test
-
-# Run E2E tests
-pnpm test:e2e
-
-# Run the tests with coverage reporting
-pnpm test:coverage
-
-# Tests in watch mode
-pnpm test:watch
-
 # Lint
 pnpm lint
 
 # Format
 pnpm format:write
-
-# Storybook
-pnpm storybook
 ```
 
 Also, if in doubt and something is going wrong, `pnpm clean`.
