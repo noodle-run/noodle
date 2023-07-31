@@ -40,6 +40,10 @@ export default authMiddleware({
       return NextResponse.redirect(new URL('/app', req.url));
     }
 
+    if (!auth.userId && req.nextUrl.pathname.includes('/app')) {
+      return NextResponse.redirect(new URL('/', req.url));
+    }
+
     return NextResponse.next();
   },
   publicRoutes: [
