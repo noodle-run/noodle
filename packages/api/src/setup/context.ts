@@ -19,7 +19,9 @@ export const createInnerContext = (opts: ContextOptions) => {
 };
 
 export const createContext = ({ req }: CreateNextContextOptions) => {
-  return createInnerContext({ auth: getAuth(req) });
+  const auth = getAuth(req);
+
+  return createInnerContext({ auth });
 };
 
 export type Context = typeof createContext;
