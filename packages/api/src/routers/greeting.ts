@@ -1,4 +1,4 @@
-import { clerkClient, currentUser } from '@clerk/nextjs';
+import { clerkClient } from '@clerk/nextjs';
 import fetch from 'node-fetch';
 
 import { protectedProcedure } from '../middlewares/auth';
