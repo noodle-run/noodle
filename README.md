@@ -22,6 +22,8 @@
 
 ![Noodle Preview](https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/preview.png?raw=true)
 
+**This is a UI design mockup of what the platform will look like, it is not the current state of the project.**
+
 ## Features
 
 - 📁 Module/Subject Management
