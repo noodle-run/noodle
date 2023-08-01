@@ -120,7 +120,16 @@ You will need to create a postgres database and get the URL of it to use as the 
 
 We also use [Upstash](https://upstash.com/) for rate limiting and a redis instance.
 
-You will also need to configure [GitHub OAuth tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) to be able to use the authentication functionality of Noodle.
+You will also need to configure [Clerk](https://clerk.com/) to be able to use the authentication functionality of Noodle.
+
+###### How to configure Clerk
+
+1. Create your account through [Clerk's dashboard](https://dashboard.clerk.com/)
+2. Add a new application
+3. Set up it's name and how you wish to sign in
+4. In the sidebar, go to "API Keys"
+5. Copy the publishable key into `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` in your .env file
+6. Copy the secret key into `CLERK_SECRET_KEY` in your .env file
 
 Also, if you want your own personal [Nx Cloud](https://cloud.nx.app/) instance, you will need to create a project on Nx Cloud and replace the default read-only token provided.
 
