@@ -13,13 +13,18 @@
 > **Warning**
 > This is a work-in-progress and not the finished product.
 >
+> Noodle is in it's very early days of development and there is not much going on for the product right now.
+> We are working hard to providing an initial version as soon as possible and also accepting contributions.
+>
 > Feel free to leave feature suggestions but please don't open issues for bugs or support requests just yet.
 >
 > Follow me on twitter [@ixahmedxii](https://twitter.com/ixahmedxii) for updates.
 
 ![Noodle Preview](https://github.com/ixahmedxi/noodle/blob/main/apps/web/public/preview.png?raw=true)
 
-## Features
+<p align="center" style="color:dodgerblue;"><strong>⚠️ This is a UI design mockup of what the platform will look like, it is not the current state of the project.</strong></p>
+
+## Planned Features
 
 - 📁 Module/Subject Management
 - 📒 Note taking
