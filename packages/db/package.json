@@ -19,12 +19,12 @@
   },
   "dependencies": {
     "@noodle/env": "workspace:^",
-    "@prisma/client": "^5.0.0"
+    "@prisma/client": "^5.1.0"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
     "eslint-config-noodle": "workspace:^",
-    "prisma": "^5.0.0"
+    "prisma": "^5.1.0"
   },
   "volta": {
     "extends": "../../package.json"

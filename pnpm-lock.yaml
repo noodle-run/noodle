@@ -67,8 +67,8 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier-plugin-jsdoc@1.0.1)(prettier@3.0.0)
       prisma:
-        specifier: ^5.0.0
-        version: 5.0.0
+        specifier: ^5.1.0
+        version: 5.1.0
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
@@ -109,20 +109,20 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.2.0)(react@18.2.0)
       '@tanstack/react-query':
-        specifier: ^4.32.0
-        version: 4.32.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^4.32.1
+        version: 4.32.1(react-dom@18.2.0)(react@18.2.0)
       '@tanstack/react-query-devtools':
-        specifier: ^4.32.0
-        version: 4.32.0(@tanstack/react-query@4.32.0)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^4.32.1
+        version: 4.32.1(@tanstack/react-query@4.32.1)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/client':
         specifier: ^10.36.0
         version: 10.36.0(@trpc/server@10.36.0)
       '@trpc/next':
         specifier: ^10.36.0
-        version: 10.36.0(@tanstack/react-query@4.32.0)(@trpc/client@10.36.0)(@trpc/react-query@10.36.0)(@trpc/server@10.36.0)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
+        version: 10.36.0(@tanstack/react-query@4.32.1)(@trpc/client@10.36.0)(@trpc/react-query@10.36.0)(@trpc/server@10.36.0)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/react-query':
         specifier: ^10.36.0
-        version: 10.36.0(@tanstack/react-query@4.32.0)(@trpc/client@10.36.0)(@trpc/server@10.36.0)(react-dom@18.2.0)(react@18.2.0)
+        version: 10.36.0(@tanstack/react-query@4.32.1)(@trpc/client@10.36.0)(@trpc/server@10.36.0)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/server':
         specifier: ^10.36.0
         version: 10.36.0
@@ -300,8 +300,8 @@ importers:
         specifier: workspace:^
         version: link:../env
       '@prisma/client':
-        specifier: ^5.0.0
-        version: 5.0.0(prisma@5.0.0)
+        specifier: ^5.1.0
+        version: 5.1.0(prisma@5.1.0)
     devDependencies:
       '@noodle/tsconfig':
         specifier: workspace:^
@@ -310,8 +310,8 @@ importers:
         specifier: workspace:^
         version: link:../config/eslint
       prisma:
-        specifier: ^5.0.0
-        version: 5.0.0
+        specifier: ^5.1.0
+        version: 5.1.0
 
   packages/editor:
     dependencies:
@@ -1394,8 +1394,8 @@ packages:
       tslib: 2.6.1
     dev: true
 
-  /@prisma/client@5.0.0(prisma@5.0.0):
-    resolution: {integrity: sha512-XlO5ELNAQ7rV4cXIDJUNBEgdLwX3pjtt9Q/RHqDpGf43szpNJx2hJnggfFs7TKNx0cOFsl6KJCSfqr5duEU/bQ==}
+  /@prisma/client@5.1.0(prisma@5.1.0):
+    resolution: {integrity: sha512-aIxuXlH3p3Vy91buodQhYgAD9m0yuxJzpXMhc1ejQ/WN3pNNWzBA0iDcBObLq8DMdszcXmoLAk3hiRq/ZwBsOw==}
     engines: {node: '>=16.13'}
     requiresBuild: true
     peerDependencies:
@@ -1404,16 +1404,16 @@ packages:
       prisma:
         optional: true
     dependencies:
-      '@prisma/engines-version': 4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584
-      prisma: 5.0.0
+      '@prisma/engines-version': 5.1.0-28.a9b7003df90aa623086e4d6f4e43c72468e6339b
+      prisma: 5.1.0
     dev: false
 
-  /@prisma/engines-version@4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584:
-    resolution: {integrity: sha512-HHiUF6NixsldsP3JROq07TYBLEjXFKr6PdH8H4gK/XAoTmIplOJBCgrIUMrsRAnEuGyRoRLXKXWUb943+PFoKQ==}
+  /@prisma/engines-version@5.1.0-28.a9b7003df90aa623086e4d6f4e43c72468e6339b:
+    resolution: {integrity: sha512-jTwE2oy1yjICmTfnCR0ASIpuMZXZ18sUzQXB7V0RMbrM9OlcmbUwXPuYhnxXuWN8XwRmujeIhsXs/Zeh+fjPOQ==}
     dev: false
 
-  /@prisma/engines@5.0.0:
-    resolution: {integrity: sha512-kyT/8fd0OpWmhAU5YnY7eP31brW1q1YrTGoblWrhQJDiN/1K+Z8S1kylcmtjqx5wsUGcP1HBWutayA/jtyt+sg==}
+  /@prisma/engines@5.1.0:
+    resolution: {integrity: sha512-HqaFsnPmZOdMWkPq6tT2eTVTQyaAXEDdKszcZ4yc7DGMBIYRP6j/zAJTtZUG9SsMV8FaucdL5vRyxY/p5Ni28g==}
     requiresBuild: true
 
   /@radix-ui/colors@1.0.1:
@@ -2218,15 +2218,19 @@ packages:
     resolution: {integrity: sha512-ei4IYwL2kmlKSlCw9WgvV7PpXi0MiswVwfQRxawhJA690zWO3dU49igaQ/UMTl+Jy9jj9dK5IKAYvbX7kUvviQ==}
     dev: false
 
-  /@tanstack/react-query-devtools@4.32.0(@tanstack/react-query@4.32.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-rOmWqzKzRmQrQULV5Ova2FGEEPT76FZA3hz8T+LFkvp3ehw9ugSZ1BosgRJ7AFCeir+5pcNvFwILy4pDK8HpRw==}
+  /@tanstack/query-core@4.32.1:
+    resolution: {integrity: sha512-VEAGHboOFWN/bvf/7cCoeLQfld0AA8n0V/kfc77W+FvxnnSwJufEh6gfjqpX5bRE/DEYfYDYdNtuL3KM+lIs8Q==}
+    dev: false
+
+  /@tanstack/react-query-devtools@4.32.1(@tanstack/react-query@4.32.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-/ZgxCfGXLIXUvaIRzrNCP+C4iv1bIleNzXCjGKFZ4qKEifnv5A/SpWE2dG4SBjqXVlIkMAP82lesfoHcsOm+zg==}
     peerDependencies:
-      '@tanstack/react-query': 4.32.0
+      '@tanstack/react-query': 4.32.1
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@tanstack/match-sorter-utils': 8.8.4
-      '@tanstack/react-query': 4.32.0(react-dom@18.2.0)(react@18.2.0)
+      '@tanstack/react-query': 4.32.1(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       superjson: 1.13.1
@@ -2246,6 +2250,24 @@ packages:
         optional: true
     dependencies:
       '@tanstack/query-core': 4.32.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  /@tanstack/react-query@4.32.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-lPTfOq6bR6DorPaS018gTMd3zs8r06tlERiVY6BRP9SnDkkl4ckqeANava/jPLWrSZP+EA15loQUTmvZs6k2GA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 4.32.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       use-sync-external-store: 1.2.0(react@18.2.0)
@@ -2280,6 +2302,27 @@ packages:
       react-ssr-prepass: 1.5.0(react@18.2.0)
     dev: false
 
+  /@trpc/next@10.36.0(@tanstack/react-query@4.32.1)(@trpc/client@10.36.0)(@trpc/react-query@10.36.0)(@trpc/server@10.36.0)(next@13.4.12)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-R0DYUMXkzKGQy49vvVou1fqOu459D47OsejwhMUktTNadTpUAuaE8SM0mo9a/faK59NhdlihDvRGq74PHupIkQ==}
+    peerDependencies:
+      '@tanstack/react-query': ^4.18.0
+      '@trpc/client': 10.36.0
+      '@trpc/react-query': 10.36.0
+      '@trpc/server': 10.36.0
+      next: '*'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@tanstack/react-query': 4.32.1(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/client': 10.36.0(@trpc/server@10.36.0)
+      '@trpc/react-query': 10.36.0(@tanstack/react-query@4.32.1)(@trpc/client@10.36.0)(@trpc/server@10.36.0)(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/server': 10.36.0
+      next: 13.4.12(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-ssr-prepass: 1.5.0(react@18.2.0)
+    dev: false
+
   /@trpc/react-query@10.36.0(@tanstack/react-query@4.32.0)(@trpc/client@10.36.0)(@trpc/server@10.36.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-ueIdfP/Xl4DIeBLMh6hEb0QdvcUjDZ+V+4lzIuztmkpRIvL4ZpwyBS7TGbKs+1EUwWu42AJB0t8n/LrtO6MxgQ==}
     peerDependencies:
@@ -2290,6 +2333,22 @@ packages:
       react-dom: '>=16.8.0'
     dependencies:
       '@tanstack/react-query': 4.32.0(react-dom@18.2.0)(react@18.2.0)
+      '@trpc/client': 10.36.0(@trpc/server@10.36.0)
+      '@trpc/server': 10.36.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@trpc/react-query@10.36.0(@tanstack/react-query@4.32.1)(@trpc/client@10.36.0)(@trpc/server@10.36.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ueIdfP/Xl4DIeBLMh6hEb0QdvcUjDZ+V+4lzIuztmkpRIvL4ZpwyBS7TGbKs+1EUwWu42AJB0t8n/LrtO6MxgQ==}
+    peerDependencies:
+      '@tanstack/react-query': ^4.18.0
+      '@trpc/client': 10.36.0
+      '@trpc/server': 10.36.0
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@tanstack/react-query': 4.32.1(react-dom@18.2.0)(react@18.2.0)
       '@trpc/client': 10.36.0(@trpc/server@10.36.0)
       '@trpc/server': 10.36.0
       react: 18.2.0
@@ -8024,13 +8083,13 @@ packages:
     hasBin: true
     dev: true
 
-  /prisma@5.0.0:
-    resolution: {integrity: sha512-KYWk83Fhi1FH59jSpavAYTt2eoMVW9YKgu8ci0kuUnt6Dup5Qy47pcB4/TLmiPAbhGrxxSz7gsSnJcCmkyPANA==}
+  /prisma@5.1.0:
+    resolution: {integrity: sha512-wkXvh+6wxk03G8qwpZMOed4Y3j+EQ+bMTlvbDZHeal6k1E8QuGKzRO7DRXlE1NV0WNgOAas8kwZqcLETQ2+BiQ==}
     engines: {node: '>=16.13'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 5.0.0
+      '@prisma/engines': 5.1.0
 
   /prismjs@1.29.0:
     resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
