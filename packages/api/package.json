@@ -6,23 +6,8 @@
   "license": "AGPL-3.0",
   "author": "Ahmed Elsakaan",
   "type": "module",
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "main": "./dist/index.js",
-  "typesVersions": {
-    "*": {
-      ".": [
-        "./dist/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
+  "main": "./src/index.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "dev": "pnpm run build --watch",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "pnpm run lint --fix",
     "typecheck": "tsc --noEmit"

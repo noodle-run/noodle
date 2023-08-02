@@ -14,6 +14,7 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  transpilePackages: ['@noodle/api', '@noodle/db'],
 };
 
 export default config;
