@@ -30,7 +30,6 @@
     "@noodle/tsconfig": "workspace:^",
     "@types/eslint": "^8.44.1",
     "@types/node": "^20.4.5",
-    "@types/prettier": "^3.0.0",
     "del-cli": "^5.0.0",
     "eslint": "^8.46.0",
     "eslint-config-noodle": "workspace:^",
