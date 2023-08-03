@@ -41,7 +41,7 @@
     "prettier-plugin-jsdoc": "^1.0.1",
     "prettier-plugin-packagejson": "^2.4.5",
     "prettier-plugin-tailwindcss": "^0.4.1",
-    "prisma": "^5.1.0",
+    "prisma": "^5.1.1",
     "typescript": "^5.1.6"
   },
   "packageManager": "pnpm@8.6.11",
