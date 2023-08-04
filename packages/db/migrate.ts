@@ -5,13 +5,13 @@ import postgres from 'postgres';
 
 import { env } from '@noodle/env';
 
-const databaseUrl = drizzle(
-  postgres(`${env.DATABASE_URL}`, { ssl: 'require', max: 1 }),
-);
-
 const main = async () => {
   if (process.env['VERCEL']) {
     try {
+      const databaseUrl = drizzle(
+        postgres(`${env.DATABASE_URL}`, { ssl: 'require', max: 1 }),
+      );
+
       await migrate(databaseUrl, { migrationsFolder: 'drizzle' });
       console.log('\n🚀 Migration complete!');
     } catch (error) {
