@@ -41,7 +41,7 @@ export default authMiddleware({
     }
 
     if (!auth.userId && req.nextUrl.pathname.includes('/app')) {
-      return NextResponse.redirect(new URL('/', req.url));
+      return NextResponse.redirect(new URL('/sign-in', req.url));
     }
 
     return NextResponse.next();
