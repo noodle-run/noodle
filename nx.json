@@ -41,11 +41,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [
-        "{projectRoot}/dist",
-        "{projectRoot}/.next",
-        "!{projectRoot}/.next/cache"
-      ],
+      "outputs": ["{projectRoot}/dist", "{projectRoot}/.next/!(cache)"],
       "inputs": ["production", "^production"]
     },
     "start": {
