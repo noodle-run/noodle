@@ -6,3 +6,4 @@ dist
 playwright-report
 test-results
 .all-contributorsrc
+packages/db/drizzle

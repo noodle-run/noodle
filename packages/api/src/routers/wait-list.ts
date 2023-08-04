@@ -1,29 +1,31 @@
 import { TRPCError } from '@trpc/server';
-import { z } from 'zod';
+
+import {
+  insertWaitingListSchema,
+  waitingListTable,
+} from '@noodle/db/src/schema';
 
 import { t } from '../setup/trpc';
 
 export const waitListRouter = t.router({
   addEmailToWaitList: t.procedure
-    .input(
-      z.object({
-        email: z.string().email(),
-        name: z.string().min(3).max(255),
-        reason: z.enum(['STUDENT', 'PROJECT', 'BOTH']),
-      }),
-    )
+    .input(insertWaitingListSchema)
     .mutation(async ({ ctx, input }) => {
+      const { email, name, reason } = input;
       try {
-        await ctx.prisma.waitingList.create({
-          data: {
-            email: input.email,
-            name: input.name,
-            reason: input.reason,
-          },
+        await ctx.db.insert(waitingListTable).values({
+          email,
+          name,
+          reason,
         });
-      } catch (err: unknown) {
-        const error = err as { code: string; message: string };
-        if (error.code === 'P2002') {
+      } catch (err) {
+        const error = err as Error;
+
+        if (
+          error.message.includes(
+            'duplicate key value violates unique constraint',
+          )
+        ) {
           throw new TRPCError({
             code: 'BAD_REQUEST',
             message: 'The email address is already on the waitlist.',

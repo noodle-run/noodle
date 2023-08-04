@@ -1,24 +1,17 @@
-import { PrismaClient } from '@prisma/client';
+import { neon, neonConfig } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/neon-http';
 
 import { env } from '@noodle/env';
 
-export * from '@prisma/client';
+import * as schema from './schema';
 
-const globalForPrisma = globalThis as { prisma?: PrismaClient };
+neonConfig.fetchConnectionCache = true;
 
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
-    datasources: {
-      db: {
-        url: `${env.DATABASE_URL.replace(
-          '.eu-central-1',
-          '-pooler.eu-central-1',
-        )}?pgbouncer=true&connect_timeout=15&pool_timeout=15`,
-      },
-    },
-    log:
-      env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
-  });
+const sql = neon(env.DATABASE_URL);
 
-if (env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+export * from 'drizzle-orm';
+
+export const db = drizzle(sql, {
+  schema,
+  logger: env.NODE_ENV === 'development',
+});
