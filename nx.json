@@ -11,8 +11,7 @@
           "lint",
           "lint:fix",
           "typecheck",
-          "generate",
-          "run-migrations"
+          "generate"
         ],
         "accessToken": "NzIyMjllYzgtMzlkYS00N2U4LThjOGItOGU3YzM0OGQyMTk2fHJlYWQtb25seQ=="
       }

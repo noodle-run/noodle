@@ -25,5 +25,4 @@ const main = async () => {
 };
 
 void main();
-
 /* eslint-enable no-console */
