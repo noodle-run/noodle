@@ -10,7 +10,7 @@ const databaseUrl = drizzle(
 );
 
 const main = async () => {
-  if (!process.env['VERCEL']) {
+  if (typeof process.env['VERCEL'] === 'undefined') {
     return;
   }
 
