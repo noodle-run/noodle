@@ -5,7 +5,7 @@ import type {
 import { getAuth } from '@clerk/nextjs/server';
 import { type CreateNextContextOptions } from '@trpc/server/adapters/next';
 
-import { prisma } from '@noodle/db';
+import { db } from '@noodle/db';
 
 type ContextOptions = {
   auth: SignedInAuthObject | SignedOutAuthObject;
@@ -14,7 +14,7 @@ type ContextOptions = {
 export const createInnerContext = (opts: ContextOptions) => {
   return {
     ...opts,
-    prisma,
+    db,
   };
 };
 

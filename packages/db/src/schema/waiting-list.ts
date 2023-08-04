@@ -36,5 +36,6 @@ export const waitingListTable = pgTable(
 );
 
 export const insertWaitingListSchema = createInsertSchema(waitingListTable, {
+  name: (schema) => schema.name,
   email: (schema) => schema.email.email(),
 });

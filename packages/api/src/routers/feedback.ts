@@ -1,27 +1,25 @@
 import { TRPCError } from '@trpc/server';
-import { z } from 'zod';
+
+import { eq, sql } from '@noodle/db';
+import { feedbackTable, insertFeedbackSchema } from '@noodle/db/src/schema';
 
 import { protectedProcedure } from '../middlewares/auth';
 import { createRouter } from '../setup/trpc';
 
 export const feedbackRouter = createRouter({
   add: protectedProcedure
-    .input(
-      z.object({
-        email: z.string().email(),
-        message: z.string().min(3),
-      }),
-    )
+    .input(insertFeedbackSchema)
     .mutation(async ({ input, ctx }) => {
       const { email, message } = input;
 
-      const countOfFeedbacksForEmail = await ctx.prisma.feedback.count({
-        where: {
-          email,
-        },
-      });
+      const [countRes] = await ctx.db
+        .select({
+          count: sql<number>`count(*)`.mapWith(Number),
+        })
+        .from(feedbackTable)
+        .where(eq(feedbackTable.email, email));
 
-      if (countOfFeedbacksForEmail > 4) {
+      if (countRes!.count > 4) {
         throw new TRPCError({
           code: 'BAD_REQUEST',
           message: 'You have already submitted 5 feedbacks',
@@ -29,15 +27,16 @@ export const feedbackRouter = createRouter({
       }
 
       try {
-        const entry = await ctx.prisma.feedback.create({
-          data: {
+        const [res] = await ctx.db
+          .insert(feedbackTable)
+          .values({
             email,
             message,
-          },
-        });
+          })
+          .returning();
 
-        return entry;
-      } catch (e) {
+        return res;
+      } catch {
         throw new TRPCError({
           code: 'INTERNAL_SERVER_ERROR',
           message:
