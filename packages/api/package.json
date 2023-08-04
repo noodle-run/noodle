@@ -13,10 +13,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.23.1",
+    "@clerk/nextjs": "^4.23.2",
     "@noodle/db": "workspace:^",
-    "@trpc/next": "^10.36.0",
-    "@trpc/server": "^10.36.0",
+    "@trpc/next": "^10.37.1",
+    "@trpc/server": "^10.37.1",
     "got": "^13.0.0",
     "node-fetch": "^3.3.2",
     "superjson": "^1.13.1",
