@@ -10,18 +10,18 @@ const databaseUrl = drizzle(
 );
 
 const main = async () => {
-  if (typeof process.env['VERCEL'] === 'undefined') {
-    return;
+  if (process.env['VERCEL']) {
+    try {
+      await migrate(databaseUrl, { migrationsFolder: 'drizzle' });
+      console.log('\n🚀 Migration complete!');
+    } catch (error) {
+      console.log(error);
+    }
+
+    process.exit(0);
   }
 
-  try {
-    await migrate(databaseUrl, { migrationsFolder: 'drizzle' });
-    console.log('\n🚀 Migration complete!');
-  } catch (error) {
-    console.log(error);
-  }
-
-  process.exit(0);
+  console.log('Not running on Vercel, skipping migration');
 };
 
 void main();
