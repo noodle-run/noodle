@@ -63,7 +63,7 @@ The actual stack:
 - [Next.js](https://nextjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [tRPC](https://trpc.io)
-- [Prisma](https://www.prisma.io/)
+- [Drizzle ORM](https://orm.drizzle.team/)
 
 Development stuff:
 
