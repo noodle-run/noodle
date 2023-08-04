@@ -6,7 +6,14 @@
     "default": {
       "runner": "nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "lint:fix", "typecheck"],
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "lint:fix",
+          "typecheck",
+          "generate",
+          "run-migrations"
+        ],
         "accessToken": "NzIyMjllYzgtMzlkYS00N2U4LThjOGItOGU3YzM0OGQyMTk2fHJlYWQtb25seQ=="
       }
     }
@@ -40,9 +47,12 @@
       "inputs": ["lint"]
     },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^run-migrations", "^build"],
       "outputs": ["{projectRoot}/dist", "{projectRoot}/.next/!(cache)"],
       "inputs": ["production", "^production"]
+    },
+    "run-migrations": {
+      "dependsOn": ["generate"]
     },
     "start": {
       "dependsOn": ["build"]

@@ -10,6 +10,10 @@ const databaseUrl = drizzle(
 );
 
 const main = async () => {
+  if (!process.env['VERCEL']) {
+    return;
+  }
+
   try {
     await migrate(databaseUrl, { migrationsFolder: 'drizzle' });
     console.log('\n🚀 Migration complete!');
