@@ -20,7 +20,7 @@ importers:
         version: 17.6.7
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.1.0
-        version: 4.1.0(prettier@3.0.0)
+        version: 4.1.0(prettier@3.0.1)
       '@noodle/tsconfig':
         specifier: workspace:^
         version: link:packages/config/tsconfig
@@ -52,17 +52,17 @@ importers:
         specifier: 16.2.0
         version: 16.2.0
       prettier:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.0.1
+        version: 3.0.1
       prettier-plugin-jsdoc:
         specifier: ^1.0.1
-        version: 1.0.1(prettier@3.0.0)
+        version: 1.0.1(prettier@3.0.1)
       prettier-plugin-packagejson:
         specifier: ^2.4.5
-        version: 2.4.5(prettier@3.0.0)
+        version: 2.4.5(prettier@3.0.1)
       prettier-plugin-tailwindcss:
         specifier: ^0.4.1
-        version: 0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier-plugin-jsdoc@1.0.1)(prettier@3.0.0)
+        version: 0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier-plugin-jsdoc@1.0.1)(prettier@3.0.1)
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
@@ -1462,7 +1462,7 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@ianvs/prettier-plugin-sort-imports@4.1.0(prettier@3.0.0):
+  /@ianvs/prettier-plugin-sort-imports@4.1.0(prettier@3.0.1):
     resolution: {integrity: sha512-IAXeTLU24k6mRPa6mFbW1qZJ/j0m3OeH44wyijWyr+YqqdNtBnfHxAntOAATS9iDfrT01NesKGsdzqnXdDQa/A==}
     peerDependencies:
       '@vue/compiler-sfc': '>=3.0.0'
@@ -1476,7 +1476,7 @@ packages:
       '@babel/parser': 7.22.7
       '@babel/traverse': 7.22.8
       '@babel/types': 7.22.5
-      prettier: 3.0.0
+      prettier: 3.0.1
       semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
@@ -8796,7 +8796,7 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-jsdoc@1.0.1(prettier@3.0.0):
+  /prettier-plugin-jsdoc@1.0.1(prettier@3.0.1):
     resolution: {integrity: sha512-07q74MfX9m+xHK2+Lr4c+igiEzAKVDWhqkvlm65WoYJUlRiaV6STXcEtcZMhrPPYgNeQRgb9FJmgE/n+OI4MpQ==}
     engines: {node: '>=14.13.1 || >=16.0.0'}
     peerDependencies:
@@ -8805,12 +8805,12 @@ packages:
       binary-searching: 2.0.5
       comment-parser: 1.3.1
       mdast-util-from-markdown: 1.3.1
-      prettier: 3.0.0
+      prettier: 3.0.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /prettier-plugin-packagejson@2.4.5(prettier@3.0.0):
+  /prettier-plugin-packagejson@2.4.5(prettier@3.0.1):
     resolution: {integrity: sha512-glG71jE1gO3y5+JNAhC8X+4yrlN28rub6Aj461SKbaPie9RgMiHKcInH2Moi2VGOfkTXaEHBhg4uVMBqa+kBUA==}
     peerDependencies:
       prettier: '>= 1.16.0'
@@ -8818,12 +8818,12 @@ packages:
       prettier:
         optional: true
     dependencies:
-      prettier: 3.0.0
+      prettier: 3.0.1
       sort-package-json: 2.5.1
       synckit: 0.8.5
     dev: true
 
-  /prettier-plugin-tailwindcss@0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier-plugin-jsdoc@1.0.1)(prettier@3.0.0):
+  /prettier-plugin-tailwindcss@0.4.1(@ianvs/prettier-plugin-sort-imports@4.1.0)(prettier-plugin-jsdoc@1.0.1)(prettier@3.0.1):
     resolution: {integrity: sha512-hwn2EiJmv8M+AW4YDkbjJ6HlZCTzLyz1QlySn9sMuKV/Px0fjwldlB7tol8GzdgqtkdPtzT3iJ4UzdnYXP25Ag==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
@@ -8875,13 +8875,13 @@ packages:
       prettier-plugin-twig-melody:
         optional: true
     dependencies:
-      '@ianvs/prettier-plugin-sort-imports': 4.1.0(prettier@3.0.0)
-      prettier: 3.0.0
-      prettier-plugin-jsdoc: 1.0.1(prettier@3.0.0)
+      '@ianvs/prettier-plugin-sort-imports': 4.1.0(prettier@3.0.1)
+      prettier: 3.0.1
+      prettier-plugin-jsdoc: 1.0.1(prettier@3.0.1)
     dev: true
 
-  /prettier@3.0.0:
-    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+  /prettier@3.0.1:
+    resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
