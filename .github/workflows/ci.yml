@@ -55,7 +55,7 @@ jobs:
 
           pnpm nx affected -t lint --parallel=3 & pids+=($!)
           pnpm nx affected -t typecheck --parallel=3 & pids+=($!)
-          pnpm nx run-many -t build --parallel=3 & pids+=($!)
+          pnpm nx affected -t build --parallel=3 & pids+=($!)
 
           # run all commands in parallel and bail if one of them fails
           for pid in "${pids[@]}"; do
