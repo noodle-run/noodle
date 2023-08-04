@@ -11,4 +11,7 @@ const sql = neon(env.DATABASE_URL);
 
 export * from 'drizzle-orm';
 
-export const db = drizzle(sql, { schema, logger: true });
+export const db = drizzle(sql, {
+  schema,
+  logger: env.NODE_ENV === 'development',
+});
