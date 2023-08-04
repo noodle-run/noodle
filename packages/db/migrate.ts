@@ -6,7 +6,7 @@ import postgres from 'postgres';
 import { env } from '@noodle/env';
 
 const main = async () => {
-  if (process.env['VERCEL']) {
+  if (process.env['VERCEL'] ?? process.env['NODE_ENV'] === 'development') {
     try {
       const databaseUrl = drizzle(
         postgres(`${env.DATABASE_URL}`, { ssl: 'require', max: 1 }),
