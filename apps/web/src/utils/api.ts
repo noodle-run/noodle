@@ -6,6 +6,8 @@ import SuperJSON from 'superjson';
 import { type AppRouter } from '@noodle/api';
 import { getBaseUrl } from '@noodle/utils';
 
+import type {} from '@noodle/db/src/schema';
+
 export const api = createTRPCNext<AppRouter>({
   config() {
     return {

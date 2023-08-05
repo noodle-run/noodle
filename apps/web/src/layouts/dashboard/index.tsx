@@ -75,6 +75,7 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
 
           <div className="flex flex-row-reverse items-center gap-4">
             <UserButton
+              afterSignOutUrl="/"
               appearance={{
                 baseTheme: dark,
               }}

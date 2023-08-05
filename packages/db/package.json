@@ -2,29 +2,34 @@
   "name": "@noodle/db",
   "version": "0.1.0",
   "private": true,
-  "description": "Noodle's prisma database package",
+  "description": "Noodle's Drizzle ORM database package",
   "license": "AGPL-3.0",
   "author": "Ahmed Elsakaan",
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./src/index.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push",
-    "db:studio": "prisma studio",
-    "dev": "pnpm run build --watch",
+    "generate": "drizzle-kit generate:pg",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "pnpm run lint --fix",
+    "pull": "drizzle-kit introspect:pg",
+    "push": "drizzle-kit push:pg",
+    "run-migrations": "tsx ./migrate.ts",
+    "studio": "drizzle-kit studio",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.5.6",
     "@noodle/env": "workspace:^",
-    "@prisma/client": "^5.1.0"
+    "drizzle-orm": "^0.27.2",
+    "drizzle-zod": "^0.4.4",
+    "pg": "^8.11.2",
+    "postgres": "^3.3.5"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
+    "drizzle-kit": "^0.19.12",
     "eslint-config-noodle": "workspace:^",
-    "prisma": "^5.1.0"
+    "tsx": "^3.12.7"
   },
   "volta": {
     "extends": "../../package.json"

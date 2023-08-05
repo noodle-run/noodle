@@ -13,7 +13,6 @@
     "dev": "pnpm nx run-many -t dev --parallel=99 --output-style=stream",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
-    "postinstall": "prisma generate",
     "lint": "pnpm nx run-many -t lint",
     "lint:fix": "pnpm nx run-many -t lint:fix",
     "prepare": "husky install",
@@ -29,8 +28,7 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@noodle/tsconfig": "workspace:^",
     "@types/eslint": "^8.44.1",
-    "@types/node": "^20.4.5",
-    "@types/prettier": "^3.0.0",
+    "@types/node": "^20.4.7",
     "del-cli": "^5.0.0",
     "eslint": "^8.46.0",
     "eslint-config-noodle": "workspace:^",
@@ -38,11 +36,10 @@
     "lint-staged": "^13.2.3",
     "nx": "16.6.0",
     "nx-cloud": "16.2.0",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.1",
     "prettier-plugin-jsdoc": "^1.0.1",
     "prettier-plugin-packagejson": "^2.4.5",
     "prettier-plugin-tailwindcss": "^0.4.1",
-    "prisma": "^5.1.0",
     "typescript": "^5.1.6"
   },
   "packageManager": "pnpm@8.6.11",
@@ -53,8 +50,5 @@
   "volta": {
     "node": "18.15.0",
     "pnpm": "8.6.11"
-  },
-  "prisma": {
-    "schema": "packages/db/prisma/schema.prisma"
   }
 }

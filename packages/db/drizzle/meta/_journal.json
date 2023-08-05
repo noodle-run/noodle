@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1691160717908,
+      "tag": "0000_sudden_the_executioner",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1691160742724,
+      "tag": "0001_modern_silk_fever",
+      "breakpoints": true
+    }
+  ]
+}
