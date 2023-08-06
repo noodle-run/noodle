@@ -15,6 +15,20 @@
       "when": 1691160742724,
       "tag": "0001_modern_silk_fever",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1691275322853,
+      "tag": "0002_clean_black_bolt",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1691275851664,
+      "tag": "0003_boring_abomination",
+      "breakpoints": true
     }
   ]
 }

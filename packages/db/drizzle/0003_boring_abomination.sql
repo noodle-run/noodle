@@ -1,0 +1,1 @@
+ALTER TABLE "Module" ALTER COLUMN "icon" SET DEFAULT 'graduation-cap';

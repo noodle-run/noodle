@@ -15,3 +15,5 @@ export const db = drizzle(sql, {
   schema,
   logger: env.NODE_ENV === 'development',
 });
+
+export * as schema from './schema';
