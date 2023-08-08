@@ -120,7 +120,7 @@ const FeedbackForm: FC<{ email?: string | undefined }> = ({ email }) => {
   );
 };
 
-export const FeedbackDialog = () => {
+export const FeedbackDialog = ({ showText }: any) => {
   const { user } = useUser();
 
   return (
@@ -128,7 +128,9 @@ export const FeedbackDialog = () => {
       <DialogTrigger asChild>
         <Button variant="muted" className="w-full">
           <Icon name="badge-help" />
-          Provide feedback
+          <span className={showText ? 'block' : 'hidden'}>
+            Provide feedback
+          </span>
         </Button>
       </DialogTrigger>
 

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { FC, PropsWithChildren } from 'react';
 import { UserButton } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
@@ -12,10 +13,40 @@ import { pageLinks } from './static-data';
 
 const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter();
+  const [isMaximized, setIsMaximized] = useState(true);
+
+  function SideMenuToggle() {
+    if (!isMaximized) {
+      return (
+        <Button
+          type="button"
+          variant="muted"
+          size="icon"
+          onClick={() => {
+            setIsMaximized(true);
+          }}
+        >
+          <Icon name="panel-left-open" />
+        </Button>
+      );
+    }
+    return (
+      <Button
+        type="button"
+        variant="muted"
+        size="icon"
+        onClick={() => {
+          setIsMaximized(false);
+        }}
+      >
+        <Icon name="panel-left-close" />
+      </Button>
+    );
+  }
 
   return (
     <div className="flex min-h-screen gap-6 p-6">
-      <aside className="flex min-w-[220px] flex-col justify-between">
+      <aside className="flex min-w-[45px] flex-col justify-between">
         <div>
           <div className="pl-4">
             <Brand size={35} />
@@ -30,7 +61,9 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
                     activeClassName="text-gray-12 dark:text-graydark-12"
                   >
                     <Icon name={link.icon} />
-                    <span>{link.label}</span>
+                    <span className={isMaximized ? 'block' : 'hidden'}>
+                      {link.label}
+                    </span>
                   </ActiveLink>
                 </Button>
               </li>
@@ -39,16 +72,14 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
         </div>
 
         <div>
-          <FeedbackDialog />
+          <FeedbackDialog showText={isMaximized} />
         </div>
       </aside>
 
       <div className="border-gray-3 dark:border-graydark-3 flex flex-1 flex-col rounded-2xl border px-6 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Button type="button" variant="muted" size="icon">
-              <Icon name="panel-left-close" />
-            </Button>
+            <SideMenuToggle />
             <div className="flex items-center">
               <Button
                 type="button"
