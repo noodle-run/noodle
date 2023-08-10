@@ -27,15 +27,15 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.6",
     "class-variance-authority": "^0.7.0",
-    "lucide-react": "^0.263.1",
+    "lucide-react": "^0.265.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.45.2"
+    "react-hook-form": "^7.45.4"
   },
   "devDependencies": {
     "@noodle/tailwind": "workspace:^",
     "@noodle/tsconfig": "workspace:^",
-    "@types/react": "18.2.18",
+    "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.27",
