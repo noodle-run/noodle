@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import type { MouseEventHandler } from 'react';
-import { Github, Menu, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { useMediaQuery } from 'usehooks-ts';
 
 import { Brand } from '@noodle/ui';
 
 import { constants } from '@/utils/constants';
+import { Icon } from './Icon';
 
 export const Navbar = () => {
   const [height, setHeight] = useState<'auto' | number>(0);
@@ -32,16 +32,16 @@ export const Navbar = () => {
 
   const smoothScrollToId =
     (id: string): MouseEventHandler<HTMLAnchorElement> =>
-    (e) => {
-      if (location.pathname === '/') {
-        e.preventDefault();
-        window.scrollTo({
-          top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
-          behavior: 'smooth',
-        });
-        isMobile && setHeight(0);
-      }
-    };
+      (e) => {
+        if (location.pathname === '/') {
+          e.preventDefault();
+          window.scrollTo({
+            top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
+            behavior: 'smooth',
+          });
+          isMobile && setHeight(0);
+        }
+      };
 
   return (
     <nav className="bg-gray-1 dark:bg-graydark-1 container fixed left-1/2 top-0 z-50 -translate-x-1/2 pb-4 pt-4 lg:bg-transparent lg:pb-0 lg:pt-8 lg:dark:bg-transparent">
@@ -116,7 +116,7 @@ export const Navbar = () => {
               rel="noopener noreferrer"
               className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 flex items-center px-2 transition-colors"
             >
-              <Github size={20} />
+              <Icon name="github" size={20} />
             </a>
           </li>
           <li>
@@ -126,7 +126,7 @@ export const Navbar = () => {
               rel="noopener noreferrer"
               className="text-gray-11 dark:text-graydark-11 dark:hover:text-graydark-12 hover:text-gray-12 flex items-center px-2 transition-colors"
             >
-              <Twitter size={20} />
+              <Icon name="twitter" size={20} />
             </a>
           </li>
 
@@ -141,7 +141,7 @@ export const Navbar = () => {
               }}
             >
               <span className="sr-only">Open Menu</span>
-              <Menu size={20} />
+              <Icon name="menu" size={20} />
             </button>
           </li>
         </ul>
