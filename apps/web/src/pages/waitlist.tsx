@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { Balancer } from 'react-wrap-balancer';
-import { ArrowRight, Check, Loader2, Mail, User } from 'lucide-react';
 import { z } from 'zod';
 
 import { cn } from '@noodle/utils';
 
+import { Icon } from '@/components/Icon';
 import { Input } from '@/components/Input';
 import { Navbar } from '@/components/Navbar';
 import {
@@ -79,7 +79,7 @@ const WaitList: NextPageWithLayout = () => {
             <Input
               type="text"
               placeholder="Your name..."
-              icon={<User />}
+              icon={<Icon name="user" />}
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
@@ -88,7 +88,7 @@ const WaitList: NextPageWithLayout = () => {
             <Input
               type="email"
               placeholder="Email address..."
-              icon={<Mail />}
+              icon={<Icon name="mail" />}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -116,10 +116,10 @@ const WaitList: NextPageWithLayout = () => {
               className="bg-primary-500 text-gray-12 dark:disabled:bg-graydark-4 dark:disabled:text-graydark-8 dark:disabled:border-graydark-6 hover:bg-primary-700 disabled:bg-gray-4 disabled:text-gray-8 disabled:border-gray-6 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors disabled:border"
             >
               {isLoading ? (
-                <Loader2 />
+                <Icon name="loader-2" />
               ) : (
                 <span className="flex items-center gap-4">
-                  Secure your spot <ArrowRight size={20} />
+                  Secure your spot <Icon name="arrow-right" size={20} />
                 </span>
               )}
             </button>
@@ -132,7 +132,7 @@ const WaitList: NextPageWithLayout = () => {
               <div className="bg-teal-2 border-teal-2 dark:bg-tealdark-2/50 dark:border-tealdark-2 flex w-full items-center gap-6 rounded-lg border px-4 py-4">
                 <div className="flex h-full items-start">
                   <div className="bg-teal-1 border-teal-11 dark:bg-tealdark-1 dark:border-tealdark-11 rounded-full border p-[4px]">
-                    <Check className="text-teal-10 h-4 w-4" />
+                    <Icon name="check" className="text-teal-10 h-4 w-4" />
                   </div>
                 </div>
                 <div>
@@ -161,7 +161,7 @@ const WaitList: NextPageWithLayout = () => {
               <div className="bg-red-1 border-red-2 dark:bg-reddark-2/50 dark:border-reddark-2 flex w-full items-center gap-6 rounded-lg border px-4 py-4">
                 <div className="flex h-full items-start">
                   <div className="bg-red-1 border-red-11 dark:bg-reddark-1 dark:border-reddark-11 rounded-full border p-[4px]">
-                    <Check className="text-red-10 h-4 w-4" />
+                    <Icon name="check" className="text-red-10 h-4 w-4" />
                   </div>
                 </div>
                 <div>
