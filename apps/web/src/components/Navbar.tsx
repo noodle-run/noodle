@@ -32,16 +32,16 @@ export const Navbar = () => {
 
   const smoothScrollToId =
     (id: string): MouseEventHandler<HTMLAnchorElement> =>
-      (e) => {
-        if (location.pathname === '/') {
-          e.preventDefault();
-          window.scrollTo({
-            top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
-            behavior: 'smooth',
-          });
-          isMobile && setHeight(0);
-        }
-      };
+    (e) => {
+      if (location.pathname === '/') {
+        e.preventDefault();
+        window.scrollTo({
+          top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
+          behavior: 'smooth',
+        });
+        isMobile && setHeight(0);
+      }
+    };
 
   return (
     <nav className="bg-gray-1 dark:bg-graydark-1 container fixed left-1/2 top-0 z-50 -translate-x-1/2 pb-4 pt-4 lg:bg-transparent lg:pb-0 lg:pt-8 lg:dark:bg-transparent">

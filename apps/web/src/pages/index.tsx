@@ -135,15 +135,15 @@ const features: FeatureCardProps[] = [
 
 const smoothScrollToId =
   (id: string): MouseEventHandler<HTMLAnchorElement> =>
-    (e) => {
-      if (location.pathname === '/') {
-        e.preventDefault();
-        window.scrollTo({
-          top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
-          behavior: 'smooth',
-        });
-      }
-    };
+  (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({
+        top: (document.getElementById(id)?.offsetTop ?? 0) - 150,
+        behavior: 'smooth',
+      });
+    }
+  };
 
 const Home: NextPageWithLayout = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
