@@ -129,7 +129,12 @@ export const FeedbackDialog = ({ showText }: any) => {
       <DialogTrigger asChild>
         <Button variant="muted" className="w-full">
           <Icon name="badge-help" />
-          <span className={showText ? 'block' : 'hidden'}>
+          <span
+            className={
+              'transition-all duration-300 ease-in-out ' +
+              (showText ? 'visible opacity-100' : 'hidden opacity-0')
+            }
+          >
             Provide feedback
           </span>
         </Button>

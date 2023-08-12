@@ -46,7 +46,7 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div className="flex min-h-screen gap-6 p-6">
-      <aside className="flex min-w-[45px] flex-col justify-between">
+      <aside className="flex min-w-[51px] flex-col justify-between">
         <div>
           <div className="pl-4">
             <Brand size={35} />
@@ -61,7 +61,14 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
                     activeClassName="text-gray-12 dark:text-graydark-12"
                   >
                     <Icon name={link.icon} />
-                    <span className={isMaximized ? 'block' : 'hidden'}>
+                    <span
+                      className={
+                        'transition-all duration-300 ease-in-out ' +
+                        (isMaximized
+                          ? 'visible opacity-100'
+                          : 'hidden opacity-0')
+                      }
+                    >
                       {link.label}
                     </span>
                   </ActiveLink>
