@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { FC, PropsWithChildren } from 'react';
 import { UserButton } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
 import { Brand, Button } from '@noodle/ui';
@@ -46,7 +47,10 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <div className="flex min-h-screen gap-6 p-6">
-      <aside className="flex min-w-[51px] flex-col justify-between">
+      <motion.aside
+        className="flex grow-0 flex-col justify-between"
+        animate={{ width: isMaximized ? 'auto' : '51px' }}
+      >
         <div>
           <div className="pl-4">
             <Brand size={35} />
@@ -60,17 +64,16 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
                     href={link.href}
                     activeClassName="text-gray-12 dark:text-graydark-12"
                   >
-                    <Icon name={link.icon} />
-                    <span
-                      className={
-                        'transition-all duration-300 ease-in-out ' +
-                        (isMaximized
-                          ? 'visible opacity-100'
-                          : 'hidden opacity-0')
-                      }
+                    <Icon className="min-w-max" name={link.icon} />
+                    <motion.span
+                      className="-z-10"
+                      animate={{
+                        opacity: isMaximized ? 1 : 0,
+                        x: isMaximized ? 0 : '-100%',
+                      }}
                     >
                       {link.label}
-                    </span>
+                    </motion.span>
                   </ActiveLink>
                 </Button>
               </li>
@@ -81,7 +84,7 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
         <div>
           <FeedbackDialog showText={isMaximized} />
         </div>
-      </aside>
+      </motion.aside>
 
       <div className="border-gray-3 dark:border-graydark-3 flex flex-1 flex-col rounded-2xl border px-6 py-4">
         <nav className="flex items-center justify-between">

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useUser } from '@clerk/nextjs';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { type TRPCErrorResponse } from '@trpc/server/rpc';
+import { motion } from 'framer-motion';
 import { z } from 'zod';
 
 import {
@@ -128,15 +129,16 @@ export const FeedbackDialog = ({ showText }: any) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="muted" className="w-full">
-          <Icon name="badge-help" />
-          <span
-            className={
-              'transition-all duration-300 ease-in-out ' +
-              (showText ? 'visible opacity-100' : 'hidden opacity-0')
-            }
+          <Icon className="min-w-max" name="badge-help" />
+          <motion.span
+            className="-z-10 min-w-max"
+            animate={{
+              opacity: showText ? 1 : 0,
+              x: showText ? 0 : '-100%',
+            }}
           >
             Provide feedback
-          </span>
+          </motion.span>
         </Button>
       </DialogTrigger>
 
