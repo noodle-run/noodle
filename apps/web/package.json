@@ -36,7 +36,7 @@
     "@vercel/analytics": "^1.0.2",
     "date-fns": "^2.30.0",
     "lucide-react": "0.263.1",
-    "next": "13.4.13",
+    "next": "13.4.15",
     "next-mdx-remote": "^4.4.1",
     "next-seo": "^6.1.0",
     "next-themes": "^0.2.1",
@@ -49,14 +49,14 @@
     "remark-gfm": "^3.0.1",
     "superjson": "^1.13.1",
     "usehooks-ts": "^2.9.1",
-    "zod": "^3.21.4"
+    "zod": "^3.22.0"
   },
   "devDependencies": {
     "@noodle/tailwind": "workspace:^",
     "@noodle/tsconfig": "workspace:^",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.15",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3"
   },

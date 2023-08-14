@@ -23,7 +23,8 @@
     "drizzle-orm": "^0.28.2",
     "drizzle-zod": "^0.5.0",
     "pg": "^8.11.2",
-    "postgres": "^3.3.5"
+    "postgres": "^3.3.5",
+    "zod": "^3.22.0"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
