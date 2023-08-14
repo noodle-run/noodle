@@ -30,7 +30,7 @@
     "@types/eslint": "^8.44.2",
     "@types/node": "^20.4.9",
     "del-cli": "^5.0.0",
-    "eslint": "^8.46.0",
+    "eslint": "^8.47.0",
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
