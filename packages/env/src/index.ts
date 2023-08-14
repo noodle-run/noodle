@@ -11,6 +11,7 @@ export const env = createEnv({
 
     UPSTASH_REDIS_REST_URL: z.string().url(),
     UPSTASH_REDIS_REST_TOKEN: z.string().min(1),
+    OPENWEATHER_API_KEY: z.string().min(1),
   },
   client: {
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
@@ -23,6 +24,7 @@ export const env = createEnv({
     CLERK_SECRET_KEY: process.env['CLERK_SECRET_KEY'],
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
       process.env['NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY'],
+    OPENWEATHER_API_KEY: process.env['OPENWEATHER_API_KEY'],
   },
   skipValidation: !!process.env['SKIP_ENV_VALIDATION'],
 });
