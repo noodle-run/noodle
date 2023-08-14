@@ -15,6 +15,7 @@
   "dependencies": {
     "@clerk/nextjs": "^4.23.2",
     "@noodle/db": "workspace:^",
+    "@noodle/env": "workspace:^",
     "@trpc/next": "^10.37.1",
     "@trpc/server": "^10.37.1",
     "got": "^13.0.0",

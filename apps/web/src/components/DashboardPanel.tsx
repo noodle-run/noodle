@@ -3,15 +3,12 @@ import format from 'date-fns/format';
 
 import { Typography } from '@noodle/ui';
 
-import { useFetchWeatherDataQuery } from '@/fetchers/weather';
-import { getFormattedWeatherDescription } from '@/utils/getFormattedWeatherCondition';
 import { TaskSkeleton } from './TaskSkeleton';
+import { WeatherData } from './WeatherData';
 
 export const DashboardPanel: FC = () => {
   const currentDate = new Date();
   const formattedDate = format(currentDate, "eeee, 'the' do 'of' MMMM yyyy");
-
-  const { data: weatherData } = useFetchWeatherDataQuery();
 
   return (
     <div className="overflow-hidden pb-2">
@@ -22,16 +19,7 @@ export const DashboardPanel: FC = () => {
         <h3 className="text-amber-9 dark:text-amberdark-9 text-sm font-semibold xl:text-base">
           {formattedDate}
         </h3>
-        {weatherData && (
-          <span className="text-gray-11 dark:text-graydark-11 text-xs leading-5 xl:text-sm">
-            You can expect a 👆 high of {weatherData.main.temp_max.toFixed()}º
-            and a 👇 low of {weatherData.main.temp_min.toFixed()}º with{' '}
-            {getFormattedWeatherDescription(
-              weatherData.weather[0]?.description,
-            )}{' '}
-            today.
-          </span>
-        )}
+        <WeatherData />
         <Typography.P as="h3" className="mt-4 text-sm">
           <span className="pr-2">📌</span>Tasks for today
         </Typography.P>
