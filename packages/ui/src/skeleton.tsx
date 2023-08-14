@@ -10,7 +10,7 @@ export const Skeleton = ({
     <div
       role="presentation"
       className={cn(
-        'bg-gray-3 dark:bg-graydark-3 animate-pulse rounded-lg',
+        'bg-gray-2 dark:bg-graydark-2 animate-pulse rounded-lg',
         className,
       )}
       {...props}
