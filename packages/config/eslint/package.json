@@ -15,10 +15,10 @@
     "lint:fix": "pnpm run lint --fix"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.4.13",
+    "@next/eslint-plugin-next": "^13.4.15",
     "@noodle/tsconfig": "workspace:^",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
-    "@typescript-eslint/parser": "^6.3.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.4.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
