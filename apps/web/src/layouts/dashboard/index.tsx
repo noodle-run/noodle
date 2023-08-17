@@ -16,35 +16,6 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter();
   const [isMaximized, setIsMaximized] = useState(true);
 
-  function SideMenuToggle() {
-    if (!isMaximized) {
-      return (
-        <Button
-          type="button"
-          variant="muted"
-          size="icon"
-          onClick={() => {
-            setIsMaximized(true);
-          }}
-        >
-          <Icon name="panel-left-open" />
-        </Button>
-      );
-    }
-    return (
-      <Button
-        type="button"
-        variant="muted"
-        size="icon"
-        onClick={() => {
-          setIsMaximized(false);
-        }}
-      >
-        <Icon name="panel-left-close" />
-      </Button>
-    );
-  }
-
   return (
     <div className="flex min-h-screen gap-6 p-6">
       <motion.aside
@@ -89,7 +60,18 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
       <div className="border-gray-3 dark:border-graydark-3 flex flex-1 flex-col rounded-2xl border px-6 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <SideMenuToggle />
+            <Button
+              type="button"
+              variant="muted"
+              size="icon"
+              onClick={() => {
+                setIsMaximized((prev) => !prev);
+              }}
+            >
+              <Icon
+                name={isMaximized ? 'panel-left-close' : 'panel-left-open'}
+              />
+            </Button>
             <div className="flex items-center">
               <Button
                 type="button"
