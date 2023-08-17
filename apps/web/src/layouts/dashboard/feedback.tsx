@@ -121,8 +121,7 @@ const FeedbackForm: FC<{ email?: string | undefined }> = ({ email }) => {
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const FeedbackDialog = ({ showText }: any) => {
+export const FeedbackDialog = ({ showText }: { showText: boolean }) => {
   const { user } = useUser();
 
   return (
