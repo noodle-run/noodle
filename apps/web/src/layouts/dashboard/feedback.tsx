@@ -131,11 +131,11 @@ export const FeedbackDialog = ({ showText }: any) => {
         <Button variant="muted" className="w-full">
           <Icon className="min-w-max" name="badge-help" />
           <motion.span
-            className="-z-10 min-w-max"
+            className="min-w-max"
             animate={{
               opacity: showText ? 1 : 0,
-              x: showText ? 0 : '-100%',
             }}
+            transition={{ duration: 0.2 }}
           >
             Provide feedback
           </motion.span>

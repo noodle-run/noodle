@@ -49,7 +49,8 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
     <div className="flex min-h-screen gap-6 p-6">
       <motion.aside
         className="flex grow-0 flex-col justify-between"
-        animate={{ width: isMaximized ? 'auto' : '51px' }}
+        animate={{ width: isMaximized ? '181px' : '51px' }}
+        transition={{ duration: 0.3 }}
       >
         <div>
           <div className="pl-4">
@@ -66,11 +67,10 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
                   >
                     <Icon className="min-w-max" name={link.icon} />
                     <motion.span
-                      className="-z-10"
                       animate={{
                         opacity: isMaximized ? 1 : 0,
-                        x: isMaximized ? 0 : '-100%',
                       }}
+                      transition={{ duration: 0.2 }}
                     >
                       {link.label}
                     </motion.span>
