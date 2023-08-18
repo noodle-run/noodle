@@ -14,13 +14,13 @@ import { pageLinks } from './static-data';
 
 const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter();
-  const [isMaximized, setIsMaximized] = useState(true);
+  const [isSideMenuExpanded, setSideMenuExpanded] = useState(true);
 
   return (
     <div className="flex min-h-screen gap-6 p-6">
       <motion.aside
         className="flex grow-0 flex-col justify-between"
-        animate={{ width: isMaximized ? '181px' : '51px' }}
+        animate={{ width: isSideMenuExpanded ? '181px' : '51px' }}
         transition={{ duration: 0.3 }}
       >
         <div>
@@ -39,7 +39,7 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
                     <Icon className="min-w-max" name={link.icon} />
                     <motion.span
                       animate={{
-                        opacity: isMaximized ? 1 : 0,
+                        opacity: isSideMenuExpanded ? 1 : 0,
                       }}
                       transition={{ duration: 0.2 }}
                     >
@@ -53,7 +53,7 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
         </div>
 
         <div>
-          <FeedbackDialog showText={isMaximized} />
+          <FeedbackDialog isSideMenuExpanded={isSideMenuExpanded} />
         </div>
       </motion.aside>
 
@@ -65,11 +65,13 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
               variant="muted"
               size="icon"
               onClick={() => {
-                setIsMaximized((prev) => !prev);
+                setSideMenuExpanded((prev) => !prev);
               }}
             >
               <Icon
-                name={isMaximized ? 'panel-left-close' : 'panel-left-open'}
+                name={
+                  isSideMenuExpanded ? 'panel-left-close' : 'panel-left-open'
+                }
               />
             </Button>
             <div className="flex items-center">

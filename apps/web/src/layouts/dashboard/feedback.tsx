@@ -121,7 +121,13 @@ const FeedbackForm: FC<{ email?: string | undefined }> = ({ email }) => {
   );
 };
 
-export const FeedbackDialog = ({ showText }: { showText: boolean }) => {
+type FeedbackDialogProps = {
+  isSideMenuExpanded?: boolean;
+};
+
+export const FeedbackDialog: FC<FeedbackDialogProps> = ({
+  isSideMenuExpanded = true,
+}) => {
   const { user } = useUser();
 
   return (
@@ -132,7 +138,7 @@ export const FeedbackDialog = ({ showText }: { showText: boolean }) => {
           <motion.span
             className="min-w-max"
             animate={{
-              opacity: showText ? 1 : 0,
+              opacity: isSideMenuExpanded ? 1 : 0,
             }}
             transition={{ duration: 0.2 }}
           >
