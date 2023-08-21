@@ -1,6 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { UserButton } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
+import { useTheme } from 'next-themes';
 import { useRouter } from 'next/navigation';
 
 import { Brand, Button } from '@noodle/ui';
@@ -12,6 +13,7 @@ import { pageLinks } from './static-data';
 
 const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter();
+  const { resolvedTheme } = useTheme();
 
   return (
     <div className="flex min-h-screen gap-6 p-6">
@@ -77,7 +79,7 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
             <UserButton
               afterSignOutUrl="/"
               appearance={{
-                baseTheme: dark,
+                ...(resolvedTheme === 'dark' && { baseTheme: dark }),
               }}
             />
             <Button type="button" variant="muted" size="icon">
