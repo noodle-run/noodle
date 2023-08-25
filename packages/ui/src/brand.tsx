@@ -2,12 +2,14 @@ import { type FC } from 'react';
 
 type BrandProps = {
   size?: number;
+  className?: string;
 };
 
-export const Brand: FC<BrandProps> = ({ size }) => {
+export const Brand: FC<BrandProps> = ({ size, className }) => {
   const sizing = size ?? 100;
   return (
     <svg
+      className={className}
       width={sizing}
       height={sizing}
       viewBox="0 0 100 100"

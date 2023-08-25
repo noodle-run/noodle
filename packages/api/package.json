@@ -15,12 +15,13 @@
   "dependencies": {
     "@clerk/nextjs": "^4.23.2",
     "@noodle/db": "workspace:^",
+    "@noodle/env": "workspace:^",
     "@trpc/next": "^10.37.1",
     "@trpc/server": "^10.37.1",
     "got": "^13.0.0",
     "node-fetch": "^3.3.2",
     "superjson": "^1.13.1",
-    "zod": "^3.21.4"
+    "zod": "^3.22.0"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",

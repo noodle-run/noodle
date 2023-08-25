@@ -35,7 +35,6 @@
     "@upstash/ratelimit": "^0.4.3",
     "@vercel/analytics": "^1.0.2",
     "date-fns": "^2.30.0",
-    "framer-motion": "^10.16.1",
     "lucide-react": "0.263.1",
     "next": "13.4.15",
     "next-mdx-remote": "^4.4.1",

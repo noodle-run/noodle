@@ -1,6 +1,5 @@
 import { Balancer } from 'react-wrap-balancer';
 import type { FC, MouseEventHandler, ReactNode } from 'react';
-import { ArrowDown, ArrowRight, Star } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMediaQuery } from 'usehooks-ts';
@@ -13,6 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/Accordion';
+import { Icon } from '@/components/Icon';
 import { Navbar } from '@/components/Navbar';
 import { constants } from '@/utils/constants';
 import { type NextPageWithLayout } from '@/utils/NextPageWithLayout';
@@ -158,7 +158,11 @@ const Home: NextPageWithLayout = () => {
           className="bg-gray-4 border-gray-8 dark:bg-graydark-4 dark:border-graydark-8 dark:hover:bg-graydark-5 hover:bg-gray-5 flex items-center gap-4 rounded-full border px-3 py-2 text-sm transition-colors"
         >
           Star us on Github{' '}
-          <Star size={13} className="fill-primary-500 stroke-primary-500" />
+          <Icon
+            name="star"
+            size={13}
+            className="fill-primary-500 stroke-primary-500"
+          />
         </a>
         <h1 className="text-5xl font-extrabold tracking-tighter md:text-6xl">
           <Balancer>{constants.tagline}</Balancer>
@@ -174,13 +178,13 @@ const Home: NextPageWithLayout = () => {
             onClick={smoothScrollToId('features')}
             className="bg-gray-4 border-gray-6 dark:bg-graydark-4 dark:border-graydark-6 dark:hover:bg-graydark-5 hover:bg-gray-5 flex w-full items-center justify-center gap-4 rounded-md border px-6 py-3 font-semibold transition-colors lg:w-auto"
           >
-            Features <ArrowDown size={20} />
+            Features <Icon name="arrow-down" size={20} />
           </Link>
           <Link
             href="/waitlist"
             className="bg-primary-500 text-gray-12 hover:bg-primary-700 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors lg:w-auto"
           >
-            Join Waitlist <ArrowRight size={20} />
+            Join Waitlist <Icon name="arrow-right" size={20} />
           </Link>
         </div>
       </header>
@@ -353,7 +357,7 @@ const Home: NextPageWithLayout = () => {
             href="/waitlist"
             className="bg-gray-1 text-primary-500 dark:bg-graydark-1 dark:hover:bg-graydark-2 hover:bg-gray-2 flex w-full items-center justify-center gap-4 rounded-md px-6 py-3 font-semibold transition-colors md:w-auto"
           >
-            Join Waitlist <ArrowRight size={20} />
+            Join Waitlist <Icon name="arrow-right" size={20} />
           </Link>
         </div>
       </div>
