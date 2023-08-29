@@ -13,15 +13,15 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.23.2",
+    "@clerk/nextjs": "^4.23.3",
     "@noodle/db": "workspace:^",
     "@noodle/env": "workspace:^",
-    "@trpc/next": "^10.37.1",
-    "@trpc/server": "^10.37.1",
+    "@trpc/next": "^10.38.0",
+    "@trpc/server": "^10.38.0",
     "got": "^13.0.0",
     "node-fetch": "^3.3.2",
     "superjson": "^1.13.1",
-    "zod": "^3.22.0"
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",

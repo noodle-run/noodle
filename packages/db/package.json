@@ -18,17 +18,17 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^0.5.7",
+    "@neondatabase/serverless": "^0.6.0",
     "@noodle/env": "workspace:^",
-    "drizzle-orm": "^0.28.2",
-    "drizzle-zod": "^0.5.0",
-    "pg": "^8.11.2",
+    "drizzle-orm": "^0.28.5",
+    "drizzle-zod": "^0.5.1",
+    "pg": "^8.11.3",
     "postgres": "^3.3.5",
-    "zod": "^3.22.0"
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
-    "drizzle-kit": "^0.19.12",
+    "drizzle-kit": "^0.19.13",
     "eslint-config-noodle": "workspace:^",
     "tsx": "^3.12.7"
   },
