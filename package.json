@@ -36,7 +36,7 @@
     "lint-staged": "^14.0.0",
     "nx": "16.6.0",
     "nx-cloud": "16.3.0",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.3",
     "prettier-plugin-jsdoc": "^1.0.1",
     "prettier-plugin-packagejson": "^2.4.5",
     "prettier-plugin-tailwindcss": "^0.5.2",
