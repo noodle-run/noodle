@@ -20,7 +20,7 @@
     "typecheck": "pnpm nx run-many -t typecheck"
   },
   "dependencies": {
-    "node-gyp-build": "^4.6.0"
+    "node-gyp-build": "^4.6.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
@@ -28,19 +28,19 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@noodle/tsconfig": "workspace:^",
     "@types/eslint": "^8.44.2",
-    "@types/node": "^20.5.0",
-    "del-cli": "^5.0.0",
-    "eslint": "^8.47.0",
+    "@types/node": "^20.5.7",
+    "del-cli": "^5.0.1",
+    "eslint": "^8.48.0",
     "eslint-config-noodle": "workspace:^",
     "husky": "^8.0.3",
-    "lint-staged": "^14.0.0",
-    "nx": "16.6.0",
+    "lint-staged": "^14.0.1",
+    "nx": "16.7.4",
     "nx-cloud": "16.3.0",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.3",
     "prettier-plugin-jsdoc": "^1.0.1",
     "prettier-plugin-packagejson": "^2.4.5",
-    "prettier-plugin-tailwindcss": "^0.5.2",
-    "typescript": "^5.1.6"
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "typescript": "^5.2.2"
   },
   "packageManager": "pnpm@8.6.11",
   "engines": {

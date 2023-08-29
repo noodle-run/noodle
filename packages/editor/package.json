@@ -31,11 +31,11 @@
   "devDependencies": {
     "@noodle/tailwind": "workspace:^",
     "@noodle/tsconfig": "workspace:^",
-    "@types/react": "18.2.20",
+    "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "^10.4.15",
     "eslint-config-noodle": "workspace:^",
-    "postcss": "^8.4.27",
+    "postcss": "^8.4.29",
     "tailwindcss": "^3.3.3"
   },
   "volta": {

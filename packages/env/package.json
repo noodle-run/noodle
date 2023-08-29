@@ -21,8 +21,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@t3-oss/env-nextjs": "^0.6.0",
-    "zod": "^3.22.0"
+    "@t3-oss/env-nextjs": "^0.6.1",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@noodle/tsconfig": "workspace:^",
