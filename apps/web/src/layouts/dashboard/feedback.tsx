@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useUser } from '@clerk/nextjs';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { type TRPCErrorResponse } from '@trpc/server/rpc';
+import { motion } from 'framer-motion';
 import { z } from 'zod';
 
 import {
@@ -120,15 +121,27 @@ const FeedbackForm: FC<{ email?: string | undefined }> = ({ email }) => {
   );
 };
 
-export const FeedbackDialog = () => {
+type FeedbackDialogProps = {
+  isSideMenuExpanded?: boolean;
+};
+
+export const FeedbackDialog: FC<FeedbackDialogProps> = ({
+  isSideMenuExpanded = true,
+}) => {
   const { user } = useUser();
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="muted" className="w-full">
-          <Icon name="badge-help" />
-          Provide feedback
+          <Icon name="badge-help" className="min-w-max" />
+          <motion.span
+            className="min-w-max"
+            animate={{ opacity: isSideMenuExpanded ? 1 : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            Provide feedback
+          </motion.span>
         </Button>
       </DialogTrigger>
 

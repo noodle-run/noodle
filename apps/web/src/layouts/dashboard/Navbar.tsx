@@ -1,3 +1,4 @@
+import type { Dispatch, FC, SetStateAction } from 'react';
 import { UserButton } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
 import { useRouter } from 'next/router';
@@ -6,13 +7,30 @@ import { Button } from '@noodle/ui';
 
 import { Icon } from '@/components/Icon';
 
-export const DashboardNavbar = () => {
+type NavbarProps = {
+  isSideMenuExpanded: boolean;
+  setSideMenuExpanded: Dispatch<SetStateAction<boolean>>;
+};
+
+export const DashboardNavbar: FC<NavbarProps> = ({
+  isSideMenuExpanded = true,
+  setSideMenuExpanded,
+}) => {
   const router = useRouter();
   return (
     <nav className="flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <Button type="button" variant="muted" size="icon">
-          <Icon name="panel-left-close" />
+        <Button
+          type="button"
+          variant="muted"
+          size="icon"
+          onClick={() => {
+            setSideMenuExpanded((prev) => !prev);
+          }}
+        >
+          <Icon
+            name={isSideMenuExpanded ? 'panel-left-close' : 'panel-left-open'}
+          />
         </Button>
 
         <div className="flex items-center">
