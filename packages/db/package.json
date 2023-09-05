@@ -30,7 +30,7 @@
     "@noodle/tsconfig": "workspace:^",
     "drizzle-kit": "^0.19.13",
     "eslint-config-noodle": "workspace:^",
-    "tsx": "^3.12.7"
+    "tsx": "^3.12.8"
   },
   "volta": {
     "extends": "../../package.json"
