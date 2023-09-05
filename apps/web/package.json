@@ -32,7 +32,7 @@
     "@trpc/next": "^10.38.0",
     "@trpc/react-query": "^10.38.0",
     "@trpc/server": "^10.38.0",
-    "@upstash/ratelimit": "^0.4.3",
+    "@upstash/ratelimit": "^0.4.4",
     "@vercel/analytics": "^1.0.2",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.3",
