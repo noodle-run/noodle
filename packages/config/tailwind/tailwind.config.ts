@@ -36,7 +36,6 @@ const config = {
     require('tailwindcss-radix-colors'),
     require('tailwindcss-animate'),
     require('@savvywombat/tailwindcss-grid-areas'),
-    require('@tailwindcss/line-clamp'),
   ],
 } satisfies Config;
 
