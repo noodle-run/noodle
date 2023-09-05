@@ -46,7 +46,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.4",
     "react-wrap-balancer": "^1.1.0",
-    "rehype-slug": "^5.1.0",
+    "rehype-slug": "^6.0.0",
     "remark-gfm": "^3.0.1",
     "superjson": "^1.13.1",
     "usehooks-ts": "^2.9.1",

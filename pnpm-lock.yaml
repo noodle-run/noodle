@@ -163,8 +163,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(react@18.2.0)
       rehype-slug:
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: ^6.0.0
+        version: 6.0.0
       remark-gfm:
         specifier: ^3.0.1
         version: 3.0.1
@@ -2664,6 +2664,12 @@ packages:
       '@types/unist': 2.0.8
     dev: false
 
+  /@types/hast@3.0.0:
+    resolution: {integrity: sha512-SoytUJRuf68HXYqcXicQIhCrLQjqeYU2anikr4G3p3Iz+OZO5QDQpDj++gv+RenHsnUBwNZ2dumBArF8VLSk2Q==}
+    dependencies:
+      '@types/unist': 2.0.8
+    dev: false
+
   /@types/http-cache-semantics@4.0.1:
     resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
     dev: false
@@ -2797,6 +2803,10 @@ packages:
 
   /@types/unist@2.0.8:
     resolution: {integrity: sha512-d0XxK3YTObnWVp6rZuev3c49+j4Lo8g4L1ZRm9z5L0xpoZycUPshHgczK5gsUMaZOstjVYYi09p5gYvUtfChYw==}
+
+  /@types/unist@3.0.0:
+    resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
+    dev: false
 
   /@typescript-eslint/eslint-plugin@6.5.0(@typescript-eslint/parser@6.5.0)(eslint@8.48.0)(typescript@5.2.2):
     resolution: {integrity: sha512-2pktILyjvMaScU6iK3925uvGU87E+N9rh372uGZgiMYwafaw9SXq86U04XPq3UH6tzRvNgBsub6x2DacHc33lw==}
@@ -6462,14 +6472,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
 
-  /hast-util-has-property@2.0.1:
-    resolution: {integrity: sha512-X2+RwZIMTMKpXUzlotatPzWj8bspCymtXH3cfG3iQKV+wPF53Vgaqxi/eLqGck0wKq1kS9nvoB1wchbCPEL8sg==}
-    dev: false
-
-  /hast-util-heading-rank@2.1.1:
-    resolution: {integrity: sha512-iAuRp+ESgJoRFJbSyaqsfvJDY6zzmFoEnL1gtz1+U8gKtGGj1p0CVlysuUAUjq95qlZESHINLThwJzNGmgGZxA==}
+  /hast-util-heading-rank@3.0.0:
+    resolution: {integrity: sha512-EJKb8oMUXVHcWZTDepnr+WNbfnXKFNf9duMesmr4S8SXTJBJ9M4Yok08pu9vxdJwdlGRhVumk9mEhkEvKGifwA==}
     dependencies:
-      '@types/hast': 2.3.5
+      '@types/hast': 3.0.0
     dev: false
 
   /hast-util-to-estree@2.3.3:
@@ -6494,10 +6500,10 @@ packages:
       - supports-color
     dev: false
 
-  /hast-util-to-string@2.0.0:
-    resolution: {integrity: sha512-02AQ3vLhuH3FisaMM+i/9sm4OXGSq1UhOOCpTLLQtHdL3tZt7qil69r8M8iDkZYyC0HCFylcYoP+8IO7ddta1A==}
+  /hast-util-to-string@3.0.0:
+    resolution: {integrity: sha512-OGkAxX1Ua3cbcW6EJ5pT/tslVb90uViVkcJ4ZZIMW/R33DX/AkcJcRrPebPwJkHYwlDHXz4aIwvAAaAdtrACFA==}
     dependencies:
-      '@types/hast': 2.3.5
+      '@types/hast': 3.0.0
     dev: false
 
   /hast-util-whitespace@2.0.1:
@@ -9104,16 +9110,14 @@ packages:
       functions-have-names: 1.2.3
     dev: true
 
-  /rehype-slug@5.1.0:
-    resolution: {integrity: sha512-Gf91dJoXneiorNEnn+Phx97CO7oRMrpi+6r155tTxzGuLtm+QrI4cTwCa9e1rtePdL4i9tSO58PeSS6HWfgsiw==}
+  /rehype-slug@6.0.0:
+    resolution: {integrity: sha512-lWyvf/jwu+oS5+hL5eClVd3hNdmwM1kAC0BUvEGD19pajQMIzcNUd/k9GsfQ+FfECvX+JE+e9/btsKH0EjJT6A==}
     dependencies:
-      '@types/hast': 2.3.5
+      '@types/hast': 3.0.0
       github-slugger: 2.0.0
-      hast-util-has-property: 2.0.1
-      hast-util-heading-rank: 2.1.1
-      hast-util-to-string: 2.0.0
-      unified: 10.1.2
-      unist-util-visit: 4.1.2
+      hast-util-heading-rank: 3.0.0
+      hast-util-to-string: 3.0.0
+      unist-util-visit: 5.0.0
     dev: false
 
   /remark-gfm@3.0.1:
@@ -10136,6 +10140,12 @@ packages:
       '@types/unist': 2.0.8
     dev: false
 
+  /unist-util-is@6.0.0:
+    resolution: {integrity: sha512-2qCTHimwdxLfz+YzdGfkqNlH0tLi9xjTnHddPmJwtIG9MGsdbutfTc4P+haPD7l7Cjxf/WZj+we5qfVPvvxfYw==}
+    dependencies:
+      '@types/unist': 3.0.0
+    dev: false
+
   /unist-util-position-from-estree@1.1.2:
     resolution: {integrity: sha512-poZa0eXpS+/XpoQwGwl79UUdea4ol2ZuCYguVaJS4qzIOMDzbqz8a3erUCOmubSZkaOuGamb3tX790iwOIROww==}
     dependencies:
@@ -10173,12 +10183,27 @@ packages:
       unist-util-is: 5.2.1
     dev: false
 
+  /unist-util-visit-parents@6.0.1:
+    resolution: {integrity: sha512-L/PqWzfTP9lzzEa6CKs0k2nARxTdZduw3zyh8d2NVBnsyvHjSX4TWse388YrrQKbvI8w20fGjGlhgT96WwKykw==}
+    dependencies:
+      '@types/unist': 3.0.0
+      unist-util-is: 6.0.0
+    dev: false
+
   /unist-util-visit@4.1.2:
     resolution: {integrity: sha512-MSd8OUGISqHdVvfY9TPhyK2VdUrPgxkUtWSuMHF6XAAFuL4LokseigBnZtPnJMu+FbynTkFNnFlyjxpVKujMRg==}
     dependencies:
       '@types/unist': 2.0.8
       unist-util-is: 5.2.1
       unist-util-visit-parents: 5.1.3
+    dev: false
+
+  /unist-util-visit@5.0.0:
+    resolution: {integrity: sha512-MR04uvD+07cwl/yhVuVWAtw+3GOR/knlL55Nd/wAdblk27GCVt3lqpTivy/tkJcZoNPzTwS1Y+KMojlLDhoTzg==}
+    dependencies:
+      '@types/unist': 3.0.0
+      unist-util-is: 6.0.0
+      unist-util-visit-parents: 6.0.1
     dev: false
 
   /universalify@2.0.0:
