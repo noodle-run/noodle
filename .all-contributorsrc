@@ -155,6 +155,15 @@
       "contributions": [
         "content"
       ]
+    },
+    {
+      "login": "gedeondoescode",
+      "name": "Gedeon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75461444?v=4",
+      "profile": "https://gedeondoescode.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
