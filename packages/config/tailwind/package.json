@@ -36,6 +36,7 @@
     "@noodle/tsconfig": "workspace:^",
     "@radix-ui/colors": "^2.1.0",
     "@savvywombat/tailwindcss-grid-areas": "^3.1.0",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "autoprefixer": "^10.4.15",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-radix-colors": "^0.5.1"
