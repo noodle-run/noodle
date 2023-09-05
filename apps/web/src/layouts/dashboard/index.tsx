@@ -44,7 +44,7 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
         <FeedbackDialog isSideMenuExpanded={isSideMenuExpanded} />
       </motion.aside>
 
-      <div className="border-gray-3 dark:border-graydark-3 flex flex-1 flex-col overflow-scroll rounded-2xl border px-6 py-4">
+      <div className="border-gray-3 dark:border-graydark-3 bg-gray-1 dark:bg-graydark-1 z-50 flex flex-1 flex-col overflow-scroll rounded-2xl border px-6 py-4">
         {/* Top Navigation Bar */}
         <DashboardNavbar
           setSideMenuExpanded={setSideMenuExpanded}
