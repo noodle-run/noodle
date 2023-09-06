@@ -20,7 +20,7 @@
   "dependencies": {
     "@neondatabase/serverless": "^0.6.0",
     "@noodle/env": "workspace:^",
-    "drizzle-orm": "^0.28.5",
+    "drizzle-orm": "^0.28.6",
     "drizzle-zod": "^0.5.1",
     "pg": "^8.11.3",
     "postgres": "^3.3.5",

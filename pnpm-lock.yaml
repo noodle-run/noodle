@@ -306,11 +306,11 @@ importers:
         specifier: workspace:^
         version: link:../env
       drizzle-orm:
-        specifier: ^0.28.5
-        version: 0.28.5(@neondatabase/serverless@0.6.0)(pg@8.11.3)(postgres@3.3.5)
+        specifier: ^0.28.6
+        version: 0.28.6(@neondatabase/serverless@0.6.0)(pg@8.11.3)(postgres@3.3.5)
       drizzle-zod:
         specifier: ^0.5.1
-        version: 0.5.1(drizzle-orm@0.28.5)(zod@3.22.2)
+        version: 0.5.1(drizzle-orm@0.28.6)(zod@3.22.2)
       pg:
         specifier: ^8.11.3
         version: 8.11.3
@@ -5412,8 +5412,8 @@ packages:
       - supports-color
     dev: true
 
-  /drizzle-orm@0.28.5(@neondatabase/serverless@0.6.0)(pg@8.11.3)(postgres@3.3.5):
-    resolution: {integrity: sha512-6r6Iw4c38NAmW6TiKH3TUpGUQ1YdlEoLJOQptn8XPx3Z63+vFNKfAiANqrIiYZiMjKR9+NYAL219nFrmo1duXA==}
+  /drizzle-orm@0.28.6(@neondatabase/serverless@0.6.0)(pg@8.11.3)(postgres@3.3.5):
+    resolution: {integrity: sha512-yBe+F9htrlYER7uXgDJUQsTHFoIrI5yMm5A0bg0GiZ/kY5jNXTWoEy4KQtg35cE27sw1VbgzoMWHAgCckUUUww==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=3'
@@ -5479,13 +5479,13 @@ packages:
       postgres: 3.3.5
     dev: false
 
-  /drizzle-zod@0.5.1(drizzle-orm@0.28.5)(zod@3.22.2):
+  /drizzle-zod@0.5.1(drizzle-orm@0.28.6)(zod@3.22.2):
     resolution: {integrity: sha512-C/8bvzUH/zSnVfwdSibOgFjLhtDtbKYmkbPbUCq46QZyZCH6kODIMSOgZ8R7rVjoI+tCj3k06MRJMDqsIeoS4A==}
     peerDependencies:
       drizzle-orm: '>=0.23.13'
       zod: '*'
     dependencies:
-      drizzle-orm: 0.28.5(@neondatabase/serverless@0.6.0)(pg@8.11.3)(postgres@3.3.5)
+      drizzle-orm: 0.28.6(@neondatabase/serverless@0.6.0)(pg@8.11.3)(postgres@3.3.5)
       zod: 3.22.2
     dev: false
 
