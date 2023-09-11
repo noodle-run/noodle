@@ -26,6 +26,10 @@ export const waitingListTable = pgTable(
     email: text('email').notNull().unique(),
     reason: waitingListReason('reason').notNull(),
     approved: boolean('approved').notNull().default(false),
+    invitationSentAt: timestamp('invitationSentAt', {
+      precision: 3,
+      mode: 'string',
+    }),
     createdAt: timestamp('createdAt', { precision: 3, mode: 'string' })
       .defaultNow()
       .notNull(),

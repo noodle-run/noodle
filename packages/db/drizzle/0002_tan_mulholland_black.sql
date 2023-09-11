@@ -1,0 +1,1 @@
+ALTER TABLE "WaitingList" ADD COLUMN "invitationSentAt" timestamp(3);

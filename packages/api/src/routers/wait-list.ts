@@ -1,5 +1,8 @@
+import { clerkClient } from '@clerk/nextjs';
 import { TRPCError } from '@trpc/server';
+import { z } from 'zod';
 
+import { eq } from '@noodle/db';
 import {
   insertWaitingListSchema,
   waitingListTable,
@@ -37,5 +40,39 @@ export const waitListRouter = t.router({
           message: error.message,
         });
       }
+    }),
+  getWaitList: t.procedure.query(async ({ ctx }) => {
+    const waitList = await ctx.db.select().from(waitingListTable);
+
+    return waitList;
+  }),
+  sendUserInvidation: t.procedure
+    .input(
+      z.object({
+        invitationId: z.string(),
+      }),
+    )
+    .mutation(async ({ input, ctx }) => {
+      const { invitationId } = input;
+
+      const invitation = await ctx.db
+        .select()
+        .from(waitingListTable)
+        .where(eq(waitingListTable.id, invitationId))
+        .limit(1);
+
+      if (invitation.length > 0 && invitation[0]) {
+        await clerkClient.allowlistIdentifiers.createAllowlistIdentifier({
+          identifier: invitation[0].email,
+          notify: true,
+        });
+
+        await ctx.db
+          .update(waitingListTable)
+          .set({ invitationSentAt: new Date().toDateString() })
+          .where(eq(waitingListTable.id, invitationId));
+      }
+
+      return invitation;
     }),
 });
