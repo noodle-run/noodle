@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.23.4",
+    "@clerk/nextjs": "^4.25.7",
     "@clerk/themes": "^1.7.5",
     "@hookform/resolvers": "^3.3.1",
     "@noodle/api": "workspace:^",
