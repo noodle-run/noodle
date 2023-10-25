@@ -64,7 +64,6 @@
     "@upstash/redis": "^1.23.4",
     "@vercel/analytics": "^1.1.1",
     "autoprefixer": "10.4.16",
-    "better-sqlite3": "^9.0.0",
     "bufferutil": "^4.0.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -103,7 +102,6 @@
   "devDependencies": {
     "@savvywombat/tailwindcss-grid-areas": "^3.1.0",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/better-sqlite3": "^7.6.6",
     "@types/eslint": "^8.44.6",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
