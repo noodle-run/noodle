@@ -36,7 +36,7 @@
     "@vercel/analytics": "^1.0.2",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.3",
-    "lucide-react": "0.263.1",
+    "lucide-react": "0.289.0",
     "next": "13.4.19",
     "next-mdx-remote": "^4.4.1",
     "next-seo": "^6.1.0",
