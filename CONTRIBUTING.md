@@ -1,4 +1,4 @@
-# Welcome to Noodle docs contributing guide
+# Noodle's contributing guidelines
 
 Thank you for your interest in contributing to our project! Any contribution is highly appreciated and will be reflected on our project ✨
 
@@ -8,7 +8,7 @@ In this guide, you will get an overview of the project structure and setup, as w
 
 ## Table of contents
 
-- [Welcome to Noodle docs contributing guide](#welcome-to-noodle-docs-contributing-guide)
+- [Noodle's contributing guidelines](#noodles-contributing-guidelines)
   - [Table of contents](#table-of-contents)
   - [New contributor guide](#new-contributor-guide)
   - [Getting your foot in](#getting-your-foot-in)
@@ -18,6 +18,9 @@ In this guide, you will get an overview of the project structure and setup, as w
     - [Cloning the repo](#cloning-the-repo)
     - [Volta](#volta)
     - [Environment Variables](#environment-variables)
+      - [Configuring your Database](#configuring-your-database)
+      - [Configuring Clerk](#configuring-clerk)
+      - [Configuring Upstash](#configuring-upstash)
     - [Installing dependencies](#installing-dependencies)
     - [Running stuff](#running-stuff)
   - [Closing notes](#closing-notes)
@@ -27,8 +30,11 @@ In this guide, you will get an overview of the project structure and setup, as w
 Here are some resources to help you get started with open source contributions:
 
 - [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
+
 - [Set up Git](https://docs.github.com/en/get-started/quickstart/set-up-git)
+
 - [GitHub flow](https://docs.github.com/en/get-started/quickstart/github-flow)
+
 - [Collaborating with pull requests](https://docs.github.com/en/github/collaborating-with-pull-requests)
 
 ## Getting your foot in
@@ -36,38 +42,62 @@ Here are some resources to help you get started with open source contributions:
 Our preferred way of providing the opportunity for people to contribute to Noodle is through a process that starts with creating a new issue, the summary of the workflow that you can expect and should adhere to is the following:
 
 - You see an area of improvement in the code base, this could be a fix, feature, refactoring...etc
+
 - Create an [issue](https://github.com/ixahmedxi/noodle/issues) on our Github repository.
+
 - Wait until a team member discusses the issue with you, and if both parties are in agreement, you can assign yourself to the issue.
+
 - Start working on the issue, creating a draft pull request and remembering to link your pull request with the issue.
+
 - Once the work is complete, change the status of the pull request to ready for review.
+
 - We will review the pull request and if all is good, congratulations! 🥳 you are now a Noodle contributor!
+
 - If not, we will explain the changes that need to be made for the pull request to be merged.
+
+If you would like to be more involved in the development of Noodle, we would like to invite you to our [Discord Server](https://discord.gg/SERySfj8Eg) where we can have a chat together and get you involved in the project!
 
 ### Some simple rules
 
-- Don't work on an issue that has already been assigned to someone.
+- Don't work on an issue that has already been assigned to someone else.
+
 - Don't work on something without getting a team member's approval, this is to not waste your time by making you work on something that won't be merged.
+
 - Don't demand for your pull request to be approved and merged.
+
 - Be nice to everyone involved, we are aiming to create a positive community around collaborating and contributing towards Noodle's development.
 
 ## The tech stack
 
-The Building blocks:
+The Environment:
 
 - [NodeJS](https://nodejs.org/en)
 - [Pnpm](https://pnpm.io/)
-- [NX](https://nx.dev)
 
-The actual stack:
+The Tech Stack:
 
-- [Next.js](https://nextjs.org/)
+- [Next.js App Router](https://nextjs.org/)
+
 - [TailwindCSS](https://tailwindcss.com/)
+
 - [tRPC](https://trpc.io)
+
 - [Drizzle ORM](https://orm.drizzle.team/)
+
+- [NextUI](https://nextui.org/)
+
+- [Sqlite](https://www.sqlite.org/index.html)
+
+- [SlateJS](https://docs.slatejs.org/)
+
+- [Plate](https://platejs.org/)
+
+- [Clerk Auth](https://clerk.dev/)
 
 Development stuff:
 
 - [ESLint](https://eslint.org/)
+
 - [Prettier](https://prettier.io)
 
 There are a lot of other technologies being used in this project, however these are the most important and influential bits of it.
@@ -113,29 +143,54 @@ And make sure that the version is the same as the one defined in the root `packa
 
 Now that Volta has been installed locally on your system, it's time to configure your environment variables so that the project works as expected:
 
-1. Duplicate the `.env.example` file as just `.env`
-2. Populate the values with your own
+1.  Duplicate the `.env.example` file as just `.env`
 
-You will need to create a postgres database and get the URL of it to use as the database for your local instance, we personally use [Neon](https://neon.tech/) as our database provider and hence we just create a development branch that we use instead of creating a local postgres instance.
+2.  Populate the values with your own
 
-We also use [Upstash](https://upstash.com/) for rate limiting and a redis instance.
+#### Configuring your Database
 
-You will also need to configure [Clerk](https://clerk.com/) to be able to use the authentication functionality of Noodle.
+At Noodle, we are using Turso as our production database, but since this is based on Sqlite, it makes it very easy to run things locally, all you need to have a local DB working is the following in the `.env` file:
 
-###### How to configure Clerk
+```bash
+DATABASE_URL="file:./dev.db"
+```
 
-1. Create your account through [Clerk's dashboard](https://dashboard.clerk.com/)
-2. Add a new application
-3. Set up it's name and how you wish to sign in
-4. In the sidebar, go to "API Keys"
-5. Copy the publishable key into `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` in your .env file
-6. Copy the secret key into `CLERK_SECRET_KEY` in your .env file
+This will create a local file in the root of the repository called `dev.db` and things will be stored there, no need to install any technologies to get a database up and running!
 
-Also, if you want your own personal [Nx Cloud](https://cloud.nx.app/) instance, you will need to create a project on Nx Cloud and replace the default read-only token provided.
+#### Configuring Clerk
+
+Clerk is our choice of authentication service for Noodle, it's true that it is a paid service but arguably for running a self hosted version of Noodle it is even easier then setting things up yourself especially with OAuth. To configure clerk you need to do the following:
+
+1.  Create your account through [Clerk's dashboard](https://dashboard.clerk.com/)
+
+2.  Add a new application
+
+3.  Set up it's name and how you wish to sign in
+
+4.  In the sidebar, go to "API Keys"
+
+5.  Copy the publishable key into `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` in your .env file
+
+6.  Copy the secret key into `CLERK_SECRET_KEY` in your .env file
+
+And now you got Auth!
+
+#### Configuring Upstash
+
+1. Create your account through [Upstash's dashboard](https://console.upstash.com)
+2. Click on "Create database"
+3. Give it a name and a region
+4. Enable TLS (SSL) encryption
+5. Press create
+6. In the "Connect to your database" section, select "@upstash/redis"
+7. Copy the url into your `.env` file as `REDIS_URL` key
+8. Copy the token into your `.env` file as `REDIS_TOKEN` key
+
+And that's all for the redis part!
 
 ### Installing dependencies
 
-To install the dependencies needed to run Noodle, you need to run `pnpm install`, this will install all of the packages that we use.
+To install the dependencies needed to run Noodle, you need to run `pnpm install`, this will install all of the packages that we use. After this is done, you are ready to run Noodle locally!
 
 ### Running stuff
 
@@ -155,10 +210,6 @@ pnpm lint
 # Format
 pnpm format:write
 ```
-
-Also, if in doubt and something is going wrong, `pnpm clean`.
-
-This is only a subset of the important commands that you will be using throughout your usage of Noodle's codebase. Be sure to check out [the package.json file](./package.json) for the full list and get familiar with [Nx's commands](https://nx.dev/reference/commands) for more complex use cases.
 
 ## Closing notes
 

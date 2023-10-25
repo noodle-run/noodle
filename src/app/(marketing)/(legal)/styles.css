@@ -1,0 +1,19 @@
+.typography a {
+  @apply text-primary underline underline-offset-2;
+}
+
+.typography table {
+  @apply mt-6 border-collapse;
+}
+
+.typography table th {
+  @apply border border-default-200 px-4 py-2 text-left font-bold;
+}
+
+.typography table td {
+  @apply border border-default-200 px-4 py-2;
+}
+
+.typography h6 {
+  @apply -mt-5 mb-6 font-normal text-default-500;
+}

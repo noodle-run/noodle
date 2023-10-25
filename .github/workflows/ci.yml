@@ -6,88 +6,46 @@ on:
   pull_request:
 
 env:
-  NX_CLOUD_DISTRIBUTED_EXECUTION: true
-  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3
-  NX_BRANCH: ${{ github.event.number || github.ref_name }}
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-  VOLTA_FEATURE_PNPM: 1
-  SKIP_ENV_VALIDATION: true
+  # Database
+  DATABASE_URL: file:./ci.db
+
+  # Clerk
   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}}
   CLERK_SECRET_KEY: ${{secrets.CLERK_SECRET_KEY}}
+  NEXT_PUBLIC_CLERK_SIGN_IN_URL: /sign-in
+  NEXT_PUBLIC_CLERK_SIGN_UP_URL: /sign-up
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: /app
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: /app
+
+  # Upstash
+  UPSTASH_REDIS_REST_URL: ${{secrets.UPSTASH_REDIS_REST_URL}}
+  UPSTASH_REDIS_REST_TOKEN: ${{secrets.UPSTASH_REDIS_REST_TOKEN}}
+
+  # Volta
+  VOLTA_FEATURE_PNPM: 1
 
 jobs:
   main:
     name: CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        name: Checkout [Pull Request]
-        if: ${{ github.event_name == 'pull_request' }}
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0
-
-      - uses: actions/checkout@v3
-        name: Checkout [Default Branch]
-        if: ${{ github.event_name != 'pull_request' }}
-        with:
-          fetch-depth: 0
-
-      - name: Derive SHAs for `nx affected` commands
-        uses: nrwl/nx-set-shas@v3
-        with:
-          main-branch-name: 'main'
-
-      - name: Setup volta
-        uses: volta-cli/action@v4
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Initialize the Nx Cloud distributed CI run
-        run: pnpm nx-cloud start-ci-run
-
-      - name: Run commands in parallel
-        run: |
-          pids=()
-
-          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx-cloud record -- pnpm format:check & pids+=($!)
-
-          pnpm nx affected -t lint --parallel=3 & pids+=($!)
-          pnpm nx affected -t typecheck --parallel=3 & pids+=($!)
-          NX_CLOUD_DISTRIBUTED_EXECUTION=false pnpm nx affected -t build --parallel=3 & pids+=($!)
-
-          # run all commands in parallel and bail if one of them fails
-          for pid in "${pids[@]}"; do
-            if ! wait $pid; then
-              echo "Process $pid failed"
-              exit 1
-            fi
-          done
-
-          exit 0
-
-      - name: Stop all running agents for this CI run
-        if: ${{ always() }}
-        run: pnpm nx-cloud stop-all-agents
-
-  agents:
-    name: Agent ${{ matrix.agent }}
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        agent: [1, 2, 3]
-    steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup volta
+      - name: Setup Volta
         uses: volta-cli/action@v4
+
+      - name: Install Node & pnpm
+        run: volta install node && volta install pnpm
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Start Nx Agent ${{ matrix.agent }}
-        run: pnpm nx-cloud start-agent
-        env:
-          NX_AGENT_NAME: ${{matrix.agent}}
+      - name: Check format
+        run: pnpm format:check
+
+      - name: Check lint
+        run: pnpm lint
+
+      - name: Build
+        run: pnpm build

@@ -1,7 +1,0 @@
-{
-  "extends": "@noodle/tsconfig/base.json",
-  "compilerOptions": {
-    "noEmit": true
-  },
-  "include": ["**/*.ts"]
-}
