@@ -1,9 +1,4 @@
-pnpm-lock.yaml
+node_modules
 .next
-coverage
-storybook-static
-dist
-playwright-report
-test-results
-.all-contributorsrc
-packages/db/drizzle
+bun.lockb
+pnpm-lock.yaml
