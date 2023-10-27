@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/ixahmedxi/noodle/blob/main/public/logo.png?raw=true" alt="Noodle logo" width="75">  
+  <img src="https://github.com/noodle-run/noodle/blob/main/public/logo.png?raw=true" alt="Noodle logo" width="75">  
   <h1>Noodle <br> Rethinking Student Productivity</h1>
   <br>
 </div>
@@ -14,7 +14,7 @@
 >
 > Follow me on twitter [@ixahmedxii](https://twitter.com/ixahmedxii) for updates.
 
-![Noodle Preview](https://github.com/ixahmedxi/noodle/blob/main/public/preview.png?raw=true)
+![Noodle Preview](https://github.com/noodle-run/noodle/blob/main/public/preview.png?raw=true)
 
 <p align="center" style="color:dodgerblue;"><strong>⚠️ This is a UI design mockup of what the platform will look like, it is not the current state of the project.</strong></p>
 
@@ -40,5 +40,5 @@ As an open-source platform, Noodle strives to cultivate a community of students 
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=ixahmedxi/noodle#gh-light-mode-only)](https://star-history.com/#ixahmedxi/noodle#gh-light-mode-only)
-[![Star History Chart](https://api.star-history.com/svg?repos=ixahmedxi/noodle&theme=dark#gh-dark-mode-only)](https://star-history.com/#ixahmedxi/noodle#gh-dark-mode-only)
+[![Star History Chart](https://api.star-history.com/svg?repos=noodle-run/noodle#gh-light-mode-only)](https://star-history.com/#noodle-run/noodle#gh-light-mode-only)
+[![Star History Chart](https://api.star-history.com/svg?repos=noodle-run/noodle&theme=dark#gh-dark-mode-only)](https://star-history.com/#noodle-run/noodle#gh-dark-mode-only)
