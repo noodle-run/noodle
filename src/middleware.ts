@@ -1,18 +1,23 @@
 import { authMiddleware } from "@clerk/nextjs";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
-import { type NextRequest, NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { env } from "./env.mjs";
 
-const redis = new Redis({
-  url: env.UPSTASH_REDIS_REST_URL,
-  token: env.UPSTASH_REDIS_REST_TOKEN,
-});
+let redis: Redis;
+let ratelimit: Ratelimit;
 
-const ratelimit = new Ratelimit({
-  redis: redis,
-  limiter: Ratelimit.slidingWindow(20, "3 s"),
-});
+if (env.UPSTASH_REDIS_REST_URL) {
+  redis = new Redis({
+    url: env.UPSTASH_REDIS_REST_URL ?? "",
+    token: env.UPSTASH_REDIS_REST_TOKEN ?? "",
+  });
+
+  ratelimit = new Ratelimit({
+    redis: redis,
+    limiter: Ratelimit.slidingWindow(20, "3 s"),
+  });
+}
 
 async function rateLimitMiddleware(
   request: NextRequest,
@@ -28,7 +33,10 @@ const publicRoutesThatShouldRedirectAfterAuth = ["/", "/waitlist"];
 
 export default authMiddleware({
   beforeAuth: (req) => {
-    return rateLimitMiddleware(req);
+    if (env.UPSTASH_REDIS_REST_URL) {
+      return rateLimitMiddleware(req);
+    }
+    return NextResponse.next();
   },
   afterAuth: (auth, req) => {
     if (
