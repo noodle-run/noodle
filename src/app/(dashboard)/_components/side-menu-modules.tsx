@@ -362,7 +362,12 @@ const CreateModulePopover = () => {
                   <span className="text-default-500">Color</span>
                 </Button>
 
-                <Button isLoading={isLoading} type="submit" color="primary" className="font-semibold">
+                <Button
+                  isLoading={isLoading}
+                  type="submit"
+                  color="primary"
+                  className="font-semibold"
+                >
                   Create module
                 </Button>
               </>
