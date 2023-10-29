@@ -1,37 +1,48 @@
 "use client";
 
-import { TypographyH2 } from "@/components/TypographyH2";
 import { trpc } from "@/trpc/client";
-import { Suspense, useEffect } from "react";
-import { ErrorBoundary } from "react-error-boundary";
-import { toast } from "sonner";
-import { Heading } from "./_components/heading";
+import { Button, useDisclosure } from "@nextui-org/react";
+import AddTask from "./_components/add-task";
+import Task from "./_components/task-item";
+import { Suspense } from "react";
+import { motion } from "framer-motion";
+
+const MotionTask = motion(Task);
 
 export default function Page({ params }: { params: { id: string } }) {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   const id = Number(params.id);
-  const { mutate, error } = trpc.module.post.updateLastVisited.useMutation();
 
-  useEffect(() => {
-    if (!error) {
-      mutate({ id });
-    }
+  const [tasks] = trpc.todos.get.byModule.useSuspenseQuery({ moduleId: id });
 
-    if (error) {
-      toast.error(
-        "Something went wrong while trying to update the module last visited date...",
-      );
-    }
-  }, [id, mutate, error]);
-
+  // FIXME: weird animation bug when moving
   return (
-    <main className="pl-2">
-      <ErrorBoundary
-        fallback={<TypographyH2>Something went wrong</TypographyH2>}
-      >
-        <Suspense fallback={<TypographyH2>Loading...</TypographyH2>}>
-          <Heading id={Number(params.id)} />
-        </Suspense>
-      </ErrorBoundary>
-    </main>
+    <div>
+      <Suspense>
+        {!tasks || tasks.length == 0 ? (
+          <div className="p-4 text-center">
+            <p className="pb-4 text-center">No tasks.</p>
+          </div>
+        ) : (
+          <ul className="p-4">
+            {tasks.map(({ name, id, checked, dueAt }) => (
+              <MotionTask
+                layout
+                key={id}
+                task={id}
+                name={name}
+                checked={checked}
+                dueAt={new Date(dueAt)}
+              />
+            ))}
+          </ul>
+        )}
+      </Suspense>
+      <Button color="primary" onClick={onOpen}>
+        Add one
+      </Button>
+      <AddTask isOpen={isOpen} onOpenChange={onOpenChange} moduleId={id} />
+    </div>
   );
 }
