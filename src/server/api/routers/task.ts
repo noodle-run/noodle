@@ -143,7 +143,7 @@ export const taskRouter = createTRPCRouter({
   }),
   patch: createTRPCRouter({
     switchDone: protectedProcedure
-      .input(selectTaskSchema.pick({ id: true }))
+      .input(selectTaskSchema.pick({ id: true, done: true }))
       .mutation(async ({ ctx, input }) => {
         try {
           const [taskWithModule] = await ctx.db
@@ -165,18 +165,50 @@ export const taskRouter = createTRPCRouter({
             });
           }
 
-          const { task } = taskWithModule;
-
           const res = await ctx.db
             .update(taskTable)
             .set({
-              done: !task.done,
-              doneAt: !task.done ? new Date().toString() : null,
+              done: input.done,
+              doneAt: !input.done ? new Date().toString() : null,
             })
             .where(eq(taskTable.id, input.id))
             .returning();
 
           return res;
+        } catch (err) {
+          console.error(err);
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message:
+              "An error occurred while switching the task's done status.",
+          });
+        }
+      }),
+  }),
+  delete: createTRPCRouter({
+    byId: protectedProcedure
+      .input(selectTaskSchema.pick({ id: true }))
+      .mutation(async ({ ctx, input }) => {
+        try {
+          const [task] = await ctx.db
+            .select({ id: taskTable.id })
+            .from(taskTable)
+            .leftJoin(moduleTable, eq(moduleTable.id, taskTable.moduleId))
+            .where(
+              and(
+                eq(taskTable.id, input.id),
+                eq(moduleTable.userId, ctx.auth.userId),
+              ),
+            );
+
+          if (!task) {
+            throw new TRPCError({
+              code: "BAD_REQUEST",
+              message: "The task you are trying to delete doesn't exist",
+            });
+          }
+
+          await ctx.db.delete(taskTable).where(eq(taskTable.id, task.id));
         } catch (err) {
           console.error(err);
           throw new TRPCError({

@@ -27,7 +27,7 @@ export const moduleTable = sqliteTable("module", {
 
 export const moduleTableRelations = relations(moduleTable, ({ many }) => ({
   notebooks: many(notebooks),
-  tasks: many(taskTable)
+  tasks: many(taskTable),
 }));
 
 export const insertModuleSchema = createInsertSchema(moduleTable, {

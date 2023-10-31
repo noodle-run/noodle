@@ -8,7 +8,7 @@ const MotionTask = motion(Task);
 
 export default function Tasks(props: { id: string }) {
   const id = Number(props.id);
-  const [todos] = trpc.todos.get.byModule.useSuspenseQuery({ moduleId: id });
+  const [todos] = trpc.task.get.byModule.useSuspenseQuery({ moduleId: id });
 
   return (
     <div className="m-1 mt-4 min-h-full w-1/4 rounded border border-gray-900">
@@ -19,10 +19,10 @@ export default function Tasks(props: { id: string }) {
             <MotionTask
               layout
               key={todo.id}
-              checked={todo.checked}
-              name={todo.name}
+              checked={todo.done ?? false}
+              name={todo.title}
               task={todo.id}
-              dueAt={new Date(todo.dueAt)}
+              dueAt={new Date(todo.dueDate)}
             />
           ))}
         </ol>

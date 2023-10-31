@@ -14,7 +14,7 @@ export default function Page({ params }: { params: { id: string } }) {
 
   const id = Number(params.id);
 
-  const [tasks] = trpc.todos.get.byModule.useSuspenseQuery({ moduleId: id });
+  const [tasks] = trpc.task.get.byModule.useSuspenseQuery({ moduleId: id });
 
   // FIXME: weird animation bug when moving
   return (
@@ -26,14 +26,14 @@ export default function Page({ params }: { params: { id: string } }) {
           </div>
         ) : (
           <ul className="p-4">
-            {tasks.map(({ name, id, checked, dueAt }) => (
+            {tasks.map(({ title, id, done, dueDate }) => (
               <MotionTask
                 layout
                 key={id}
                 task={id}
-                name={name}
-                checked={checked}
-                dueAt={new Date(dueAt)}
+                name={title}
+                checked={done ?? false}
+                dueAt={new Date(dueDate)}
               />
             ))}
           </ul>

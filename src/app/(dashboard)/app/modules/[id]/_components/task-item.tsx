@@ -21,9 +21,9 @@ const Task = forwardRef<
     name: string;
     dueAt: Date;
   }
->(({ task, checked, name, dueAt }, ref) => {
-  const setChecked = trpc.todos.update.setChecked.useMutation();
-  const remove = trpc.todos.delete.byId.useMutation();
+>(function Task({ task, checked, name, dueAt }, ref) {
+  const setChecked = trpc.task.patch.switchDone.useMutation();
+  const remove = trpc.task.delete.byId.useMutation();
   const { onOpen, onOpenChange, isOpen } = useDisclosure();
 
   const utils = trpc.useUtils();
@@ -34,8 +34,8 @@ const Task = forwardRef<
         isSelected={checked}
         onChange={async (e) => {
           e.preventDefault();
-          await setChecked.mutateAsync({ checked: e.target.checked, id: task });
-          await utils.todos.invalidate();
+          await setChecked.mutateAsync({ done: e.target.checked, id: task });
+          await utils.task.invalidate();
         }}
       />
       <button>
@@ -79,8 +79,8 @@ const Task = forwardRef<
                   color="danger"
                   isLoading={remove.isLoading}
                   onClick={async () => {
-                    await remove.mutateAsync(task);
-                    await utils.todos.invalidate();
+                    await remove.mutateAsync({ id: task });
+                    await utils.task.invalidate();
                     onClose();
                   }}
                 >

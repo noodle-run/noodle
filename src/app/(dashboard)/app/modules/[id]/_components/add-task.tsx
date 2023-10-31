@@ -28,16 +28,16 @@ export default function AddTask(props: {
     reset,
   } = useZodForm({
     schema: z.object({
-      name: z.string(),
+      title: z.string(),
       note: z.string().optional(),
-      dueAt: z
+      dueDate: z
         .string()
         .refine((str) => !isNaN(Date.parse(str)), { message: "Invalid date" }),
-      priority: z.enum(["low", "high", "medium"]),
+      priority: z.enum(["LOW", "HIGH", "MEDIUM"]),
     }),
   });
 
-  const { mutateAsync, isLoading } = trpc.todos.create.new.useMutation();
+  const { mutateAsync, isLoading } = trpc.task.post.create.useMutation();
   const utils = trpc.useUtils();
 
   return (
@@ -50,12 +50,12 @@ export default function AddTask(props: {
               onSubmit={handleSubmit(async (data) => {
                 await mutateAsync({
                   moduleId: props.moduleId,
-                  name: data.name,
+                  title: data.title,
                   priority: data.priority,
-                  note: data.note,
-                  dueAt: new Date(Date.parse(data.dueAt)),
+                  notes: data.note ?? "",
+                  dueDate: new Date(Date.parse(data.dueDate)).toString(),
                 });
-                await utils.todos.invalidate();
+                await utils.task.invalidate();
 
                 onClose();
                 reset();
@@ -71,9 +71,9 @@ export default function AddTask(props: {
                   variant="bordered"
                   labelPlacement="outside"
                   isRequired
-                  isInvalid={!!errors.name}
-                  errorMessage={errors.name?.message}
-                  {...register("name")}
+                  isInvalid={!!errors.title}
+                  errorMessage={errors.title?.message}
+                  {...register("title")}
                 />
                 <Textarea
                   label="Note"
@@ -98,13 +98,13 @@ export default function AddTask(props: {
                   errorMessage={errors.priority?.message}
                   {...register("priority")}
                 >
-                  <SelectItem key="low" value="low">
+                  <SelectItem key="LOW" value="LOW">
                     Low
                   </SelectItem>
-                  <SelectItem key="medium" value="medium">
+                  <SelectItem key="MEDIUM" value="MEDIUM">
                     Medium
                   </SelectItem>
-                  <SelectItem key="high" value="high">
+                  <SelectItem key="HIGH" value="HIGH">
                     High
                   </SelectItem>
                 </Select>
@@ -117,9 +117,9 @@ export default function AddTask(props: {
                   variant="bordered"
                   labelPlacement="outside"
                   isRequired
-                  isInvalid={!!errors.dueAt}
-                  errorMessage={errors.dueAt?.message}
-                  {...register("dueAt")}
+                  isInvalid={!!errors.dueDate}
+                  errorMessage={errors.dueDate?.message}
+                  {...register("dueDate")}
                 />
               </ModalBody>
               <ModalFooter>

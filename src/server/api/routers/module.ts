@@ -8,9 +8,9 @@ export const moduleRouter = createTRPCRouter({
       try {
         const modules = await ctx.db.query.moduleTable.findMany({
           where: (table, { eq }) => eq(table.userId, ctx.auth.userId),
-          with:{
-            tasks: true
-          }
+          with: {
+            tasks: true,
+          },
         });
 
         return modules;
