@@ -1,6 +1,6 @@
 import { insertModuleSchema, moduleTable, selectModuleSchema } from "@/db";
-import { createTRPCRouter, protectedProcedure } from "../trpc";
 import { and, eq } from "drizzle-orm";
+import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const moduleRouter = createTRPCRouter({
   get: createTRPCRouter({
@@ -8,6 +8,9 @@ export const moduleRouter = createTRPCRouter({
       try {
         const modules = await ctx.db.query.moduleTable.findMany({
           where: (table, { eq }) => eq(table.userId, ctx.auth.userId),
+          with:{
+            tasks: true
+          }
         });
 
         return modules;
