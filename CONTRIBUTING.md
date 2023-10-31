@@ -43,7 +43,7 @@ Our preferred way of providing the opportunity for people to contribute to Noodl
 
 - You see an area of improvement in the code base, this could be a fix, feature, refactoring...etc
 
-- Create an [issue](https://github.com/ixahmedxi/noodle/issues) on our Github repository.
+- Create an [issue](https://github.com/noodle-run/noodle/issues) on our Github repository.
 
 - Wait until a team member discusses the issue with you, and if both parties are in agreement, you can assign yourself to the issue.
 
@@ -106,7 +106,7 @@ There are a lot of other technologies being used in this project, however these 
 
 ### Cloning the repo
 
-To clone the repo, you firstly need to [fork](https://github.com/ixahmedxi/noodle/fork) it, and then clone your copy of noodle locally.
+To clone the repo, you firstly need to [fork](https://github.com/noodle-run/noodle/fork) it, and then clone your copy of noodle locally.
 
 ```bash
 git clone https://github.com/<your-gh-username>/noodle.git
