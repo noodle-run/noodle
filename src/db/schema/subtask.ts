@@ -1,13 +1,13 @@
 import { relations, sql } from "drizzle-orm";
-import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, text } from "drizzle-orm/sqlite-core";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
-import { task } from "./task";
+import { sqliteTable } from "./noodle_table";
+import { taskTable } from "./task";
 
-export const subtask = sqliteTable("subTask", {
+export const subtaskTable = sqliteTable("subtask", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
 
   title: text("title").notNull(),
-  description: text("description").notNull(),
 
   notes: text("notes").notNull(),
 
@@ -15,7 +15,7 @@ export const subtask = sqliteTable("subTask", {
   doneAt: text("doneAt"),
 
   taskId: integer("task_id")
-    .references(() => task.id)
+    .references(() => taskTable.id)
     .notNull(),
 
   createdAt: text("createdAt")
@@ -27,28 +27,28 @@ export const subtask = sqliteTable("subTask", {
     .default(sql`CURRENT_TIMESTAMP`),
 });
 
-export type Subtask = typeof subtask.$inferSelect;
-export type NewSubtask = typeof subtask.$inferInsert;
+export type Subtask = typeof subtaskTable.$inferSelect;
+export type NewSubtask = typeof subtaskTable.$inferInsert;
 
-export const subtaskRelations = relations(subtask, ({ one }) => ({
-  task: one(task),
+export const subtaskRelations = relations(subtaskTable, ({ one }) => ({
+  task: one(taskTable),
 }));
 
-export const insertSubtaskSchema = createInsertSchema(subtask).omit({
+export const insertSubtaskSchema = createInsertSchema(subtaskTable).omit({
   id: true,
   createdAt: true,
   done: true,
   doneAt: true,
 });
 
-export const updateSubtaskSchema = createInsertSchema(subtask).omit({
+export const updateSubtaskSchema = createInsertSchema(subtaskTable).omit({
   moduleId: true,
   taskId: true,
   doneAt: true,
   createdAt: true,
 });
 
-export const selectSubtaskSchema = createSelectSchema(subtask).omit({
+export const selectSubtaskSchema = createSelectSchema(subtaskTable).omit({
   createdAt: true,
   description: true,
   dueDate: true,
