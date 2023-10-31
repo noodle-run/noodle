@@ -194,7 +194,7 @@ const CreateModulePopover = () => {
 
   const utils = trpc.useUtils();
 
-  const { mutateAsync } = trpc.module.post.create.useMutation({
+  const { mutateAsync, isLoading } = trpc.module.post.create.useMutation({
     onSuccess: async () => {
       await utils.module.get.all.invalidate();
     },
@@ -362,7 +362,12 @@ const CreateModulePopover = () => {
                   <span className="text-default-500">Color</span>
                 </Button>
 
-                <Button type="submit" color="primary" className="font-semibold">
+                <Button
+                  isLoading={isLoading}
+                  type="submit"
+                  color="primary"
+                  className="font-semibold"
+                >
                   Create module
                 </Button>
               </>

@@ -33,7 +33,7 @@ export const DashboardSideMenu = async () => {
           <ul>
             <li>
               <FeedbackModal
-                email={user?.emailAddresses[0]!.emailAddress ?? ""}
+                email={user?.emailAddresses[0]?.emailAddress ?? ""}
               />
             </li>
             <li>

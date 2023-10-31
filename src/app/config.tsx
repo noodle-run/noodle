@@ -16,7 +16,7 @@ export const siteConfig = {
   description:
     "Noodle is an open-source platform that combines various productivity tools into one, such as note taking and task management, providing insightful automations to enhance student productivity.",
 
-  github: "https://github.com/ixahmedxi/noodle",
+  github: "https://github.com/noodle-run/noodle",
   twitter: "https://twitter.com/ixahmedxii",
   discord: "https://discord.gg/SERySfj8Eg",
   instagram: "https://instagram.com/noodle.run",
