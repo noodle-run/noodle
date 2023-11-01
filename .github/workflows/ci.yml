@@ -3,7 +3,12 @@ on:
   push:
     branches:
       - main
-  pull_request:
+  pull_request_target:
+    branches:
+      - main
+    paths-ignore:
+      - ".vscode/**"
+      - "*.md"
 
 env:
   # Database
@@ -28,6 +33,7 @@ jobs:
   main:
     name: CI
     runs-on: ubuntu-latest
+    environment: CI
     steps:
       - name: Checkout
         uses: actions/checkout@v4
