@@ -7,6 +7,7 @@ import {
   ListTodoIcon,
   PuzzleIcon,
   WalletCardsIcon,
+  LandmarkIcon
 } from "lucide-react";
 import { type FeatureCardProps } from "./(marketing)/_components/feature-card";
 
@@ -59,6 +60,11 @@ export const dashboardLinks = [
     href: "/app/calendar",
     label: "Calendar",
     icon: <CalendarIcon size={18} />,
+  },
+  {
+    href: "/app/finance",
+    label: "Finance",
+    icon: <LandmarkIcon size={18} />,
   },
 ];
 
