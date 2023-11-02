@@ -41,17 +41,20 @@ jobs:
       - name: Setup Volta
         uses: volta-cli/action@v4
 
-      - name: Install Node & pnpm
-        run: volta install node && volta install pnpm
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install Node
+        run: volta install node
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Check format
-        run: pnpm format:check
+        run: bun run format:check
 
       - name: Check lint
-        run: pnpm lint
+        run: bun run lint
 
       - name: Build
-        run: pnpm build
+        run: bun run build
