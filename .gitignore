@@ -41,3 +41,5 @@ next-env.d.ts
 *.db
 *.sqlite
 *.sqlite3
+
+package-lock.json
