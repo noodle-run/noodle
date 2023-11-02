@@ -94,4 +94,46 @@ export const subtaskRouter = createTRPCRouter({
         }
       }),
   }),
+  delete: createTRPCRouter({
+    byId: protectedProcedure
+      .input(selectSubtaskSchema.pick({ id: true }))
+      .mutation(async ({ ctx, input }) => {
+        try {
+          const [subtaskWithTask] = await ctx.db
+            .select()
+            .from(subtaskTable)
+            .leftJoin(taskTable, eq(taskTable.id, subtaskTable.taskId))
+            .leftJoin(moduleTable, eq(moduleTable.id, taskTable.moduleId))
+            .where(
+              and(
+                eq(subtaskTable.id, input.id),
+                eq(moduleTable.userId, ctx.auth.userId),
+              ),
+            )
+            .limit(1);
+
+          if (!subtaskWithTask) {
+            throw new TRPCError({
+              code: "BAD_REQUEST",
+              message: `The task you are trying to delete does not exist`,
+            });
+          }
+
+          const { subtask } = subtaskWithTask;
+
+          const deleteResult = await ctx.db
+            .delete(subtaskTable)
+            .where(eq(subtaskTable.id, subtask.id))
+            .returning();
+
+          return deleteResult;
+        } catch (err) {
+          console.error(err);
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "An error occurred while deleting the task.",
+          });
+        }
+      }),
+  }),
 });

@@ -187,4 +187,45 @@ export const taskRouter = createTRPCRouter({
         }
       }),
   }),
+  delete: createTRPCRouter({
+    byId: protectedProcedure
+      .input(selectTaskSchema.pick({ id: true }))
+      .mutation(async ({ ctx, input }) => {
+        try {
+          const [taskWithModule] = await ctx.db
+            .select()
+            .from(taskTable)
+            .leftJoin(moduleTable, eq(moduleTable.id, taskTable.moduleId))
+            .where(
+              and(
+                eq(taskTable.id, input.id),
+                eq(moduleTable.userId, ctx.auth.userId),
+              ),
+            )
+            .limit(1);
+
+          if (!taskWithModule) {
+            throw new TRPCError({
+              code: "BAD_REQUEST",
+              message: `The task you are trying to delete does not exist`,
+            });
+          }
+
+          const { task } = taskWithModule;
+
+          const deleteResult = await ctx.db
+            .delete(taskTable)
+            .where(eq(taskTable.id, task.id))
+            .returning();
+
+          return deleteResult;
+        } catch (err) {
+          console.error(err);
+          throw new TRPCError({
+            code: "INTERNAL_SERVER_ERROR",
+            message: "An error occurred while deleting the task.",
+          });
+        }
+      }),
+  }),
 });
