@@ -7,7 +7,7 @@ export const FaqAccordion = () => {
   return (
     <Accordion>
       {faq.map((item, i) => (
-        <AccordionItem key={i} {...item} aria-label={item.title} />
+        <AccordionItem key={i} title={item["aria-label"]} {...item} />
       ))}
     </Accordion>
   );

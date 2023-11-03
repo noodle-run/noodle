@@ -20,7 +20,6 @@ If applicable, add screenshots to help explain your problem.
 
 **Information (please complete the following information):**
 
-- Node version [e.g. 18.17.0]
 - Bun version [e.g. 1.0.8]
 
 **Additional context**
