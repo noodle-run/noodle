@@ -9,7 +9,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
   return (
     <TRPCReactProvider headers={headers()}>
       <SideMenuProvider>
-        <div className="relative flex min-h-screen w-screen overflow-hidden">
+        <div className="relative flex h-screen w-screen overflow-hidden">
           <DashboardSideMenu />
 
           <MainDashboardWrapper>{children}</MainDashboardWrapper>
