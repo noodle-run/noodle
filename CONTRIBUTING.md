@@ -169,7 +169,7 @@ Clerk is our choice of authentication service for Noodle, it's true that it is a
 
 And now you got Auth!
 
-#### Configuring Upstash
+#### Configuring Upstash (optional)
 
 1. Create your account through [Upstash's dashboard](https://console.upstash.com)
 2. Click on "Create database"
@@ -179,6 +179,7 @@ And now you got Auth!
 6. In the "Connect to your database" section, select "@upstash/redis"
 7. Copy the url into your `.env` file as `REDIS_URL` key
 8. Copy the token into your `.env` file as `REDIS_TOKEN` key
+9. Upstash is only used for ratelimiting, if left empty then ratelimiting will be disabled
 
 And that's all for the redis part!
 
