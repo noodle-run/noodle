@@ -9,8 +9,8 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
-    UPSTASH_REDIS_REST_URL: z.string().min(1).optional(),
-    UPSTASH_REDIS_REST_TOKEN: z.string().min(0).optional(),
+    UPSTASH_REDIS_REST_URL: z.string().optional(),
+    UPSTASH_REDIS_REST_TOKEN: z.string().optional(),
     CLERK_SECRET_KEY: z.string().min(1),
     OPENWEATHER_API_KEY: z.string().min(1),
   },
