@@ -35,14 +35,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Volta
-        uses: volta-cli/action@v4
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: '1.0.8'
 
-      - name: Install Node
-        run: volta install node
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.18.2'
 
       - name: Install dependencies
         run: bun install
