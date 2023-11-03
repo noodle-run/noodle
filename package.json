@@ -6,8 +6,8 @@
   "author": "NOODLE RUN LTD",
   "private": true,
   "scripts": {
-    "dev": "bun run db:migrate && next dev",
-    "build": "bun run db:migrate && next build",
+    "dev": "bun run db:migrate && bun run next dev",
+    "build": "bun run db:migrate && bun run next build",
     "start": "next start",
     "lint": "next lint --fix",
     "format": "prettier --write .",
@@ -113,6 +113,6 @@
   },
   "volta": {
     "node": "18.18.2",
-    "bun": "1.0.7"
+    "bun": "1.0.8"
   }
 }

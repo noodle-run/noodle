@@ -72,7 +72,7 @@ If you would like to be more involved in the development of Noodle, we would lik
 The Environment:
 
 - [NodeJS](https://nodejs.org/en)
-- [Pnpm](https://pnpm.io/)
+- [Bun](https://bun.sh/)
 
 The Tech Stack:
 
@@ -114,27 +114,30 @@ git clone https://github.com/<your-gh-username>/noodle.git
 
 ### Volta
 
-To get the project running locally, it is advised that you have [Volta](https://volta.sh/) installed on your system. This allows you to have the exact same versions of [NodeJS](https://nodejs.org/en) and [Pnpm](https://pnpm.io/) as we do, further lowering the chances of you getting errors that we don't get.
+To get the project running locally, it is advised that you have [Volta](https://volta.sh/) installed on your system. This allows you to have the exact same versions of [NodeJS](https://nodejs.org/en), further lowering the chances of you getting errors that we don't get.
 
 There are ways to do this using other tools such as NVM, but we take Noodle as an initiative to move people to arguably better tools such as Volta.
 
-Volta's pnpm support is currently experimental, and so you need to do the following to let it manage your Pnpm version:
-
-In your `.bashrc` or `.zshrc` file, add the following line:
-
-```bash
-export VOLTA_FEATURE_PNPM=1
-```
-
-With this out of the way, you should have the correct version of Nodejs and Pnpm once you change directory into Noodle's project folder. You can test this out as such:
+With this out of the way, you should have the correct version of Nodejs once you change directory into Noodle's project folder. You can test this out as such:
 
 ```bash
 # cd into noodle
 cd /path/to/noodle
 
-# output node and pnpm versions
+# output node version
 node --version
-pnpm --version
+```
+
+### Bun
+
+TODO: write this
+
+```bash
+# cd into noodle
+cd /path/to/noodle
+
+# output bun version
+bun --version
 ```
 
 And make sure that the version is the same as the one defined in the root `package.json` file in the `volta` section.
@@ -190,25 +193,25 @@ And that's all for the redis part!
 
 ### Installing dependencies
 
-To install the dependencies needed to run Noodle, you need to run `pnpm install`, this will install all of the packages that we use. After this is done, you are ready to run Noodle locally!
+To install the dependencies needed to run Noodle, you need to run `bun install`, this will install all of the packages that we use. After this is done, you are ready to run Noodle locally!
 
 ### Running stuff
 
 ```bash
 # Run the project's dev server
-pnpm dev
+bun run dev
 
 # Build the project
-pnpm build
+bun run build
 
 # Run the built project in production mode
-pnpm start
+bun run start
 
 # Lint
-pnpm lint
+bun run lint
 
 # Format
-pnpm format:write
+bun run format:write
 ```
 
 ## Closing notes

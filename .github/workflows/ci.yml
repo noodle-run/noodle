@@ -26,9 +26,6 @@ env:
   UPSTASH_REDIS_REST_URL: ${{secrets.UPSTASH_REDIS_REST_URL}}
   UPSTASH_REDIS_REST_TOKEN: ${{secrets.UPSTASH_REDIS_REST_TOKEN}}
 
-  # Volta
-  VOLTA_FEATURE_PNPM: 1
-
 jobs:
   main:
     name: CI
