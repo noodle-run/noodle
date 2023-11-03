@@ -20,8 +20,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Information (please complete the following information):**
 
-- Node version [e.g. 18.17.0]
-- Pnpm version [e.g. 8.9.2]
+- Bun version [e.g. 1.0.8]
 
 **Additional context**
 Add any other context about the problem here.
