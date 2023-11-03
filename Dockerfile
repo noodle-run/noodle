@@ -1,4 +1,4 @@
-FROM node:18-alpine AS base
+FROM node:20-alpine AS base
 RUN npm i -g pnpm
 RUN apk add --no-cache libc6-compat
 ENV DATABASE_URL file:./dev.db
