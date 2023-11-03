@@ -16,12 +16,12 @@ In this guide, you will get an overview of the project structure and setup, as w
   - [The tech stack](#the-tech-stack)
   - [Getting stuff running](#getting-stuff-running)
     - [Cloning the repo](#cloning-the-repo)
-    - [Volta](#volta)
+    - [Bun](#bun)
+    - [Installing dependencies](#installing-dependencies)
     - [Environment Variables](#environment-variables)
       - [Configuring your Database](#configuring-your-database)
       - [Configuring Clerk](#configuring-clerk)
       - [Configuring Upstash](#configuring-upstash)
-    - [Installing dependencies](#installing-dependencies)
     - [Running stuff](#running-stuff)
   - [Closing notes](#closing-notes)
 
@@ -69,10 +69,9 @@ If you would like to be more involved in the development of Noodle, we would lik
 
 ## The tech stack
 
-The Environment:
+The Runtime:
 
-- [NodeJS](https://nodejs.org/en)
-- [Pnpm](https://pnpm.io/)
+- [Bun](https://bun.sh/)
 
 The Tech Stack:
 
@@ -112,36 +111,31 @@ To clone the repo, you firstly need to [fork](https://github.com/noodle-run/nood
 git clone https://github.com/<your-gh-username>/noodle.git
 ```
 
-### Volta
+### Bun
 
-To get the project running locally, it is advised that you have [Volta](https://volta.sh/) installed on your system. This allows you to have the exact same versions of [NodeJS](https://nodejs.org/en) and [Pnpm](https://pnpm.io/) as we do, further lowering the chances of you getting errors that we don't get.
+Bun is used as the package manager of Noodle, with Bun, you actually don't need to have NodeJS installed at all on your system to be able to run Noodle. The only tool you need to install dependencies & run Noodle is Bun!
 
-There are ways to do this using other tools such as NVM, but we take Noodle as an initiative to move people to arguably better tools such as Volta.
+To install bun, head over to [their website](https://bun.sh/) which will tell you how to get it installed on your system.
 
-Volta's pnpm support is currently experimental, and so you need to do the following to let it manage your Pnpm version:
-
-In your `.bashrc` or `.zshrc` file, add the following line:
+To check that you have Bun installed, simply run the following command:
 
 ```bash
-export VOLTA_FEATURE_PNPM=1
+bun --version
 ```
 
-With this out of the way, you should have the correct version of Nodejs and Pnpm once you change directory into Noodle's project folder. You can test this out as such:
+If this commands outputs a version number, you're all good to go.
+
+### Installing dependencies
+
+With bun installed on your machine, the next step would be to install the dependencies that Noodle relies upon to work, to do this, run the following command:
 
 ```bash
-# cd into noodle
-cd /path/to/noodle
-
-# output node and pnpm versions
-node --version
-pnpm --version
+bun install
 ```
-
-And make sure that the version is the same as the one defined in the root `package.json` file in the `volta` section.
 
 ### Environment Variables
 
-Now that Volta has been installed locally on your system, it's time to configure your environment variables so that the project works as expected:
+Now that Bun & dependencies has been installed, it's time to configure your environment variables so that the project works as expected:
 
 1.  Duplicate the `.env.example` file as just `.env`
 
@@ -189,27 +183,26 @@ And now you got Auth!
 
 And that's all for the redis part!
 
-### Installing dependencies
-
-To install the dependencies needed to run Noodle, you need to run `pnpm install`, this will install all of the packages that we use. After this is done, you are ready to run Noodle locally!
-
 ### Running stuff
 
 ```bash
 # Run the project's dev server
-pnpm dev
+bun dev
 
 # Build the project
-pnpm build
+bun run build
 
 # Run the built project in production mode
-pnpm start
+bun start
 
-# Lint
-pnpm lint
+# Run the typecheck script
+bun typecheck
 
-# Format
-pnpm format:write
+# Lint using ESLint
+bun lint
+
+# Format using Prettier
+bun format
 ```
 
 ## Closing notes

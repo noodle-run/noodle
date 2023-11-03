@@ -6,8 +6,9 @@
   "author": "NOODLE RUN LTD",
   "private": true,
   "scripts": {
-    "dev": "pnpm db:migrate && next dev",
-    "build": "pnpm db:migrate && next build",
+    "postinstall": "cd ./node_modules/better-sqlite3 && bun run install && cd ../../",
+    "dev": "bun run db:migrate && bun run next dev",
+    "build": "bun run db:migrate && bun run next build",
     "start": "next start",
     "lint": "next lint --fix",
     "format": "prettier --write .",
@@ -16,7 +17,7 @@
     "db:generate": "drizzle-kit generate:sqlite",
     "db:push": "drizzle-kit push:sqlite",
     "db:studio": "drizzle-kit studio",
-    "db:migrate": "tsx ./scripts/run-migrations.ts"
+    "db:migrate": "bun ./scripts/run-migrations.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.25.6",
@@ -64,6 +65,7 @@
     "@upstash/redis": "^1.23.4",
     "@vercel/analytics": "^1.1.1",
     "autoprefixer": "10.4.16",
+    "better-sqlite3": "^9.0.0",
     "bufferutil": "^4.0.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -76,6 +78,7 @@
     "lucide-react": "^0.288.0",
     "next": "13.5.6",
     "next-themes": "^0.2.1",
+    "node-fetch": "^3.3.2",
     "postcss": "8.4.31",
     "react": "18.2.0",
     "react-animate-height": "^3.2.2",
@@ -105,14 +108,9 @@
     "@types/eslint": "^8.44.6",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
-    "dotenv": "^16.3.1",
     "drizzle-kit": "^0.19.13",
+    "node-gyp": "^10.0.1",
     "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.6",
-    "tsx": "^3.14.0"
-  },
-  "volta": {
-    "node": "18.18.2",
-    "pnpm": "8.9.2"
+    "prettier-plugin-tailwindcss": "^0.5.6"
   }
 }
