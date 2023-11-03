@@ -22,29 +22,39 @@ export const Heading = ({ id }: { id: number }) => {
 
   return (
     <div>
-      <div
-        style={{
-          backgroundColor: moduleColor["500"],
-        }}
-        className="mt-6 inline-block rounded-xl p-2"
-      >
-        <Icon
-          name={module.icon as IconNames}
-          color={getTextColor(moduleColor["500"])}
-          size={36}
-          strokeWidth={1.5}
-        />
+      <div className="mt-6 flex gap-4">
+        <div className="mt-2">
+          <Icon
+            name={module.icon as IconNames}
+            color="white"
+            size={36}
+            strokeWidth={1.5}
+          />
+        </div>
+        <TypographyH2 className="mt-0 font-semibold">
+          {module.name}
+        </TypographyH2>
       </div>
-      <TypographyH2 className="mt-3">{module.name}</TypographyH2>
-      <TypographyH4 className="opacity-70">{module.code}</TypographyH4>
-      <p className="mt-3 flex items-center gap-2 opacity-75">
-        <Icon name="Scale" size={18} />
-        Worth {module.credits} Credits
-      </p>
-      <p className="mt-1 flex items-center gap-2 opacity-75">
-        <Icon name="Clock" size={18} /> Created{" "}
-        {getRelativeTime(new Date(module.createdAt))}
-      </p>
+      <div className="mr-24 mt-3 flex gap-4 p-2">
+        <p
+          className="rounded-full bg-pink-400 px-2"
+          style={{
+            backgroundColor: moduleColor["500"],
+            color: getTextColor(moduleColor["500"]),
+          }}
+        >
+          {module.code}
+        </p>
+
+        <p className="flex items-center gap-2 text-gray-400">
+          <Icon name="Scale" size={18} />
+          {module.credits} Credit{module.credits == 1 ? "" : "s"}
+        </p>
+        <p className="flex items-center gap-2 text-gray-400">
+          <Icon name="Clock" size={18} /> Created{" "}
+          {getRelativeTime(new Date(module.createdAt))}
+        </p>
+      </div>
     </div>
   );
 };
