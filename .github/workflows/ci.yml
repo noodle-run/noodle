@@ -26,8 +26,8 @@ env:
   UPSTASH_REDIS_REST_URL: ${{secrets.UPSTASH_REDIS_REST_URL}}
   UPSTASH_REDIS_REST_TOKEN: ${{secrets.UPSTASH_REDIS_REST_TOKEN}}
 
-  # Volta
-  VOLTA_FEATURE_PNPM: 1
+  # Openweather
+  OPENWEATHER_API_KEY: ${{secrets.OPENWEATHER_API_KEY}}
 
 jobs:
   main:
@@ -38,20 +38,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Volta
-        uses: volta-cli/action@v4
-
-      - name: Install Node & pnpm
-        run: volta install node && volta install pnpm
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Check format
-        run: pnpm format:check
+        run: bun run format:check
 
       - name: Check lint
-        run: pnpm lint
+        run: bun run lint
 
       - name: Build
-        run: pnpm build
+        run: bun run build

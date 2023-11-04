@@ -1,16 +1,12 @@
 import { db } from "@/db";
-import {
-  type SignedInAuthObject,
-  type SignedOutAuthObject,
-  getAuth,
-} from "@clerk/nextjs/server";
+import { getAuth } from "@clerk/nextjs/server";
 import { TRPCError, initTRPC } from "@trpc/server";
 import { type NextRequest } from "next/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
 type CreateContextOptions = {
-  auth: SignedInAuthObject | SignedOutAuthObject | null;
+  auth: ReturnType<typeof getAuth> | null;
 };
 
 const createInnerTRPCContext = ({ auth }: CreateContextOptions) => {
