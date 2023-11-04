@@ -1,5 +1,4 @@
 node_modules
 .next
 bun.lockb
-pnpm-lock.yaml
 migrations

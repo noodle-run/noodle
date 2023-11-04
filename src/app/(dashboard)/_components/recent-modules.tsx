@@ -1,11 +1,10 @@
 "use client";
 
 import { type IconNames } from "@/components/icon";
-import { ScrollArea } from "@/components/scroll-area";
 import { trpc } from "@/trpc/client";
 import { cn } from "@/utils/cn";
 import { Button } from "@nextui-org/react";
-import { type FC, Suspense, useState } from "react";
+import { Suspense, useState, type FC } from "react";
 import AnimateHeight from "react-animate-height";
 import { ErrorBoundary } from "react-error-boundary";
 import { ModuleCard, ModuleCardSkeleton } from "./module-card";
@@ -69,21 +68,19 @@ export const RecentModules = () => {
         </Button>
       </div>
       <AnimateHeight height={isExpanded ? "auto" : 0}>
-        <ScrollArea>
-          <ErrorBoundary fallback={<div>Failed to load modules</div>}>
-            <Suspense
-              fallback={
-                <ul className="flex gap-4 overflow-x-auto pb-4 pt-2">
-                  {new Array(8).fill(0).map((_, i) => (
-                    <ModuleCardSkeleton key={i} isLoaded={false} />
-                  ))}
-                </ul>
-              }
-            >
-              <RecentModulesInner />
-            </Suspense>
-          </ErrorBoundary>
-        </ScrollArea>
+        <ErrorBoundary fallback={<div>Failed to load modules</div>}>
+          <Suspense
+            fallback={
+              <ul className="flex gap-4 overflow-x-auto pb-4 pt-2">
+                {new Array(8).fill(0).map((_, i) => (
+                  <ModuleCardSkeleton key={i} isLoaded={false} />
+                ))}
+              </ul>
+            }
+          >
+            <RecentModulesInner />
+          </Suspense>
+        </ErrorBoundary>
       </AnimateHeight>
     </div>
   );
