@@ -9,10 +9,8 @@ export const subtaskTable = sqliteTable("subtask", {
 
   title: text("title").notNull(),
 
-  notes: text("notes").notNull(),
-
-  done: integer("done", { mode: "boolean" }).default(false),
-  doneAt: text("doneAt"),
+  completed: integer("completed", { mode: "boolean" }).default(false),
+  completedAt: text("completedAt"),
 
   taskId: integer("task_id")
     .references(() => taskTable.id)

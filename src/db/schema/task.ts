@@ -4,6 +4,7 @@ import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import { moduleTable } from "./module";
 import { sqliteTable } from "./noodle_table";
 import { subtaskTable } from "./subtask";
+import { tagTable } from "./tag";
 
 export const taskTable = sqliteTable("task", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
@@ -12,12 +13,14 @@ export const taskTable = sqliteTable("task", {
 
   notes: text("notes").notNull(),
 
-  done: integer("done", { mode: "boolean" }).default(false),
-  doneAt: text("doneAt"),
+  completed: integer("completed", { mode: "boolean" }).default(false),
+  completedAt: text("completedAt"),
 
   dueDate: text("dueDate").notNull(),
+  personalDueDate: text("dueDate").notNull(),
+  reminderDate: text("reminderDate").notNull(),
 
-  priority: text("priority", { enum: ["LOW", "MEDIUM", "HIGH"] }).notNull(),
+  priority: text("priority", { enum: ["LOW", "MEDIUM", "URGENT"] }).notNull(),
 
   tags: text("tags", { mode: "json" }).$type<string[]>(),
 
@@ -34,14 +37,12 @@ export const taskTable = sqliteTable("task", {
     .default(sql`CURRENT_TIMESTAMP`),
 });
 
-export type Task = typeof taskTable.$inferSelect;
-export type NewTask = typeof taskTable.$inferInsert;
-
 export const taskRelations = relations(taskTable, ({ one, many }) => ({
   module: one(moduleTable, {
     fields: [taskTable.moduleId],
     references: [moduleTable.id],
   }),
+  tags: many(tagTable),
   subtask: many(subtaskTable),
 }));
 
@@ -63,3 +64,6 @@ export const selectTaskSchema = createSelectSchema(taskTable).omit({
   priority: true,
   title: true,
 });
+
+export type Task = typeof taskTable.$inferSelect;
+export type NewTask = typeof taskTable.$inferInsert;
