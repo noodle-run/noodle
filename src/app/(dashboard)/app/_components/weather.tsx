@@ -40,10 +40,9 @@ export const WeatherData: FC = () => {
 
   return (
     <span className="text-tiny text-default-500">
-      You can expect a 👆 high of {weatherData.main.temp_max.toFixed()}º and a
-      👇 low of {weatherData.main.temp_min.toFixed()}º with{" "}
-      {getFormattedWeatherDescription(weatherData.weather[0]?.description)}{" "}
-      today.
+      You can expect a high of {weatherData.temp_max.toFixed()}º 👆 and a 
+      low of {weatherData.temp_min.toFixed()}º 👇
+      {getFormattedWeatherDescription(weatherData.summary)} today.
     </span>
   );
 };
