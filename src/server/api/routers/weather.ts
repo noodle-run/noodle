@@ -10,17 +10,17 @@ type RawWeatherData = {
         next_12_hours: {
           summary: {
             symbol_code: string;
-          }
-        },
+          };
+        };
         instant: {
           details: {
             air_temperature: number;
-          }
-        }
-      }
-    }[]
-  }
-}
+          };
+        };
+      };
+    }[];
+  };
+};
 
 type WeatherData = {
   temp_max: number;
@@ -43,9 +43,9 @@ export const weatherRouter = createTRPCRouter({
         `https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=${latitude}&lon=${longitude}`,
         {
           headers: {
-            "User-Agent": `noodle.run (https://github.com/noodle-run/noodle)`
-          }
-        }
+            "User-Agent": `noodle.run (https://github.com/noodle-run/noodle)`,
+          },
+        },
       );
 
       if (!response.ok) {
@@ -55,13 +55,14 @@ export const weatherRouter = createTRPCRouter({
         });
       }
 
-      const rawWeatherData: RawWeatherData = await response.json() as RawWeatherData;
+      const rawWeatherData: RawWeatherData =
+        (await response.json()) as RawWeatherData;
 
       if (rawWeatherData.properties.timeseries.length < 12) {
         throw new TRPCError({
           code: "INTERNAL_SERVER_ERROR",
-          message: "Partial weather data"
-        })
+          message: "Partial weather data",
+        });
       }
 
       const temperatures = [];
@@ -71,11 +72,13 @@ export const weatherRouter = createTRPCRouter({
       }
 
       const weatherData: WeatherData = {
-        summary: rawWeatherData.properties.timeseries[0]!.data.next_12_hours.summary.symbol_code,
+        summary:
+          rawWeatherData.properties.timeseries[0]!.data.next_12_hours.summary
+            .symbol_code,
         temp_max: Math.max(...temperatures),
-        temp_min: Math.min(...temperatures)
-      }
-      
+        temp_min: Math.min(...temperatures),
+      };
+
       return weatherData;
     }),
 });
