@@ -1,13 +1,16 @@
-FROM oven/bun:alpine AS base
-RUN apk add --no-cache python3 make gcc
+FROM node:20-alpine AS base
+RUN npm i -g pnpm
+RUN apk add --no-cache libc6-compat
 ENV DATABASE_URL file:./dev.db
+ENV SKIP_ENV_VALIDATION true
 
 FROM base AS builder
 WORKDIR /app
+COPY package.json pnpm-lock.yaml* .npmrc ./
+RUN pnpm i --frozen-lockfile --ignore-scripts
+RUN pnpm i --force @libsql/linux-x64-musl --prefix /tmp/libsql_bundle
 COPY . .
-RUN bun install --frozen-lockfile
-# RUN pnpm i --force @libsql/linux-x64-musl --prefix /tmp/libsql_bundle
-RUN bun run build
+RUN pnpm run node:build
 
 FROM base
 WORKDIR /app
@@ -17,8 +20,8 @@ COPY --from=builder /app/dev.db .
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/.next/server ./.next/server
-# COPY --from=builder /tmp/libsql_bundle/node_modules/@libsql/linux-x64-musl /app/node_modules/@libsql/linux-x64-musl
+COPY --from=builder /tmp/libsql_bundle/node_modules/@libsql/linux-x64-musl /app/node_modules/@libsql/linux-x64-musl
 EXPOSE 3000
 ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
-CMD ["bun", "run", "server.js"]
+CMD ["node", "server.js"]

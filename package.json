@@ -17,7 +17,10 @@
     "db:generate": "drizzle-kit generate:sqlite",
     "db:push": "drizzle-kit push:sqlite",
     "db:studio": "drizzle-kit studio",
-    "db:migrate": "bun ./scripts/run-migrations.ts"
+    "db:migrate": "bun ./scripts/run-migrations.ts",
+    "node:dev": "pnpm run node:db:migrate && next dev",
+    "node:build": "pnpm run node:db:migrate && next build",
+    "node:db:migrate": "tsx ./scripts/run-migrations.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.25.6",
@@ -96,6 +99,7 @@
     "superjson": "^2.0.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
+    "tsx": "^3.14.0",
     "typescript": "5.2.2",
     "use-resize-observer": "^9.1.0",
     "usehooks-ts": "^2.9.1",
