@@ -27,13 +27,10 @@ export const WaitListInvitationForm = ({
 
   const { mutateAsync, isLoading } =
     trpc.waitlist.sendUserInvitation.useMutation({
-      async onSuccess(data) {
-        console.log(data);
+      async onSuccess() {
         await utils.waitlist.invalidate();
       },
     });
-
-  console.log(form.formState.errors);
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
