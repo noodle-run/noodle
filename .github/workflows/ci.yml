@@ -26,9 +26,6 @@ env:
   UPSTASH_REDIS_REST_URL: ${{secrets.UPSTASH_REDIS_REST_URL}}
   UPSTASH_REDIS_REST_TOKEN: ${{secrets.UPSTASH_REDIS_REST_TOKEN}}
 
-  # Openweather
-  OPENWEATHER_API_KEY: ${{secrets.OPENWEATHER_API_KEY}}
-
 jobs:
   main:
     name: CI
