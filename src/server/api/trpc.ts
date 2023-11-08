@@ -1,6 +1,8 @@
 import { db } from "@/db";
+import { env } from "@/env.mjs";
 import { getAuth } from "@clerk/nextjs/server";
 import { TRPCError, initTRPC } from "@trpc/server";
+import { Redis } from "@upstash/redis";
 import { type NextRequest } from "next/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
@@ -10,9 +12,12 @@ type CreateContextOptions = {
 };
 
 const createInnerTRPCContext = ({ auth }: CreateContextOptions) => {
+  const redis = env.UPSTASH_REDIS_REST_URL && Redis.fromEnv();
+
   return {
     auth,
     db,
+    redis,
   };
 };
 

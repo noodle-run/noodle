@@ -47,8 +47,6 @@ export const waitlistRouter = createTRPCRouter({
     .mutation(async ({ input, ctx }) => {
       const { invitationId } = input;
 
-      console.log("invitationId", invitationId);
-
       const invitation = await ctx.db
         .select()
         .from(waitlist)
