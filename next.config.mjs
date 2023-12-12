@@ -8,6 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   pageExtensions: ["mdx", "ts", "tsx"],
+  output: "standalone",
   experimental: {
     serverComponentsExternalPackages: ["libsql"],
     optimizePackageImports: ["@nextui-org/react"],

@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  noodle:
+    image: "noodle"
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
