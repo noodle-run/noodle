@@ -16,7 +16,7 @@ const Content = () => {
   if (cookies !== null) return null;
 
   return (
-    <div className="fixed bottom-[24px] right-[24px] z-10 flex items-center gap-6 rounded-2xl border-1 border-secondary bg-background px-6 py-5 text-foreground">
+    <div className="fixed bottom-0 right-0 z-10 flex flex-col items-stretch gap-6 rounded-2xl border-1 border-secondary bg-background px-6 py-5 text-foreground md:bottom-[24px] md:right-[24px] md:flex-row md:items-center">
       <div>
         <h1 className="pb-1 text-2xl font-extrabold tracking-tighter">
           Cookies
