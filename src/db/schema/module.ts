@@ -4,6 +4,7 @@ import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import { z } from "zod";
 import { sqliteTable } from "./noodle_table";
 import { notebooks } from "./notebook";
+import { taskTable } from "./task";
 
 export const moduleTable = sqliteTable("module", {
   id: integer("id", { mode: "number" }).primaryKey({ autoIncrement: true }),
@@ -26,6 +27,7 @@ export const moduleTable = sqliteTable("module", {
 
 export const moduleTableRelations = relations(moduleTable, ({ many }) => ({
   notebooks: many(notebooks),
+  tasks: many(taskTable)
 }));
 
 export const insertModuleSchema = createInsertSchema(moduleTable, {
