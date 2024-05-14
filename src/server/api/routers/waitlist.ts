@@ -1,5 +1,5 @@
 import { insertWaitlist, waitlist } from "@/db";
-import { clerkClient } from "@clerk/nextjs";
+import { clerkClient } from "@clerk/nextjs/server";
 import { LibsqlError } from "@libsql/client";
 import { TRPCError } from "@trpc/server";
 import { eq } from "drizzle-orm";

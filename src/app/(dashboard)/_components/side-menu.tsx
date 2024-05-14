@@ -1,6 +1,6 @@
 import { dashboardLinks, siteConfig } from "@/app/config";
 import { Brand } from "@/components/brand";
-import { currentUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
 import { BadgeHelpIcon } from "lucide-react";

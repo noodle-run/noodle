@@ -1,6 +1,5 @@
 import { TypographyH2 } from "@/components/TypographyH2";
-import { currentUser } from "@clerk/nextjs";
-import type { User } from "@clerk/nextjs/api";
+import { currentUser } from "@clerk/nextjs/server";
 import { type Metadata } from "next";
 import { Waitlist } from "../../_components/waitlist-table";
 
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default async function WaitlistPage() {
-  const user: User | null = await currentUser();
+  const user = await currentUser();
   const userMetadata = user?.publicMetadata;
 
   if (userMetadata?.role === "ADMIN") {

@@ -1,7 +1,7 @@
-import { authMiddleware } from "@clerk/nextjs";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
-import { NextResponse, type NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import { env } from "./env.mjs";
 
 let redis: Redis;
@@ -19,48 +19,20 @@ if (env.UPSTASH_REDIS_REST_URL) {
   });
 }
 
-async function rateLimitMiddleware(
-  request: NextRequest,
-): Promise<Response | undefined> {
-  const ip = request.ip ?? "127.0.0.1";
-  const { success } = await ratelimit.limit(ip);
-  return success
-    ? NextResponse.next()
-    : NextResponse.redirect(new URL("/blocked", request.url));
-}
+const isProtectedRoute = createRouteMatcher(["/app(.*)"]);
 
-const publicRoutesThatShouldRedirectAfterAuth = ["/", "/waitlist"];
+export default clerkMiddleware(async (auth, req) => {
+  if (isProtectedRoute(req)) auth().protect();
 
-export default authMiddleware({
-  beforeAuth: (req) => {
-    if (env.UPSTASH_REDIS_REST_URL) {
-      return rateLimitMiddleware(req);
-    }
-    return NextResponse.next();
-  },
-  afterAuth: (auth, req) => {
-    if (
-      auth.userId &&
-      publicRoutesThatShouldRedirectAfterAuth.includes(req.nextUrl.pathname)
-    ) {
-      return NextResponse.redirect(new URL("/app", req.url));
-    }
-
-    if (!auth.userId && req.nextUrl.pathname.includes("/app")) {
-      return NextResponse.redirect(new URL("/sign-in", req.url));
-    }
-
-    return NextResponse.next();
-  },
-  publicRoutes: [
-    ...publicRoutesThatShouldRedirectAfterAuth,
-    "/blocked",
-    "/editor",
-    "/privacy",
-    "/(api|trpc)(.*)",
-  ],
+  if (env.UPSTASH_REDIS_REST_URL) {
+    const ip = req.ip ?? "127.0.0.1";
+    const { success } = await ratelimit.limit(ip);
+    return success
+      ? NextResponse.next()
+      : NextResponse.redirect(new URL("/blocked", req.url));
+  }
 });
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/blocked", "/(api|trpc)(.*)"],
 };

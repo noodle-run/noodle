@@ -1,7 +1,7 @@
 import { TypographyH2 } from "@/components/TypographyH2";
 import { TypographyP } from "@/components/TypographyP";
 import { formatDate } from "@/utils/formatDate";
-import { currentUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 import { type Metadata } from "next";
 import { RecentModules } from "../_components/recent-modules";
 import { NotebookTable } from "./_components/notebook-table";

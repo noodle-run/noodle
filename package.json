@@ -20,8 +20,8 @@
     "db:migrate": "bun ./scripts/run-migrations.ts"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.27.7",
-    "@clerk/themes": "^1.7.9",
+    "@clerk/nextjs": "^5.0.9",
+    "@clerk/themes": "^2.1.4",
     "@hookform/resolvers": "^3.3.4",
     "@libsql/client": "^0.3.6",
     "@mdx-js/loader": "^3.0.1",
