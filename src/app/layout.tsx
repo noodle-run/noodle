@@ -2,6 +2,7 @@ import { CookieBanner, NoodleAnalytics } from "@/components/cookie-banner";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { siteConfig } from "./config";
 import "./globals.css";
@@ -56,7 +57,9 @@ export default function RootLayout({
     >
       <html lang="en">
         <body className={`${sans.variable} ${mono.variable} font-sans`}>
-          <Providers>{children}</Providers>
+          <ThemeProvider attribute="class" enableSystem>
+            <Providers>{children}</Providers>
+          </ThemeProvider>
           <CookieBanner />
           <NoodleAnalytics />
         </body>

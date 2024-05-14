@@ -1,5 +1,5 @@
 import { db } from "@/db";
-import { env } from "@/env.mjs";
+import { env } from "@/env";
 import { getAuth } from "@clerk/nextjs/server";
 import { TRPCError, initTRPC } from "@trpc/server";
 import { Redis } from "@upstash/redis";

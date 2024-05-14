@@ -2,7 +2,7 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 import { NextResponse } from "next/server";
-import { env } from "./env.mjs";
+import { env } from "./env";
 
 let redis: Redis;
 let ratelimit: Ratelimit;

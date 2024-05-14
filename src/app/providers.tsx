@@ -1,8 +1,8 @@
 "use client";
 
 import { NextUIProvider } from "@nextui-org/react";
-import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
-import { type PropsWithChildren, useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { useEffect, useState, type PropsWithChildren } from "react";
 import { Toaster } from "sonner";
 
 const ToastProvider = () => {
@@ -29,10 +29,8 @@ const ToastProvider = () => {
 export function Providers({ children }: PropsWithChildren) {
   return (
     <NextUIProvider>
-      <NextThemesProvider attribute="class" enableSystem>
-        <ToastProvider />
-        {children}
-      </NextThemesProvider>
+      <ToastProvider />
+      {children}
     </NextUIProvider>
   );
 }
