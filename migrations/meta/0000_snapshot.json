@@ -1,8 +1,6 @@
 {
-  "version": "5",
+  "version": "6",
   "dialect": "sqlite",
-  "id": "14800464-77e1-40db-85cb-670940d14a4c",
-  "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "noodle_feedback": {
       "name": "noodle_feedback",
@@ -188,15 +186,15 @@
         "noodle_notebooks_moduleId_noodle_module_id_fk": {
           "name": "noodle_notebooks_moduleId_noodle_module_id_fk",
           "tableFrom": "noodle_notebooks",
-          "tableTo": "noodle_module",
           "columnsFrom": [
             "moduleId"
           ],
+          "tableTo": "noodle_module",
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
-          "onUpdate": "no action"
+          "onUpdate": "no action",
+          "onDelete": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -265,8 +263,9 @@
   },
   "enums": {},
   "_meta": {
-    "schemas": {},
     "tables": {},
     "columns": {}
-  }
+  },
+  "id": "14800464-77e1-40db-85cb-670940d14a4c",
+  "prevId": "00000000-0000-0000-0000-000000000000"
 }
