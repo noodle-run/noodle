@@ -123,7 +123,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-12 bg-primary py-8 text-white dark:text-black lg:py-12">
+      <section className="mt-12 bg-primary py-8 text-white lg:py-12 dark:text-black">
         <div className="container mx-auto px-6">
           <TypographyH1 className="max-w-[15ch]">
             How about we take a minute of your time?
