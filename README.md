@@ -42,3 +42,5 @@ As an open-source platform, Noodle strives to cultivate a community of students 
 
 [![Star History Chart](https://api.star-history.com/svg?repos=noodle-run/noodle#gh-light-mode-only)](https://star-history.com/#noodle-run/noodle#gh-light-mode-only)
 [![Star History Chart](https://api.star-history.com/svg?repos=noodle-run/noodle&theme=dark#gh-dark-mode-only)](https://star-history.com/#noodle-run/noodle#gh-dark-mode-only)
+
+We are back!
