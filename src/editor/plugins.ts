@@ -1,3 +1,4 @@
+import { withProps } from "@udecode/cn";
 import { createAutoformatPlugin } from "@udecode/plate-autoformat";
 import {
   MARK_BOLD,
@@ -26,7 +27,6 @@ import {
   createReactPlugin,
   isBlockAboveEmpty,
   isSelectionAtBlockStart,
-  withProps,
 } from "@udecode/plate-common";
 import {
   ELEMENT_H1,
