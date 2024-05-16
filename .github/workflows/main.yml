@@ -1,0 +1,32 @@
+name: Main CI
+
+on: [push, pull_request]
+
+jobs:
+  main-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install Dependencies
+        run: bun install
+
+      - name: Check Format
+        run: bun format:check
+
+      - name: Lint
+        run: bun lint
+
+      - name: Typecheck
+        run: bun typecheck
+
+      - name: Unit tests
+        run: bun test
+
+      - name: Build
+        run: bun run build
