@@ -4,7 +4,7 @@
 
 ## Todo
 
-- [ ] Playwright E2E tests.
+- [x] Playwright E2E tests.
 - [x] github actions.
 - [ ] SEO (dub.co is a great reference) for example robots.ts file.
 - [ ] Shadcn UI.

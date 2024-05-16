@@ -7,6 +7,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import jsdoc from 'eslint-plugin-jsdoc';
+import playwright from 'eslint-plugin-playwright';
 import * as regexpPlugin from 'eslint-plugin-regexp';
 import pluginSecurity from 'eslint-plugin-security';
 import tseslint from 'typescript-eslint';
@@ -24,31 +25,47 @@ export default tseslint.config(
     ignores: ['.next'],
   },
 
+  // Base configurations
   js.configs.recommended,
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
+
+  // Next.js / React
   ...fixupConfigRules(compat.extends('plugin:@next/next/recommended')),
   ...fixupConfigRules(compat.extends('plugin:react/recommended')),
   ...fixupConfigRules(compat.extends('plugin:react-hooks/recommended')),
-  ...fixupConfigRules(compat.extends('plugin:tailwindcss/recommended')),
   ...fixupConfigRules(compat.extends('plugin:jsx-a11y/strict')),
+
+  // Tailwind CSS
+  ...fixupConfigRules(compat.extends('plugin:tailwindcss/recommended')),
+
+  // Other plugins
   comments.recommended,
   regexpPlugin.configs['flat/recommended'],
   pluginSecurity.configs.recommended,
   eslintConfigPrettier,
 
+  // JSDoc plugin only for TypeScript files
   {
     files: ['**/*.{ts,tsx}'],
     extends: [jsdoc.configs['flat/recommended-typescript-error']],
   },
 
+  // Unit tests
   {
-    files: ['**/?(*.)+(spec|test).[jt]s?(x)'],
+    files: ['src/**/?(*.)+(spec|test).[jt]s?(x)'],
     extends: [
       ...fixupConfigRules(compat.extends('plugin:testing-library/react')),
     ],
   },
 
+  // Playwright
+  {
+    files: ['e2e/**'],
+    ...playwright.configs['flat/recommended'],
+  },
+
+  // Settings and rule overrides
   {
     linterOptions: {
       reportUnusedDisableDirectives: true,

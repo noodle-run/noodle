@@ -12,6 +12,7 @@
     "unifiedjs.vscode-mdx",
     "christian-kohler.path-intellisense",
     "YoavBls.pretty-ts-errors",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "ms-playwright.playwright"
   ]
 }

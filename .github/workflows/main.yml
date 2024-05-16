@@ -16,6 +16,9 @@ jobs:
       - name: Install Dependencies
         run: bun install
 
+      - name: Install Playwright Browsers
+        run: bun playwright install --with-deps
+
       - name: Check Format
         run: bun format:check
 
@@ -30,3 +33,13 @@ jobs:
 
       - name: Build
         run: bun run build
+
+      - name: Run Playwright tests
+        run: bun playwright test
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
