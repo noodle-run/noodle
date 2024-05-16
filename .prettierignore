@@ -1,4 +1,7 @@
+.prettierignore
 node_modules
 .next
+next-env.d.ts
+.husky
 bun.lockb
-migrations
+*.toml

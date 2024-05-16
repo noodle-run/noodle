@@ -1,0 +1,2 @@
+# only run this if no git commit message has been provided
+[ -z "$2" ] && exec < /dev/tty && bun git-cz --hook || true

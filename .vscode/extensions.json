@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "mikestead.dotenv",
+    "streetsidesoftware.code-spell-checker",
+    "aaron-bond.better-comments",
+    "EditorConfig.EditorConfig",
+    "dsznajder.es7-react-js-snippets",
+    "tamasfe.even-better-toml",
+    "DavidAnson.vscode-markdownlint",
+    "unifiedjs.vscode-mdx",
+    "christian-kohler.path-intellisense",
+    "YoavBls.pretty-ts-errors",
+    "bradlc.vscode-tailwindcss"
+  ]
+}

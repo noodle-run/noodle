@@ -1,0 +1,28 @@
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+version: '0.2'
+ignorePaths:
+  - node_modules
+  - bun.lockb
+  - .tsbuildinfo
+  - .gitignore
+  - .next
+  - drizzle
+  - '**/*.svg'
+  - .vscode/extensions.json
+words:
+  - clsx
+  - commitlint
+  - compat
+  - ianvs
+  - ixahmedxi
+  - jiti
+  - lockb
+  - mitigations
+  - nextjs
+  - packagejson
+  - Registrator
+  - serviceworker
+  - tailwindcss
+  - tsbuildinfo
+  - tseslint
+  - typecheck
