@@ -1,6 +1,64 @@
 @import '@radix-ui/colors/gray.css';
 @import '@radix-ui/colors/gray-dark.css';
 
+:root,
+.light {
+  --pink-1: #fffcfd;
+  --pink-2: #fef7f8;
+  --pink-3: #ffe9ee;
+  --pink-4: #ffdce4;
+  --pink-5: #fbced8;
+  --pink-6: #f4bfcc;
+  --pink-7: #ebacbc;
+  --pink-8: #e294a8;
+  --pink-9: #fe5591;
+  --pink-10: #f04886;
+  --pink-11: #c92268;
+  --pink-12: #631733;
+
+  --salmon-1: #fefcfc;
+  --salmon-2: #fff7f6;
+  --salmon-3: #ffebe9;
+  --salmon-4: #ffd9d5;
+  --salmon-5: #ffc9c4;
+  --salmon-6: #ffbbb6;
+  --salmon-7: #f4a8a3;
+  --salmon-8: #ea8f8a;
+  --salmon-9: #f86c6a;
+  --salmon-10: #ec5f5e;
+  --salmon-11: #cc4446;
+  --salmon-12: #582b29;
+}
+
+:root,
+.dark {
+  --pink-1: #170e10;
+  --pink-2: #201316;
+  --pink-3: #3a1320;
+  --pink-4: #510d27;
+  --pink-5: #601431;
+  --pink-6: #71213d;
+  --pink-7: #8b304f;
+  --pink-8: #b53e67;
+  --pink-9: #fe5591;
+  --pink-10: #f04886;
+  --pink-11: #ff8ab0;
+  --pink-12: #ffd2dd;
+
+  --salmon-1: #160f0e;
+  --salmon-2: #1f1312;
+  --salmon-3: #3a1313;
+  --salmon-4: #501113;
+  --salmon-5: #60181a;
+  --salmon-6: #722526;
+  --salmon-7: #8b3535;
+  --salmon-8: #b44746;
+  --salmon-9: #f86c6a;
+  --salmon-10: #eb605f;
+  --salmon-11: #ff8e89;
+  --salmon-12: #ffd2cf;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -6,7 +6,7 @@
 
 - [x] Playwright E2E tests.
 - [x] github actions.
-- [ ] SEO (dub.co is a great reference) for example robots.ts file.
+- [x] SEO (dub.co is a great reference) for example robots.ts file.
 - [ ] Shadcn UI.
 - [ ] Slate/Plate.js editor.
 - [ ] tRPC api with tanstack query.

@@ -6,6 +6,29 @@ import formsPlugin from '@tailwindcss/forms';
 import typographyPlugin from '@tailwindcss/typography';
 import tailwindAnimate from 'tailwindcss-animate';
 
+type Scale = 'gray' | 'pink' | 'salmon';
+
+const generateColorScale = (scale: Scale) => ({
+  DEFAULT: `var(--${scale}-9)`,
+
+  'foreground-muted': `var(--${scale}-11)`,
+  foreground: `var(--${scale}-12)`,
+
+  app: `var(--${scale}-1)`,
+
+  subtle: `var(--${scale}-2)`,
+  'subtle-border': `var(--${scale}-6)`,
+
+  element: `var(--${scale}-3)`,
+  'element-hover': `var(--${scale}-4)`,
+  'element-active': `var(--${scale}-5)`,
+  'element-border': `var(--${scale}-7)`,
+  'element-border-hover': `var(--${scale}-8)`,
+
+  solid: `var(--${scale}-9)`,
+  'solid-hover': `var(--${scale}-10)`,
+});
+
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
@@ -21,22 +44,9 @@ const config: Config = {
       'foreground-muted': 'var(--gray-11)',
       border: 'var(--gray-6)',
 
-      gray: {
-        DEFAULT: 'var(--gray-9)',
-
-        1: 'var(--gray-1)',
-        2: 'var(--gray-2)',
-        3: 'var(--gray-3)',
-        4: 'var(--gray-4)',
-        5: 'var(--gray-5)',
-        6: 'var(--gray-6)',
-        7: 'var(--gray-7)',
-        8: 'var(--gray-8)',
-        9: 'var(--gray-9)',
-        10: 'var(--gray-10)',
-        11: 'var(--gray-11)',
-        12: 'var(--gray-12)',
-      },
+      gray: generateColorScale('gray'),
+      pink: generateColorScale('pink'),
+      salmon: generateColorScale('salmon'),
     },
     container: {
       center: true,

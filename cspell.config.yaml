@@ -9,6 +9,7 @@ ignorePaths:
   - drizzle
   - '**/*.svg'
   - .vscode/extensions.json
+  - public
 words:
   - clsx
   - commitlint

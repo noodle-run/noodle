@@ -9,14 +9,9 @@ import { ThemeProvider } from 'next-themes';
 
 import type { PropsWithChildren } from 'react';
 
-export const metadata: Metadata = {
-  title: {
-    default: 'Noodle - Rethinking Student Productivity',
-    template: '%s - Noodle',
-  },
-  description:
-    'Noodle is a productivity platform including many tools students need to be productive and stay on top of their work such as note taking, task management, and more.',
-};
+import { constructMetadata } from '@/lib/utils';
+
+export const metadata: Metadata = constructMetadata();
 
 /**
  * The root layout component of the application.
