@@ -13,7 +13,7 @@ import { Navbar } from './_components/navbar';
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <main>
-      <div className="absolute left-0 top-0 z-[-1] h-36 w-full bg-gradient-to-b from-indigo-subtle to-background" />
+      <div className="absolute left-0 top-0 z-[-1] h-56 w-full bg-gradient-to-b from-indigo-subtle to-background" />
       <Navbar />
       <div className="container">{children}</div>
     </main>
