@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "clean": "rimraf --glob .next node_modules *.tsbuildinfo next-env.d.ts .eslintcache",
+    "clean": "rimraf --glob .next node_modules *.tsbuildinfo next-env.d.ts .eslintcache playwright-report test-results",
     "commit": "git-cz",
     "dev": "next dev --turbo",
     "format": "pnpm format:write",
