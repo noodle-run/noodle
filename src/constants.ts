@@ -5,4 +5,5 @@ export const constants = {
   description:
     'Noodle is a productivity platform including many tools students need to be productive and stay on top of their work such as note taking, task management, and more.',
   twitter_handle: '@noodle_run',
+  github_repo: 'https://github.com/noodle-run/noodle',
 };

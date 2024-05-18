@@ -17,6 +17,7 @@ import {
 
 import { constants } from '@/constants';
 import { cn } from '@/lib/utils';
+import { Button } from '@/primitives/button';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -213,7 +214,13 @@ export const Navbar = () => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <div>{/* TODO: add log in / sign up buttons */}</div>
+        <div className="flex items-center gap-4">
+          <Button size="sm" asChild>
+            <Link href="/sign-in">
+              Dashboard <ChevronRightIcon size={16} />
+            </Link>
+          </Button>
+        </div>
       </div>
     </nav>
   );

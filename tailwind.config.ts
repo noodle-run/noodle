@@ -6,7 +6,7 @@ import formsPlugin from '@tailwindcss/forms';
 import typographyPlugin from '@tailwindcss/typography';
 import tailwindAnimate from 'tailwindcss-animate';
 
-type Scale = 'gray' | 'pink' | 'salmon' | 'indigo';
+type Scale = 'gray' | 'pink' | 'salmon' | 'indigo' | 'red';
 
 const generateColorScale = (scale: Scale) => ({
   DEFAULT: `hsl(var(--${scale}-9))`,
@@ -56,6 +56,7 @@ const config: Config = {
         pink: generateColorScale('pink'),
         salmon: generateColorScale('salmon'),
         indigo: generateColorScale('indigo'),
+        red: generateColorScale('red'),
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
