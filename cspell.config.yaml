@@ -32,3 +32,4 @@ words:
   - typecheck
   - Uploadthing
   - Upstash
+  - ratelimit
