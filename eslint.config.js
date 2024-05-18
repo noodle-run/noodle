@@ -80,6 +80,9 @@ export default tseslint.config(
       react: {
         version: 'detect',
       },
+      tailwindcss: {
+        callees: ['classnames', 'clsx', 'ctl', 'cn', 'cva'],
+      },
     },
     rules: {
       '@typescript-eslint/no-unused-vars': [
@@ -105,6 +108,7 @@ export default tseslint.config(
       ],
 
       'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
 
       // prettier figures out the lines between tags
       'jsdoc/tag-lines': 'off',

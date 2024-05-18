@@ -6,48 +6,33 @@ import formsPlugin from '@tailwindcss/forms';
 import typographyPlugin from '@tailwindcss/typography';
 import tailwindAnimate from 'tailwindcss-animate';
 
-type Scale = 'gray' | 'pink' | 'salmon';
+type Scale = 'gray' | 'pink' | 'salmon' | 'indigo';
 
 const generateColorScale = (scale: Scale) => ({
-  DEFAULT: `var(--${scale}-9)`,
+  DEFAULT: `hsl(var(--${scale}-9))`,
 
-  'foreground-muted': `var(--${scale}-11)`,
-  foreground: `var(--${scale}-12)`,
+  'foreground-muted': `hsl(var(--${scale}-11))`,
+  foreground: `hsl(var(--${scale}-12))`,
 
-  app: `var(--${scale}-1)`,
+  app: `hsl(var(--${scale}-1))`,
 
-  subtle: `var(--${scale}-2)`,
-  'subtle-border': `var(--${scale}-6)`,
+  subtle: `hsl(var(--${scale}-2))`,
+  'subtle-border': `hsl(var(--${scale}-6))`,
 
-  element: `var(--${scale}-3)`,
-  'element-hover': `var(--${scale}-4)`,
-  'element-active': `var(--${scale}-5)`,
-  'element-border': `var(--${scale}-7)`,
-  'element-border-hover': `var(--${scale}-8)`,
+  element: `hsl(var(--${scale}-3))`,
+  'element-hover': `hsl(var(--${scale}-4))`,
+  'element-active': `hsl(var(--${scale}-5))`,
+  'element-border': `hsl(var(--${scale}-7))`,
+  'element-border-hover': `hsl(var(--${scale}-8))`,
 
-  solid: `var(--${scale}-9)`,
-  'solid-hover': `var(--${scale}-10)`,
+  solid: `hsl(var(--${scale}-9))`,
+  'solid-hover': `hsl(var(--${scale}-10))`,
 });
 
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
   theme: {
-    colors: {
-      black: '#000000',
-      white: '#ffffff',
-      transparent: 'transparent',
-      current: 'currentColor',
-
-      background: 'var(--gray-1)',
-      foreground: 'var(--gray-12)',
-      'foreground-muted': 'var(--gray-11)',
-      border: 'var(--gray-6)',
-
-      gray: generateColorScale('gray'),
-      pink: generateColorScale('pink'),
-      salmon: generateColorScale('salmon'),
-    },
     container: {
       center: true,
       padding: '2rem',
@@ -56,6 +41,22 @@ const config: Config = {
       },
     },
     extend: {
+      colors: {
+        black: '#000000',
+        white: '#ffffff',
+        transparent: 'transparent',
+        current: 'currentColor',
+
+        background: 'hsl(var(--gray-1))',
+        foreground: 'hsl(var(--gray-12))',
+        'foreground-muted': 'hsl(var(--gray-11))',
+        border: 'hsl(var(--gray-4))',
+
+        gray: generateColorScale('gray'),
+        pink: generateColorScale('pink'),
+        salmon: generateColorScale('salmon'),
+        indigo: generateColorScale('indigo'),
+      },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)'],

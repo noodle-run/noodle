@@ -1,62 +1,111 @@
-@import '@radix-ui/colors/gray.css';
-@import '@radix-ui/colors/gray-dark.css';
-
 :root,
 .light {
-  --pink-1: #fffcfd;
-  --pink-2: #fef7f8;
-  --pink-3: #ffe9ee;
-  --pink-4: #ffdce4;
-  --pink-5: #fbced8;
-  --pink-6: #f4bfcc;
-  --pink-7: #ebacbc;
-  --pink-8: #e294a8;
-  --pink-9: #fe5591;
-  --pink-10: #f04886;
-  --pink-11: #c92268;
-  --pink-12: #631733;
+  --gray-1: 0 0% 99%;
+  --gray-2: 0 0% 98%;
+  --gray-3: 0 0% 94%;
+  --gray-4: 0 0% 91%;
+  --gray-5: 0 0% 88%;
+  --gray-6: 0 0% 85%;
+  --gray-7: 0 0% 81%;
+  --gray-8: 0 0% 73%;
+  --gray-9: 0 0% 55%;
+  --gray-10: 0 0% 51%;
+  --gray-11: 0 0% 39%;
+  --gray-12: 0 0% 13%;
 
-  --salmon-1: #fefcfc;
-  --salmon-2: #fff7f6;
-  --salmon-3: #ffebe9;
-  --salmon-4: #ffd9d5;
-  --salmon-5: #ffc9c4;
-  --salmon-6: #ffbbb6;
-  --salmon-7: #f4a8a3;
-  --salmon-8: #ea8f8a;
-  --salmon-9: #f86c6a;
-  --salmon-10: #ec5f5e;
-  --salmon-11: #cc4446;
-  --salmon-12: #582b29;
+  --pink-1: 340 100% 99%;
+  --pink-2: 351 78% 98%;
+  --pink-3: 346 100% 96%;
+  --pink-4: 346 100% 93%;
+  --pink-5: 347 85% 90%;
+  --pink-6: 345 71% 85%;
+  --pink-7: 345 61% 80%;
+  --pink-8: 345 57% 73%;
+  --pink-9: 339 99% 66%;
+  --pink-10: 338 85% 61%;
+  --pink-11: 335 71% 46%;
+  --pink-12: 338 62% 24%;
+
+  --salmon-1: 0 50% 99%;
+  --salmon-2: 7 100% 98%;
+  --salmon-3: 5 100% 96%;
+  --salmon-4: 6 100% 92%;
+  --salmon-5: 5 100% 88%;
+  --salmon-6: 4 100% 86%;
+  --salmon-7: 4 79% 80%;
+  --salmon-8: 3 70% 73%;
+  --salmon-9: 1 91% 69%;
+  --salmon-10: 0 79% 65%;
+  --salmon-11: 359 57% 53%;
+  --salmon-12: 3 36% 25%;
+
+  --indigo-1: 240 33% 99%;
+  --indigo-2: 225 100% 98%;
+  --indigo-3: 222 89% 96%;
+  --indigo-4: 224 100% 94%;
+  --indigo-5: 224 100% 91%;
+  --indigo-6: 225 100% 88%;
+  --indigo-7: 226 87% 82%;
+  --indigo-8: 226 75% 75%;
+  --indigo-9: 226 70% 55%;
+  --indigo-10: 226 65% 52%;
+  --indigo-11: 226 56% 50%;
+  --indigo-12: 226 50% 24%;
 }
 
 :root,
 .dark {
-  --pink-1: #170e10;
-  --pink-2: #201316;
-  --pink-3: #3a1320;
-  --pink-4: #510d27;
-  --pink-5: #601431;
-  --pink-6: #71213d;
-  --pink-7: #8b304f;
-  --pink-8: #b53e67;
-  --pink-9: #fe5591;
-  --pink-10: #f04886;
-  --pink-11: #ff8ab0;
-  --pink-12: #ffd2dd;
+  --gray-1: 0 0% 7%;
+  --gray-2: 0 0% 10%;
+  --gray-3: 0 0% 13%;
+  --gray-4: 0 0% 16%;
+  --gray-5: 0 0% 19%;
+  --gray-6: 0 0% 23%;
+  --gray-7: 0 0% 28%;
+  --gray-8: 0 0% 38%;
+  --gray-9: 0 0% 43%;
+  --gray-10: 0 0% 48%;
+  --gray-11: 0 0% 71%;
+  --gray-12: 0 0% 93%;
 
-  --salmon-1: #160f0e;
-  --salmon-2: #1f1312;
-  --salmon-3: #3a1313;
-  --salmon-4: #501113;
-  --salmon-5: #60181a;
-  --salmon-6: #722526;
-  --salmon-7: #8b3535;
-  --salmon-8: #b44746;
-  --salmon-9: #f86c6a;
-  --salmon-10: #eb605f;
-  --salmon-11: #ff8e89;
-  --salmon-12: #ffd2cf;
+  --pink-1: 347 24% 7%;
+  --pink-2: 346 25% 10%;
+  --pink-3: 340 51% 15%;
+  --pink-4: 337 72% 18%;
+  --pink-5: 337 66% 23%;
+  --pink-6: 339 55% 29%;
+  --pink-7: 340 49% 37%;
+  --pink-8: 339 49% 48%;
+  --pink-9: 339 99% 66%;
+  --pink-10: 338 85% 61%;
+  --pink-11: 341 100% 77%;
+  --pink-12: 345 100% 91%;
+
+  --salmon-1: 8 22% 7%;
+  --salmon-2: 5 27% 10%;
+  --salmon-3: 0 51% 15%;
+  --salmon-4: 358 65% 19%;
+  --salmon-5: 358 60% 24%;
+  --salmon-6: 359 51% 30%;
+  --salmon-7: 0 45% 38%;
+  --salmon-8: 1 44% 49%;
+  --salmon-9: 1 91% 69%;
+  --salmon-10: 0 78% 65%;
+  --salmon-11: 3 100% 77%;
+  --salmon-12: 4 100% 91%;
+
+  --indigo-1: 231 29% 9%;
+  --indigo-2: 230 31% 11%;
+  --indigo-3: 225 51% 19%;
+  --indigo-4: 225 54% 25%;
+  --indigo-5: 225 52% 30%;
+  --indigo-6: 226 47% 35%;
+  --indigo-7: 226 44% 41%;
+  --indigo-8: 226 45% 48%;
+  --indigo-9: 226 70% 55%;
+  --indigo-10: 228 73% 61%;
+  --indigo-11: 228 100% 81%;
+  --indigo-12: 224 100% 92%;
 }
 
 @tailwind base;
