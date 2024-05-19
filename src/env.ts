@@ -11,13 +11,25 @@ export const env = createEnv({
   },
   server: {
     PORT: z.coerce.number().default(3000),
+
+    // upstash
     UPSTASH_REDIS_REST_URL: z.string().optional(),
     UPSTASH_REDIS_REST_TOKEN: z.string().optional(),
+
+    // Clerk
+    CLERK_SECRET_KEY: z.string().min(1),
   },
-  client: {},
+  client: {
+    // Clerk
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
+  },
+
   experimental__runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
+      process.env['NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY'],
   },
-  emptyStringAsUndefined: true,
+
   skipValidation: !!process.env['SKIP_ENV_VALIDATION'],
+  emptyStringAsUndefined: true,
 });
