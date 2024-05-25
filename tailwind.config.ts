@@ -2,7 +2,6 @@ import type { Config } from 'tailwindcss';
 
 import aspectRatioPlugin from '@tailwindcss/aspect-ratio';
 import containerQueriesPlugin from '@tailwindcss/container-queries';
-import formsPlugin from '@tailwindcss/forms';
 import typographyPlugin from '@tailwindcss/typography';
 import tailwindAnimate from 'tailwindcss-animate';
 
@@ -66,7 +65,6 @@ const config: Config = {
   },
   plugins: [
     typographyPlugin,
-    formsPlugin,
     aspectRatioPlugin,
     {
       handler: containerQueriesPlugin.handler,
