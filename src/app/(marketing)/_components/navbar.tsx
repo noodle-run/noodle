@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -10,9 +10,6 @@ import {
   Edit2Icon,
   FlaskRoundIcon,
   ListChecksIcon,
-  PaintbrushIcon,
-  RssIcon,
-  User2Icon,
 } from 'lucide-react';
 
 import { constants } from '@/constants';
@@ -64,28 +61,7 @@ const features: ListItemProps[] = [
   },
 ];
 
-const companyItems: ListItemProps[] = [
-  {
-    title: 'About Us',
-    icon: <User2Icon size={18} />,
-    href: '/docs/primitives/alert-dialog',
-    description: 'Learn more about the team behind Noodle.',
-  },
-  {
-    title: 'Blog',
-    icon: <RssIcon size={18} />,
-    href: '/docs/primitives/progress',
-    description: 'Read about the latest updates and features of Noodle.',
-  },
-  {
-    title: 'Design System',
-    icon: <PaintbrushIcon size={18} />,
-    href: '/docs/primitives/progress',
-    description: 'Learn about the design system we use to build Noodle.',
-  },
-];
-
-const ListItem = React.forwardRef<
+const ListItem = forwardRef<
   React.ElementRef<'a'>,
   React.ComponentPropsWithoutRef<'a'> & { icon: React.ReactNode }
 >(({ className, title, children, icon, ...props }, ref) => {
@@ -115,8 +91,30 @@ const ListItem = React.forwardRef<
 ListItem.displayName = 'ListItem';
 
 export const Navbar = () => {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="sticky inset-x-0 top-0 z-50 w-full border-b border-transparent pb-2 pt-6">
+    <nav
+      className={cn(
+        'sticky inset-x-0 top-0 z-50 w-full border-b border-transparent bg-transparent py-4 transition-colors duration-500',
+        scroll && 'border-gray-element bg-background/85 backdrop-blur-md',
+      )}
+    >
       <div className="container flex items-center justify-between transition-all">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.svg" width={35} height={35} alt="Noodle Logo" />
@@ -175,26 +173,16 @@ export const Navbar = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Company</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-2 p-2 md:w-[250] lg:w-[300px] ">
-                  {companyItems.map((item) => (
-                    <ListItem
-                      key={item.title}
-                      title={item.title}
-                      icon={item.icon}
-                      href={item.href}
-                    >
-                      {item.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
+              <Link href="/docs" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Pricing
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/docs" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Pricing
+                  Blog
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
