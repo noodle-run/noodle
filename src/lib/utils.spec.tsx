@@ -10,6 +10,7 @@ describe('utils', () => {
   });
 
   it('should merge classes using cn function', () => {
+    // eslint-disable-next-line tailwindcss/classnames-order, tailwindcss/no-contradicting-classname
     const classes = cn('text-black p-4', 'text-white');
 
     expect(classes).toBe('p-4 text-white');

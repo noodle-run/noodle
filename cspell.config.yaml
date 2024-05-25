@@ -10,7 +10,13 @@ ignorePaths:
   - '**/*.svg'
   - .vscode/extensions.json
   - public
+  - tsconfig.tsbuildinfo
+  - playwright-report
+  - test-results
 words:
+  - tsbuildinfo
+  - callees
+  - classname
   - clsx
   - commitlint
   - compat
@@ -18,6 +24,7 @@ words:
   - ixahmedxi
   - jiti
   - lockb
+  - lucide
   - mitigations
   - nextjs
   - packagejson
