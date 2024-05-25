@@ -15,7 +15,7 @@
 
 ## TODO service integrations
 
-- [ ] Neon Database / Drizzle orm.
+- [x] Neon Database / Drizzle orm.
 - [x] Upstash redis
 - [x] Clerk authentication.
 - [ ] Arcjet.

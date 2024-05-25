@@ -1,6 +1,9 @@
 name: Main CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   main-ci:
@@ -8,6 +11,9 @@ jobs:
 
     environment: CI
     env:
+      # Database
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
       # Clerk
       NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ vars.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
       CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
@@ -24,6 +30,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
@@ -33,6 +41,9 @@ jobs:
 
       - name: Install Playwright Browsers
         run: bun playwright install --with-deps
+
+      - name: Run DB Migrations
+        run: bun db:migrate
 
       - name: Check Format
         run: bun format:check

@@ -12,6 +12,9 @@ export const env = createEnv({
   server: {
     PORT: z.coerce.number().default(3000),
 
+    // Neon DB
+    DATABASE_URL: z.string().url(),
+
     // upstash
     UPSTASH_REDIS_REST_URL: z.string(),
     UPSTASH_REDIS_REST_TOKEN: z.string(),

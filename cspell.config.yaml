@@ -26,6 +26,7 @@ words:
   - lockb
   - lucide
   - mitigations
+  - neondatabase
   - nextjs
   - packagejson
   - Posthog
@@ -43,3 +44,4 @@ words:
   - typecheck
   - Uploadthing
   - Upstash
+  - sslmode
