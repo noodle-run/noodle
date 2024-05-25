@@ -109,9 +109,6 @@ export default tseslint.config(
 
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
-
-      // prettier figures out the lines between tags
-      'jsdoc/tag-lines': 'off',
     },
   },
 );

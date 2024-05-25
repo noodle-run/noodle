@@ -11,13 +11,14 @@ import { HomePreview } from './_components/home-preview';
 
 /**
  * The marketing home page.
- *
  * @returns A react component representing the marketing home page.
  */
 export default async function Home() {
   const session = await currentUser();
 
-  if (session) redirect('/app');
+  if (session) {
+    redirect('/app');
+  }
 
   return (
     <main className="flex flex-col items-center justify-center gap-6 pt-24">

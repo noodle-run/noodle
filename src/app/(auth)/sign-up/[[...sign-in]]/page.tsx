@@ -2,7 +2,6 @@ import { SignUp } from '@clerk/nextjs';
 
 /**
  * The Signup page component.
- *
  * @returns The signup page.
  */
 export default function Page() {

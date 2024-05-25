@@ -5,7 +5,6 @@ import { constants } from '@/constants';
 /**
  * This function returns an object that represents the manifest.json file which
  * next.js uses to create the manifest.json file.
- *
  * @returns The manifest.json file configuration.
  */
 export default function manifest(): MetadataRoute.Manifest {

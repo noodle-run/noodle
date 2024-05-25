@@ -2,7 +2,6 @@ import { SignIn } from '@clerk/nextjs';
 
 /**
  * The Signin page component.
- *
  * @returns The signin page.
  */
 export default function Page() {

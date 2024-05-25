@@ -4,7 +4,6 @@ import { Navbar } from './_components/navbar';
 
 /**
  * The root layout component of the marketing group of pages.
- *
  * @param props The props of the layout.
  * @param props.children The children of the layout which is every page in the
  *   marketing layout group.

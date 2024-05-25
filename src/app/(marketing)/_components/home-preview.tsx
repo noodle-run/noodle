@@ -7,7 +7,6 @@ import Image from 'next/image';
 /**
  * This component renders the dashboard preview image that is used on the home
  * marketing page, it will use the light or dark image depending on the theme.
- *
  * @returns A react component representing the dashboard preview image.
  */
 export function HomePreview() {

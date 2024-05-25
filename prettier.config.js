@@ -6,10 +6,8 @@ const config = {
   printWidth: 80,
   plugins: [
     '@ianvs/prettier-plugin-sort-imports',
-    'prettier-plugin-tailwindcss',
     'prettier-plugin-packagejson',
     'prettier-plugin-curly',
-    'prettier-plugin-jsdoc',
   ],
   importOrder: [
     '',

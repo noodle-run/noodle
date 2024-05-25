@@ -17,7 +17,6 @@ export const metadata: Metadata = constructMetadata();
 
 /**
  * The root layout component of the application.
- *
  * @param props The props of the root layout.
  * @param props.children The children of the root layout which is every page in
  *   the application.
