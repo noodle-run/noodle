@@ -16,8 +16,9 @@
 ## TODO service integrations
 
 - [ ] Neon Database / Drizzle orm.
-- [ ] Upstash redis & rate limiting.
-- [ ] Clerk authentication.
+- [x] Upstash redis
+- [x] Clerk authentication.
+- [ ] Arcjet.
 - [ ] Resend & React email.
 - [ ] Stripe payment.
 - [ ] Sentry.

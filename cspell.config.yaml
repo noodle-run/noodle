@@ -14,7 +14,7 @@ ignorePaths:
   - playwright-report
   - test-results
 words:
-  - tsbuildinfo
+  - Arcjet
   - callees
   - classname
   - clsx
