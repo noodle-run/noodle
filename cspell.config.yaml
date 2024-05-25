@@ -29,11 +29,15 @@ words:
   - nextjs
   - packagejson
   - Posthog
+  - ratelimit
   - Registrator
   - serviceworker
   - Shadcn
+  - Signin
+  - Signup
   - tailwindcss
   - tanstack
+  - trpc
   - tsbuildinfo
   - tseslint
   - typecheck
