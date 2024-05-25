@@ -33,6 +33,8 @@ export default clerkMiddleware(async (auth, req) => {
       ? NextResponse.next()
       : NextResponse.redirect(new URL('/blocked', req.url));
   }
+
+  return NextResponse.next();
 });
 
 export const config = {
