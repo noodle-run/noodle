@@ -6,6 +6,8 @@ jobs:
   main-ci:
     runs-on: ubuntu-latest
 
+    environment: CI
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
