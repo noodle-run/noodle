@@ -1,7 +1,4 @@
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
-
-import { currentUser } from '@clerk/nextjs/server';
 import { ChevronRightIcon, StarIcon } from 'lucide-react';
 
 import { constants } from '@/constants';
@@ -13,13 +10,7 @@ import { HomePreview } from './_components/home-preview';
  * The marketing home page.
  * @returns A react component representing the marketing home page.
  */
-export default async function Home() {
-  const session = await currentUser();
-
-  if (session) {
-    redirect('/app');
-  }
-
+export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center gap-6 pt-24">
       <Button variant="outline" asChild className="rounded-full font-normal">
