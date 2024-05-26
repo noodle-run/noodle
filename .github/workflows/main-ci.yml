@@ -29,6 +29,9 @@ jobs:
       UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
       UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
 
+      # Resend
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
