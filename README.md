@@ -8,7 +8,7 @@
 - [x] github actions.
 - [x] SEO (dub.co is a great reference) for example robots.ts file.
 - [x] tRPC api with tanstack query.
-- [ ] Shadcn UI.
+- [x] Shadcn UI.
 - [ ] Slate/Plate.js editor.
 - [ ] New & Refined README.md.
 - [ ] Add a `CONTRIBUTING.md` file.
@@ -18,7 +18,7 @@
 - [x] Neon Database / Drizzle orm.
 - [x] Upstash redis
 - [x] Clerk authentication.
-- [ ] Resend & React email.
+- [x] Resend & React email.
 - [ ] Stripe payment.
 - [ ] Sentry.
 - [ ] Posthog.

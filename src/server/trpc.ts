@@ -4,12 +4,16 @@ import superjson from 'superjson';
 import { ZodError } from 'zod';
 
 import { db } from '@/db';
+import { resend } from '@/lib/resend';
+import { redis } from '@/lib/redis';
 
 export const createTRPCContext = async (opts: { headers: Headers }) => {
   const session = await currentUser();
 
   return {
     db,
+    resend,
+    redis,
     session,
     ...opts,
   };

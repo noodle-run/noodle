@@ -15,9 +15,12 @@ export const env = createEnv({
     // Neon DB
     DATABASE_URL: z.string().url(),
 
-    // upstash
+    // Upstash
     UPSTASH_REDIS_REST_URL: z.string(),
     UPSTASH_REDIS_REST_TOKEN: z.string(),
+
+    // Resend
+    RESEND_API_KEY: z.string(),
 
     // Clerk
     CLERK_SECRET_KEY: z.string(),

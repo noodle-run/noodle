@@ -41,11 +41,6 @@ const config: Config = {
     },
     extend: {
       colors: {
-        black: '#000000',
-        white: '#ffffff',
-        transparent: 'transparent',
-        current: 'currentColor',
-
         background: 'hsl(var(--gray-1))',
         foreground: 'hsl(var(--gray-12))',
         'foreground-muted': 'hsl(var(--gray-11))',

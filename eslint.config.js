@@ -109,6 +109,9 @@ export default tseslint.config(
 
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
+
+      // we're not building a library here
+      'jsdoc/require-jsdoc': 'off',
     },
   },
 );
