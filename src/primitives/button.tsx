@@ -13,10 +13,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-gradient-to-br from-salmon to-pink text-black hover:opacity-90',
+          'bg-gradient-to-br from-salmon to-pink text-white hover:opacity-90 dark:text-black',
         destructive: 'bg-red text-white hover:bg-red-solid-hover',
         outline:
-          'border border-gray-subtle-border bg-background text-foreground-muted hover:bg-gray-subtle hover:text-foreground',
+          'border border-gray-subtle-border bg-gray-element text-foreground-muted hover:bg-gray-element-hover hover:text-foreground',
         ghost: 'hover:bg-gray-element',
         link: 'relative bg-gradient-to-br from-salmon to-pink bg-clip-text text-transparent before:absolute before:bottom-0 before:h-px before:w-[calc(100%-24px)] before:rounded-full before:bg-gradient-to-br before:from-salmon before:to-pink hover:opacity-90',
       },

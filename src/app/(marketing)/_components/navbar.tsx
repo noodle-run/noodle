@@ -71,7 +71,7 @@ const ListItem = forwardRef<
         <a
           ref={ref}
           className={cn(
-            'z-50 flex select-none items-start gap-3 rounded-md border border-transparent px-4 py-3 leading-none no-underline outline-none transition-colors hover:border-gray-element hover:bg-gray-element/30 hover:text-gray-foreground focus:border-gray-element focus:bg-gray-element/30 focus:text-gray-foreground',
+            'z-50 flex select-none items-start gap-3 rounded-md border border-transparent px-4 py-3 leading-none no-underline outline-none transition-colors hover:border-gray-element-border hover:bg-gray-element hover:text-gray-foreground focus:border-gray-element-border focus:bg-gray-element focus:text-gray-foreground',
             className,
           )}
           {...props}
@@ -143,7 +143,7 @@ export const Navbar = () => {
                   <li>
                     <NavigationMenuLink asChild>
                       <a
-                        className="flex size-full select-none flex-col justify-end rounded-md border border-gray-element bg-[#191919]/50 px-6 py-3 no-underline outline-none backdrop-blur-lg transition-colors hover:bg-[#191919]/75 focus:shadow-md"
+                        className="flex size-full select-none flex-col justify-end rounded-md border border-gray-element-border bg-gray-element/50 px-6 py-3 no-underline outline-none backdrop-blur-lg transition-colors hover:bg-gray-element/75 focus:shadow-md"
                         href="/"
                       >
                         <Image

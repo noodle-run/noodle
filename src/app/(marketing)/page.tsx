@@ -4,7 +4,7 @@ import { ChevronRightIcon, StarIcon } from 'lucide-react';
 import { constants } from '@/constants';
 import { Button } from '@/primitives/button';
 
-import { HomePreview } from './_components/home-preview';
+import Image from 'next/image';
 
 /**
  * The marketing home page.
@@ -23,7 +23,7 @@ export default function Home() {
           <StarIcon className="fill-amber-500 stroke-amber-500" size={16} />
         </a>
       </Button>
-      <h1 className="max-w-[20ch] bg-gradient-to-b from-foreground to-gray-solid-hover bg-clip-text text-center text-8xl font-extrabold leading-none text-transparent">
+      <h1 className="max-w-[20ch] bg-gradient-to-b from-foreground to-gray-foreground-muted bg-clip-text text-center text-8xl font-extrabold leading-none text-transparent">
         {constants.tagline}
       </h1>
       <p className="max-w-[50ch] text-center text-lg text-foreground-muted [&>strong]:font-medium [&>strong]:text-foreground">
@@ -36,7 +36,13 @@ export default function Home() {
           Get early access <ChevronRightIcon size={20} strokeWidth={2.5} />
         </Link>
       </Button>
-      <HomePreview />
+      <Image
+        src="/_static/dark-dashboard-preview.jpg"
+        width={1920}
+        height={1080}
+        alt="Dashboard Preview"
+        className="my-12 rounded-lg shadow-[0_50px_200px_75px] shadow-pink/10"
+      />
     </main>
   );
 }

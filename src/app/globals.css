@@ -1,5 +1,4 @@
-:root,
-html.light {
+:root {
   --gray-1: 0 0% 99%;
   --gray-2: 0 0% 98%;
   --gray-3: 0 0% 94%;
@@ -66,8 +65,7 @@ html.light {
   --red-12: 8, 50%, 24%;
 }
 
-:root,
-html.dark {
+:root.dark {
   --gray-1: 0 0% 7%;
   --gray-2: 0 0% 10%;
   --gray-3: 0 0% 13%;
