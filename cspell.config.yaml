@@ -36,6 +36,8 @@ words:
   - Shadcn
   - Signin
   - Signup
+  - sslmode
+  - superjson
   - tailwindcss
   - tanstack
   - trpc
@@ -44,4 +46,3 @@ words:
   - typecheck
   - Uploadthing
   - Upstash
-  - sslmode

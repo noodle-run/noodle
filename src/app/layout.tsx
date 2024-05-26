@@ -12,6 +12,7 @@ import { ThemeProvider } from 'next-themes';
 import type { PropsWithChildren } from 'react';
 
 import { constructMetadata } from '@/lib/utils';
+import { TRPCReactProvider } from '@/lib/trpc/react';
 
 export const metadata: Metadata = constructMetadata();
 
@@ -34,7 +35,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       >
         <body>
           <ThemeProvider attribute="class" disableTransitionOnChange>
-            {children}
+            <TRPCReactProvider>{children}</TRPCReactProvider>
           </ThemeProvider>
         </body>
       </html>

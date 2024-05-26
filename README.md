@@ -7,9 +7,9 @@
 - [x] Playwright E2E tests.
 - [x] github actions.
 - [x] SEO (dub.co is a great reference) for example robots.ts file.
+- [x] tRPC api with tanstack query.
 - [ ] Shadcn UI.
 - [ ] Slate/Plate.js editor.
-- [ ] tRPC api with tanstack query.
 - [ ] New & Refined README.md.
 - [ ] Add a `CONTRIBUTING.md` file.
 
@@ -18,7 +18,6 @@
 - [x] Neon Database / Drizzle orm.
 - [x] Upstash redis
 - [x] Clerk authentication.
-- [ ] Arcjet.
 - [ ] Resend & React email.
 - [ ] Stripe payment.
 - [ ] Sentry.
