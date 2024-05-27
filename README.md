@@ -17,3 +17,4 @@
 - [ ] CONTRIBUTING.md.
 - [ ] Posthog.
 - [ ] Sentry.
+- [ ] Update GitHub repo about & tags.
