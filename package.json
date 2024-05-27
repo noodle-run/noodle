@@ -143,5 +143,11 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.9.0"
-  }
+  },
+  "trustedDependencies": [
+    "@clerk/shared",
+    "@swc/core",
+    "es5-ext",
+    "esbuild"
+  ]
 }
