@@ -10,6 +10,7 @@ import { ThemeProvider } from 'next-themes';
 import type { PropsWithChildren } from 'react';
 
 import { constructMetadata } from '@/lib/utils';
+import { Toaster } from '@/primitives/sonner';
 
 export const metadata: Metadata = constructMetadata();
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body>
         <ThemeProvider attribute="class" disableTransitionOnChange>
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

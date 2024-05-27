@@ -20,6 +20,7 @@ words:
   - clsx
   - commitlint
   - compat
+  - hookform
   - ianvs
   - ixahmedxi
   - jiti
@@ -36,6 +37,7 @@ words:
   - Shadcn
   - Signin
   - Signup
+  - Sonner
   - sslmode
   - superjson
   - tailwindcss

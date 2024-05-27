@@ -1,5 +1,4 @@
 import { boolean, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
-import { createInsertSchema } from 'drizzle-zod';
 
 export const earlyAccessTable = pgTable('early_access', {
   id: uuid('id').primaryKey().defaultRandom(),
@@ -15,12 +14,4 @@ export const earlyAccessTable = pgTable('early_access', {
     mode: 'date',
     precision: 3,
   }),
-});
-
-export const insertEarlyAccessSchema = createInsertSchema(
-  earlyAccessTable,
-).pick({
-  email: true,
-  name: true,
-  reason: true,
 });
