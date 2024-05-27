@@ -13,6 +13,7 @@ ignorePaths:
   - tsconfig.tsbuildinfo
   - playwright-report
   - test-results
+  - branch_out
 words:
   - Arcjet
   - callees
