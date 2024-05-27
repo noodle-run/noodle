@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import { JoinEarlyAccessForm } from './_forms/join';
+import { constructMetadata } from '@/lib/utils';
+
+export const metadata: Metadata = constructMetadata({
+  title: 'Early Access - Noodle',
+  description: 'Join us on our journey to improve student productivity.',
+});
 
 export default function EarlyAccessPage() {
   return (
