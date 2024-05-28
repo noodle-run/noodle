@@ -1,44 +1,10 @@
 import Link from 'next/link';
-import {
-  ChevronRightIcon,
-  ClipboardCheckIcon,
-  DiamondIcon,
-  Edit3Icon,
-  ListChecksIcon,
-  StarIcon,
-} from 'lucide-react';
+import { ChevronRightIcon, StarIcon } from 'lucide-react';
 
-import { constants } from '@/constants';
+import { constants, features } from '@/constants';
 import { Button } from '@/primitives/button';
 
 import Image from 'next/image';
-
-const shortFeaturesIconSize = 30;
-
-const shortFeatures = [
-  {
-    icon: <Edit3Icon size={shortFeaturesIconSize} />,
-    title: 'Note Taking',
-    description: 'Write your study notes and let Noodle take care of the rest.',
-  },
-  {
-    icon: <DiamondIcon size={shortFeaturesIconSize} />,
-    title: 'Flashcards',
-    description:
-      'Create flashcards with reminders or let AI auto-suggest them for you.',
-  },
-  {
-    icon: <ListChecksIcon size={shortFeaturesIconSize} />,
-    title: 'Task Management',
-    description:
-      'Create module specific tasks to keep on track with what you need to do.',
-  },
-  {
-    icon: <ClipboardCheckIcon size={shortFeaturesIconSize} />,
-    title: 'Grade Tracking',
-    description: 'Find out what you need to achieve to stay in progression.',
-  },
-];
 
 /**
  * The marketing home page.
@@ -77,23 +43,14 @@ export default function Home() {
         alt="Dashboard Preview"
         className="my-12 rounded-lg shadow-[0_50px_200px_75px] shadow-pink/10"
       />
-      <section className="my-36 grid grid-cols-4 gap-12">
-        {shortFeatures.map((feature) => (
+      <section id="features" className="my-36 grid grid-cols-4 gap-12">
+        {features(30).map((feature) => (
           <div key={feature.title} className="flex flex-col gap-2">
             {feature.icon}
             <h3 className="pt-2 text-xl font-medium">{feature.title}</h3>
             <p className="text-foreground-muted">{feature.description}</p>
           </div>
         ))}
-      </section>
-      <section className="flex flex-col items-center gap-6">
-        <h2 className="max-w-[20ch] text-balance bg-gradient-to-b from-foreground to-gray-foreground-muted bg-clip-text text-center text-6xl font-extrabold leading-tight text-transparent">
-          One Platform to Rule Them All
-        </h2>
-        <p className="max-w-[45ch] text-pretty text-center text-lg text-foreground-muted [&>strong]:font-medium [&>strong]:text-foreground">
-          A one of a kind platform, combining all the necessary productivity
-          tools a student needs to stay on top of their work.
-        </p>
       </section>
     </main>
   );
