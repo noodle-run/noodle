@@ -48,7 +48,9 @@ export default function Home() {
           <div key={feature.title} className="flex flex-col gap-2">
             {feature.icon}
             <h3 className="pt-2 text-xl font-medium">{feature.title}</h3>
-            <p className="text-foreground-muted">{feature.description}</p>
+            <p className="text-pretty text-foreground-muted">
+              {feature.description}
+            </p>
           </div>
         ))}
       </section>

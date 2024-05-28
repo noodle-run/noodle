@@ -139,15 +139,14 @@ export const Navbar = () => {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <a
+              <NavigationMenuLink
                 href={constants.github_repo}
                 target="_blank"
                 rel="noreferrer noopener"
+                className={navigationMenuTriggerStyle()}
               >
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Contribute
-                </NavigationMenuLink>
-              </a>
+                Contribute
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
