@@ -12,7 +12,7 @@ import Image from 'next/image';
  */
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center gap-6 pt-24">
+    <main className="flex flex-col items-center justify-center gap-6 pt-16 lg:pt-24">
       <Button variant="outline" asChild className="rounded-full font-normal">
         <a
           href={constants.github_repo}
@@ -23,15 +23,15 @@ export default function Home() {
           <StarIcon className="fill-amber-500 stroke-amber-500" size={16} />
         </a>
       </Button>
-      <h1 className="max-w-[20ch] text-balance bg-gradient-to-b from-foreground to-gray-foreground-muted bg-clip-text text-center text-8xl font-extrabold leading-none text-transparent">
+      <h1 className="max-w-[20ch] text-balance bg-gradient-to-b from-foreground to-gray-foreground-muted bg-clip-text text-center text-5xl font-extrabold leading-none text-transparent md:text-6xl lg:text-8xl">
         {constants.tagline}
       </h1>
-      <p className="max-w-[50ch] text-pretty text-center text-lg text-foreground-muted [&>strong]:font-medium [&>strong]:text-foreground">
-        Noodle is an <strong>open-source</strong> student productivity platform
-        made to <strong>streamline</strong> the process students conduct their
-        studies and organize it.
+      <p className="max-w-[50ch] text-pretty text-center text-foreground-muted lg:text-lg [&>strong]:font-medium [&>strong]:text-foreground">
+        <strong>open-source</strong> student productivity platform made to{' '}
+        <strong>streamline</strong> the process students conduct their studies
+        and organize it.
       </p>
-      <Button className="mt-6 rounded-full" size="lg" asChild>
+      <Button className="mt-3 rounded-full lg:mt-6" size="lg" asChild>
         <Link href="/early-access">
           Get early access <ChevronRightIcon size={20} strokeWidth={2.5} />
         </Link>
@@ -43,11 +43,16 @@ export default function Home() {
         alt="Dashboard Preview"
         className="my-12 rounded-lg shadow-[0_50px_200px_75px] shadow-pink/10"
       />
-      <section id="features" className="my-36 grid grid-cols-4 gap-12">
+      <section
+        id="features"
+        className="my-0 grid grid-cols-1 gap-12 md:my-24 md:grid-cols-2 lg:my-36 lg:grid-cols-4"
+      >
         {features(30).map((feature) => (
           <div key={feature.title} className="flex flex-col gap-2">
-            {feature.icon}
-            <h3 className="pt-2 text-xl font-medium">{feature.title}</h3>
+            <div className="[&>svg]:w-6 md:[&>svg]:w-7 lg:[&>svg]:w-8">
+              {feature.icon}
+            </div>
+            <h3 className="pt-2 font-medium lg:text-xl">{feature.title}</h3>
             <p className="text-pretty text-foreground-muted">
               {feature.description}
             </p>

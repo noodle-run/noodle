@@ -60,6 +60,8 @@ export const Navbar = () => {
       }
     };
 
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -79,7 +81,7 @@ export const Navbar = () => {
           <span>Noodle</span>
         </Link>
 
-        <NavigationMenu>
+        <NavigationMenu className="hidden lg:block">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Features</NavigationMenuTrigger>
@@ -146,6 +148,16 @@ export const Navbar = () => {
                 className={navigationMenuTriggerStyle()}
               >
                 Contribute
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                href={constants.discord}
+                target="_blank"
+                rel="noreferrer noopener"
+                className={navigationMenuTriggerStyle()}
+              >
+                Discord
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
