@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
 import { Navbar } from './_components/navbar';
+import { Footer } from './_components/footer';
 
 /**
  * The root layout component of the marketing group of pages.
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <div className="absolute left-0 top-0 z-[-1] h-56 w-full bg-gradient-to-b from-indigo-subtle to-background" />
       <Navbar />
       <div className="container">{children}</div>
+      <Footer />
     </main>
   );
 }
