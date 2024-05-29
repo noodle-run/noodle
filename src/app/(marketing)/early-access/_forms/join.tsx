@@ -66,7 +66,7 @@ export const JoinEarlyAccessForm = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="mt-6 flex max-w-[500px] flex-col gap-6"
       >
-        <div className="flex flex-col md:flex-row w-full gap-6">
+        <div className="flex w-full flex-col gap-6 md:flex-row">
           <div className="w-full space-y-2">
             <FormField
               control={form.control}
