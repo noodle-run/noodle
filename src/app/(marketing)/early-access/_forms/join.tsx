@@ -66,7 +66,7 @@ export const JoinEarlyAccessForm = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="mt-6 flex max-w-[500px] flex-col gap-6"
       >
-        <div className="flex w-full gap-6">
+        <div className="flex flex-col md:flex-row w-full gap-6">
           <div className="w-full space-y-2">
             <FormField
               control={form.control}
@@ -185,7 +185,7 @@ export const JoinEarlyAccessForm = () => {
             !form.getValues('agreement')
           }
         >
-          Join Early Access
+          {isPending ? 'Joining...' : 'Join early access'}
         </Button>
       </form>
     </Form>

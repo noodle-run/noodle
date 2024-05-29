@@ -142,7 +142,7 @@
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.4.5",
-    "typescript-eslint": "^7.10.0"
+    "typescript-eslint": "^8.0.0-alpha.20"
   },
   "trustedDependencies": [
     "@clerk/shared",

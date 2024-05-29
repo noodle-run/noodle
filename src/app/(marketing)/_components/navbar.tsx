@@ -81,7 +81,7 @@ export const Navbar = () => {
           <span>Noodle</span>
         </Link>
 
-        <NavigationMenu className="hidden lg:block">
+        <NavigationMenu className="hidden md:block">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Features</NavigationMenuTrigger>
@@ -162,7 +162,7 @@ export const Navbar = () => {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="flex items-center gap-4">
+        <div className="hidden items-center gap-4 md:flex">
           <Button size="sm" asChild>
             <Link href="/sign-in">
               Dashboard <ChevronRightIcon size={16} />
