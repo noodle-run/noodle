@@ -162,16 +162,28 @@ export const Navbar = () => {
         <div className="container">
           <ul className="flex flex-col gap-3">
             <li>
-              <Link href="/">Early access</Link>
+              <Link href="/early-access">Early access</Link>
             </li>
             <li>
-              <Link href="/">Blog</Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
-              <Link href="/">Contribute</Link>
+              <a
+                href={constants.github_repo}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Contribute
+              </a>
             </li>
             <li>
-              <Link href="/">Discord</Link>
+              <a
+                href={constants.discord}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Discord
+              </a>
             </li>
           </ul>
         </div>
