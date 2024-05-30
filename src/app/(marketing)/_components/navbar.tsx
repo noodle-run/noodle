@@ -1,10 +1,10 @@
 'use client';
 
-import { forwardRef, useEffect, useState } from 'react';
+import { forwardRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { ChevronRightIcon } from 'lucide-react';
+import { ChevronRightIcon, MenuIcon } from 'lucide-react';
 
 import { constants, features } from '@/constants';
 import { cn } from '@/lib/utils';
@@ -49,32 +49,10 @@ const ListItem = forwardRef<
 ListItem.displayName = 'ListItem';
 
 export const Navbar = () => {
-  const [scroll, setScroll] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
-    };
-
-    handleScroll();
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav
-      className={cn(
-        'sticky inset-x-0 top-0 z-50 w-full border-b border-transparent bg-transparent py-4 transition-colors duration-500',
-        scroll && 'border-gray-element bg-background/85 backdrop-blur-md',
-      )}
-    >
+    <nav className={cn('z-50 w-full pb-0 pt-4 md:py-4')}>
       <div className="container flex items-center justify-between transition-all">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.svg" width={35} height={35} alt="Noodle Logo" />
@@ -168,6 +146,34 @@ export const Navbar = () => {
               Dashboard <ChevronRightIcon size={16} />
             </Link>
           </Button>
+        </div>
+        <div className="block md:hidden">
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen((prev) => !prev);
+            }}
+          >
+            <MenuIcon size={24} />
+          </button>
+        </div>
+      </div>
+      <div className={cn('h-0 overflow-hidden', menuOpen && 'h-full pt-6')}>
+        <div className="container">
+          <ul className="flex flex-col gap-3">
+            <li>
+              <Link href="/">Early access</Link>
+            </li>
+            <li>
+              <Link href="/">Blog</Link>
+            </li>
+            <li>
+              <Link href="/">Contribute</Link>
+            </li>
+            <li>
+              <Link href="/">Discord</Link>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
