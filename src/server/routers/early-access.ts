@@ -17,47 +17,50 @@ export const earlyAccessRouter = createRouter({
       const { email, name, reason } = input;
       const { db, resend } = ctx;
 
-      try {
-        await db.insert(earlyAccessTable).values({
+      await db
+        .insert(earlyAccessTable)
+        .values({
           email,
           name,
           reason,
+        })
+        .catch((err: unknown) => {
+          if (err instanceof Error) {
+            if (
+              err.message.includes(
+                'duplicate key value violates unique constraint',
+              )
+            ) {
+              throw new TRPCError({
+                code: 'BAD_REQUEST',
+                cause: err,
+                message: 'This email is already on the early access list.',
+              });
+            }
+
+            throw new TRPCError({
+              code: 'INTERNAL_SERVER_ERROR',
+              cause: err,
+              message:
+                'An error occurred while adding you to the early access list. Please try again later.',
+            });
+          }
         });
 
-        await resend.emails.send({
+      await resend.emails
+        .send({
           from: 'Noodle <contact@noodle.run>',
           to: email,
           subject: "You are on Noodle's early access list!",
           react: EarlyAccessJoinedEmail({ name, email }),
-        });
-      } catch (err) {
-        if (err instanceof Error) {
-          if (
-            err.message.includes(
-              'duplicate key value violates unique constraint',
-            )
-          ) {
-            throw new TRPCError({
-              code: 'BAD_REQUEST',
-              cause: err,
-              message: 'This email is already on the early access list.',
-            });
-          }
-
+        })
+        .catch((err: unknown) => {
           throw new TRPCError({
             code: 'INTERNAL_SERVER_ERROR',
             cause: err,
             message:
               'An error occurred while adding you to the early access list. Please try again later.',
           });
-        }
-
-        throw new TRPCError({
-          code: 'INTERNAL_SERVER_ERROR',
-          cause: err,
-          message:
-            'An error occurred while adding you to the early access list. Please try again later.',
         });
-      }
     }),
 });
