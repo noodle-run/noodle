@@ -80,7 +80,7 @@ export const Navbar = () => {
                   <li>
                     <NavigationMenuLink asChild>
                       <a
-                        className="flex size-full select-none flex-col justify-end rounded-md border border-gray-element-border bg-gray-element/50 px-6 py-3 no-underline outline-none backdrop-blur-lg transition-colors hover:bg-gray-element/75 focus:shadow-md"
+                        className="flex size-full select-none flex-col justify-end rounded-md border border-gray-element-border bg-gray-element/50 px-6 py-3 pt-6 no-underline outline-none backdrop-blur-lg transition-colors hover:bg-gray-element/75 focus:shadow-md"
                         href="/"
                       >
                         <Image
@@ -158,7 +158,12 @@ export const Navbar = () => {
           </button>
         </div>
       </div>
-      <div className={cn('h-0 overflow-hidden', menuOpen && 'h-full pt-6')}>
+      <div
+        className={cn(
+          'block h-0 overflow-hidden md:hidden',
+          menuOpen && 'h-full pt-6',
+        )}
+      >
         <div className="container">
           <ul className="flex flex-col gap-3">
             <li>
