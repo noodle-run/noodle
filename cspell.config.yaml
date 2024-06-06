@@ -21,6 +21,7 @@ words:
   - clsx
   - commitlint
   - compat
+  - frontmatter
   - hookform
   - ianvs
   - ixahmedxi

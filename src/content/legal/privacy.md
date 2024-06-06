@@ -1,4 +1,7 @@
-# Privacy Policy
+---
+title: Privacy Policy
+effectiveDate: Jun 6th, 2024
+---
 
 ## 1. Introduction
 
@@ -36,5 +39,3 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 ## 8. Contact Us
 
 If you have any questions about this Privacy Policy, please contact us at [privacy@noodle.run](mailto:privacy@noodle.run).
-
-Effective Date: Jun 6th, 2024

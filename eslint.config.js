@@ -73,6 +73,7 @@ export default tseslint.config(
     languageOptions: {
       parserOptions: {
         projectService: true,
+        tsconfigRootDir: __dirname,
       },
     },
     settings: {
@@ -108,6 +109,9 @@ export default tseslint.config(
 
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
+
+      // security
+      'security/detect-non-literal-fs-filename': 'off',
 
       // we're not building a library here
       'jsdoc/require-jsdoc': 'off',

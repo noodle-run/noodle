@@ -1,13 +1,10 @@
 import { fileURLToPath } from 'node:url';
 
 import createJiti from 'jiti';
-import mdxPlugin from '@next/mdx';
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
 jiti('./src/env');
-
-const withMDX = mdxPlugin();
 
 const extensions = ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'];
 
@@ -15,6 +12,7 @@ const extensions = ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'];
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: extensions,
+  transpilePackages: ['next-mdx-remote'],
 
   // We run ESLint and TypeScript separately in the CI pipeline
   eslint: {
@@ -22,6 +20,11 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
   },
   experimental: {
     mdxRs: true,
@@ -31,4 +34,4 @@ const nextConfig = {
   },
 };
 
-export default withMDX(nextConfig);
+export default nextConfig;

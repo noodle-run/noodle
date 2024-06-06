@@ -1,4 +1,7 @@
-# Terms of Service
+---
+title: Terms of Service
+effectiveDate: Jun 6th, 2024
+---
 
 ## 1. Introduction
 
@@ -31,5 +34,3 @@ We reserve the right to modify these Terms at any time. We will notify you of an
 ## 8. Contact Us
 
 If you have any questions about these Terms, please contact us at [contact@noodle.run](mailto:contact@noodle.run).
-
-Effective Date: Jun 6th, 2024
