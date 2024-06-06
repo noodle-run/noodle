@@ -6,11 +6,11 @@
 
 - [x] Landing page.
 - [x] Early access page.
-- [ ] Blog page.
-- [ ] Write a blog post about Noodle's resurrection.
 - [ ] Terms and conditions page.
 - [ ] Privacy policy page.
 - [ ] Cookie policy page.
+- [ ] Blog page.
+- [ ] Write a blog post about Noodle's resurrection.
 - [ ] Responsiveness.
 - [ ] README.md.
 - [ ] CONTRIBUTING.md.
