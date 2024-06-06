@@ -79,10 +79,7 @@ export const Navbar = () => {
                   </div>
                   <li>
                     <NavigationMenuLink asChild>
-                      <a
-                        className="flex size-full select-none flex-col justify-end rounded-md border border-gray-element-border bg-gray-element/50 px-6 py-3 pt-6 no-underline outline-none backdrop-blur-lg transition-colors hover:bg-gray-element/75 focus:shadow-md"
-                        href="/"
-                      >
+                      <div className="flex size-full select-none flex-col justify-end rounded-md border border-gray-element-border bg-gray-element/50 px-6 py-3 pt-6 no-underline outline-none backdrop-blur-lg transition-colors hover:bg-gray-element/75 focus:shadow-md">
                         <Image
                           src="/logo.svg"
                           width={35}
@@ -105,7 +102,7 @@ export const Navbar = () => {
                         >
                           Contribute <ChevronRightIcon size={13} />
                         </a>
-                      </a>
+                      </div>
                     </NavigationMenuLink>
                   </li>
                 </ul>
