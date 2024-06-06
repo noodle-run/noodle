@@ -6,9 +6,8 @@
 
 - [x] Landing page.
 - [x] Early access page.
-- [ ] Terms and conditions page.
-- [ ] Privacy policy page.
-- [ ] Cookie policy page.
+- [x] Terms and conditions page.
+- [x] Privacy policy page.
 - [ ] Blog page.
 - [ ] Write a blog post about Noodle's resurrection.
 - [ ] Responsiveness.
