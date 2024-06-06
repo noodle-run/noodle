@@ -1,7 +1,8 @@
 import { fileURLToPath } from 'node:url';
-
+import { withSentryConfig } from '@sentry/nextjs';
 import createJiti from 'jiti';
 import mdxPlugin from '@next/mdx';
+import process from 'node:process';
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
@@ -31,4 +32,15 @@ const nextConfig = {
   },
 };
 
-export default withMDX(nextConfig);
+export default withMDX(
+  withSentryConfig(nextConfig, {
+    org: process.env.SENTRY_ORG,
+    project: process.env.SENTRY_PROJECT,
+    authToken: process.env.SENTRY_TOKEN,
+    silent: false,
+    widenClientFileUpload: true,
+    hideSourceMaps: true,
+    disableLogger: true,
+    automaticVercelMonitors: true,
+  }),
+);

@@ -68,6 +68,7 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@react-email/components": "^0.0.19",
+    "@sentry/nextjs": "8",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tanstack/react-query": "^5.40.1",
     "@trpc/client": "next",
