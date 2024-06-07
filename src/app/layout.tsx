@@ -8,6 +8,8 @@ import './globals.css';
 import { ThemeProvider } from 'next-themes';
 
 import type { PropsWithChildren } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { constructMetadata } from '@/lib/utils';
 import { Toaster } from '@/primitives/sonner';
@@ -32,6 +34,8 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <ThemeProvider attribute="class" disableTransitionOnChange>
           {children}
           <Toaster />
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

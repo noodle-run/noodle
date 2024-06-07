@@ -138,3 +138,6 @@ dist
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# task file
+.todo

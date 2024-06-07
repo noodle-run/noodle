@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-effectiveDate: Jun 6th, 2024
+effectiveDate: Jun 8th, 2024
 ---
 
 ## 1. Introduction
