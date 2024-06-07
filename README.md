@@ -11,7 +11,7 @@
 >
 > Follow me on twitter [@ixahmedxii](https://twitter.com/ixahmedxii) for updates.
 
-![Noodle Preview](https://github.com/noodle-run/noodle/blob/main/public/preview.png?raw=true)
+![Noodle Preview](https://github.com/noodle-run/noodle/blob/main/public/_static/dark-dashboard-preview.jpg?raw=true)
 
 <p align="center" style="color:dodgerblue;"><strong>⚠️ This is a UI design mockup of what the platform will look like, it is not the current state of the project.</strong></p>
 
