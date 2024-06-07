@@ -19,6 +19,21 @@
 
 Noodle as an idea came from the struggles that I faced during my university years. I was using multiple apps to try and stay on track with my studies, and I thought to myself, why is there no singular app that can do everything a student needs to stay on track with their studies? Like a GitHub but for students.
 
+## Planned MVP Features
+
+- ✍️ Note Taking
+- 📚 Flashcards
+
+The flashcards will be generated from the notes that you take, and you will be able to quiz yourself on them.
+
+## Future Features
+
+- 📅 Calendar
+- 📝 Task management
+- 📊 Grade tracking
+
+Feel free to suggest more features by opening an issue, or join our [Discord server](https://discord.gg/ewKmQd8kYm) to discuss it with the community.
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=noodle-run/noodle#gh-light-mode-only)](https://star-history.com/#noodle-run/noodle#gh-light-mode-only)
