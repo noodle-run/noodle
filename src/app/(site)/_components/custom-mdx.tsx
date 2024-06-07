@@ -35,6 +35,10 @@ export const MDXComponents = {
     2,
     'text-xl md:text-2xl mb-3 md:mb-4 mt-3 md:mt-4 inline-block',
   ),
+  h3: createHeading(
+    3,
+    'text-lg md:text-xl mb-2 md:mb-3 mt-2 md:mt-3 inline-block font-normal',
+  ),
   ul: ({ children, className, ...props }) => (
     <ul
       {...props}
@@ -81,7 +85,7 @@ export const MDXComponents = {
       {...props}
       className={cn(
         className,
-        'mb-3 text-sm leading-relaxed text-foreground-muted md:mb-4 md:text-base',
+        'mb-3 text-sm !leading-6 text-foreground-muted md:mb-4 md:text-base md:!leading-7',
       )}
     >
       {children}

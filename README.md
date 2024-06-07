@@ -8,11 +8,12 @@
 - [x] Early access page.
 - [x] Terms and conditions page.
 - [x] Privacy policy page.
-- [ ] Blog page.
-- [ ] Write a blog post about Noodle's resurrection.
-- [ ] Responsiveness.
+- [x] Blog page.
+- [x] Write a blog post about Noodle's resurrection.
+- [x] Responsiveness.
 - [ ] README.md.
 - [ ] CONTRIBUTING.md.
 - [ ] Posthog.
 - [ ] Sentry.
 - [ ] Update GitHub repo about & tags.
+- [ ] Update privacy, terms and blog post dates.

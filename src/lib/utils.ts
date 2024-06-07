@@ -45,6 +45,9 @@ export function getBaseUrl() {
  * @param params.image The image of the page.
  * @param params.icons The icons of the page.
  * @param params.noIndex Whether to no-index the page.
+ * @param params.url The URL of the page.
+ * @param params.type The type of the page, either 'website' or 'article'.
+ * @param params.publishedTime The published time of the article.
  * @returns The metadata for the page.
  */
 export function constructMetadata({
@@ -71,12 +74,18 @@ export function constructMetadata({
     },
   ],
   noIndex = false,
+  url = getBaseUrl(),
+  type = 'website',
+  publishedTime,
 }: {
   title?: string;
   description?: string;
   image?: string | null;
   icons?: Metadata['icons'];
   noIndex?: boolean;
+  url?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
 } = {}): Metadata {
   return {
     title,
@@ -84,6 +93,9 @@ export function constructMetadata({
     openGraph: {
       title,
       description,
+      url,
+      type,
+      publishedTime,
       ...(image && {
         images: [
           {
