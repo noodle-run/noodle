@@ -1,3 +1,4 @@
+/* eslint-disable no-global-assign */
 import { afterEach, describe, expect, it } from 'bun:test';
 
 import { cn, constructMetadata, getBaseUrl } from './utils';
@@ -49,3 +50,4 @@ describe('utils', () => {
     expect(metadata.description).toBe('world');
   });
 });
+/* eslint-enable no-global-assign */
