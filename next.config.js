@@ -6,12 +6,9 @@ const jiti = createJiti(fileURLToPath(import.meta.url));
 
 jiti('./src/env');
 
-const extensions = ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'];
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: extensions,
   transpilePackages: ['next-mdx-remote'],
 
   // We run ESLint and TypeScript separately in the CI pipeline
@@ -24,12 +21,6 @@ const nextConfig = {
   logging: {
     fetches: {
       fullUrl: true,
-    },
-  },
-  experimental: {
-    mdxRs: true,
-    turbo: {
-      resolveExtensions: extensions.map((ext) => `.${ext}`),
     },
   },
 };
