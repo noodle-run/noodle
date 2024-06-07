@@ -11,6 +11,7 @@ import playwright from 'eslint-plugin-playwright';
 import * as regexpPlugin from 'eslint-plugin-regexp';
 import pluginSecurity from 'eslint-plugin-security';
 import tseslint from 'typescript-eslint';
+import globals from 'globals';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -75,6 +76,11 @@ export default tseslint.config(
         projectService: true,
         tsconfigRootDir: __dirname,
       },
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.es2024,
+      },
     },
     settings: {
       react: {
@@ -99,6 +105,8 @@ export default tseslint.config(
         'error',
         { checksVoidReturn: { attributes: false } },
       ],
+
+      '@typescript-eslint/dot-notation': 'off',
 
       '@typescript-eslint/no-unnecessary-condition': [
         'error',

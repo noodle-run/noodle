@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'node:url';
 
 import createJiti from 'jiti';
+import { withSentryConfig } from '@sentry/nextjs';
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
@@ -25,4 +26,13 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+  org: process.env['SENTRY_ORG'] ?? '',
+  project: process.env['SENTRY_PROJECT'] ?? '',
+  silent: !process.env['CI'],
+  widenClientFileUpload: true,
+  tunnelRoute: '/monitoring',
+  hideSourceMaps: true,
+  disableLogger: true,
+  automaticVercelMonitors: true,
+});
