@@ -14,6 +14,7 @@
 - [ ] README.md.
 - [ ] CONTRIBUTING.md.
 - [ ] Posthog.
-- [ ] Sentry.
+- [x] Sentry.
 - [ ] Update GitHub repo about & tags.
 - [ ] Update privacy, terms and blog post dates.
+- [x] 404 page
