@@ -1,0 +1,27 @@
+name: Clean up after after a PR is closed or merged
+run-name: Clean up PR database
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  delete-db-branch:
+    runs-on: ubuntu-latest
+
+    environment: CI
+
+    env:
+      NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+      NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }}
+
+    steps:
+      - name: Get branch name
+        id: branch_name
+        uses: tj-actions/branch-names@v8
+
+      - name: Delete Neon Branch
+        uses: neondatabase/delete-branch-action@v3
+        with:
+          project_id: ${{ secrets.NEON_PROJECT_ID }}
+          branch: pr-${{ github.event.number }}-${{ steps.branch_name.outputs.current_branch }}
+          api_key: ${{ secrets.NEON_API_KEY }}

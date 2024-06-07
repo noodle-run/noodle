@@ -1,60 +1,71 @@
-import { nextui } from "@nextui-org/react";
-import type { Config } from "tailwindcss";
-import { primary, secondaryDark, secondaryLight } from "./src/utils/colors";
+import type { Config } from 'tailwindcss';
+
+import aspectRatioPlugin from '@tailwindcss/aspect-ratio';
+import containerQueriesPlugin from '@tailwindcss/container-queries';
+import typographyPlugin from '@tailwindcss/typography';
+import tailwindAnimate from 'tailwindcss-animate';
+
+type Scale = 'gray' | 'pink' | 'salmon' | 'indigo' | 'red';
+
+const generateColorScale = (scale: Scale) => ({
+  DEFAULT: `hsl(var(--${scale}-9))`,
+
+  'foreground-muted': `hsl(var(--${scale}-11))`,
+  foreground: `hsl(var(--${scale}-12))`,
+
+  app: `hsl(var(--${scale}-1))`,
+
+  subtle: `hsl(var(--${scale}-2))`,
+  'subtle-border': `hsl(var(--${scale}-6))`,
+
+  element: `hsl(var(--${scale}-3))`,
+  'element-hover': `hsl(var(--${scale}-4))`,
+  'element-active': `hsl(var(--${scale}-5))`,
+  'element-border': `hsl(var(--${scale}-7))`,
+  'element-border-hover': `hsl(var(--${scale}-8))`,
+
+  solid: `hsl(var(--${scale}-9))`,
+  'solid-hover': `hsl(var(--${scale}-10))`,
+});
 
 const config: Config = {
-  content: [
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  darkMode: 'class',
   theme: {
+    container: {
+      center: true,
+      padding: '1.5rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
-      gridTemplateAreas: {
-        featuresWide: [
-          `leftTop    leftTop    centerTop  centerTop    centerTop    right right`,
-          `leftBottom leftBottom leftBottom centerBottom centerBottom right right`,
-        ],
+      colors: {
+        background: 'hsl(var(--gray-1))',
+        foreground: 'hsl(var(--gray-12))',
+        'foreground-muted': 'hsl(var(--gray-11))',
+        border: 'hsl(var(--gray-4))',
+
+        gray: generateColorScale('gray'),
+        pink: generateColorScale('pink'),
+        salmon: generateColorScale('salmon'),
+        indigo: generateColorScale('indigo'),
+        red: generateColorScale('red'),
       },
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        mono: ["var(--font-mono)"],
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
       },
     },
   },
   plugins: [
-    require("@tailwindcss/typography"),
-    require("@savvywombat/tailwindcss-grid-areas"),
-    nextui({
-      prefix: "noodle",
-      layout: {
-        radius: {
-          small: "4px",
-          medium: "8px",
-          large: "12px",
-        },
-      },
-      themes: {
-        light: {
-          colors: {
-            background: "#ffffff",
-            foreground: "#000000",
-            primary: {
-              ...primary,
-              foreground: "#ffffff",
-            },
-            secondary: secondaryLight,
-          },
-        },
-        dark: {
-          colors: {
-            background: "#000000",
-            foreground: "#ffffff",
-            primary,
-            secondary: secondaryDark,
-          },
-        },
-      },
-    }),
+    typographyPlugin,
+    aspectRatioPlugin,
+    {
+      handler: containerQueriesPlugin.handler,
+      config: containerQueriesPlugin.config ?? {},
+    },
+    tailwindAnimate,
   ],
 };
 export default config;

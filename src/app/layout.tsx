@@ -1,69 +1,43 @@
-import { CookieBanner, NoodleAnalytics } from "@/components/cookie-banner";
-import { ClerkProvider } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
-import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
-import { Inter, JetBrains_Mono } from "next/font/google";
-import { siteConfig } from "./config";
-import "./globals.css";
-import { Providers } from "./providers";
+import type { Metadata } from 'next';
 
-const sans = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  weight: "variable",
-});
+import { GeistMono } from 'geist/font/mono';
+import { GeistSans } from 'geist/font/sans';
 
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: "variable",
-});
+import './globals.css';
 
-export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name + " - " + siteConfig.tagline,
-    template: "%s - " + siteConfig.name,
-  },
-  description: siteConfig.description,
-  metadataBase: new URL(siteConfig.url),
-  openGraph: {
-    url: siteConfig.url,
-    title: siteConfig.name + " - " + siteConfig.tagline,
-    description: siteConfig.description,
-    images: [
-      {
-        url: `${siteConfig.url}/preview_card.png`,
-        width: 1200,
-        height: 628,
-        alt: siteConfig.name + " - " + siteConfig.tagline,
-      },
-    ],
-    siteName: siteConfig.name,
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-};
+import { ThemeProvider } from 'next-themes';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import type { PropsWithChildren } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+import { constructMetadata } from '@/lib/utils';
+import { Toaster } from '@/primitives/sonner';
+
+export const metadata: Metadata = constructMetadata();
+
+/**
+ * The root layout component of the application.
+ * @param props The props of the root layout.
+ * @param props.children The children of the root layout which is every page in
+ *   the application.
+ * @returns A react component representing the root layout.
+ */
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <ClerkProvider
-      appearance={{ baseTheme: dark, variables: { colorPrimary: "#F9617B" } }}
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <html lang="en">
-        <body className={`${sans.variable} ${mono.variable} font-sans`}>
-          <ThemeProvider attribute="class" enableSystem>
-            <Providers>{children}</Providers>
-          </ThemeProvider>
-          <CookieBanner />
-          <NoodleAnalytics />
-        </body>
-      </html>
-    </ClerkProvider>
+      <body>
+        <ThemeProvider attribute="class" disableTransitionOnChange>
+          {children}
+          <Toaster />
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
