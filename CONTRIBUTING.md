@@ -68,7 +68,6 @@ The Tech Stack:
 - [NeonDB](https://neon.tech)
 - [Clerk Auth](https://clerk.dev/)
 - [Upstash](https://upstash.com)
-- [Sentry](https://sentry.io)
 - [Resend](https://resend.com)
 
 Development stuff:

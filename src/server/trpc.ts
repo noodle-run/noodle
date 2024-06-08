@@ -7,14 +7,11 @@ import { db } from '@/db';
 import { resend } from '@/lib/resend';
 import { redis } from '@/lib/redis';
 
-export const createTRPCContext = async (opts: { headers: Headers }) => {
-  const session = await currentUser();
-
+export const createTRPCContext = (opts: { headers: Headers }) => {
   return {
     db,
     resend,
     redis,
-    session,
     ...opts,
   };
 };
@@ -37,14 +34,16 @@ export const createCallerFactory = t.createCallerFactory;
 export const createRouter = t.router;
 export const publicProcedure = t.procedure;
 
-export const protectedProcedure = t.procedure.use(({ ctx, next }) => {
-  if (!ctx.session) {
+export const protectedProcedure = t.procedure.use(async ({ next }) => {
+  const session = await currentUser();
+
+  if (!session) {
     throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
 
   return next({
     ctx: {
-      session: { ...ctx.session },
+      session: { ...session },
     },
   });
 });
