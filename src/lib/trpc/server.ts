@@ -6,7 +6,7 @@ import { headers } from 'next/headers';
 import { createCaller } from '@/server';
 import { createTRPCContext } from '@/server/trpc';
 
-const createContext = cache(async () => {
+const createContext = cache(() => {
   const heads = new Headers(headers());
   heads.set('x-trpc-source', 'rsc');
 

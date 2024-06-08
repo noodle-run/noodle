@@ -6,7 +6,7 @@ import { env } from '@/env';
 import { appRouter } from '@/server';
 import { createTRPCContext } from '@/server/trpc';
 
-const createContext = async (req: NextRequest) => {
+const createContext = (req: NextRequest) => {
   return createTRPCContext({
     headers: req.headers,
   });
