@@ -51,14 +51,6 @@ export default tseslint.config(
     extends: [jsdoc.configs['flat/recommended-typescript-error']],
   },
 
-  // Unit tests
-  {
-    files: ['src/**/?(*.)+(spec|test).[jt]s?(x)'],
-    extends: [
-      ...fixupConfigRules(compat.extends('plugin:testing-library/react')),
-    ],
-  },
-
   // Settings and rule overrides
   {
     linterOptions: {

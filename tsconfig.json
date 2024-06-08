@@ -43,7 +43,6 @@
   },
   "include": [
     "next-env.d.ts",
-    "bun-test.d.ts",
     "reset.d.ts",
     "eslint.d.ts",
     "**/*.ts",
