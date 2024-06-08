@@ -13,6 +13,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { constructMetadata } from '@/lib/utils';
 import { Toaster } from '@/primitives/sonner';
+import dynamic from 'next/dynamic';
+import { PHProvider } from './providers';
+
+const PostHogPageView = dynamic(() => import('./PostHogPageView'), {
+  ssr: false,
+});
 
 export const metadata: Metadata = constructMetadata();
 
@@ -30,14 +36,17 @@ export default function RootLayout({ children }: PropsWithChildren) {
       suppressHydrationWarning
       className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
-      <body>
-        <ThemeProvider attribute="class" disableTransitionOnChange>
-          {children}
-          <Toaster />
-          <Analytics />
-          <SpeedInsights />
-        </ThemeProvider>
-      </body>
+      <PHProvider>
+        <body>
+          <ThemeProvider attribute="class" disableTransitionOnChange>
+            <PostHogPageView />
+            {children}
+            <Toaster />
+            <Analytics />
+            <SpeedInsights />
+          </ThemeProvider>
+        </body>
+      </PHProvider>
     </html>
   );
 }
