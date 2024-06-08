@@ -7,7 +7,6 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import jsdoc from 'eslint-plugin-jsdoc';
-import playwright from 'eslint-plugin-playwright';
 import * as regexpPlugin from 'eslint-plugin-regexp';
 import pluginSecurity from 'eslint-plugin-security';
 import tseslint from 'typescript-eslint';
@@ -58,12 +57,6 @@ export default tseslint.config(
     extends: [
       ...fixupConfigRules(compat.extends('plugin:testing-library/react')),
     ],
-  },
-
-  // Playwright
-  {
-    files: ['e2e/**'],
-    ...playwright.configs['flat/recommended'],
   },
 
   // Settings and rule overrides

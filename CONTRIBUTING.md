@@ -125,9 +125,6 @@ You can checkout which variables are needed and which are optional in the `src/e
 # Run the project's dev server
 bun dev
 
-# Run e2e tests
-bun playwright test
-
 # Build the project
 bun run build
 

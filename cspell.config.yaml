@@ -11,8 +11,6 @@ ignorePaths:
   - .vscode/extensions.json
   - public
   - tsconfig.tsbuildinfo
-  - playwright-report
-  - test-results
   - branch_out
 words:
   - Arcjet
@@ -33,6 +31,7 @@ words:
   - neondatabase
   - nextjs
   - packagejson
+  - paralleldrive
   - Posthog
   - ratelimit
   - Registrator
