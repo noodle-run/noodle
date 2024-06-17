@@ -14,7 +14,7 @@
       "severity": "warn"
     }
   ],
-  "eslint.experimental.useFlatConfig": true,
+  "eslint.useFlatConfig": true,
 
   // Tailwind
   "files.associations": {
