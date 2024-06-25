@@ -1,15 +1,10 @@
 import { fileURLToPath } from 'node:url';
 
 import createJiti from 'jiti';
-import bundleAnalyzerPlugin from '@next/bundle-analyzer';
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
 jiti('./src/env');
-
-const withBundleAnalyzer = bundleAnalyzerPlugin({
-  enabled: process.env['ANALYZE'] === 'true',
-});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -30,4 +25,4 @@ const nextConfig = {
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default nextConfig;

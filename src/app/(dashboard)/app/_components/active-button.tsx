@@ -19,14 +19,14 @@ export function ActiveButton({ href, label, icon }: Props) {
     <Button
       variant="ghost"
       className={cn(
-        'w-full justify-start gap-3 font-normal text-foreground-muted hover:text-foreground',
+        'justify-start gap-3 font-normal',
         pathname === href && 'text-foreground',
       )}
       asChild
     >
       <Link href={href}>
         {icon}
-        {label}
+        <span className="w-full truncate">{label}</span>
       </Link>
     </Button>
   );

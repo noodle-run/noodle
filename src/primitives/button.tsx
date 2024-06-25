@@ -17,7 +17,8 @@ const buttonVariants = cva(
         destructive: 'bg-red text-white hover:bg-red-solid-hover',
         outline:
           'border border-gray-subtle-border bg-gray-element text-foreground-muted hover:bg-gray-element-hover hover:text-foreground',
-        ghost: 'hover:bg-gray-element',
+        ghost:
+          'text-foreground-muted hover:bg-gray-element hover:text-foreground',
         link: 'relative bg-gradient-to-br from-salmon to-pink bg-clip-text text-transparent before:absolute before:bottom-0 before:h-px before:w-[calc(100%-24px)] before:rounded-full before:bg-gradient-to-br before:from-salmon before:to-pink hover:opacity-90',
       },
       size: {
