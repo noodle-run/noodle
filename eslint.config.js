@@ -48,6 +48,7 @@ export default tseslint.config(
   // JSDoc plugin only for TypeScript files
   {
     files: ['**/*.{ts,tsx}'],
+    // @ts-expect-error - types are wrong
     extends: [jsdoc.configs['flat/recommended-typescript-error']],
   },
 
