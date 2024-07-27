@@ -6,6 +6,8 @@ import {
   timestamp,
   uuid,
 } from 'drizzle-orm/pg-core';
+import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
+import { z } from 'zod';
 
 export const modulesTable = pgTable('modules', {
   id: uuid('id').primaryKey().unique().defaultRandom().notNull(),
@@ -21,3 +23,18 @@ export const modulesTable = pgTable('modules', {
   modifiedAt: timestamp('modified_at').notNull().defaultNow(),
   lastVisited: timestamp('last_visited').notNull().defaultNow(),
 });
+
+export const insertModuleSchema = createInsertSchema(modulesTable).extend({
+  id: z.string().min(1),
+  icon: z.string().default('default'),
+  color: z.string().default('default'),
+  archived: z.boolean().default(false),
+  credits: z.number().default(0),
+  createdAt: z.date().default(new Date()),
+  modifiedAt: z.date().default(new Date()),
+  lastVisited: z.date().default(new Date()),
+});
+
+export type InsertModuleInput = z.infer<typeof insertModuleSchema>;
+
+export const selectModuleSchema = createSelectSchema(modulesTable);

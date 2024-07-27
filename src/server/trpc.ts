@@ -35,15 +35,15 @@ export const createRouter = t.router;
 export const publicProcedure = t.procedure;
 
 export const protectedProcedure = t.procedure.use(async ({ next }) => {
-  const session = await currentUser();
+  const user = await currentUser();
 
-  if (!session) {
+  if (!user) {
     throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
 
   return next({
     ctx: {
-      session: { ...session },
+      user: { ...user },
     },
   });
 });
