@@ -1,6 +1,8 @@
+import { RecentModules } from './_components/recent-modules';
+
 export default function DashboardHome() {
   return (
-    <div className="flex flex-1">
+    <div className="flex flex-1 gap-6">
       <div className="flex-1">
         <div className="space-y-3">
           <h1 className="text-4xl font-semibold">Good afternoon, Ahmed!</h1>
@@ -10,7 +12,7 @@ export default function DashboardHome() {
             Niebuhr
           </p>
         </div>
-        <div>More content</div>
+        <RecentModules />
       </div>
       <div className="min-w-[280px] rounded-lg border p-4">Right side</div>
     </div>
