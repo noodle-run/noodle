@@ -5,3 +5,4 @@ next-env.d.ts
 .husky
 bun.lockb
 *.toml
+drizzle
