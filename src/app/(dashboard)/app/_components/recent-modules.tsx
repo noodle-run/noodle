@@ -16,6 +16,8 @@ export function RecentModules() {
           variant="outline"
           size="sm"
           className="text-xs"
+          aria-expanded={isExpanded}
+          aria-controls="recent-modules-list"
           onClick={() => {
             setIsExpanded((prev) => !prev);
           }}
@@ -23,49 +25,14 @@ export function RecentModules() {
           {isExpanded ? 'Hide' : 'Show'}
         </Button>
       </div>
-      <AnimateHeight height={isExpanded ? 'auto' : 0}>
+      <AnimateHeight id="recent-modules-list" height={isExpanded ? 'auto' : 0}>
         <ScrollArea>
           <ul className="mb-2 mt-4 flex gap-4">
             <ModuleCard
               id="123"
               color="default"
               credits={15}
-              icon="🔒"
-              name="Information Security"
-            />
-            <ModuleCard
-              id="123"
-              color="default"
-              credits={15}
-              icon="🔒"
-              name="Information Security"
-            />
-            <ModuleCard
-              id="123"
-              color="default"
-              credits={15}
-              icon="🔒"
-              name="Information Security"
-            />
-            <ModuleCard
-              id="123"
-              color="default"
-              credits={15}
-              icon="🔒"
-              name="Information Security"
-            />
-            <ModuleCard
-              id="123"
-              color="default"
-              credits={15}
-              icon="🔒"
-              name="Information Security"
-            />
-            <ModuleCard
-              id="123"
-              color="default"
-              credits={15}
-              icon="🔒"
+              icon="Airplay"
               name="Information Security"
             />
           </ul>
