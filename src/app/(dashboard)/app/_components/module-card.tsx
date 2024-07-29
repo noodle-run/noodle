@@ -43,12 +43,16 @@ export function ModuleCard({
   );
 }
 
-ModuleCard.Skeleton = function ModuleCardSkeleton() {
+ModuleCard.Skeleton = function ModuleCardSkeleton({
+  animate = true,
+}: {
+  animate?: boolean;
+}) {
   return (
-    <div className="flex h-[138px] w-[250px] flex-col gap-2 rounded-xl border border-gray-element bg-gray-subtle p-6">
-      <Skeleton className="size-5" />
-      <Skeleton className="mt-2 h-6 w-[200px]" />
-      <Skeleton className="mt-1 h-4 w-[50px]" />
+    <div className="flex h-[138px] w-[250px] flex-col gap-2 rounded-xl border  bg-gray-subtle p-6">
+      <Skeleton noPulse={!animate} className="size-5" />
+      <Skeleton noPulse={!animate} className="mt-2 h-6 w-[200px]" />
+      <Skeleton noPulse={!animate} className="mt-1 h-4 w-[50px]" />
     </div>
   );
 };
