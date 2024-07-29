@@ -15,7 +15,7 @@ interface RecentModulesProps {
 export function RecentModules({ modules }: RecentModulesProps) {
   const [isExpanded, setIsExpanded] = useState(true);
   return (
-    <div className="mt-6 overflow-hidden rounded-xl border px-6 py-4">
+    <div className="mt-6 overflow-hidden rounded-xl border px-4 py-3">
       <div className="flex justify-between">
         <h2 className="text-lg font-semibold">Recent Modules</h2>
         <Button
@@ -35,7 +35,7 @@ export function RecentModules({ modules }: RecentModulesProps) {
         <ScrollArea>
           <ul
             className={cn(
-              'relative mb-2.5 mt-4 flex gap-4',
+              'relative mt-4 flex gap-4',
               modules.length === 0 && 'overflow-hidden',
             )}
           >

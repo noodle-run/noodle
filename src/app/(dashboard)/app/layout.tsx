@@ -1,5 +1,4 @@
 import {
-  BellIcon,
   CircleHelpIcon,
   DiamondIcon,
   FolderIcon,
@@ -8,12 +7,12 @@ import {
   MessageSquareMore,
   PanelLeftCloseIcon,
   PenLineIcon,
+  PlusIcon,
   PuzzleIcon,
 } from 'lucide-react';
 import Image from 'next/image';
 import type { PropsWithChildren } from 'react';
 import { ActiveButton } from './_components/active-button';
-import { CreatePlusDropdownMenu } from './_components/create-plus-dropdown-menu';
 import { Button } from '@/primitives/button';
 import { UserButton } from '@clerk/nextjs';
 
@@ -66,7 +65,12 @@ export default function AppLayout({ children }: PropsWithChildren) {
           </ul>
 
           <div className="mt-6 space-y-2">
-            <h3 className="pl-4 text-xs text-gray">Modules</h3>
+            <div className="flex items-center justify-between pl-4">
+              <h3 className="text-xs text-gray">Modules</h3>
+              <Button variant="ghost" size="icon" className="size-8">
+                <PlusIcon size={15} strokeWidth={1.5} />
+              </Button>
+            </div>
             <ul className="flex flex-col">
               <li className="flex flex-1 flex-col">
                 <ActiveButton
@@ -103,18 +107,10 @@ export default function AppLayout({ children }: PropsWithChildren) {
 
       <div className="flex flex-1 flex-col rounded-xl border px-6 pb-6 pt-4">
         <nav className="mb-6 flex items-center justify-between">
-          <div>
-            <Button variant="ghost" size="icon" className="-ml-2">
-              <PanelLeftCloseIcon strokeWidth={1.5} size={18} />
-            </Button>
-          </div>
-          <div className="flex items-center gap-4">
-            <CreatePlusDropdownMenu />
-            <Button variant="ghost" size="icon">
-              <BellIcon size={18} />
-            </Button>
-            <UserButton />
-          </div>
+          <Button variant="ghost" size="icon" className="-ml-2">
+            <PanelLeftCloseIcon strokeWidth={1.5} size={18} />
+          </Button>
+          <UserButton />
         </nav>
 
         {children}
