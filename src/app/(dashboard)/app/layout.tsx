@@ -7,7 +7,6 @@ import {
   MessageSquareMore,
   PanelLeftCloseIcon,
   PenLineIcon,
-  PlusIcon,
   PuzzleIcon,
 } from 'lucide-react';
 import Image from 'next/image';
@@ -15,6 +14,7 @@ import type { PropsWithChildren } from 'react';
 import { ActiveButton } from './_components/active-button';
 import { Button } from '@/primitives/button';
 import { UserButton } from '@clerk/nextjs';
+import { CreateModulePopover } from './_components/create-module-popover';
 
 const iconSize = 15;
 
@@ -67,9 +67,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
           <div className="mt-6 space-y-2">
             <div className="flex items-center justify-between pl-4">
               <h3 className="text-xs text-gray">Modules</h3>
-              <Button variant="ghost" size="icon" className="size-8">
-                <PlusIcon size={15} strokeWidth={1.5} />
-              </Button>
+              <CreateModulePopover />
             </div>
             <ul className="flex flex-col">
               <li className="flex flex-1 flex-col">
