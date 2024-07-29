@@ -1,5 +1,6 @@
 import { convertHexToRGBA } from '@/lib/colors';
 import { Icon, type IconNames } from '@/primitives/icon';
+import { Skeleton } from '@/primitives/skeleton';
 import Link from 'next/link';
 import colors, { zinc } from 'tailwindcss/colors';
 
@@ -41,3 +42,13 @@ export function ModuleCard({
     </li>
   );
 }
+
+ModuleCard.Skeleton = function ModuleCardSkeleton() {
+  return (
+    <div className="flex h-[138px] w-[250px] flex-col gap-2 rounded-xl border border-gray-element bg-gray-subtle p-6">
+      <Skeleton className="size-5" />
+      <Skeleton className="mt-2 h-6 w-[200px]" />
+      <Skeleton className="mt-1 h-4 w-[50px]" />
+    </div>
+  );
+};

@@ -35,6 +35,7 @@ export function RecentModules() {
               icon="Airplay"
               name="Information Security"
             />
+            <ModuleCard.Skeleton />
           </ul>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
