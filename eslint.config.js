@@ -92,6 +92,8 @@ export default tseslint.config(
         { checksVoidReturn: { attributes: false } },
       ],
 
+      '@typescript-eslint/non-nullable-type-assertion-style': 'off',
+
       '@typescript-eslint/dot-notation': 'off',
 
       '@typescript-eslint/no-unnecessary-condition': [

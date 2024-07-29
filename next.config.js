@@ -9,7 +9,7 @@ jiti('./src/env');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ['next-mdx-remote'],
+  transpilePackages: ['next-mdx-remote', 'lucide-react'],
 
   // We run ESLint and TypeScript separately in the CI pipeline
   eslint: {
