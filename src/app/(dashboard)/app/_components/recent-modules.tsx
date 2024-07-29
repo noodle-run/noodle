@@ -5,8 +5,14 @@ import { ModuleCard } from './module-card';
 import { Button } from '@/primitives/button';
 import AnimateHeight from 'react-animate-height';
 import { useState } from 'react';
+import type { RouterOutputs } from '@/lib/trpc/types';
+import { cn } from '@/lib/utils';
 
-export function RecentModules() {
+interface RecentModulesProps {
+  modules: RouterOutputs['modules']['getUserModules'];
+}
+
+export function RecentModules({ modules }: RecentModulesProps) {
   const [isExpanded, setIsExpanded] = useState(true);
   return (
     <div className="mt-6 overflow-hidden rounded-xl border px-6 py-4">
@@ -27,15 +33,25 @@ export function RecentModules() {
       </div>
       <AnimateHeight id="recent-modules-list" height={isExpanded ? 'auto' : 0}>
         <ScrollArea>
-          <ul className="mb-2 mt-4 flex gap-4">
-            <ModuleCard
-              id="123"
-              color="default"
-              credits={15}
-              icon="Airplay"
-              name="Information Security"
-            />
-            <ModuleCard.Skeleton animate={false} />
+          <ul
+            className={cn(
+              'relative mb-2.5 mt-4 flex gap-4',
+              modules.length === 0 && 'overflow-hidden',
+            )}
+          >
+            {modules.length === 0 && (
+              <>
+                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center">
+                  <p className="max-w-[40ch] text-center text-sm text-gray-foreground-muted">
+                    When you decide to become a good student and create modules,
+                    your recent ones will show up here.
+                  </p>
+                </div>
+                {new Array(8).fill(0).map((_, i) => (
+                  <ModuleCard.Skeleton key={i} opacity={50} animate={false} />
+                ))}
+              </>
+            )}
           </ul>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>

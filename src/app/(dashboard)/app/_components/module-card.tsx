@@ -26,7 +26,7 @@ export function ModuleCard({
     <li className="shrink-0 basis-full lg:basis-[250px]">
       <Link
         href={`/app/module/${id}`}
-        className="flex w-full flex-col gap-2 rounded-xl p-6"
+        className="flex flex-col gap-2 rounded-xl p-6"
         style={{
           background: `linear-gradient(135deg, ${convertHexToRGBA(
             moduleColor['500'],
@@ -45,14 +45,21 @@ export function ModuleCard({
 
 ModuleCard.Skeleton = function ModuleCardSkeleton({
   animate = true,
+  opacity = 100,
 }: {
   animate?: boolean;
+  opacity?: number;
 }) {
   return (
-    <div className="flex h-[138px] w-[250px] flex-col gap-2 rounded-xl border  bg-gray-subtle p-6">
-      <Skeleton noPulse={!animate} className="size-5" />
-      <Skeleton noPulse={!animate} className="mt-2 h-6 w-[200px]" />
-      <Skeleton noPulse={!animate} className="mt-1 h-4 w-[50px]" />
-    </div>
+    <li
+      className="shrink-0 basis-full lg:basis-[250px]"
+      style={{ opacity: `${opacity.toString()}%` }}
+    >
+      <div className="flex flex-col gap-2 rounded-xl border bg-gray-subtle p-6">
+        <Skeleton noPulse={!animate} className="size-5" />
+        <Skeleton noPulse={!animate} className="mt-2 h-6 w-full" />
+        <Skeleton noPulse={!animate} className="mt-1 h-4 w-[50px]" />
+      </div>
+    </li>
   );
 };

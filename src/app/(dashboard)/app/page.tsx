@@ -1,6 +1,9 @@
+import { api } from '@/lib/trpc/server';
 import { RecentModules } from './_components/recent-modules';
 
-export default function DashboardHome() {
+export default async function DashboardHome() {
+  const modules = await api.modules.getUserModules();
+
   return (
     <div className="flex flex-1 gap-6">
       <div className="flex-1">
@@ -12,7 +15,7 @@ export default function DashboardHome() {
             Niebuhr
           </p>
         </div>
-        <RecentModules />
+        <RecentModules modules={modules} />
       </div>
       <div className="min-w-[280px] rounded-lg border p-4">Right side</div>
     </div>
