@@ -54,8 +54,8 @@
     }
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.3.0",
-    "@clerk/themes": "^2.1.19",
+    "@clerk/nextjs": "^5.3.1",
+    "@clerk/themes": "^2.1.20",
     "@hookform/resolvers": "^3.9.0",
     "@neondatabase/serverless": "^0.9.4",
     "@paralleldrive/cuid2": "^2.2.2",
@@ -97,7 +97,7 @@
     "server-only": "^0.0.1",
     "sonner": "^1.5.0",
     "superjson": "^2.2.1",
-    "tailwind-merge": "^2.5.0",
+    "tailwind-merge": "^2.5.2",
     "use-resize-observer": "^9.1.0",
     "zod": "^3.23.8"
   },
@@ -124,11 +124,11 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "commitizen": "^4.3.0",
-    "cspell": "^8.13.2",
+    "cspell": "^8.13.3",
     "drizzle-kit": "^0.24.0",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jsdoc": "^50.0.1",
+    "eslint-plugin-jsdoc": "^50.2.1",
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^4.6.2",
@@ -137,7 +137,7 @@
     "eslint-plugin-tailwindcss": "^3.17.4",
     "globals": "^15.9.0",
     "husky": "^9.1.4",
-    "lint-staged": "^15.2.8",
+    "lint-staged": "^15.2.9",
     "markdownlint": "^0.34.0",
     "markdownlint-cli": "^0.41.0",
     "postcss": "^8.4.41",
@@ -147,7 +147,7 @@
     "tailwindcss": "^3.4.9",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.0.1"
+    "typescript-eslint": "^8.1.0"
   },
   "trustedDependencies": [
     "@clerk/shared",
