@@ -20,8 +20,10 @@ import {
 } from '@/primitives/form';
 import { Label } from '@/primitives/label';
 import type { IconNames } from '@/primitives/icon';
-import { Icon } from '@/primitives/icon';
+import { Icon, iconNames } from '@/primitives/icon';
 import { grayDark } from '@radix-ui/colors';
+import { colorChoices } from '../lib/color-choices';
+import { ScrollArea } from '@/primitives/scroll-area';
 
 interface StepHeadingProps {
   title: string;
@@ -43,7 +45,7 @@ const StepHeading = ({ title, description }: StepHeadingProps) => {
 const formSchema = z.object({
   name: z.string(),
   code: z.string(),
-  credits: z.number(),
+  credits: z.string(),
   icon: z.string(),
   color: z.string(),
 });
@@ -57,7 +59,7 @@ export function CreateModulePopover() {
     defaultValues: {
       name: '',
       code: '',
-      credits: 0,
+      credits: '',
       icon: 'default',
       color: 'default',
     },
@@ -157,6 +159,15 @@ export function CreateModulePopover() {
                         <Button
                           variant="outline"
                           className="flex-1 justify-between bg-gray-subtle px-3 py-2 hover:bg-gray-element"
+                          style={{
+                            color:
+                              form.watch('color') === 'default'
+                                ? grayDark.gray10
+                                : colorChoices.find(
+                                    (color) =>
+                                      color.name === form.watch('color'),
+                                  )?.value,
+                          }}
                           onClick={() => {
                             setStep(2);
                           }}
@@ -193,7 +204,10 @@ export function CreateModulePopover() {
                               backgroundColor:
                                 form.watch('color') === 'default'
                                   ? grayDark.gray10
-                                  : form.watch('color'),
+                                  : colorChoices.find(
+                                      (color) =>
+                                        color.name === form.watch('color'),
+                                    )?.value,
                             }}
                           />
 
@@ -218,6 +232,23 @@ export function CreateModulePopover() {
                     title="Select an icon"
                     description="You can select an icon for your module to make it easier to identify."
                   />
+                  <ScrollArea className="h-[300px]">
+                    <div className="mt-2 grid grid-cols-6 gap-2">
+                      {iconNames.map((icon) => (
+                        <button
+                          type="button"
+                          key={icon}
+                          className="grid place-items-center rounded-lg p-2 text-foreground transition-colors hover:bg-gray-element"
+                          onClick={() => {
+                            form.setValue('icon', icon);
+                            setStep(1);
+                          }}
+                        >
+                          <Icon name={icon} size={20} strokeWidth={1.5} />
+                        </button>
+                      ))}
+                    </div>
+                  </ScrollArea>
                 </div>
               )}
 
@@ -227,6 +258,20 @@ export function CreateModulePopover() {
                     title="Select a color"
                     description="You can select a color for your module to be able to identify it easily."
                   />
+                  <div className="mt-2 flex flex-wrap justify-between gap-4">
+                    {colorChoices.map((color) => (
+                      <button
+                        type="button"
+                        key={color.name}
+                        className="size-8 rounded-lg transition-all hover:scale-110"
+                        style={{ backgroundColor: color.value }}
+                        onClick={() => {
+                          form.setValue('color', color.name);
+                          setStep(1);
+                        }}
+                      />
+                    ))}
+                  </div>
                 </div>
               )}
             </form>
