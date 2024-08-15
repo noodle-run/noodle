@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'path';
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters
 function parseFrontmatter<T extends Record<string, unknown>>(
   fileContent: string,
 ) {

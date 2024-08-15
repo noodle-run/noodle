@@ -41,10 +41,13 @@ export const modulesRouter = createRouter({
     .mutation(async ({ ctx, input }) => {
       const userId = ctx.user.id;
 
-      return ctx.db.insert(modulesTable).values({
-        ...input,
-        user_id: userId,
-      });
+      return ctx.db
+        .insert(modulesTable)
+        .values({
+          ...input,
+          user_id: userId,
+        })
+        .returning();
     }),
 
   archive: protectedProcedure

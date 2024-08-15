@@ -24,6 +24,10 @@ import { Icon, iconNames } from '@/primitives/icon';
 import { grayDark } from '@radix-ui/colors';
 import { colorChoices } from '../lib/color-choices';
 import { ScrollArea } from '@/primitives/scroll-area';
+import { api } from '@/lib/trpc/react';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
+import { Textarea } from '@/primitives/textarea';
 
 interface StepHeadingProps {
   title: string;
@@ -43,30 +47,45 @@ const StepHeading = ({ title, description }: StepHeadingProps) => {
 };
 
 const formSchema = z.object({
-  name: z.string(),
-  code: z.string(),
+  name: z.string().min(2),
+  description: z.string(),
+  code: z.string().min(2),
   credits: z.string(),
-  icon: z.string(),
-  color: z.string(),
+  icon: z.string().min(1),
+  color: z.string().min(1),
 });
 
 export function CreateModulePopover() {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [step, setStep] = useState<1 | 2 | 3>(1);
 
+  const router = useRouter();
+
+  const mutation = api.modules.create.useMutation({
+    onError(error) {
+      toast.error(error.message);
+    },
+    onSuccess() {
+      router.refresh();
+    },
+  });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
       code: '',
-      credits: '',
+      credits: '0',
       icon: 'default',
       color: 'default',
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    await mutation.mutateAsync({
+      ...values,
+      credits: parseInt(values.credits),
+    });
   }
 
   return (
@@ -113,7 +132,26 @@ export function CreateModulePopover() {
                         </FormItem>
                       )}
                     />
-                    <div className="flex items-center justify-between gap-3">
+                    <FormField
+                      control={form.control}
+                      name="description"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-xs text-foreground">
+                            Description (optional)
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              className="resize-none"
+                              placeholder="Type here..."
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <div className="flex items-start justify-between gap-3">
                       <FormField
                         control={form.control}
                         name="code"
@@ -153,10 +191,11 @@ export function CreateModulePopover() {
                         )}
                       />
                     </div>
-                    <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-start justify-between gap-3">
                       <div className="mt-1 flex flex-1 flex-col gap-2">
                         <Label className="text-xs text-foreground">Icon</Label>
                         <Button
+                          type="button"
                           variant="outline"
                           className="flex-1 justify-between bg-gray-subtle px-3 py-2 hover:bg-gray-element"
                           style={{
@@ -192,6 +231,7 @@ export function CreateModulePopover() {
                       <div className="mt-1 flex flex-1 flex-col space-y-2">
                         <Label className="text-xs text-foreground">Color</Label>
                         <Button
+                          type="button"
                           variant="outline"
                           className="flex-1 justify-between bg-gray-subtle px-3 py-2 hover:bg-gray-element"
                           onClick={() => {
