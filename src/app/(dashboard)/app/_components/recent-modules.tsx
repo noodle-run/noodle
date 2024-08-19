@@ -7,6 +7,7 @@ import AnimateHeight from 'react-animate-height';
 import { useState } from 'react';
 import type { RouterOutputs } from '@/lib/trpc/types';
 import { cn } from '@/lib/utils';
+import type { IconNames } from '@/primitives/icon';
 
 interface RecentModulesProps {
   modules: RouterOutputs['modules']['getUserModules'];
@@ -52,6 +53,15 @@ export function RecentModules({ modules }: RecentModulesProps) {
                 ))}
               </>
             )}
+
+            {modules.length > 0 &&
+              modules.map((module) => (
+                <ModuleCard
+                  key={module.id}
+                  {...module}
+                  icon={module.icon as IconNames}
+                />
+              ))}
           </ul>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>

@@ -8,11 +8,6 @@ export default clerkMiddleware((auth, req) => {
     auth().protect();
   }
 
-  // if the user is authenticated and is trying to access anything other than the dashboard, redirect them to the dashboard
-  if (auth().userId && !isProtectedRoute(req)) {
-    return NextResponse.redirect(new URL(`${req.nextUrl.origin}/app`));
-  }
-
   return NextResponse.next();
 });
 

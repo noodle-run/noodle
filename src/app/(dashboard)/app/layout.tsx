@@ -1,7 +1,6 @@
 import {
   CircleHelpIcon,
   DiamondIcon,
-  FolderIcon,
   HomeIcon,
   ListChecksIcon,
   MessageSquareMore,
@@ -15,6 +14,9 @@ import { ActiveButton } from './_components/active-button';
 import { Button } from '@/primitives/button';
 import { UserButton } from '@clerk/nextjs';
 import { CreateModulePopover } from './_components/create-module-popover';
+import { api } from '@/lib/trpc/server';
+import type { IconNames } from '@/primitives/icon';
+import { Icon } from '@/primitives/icon';
 
 const iconSize = 15;
 
@@ -46,7 +48,9 @@ const sideMenuStaticLinks = [
   },
 ];
 
-export default function AppLayout({ children }: PropsWithChildren) {
+export default async function AppLayout({ children }: PropsWithChildren) {
+  const modules = await api.modules.getUserModules();
+
   return (
     <main className="flex min-h-dvh gap-4 p-4">
       <aside className="flex w-[200px] flex-col justify-between">
@@ -70,13 +74,21 @@ export default function AppLayout({ children }: PropsWithChildren) {
               <CreateModulePopover />
             </div>
             <ul className="flex flex-col">
-              <li className="flex flex-1 flex-col">
-                <ActiveButton
-                  href="/modules/ai"
-                  icon={<FolderIcon size={15} strokeWidth={1.5} />}
-                  label="Artificial Intelligence"
-                />
-              </li>
+              {modules.map((module) => (
+                <li key={module.id} className="flex flex-1 flex-col">
+                  <ActiveButton
+                    href={`/modules/${module.id}`}
+                    icon={
+                      <Icon
+                        name={module.icon as IconNames}
+                        size={15}
+                        strokeWidth={1.5}
+                      />
+                    }
+                    label={module.name}
+                  />
+                </li>
+              ))}
             </ul>
           </div>
         </div>
