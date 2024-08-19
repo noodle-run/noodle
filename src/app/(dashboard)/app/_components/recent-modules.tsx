@@ -59,7 +59,11 @@ export function RecentModules({ modules }: RecentModulesProps) {
                 <ModuleCard
                   key={module.id}
                   {...module}
-                  icon={module.icon as IconNames}
+                  icon={
+                    module.icon === 'default'
+                      ? 'Folder'
+                      : (module.icon as IconNames)
+                  }
                 />
               ))}
           </ul>

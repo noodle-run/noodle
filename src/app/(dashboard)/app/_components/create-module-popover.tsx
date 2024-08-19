@@ -86,6 +86,13 @@ export function CreateModulePopover() {
       ...values,
       credits: parseInt(values.credits),
     });
+    form.reset({
+      name: '',
+      code: '',
+      credits: '0',
+      icon: 'default',
+      color: 'default',
+    });
   }
 
   return (
@@ -259,8 +266,15 @@ export function CreateModulePopover() {
                         </Button>
                       </div>
                     </div>
-                    <Button type="submit" className="!mt-4 w-full" size="sm">
-                      Create module
+                    <Button
+                      type="submit"
+                      disabled={form.formState.isSubmitting}
+                      className="!mt-4 w-full"
+                      size="sm"
+                    >
+                      {form.formState.isSubmitting
+                        ? 'Creating...'
+                        : 'Create module'}
                     </Button>
                   </div>
                 </div>

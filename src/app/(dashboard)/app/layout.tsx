@@ -74,21 +74,32 @@ export default async function AppLayout({ children }: PropsWithChildren) {
               <CreateModulePopover />
             </div>
             <ul className="flex flex-col">
-              {modules.map((module) => (
-                <li key={module.id} className="flex flex-1 flex-col">
-                  <ActiveButton
-                    href={`/modules/${module.id}`}
-                    icon={
-                      <Icon
-                        name={module.icon as IconNames}
-                        size={15}
-                        strokeWidth={1.5}
-                      />
-                    }
-                    label={module.name}
-                  />
-                </li>
-              ))}
+              {modules
+                .sort((a, b) => {
+                  return (
+                    new Date(a.createdAt).getTime() -
+                    new Date(b.createdAt).getTime()
+                  );
+                })
+                .map((module) => (
+                  <li key={module.id} className="flex flex-1 flex-col">
+                    <ActiveButton
+                      href={`/modules/${module.id}`}
+                      icon={
+                        <Icon
+                          name={
+                            module.icon === 'default'
+                              ? 'Folder'
+                              : (module.icon as IconNames)
+                          }
+                          size={15}
+                          strokeWidth={1.5}
+                        />
+                      }
+                      label={module.name}
+                    />
+                  </li>
+                ))}
             </ul>
           </div>
         </div>
