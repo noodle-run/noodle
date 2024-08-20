@@ -2,11 +2,9 @@ import {
   CircleHelpIcon,
   DiamondIcon,
   HomeIcon,
-  ListChecksIcon,
   MessageSquareMore,
   PanelLeftCloseIcon,
   PenLineIcon,
-  PuzzleIcon,
 } from 'lucide-react';
 import Image from 'next/image';
 import type { PropsWithChildren } from 'react';
@@ -27,24 +25,14 @@ const sideMenuStaticLinks = [
     href: '/app',
   },
   {
-    icon: <PuzzleIcon size={iconSize} />,
-    label: 'Modules',
-    href: '/modules',
-  },
-  {
-    icon: <ListChecksIcon size={iconSize} />,
-    label: 'Tasks',
-    href: '/tasks',
-  },
-  {
     icon: <PenLineIcon size={iconSize} />,
     label: 'Notebooks',
-    href: '/notes',
+    href: '/app/notes',
   },
   {
     icon: <DiamondIcon size={iconSize} />,
     label: 'Flashcards',
-    href: '/flashcards',
+    href: '/app/flashcards',
   },
 ];
 
@@ -53,7 +41,7 @@ export default async function AppLayout({ children }: PropsWithChildren) {
 
   return (
     <main className="flex min-h-dvh gap-4 p-4">
-      <aside className="flex w-[200px] flex-col justify-between">
+      <aside className="flex w-[200px] flex-col justify-between gap-8">
         <div>
           <div className="flex items-center gap-3 pl-3 pt-4">
             <Image src="/logo.svg" width={35} height={35} alt="Noodle Logo" />

@@ -45,6 +45,7 @@ export const modulesRouter = createRouter({
         .insert(modulesTable)
         .values({
           ...input,
+          description: input.description ?? '',
           user_id: userId,
         })
         .returning();
@@ -106,6 +107,7 @@ export const modulesRouter = createRouter({
         .update(modulesTable)
         .set({
           ...updateData,
+          description: updateData.description ?? '',
           modifiedAt: new Date(),
         })
         .where(

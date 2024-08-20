@@ -13,7 +13,7 @@ export const modulesTable = pgTable('modules', {
   id: uuid('id').primaryKey().unique().defaultRandom().notNull(),
   user_id: text('user_id').notNull(),
   name: text('name').notNull(),
-  description: text('description').notNull(),
+  description: text('description'),
   code: text('code').notNull(),
   icon: text('icon').default('default').notNull(),
   color: text('color').default('default').notNull(),
@@ -26,6 +26,7 @@ export const modulesTable = pgTable('modules', {
 
 export const insertModuleSchema = createInsertSchema(modulesTable).extend({
   id: z.string().min(1),
+  description: z.string().optional(),
   icon: z.string().default('default'),
   color: z.string().default('default'),
   archived: z.boolean().default(false),

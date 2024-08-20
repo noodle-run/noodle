@@ -15,7 +15,7 @@ export default async function DashboardHome() {
             Niebuhr
           </p>
         </div>
-        <RecentModules modules={modules} />
+        <RecentModules modules={modules.slice(0, 4)} />
       </div>
       <div className="min-w-[280px] rounded-lg border p-4">Right side</div>
     </div>

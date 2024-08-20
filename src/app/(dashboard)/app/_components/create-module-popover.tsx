@@ -48,7 +48,7 @@ const StepHeading = ({ title, description }: StepHeadingProps) => {
 
 const formSchema = z.object({
   name: z.string().min(2),
-  description: z.string(),
+  description: z.string().optional(),
   code: z.string().min(2),
   credits: z.string(),
   icon: z.string().min(1),
