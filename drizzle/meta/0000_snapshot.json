@@ -1,7 +1,5 @@
 {
-  "id": "b304d26a-1927-40c9-9067-57935d6d9ab3",
-  "prevId": "00000000-0000-0000-0000-000000000000",
-  "version": "6",
+  "version": "7",
   "dialect": "postgresql",
   "tables": {
     "public.early_access": {
@@ -60,8 +58,10 @@
       "uniqueConstraints": {
         "early_access_email_unique": {
           "name": "early_access_email_unique",
-          "nullsNotDistinct": false,
-          "columns": ["email"]
+          "columns": [
+            "email"
+          ],
+          "nullsNotDistinct": false
         }
       }
     }
@@ -69,8 +69,10 @@
   "enums": {},
   "schemas": {},
   "_meta": {
-    "columns": {},
     "schemas": {},
-    "tables": {}
-  }
+    "tables": {},
+    "columns": {}
+  },
+  "id": "b304d26a-1927-40c9-9067-57935d6d9ab3",
+  "prevId": "00000000-0000-0000-0000-000000000000"
 }

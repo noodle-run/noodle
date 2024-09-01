@@ -1,21 +1,20 @@
 import {
-  BellIcon,
   CircleHelpIcon,
   DiamondIcon,
-  FolderIcon,
   HomeIcon,
-  ListChecksIcon,
   MessageSquareMore,
   PanelLeftCloseIcon,
   PenLineIcon,
-  PuzzleIcon,
 } from 'lucide-react';
 import Image from 'next/image';
 import type { PropsWithChildren } from 'react';
 import { ActiveButton } from './_components/active-button';
-import { CreatePlusDropdownMenu } from './_components/create-plus-dropdown-menu';
 import { Button } from '@/primitives/button';
 import { UserButton } from '@clerk/nextjs';
+import { CreateModulePopover } from './_components/create-module-popover';
+import { api } from '@/lib/trpc/server';
+import type { IconNames } from '@/primitives/icon';
+import { Icon } from '@/primitives/icon';
 
 const iconSize = 15;
 
@@ -26,31 +25,23 @@ const sideMenuStaticLinks = [
     href: '/app',
   },
   {
-    icon: <PuzzleIcon size={iconSize} />,
-    label: 'Modules',
-    href: '/modules',
-  },
-  {
-    icon: <ListChecksIcon size={iconSize} />,
-    label: 'Tasks',
-    href: '/tasks',
-  },
-  {
     icon: <PenLineIcon size={iconSize} />,
     label: 'Notebooks',
-    href: '/notes',
+    href: '/app/notes',
   },
   {
     icon: <DiamondIcon size={iconSize} />,
     label: 'Flashcards',
-    href: '/flashcards',
+    href: '/app/flashcards',
   },
 ];
 
-export default function AppLayout({ children }: PropsWithChildren) {
+export default async function AppLayout({ children }: PropsWithChildren) {
+  const modules = await api.modules.getUserModules();
+
   return (
     <main className="flex min-h-dvh gap-4 p-4">
-      <aside className="flex w-[200px] flex-col justify-between">
+      <aside className="flex w-[200px] flex-col justify-between gap-8">
         <div>
           <div className="flex items-center gap-3 pl-3 pt-4">
             <Image src="/logo.svg" width={35} height={35} alt="Noodle Logo" />
@@ -66,15 +57,37 @@ export default function AppLayout({ children }: PropsWithChildren) {
           </ul>
 
           <div className="mt-6 space-y-2">
-            <h3 className="pl-4 text-xs text-gray">Modules</h3>
+            <div className="flex items-center justify-between pl-4">
+              <h3 className="text-xs text-gray">Modules</h3>
+              <CreateModulePopover />
+            </div>
             <ul className="flex flex-col">
-              <li className="flex flex-1 flex-col">
-                <ActiveButton
-                  href="/modules/ai"
-                  icon={<FolderIcon size={15} strokeWidth={1.5} />}
-                  label="Artificial Intelligence"
-                />
-              </li>
+              {modules
+                .sort((a, b) => {
+                  return (
+                    new Date(a.createdAt).getTime() -
+                    new Date(b.createdAt).getTime()
+                  );
+                })
+                .map((module) => (
+                  <li key={module.id} className="flex flex-1 flex-col">
+                    <ActiveButton
+                      href={`/modules/${module.id}`}
+                      icon={
+                        <Icon
+                          name={
+                            module.icon === 'default'
+                              ? 'Folder'
+                              : (module.icon as IconNames)
+                          }
+                          size={15}
+                          strokeWidth={1.5}
+                        />
+                      }
+                      label={module.name}
+                    />
+                  </li>
+                ))}
             </ul>
           </div>
         </div>
@@ -103,18 +116,10 @@ export default function AppLayout({ children }: PropsWithChildren) {
 
       <div className="flex flex-1 flex-col rounded-xl border px-6 pb-6 pt-4">
         <nav className="mb-6 flex items-center justify-between">
-          <div>
-            <Button variant="ghost" size="icon" className="-ml-2">
-              <PanelLeftCloseIcon strokeWidth={1.5} size={18} />
-            </Button>
-          </div>
-          <div className="flex items-center gap-4">
-            <CreatePlusDropdownMenu />
-            <Button variant="ghost" size="icon">
-              <BellIcon size={18} />
-            </Button>
-            <UserButton />
-          </div>
+          <Button variant="ghost" size="icon" className="-ml-2">
+            <PanelLeftCloseIcon strokeWidth={1.5} size={18} />
+          </Button>
+          <UserButton />
         </nav>
 
         {children}

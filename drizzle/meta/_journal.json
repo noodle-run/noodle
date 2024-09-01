@@ -8,6 +8,20 @@
       "when": 1716742272276,
       "tag": "0000_funny_johnny_blaze",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1722099574439,
+      "tag": "0001_minor_warlock",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1724179669909,
+      "tag": "0002_complex_sally_floyd",
+      "breakpoints": true
     }
   ]
 }
