@@ -4,7 +4,8 @@ import {
   modulesTable,
   selectModuleSchema,
 } from '@/db/schema';
-import { and, eq } from 'drizzle-orm';
+import { TRPCError } from '@trpc/server';
+import { DrizzleError, and, eq } from 'drizzle-orm';
 
 export const modulesRouter = createRouter({
   getById: protectedProcedure
@@ -12,10 +13,33 @@ export const modulesRouter = createRouter({
     .query(async ({ ctx, input }) => {
       const userId = ctx.user.id;
 
-      return ctx.db.query.modulesTable.findFirst({
-        where: (t, { and, eq }) =>
-          and(eq(t.id, input.id), eq(t.user_id, userId)),
-      });
+      try {
+        const userModule = await ctx.db.query.modulesTable.findFirst({
+          where: (t, { and, eq }) =>
+            and(eq(t.id, input.id), eq(t.user_id, userId)),
+        });
+
+        if (!userModule) {
+          throw new TRPCError({
+            code: 'BAD_REQUEST',
+            message: 'Module not found',
+          });
+        }
+
+        return userModule;
+      } catch (error) {
+        if (error instanceof DrizzleError) {
+          throw new TRPCError({
+            code: 'BAD_REQUEST',
+            message: error.message,
+          });
+        }
+
+        throw new TRPCError({
+          code: 'INTERNAL_SERVER_ERROR',
+          message: 'An error occurred while fetching the module',
+        });
+      }
     }),
 
   getUserModules: protectedProcedure.query(async ({ ctx }) => {
