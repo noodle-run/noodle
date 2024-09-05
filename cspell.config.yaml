@@ -17,16 +17,19 @@ words:
   - callees
   - classname
   - clsx
+  - combobox
   - commitlint
   - compat
+  - esbenp
+  - excalidraw
   - frontmatter
+  - healthcheck
   - hookform
   - ianvs
   - ixahmedxi
   - ixahmedxii
   - jiti
   - lockb
-  - esbenp
   - lucide
   - mitigations
   - neondatabase
@@ -45,12 +48,12 @@ words:
   - superjson
   - tailwindcss
   - tanstack
+  - timeago
   - Todos
   - trpc
   - tsbuildinfo
   - tseslint
   - typecheck
+  - udecode
   - Uploadthing
   - Upstash
-  - healthcheck
-  - timeago
