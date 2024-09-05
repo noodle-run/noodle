@@ -34,17 +34,38 @@ export default async function ModulePage({ params }: Props) {
   return (
     <div className="flex flex-1 gap-6">
       <div className="flex-1">
-        <div className="flex items-center gap-4">
-          <Icon
-            name={
-              userModule.icon === 'default'
-                ? 'Folder'
-                : (userModule.icon as IconNames)
-            }
-            size={30}
-            strokeWidth={1.5}
-          />
-          <h1 className="text-3xl font-medium">{userModule.name}</h1>
+        <div className="flex items-start gap-4">
+          <div className="mt-1">
+            <Icon
+              name={
+                userModule.icon === 'default'
+                  ? 'Folder'
+                  : (userModule.icon as IconNames)
+              }
+              size={28}
+              strokeWidth={1.5}
+            />
+          </div>
+          <div className="flex flex-1 flex-col gap-3">
+            <h1 className="text-3xl font-medium">{userModule.name}</h1>
+            <div className="flex items-start gap-6">
+              <p className="flex items-center gap-2 text-sm text-foreground-muted">
+                <RadicalIcon size={15} /> {userModule.code}
+              </p>
+              <p className="flex items-center gap-2 text-sm text-foreground-muted">
+                <WeightIcon size={15} /> {userModule.credits} credits
+              </p>
+              <p className="flex items-center gap-2 text-sm text-foreground-muted">
+                <ClockIcon size={15} /> Created {format(userModule.createdAt)}
+              </p>
+              <p className="flex items-center gap-2 text-sm text-foreground-muted">
+                <PenLineIcon size={15} /> 0 Notebooks
+              </p>
+              <p className="flex items-center gap-2 text-sm text-foreground-muted">
+                <DiamondIcon size={15} /> 0 Flashcards
+              </p>
+            </div>
+          </div>
         </div>
         <Tabs defaultValue="notes" className="mt-4 w-full">
           <TabsList className="w-full">
@@ -65,7 +86,7 @@ export default async function ModulePage({ params }: Props) {
           </TabsContent>
         </Tabs>
       </div>
-      <div className="w-[330px] rounded-lg border p-6">
+      <div className="min-w-[280px] rounded-lg border p-4">
         <div className="flex flex-col gap-3">
           <h2 className="font-medium">Description</h2>
           <Textarea
@@ -73,23 +94,6 @@ export default async function ModulePage({ params }: Props) {
             readOnly
             className="resize-none"
           />
-        </div>
-        <div className="mt-4 flex flex-col gap-2 [&>p]:flex [&>p]:items-center [&>p]:gap-2 [&>p]:text-foreground-muted">
-          <p>
-            <RadicalIcon size={15} /> {userModule.code}
-          </p>
-          <p>
-            <WeightIcon size={15} /> {userModule.credits} credits
-          </p>
-          <p>
-            <ClockIcon size={15} /> {format(userModule.createdAt)}
-          </p>
-          <p>
-            <PenLineIcon size={15} /> 0 Notebooks
-          </p>
-          <p>
-            <DiamondIcon size={15} /> 0 Flashcards
-          </p>
         </div>
       </div>
     </div>
