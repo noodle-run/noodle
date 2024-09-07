@@ -58,6 +58,7 @@ const formSchema = z.object({
 export function CreateModulePopover() {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [iconSearchTerm, setIconSearchTerm] = useState('');
 
   const router = useRouter();
 
@@ -94,6 +95,12 @@ export function CreateModulePopover() {
       color: 'default',
     });
   }
+
+  const filteredIcons = iconSearchTerm
+    ? iconNames.filter((icon) =>
+        icon.toLowerCase().includes(iconSearchTerm.toLowerCase()),
+      )
+    : iconNames;
 
   return (
     <Popover
@@ -286,9 +293,17 @@ export function CreateModulePopover() {
                     title="Select an icon"
                     description="You can select an icon for your module to make it easier to identify."
                   />
-                  <ScrollArea className="h-[300px]">
+                  <Input
+                    type="text"
+                    placeholder="Search icons..."
+                    value={iconSearchTerm}
+                    onChange={(e) => {
+                      setIconSearchTerm(e.target.value);
+                    }}
+                  ></Input>
+                  <ScrollArea className="mt-2 h-[300px]">
                     <div className="mt-2 grid grid-cols-6 gap-2">
-                      {iconNames.map((icon) => (
+                      {filteredIcons.map((icon) => (
                         <button
                           type="button"
                           key={icon}
