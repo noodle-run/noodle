@@ -28,7 +28,7 @@ import { api } from '@/lib/trpc/react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { Textarea } from '@/primitives/textarea';
-
+import { useDebounceValue } from 'usehooks-ts';
 interface StepHeadingProps {
   title: string;
   description: string;
@@ -45,6 +45,48 @@ const StepHeading = ({ title, description }: StepHeadingProps) => {
     </div>
   );
 };
+
+interface IconPickerProps {
+  iconOnClickHandler: (icon: IconNames) => void;
+}
+
+export function IconPicker({ iconOnClickHandler }: IconPickerProps) {
+  const [iconSearchTerm, setIconSearchTerm] = useDebounceValue('', 200);
+
+  return (
+    <>
+      <Input
+        type="text"
+        placeholder="Search icons..."
+        onChange={(e) => {
+          setIconSearchTerm(e.target.value);
+        }}
+      />
+      <ScrollArea className="mt-2 h-[300px]">
+        <div className="mt-2 grid grid-cols-6 gap-2">
+          {iconNames
+            .filter((icon) =>
+              iconSearchTerm === ''
+                ? true
+                : icon.toLowerCase().includes(iconSearchTerm.toLowerCase()),
+            )
+            .map((icon) => (
+              <button
+                type="button"
+                key={icon}
+                className="grid place-items-center rounded-lg p-2 text-foreground transition-colors hover:bg-gray-element"
+                onClick={() => {
+                  iconOnClickHandler(icon);
+                }}
+              >
+                <Icon name={icon} size={20} strokeWidth={1.5} />
+              </button>
+            ))}
+        </div>
+      </ScrollArea>
+    </>
+  );
+}
 
 const formSchema = z.object({
   name: z.string().min(2),
@@ -286,23 +328,12 @@ export function CreateModulePopover() {
                     title="Select an icon"
                     description="You can select an icon for your module to make it easier to identify."
                   />
-                  <ScrollArea className="h-[300px]">
-                    <div className="mt-2 grid grid-cols-6 gap-2">
-                      {iconNames.map((icon) => (
-                        <button
-                          type="button"
-                          key={icon}
-                          className="grid place-items-center rounded-lg p-2 text-foreground transition-colors hover:bg-gray-element"
-                          onClick={() => {
-                            form.setValue('icon', icon);
-                            setStep(1);
-                          }}
-                        >
-                          <Icon name={icon} size={20} strokeWidth={1.5} />
-                        </button>
-                      ))}
-                    </div>
-                  </ScrollArea>
+                  <IconPicker
+                    iconOnClickHandler={(icon) => {
+                      form.setValue('icon', icon);
+                      setStep(1);
+                    }}
+                  />
                 </div>
               )}
 
