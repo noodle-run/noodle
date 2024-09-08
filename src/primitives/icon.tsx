@@ -5,14 +5,26 @@ interface Props {
   color?: string;
   size?: number;
   strokeWidth?: number;
+  className?: string;
 }
 
-export const Icon: React.FC<Props> = ({ name, color, size, strokeWidth }) => {
+export const Icon: React.FC<Props> = ({
+  name,
+  color,
+  size,
+  strokeWidth,
+  className,
+}) => {
   // eslint-disable-next-line security/detect-object-injection
   const LucideIcon = icons[name];
 
   return (
-    <LucideIcon strokeWidth={strokeWidth} color={color} size={size ?? 24} />
+    <LucideIcon
+      strokeWidth={strokeWidth}
+      className={className}
+      color={color}
+      size={size ?? 24}
+    />
   );
 };
 

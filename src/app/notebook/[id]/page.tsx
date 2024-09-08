@@ -2,7 +2,7 @@ import { PlateEditor } from '@/editor';
 
 export default function NotebookPage() {
   return (
-    <div className="px-6 py-4">
+    <div className="mx-auto max-w-3xl py-12">
       <PlateEditor />
     </div>
   );

@@ -27,9 +27,14 @@ import {
 import { NodeIdPlugin } from '@udecode/plate-node-id';
 import { BlockSelectionPlugin } from '@udecode/plate-selection/react';
 import { TrailingBlockPlugin } from '@udecode/plate-trailing-block';
-import { HEADING_LEVELS, HeadingPlugin } from '@udecode/plate-heading';
+import {
+  HEADING_KEYS,
+  HEADING_LEVELS,
+  HeadingPlugin,
+} from '@udecode/plate-heading';
 import { IndentPlugin } from '@udecode/plate-indent';
 import { BlockquotePlugin } from '@udecode/plate-block-quote/react';
+import { NormalizeTypesPlugin } from '@udecode/plate-normalizers';
 import {
   CodeBlockPlugin,
   CodeLinePlugin,
@@ -48,12 +53,18 @@ import {
 } from '@udecode/plate-table';
 import { HorizontalRulePlugin } from '@udecode/plate-horizontal-rule/react';
 import { TodoListPlugin } from '@udecode/plate-list';
+import Prism from 'prismjs';
 
 export const plugins = [
   // Nodes
   HeadingPlugin,
   BlockquotePlugin,
-  CodeBlockPlugin,
+  CodeBlockPlugin.configure({
+    options: {
+      syntax: true,
+      prism: Prism,
+    },
+  }),
   CodeLinePlugin,
   CodeSyntaxPlugin,
   HorizontalRulePlugin,
@@ -222,6 +233,11 @@ export const plugins = [
   })),
   TrailingBlockPlugin.configure({
     options: { type: ParagraphPlugin.key },
+  }),
+  NormalizeTypesPlugin.configure({
+    options: {
+      rules: [{ path: [0], strictType: HEADING_KEYS.h1 }],
+    },
   }),
 
   // Deserialization

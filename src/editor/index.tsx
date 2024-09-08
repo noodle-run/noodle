@@ -1,12 +1,33 @@
 'use client';
 
-import { createPlateEditor, Plate } from '@udecode/plate-common/react';
+import {
+  createPlateEditor,
+  ParagraphPlugin,
+  Plate,
+} from '@udecode/plate-common/react';
 import { Editor } from './ui/editor';
 import { createPlateUI } from './ui/components';
 import { plugins } from './plugins';
+import { HEADING_KEYS } from '@udecode/plate-heading';
+import type { Value } from '@udecode/plate-common';
+
+const initialValue = [
+  {
+    type: HEADING_KEYS.h1,
+    children: [{ text: '' }],
+  },
+  {
+    type: ParagraphPlugin.key,
+    children: [{ text: '' }],
+  },
+];
 
 export const PlateEditor = () => {
+  const localValue =
+    typeof window !== 'undefined' && localStorage.getItem('editorContent');
+
   const editor = createPlateEditor({
+    value: localValue ? (JSON.parse(localValue) as Value) : initialValue,
     plugins,
     override: {
       components: createPlateUI(),
@@ -14,13 +35,13 @@ export const PlateEditor = () => {
   });
 
   return (
-    <Plate editor={editor}>
-      <Editor
-        focusRing={false}
-        className="max-w-2xl"
-        variant="ghost"
-        placeholder="Type here..."
-      />
+    <Plate
+      editor={editor}
+      onChange={({ value }) => {
+        localStorage.setItem('editorContent', JSON.stringify(value));
+      }}
+    >
+      <Editor focusRing={false} variant="ghost" placeholder="Type here..." />
     </Plate>
   );
 };

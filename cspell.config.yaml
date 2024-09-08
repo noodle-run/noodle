@@ -13,6 +13,7 @@ ignorePaths:
   - tsconfig.tsbuildinfo
   - branch_out
 words:
+  - ANTLR
   - Arcjet
   - callees
   - classname
@@ -37,6 +38,8 @@ words:
   - packagejson
   - paralleldrive
   - Posthog
+  - prismjs
+  - protobuf
   - ratelimit
   - Registrator
   - serviceworker
@@ -57,3 +60,4 @@ words:
   - udecode
   - Uploadthing
   - Upstash
+  - atrule
