@@ -27,6 +27,8 @@ import {
 import { CodeBlockElement } from './elements/code-block';
 import { CodeLineElement } from './elements/code-block/code-line-element';
 import { CodeSyntaxLeaf } from './elements/code-block/code-syntax-leaf';
+import { HorizontalRulePlugin } from '@udecode/plate-horizontal-rule/react';
+import { HrElement } from './elements/hr';
 
 export const createPlateUI = () => {
   const components: Record<string, NodeComponent> = withPlaceholders({
@@ -38,9 +40,12 @@ export const createPlateUI = () => {
     [HEADING_KEYS.h6]: withProps(HeadingElement, { variant: 'h6' }),
 
     [BlockquotePlugin.key]: BlockquoteElement,
+
     [CodeBlockPlugin.key]: CodeBlockElement,
     [CodeLinePlugin.key]: CodeLineElement,
     [CodeSyntaxPlugin.key]: CodeSyntaxLeaf,
+
+    [HorizontalRulePlugin.key]: HrElement,
 
     [ParagraphPlugin.key]: withProps(PlateElement, {
       as: 'p',
