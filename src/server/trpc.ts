@@ -1,11 +1,10 @@
+import { db } from '@/db';
+import { redis } from '@/lib/redis';
+import { resend } from '@/lib/resend';
 import { currentUser } from '@clerk/nextjs/server';
 import { initTRPC, TRPCError } from '@trpc/server';
 import superjson from 'superjson';
 import { ZodError } from 'zod';
-
-import { db } from '@/db';
-import { resend } from '@/lib/resend';
-import { redis } from '@/lib/redis';
 
 export const createTRPCContext = (opts: { headers: Headers }) => {
   return {

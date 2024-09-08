@@ -67,7 +67,7 @@ The Tech Stack:
 - [ShadCN UI](https://ui.shadcn.com)
 - [NeonDB](https://neon.tech)
 - [Clerk Auth](https://clerk.dev/)
-- [Upstash](https://upstash.com)
+- [Redis](https://redis.io/)
 - [Resend](https://resend.com)
 
 Development stuff:
