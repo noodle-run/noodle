@@ -1,0 +1,6 @@
+Contact: https://github.com/noodle-run/noodle/security/advisories/new
+Expires: 2025-12-31T23:00:00.000Z
+Acknowledgments: https://github.com/noodle-run/noodle/security
+Preferred-Languages: en
+Canonical: https://noodle.run/.well-known/security.txt
+Policy: https://github.com/noodle-run/noodle/blob/main/SECURITY.md
