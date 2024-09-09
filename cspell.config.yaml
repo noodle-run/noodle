@@ -51,7 +51,6 @@ words:
   - tseslint
   - typecheck
   - Uploadthing
-  - Upstash
   - healthcheck
   - timeago
   - usehooks

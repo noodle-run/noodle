@@ -22,9 +22,8 @@ jobs:
       NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL: '/app'
       NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL: '/app'
 
-      # Upstash
-      UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
-      UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+      # Redis
+      REDIS_URL: ${{ secrets.REDIS_URL }}
 
       # Resend
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
