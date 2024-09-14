@@ -49,7 +49,7 @@ export const createPlateUI = () => {
 
     [ParagraphPlugin.key]: withProps(PlateElement, {
       as: 'p',
-      className: 'text-foreground-muted leading-7 m-0 px-0 py-2',
+      className: 'text-foreground-muted leading-7 m-0 px-0',
     }),
     [BoldPlugin.key]: withProps(PlateLeaf, {
       as: 'strong',

@@ -1,4 +1,9 @@
-import { PlateEditor } from '@/editor';
+import dynamic from 'next/dynamic';
+
+const PlateEditor = dynamic(
+  () => import('@/editor').then((res) => res.PlateEditor),
+  { ssr: false },
+);
 
 export default function NotebookPage() {
   return (
