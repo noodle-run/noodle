@@ -7,52 +7,51 @@ import {
   SuperscriptPlugin,
   UnderlinePlugin,
 } from '@udecode/plate-basic-marks/react';
-import { AlignPlugin } from '@udecode/plate-alignment';
+import { AlignPlugin } from '@udecode/plate-alignment/react';
 import { autoformatRules } from './autoformat-rules';
 import { SelectOnBackspacePlugin } from '@udecode/plate-select';
 import { JuicePlugin } from '@udecode/plate-juice';
 import { DocxPlugin } from '@udecode/plate-docx';
 import { MarkdownPlugin } from '@udecode/plate-markdown';
-import { TabbablePlugin } from '@udecode/plate-tabbable';
-import { ResetNodePlugin } from '@udecode/plate-reset-node';
+import { TabbablePlugin } from '@udecode/plate-tabbable/react';
+import { ResetNodePlugin } from '@udecode/plate-reset-node/react';
 import { ImagePlugin } from '@udecode/plate-media/react';
 import { ExitBreakPlugin, SoftBreakPlugin } from '@udecode/plate-break/react';
-import { AutoformatPlugin } from '@udecode/plate-autoformat';
+import { AutoformatPlugin } from '@udecode/plate-autoformat/react';
 import {
   isBlockAboveEmpty,
   isSelectionAtBlockStart,
-  ParagraphPlugin,
   someNode,
 } from '@udecode/plate-common';
+import { ParagraphPlugin } from '@udecode/plate-common/react';
 import { NodeIdPlugin } from '@udecode/plate-node-id';
 import { BlockSelectionPlugin } from '@udecode/plate-selection/react';
 import { TrailingBlockPlugin } from '@udecode/plate-trailing-block';
-import {
-  HEADING_KEYS,
-  HEADING_LEVELS,
-  HeadingPlugin,
-} from '@udecode/plate-heading';
-import { IndentPlugin } from '@udecode/plate-indent';
+import { HEADING_KEYS, HEADING_LEVELS } from '@udecode/plate-heading';
+import { HeadingPlugin } from '@udecode/plate-heading/react';
+import { IndentPlugin } from '@udecode/plate-indent/react';
 import { BlockquotePlugin } from '@udecode/plate-block-quote/react';
 import { NormalizeTypesPlugin } from '@udecode/plate-normalizers';
 import {
-  CodeBlockPlugin,
-  CodeLinePlugin,
-  CodeSyntaxPlugin,
   isCodeBlockEmpty,
   isSelectionAtCodeBlockStart,
   unwrapCodeBlock,
 } from '@udecode/plate-code-block';
-import { LineHeightPlugin } from '@udecode/plate-line-height';
-import { IndentListPlugin } from '@udecode/plate-indent-list';
+import {
+  CodeBlockPlugin,
+  CodeLinePlugin,
+  CodeSyntaxPlugin,
+} from '@udecode/plate-code-block/react';
+import { LineHeightPlugin } from '@udecode/plate-line-height/react';
+import { IndentListPlugin } from '@udecode/plate-indent-list/react';
 import {
   TableCellHeaderPlugin,
   TableCellPlugin,
   TablePlugin,
   TableRowPlugin,
-} from '@udecode/plate-table';
+} from '@udecode/plate-table/react';
 import { HorizontalRulePlugin } from '@udecode/plate-horizontal-rule/react';
-import { TodoListPlugin } from '@udecode/plate-list';
+import { TodoListPlugin } from '@udecode/plate-list/react';
 import Prism from 'prismjs';
 
 export const plugins = [
@@ -155,13 +154,13 @@ export const plugins = [
     options: {
       rules: [
         {
-          types: [BlockquotePlugin.key, TodoListPlugin.key],
+          types: [BlockquotePlugin.key, TodoListPlugin.key as string],
           defaultType: ParagraphPlugin.key,
           hotkey: 'Enter',
           predicate: isBlockAboveEmpty,
         },
         {
-          types: [BlockquotePlugin.key, TodoListPlugin.key],
+          types: [BlockquotePlugin.key, TodoListPlugin.key as string],
           defaultType: ParagraphPlugin.key,
           hotkey: 'Backspace',
           predicate: isSelectionAtBlockStart,
