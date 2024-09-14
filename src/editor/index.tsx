@@ -38,6 +38,7 @@ export const PlateEditor = () => {
     <Plate
       editor={editor}
       onChange={({ value }) => {
+        console.log(value);
         localStorage.setItem('editorContent', JSON.stringify(value));
       }}
     >

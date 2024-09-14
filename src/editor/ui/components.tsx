@@ -29,6 +29,8 @@ import { CodeLineElement } from './elements/code-block/code-line-element';
 import { CodeSyntaxLeaf } from './elements/code-block/code-syntax-leaf';
 import { HorizontalRulePlugin } from '@udecode/plate-horizontal-rule/react';
 import { HrElement } from './elements/hr';
+import { TodoListPlugin } from '@udecode/plate-list/react';
+import { TodoListElement } from './elements/todo-list';
 
 export const createPlateUI = () => {
   const components: Record<string, NodeComponent> = withPlaceholders({
@@ -46,6 +48,7 @@ export const createPlateUI = () => {
     [CodeSyntaxPlugin.key]: CodeSyntaxLeaf,
 
     [HorizontalRulePlugin.key]: HrElement,
+    [TodoListPlugin.key]: TodoListElement,
 
     [ParagraphPlugin.key]: withProps(PlateElement, {
       as: 'p',
