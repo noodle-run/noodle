@@ -31,6 +31,8 @@ import { HorizontalRulePlugin } from '@udecode/plate-horizontal-rule/react';
 import { HrElement } from './elements/hr';
 import { TodoListPlugin } from '@udecode/plate-list/react';
 import { TodoListElement } from './elements/todo-list';
+import { LinkPlugin } from '@udecode/plate-link/react';
+import { LinkElement } from './elements/link';
 
 export const createPlateUI = () => {
   const components: Record<string, NodeComponent> = withPlaceholders({
@@ -49,6 +51,7 @@ export const createPlateUI = () => {
 
     [HorizontalRulePlugin.key]: HrElement,
     [TodoListPlugin.key]: TodoListElement,
+    [LinkPlugin.key]: LinkElement,
 
     [ParagraphPlugin.key]: withProps(PlateElement, {
       as: 'p',

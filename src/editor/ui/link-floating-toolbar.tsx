@@ -1,0 +1,159 @@
+'use client';
+
+import React from 'react';
+import { cn } from '@udecode/cn';
+import { useFormInputProps } from '@udecode/plate-common/react';
+import { flip, offset } from '@udecode/plate-floating';
+import {
+  FloatingLinkUrlInput,
+  LinkOpenButton,
+  useFloatingLinkEdit,
+  useFloatingLinkEditState,
+  useFloatingLinkInsert,
+  useFloatingLinkInsertState,
+} from '@udecode/plate-link/react';
+
+import { buttonVariants } from '@/primitives/button';
+import { inputVariants, Input } from '@/primitives/input';
+import { popoverVariants } from '@/primitives/popover';
+import { Separator } from '@/primitives/separator';
+
+import type { UseVirtualFloatingOptions } from '@udecode/plate-floating';
+import type { LinkFloatingToolbarState } from '@udecode/plate-link/react';
+import { ExternalLinkIcon, LinkIcon, TextIcon, UnlinkIcon } from 'lucide-react';
+
+const floatingOptions: UseVirtualFloatingOptions = {
+  middleware: [
+    offset(12),
+    flip({
+      fallbackPlacements: ['bottom-end', 'top-start', 'top-end'],
+      padding: 12,
+    }),
+  ],
+  placement: 'bottom-start',
+};
+
+export interface LinkFloatingToolbarProps {
+  state?: LinkFloatingToolbarState;
+}
+
+export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
+  const insertState = useFloatingLinkInsertState({
+    ...state,
+    floatingOptions: {
+      ...floatingOptions,
+      ...state?.floatingOptions,
+    },
+  });
+  const {
+    hidden,
+    props: insertProps,
+    ref: insertRef,
+    textInputProps,
+  } = useFloatingLinkInsert(insertState);
+
+  const editState = useFloatingLinkEditState({
+    ...state,
+    floatingOptions: {
+      ...floatingOptions,
+      ...state?.floatingOptions,
+    },
+  });
+  const {
+    editButtonProps,
+    props: editProps,
+    ref: editRef,
+    unlinkButtonProps,
+  } = useFloatingLinkEdit(editState);
+  const inputProps = useFormInputProps({
+    preventDefaultOnEnterKeydown: true,
+  });
+
+  if (hidden) {
+    return null;
+  }
+
+  const input = (
+    <div className="flex w-[330px] flex-col" {...inputProps}>
+      <div className="flex items-center">
+        <div className="flex items-center pl-3 text-foreground-muted">
+          <LinkIcon className="size-4" />
+        </div>
+
+        <FloatingLinkUrlInput
+          className={inputVariants({ variant: 'ghost' })}
+          placeholder="Paste link"
+        />
+      </div>
+      <Separator />
+      <div className="flex items-center">
+        <div className="flex items-center pl-3 text-foreground-muted">
+          <TextIcon className="size-4" />
+        </div>
+        <Input
+          variant="ghost"
+          placeholder="Text to display"
+          {...textInputProps}
+        />
+      </div>
+    </div>
+  );
+
+  const editContent = editState.isEditing ? (
+    input
+  ) : (
+    <div className="box-content flex h-9 items-center gap-1">
+      <button
+        className={buttonVariants({ size: 'sm', variant: 'ghost' })}
+        type="button"
+        {...editButtonProps}
+      >
+        Edit link
+      </button>
+
+      <Separator orientation="vertical" />
+
+      <LinkOpenButton
+        className={buttonVariants({
+          size: 'sm',
+          variant: 'ghost',
+        })}
+      >
+        <ExternalLinkIcon width={18} />
+      </LinkOpenButton>
+
+      <Separator orientation="vertical" />
+
+      <button
+        className={buttonVariants({
+          size: 'sm',
+          variant: 'ghost',
+        })}
+        type="button"
+        {...unlinkButtonProps}
+      >
+        <UnlinkIcon width={18} />
+      </button>
+    </div>
+  );
+
+  return (
+    <>
+      <div
+        className={cn(popoverVariants(), 'w-auto p-1')}
+        ref={insertRef}
+        {...insertProps}
+      >
+        {input}
+      </div>
+
+      <div
+        className={cn(popoverVariants(), 'w-auto p-1')}
+        ref={editRef}
+        {...editProps}
+      >
+        {editContent}
+      </div>
+    </>
+  );
+}

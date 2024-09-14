@@ -53,6 +53,8 @@ import {
 import { HorizontalRulePlugin } from '@udecode/plate-horizontal-rule/react';
 import { TodoListPlugin } from '@udecode/plate-list/react';
 import Prism from 'prismjs';
+import { LinkPlugin } from '@udecode/plate-link/react';
+import { LinkFloatingToolbar } from '../ui/link-floating-toolbar';
 
 export const plugins = [
   // Nodes
@@ -72,6 +74,9 @@ export const plugins = [
   TableCellPlugin,
   TableCellHeaderPlugin,
   TodoListPlugin,
+  LinkPlugin.configure({
+    render: { afterEditable: () => <LinkFloatingToolbar /> },
+  }),
 
   // Basic Marks
   BoldPlugin,
