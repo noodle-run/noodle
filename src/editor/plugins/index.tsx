@@ -55,6 +55,7 @@ import { TodoListPlugin } from '@udecode/plate-list/react';
 import Prism from 'prismjs';
 import { LinkPlugin } from '@udecode/plate-link/react';
 import { LinkFloatingToolbar } from '../ui/link-floating-toolbar';
+import { TodoLi, TodoMarker } from '../ui/elements/todo';
 
 export const plugins = [
   // Nodes
@@ -111,6 +112,15 @@ export const plugins = [
         CodeBlockPlugin.key,
         ...HEADING_LEVELS,
       ],
+    },
+    options: {
+      listStyleTypes: {
+        todo: {
+          liComponent: TodoLi,
+          markerComponent: TodoMarker,
+          type: 'todo',
+        },
+      },
     },
   }),
   LineHeightPlugin.configure({
