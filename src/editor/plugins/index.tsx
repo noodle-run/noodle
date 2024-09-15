@@ -56,6 +56,7 @@ import Prism from 'prismjs';
 import { LinkPlugin } from '@udecode/plate-link/react';
 import { LinkFloatingToolbar } from '../ui/link-floating-toolbar';
 import { TodoLi, TodoMarker } from '../ui/elements/todo';
+import { HighlightPlugin } from '@udecode/plate-highlight/react';
 
 export const plugins = [
   // Nodes
@@ -87,6 +88,7 @@ export const plugins = [
   CodePlugin,
   SubscriptPlugin,
   SuperscriptPlugin,
+  HighlightPlugin,
 
   // Block Style
   AlignPlugin.configure({

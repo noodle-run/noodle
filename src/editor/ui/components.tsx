@@ -33,6 +33,7 @@ import { TodoListPlugin } from '@udecode/plate-list/react';
 import { TodoListElement } from './elements/todo-list';
 import { LinkPlugin } from '@udecode/plate-link/react';
 import { LinkElement } from './elements/link';
+import { HighlightPlugin } from '@udecode/plate-highlight/react';
 
 export const createPlateUI = () => {
   const components: Record<string, NodeComponent> = withPlaceholders({
@@ -85,6 +86,11 @@ export const createPlateUI = () => {
       as: 'code',
       className:
         'text-foreground bg-gray-element border rounded-md px-1 py-0.5',
+    }),
+    [HighlightPlugin.key]: withProps(PlateLeaf, {
+      as: 'mark',
+      className:
+        'bg-yellow-500/10 text-yellow-500 [&>em]:text-yellow-500 [&>strong]:text-yellow-500 [&>u]:text-yellow-500 [&>s]:text-yellow-500 [&>sub]:text-yellow-500 [&>sup]:text-yellow-500',
     }),
   });
 
