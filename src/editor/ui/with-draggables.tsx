@@ -11,20 +11,11 @@ import {
   type WithDraggableOptions,
   withDraggable as withDraggablePrimitive,
 } from '@udecode/plate-dnd';
-import { ExcalidrawPlugin } from '@udecode/plate-excalidraw/react';
 import { HEADING_KEYS } from '@udecode/plate-heading';
-import { ColumnPlugin } from '@udecode/plate-layout/react';
 import {
   BulletedListPlugin,
   NumberedListPlugin,
 } from '@udecode/plate-list/react';
-import {
-  ImagePlugin,
-  MediaEmbedPlugin,
-  PlaceholderPlugin,
-} from '@udecode/plate-media/react';
-import { TablePlugin } from '@udecode/plate-table/react';
-import { TogglePlugin } from '@udecode/plate-toggle/react';
 
 import { type DraggableProps, Draggable } from './draggable';
 
@@ -59,14 +50,17 @@ export const withDraggables = (components: Record<string, NodeComponent>) => {
         NumberedListPlugin.key,
       ],
       level: 0,
+      draggableProps: {
+        classNames: {
+          gutterLeft: 'pt-[1px]',
+        },
+      },
     },
     {
       key: HEADING_KEYS.h2,
       draggableProps: {
         classNames: {
-          block: 'pt-6',
-          blockToolbarWrapper: 'h-[1.3em]',
-          gutterLeft: 'px-0 pb-1 pt-7 text-[1.5em]',
+          gutterLeft: 'pt-9',
         },
       },
     },
@@ -74,105 +68,39 @@ export const withDraggables = (components: Record<string, NodeComponent>) => {
       key: HEADING_KEYS.h3,
       draggableProps: {
         classNames: {
-          blockToolbarWrapper: 'h-[1.3em]',
-          gutterLeft: 'pt-6 px-0 pb-1 text-[1.25em]',
+          gutterLeft: 'pt-7',
         },
       },
     },
     {
-      keys: [HEADING_KEYS.h4, HEADING_KEYS.h5],
+      key: HEADING_KEYS.h4,
       draggableProps: {
         classNames: {
-          blockToolbarWrapper: 'h-[1.3em]',
-          gutterLeft: 'pt-[3px] px-0 pb-0 text-[1.1em]',
+          gutterLeft: 'pt-6',
         },
       },
     },
     {
-      keys: [ParagraphPlugin.key],
+      key: HEADING_KEYS.h5,
       draggableProps: {
         classNames: {
-          gutterLeft: 'pt-[3px] px-0 pb-0',
+          gutterLeft: 'pt-[22px]',
         },
       },
     },
     {
-      keys: [HEADING_KEYS.h6, BulletedListPlugin.key, NumberedListPlugin.key],
+      key: HEADING_KEYS.h6,
       draggableProps: {
         classNames: {
-          gutterLeft: 'px-0 pb-0',
+          gutterLeft: 'pt-[17px]',
         },
       },
     },
     {
-      key: BlockquotePlugin.key,
+      keys: [BlockquotePlugin.key, CodeBlockPlugin.key],
       draggableProps: {
         classNames: {
-          gutterLeft: 'px-0 pb-0',
-        },
-      },
-    },
-    {
-      key: CodeBlockPlugin.key,
-      draggableProps: {
-        classNames: {
-          gutterLeft: 'px-0 pb-0',
-        },
-      },
-    },
-    {
-      key: ImagePlugin.key,
-      draggableProps: {
-        classNames: {
-          gutterLeft: 'pt-0 px-0 pb-0',
-        },
-      },
-    },
-    {
-      key: MediaEmbedPlugin.key,
-      draggableProps: {
-        classNames: {
-          gutterLeft: 'pt-0 px-0 pb-0',
-        },
-      },
-    },
-    {
-      key: ExcalidrawPlugin.key,
-      draggableProps: {
-        classNames: {
-          gutterLeft: 'pt-0 px-0 pb-0',
-        },
-      },
-    },
-    {
-      key: TogglePlugin.key,
-      draggableProps: {
-        classNames: {
-          gutterLeft: 'pt-0 px-0 pb-0',
-        },
-      },
-    },
-    {
-      key: ColumnPlugin.key,
-      draggableProps: {
-        classNames: {
-          gutterLeft: 'pt-0 px-0 pb-0',
-        },
-      },
-    },
-    {
-      key: PlaceholderPlugin.key,
-      draggableProps: {
-        classNames: {
-          gutterLeft: 'pt-3 px-0 pb-0',
-        },
-      },
-    },
-    {
-      key: TablePlugin.key,
-      draggableProps: {
-        classNames: {
-          gutterLeft: 'pt-3 px-0 pb-0',
+          gutterLeft: 'pt-[1px]',
         },
       },
     },

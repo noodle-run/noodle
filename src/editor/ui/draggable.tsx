@@ -24,7 +24,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/primitives/tooltip';
-import { GripVerticalIcon } from 'lucide-react';
+import { GripIcon } from 'lucide-react';
 
 export interface DraggableProps
   extends PlateElementProps,
@@ -83,7 +83,7 @@ const DragHandle = () => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger type="button">
-          <GripVerticalIcon
+          <GripIcon
             className="size-4 text-foreground-muted"
             onClick={(event) => {
               event.stopPropagation();
@@ -137,7 +137,7 @@ export const Draggable = withRef<'div', DraggableProps>(
           <div className={cn('flex h-[1.5em]', classNames.blockToolbarWrapper)}>
             <div
               className={cn(
-                'pointer-events-auto mr-1 flex items-center',
+                'pointer-events-auto mr-2 flex items-center',
                 classNames.blockToolbar,
               )}
             >
