@@ -8,7 +8,7 @@ import type { VariantProps } from 'class-variance-authority';
 
 const editorVariants = cva(
   cn(
-    'relative overflow-x-auto whitespace-pre-wrap break-words',
+    'relative whitespace-pre-wrap break-words',
     'min-h-[80px] w-full rounded-md text-sm ring-offset-background placeholder:text-foreground-muted focus-visible:outline-none',
     '[&_[data-slate-placeholder]]:text-foreground-muted [&_[data-slate-placeholder]]:!opacity-100',
     '[&_[data-slate-placeholder]]:top-[auto_!important]',

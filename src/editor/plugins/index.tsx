@@ -18,6 +18,7 @@ import { ResetNodePlugin } from '@udecode/plate-reset-node/react';
 import { ImagePlugin } from '@udecode/plate-media/react';
 import { ExitBreakPlugin, SoftBreakPlugin } from '@udecode/plate-break/react';
 import { AutoformatPlugin } from '@udecode/plate-autoformat/react';
+import { DndPlugin } from '@udecode/plate-dnd';
 import {
   isBlockAboveEmpty,
   isSelectionAtBlockStart,
@@ -167,6 +168,7 @@ export const plugins = [
     },
   }),
   NodeIdPlugin,
+  DndPlugin.configure({ options: { enableScroller: true } }),
   ResetNodePlugin.configure({
     options: {
       rules: [

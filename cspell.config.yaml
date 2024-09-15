@@ -15,12 +15,14 @@ ignorePaths:
 words:
   - ANTLR
   - Arcjet
+  - atrule
   - callees
   - classname
   - clsx
   - combobox
   - commitlint
   - compat
+  - Draggables
   - esbenp
   - excalidraw
   - frontmatter
@@ -42,6 +44,7 @@ words:
   - protobuf
   - ratelimit
   - Registrator
+  - Scroller
   - serviceworker
   - Shadcn
   - Signin
@@ -60,4 +63,3 @@ words:
   - udecode
   - Uploadthing
   - Upstash
-  - atrule

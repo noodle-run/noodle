@@ -34,9 +34,10 @@ import { TodoListElement } from './elements/todo-list';
 import { LinkPlugin } from '@udecode/plate-link/react';
 import { LinkElement } from './elements/link';
 import { HighlightPlugin } from '@udecode/plate-highlight/react';
+import { withDraggables } from './with-draggables';
 
 export const createPlateUI = () => {
-  const components: Record<string, NodeComponent> = withPlaceholders({
+  let components: Record<string, NodeComponent> = {
     [HEADING_KEYS.h1]: withProps(HeadingElement, { variant: 'h1' }),
     [HEADING_KEYS.h2]: withProps(HeadingElement, { variant: 'h2' }),
     [HEADING_KEYS.h3]: withProps(HeadingElement, { variant: 'h3' }),
@@ -55,6 +56,7 @@ export const createPlateUI = () => {
     [LinkPlugin.key]: LinkElement,
 
     [ParagraphPlugin.key]: withProps(PlateElement, {
+      draggable: true,
       as: 'p',
       className: 'text-foreground-muted leading-7 m-0 px-0',
     }),
@@ -92,7 +94,9 @@ export const createPlateUI = () => {
       className:
         'bg-yellow-500/10 text-yellow-500 [&>em]:text-yellow-500 [&>strong]:text-yellow-500 [&>u]:text-yellow-500 [&>s]:text-yellow-500 [&>sub]:text-yellow-500 [&>sup]:text-yellow-500',
     }),
-  });
+  };
+
+  components = withPlaceholders(withDraggables(components));
 
   return components;
 };
