@@ -54,8 +54,7 @@
     }
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.5.3",
-    "@clerk/themes": "^2.1.30",
+    "@auth/drizzle-adapter": "^1.5.0",
     "@hookform/resolvers": "^3.9.0",
     "@neondatabase/serverless": "^0.9.5",
     "@paralleldrive/cuid2": "^2.2.2",
@@ -88,6 +87,7 @@
     "jiti": "^1.21.6",
     "lucide-react": "^0.441.0",
     "next": "14.2.11",
+    "next-auth": "^5.0.0-beta.21",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
@@ -154,7 +154,6 @@
     "typescript-eslint": "^8.6.0"
   },
   "trustedDependencies": [
-    "@clerk/shared",
     "@swc/core",
     "es5-ext",
     "esbuild"

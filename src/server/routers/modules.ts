@@ -11,12 +11,10 @@ export const modulesRouter = createRouter({
   getById: protectedProcedure
     .input(selectModuleSchema.pick({ id: true }))
     .query(async ({ ctx, input }) => {
-      const userId = ctx.user.id;
-
       try {
         const userModule = await ctx.db.query.modulesTable.findFirst({
           where: (t, { and, eq }) =>
-            and(eq(t.id, input.id), eq(t.user_id, userId)),
+            and(eq(t.id, input.id), eq(t.userId, ctx.userId)),
         });
 
         if (!userModule) {
@@ -43,10 +41,8 @@ export const modulesRouter = createRouter({
     }),
 
   getUserModules: protectedProcedure.query(async ({ ctx }) => {
-    const userId = ctx.user.id;
-
     return ctx.db.query.modulesTable.findMany({
-      where: (t, { eq }) => eq(t.user_id, userId),
+      where: (t, { eq }) => eq(t.userId, ctx.userId),
       orderBy: (t, { desc }) => desc(t.lastVisited),
     });
   }),
@@ -63,14 +59,12 @@ export const modulesRouter = createRouter({
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const userId = ctx.user.id;
-
       return ctx.db
         .insert(modulesTable)
         .values({
           ...input,
           description: input.description ?? '',
-          user_id: userId,
+          userId: ctx.userId,
         })
         .returning();
     }),
@@ -78,26 +72,28 @@ export const modulesRouter = createRouter({
   archive: protectedProcedure
     .input(selectModuleSchema.pick({ id: true }))
     .mutation(async ({ ctx, input }) => {
-      const userId = ctx.user.id;
-
       return ctx.db
         .update(modulesTable)
         .set({ archived: true })
         .where(
-          and(eq(modulesTable.id, input.id), eq(modulesTable.user_id, userId)),
+          and(
+            eq(modulesTable.id, input.id),
+            eq(modulesTable.userId, ctx.userId),
+          ),
         );
     }),
 
   recover: protectedProcedure
     .input(selectModuleSchema.pick({ id: true }))
     .mutation(async ({ ctx, input }) => {
-      const userId = ctx.user.id;
-
       return ctx.db
         .update(modulesTable)
         .set({ archived: false })
         .where(
-          and(eq(modulesTable.id, input.id), eq(modulesTable.user_id, userId)),
+          and(
+            eq(modulesTable.id, input.id),
+            eq(modulesTable.userId, ctx.userId),
+          ),
         );
     }),
 
@@ -114,13 +110,11 @@ export const modulesRouter = createRouter({
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const userId = ctx.user.id;
-
       const { id: moduleId, ...updateData } = input;
 
       const existingModule = await ctx.db.query.modulesTable.findFirst({
         where: (t, { and, eq }) =>
-          and(eq(t.id, moduleId), eq(t.user_id, userId)),
+          and(eq(t.id, moduleId), eq(t.userId, ctx.userId)),
       });
 
       if (!existingModule) {
@@ -135,20 +129,24 @@ export const modulesRouter = createRouter({
           modifiedAt: new Date(),
         })
         .where(
-          and(eq(modulesTable.id, moduleId), eq(modulesTable.user_id, userId)),
+          and(
+            eq(modulesTable.id, moduleId),
+            eq(modulesTable.userId, ctx.userId),
+          ),
         );
     }),
 
   updateLastVisited: protectedProcedure
     .input(insertModuleSchema.pick({ id: true }))
     .mutation(async ({ ctx, input }) => {
-      const userId = ctx.user.id;
-
       return ctx.db
         .update(modulesTable)
         .set({ lastVisited: new Date() })
         .where(
-          and(eq(modulesTable.id, input.id), eq(modulesTable.user_id, userId)),
+          and(
+            eq(modulesTable.id, input.id),
+            eq(modulesTable.userId, ctx.userId),
+          ),
         );
     }),
 });

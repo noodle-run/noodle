@@ -1,28 +1,17 @@
 import { TRPCReactProvider } from '@/lib/trpc/react';
-import { ClerkProvider } from '@clerk/nextjs';
-import { dark } from '@clerk/themes';
+import { SessionProvider } from 'next-auth/react';
 import type { PropsWithChildren } from 'react';
 
 /**
- * The layout of the dashboard routes, this supplies the clerk & trpc providers mainly.
+ * The layout of the dashboard routes.
  * @param props The props of the layout.
  * @param props.children The children of the layout, which are all the routes under this route group.
  * @returns A react component.
  */
 export default function DashboardLayout({ children }: PropsWithChildren) {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: dark,
-        variables: { colorPrimary: '#F9617B' },
-        elements: {
-          userButtonPopoverMain: 'bg-gray-subtle',
-          navbar: 'bg-gradient-to-r from-gray-subtle to-gray-subtle',
-          pageScrollBox: 'bg-gray-subtle',
-        },
-      }}
-    >
+    <SessionProvider>
       <TRPCReactProvider>{children}</TRPCReactProvider>
-    </ClerkProvider>
+    </SessionProvider>
   );
 }

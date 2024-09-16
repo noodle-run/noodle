@@ -66,7 +66,7 @@ The Tech Stack:
 - [Drizzle ORM](https://orm.drizzle.team/)
 - [ShadCN UI](https://ui.shadcn.com)
 - [NeonDB](https://neon.tech)
-- [Clerk Auth](https://clerk.dev/)
+- [NextAuth](https://authjs.dev)
 - [Upstash](https://upstash.com)
 - [Resend](https://resend.com)
 

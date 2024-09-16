@@ -22,18 +22,15 @@ export const env = createEnv({
     // Resend
     RESEND_API_KEY: z.string(),
 
-    // Clerk
-    CLERK_SECRET_KEY: z.string(),
+    // NextAuth
+    AUTH_SECRET: z.string(),
+    AUTH_GITHUB_ID: z.string(),
+    AUTH_GITHUB_SECRET: z.string(),
   },
-  client: {
-    // Clerk
-    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string(),
-  },
+  client: {},
 
   experimental__runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
-      process.env['NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY'],
   },
 
   skipValidation: !!process.env['SKIP_ENV_VALIDATION'],

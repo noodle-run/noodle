@@ -1,7 +1,6 @@
 import { PanelLeftCloseIcon } from 'lucide-react';
 import type { PropsWithChildren } from 'react';
 import { Button } from '@/primitives/button';
-import { UserButton } from '@clerk/nextjs';
 import { SideMenu } from './_components/side-menu';
 
 export default function AppLayout({ children }: PropsWithChildren) {
@@ -14,7 +13,7 @@ export default function AppLayout({ children }: PropsWithChildren) {
           <Button variant="ghost" size="icon" className="-ml-2">
             <PanelLeftCloseIcon strokeWidth={1.5} size={18} />
           </Button>
-          <UserButton />
+          USER BUTTON
         </nav>
 
         {children}

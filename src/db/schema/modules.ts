@@ -7,11 +7,15 @@ import {
   uuid,
 } from 'drizzle-orm/pg-core';
 import { createInsertSchema, createSelectSchema } from 'drizzle-zod';
+import { relations } from 'drizzle-orm';
 import { z } from 'zod';
+import { users } from './auth';
 
 export const modulesTable = pgTable('modules', {
   id: uuid('id').primaryKey().unique().defaultRandom().notNull(),
-  user_id: text('user_id').notNull(),
+  userId: text('userId')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
   name: text('name').notNull(),
   description: text('description'),
   code: text('code').notNull(),
@@ -23,6 +27,13 @@ export const modulesTable = pgTable('modules', {
   modifiedAt: timestamp('modified_at').notNull().defaultNow(),
   lastVisited: timestamp('last_visited').notNull().defaultNow(),
 });
+
+export const modulesTableRelations = relations(modulesTable, ({ one }) => ({
+  user: one(users, {
+    fields: [modulesTable.userId],
+    references: [users.id],
+  }),
+}));
 
 export const insertModuleSchema = createInsertSchema(modulesTable).extend({
   id: z.string().min(1),
