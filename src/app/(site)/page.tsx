@@ -5,12 +5,20 @@ import { constants } from '@/constants';
 import { Button } from '@/primitives/button';
 
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
+import { auth } from '@/lib/auth';
 
 /**
  * The marketing home page.
  * @returns A react component representing the marketing home page.
  */
-export default function Home() {
+export default async function Home() {
+  const session = await auth();
+
+  if (session) {
+    return redirect('/app');
+  }
+
   return (
     <main className="flex flex-col items-center justify-center py-12 md:py-16 lg:py-24">
       <div className="flex flex-col items-center gap-6">
