@@ -6,6 +6,33 @@ import { twMerge } from 'tailwind-merge';
 
 import { constants } from '@/constants';
 import { env } from '@/env';
+import {
+  amber,
+  blue,
+  bronze,
+  brown,
+  crimson,
+  cyan,
+  gold,
+  grass,
+  green,
+  indigo,
+  iris,
+  jade,
+  lime,
+  mint,
+  orange,
+  pink,
+  plum,
+  purple,
+  red,
+  ruby,
+  sky,
+  teal,
+  tomato,
+  violet,
+  yellow,
+} from '@radix-ui/colors';
 
 /**
  * A utility function to merge Tailwind CSS classes using a combination of clsx
@@ -133,4 +160,59 @@ export function slugify(str: string) {
     .replace(/&/g, '-and-')
     .replace(/[^\w-]+/g, '')
     .replace(/-{2,}/g, '-');
+}
+
+export const staticUserColors = [
+  tomato.tomato9,
+  red.red9,
+  ruby.ruby9,
+  crimson.crimson9,
+  pink.pink9,
+  plum.plum9,
+  purple.purple9,
+  violet.violet9,
+  iris.iris9,
+  indigo.indigo9,
+  blue.blue9,
+  cyan.cyan9,
+  teal.teal9,
+  jade.jade9,
+  green.green9,
+  grass.grass9,
+  bronze.bronze9,
+  gold.gold9,
+  brown.brown9,
+  orange.orange9,
+  amber.amber9,
+  yellow.yellow9,
+  lime.lime9,
+  mint.mint9,
+  sky.sky9,
+];
+
+export function getColorForUsername(
+  username: string,
+  colors = staticUserColors,
+) {
+  let hash = 0;
+  for (let i = 0; i < username.length; i++) {
+    const char = username.charCodeAt(i);
+    hash = ((hash << 5) - hash + char) | 0;
+  }
+  const colorIndex = Math.abs(hash) % colors.length;
+  // eslint-disable-next-line security/detect-object-injection
+  const backgroundColor = colors[colorIndex] ?? 'gray';
+
+  const hex = backgroundColor.replace('#', '');
+  const r = parseInt(hex.slice(0, 2), 16) / 255;
+  const g = parseInt(hex.slice(2, 4), 16) / 255;
+  const b = parseInt(hex.slice(4, 6), 16) / 255;
+  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+
+  const color = luminance > 0.5 ? '#000000' : '#FFFFFF';
+
+  return {
+    backgroundColor,
+    color,
+  };
 }
