@@ -1,15 +1,15 @@
 import type { DefaultSession } from 'next-auth';
 import NextAuth from 'next-auth';
+import { DrizzleAdapter } from '@auth/drizzle-adapter';
+import { db } from '@/db';
+import { env } from '@/env';
+import type { Provider } from 'next-auth/providers';
+import Resend from 'next-auth/providers/resend';
 import GitHub from 'next-auth/providers/github';
 import Google from 'next-auth/providers/google';
 import Apple from 'next-auth/providers/apple';
-import Resend from 'next-auth/providers/resend';
-import { DrizzleAdapter } from '@auth/drizzle-adapter';
-import { type Provider } from 'next-auth/providers';
-import { db } from '@/db';
-import { env } from '@/env';
-import EmailVerificationEmail from '@/emails/templates/email-verification';
-import { resend } from './resend';
+import { api } from './trpc/vanilla';
+import { TRPCError } from '@trpc/server';
 
 declare module 'next-auth' {
   interface Session extends DefaultSession {
@@ -19,26 +19,23 @@ declare module 'next-auth' {
   }
 }
 
-const providers: Provider[] = [
+export const providers: Provider[] = [
   env.RESEND_API_KEY
     ? Resend({
         apiKey: env.RESEND_API_KEY,
         from: 'Noodle <signin@noodle.run>',
         async sendVerificationRequest(params) {
-          const { identifier, provider, url } = params;
+          const { identifier, url } = params;
 
-          const result = await resend.emails.send({
-            from: provider.from ?? 'Noodle <signin@noodle.run>',
-            to: identifier,
-            subject: 'Sign in to Noodle',
-            react: EmailVerificationEmail({
-              name: identifier,
-              verificationLink: url,
-            }),
-          });
-
-          if (result.error) {
-            throw new Error(result.error.message);
+          try {
+            await api.auth.sendVerificationRequest.mutate({
+              identifier,
+              url,
+            });
+          } catch (error) {
+            if (error instanceof TRPCError) {
+              throw new Error(error.message);
+            }
           }
         },
       })

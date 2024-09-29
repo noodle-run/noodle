@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { Button } from '@/primitives/button';
 import { Separator } from '@/primitives/separator';
 import * as FaIcons from 'react-icons/fa';
-import { providerMap, signIn } from '@/lib/auth';
+import { providerMap } from '@/lib/auth';
+import { signIn } from '@/lib/auth';
 import { EmailSignIn } from './_components/email-sign-in';
 
 export default function SignInPage() {
