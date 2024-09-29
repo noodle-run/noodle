@@ -11,8 +11,39 @@ import {
 import { LogOutIcon, PanelLeftCloseIcon } from 'lucide-react';
 import type { Session } from 'next-auth';
 
+function getInitials(
+  name: string | null | undefined,
+  email: string | null | undefined,
+): string {
+  if (name) {
+    return name
+      .split(' ')
+      .map((n) => n[0])
+      .join('')
+      .toUpperCase();
+  }
+
+  if (email) {
+    const [localPart, domain] = email.split('@');
+
+    if (!localPart || !domain) {
+      return '?';
+    }
+
+    if (!localPart[0] || !domain[0]) {
+      return '?';
+    }
+
+    return (localPart[0] + (domain ? domain[0] : '')).toUpperCase();
+  }
+  return '?';
+}
+
 export function TopNavbar({ session }: { session: Session }) {
-  const userColor = getColorForUsername(session.user.name ?? '');
+  const userColor = getColorForUsername(
+    session.user.name ?? session.user.email ?? '',
+  );
+  const initials = getInitials(session.user.name, session.user.email);
 
   return (
     <nav className="mb-6 flex items-center justify-between">
@@ -29,10 +60,7 @@ export function TopNavbar({ session }: { session: Session }) {
               }}
               className="font-medium"
             >
-              {session.user.name
-                ?.split(' ')
-                .map((name) => name[0])
-                .join('')}
+              {initials}
             </AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
