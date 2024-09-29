@@ -1,20 +1,17 @@
-'use client';
+import { auth } from '@/lib/auth';
 
-import { useSession } from 'next-auth/react';
+export async function WelcomeMessage() {
+  const session = await auth();
 
-export function WelcomeMessage() {
-  const { data: session } = useSession();
-
-  if (!session?.user) {
+  if (!session) {
     return null;
   }
-
-  const { user } = session;
 
   return (
     <div className="space-y-3">
       <h1 className="text-4xl font-semibold">
-        Good afternoon, {user.name ?? user.email?.split('@')[0]}!
+        Good afternoon, {session.user.name ?? session.user.email?.split('@')[0]}
+        !
       </h1>
       <p className="max-w-prose text-balance text-sm leading-6 text-foreground-muted">
         “The final wisdom of life requires not the annulment of incongruity but

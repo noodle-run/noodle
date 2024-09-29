@@ -19,14 +19,16 @@ words:
   - clsx
   - commitlint
   - compat
+  - didn
+  - esbenp
   - frontmatter
+  - healthcheck
   - hookform
   - ianvs
   - ixahmedxi
   - ixahmedxii
   - jiti
   - lockb
-  - esbenp
   - lucide
   - mitigations
   - neondatabase
@@ -45,6 +47,7 @@ words:
   - superjson
   - tailwindcss
   - tanstack
+  - timeago
   - Todos
   - trpc
   - tsbuildinfo
@@ -52,6 +55,4 @@ words:
   - typecheck
   - Uploadthing
   - Upstash
-  - healthcheck
-  - timeago
   - usehooks

@@ -22,13 +22,14 @@ import { Label } from '@/primitives/label';
 import type { IconNames } from '@/primitives/icon';
 import { Icon, iconNames } from '@/primitives/icon';
 import { grayDark } from '@radix-ui/colors';
-import { colorChoices } from '../lib/color-choices';
+import { colorChoices } from '@/lib/colors';
 import { ScrollArea } from '@/primitives/scroll-area';
 import { api } from '@/lib/trpc/react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { Textarea } from '@/primitives/textarea';
 import { useDebounceValue } from 'usehooks-ts';
+
 interface StepHeadingProps {
   title: string;
   description: string;
