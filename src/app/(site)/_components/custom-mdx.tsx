@@ -1,4 +1,5 @@
-import { cn, slugify } from '@/lib/utils';
+import { cn } from '@/utils/cn';
+import { slugify } from '@/utils/slugify';
 import { buttonVariants } from '@/primitives/button';
 import type { MDXRemoteProps } from 'next-mdx-remote/rsc';
 import { MDXRemote } from 'next-mdx-remote/rsc';

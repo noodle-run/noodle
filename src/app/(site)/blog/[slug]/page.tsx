@@ -2,8 +2,9 @@ import { getBlogPosts } from '@/lib/mdx';
 import { notFound } from 'next/navigation';
 import { CustomMDX, MDXComponents } from '../../_components/custom-mdx';
 import type { Metadata } from 'next';
-import { constructMetadata, getBaseUrl } from '@/lib/utils';
+import { constructMetadata } from '@/utils/construct-metadata';
 import { constants } from '@/constants';
+import { getBaseUrl } from '@/utils/base-url';
 
 export const dynamic = 'force-static';
 

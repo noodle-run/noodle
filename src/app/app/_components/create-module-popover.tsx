@@ -22,7 +22,7 @@ import { Label } from '@/primitives/label';
 import type { IconNames } from '@/primitives/icon';
 import { Icon, iconNames } from '@/primitives/icon';
 import { grayDark } from '@radix-ui/colors';
-import { colorChoices } from '@/lib/colors';
+import { colorChoices } from '@/utils/colors';
 import { ScrollArea } from '@/primitives/scroll-area';
 import { api } from '@/lib/trpc/react';
 import { useRouter } from 'next/navigation';

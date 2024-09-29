@@ -9,7 +9,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { Controller, FormProvider, useFormContext } from 'react-hook-form';
 
 import { Label } from '@/primitives/label';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 import { CircleXIcon } from 'lucide-react';
 
 const Form = FormProvider;

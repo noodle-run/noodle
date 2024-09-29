@@ -1,6 +1,6 @@
 import type { MDXComponents } from 'mdx/types';
 import { buttonVariants } from './primitives/button';
-import { cn } from './lib/utils';
+import { cn } from '@/utils/cn';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {

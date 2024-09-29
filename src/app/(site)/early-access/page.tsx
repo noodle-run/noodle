@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { JoinEarlyAccessForm } from './_forms/join';
-import { constructMetadata } from '@/lib/utils';
+import { constructMetadata } from '@/utils/construct-metadata';
 
 export const metadata: Metadata = constructMetadata({
   title: 'Early Access - Noodle',

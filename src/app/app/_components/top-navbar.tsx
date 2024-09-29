@@ -1,5 +1,5 @@
 import { signOut } from '@/lib/auth';
-import { getColorForUsername } from '@/lib/colors';
+import { getColorForUsername } from '@/utils/colors';
 import { Avatar, AvatarFallback, AvatarImage } from '@/primitives/avatar';
 import { Button } from '@/primitives/button';
 import {

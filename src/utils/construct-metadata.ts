@@ -1,40 +1,7 @@
-import type { ClassValue } from 'clsx';
 import type { Metadata } from 'next';
 
-import { clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-
 import { constants } from '@/constants';
-import { env } from '@/env';
-
-/**
- * A utility function to merge Tailwind CSS classes using a combination of clsx
- * and tailwind-merge.
- * @example
- *   import { cn } from '@lib/utils';
- *
- *   const classes = cn('text-black', 'bg-white', 'p-4');
- * @param inputs - The classes to merge.
- * @returns A string of the classes merged together.
- */
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-
-/**
- * A utility function to get the base URL of the current instance.
- * @returns The base URL.
- */
-export function getBaseUrl() {
-  if (typeof window !== 'undefined') {
-    return window.location.origin;
-  }
-
-  if (process.env['VERCEL_URL']) {
-    return `https://${process.env['VERCEL_URL']}`;
-  }
-  return `http://localhost:${String(env.PORT)}`;
-}
+import { getBaseUrl } from './base-url';
 
 /**
  * A utility function to construct metadata for the application which can be
@@ -122,15 +89,4 @@ export function constructMetadata({
       },
     }),
   };
-}
-
-export function slugify(str: string) {
-  return str
-    .toString()
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/&/g, '-and-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/-{2,}/g, '-');
 }

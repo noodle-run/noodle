@@ -1,4 +1,4 @@
-import { convertHexToRGBA } from '@/lib/colors';
+import { convertHexToRGBA } from '@/utils/colors';
 import { Icon, type IconNames } from '@/primitives/icon';
 import { Skeleton } from '@/primitives/skeleton';
 import Link from 'next/link';
