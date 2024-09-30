@@ -1,4 +1,4 @@
-import type { AppRouter } from '@/server';
+import type { AppRouter } from '@/api';
 import type { inferReactQueryProcedureOptions } from '@trpc/react-query';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 

@@ -8,7 +8,7 @@ import { createTRPCReact } from '@trpc/react-query';
 import superjson from 'superjson';
 
 import { getBaseUrl } from '@/utils/base-url';
-import { type AppRouter } from '@/server';
+import { type AppRouter } from '@/api';
 
 const createQueryClient = () => new QueryClient();
 
