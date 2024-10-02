@@ -1,7 +1,7 @@
 'use client';
 
 import { api } from '@/lib/trpc/react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 import { Button, buttonVariants } from '@/primitives/button';
 import { Checkbox } from '@/primitives/checkbox';
 import { Input } from '@/primitives/input';

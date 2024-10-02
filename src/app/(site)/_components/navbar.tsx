@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { ChevronRightIcon, MenuIcon } from 'lucide-react';
 
 import { constants, features } from '@/constants';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 import { Button } from '@/primitives/button';
 import {
   NavigationMenu,

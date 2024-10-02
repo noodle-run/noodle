@@ -3,8 +3,8 @@ import type { NextRequest } from 'next/server';
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 
 import { env } from '@/env';
-import { appRouter } from '@/server';
-import { createTRPCContext } from '@/server/trpc';
+import { appRouter } from '@/api';
+import { createTRPCContext } from '@/api/trpc';
 
 const createContext = (req: NextRequest) => {
   return createTRPCContext({

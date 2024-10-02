@@ -10,7 +10,7 @@ import {
 import { emailTailwindConfig } from '../tailwind';
 import type { PropsWithChildren } from 'react';
 import { emailBaseUrl } from '../utils';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils/cn';
 
 type Props = PropsWithChildren<{
   title: string;

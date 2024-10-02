@@ -13,18 +13,14 @@ import {
   iris,
   jade,
   lime,
-  mauve,
   mint,
-  olive,
   orange,
   pink,
   plum,
   purple,
   red,
   ruby,
-  sage,
   sky,
-  slate,
   teal,
   tomato,
   violet,
@@ -35,22 +31,6 @@ export const colorChoices = [
   {
     name: 'default',
     value: gray.gray9,
-  },
-  {
-    name: 'mauve',
-    value: mauve.mauve9,
-  },
-  {
-    name: 'slate',
-    value: slate.slate9,
-  },
-  {
-    name: 'sage',
-    value: sage.sage9,
-  },
-  {
-    name: 'olive',
-    value: olive.olive9,
   },
   {
     name: 'tomato',
@@ -153,3 +133,56 @@ export const colorChoices = [
     value: sky.sky9,
   },
 ];
+
+export const convertHexToRGBA = (hexCode: string, opacity = 1) => {
+  let hex = hexCode.replace('#', '');
+
+  if (hex.length === 3) {
+    const first = hex[0] ?? '';
+    const second = hex[1] ?? '';
+    const third = hex[2] ?? '';
+
+    hex = `${first}${first}${second}${second}${third}${third}`;
+  }
+
+  const r = parseInt(hex.substring(0, 2), 16).toString();
+  const g = parseInt(hex.substring(2, 4), 16).toString();
+  const b = parseInt(hex.substring(4, 6), 16).toString();
+
+  if (opacity > 1 && opacity <= 100) {
+    opacity = opacity / 100;
+  }
+
+  return `rgba(${r},${g},${b},${opacity.toString()})`;
+};
+
+export function getTextColor(hexColor: string): string {
+  const hex = hexColor.replace('#', '');
+  const r = parseInt(hex.slice(0, 2), 16) / 255;
+  const g = parseInt(hex.slice(2, 4), 16) / 255;
+  const b = parseInt(hex.slice(4, 6), 16) / 255;
+  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+
+  const color = luminance > 0.5 ? '#000000' : '#FFFFFF';
+
+  return color;
+}
+
+export function getColorForUsername(
+  username: string,
+  colors = colorChoices.map((c) => c.value).filter((c) => c !== gray.gray9),
+) {
+  let hash = 0;
+  for (let i = 0; i < username.length; i++) {
+    const char = username.charCodeAt(i);
+    hash = ((hash << 5) - hash + char) | 0;
+  }
+  const colorIndex = Math.abs(hash) % colors.length;
+  // eslint-disable-next-line security/detect-object-injection
+  const backgroundColor = colors[colorIndex] ?? gray.gray9;
+
+  return {
+    backgroundColor,
+    color: getTextColor(backgroundColor),
+  };
+}

@@ -11,7 +11,7 @@ import type { PropsWithChildren } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
-import { constructMetadata } from '@/lib/utils';
+import { constructMetadata } from '@/utils/construct-metadata';
 import { Toaster } from '@/primitives/sonner';
 
 export const metadata: Metadata = constructMetadata();
