@@ -58,7 +58,7 @@ export function UserProfileDropdown({ session }: { session: Session }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar>
+        <Avatar className="size-8">
           <AvatarImage src={session.user.image ?? ''} />
           <AvatarFallback
             style={{
