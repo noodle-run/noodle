@@ -1,17 +1,10 @@
 import { api } from '@/lib/trpc/server';
-import {
-  CircleHelpIcon,
-  DiamondIcon,
-  HomeIcon,
-  MessageSquareMore,
-  PenLineIcon,
-} from 'lucide-react';
+import { DiamondIcon, HomeIcon, PenLineIcon } from 'lucide-react';
 import Image from 'next/image';
 import { ActiveButton } from './active-button';
 import { CreateModulePopover } from './create-module-popover';
 import type { IconNames } from '@/primitives/icon';
 import { Icon } from '@/primitives/icon';
-import { Button } from '@/primitives/button';
 
 const iconSize = 15;
 
@@ -86,27 +79,6 @@ export async function SideMenu() {
               ))}
           </ul>
         </div>
-      </div>
-
-      <div className="mb-6 flex flex-col">
-        <Button
-          variant="ghost"
-          className="justify-start gap-3 font-normal"
-          asChild
-        >
-          <a href="mailto:feedback@noodle.run">
-            <MessageSquareMore size={15} strokeWidth={1.5} /> Feedback
-          </a>
-        </Button>
-        <Button
-          variant="ghost"
-          className="justify-start gap-3 font-normal"
-          asChild
-        >
-          <a href="mailto:support@noodle.run">
-            <CircleHelpIcon size={15} strokeWidth={1.5} /> Help & Support
-          </a>
-        </Button>
       </div>
     </aside>
   );
