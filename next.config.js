@@ -1,10 +1,10 @@
 import { fileURLToPath } from 'node:url';
 
-import createJiti from 'jiti';
+import { createJiti } from 'jiti';
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
-jiti('./src/env');
+await jiti.import('./src/env');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
