@@ -152,7 +152,7 @@ export function CreateModulePopover() {
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent side="right" className="w-[328px]">
+      <PopoverContent align="start" side="right" className="w-[328px]">
         <ResizablePanel>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="p-4">
