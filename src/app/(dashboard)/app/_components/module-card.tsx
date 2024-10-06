@@ -1,4 +1,4 @@
-import { convertHexToRGBA } from '@/lib/colors';
+import Color from 'color';
 import { Icon, type IconNames } from '@/primitives/icon';
 import { Skeleton } from '@/primitives/skeleton';
 import Link from 'next/link';
@@ -28,11 +28,14 @@ export function ModuleCard({
         href={`/app/module/${id}`}
         className="flex flex-col gap-2 rounded-xl p-6"
         style={{
-          background: `linear-gradient(135deg, ${convertHexToRGBA(
-            moduleColor['500'],
-            0.08,
-          )} 0%, ${convertHexToRGBA(moduleColor['700'], 0.05)} 100%)`,
-          border: `1px solid ${convertHexToRGBA(moduleColor['500'], 0.1)}`,
+          background: `linear-gradient(135deg, ${Color(moduleColor['500'])
+            .alpha(0.08)
+            .toString()} 0%, ${Color(moduleColor['700'])
+            .alpha(0.05)
+            .toString()} 100%)`,
+          border: `1px solid ${Color(moduleColor['500'])
+            .alpha(0.1)
+            .toString()}`,
         }}
       >
         <Icon name={icon} strokeWidth={2} size={20} />

@@ -1,4 +1,5 @@
-import { cn, slugify } from '@/lib/utils';
+import { cn } from '@/utils/cn';
+import slugify from 'slugify';
 import { buttonVariants } from '@/primitives/button';
 import type { MDXRemoteProps } from 'next-mdx-remote/rsc';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -7,7 +8,10 @@ import { createElement } from 'react';
 
 function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6, className: string) {
   const Element = ({ children }: PropsWithChildren) => {
-    const slug = typeof children === 'string' ? slugify(children) : '';
+    const slug =
+      typeof children === 'string'
+        ? slugify(children, { lower: true, strict: true })
+        : '';
 
     return createElement(
       `h${String(level)}`,

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-import { getBaseUrl } from '@/lib/utils';
+import { getBaseUrl } from '@/utils/base-url';
 
 /**
  * This function returns an object that represents the robots.txt file which
