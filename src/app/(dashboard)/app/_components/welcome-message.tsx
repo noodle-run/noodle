@@ -1,20 +1,32 @@
-'use client';
+import { auth, currentUser } from '@clerk/nextjs/server';
 
-import { useUser } from '@clerk/nextjs';
+export async function WelcomeMessage() {
+  const { redirectToSignIn } = auth();
 
-export function WelcomeMessage() {
-  const { user } = useUser();
+  const user = await currentUser();
 
-  if (user === null || user === undefined) {
-    return null;
+  if (!user) {
+    return redirectToSignIn();
   }
+
+  const currentHour = new Date().getHours();
+
+  let timeGreeting;
+  if (currentHour < 12) {
+    timeGreeting = 'Good morning';
+  } else if (currentHour < 18) {
+    timeGreeting = 'Good afternoon';
+  } else {
+    timeGreeting = 'Good evening';
+  }
+
+  const greeting = user.firstName
+    ? `${timeGreeting}, ${user.firstName}!`
+    : `${timeGreeting}!`;
 
   return (
     <div className="space-y-3">
-      <h1 className="text-4xl font-semibold">
-        Good afternoon,{' '}
-        {user.firstName ?? user.emailAddresses[0]?.emailAddress.split('@')[0]}!
-      </h1>
+      <h1 className="text-4xl font-semibold">{greeting}</h1>
       <p className="max-w-prose text-balance text-sm leading-6 text-foreground-muted">
         “The final wisdom of life requires not the annulment of incongruity but
         the achievement of serenity within and above it.” - Reinhold Niebuhr
