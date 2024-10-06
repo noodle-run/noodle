@@ -12,6 +12,7 @@ import { CreateModulePopover } from './create-module-popover';
 import type { IconNames } from '@/primitives/icon';
 import { Icon } from '@/primitives/icon';
 import { Button } from '@/primitives/button';
+import { constants } from '@/constants';
 
 const iconSize = 15;
 
@@ -94,7 +95,11 @@ export async function SideMenu() {
           className="justify-start gap-3 font-normal"
           asChild
         >
-          <a href="mailto:feedback@noodle.run">
+          <a
+            href={constants.feedback}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <MessageSquareMore size={15} strokeWidth={1.5} /> Feedback
           </a>
         </Button>
@@ -103,7 +108,7 @@ export async function SideMenu() {
           className="justify-start gap-3 font-normal"
           asChild
         >
-          <a href="mailto:support@noodle.run">
+          <a href={constants.support} target="_blank" rel="noopener noreferrer">
             <CircleHelpIcon size={15} strokeWidth={1.5} /> Help & Support
           </a>
         </Button>

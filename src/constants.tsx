@@ -16,6 +16,8 @@ export const constants = {
   domain: 'noodle.run',
   discord: 'https://discord.gg/ewKmQd8kYm',
   twitter: 'https://x.com/noodle_run',
+  feedback: 'mailto:feedback@noodle.run',
+  support: 'mailto:support@noodle.run',
 };
 
 export const features = (iconSize: number) => [
