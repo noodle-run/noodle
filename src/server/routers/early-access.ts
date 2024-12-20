@@ -95,13 +95,16 @@ function hasAlternatingCharsAndNumbers(username: string): boolean {
   return alternatingPattern.test(username);
 }
 
-function scoreEmail(email: string): number {
+function scoreEmail(email: string): { score: number; message: string } {
   let score = 0;
-
+  let message = '';
   const [username, domain] = email.split('@');
 
   if (!username || !domain) {
-    return 100;
+    return {
+      score: 100,
+      message: 'Invalid email address',
+    };
   }
 
   if (nonHumanEmailDomains.some((d) => email.endsWith(d))) {
@@ -133,10 +136,14 @@ function scoreEmail(email: string): number {
 
   if (isEmailGibberish(username)) {
     score += 20;
+    message =
+      'The email address appears to be gibberish. Please use a more conventional email address.';
   }
 
   if (hasAlternatingCharsAndNumbers(username)) {
     score += 15;
+    message =
+      'The email address has alternating characters and numbers, which is not allowed.';
   }
 
   const specialCharCount = username.replace(/[a-z0-9]/gi, '').length;
@@ -149,12 +156,18 @@ function scoreEmail(email: string): number {
     score += 5;
   }
 
-  return score;
+  return { score, message };
 }
 
-function isLikelyHuman(email: string, threshold = 30): boolean {
+function isLikelyHuman(
+  email: string,
+  threshold = 30,
+): { isValid: boolean; message: string } {
   const emailScore = scoreEmail(email);
-  return emailScore < threshold;
+  const message = emailScore.message;
+  return emailScore.score < threshold
+    ? { isValid: true, message }
+    : { isValid: false, message };
 }
 
 export const earlyAccessRouter = createRouter({
@@ -172,10 +185,10 @@ export const earlyAccessRouter = createRouter({
 
       const emailHuman = isLikelyHuman(email);
 
-      if (!emailHuman) {
+      if (!emailHuman.isValid) {
         throw new TRPCError({
           code: 'BAD_REQUEST',
-          message: 'Please use a valid email address.',
+          message: emailHuman.message,
         });
       }
 
