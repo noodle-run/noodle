@@ -3,6 +3,8 @@ version: '0.2'
 ignorePaths:
   - node_modules
   - bun.lockb
+  - package.json
+  - src/utils/get-formatted-weather-description.ts
   - .tsbuildinfo
   - .gitignore
   - .next

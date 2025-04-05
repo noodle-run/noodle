@@ -58,6 +58,7 @@
     "@clerk/themes": "^2.1.36",
     "@hookform/resolvers": "^3.9.0",
     "@neondatabase/serverless": "^0.10.1",
+    "@nextui-org/react": "^2.6.11",
     "@paralleldrive/cuid2": "^2.2.2",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-checkbox": "^1.1.2",
@@ -73,9 +74,10 @@
     "@react-email/components": "^0.0.25",
     "@t3-oss/env-nextjs": "^0.11.1",
     "@tanstack/react-query": "^5.59.15",
+    "@tanstack/react-query-next-experimental": "^5.71.10",
     "@trpc/client": "next",
     "@trpc/react-query": "next",
-    "@trpc/server": "next",
+    "@trpc/server": "^11.0.2",
     "@upstash/redis": "^1.34.3",
     "@vercel/analytics": "^1.3.1",
     "@vercel/speed-insights": "^1.0.12",
@@ -105,7 +107,7 @@
     "timeago.js": "^4.0.2",
     "use-resize-observer": "^9.1.0",
     "usehooks-ts": "^3.1.0",
-    "zod": "^3.23.8"
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",

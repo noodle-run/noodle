@@ -1,0 +1,56 @@
+//cSpell:disable
+const weatherCodeToEnglish: Record<string, string> = {
+  clearsky: '🌞 a clear sky',
+  cloudy: '☁️ clouds',
+  fair: '⛅ fair',
+  fair_day: '🌤️ fair day',
+  fog: '🌫️ fog',
+  heavyrain: '🌧️ heavy rain',
+  heavyrainandthunder: '⛈️ heavy rain and thunder',
+  heavyrainshowers: '🌧️ heavy rain showers',
+  heavyrainshowersandthunder: '⛈️ heavy rain showers and thunder',
+  heavysleet: '🌨️ heavy sleet',
+  heavysleetandthunder: '⛈️ heavy sleet and thunder',
+  heavysleetshowers: '🌨️ heavy sleet showers',
+  heavysleetshowersandthunder: '⛈️ heavy sleet showers and thunder',
+  heavysnow: '❄️ heavy snow',
+  heavysnowandthunder: '⛈️ heavy snow and thunder',
+  heavysnowshowers: '❄️ heavy snow showers',
+  heavysnowshowersandthunder: '⛈️ heavy snow showers and thunder',
+  lightrain: '🌦️ light rain',
+  lightrainandthunder: '⛈️ light rain and thunder',
+  lightrainshowers: '🌦️ light rain showers',
+  lightrainshowersandthunder: '⛈️ light rain showers and thunder',
+  lightsleet: '🌧️ light sleet',
+  lightsleetandthunder: '⛈️ light sleet and thunder',
+  lightsleetshowers: '🌧️ light sleet showers',
+  lightsnow: '🌨️ light snow',
+  lightsnowandthunder: '⛈️ light snow and thunder',
+  lightsnowshowers: '🌨️ light snow showers',
+  lightssleetshowersandthunder: '⛈️ light sleet showers and thunder',
+  lightssnowshowersandthunder: '⛈️ light snow showers and thunder',
+  partlycloudy: '🌥️ some clouds',
+  rain: '🌧️ rain',
+  rainandthunder: '⛈️ rain and thunder',
+  rainshowers: '🌧️ rain showers',
+  rainshowersandthunder: '⛈️ rain showers and thunder',
+  sleet: '🌨️ sleet',
+  sleetandthunder: '⛈️ sleet and thunder',
+  sleetshowers: '🌨️ sleet showers',
+  sleetshowersandthunder: '⛈️ sleet showers and thunder',
+  snow: '❄️ snow',
+  snowandthunder: '⛈️ snow and thunder',
+  snowshowers: '❄️ snow showers',
+  snowshowersandthunder: '⛈️ snow showers and thunder',
+};
+
+export const getFormattedWeatherDescription = (
+  condition: string | undefined,
+): string | undefined => {
+  if (!condition || !(condition in weatherCodeToEnglish)) {
+    return undefined;
+  }
+  // eslint-disable-next-line security/detect-object-injection
+  const weatherDescription = weatherCodeToEnglish[condition];
+  return `with ${weatherDescription as string}`;
+};
